@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact – Emotion Encoded</title>
+  <style>
+    body {
+      font-family: Times New Roman, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #222;
+      padding: 1em;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff9800;
+    }
+    main {
+      max-width: 600px;
+      margin: 2em auto;
+      background: white;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 1em 0 0.5em;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    button {
+      margin-top: 1em;
+      padding: 0.75em 1.5em;
+      background-color: #222;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff9800;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <h1>Contact Emotion Encoded</h1>
+    <p>If you’d like to get in touch, please fill out the form below or email us at <a href="mailto:sonrisawatts@gmail.com">contact@encodedemotion.org</a>.</p>
+    <form action="mailto:contact@encodedemotion.org" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input id="name" name="name" type="text" required />
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" required />
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+</body>
+</html>
