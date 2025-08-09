@@ -107,7 +107,7 @@ body.about-body nav a:hover {
   max-width: 800px;
   margin: 2em auto 4em auto;
   padding: 2em 3em;
-  background-color: transparent;
+  background-color: rgba(10, 35, 66, 0.75); /* semi-transparent navy overlay */
   color: #d3d3d3;
   border-radius: 10px;
   font-weight: 400;
