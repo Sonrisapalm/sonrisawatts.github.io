@@ -1,29 +1,22 @@
-/* Make html and body full height so background covers entire viewport */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-}
+/* ===== Homepage and general styles ===== */
 
-/* Background image on body fills entire viewport, no black bars */
 body {
   background-image: url('images/emotion-coded-web-page.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
-/* Navigation styles */
 nav {
-  background-color: rgba(34, 34, 34, 0.8); /* semi-transparent black */
+  background-color: #222;
   padding: 1em;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 nav a {
@@ -37,32 +30,114 @@ nav a:hover {
   color: #ff9800;
 }
 
-/* Header styles */
 header {
   padding: 2em;
   text-align: center;
-  background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(68, 68, 68, 0.8));
+  background: linear-gradient(to right, #222, #444);
   color: white;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Main content */
 main {
   max-width: 800px;
   margin: 2em auto;
   padding: 1em;
-  background-color: rgba(255, 255, 255, 0.9); /* slight transparency */
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   font-weight: 400;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 1em;
   margin-top: 2em;
   font-size: 0.9em;
+  background-color: #222;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== About Page Specific Styles ===== */
+
+body.about-body {
+  background-color: #0a2342; /* dark navy blue */
+  font-family: 'Poppins', sans-serif;
+  color: #d3d3d3;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+body.about-body nav {
+  background-color: rgba(34, 34, 34, 0.8);
+  font-family: 'Poppins', sans-serif;
+}
+
+body.about-body nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+}
+
+body.about-body nav a.active {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+body.about-body nav a:hover {
+  color: #ff9800;
+}
+
+.about-header {
+  padding: 3em 1em 2em 1em;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-main {
+  max-width: 800px;
+  margin: 2em auto 4em auto;
+  padding: 2em 3em;
+  background-color: transparent;
+  color: #d3d3d3;
+  border-radius: 10px;
+  font-weight: 400;
+  line-height: 2; /* double spacing */
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-main h2 {
+  color: #ffd700;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+body.about-body footer {
+  text-align: center;
+  padding: 1em;
+  margin-top: auto;
+  font-size: 0.9em;
   background-color: rgba(34, 34, 34, 0.8);
   color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 600px) {
+  .about-main {
+    padding: 1em;
+    margin: 1em;
+  }
+
+  .about-header {
+    padding: 2em 1em 1.5em 1em;
+  }
 }
