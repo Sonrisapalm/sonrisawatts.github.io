@@ -1,163 +1,79 @@
-body {
-  background-image: url('images/emotion-coded-web-page.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emotion Encoded</title>
 
-nav {
-  background-color: #222;
-  padding: 1em;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-nav a:hover {
-  color: #ff6f61;
-  text-decoration: underline;
-  cursor: pointer;
-}
+  <header>
+    <h1>Emotion Encoded</h1>
+    <p>By Sonrisa Watts: Exploring the intersection of psychology and AI to build trust and transparency.</p>
+  </header>
 
-header {
-  padding: 2em;
-  text-align: center;
-  background: linear-gradient(to right, #222, #444);
-  color: white;
-  font-weight: 800;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  transition: color 0.3s ease;
-}
+  <main>
+    <h2>Welcome</h2>
+    <p>
+      Emotion Encoded is dedicated to understanding how emotional reasoning, cultural context,
+      and psychological bias shape human responses to AI.
+    </p>
+    <p>
+      Through research and collaboration with professionals in law, medicine, and policy,
+      we aim to foster trust, transparency, and ethical AI governance.
+    </p>
 
-header:hover {
-  color: #ff3b1f;
-  cursor: pointer;
-}
+    <section id="articles">
+      <h2>Featured Article</h2>
+      <article>
+        <img src="images/article1.jpg" alt="Research in Caribbean Region" />
+        <p>
+          I conducted research in the Caribbean Region and I got some interesting answers. Most responses are from my hometown St. Kitts & Nevis.<br/>
+          I asked "Who would you trust more? An AI advisor or an AI Therapist?"<br/>
+          Here are some results. I'll publish the others next week. What do you think?
+        </p>
+        <ul>
+          <li>1. Financial advisor is a little too private for me</li>
+          <li>2. I prefer a human to deal with my money</li>
+          <li>3. Therapist errors are less likely to be lethal</li>
+          <li>4. Although both should be private and confidential, an AI therapist can draw on a large resource and apply it to challenges I may be experiencing whereas Finances are more personal.</li>
+          <li>5. Therapist work may involve actual human feelings and rational thinking, while financial advice is based on the numbers and their interpretation, the numbers speak for themselves.</li>
+          <li>6. A therapist needs a certain level of emotional intelligence that I don't think AI has developed.</li>
+          <li>9. Finance is numbers. I can sort out my own feelings.</li>
+          <li>10. Therapist has a lot more nuances and human components that robots can’t completely understand. Financial is about understanding markets, money movement, world economy..more facts, more objectives. Robot advice will be more adequate.</li>
+          <li>11. There are layers to communication which AI may not tap into within the process of therapy.</li>
+          <li>12. Might be easier to see if it is working for me or not.</li>
+          <li>13. It's research and figures, no understanding of emotions involved.</li>
+          <li>14. Health over Wealth.</li>
+          <li>15. The therapist errors are more easily corrected.</li>
+        </ul>
+        <p>
+          What does this mean?<br/>
+          Trust isn't automatic.<br/>
+          Have we considered all the risks involved with trusting an AI tool with our finances or our personal feelings?<br/>
+          Is it mainly about communicating ethically?<br/>
+          What does this mean for people who's in the career of financial advising?<br/>
+          What does this mean for psychologists?<br/>
+          Join in on the discussion.
+        </p>
+      </article>
+    </section>
+  </main>
 
-main {
-  max-width: 800px;
-  margin: 2em auto;
-  padding: 1em 2em;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  font-weight: 400;
-  font-family: 'Poppins', sans-serif;
-  color: #333333;
-  line-height: 1.8;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
+  <footer>
+    © 2025 Emotion Encoded — All rights reserved.
+  </footer>
 
-main:hover {
-  color: #ff6f61;
-  cursor: default;
-}
-
-footer {
-  text-align: center;
-  padding: 1em;
-  margin-top: 2em;
-  font-size: 0.9em;
-  background-color: #222;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* ===== Articles Section ===== */
-
-#articles {
-  margin-top: 3em;
-}
-
-#articles h2 {
-  text-align: center;
-  margin-bottom: 1.5em;
-  color: #ff6f61;
-  font-weight: 800;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-  transition: color 0.3s ease;
-}
-
-#articles h2:hover {
-  color: #ff3b1f;
-  cursor: pointer;
-}
-
-#articles article {
-  max-width: 700px;
-  margin: 2em auto;
-  padding: 1.5em 2em;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-#articles article img {
-  width: 80%;
-  max-width: 650px;
-  height: auto;
-  border-radius: 15px;
-  object-fit: cover;
-  margin: 0 auto 20px auto;
-  display: block;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-#articles article img:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-#articles article ul {
-  padding-left: 20px;
-  margin-top: 0.5em;
-  margin-bottom: 1.5em;
-  list-style-type: decimal;
-}
-
-#articles article ul li {
-  margin-bottom: 0.8em;
-  transition: color 0.3s ease, font-weight 0.3s ease;
-}
-
-#articles article ul li:hover {
-  color: #ff6f61;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* Responsive tweaks */
-@media (max-width: 700px) {
-  main, #articles article {
-    margin: 1em;
-    padding: 1em;
-  }
-
-  #articles article img {
-    max-width: 100%;
-  }
-}
+</body>
+</html>
