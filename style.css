@@ -94,8 +94,8 @@ main {
 }
 
 #articles article img {
-  width: 50px;    /* smaller size */
-  height: 50px;
+  width: 70px;    /* smaller size */
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
