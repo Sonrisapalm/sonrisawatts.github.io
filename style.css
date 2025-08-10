@@ -1,165 +1,62 @@
-/* ===== Homepage and general styles ===== */
-
-body {
-  background-image: url('images/emotion-coded-web-page.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-
-nav {
-  background-color: #222;
-  padding: 1em;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #ff6f61;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-header {
-  padding: 2em;
-  text-align: center;
-  background: linear-gradient(to right, #222, #444);
-  color: white;
-  font-weight: 800;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  transition: color 0.3s ease;
-}
-
-header:hover {
-  color: #ff3b1f;
-  cursor: pointer;
-}
-
-main {
-  max-width: 800px;
-  margin: 2em auto;
-  padding: 1em 2em;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  font-weight: 400;
-  font-family: 'Poppins', sans-serif;
-  color: #333333;
-  line-height: 1.8;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-main:hover {
-  color: #ff6f61;
-  cursor: default;
-}
-
-footer {
-  text-align: center;
-  padding: 1em;
-  margin-top: 2em;
-  font-size: 0.9em;
-  background-color: #222;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* ===== Articles Section ===== */
-
-#articles {
-  margin-top: 3em;
-}
-
-#articles h2 {
-  text-align: center;
-  margin-bottom: 1.5em;
-  color: #ff6f61;
-  font-weight: 800;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-  transition: color 0.3s ease;
-}
-
-#articles h2:hover {
-  color: #ff3b1f;
-  cursor: pointer;
-}
-
-#articles article {
-  max-width: 700px;
-  margin: 2em auto;
-  padding: 1.5em 2em;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-#articles article img {
-  width: 80%;
-  max-width: 650px;
-  height: auto;
-  border-radius: 15px;
-  object-fit: cover;
-  margin: 0 auto 20px auto;
-  display: block;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-#articles article img:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-#articles article ul {
-  padding-left: 20px;
-  margin-top: 0.5em;
-  margin-bottom: 1.5em;
-  list-style-type: decimal;
-}
-
-#articles article ul li {
-  margin-bottom: 0.8em;
-  transition: color 0.3s ease, font-weight 0.3s ease;
-}
-
-#articles article ul li:hover {
-  color: #ff6f61;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* Responsive tweaks */
-@media (max-width: 700px) {
-  main, #articles article {
-    margin: 1em;
-    padding: 1em;
-  }
-
-  #articles article img {
-    max-width: 100%;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychology & AI Collage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      font-family: 'Arial Black', Gadget, sans-serif;
+      font-weight: bold;
+      color: #5D3FD3; /* Deep purple pop color */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+      font-size: 2.8em;
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+  <h1>Psychology & AI Intertwined</h1>
+  <div class="gallery">
+    <img src="your-image1.jpg" alt="Psychology AI collage 1">
+    <img src="your-image2.jpg" alt="Psychology AI collage 2">
+    <img src="your-image3.jpg" alt="Psychology AI collage 3">
+    <img src="your-image4.jpg" alt="Psychology AI collage 4">
+    <img src="your-image5.jpg" alt="Psychology AI collage 5">
+    <img src="your-image6.jpg" alt="Psychology AI collage 6">
+    <img src="your-image7.jpg" alt="Psychology AI collage 7">
+    <img src="your-image8.jpg" alt="Psychology AI collage 8">
+    <img src="your-image9.jpg" alt="Psychology AI collage 9">
+    <img src="your-image10.jpg" alt="Psychology AI collage 10">
+  </div>
+</body>
+</html>
