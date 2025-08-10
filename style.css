@@ -115,7 +115,64 @@ main {
   #articles article img {
     max-width: 100%;
   }
+/* Make headings bold, bigger, and bright */
+h1, h2 {
+  font-weight: 800;
+  color: #ff6f61; /* bright coral/orange */
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  transition: color 0.3s ease;
+}
 
+/* Hover effect on headings */
+h1:hover, h2:hover {
+  color: #ff3b1f; /* deeper, more intense coral */
+  cursor: pointer;
+}
+
+/* Make paragraphs more readable and slightly bigger */
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333333;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on paragraphs for subtle interaction */
+p:hover {
+  color: #ff6f61;
+  cursor: default;
+}
+
+/* List items styling */
+ul li {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.7em;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on list items */
+ul li:hover {
+  color: #ff6f61;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Make links stand out */
+nav a {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Nav links hover effect */
+nav a:hover {
+  color: #ff6f61;
+  text-decoration: underline;
+  cursor: pointer;
+}
   main {
     margin: 1em auto;
     padding: 1em 1.2em;
