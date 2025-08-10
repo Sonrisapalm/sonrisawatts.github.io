@@ -1,64 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Encoded</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-            color: #333;
-        }
-        header {
-            background-color: #222;
-            color: white;
-            padding: 20px 0;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        main {
-            padding: 20px;
-        }
-        img {
-            width: 80%; /* Increased from smaller size */
-            max-width: 900px; /* Keeps it from becoming TOO big on large screens */
-            height: auto;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 20px auto;
-            line-height: 1.6;
-        }
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 10px 0;
-            font-size: 0.9em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Emotion Encoded</h1>
-    </header>
-    <main>
-        <p>Exploring the intersection of psychology, emotion, and AI.</p>
-        <img src="your-image.jpg" alt="Psychology and AI">
-    </main>
-    <footer>
-        &copy; 2025 Emotion Encoded. All rights reserved.
-    </footer>
-</body>
-</html>
+/* ===== Homepage and general styles ===== */
+
+body {
+  background-image: url('images/emotion-coded-web-page.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+nav {
+  background-color: #222;
+  padding: 1em;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff6f61;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+header {
+  padding: 2em;
+  text-align: center;
+  background: linear-gradient(to right, #222, #444);
+  color: white;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  transition: color 0.3s ease;
+}
+
+header:hover {
+  color: #ff3b1f;
+  cursor: pointer;
+}
+
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 1em 2em;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+main:hover {
+  color: #ff6f61;
+  cursor: default;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+  font-size: 0.9em;
+  background-color: #222;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Articles Section ===== */
+
+#articles {
+  margin-top: 3em;
+}
+
+#articles h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #ff6f61;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  transition: color 0.3s ease;
+}
+
+#articles h2:hover {
+  color: #ff3b1f;
+  cursor: pointer;
+}
+
+#articles article {
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 1.5em 2em;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+#articles article img {
+  width: 80%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  margin: 0 auto 20px auto;
+  display: block;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+#articles article img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#articles article ul {
+  padding-left: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  list-style-type: decimal;
+}
+
+#articles article ul li {
+  margin-bottom: 0.8em;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#articles article ul li:hover {
+  color: #ff6f61;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  main, #articles article {
+    margin: 1em;
+    padding: 1em;
+  }
+
+  #articles article img {
+    max-width: 100%;
+  }
+}
