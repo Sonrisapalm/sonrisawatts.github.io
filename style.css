@@ -63,8 +63,8 @@ main {
 }
 
 #articles article img {
-  width: 90%;      /* increased from 80% */
-  max-width: 500px; /* increased from 400px */
+  width: 95%;      /* increased from 80% */
+  max-width: 550px; /* increased from 400px */
   height: auto;
   border-radius: 15px;
   object-fit: cover;
