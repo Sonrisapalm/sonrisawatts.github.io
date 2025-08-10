@@ -93,13 +93,15 @@ main {
   border-radius: 10px;
 }
 
-#articles article img {
-  width: 70px;    /* medium size */
-  height: 70px;
+ #articles article img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  box-shadow: 0 4px 8
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
 
 #articles article:hover img {
   transform: scale(1.05);
