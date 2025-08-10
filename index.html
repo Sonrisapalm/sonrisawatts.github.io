@@ -1,62 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Psychology & AI Collage</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-    h1 {
-      font-family: 'Arial Black', Gadget, sans-serif;
-      font-weight: bold;
-      color: #5D3FD3; /* Deep purple pop color */
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-      margin-bottom: 30px;
-      font-size: 2.8em;
-      text-align: center;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      width: 100%;
-      max-width: 1200px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encoded Emotion</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            color: #111827;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        nav {
+            background: #1f2937;
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fbbf24;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #1f2937;
+            margin-top: 0;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-  <h1>Psychology & AI Intertwined</h1>
-  <div class="gallery">
-    <img src="your-image1.jpg" alt="Psychology AI collage 1">
-    <img src="your-image2.jpg" alt="Psychology AI collage 2">
-    <img src="your-image3.jpg" alt="Psychology AI collage 3">
-    <img src="your-image4.jpg" alt="Psychology AI collage 4">
-    <img src="your-image5.jpg" alt="Psychology AI collage 5">
-    <img src="your-image6.jpg" alt="Psychology AI collage 6">
-    <img src="your-image7.jpg" alt="Psychology AI collage 7">
-    <img src="your-image8.jpg" alt="Psychology AI collage 8">
-    <img src="your-image9.jpg" alt="Psychology AI collage 9">
-    <img src="your-image10.jpg" alt="Psychology AI collage 10">
-  </div>
+    <header>
+        <h1>Encoded Emotion</h1>
+        <p>Exploring the psychology of AI interactions</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                Encoded Emotion investigates how emotional reasoning, cultural context, and psychological bias shape human responses to AI. We aim to foster dialogue and research into AI trust and adoption.
+            </p>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            <p>
+                Our projects span cognitive bias simulations, trust metrics for AI, and studies on emotional reasoning in professional AI adoption. We collaborate with researchers, developers, and policymakers.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email us at: <a href="mailto:info@encodedemotion.org">info@encodedemotion.org</a></p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Encoded Emotion. All rights reserved.
+    </footer>
 </body>
 </html>
