@@ -1,83 +1,184 @@
+/* ===== Homepage and general styles ===== */
+
 body {
+  background-image: url('images/emotion-coded-web-page.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: url("images/emotion-coded-web-page.png") no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  line-height: 1.6;
+  color: #333;
 }
 
 nav {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
+  background-color: #222;
+  padding: 1em;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 nav a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1em;
+  margin: 0 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
+  color: #ff6f61;
   text-decoration: underline;
+  cursor: pointer;
 }
 
+/* Transparent bubble on header for readability */
 header {
+  padding: 2em;
   text-align: center;
-  padding: 50px 20px;
-}
-
-header h1 {
-  font-size: 3em;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 30px auto;
+  color: white;
   font-weight: 800;
   letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  transition: color 0.3s ease;
 }
 
-header p {
-  font-size: 1.2em;
-  max-width: 600px;
-  margin: auto;
+header:hover {
+  color: #ff3b1f;
+  cursor: pointer;
 }
 
+/* Transparent bubble on main */
 main {
-  padding: 20px;
-  max-width: 1000px;
-  margin: auto;
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 2em;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+main:hover {
+  color: #ff6f61;
+  cursor: default;
+}
+
+/* Articles Section */
+
+#articles {
+  margin-top: 3em;
 }
 
 #articles h2 {
-  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #ff6f61;
   font-weight: 800;
-  letter-spacing: 3px;
-  color: #ffccff;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  transition: color 0.3s ease;
+}
+
+#articles h2:hover {
+  color: #ff3b1f;
+  cursor: pointer;
 }
 
 .articles-link {
-  color: #ffccff;
+  color: #ff6f61;
   text-decoration: none;
-  transition: all 0.3s ease;
+  font-weight: 800;
 }
 
 .articles-link:hover {
-  color: #fff;
-  text-shadow: 3px 3px 10px #ff99ff;
+  color: #ff3b1f;
+  text-decoration: underline;
 }
 
-article img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-top: 20px;
+#articles article {
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 1.5em 2em;
+  background: rgba(0, 0, 0, 0.4); /* transparent bubble for article */
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  line-height: 1.6;
+  font-size: 1.1rem;
 }
+
+#articles article img {
+  width: 80%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  margin: 0 auto 20px auto;
+  display: block;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+#articles article img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#articles article ul {
+  padding-left: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  list-style-type: decimal;
+}
+
+#articles article ul li {
+  margin-bottom: 0.8em;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#articles article ul li:hover {
+  color: #ff6f61;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Footer */
 
 footer {
   text-align: center;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.7);
-  margin-top: 20px;
+  padding: 1em;
+  margin-top: 2em;
   font-size: 0.9em;
+  background-color: #222;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 700px) {
+  main, #articles article {
+    margin: 1em;
+    padding: 1em;
+  }
+
+  #articles article img {
+    max-width: 100%;
+  }
 }
