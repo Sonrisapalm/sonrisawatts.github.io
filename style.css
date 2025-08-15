@@ -1,166 +1,132 @@
-/* ===== Homepage and general styles ===== */
-
+/* =========================
+   Base Styling
+   ========================= */
 body {
-  background-image: url('images/emotion-coded-web-page.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('images/ai-future.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
 }
 
-nav {
-  background-color: #222;
-  padding: 1em;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #ff6f61;
-  text-decoration: underline;
-  cursor: pointer;
+/* Background overlay for better text contrast */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* adjust opacity for darker/lighter effect */
+    z-index: -1;
 }
 
 header {
-  padding: 2em;
-  text-align: center;
-  background: linear-gradient(to right, #222, #444);
-  color: white;
-  font-weight: 800;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  transition: color 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header:hover {
-  color: #ff3b1f;
-  cursor: pointer;
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Nav hover animation */
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff6f61;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #ff6f61;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 main {
-  max-width: 800px;
-  margin: 2em auto;
-  padding: 1em 2em;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  font-weight: 400;
-  font-family: 'Poppins', sans-serif;
-  color: #333333;
-  line-height: 1.8;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.95);
+    margin: 2em auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease-out;
 }
 
-main:hover {
-  color: #ff6f61;
-  cursor: default;
+h1, h2, h3 {
+    color: #222;
 }
 
-footer {
-  text-align: center;
-  padding: 1em;
-  margin-top: 2em;
-  font-size: 0.9em;
-  background-color: #222;
-  color: white;
-  font-family: 'Poppins', sans-serif;
+p {
+    line-height: 1.6;
 }
 
-/* ===== Articles Section ===== */
+a {
+    color: #ff6f61;
+}
 
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   Article Styles
+   ========================= */
 #articles {
-  margin-top: 3em;
-}
-
-#articles h2 {
-  text-align: center;
-  margin-bottom: 1.5em;
-  color: #ff6f61;
-  font-weight: 800;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-  transition: color 0.3s ease;
-}
-
-#articles h2:hover {
-  color: #ff3b1f;
-  cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2em;
 }
 
 #articles article {
-  max-width: 700px;
-  margin: 2em auto;
-  padding: 1.5em 2em;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-#articles article img {
-  width: 80%;
-  max-width: 650px;
-  height: auto;
-  border-radius: 15px;
-  object-fit: cover;
-  margin: 0 auto 20px auto;
-  display: block;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-#articles article img:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-#articles article ul {
-  padding-left: 20px;
-  margin-top: 0.5em;
-  margin-bottom: 1.5em;
-  list-style-type: decimal;
-}
-
-#articles article ul li {
-  margin-bottom: 0.8em;
-  transition: color 0.3s ease, font-weight 0.3s ease;
-}
-
-#articles article ul li:hover {
-  color: #ff6f61;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* Responsive tweaks */
-@media (max-width: 700px) {
-  main, #articles article {
-    margin: 1em;
+    background: rgba(255, 255, 255, 0.95);
     padding: 1em;
-  }
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+}
 
-  #articles article img {
-    width: 95%;
-    max-width: none;
-  }
+#articles article:hover {
+    transform: translateY(-5px);
+}
+
+#articles img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Limit image size inside article page */
+.article-content img {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* =========================
+   Animations
+   ========================= */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
