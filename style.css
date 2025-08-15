@@ -1,104 +1,185 @@
-/* =========================
-   Homepage & General Styles
-   ========================= */
+/* ===== Homepage and general styles ===== */
+
 body {
-    background-image: url('images/emotion-coded-web-page.png'); /* your original */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
+  background-image: url('images/emotion-coded-web-page.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
 nav {
-    background-color: #222;
-    padding: 1em;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
+  background-color: #222;
+  padding: 1em;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-    position: relative;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #ff6f61;
+  color: #ff6f61;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0; bottom: -3px;
-    width: 0;
-    height: 2px;
-    background-color: #ff6f61;
-    transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
+/* Transparent bubble on header for readability */
 header {
-    padding: 2em;
-    text-align: center;
-    background: linear-gradient(to right, #222, #444);
-    color: white;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    transition: color 0.3s ease;
+  padding: 2em;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 30px auto;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  transition: color 0.3s ease;
 }
 
+header:hover {
+  color: #ff3b1f;
+  cursor: pointer;
+}
+
+/* Transparent bubble on main */
 main {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 1em 2em;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    line-height: 1.8;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-    animation: fadeInUp 0.8s ease-out;
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 2em;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
-/* =========================
-   Articles Section
-   ========================= */
+main:hover {
+  color: #ff6f61;
+  cursor: default;
+}
+
+/* Articles Section */
+
 #articles {
-    margin-top: 3em;
+  margin-top: 3em;
 }
 
 #articles h2 {
-    text-align: center;
-    margin-bottom: 1.5em;
-    color: #ff6f61;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-    transition: color 0.3s ease;
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #ff6f61;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  transition: color 0.3s ease;
 }
 
 #articles h2:hover {
-    color: #ff3b1f;
-    cursor: pointer;
+  color: #ff3b1f;
+  cursor: pointer;
+}
+
+.articles-link {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.articles-link:hover {
+  color: #ff3b1f;
+  text-decoration: underline;
 }
 
 #articles article {
-    max-width: 700px;
-    margin: 2em auto;
-    padding: 1.5em 2em;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 1.5em 2em;
+  background: rgba(0, 0, 0, 0.4); /* transparent bubble for article */
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+#articles article img {
+  width: 80%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  margin: 0 auto 20px auto;
+  display: block;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+#articles article img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#articles article ul {
+  padding-left: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  list-style-type: decimal;
+}
+
+#articles article ul li {
+  margin-bottom: 0.8em;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#articles article ul li:hover {
+  color: #ff6f61;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+  font-size: 0.9em;
+  background-color: #222;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 700px) {
+  main, #articles article {
+    margin: 1em;
+    padding: 1em;
+  }
+
+  #articles article img {
+    max-width: 100%;
+  }
+}
+
