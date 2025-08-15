@@ -182,4 +182,11 @@ footer {
     max-width: 100%;
   }
 }
-
+/* Make article page images smaller */
+#articles article img {
+    width: 60%;       /* adjust this % to make it smaller or bigger */
+    max-width: 500px; /* sets a hard maximum size */
+    height: auto;     /* maintain aspect ratio */
+    display: block;
+    margin: 0 auto 20px auto;
+}
