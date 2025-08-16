@@ -205,3 +205,17 @@ main article img {
   margin: 20px auto;
   border-radius: 10px;
 }
+/* ===== Bottom images on index page ===== */
+.bottom-images {
+  display: flex;           /* put images in a row */
+  justify-content: center; /* center them on the page */
+  gap: 20px;               /* space between images */
+  margin: 20px 0;          /* space above and below */
+}
+
+.bottom-images img {
+  max-width: 380px;  /* same size as article previews */
+  width: auto;       /* maintain aspect ratio */
+  height: auto;
+  border-radius: 8px; /* optional rounded corners */
+}
