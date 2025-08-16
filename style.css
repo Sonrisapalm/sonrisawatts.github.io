@@ -200,8 +200,8 @@ main article img {
   border-radius: 8px;
 }
 .bottom-image img {
-  max-width: 300px;  /* adjust size */
+  max-width: 500px;   /* make it bigger */
   display: block;
-  margin: 20px auto; /* centers it */
-  border-radius: 10px; /* optional */
+  margin: 20px auto;
+  border-radius: 10px;
 }
