@@ -1,38 +1,232 @@
-/* Articles styling (applies to all articles) */
-.article-section {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+/* ===== Homepage and general styles ===== */
+
+body {
+  background-image: url('images/emotion-coded-web-page.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
-.article-section img.article-image {
+nav {
+  background-color: #222;
+  padding: 1em;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff6f61;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Transparent bubble on header for readability */
+header {
+  padding: 2em;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 30px auto;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  transition: color 0.3s ease;
+}
+
+header:hover {
+  color: #ff3b1f;
+  cursor: pointer;
+}
+
+/* Transparent bubble on main */
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 2em;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+main:hover {
+  color: #ff6f61;
+  cursor: default;
+}
+
+/* Articles Section */
+
+#articles {
+  margin-top: 3em;
+}
+
+#articles h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #ff6f61;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  transition: color 0.3s ease;
+}
+
+#articles h2:hover {
+  color: #ff3b1f;
+  cursor: pointer;
+}
+
+.articles-link {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.articles-link:hover {
+  color: #ff3b1f;
+  text-decoration: underline;
+}
+
+#articles article {
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 1.5em 2em;
+  background: rgba(0, 0, 0, 0.4); /* transparent bubble for article */
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+#articles article img {
+  width: 80%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  margin: 0 auto 20px auto;
+  display: block;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+#articles article img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#articles article ul {
+  padding-left: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  list-style-type: decimal;
+}
+
+#articles article ul li {
+  margin-bottom: 0.8em;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#articles article ul li:hover {
+  color: #ff6f61;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+  font-size: 0.9em;
+  background-color: #222;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 700px) {
+  main, #articles article {
+    margin: 1em;
+    padding: 1em;
+  }
+
+  #articles article img {
+    max-width: 100%;
+  }
+}
+/* Make article page images smaller */
+#articles article img {
+    width: 60%;       /* adjust this % to make it smaller or bigger */
+    max-width: 500px; /* sets a hard maximum size */
+    height: auto;     /* maintain aspect ratio */
+    display: block;
+    margin: 0 auto 20px auto;
+}
+/* Make article preview images smaller */
+main article img {
+  display: block;
+  max-width: 380px !important;  /* cap size */
+  width: auto !important;       /* override any width:100% rules */
+  height: auto;
+  margin: 0 auto 1rem;          /* center + space below */
+  border-radius: 8px;
+}
+.bottom-image img {
+  max-width: 500px;   /* make it bigger */
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+/* ===== Bottom images on index page ===== */
+.bottom-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  align-items: flex-start;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.bottom-images img {
+  max-width: 500px;  /* bigger than article previews */
+  max-height: 500px; /* ensures neither gets too tall */
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+}
+.header-image {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 0 auto 20px auto;
-  border-radius: 8px;
+  margin: 0 auto 15px; /* centers image and adds space below */
+  border-radius: 8px;  /* optional for rounded corners */
 }
-
-.article-section h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.article-section p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.article-section ul {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
-
-.article-section li {
-  font-size: 18px;
-  line-height: 1.5;
-}
+✅ Result:
