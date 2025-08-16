@@ -229,3 +229,40 @@ main article img {
   margin: 0 auto 15px; /* centers the image and adds space below */
   border-radius: 8px;  /* optional, rounded corners */
 }
+.article-section {
+  max-width: 900px;       /* same as other articles */
+  margin: 30px auto;      /* center it on the page */
+  padding: 20px;
+  background-color: #f9f9f9; /* optional, same style as others */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.article-section img.article-image {
+  display: block;
+  max-width: 100%;        /* fits nicely, responsive */
+  height: auto;
+  margin: 0 auto 20px auto; /* center the image with spacing below */
+  border-radius: 8px;
+}
+
+.article-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.article-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.article-section ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.article-section li {
+  font-size: 18px;
+  line-height: 1.5;
+}
