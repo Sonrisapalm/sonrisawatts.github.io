@@ -211,12 +211,15 @@ main article img {
   justify-content: center;
   gap: 20px;
   margin: 20px 0;
-  align-items: flex-start; /* aligns tops instead of stretching */
+  align-items: flex-start; /* aligns tops */
+  flex-wrap: wrap; /* allows stacking on smaller screens */
 }
 
 .bottom-images img {
-  max-height: 250px;  /* makes both images same height */
-  width: auto;        /* keeps original width ratio */
+  max-width: 380px;  /* match article previews */
+  max-height: 380px; /* ensures neither gets too tall */
+  width: auto;
   height: auto;
   border-radius: 8px;
 }
+
