@@ -222,3 +222,11 @@ main article img {
   height: auto;
   border-radius: 8px;
 }
+.header-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 15px; /* centers image and adds space below */
+  border-radius: 8px;  /* optional for rounded corners */
+}
+✅ Result:
