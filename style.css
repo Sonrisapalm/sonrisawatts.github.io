@@ -190,12 +190,12 @@ footer {
     display: block;
     margin: 0 auto 20px auto;
 }
-/* Resize article preview images */
+/* Make article preview images smaller */
 main article img {
-  width: 100%;        /* scale to the width of the article container */
-  max-width: 400px;   /* maximum width so it doesn't get too big */
-  height: auto;       /* maintain aspect ratio */
   display: block;
-  margin: 0 auto 1rem auto; /* center the image and add some spacing below */
-  border-radius: 8px; /* optional: rounded corners */
+  max-width: 380px !important;  /* cap size */
+  width: auto !important;       /* override any width:100% rules */
+  height: auto;
+  margin: 0 auto 1rem;          /* center + space below */
+  border-radius: 8px;
 }
