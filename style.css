@@ -229,10 +229,11 @@ main article img {
   margin: 0 auto 15px; /* centers image and adds space below */
   border-radius: 8px;  /* optional for rounded corners */
 }
-.article-img {
-    max-width: 380px;   /* same size as other article previews */
-    width: auto;
-    height: auto;
+/* Article 3 specific styling */
+.article3-img {
+    max-width: 380px !important;  /* force the max width */
+    width: auto !important;
+    height: auto !important;
     display: block;
     margin: 0 auto 20px auto;
     border-radius: 15px;
