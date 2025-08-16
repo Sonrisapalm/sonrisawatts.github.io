@@ -239,3 +239,18 @@ main article img {
     border-radius: 15px;
     object-fit: cover;
 }
+/* Make all article images the same size and style */
+article img {
+  width: 80%;         /* same as Article 2 */
+  max-width: 500px;   /* prevents image from being too big */
+  height: auto;       /* keeps aspect ratio */
+  display: block;
+  margin: 0 auto 20px auto; /* centers the image */
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Make article text white for readability */
+article p, article ul li {
+  color: white;
+}
