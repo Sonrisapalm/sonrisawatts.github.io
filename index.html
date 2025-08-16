@@ -9,6 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Flex container for side-by-side images */
+    .article-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .article-images img {
+      width: 300px;
+      height: auto;
+      border-radius: 12px;
+    }
+  </style>
 </head>
 <body>
 
@@ -37,7 +51,11 @@
     <section id="articles">
       <h2><a href="articles.html" class="articles-link">Articles</a></h2>
       <article>
-        <img src="images/article1.jpg" alt="Research in Caribbean Region" />
+        <div class="article-images">
+          <img src="images/article1.jpg" alt="Research in Caribbean Region" />
+          <img src="images/imagessecond-picture.jpg" alt="Second research illustration" />
+        </div>
+
         <p>
           I conducted research in the Caribbean Region and I got some interesting answers. Most responses are from my hometown St. Kitts & Nevis.<br/>
           I asked "Who would you trust more? An AI advisor or an AI Therapist?"<br/>
