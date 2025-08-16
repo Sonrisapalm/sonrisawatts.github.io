@@ -224,9 +224,8 @@ main article img {
 }
 .header-image {
   display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto 15px; /* centers image and adds space below */
-  border-radius: 8px;  /* optional for rounded corners */
+  max-width: 80%;   /* smaller than full width */
+  height: auto;     /* keep aspect ratio */
+  margin: 0 auto 15px; /* centers the image and adds space below */
+  border-radius: 8px;  /* optional, rounded corners */
 }
-✅ Result:
