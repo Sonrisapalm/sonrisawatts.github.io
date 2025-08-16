@@ -236,20 +236,22 @@ main article img {
   background-color: #f9f9f9; /* optional, same style as others */
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+  
+  /* Article 3 styling (matches other articles) */
 .article-section {
-  max-width: 900px;       /* same as other articles */
-  margin: 30px auto;      /* center it on the page */
+  max-width: 900px;          /* same width as other articles */
+  margin: 30px auto;         /* center on page */
   padding: 20px;
   background-color: #f9f9f9; /* optional, same style as others */
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
 .article-section img.article-image {
   display: block;
-  max-width: 100%;        /* fits nicely, responsive */
+  max-width: 100%;           /* makes image responsive */
   height: auto;
-  margin: 0 auto 20px auto; /* center the image with spacing below */
+  margin: 0 auto 20px auto;  /* centers image and adds space below */
   border-radius: 8px;
 }
 
