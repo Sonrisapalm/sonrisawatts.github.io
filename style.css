@@ -199,3 +199,9 @@ main article img {
   margin: 0 auto 1rem;          /* center + space below */
   border-radius: 8px;
 }
+.bottom-image img {
+  max-width: 300px;  /* adjust size */
+  display: block;
+  margin: 20px auto; /* centers it */
+  border-radius: 10px; /* optional */
+}
