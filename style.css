@@ -254,3 +254,24 @@ article img {
 article p, article ul li {
   color: white;
 }
+.hero-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* space between images */
+  margin-bottom: 20px;
+}
+
+.top-pic {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.side-pic {
+  max-width: 300px;  /* smaller side image */
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
