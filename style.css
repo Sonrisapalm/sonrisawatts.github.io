@@ -171,3 +171,16 @@ footer {
     max-width: 100%;
   }
 }
+.hero-pair {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.hero-img {
+  width: 250px;   /* make them smaller */
+  height: auto;
+  border-radius: 12px;
+}
+
