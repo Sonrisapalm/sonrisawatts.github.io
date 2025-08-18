@@ -1,60 +1,107 @@
-<main>
-  <div class="articles-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Articles — Emotion Encoded</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <!-- Article One Preview (full width) -->
-    <article>
-      <h2>AI Therapist vs AI Financial Advisor: Who Do You Trust More?</h2>
-      <img src="images/article1.jpg" alt="Research in Caribbean Region" />
-      <p>I conducted research in the Caribbean Region and got some interesting answers...</p>
-      <a href="./article1.html">Read More</a>
-    </article>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="articles.html" class="active">Articles</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <!-- Side-by-side Articles -->
-    <div class="articles-row">
-      <!-- Article Two Preview -->
-      <div class="article-preview">
-        <h2>Conducting Research Continues</h2>
-        <img src="images/articletwo.jpg" alt="Article Two Preview" />
-        <p>
-          Emotion Encoded asked participants "Would you take advice from an AI if it knew your entire personality and history?"<br/>
-          Majority said "Maybe". 15.6% said "No, that's creepy."
-        </p>
-        <a href="./article2.html">Read More</a>
+  <header>
+    <p>Dive deeper into research, interviews, and insights from Emotion Encoded.</p>
+    <blockquote>
+      <p>Bill Gates<br>
+      “If you invent a breakthrough in artificial intelligence, so machines can learn, that is worth 10 Microsofts.”</p>
+    </blockquote>
+  </header>
+
+  <main>
+    <div id="articles">
+
+      <h2><a href="articles.html" class="articles-link">Articles</a></h2>
+
+      <!-- Side-by-side row for Article 2 and Article 6 -->
+      <div class="articles-row">
+        <!-- Article 2 -->
+        <div class="article-preview">
+          <h3>Conducting Research Continues</h3>
+          <img src="images/articletwo.jpg" alt="Article Two Preview" />
+          <p>
+            Emotion Encoded asked participants "Would you take advice from an AI if it knew your entire personality and history?"<br/>
+            Majority said "Maybe". 15.6% said "No, that's creepy."
+          </p>
+          <a href="./article2.html">Read More</a>
+        </div>
+
+        <!-- Article 6 -->
+        <div class="article-preview">
+          <h3>St. Kitts & Nevis! Who Do You Trust More?</h3>
+          <img src="images/article6.jpg" alt="Article Six Preview" />
+          <p>
+            If AI can’t ‘understand’ emotions, why do we trust it with life-altering money decisions? Our research initiative, Emotion Encoded, asked 66 participants: “Who would you trust more, an AI therapist or an AI financial advisor?” The results show a clear psychological divide.
+          </p>
+          <a href="./article6.html">Read More</a>
+        </div>
       </div>
 
-      <!-- Article Six Preview -->
-      <div class="article-preview">
-        <h2>St. Kitts & Nevis! Who Do You Trust More?</h2>
-        <img src="images/article6.jpg" alt="Article Six Illustration" />
+      <!-- Article 1 -->
+      <article>
+        <h2>AI Therapist vs AI Financial Advisor: Who Do You Trust More?</h2>
+        <img src="images/article1.jpg" alt="Research in Caribbean Region" />
         <p>
-          If AI can’t ‘understand’ emotions, why do we trust it with life-altering money decisions? My research suggests it’s about perceived risk. 
+          I conducted research in the Caribbean Region and got some interesting answers...
         </p>
-        <a href="./article6.html">Read More</a>
-      </div>
+        <a href="./article1.html">Read More</a>
+      </article>
+
+      <!-- Article 3 -->
+      <article>
+        <h2>AI Trust: What Do People Need to Know?</h2>
+        <img src="images/articlethree.jpg" alt="Article Three Illustration" />
+        <p>
+          Emotion Encoded asked "What would you need to know about an AI tool in order to trust it?" Some responses were...
+        </p>
+        <a href="./article3.html">Read More</a>
+      </article>
+
+      <!-- Article 4 -->
+      <article>
+        <h2>Emotion Encoded Research Initiative: AI in the Classroom</h2>
+        <img src="images/articlefour.jpg" alt="AI in Education Illustration" />
+        <p>
+          As part of my research initiative Emotion Encoded, I asked participants: “Would you be comfortable if your child’s teacher used AI to help with grading or lesson planning?”<br/>
+          53.7% said “yes, but only under conditions”; 26% said “no”; 11% said “yes” without conditions.
+        </p>
+        <a href="./article4.html">Read More</a>
+      </article>
+
+      <!-- Article 5 -->
+      <article>
+        <h2>Emotion Encoded: A Future Dictated by Algorithms</h2>
+        <img src="images/articlefive.jpg" alt="Article Five Preview" />
+        <p>
+          ❗⁉️ Contribute to my research project.<br/>
+          What jobs do you think AI is threatening to replace? Message me.<br/>
+          Artificial intelligence holds the power to reshape economies, industries, and personal choices. 75% of participants believe powerful companies will use AI to manipulate opinions and behaviour.
+        </p>
+        <a href="./article5.html">Read More</a>
+      </article>
+
     </div>
+  </main>
 
-    <!-- Article Three Preview (full width) -->
-    <article>
-      <h2>AI Trust: What Do People Need to Know?</h2>
-      <img src="images/articlethree.jpg" alt="Article Three Illustration" class="article3-img" />
-      <p>
-        Emotion Encoded asked "What would you need to know about an AI tool in order to trust it?"<br/>
-        Some of the responses that the majority of participants chose were...
-      </p>
-      <a href="./article3.html">Read More</a>
-    </article>
+  <footer>
+    © 2025 Emotion Encoded — All rights reserved.
+  </footer>
 
-    <!-- Article Four Preview (full width) -->
-    <article>
-      <h2>Emotion Encoded Research Initiative: AI in the Classroom</h2>
-      <img src="images/articlefour.jpg" alt="AI in Education Illustration" />
-      <p>
-        As part of my research initiative Emotion Encoded, I asked participants:
-        “Would you be comfortable if your child’s teacher used AI to help with grading or lesson planning?”
-        53.7% said “yes, but only under conditions”; 26% said “no”; 11% said “yes” without conditions.
-      </p>
-      <a href="./article4.html">Read More</a>
-    </article>
-
-  </div>
-</main>
+</body>
+</html>
