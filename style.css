@@ -16,6 +16,7 @@ nav {
   background-color: #222;
   padding: 1em;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 nav a {
@@ -34,110 +35,130 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* Header */
+/* Transparent bubble on header for readability */
 header {
   padding: 2em;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
   border-radius: 15px;
   max-width: 900px;
   margin: 30px auto;
   color: white;
   font-weight: 800;
   letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  transition: color 0.3s ease;
 }
 
-/* Main content */
+header:hover {
+  color: #ff3b1f;
+  cursor: pointer;
+}
+
+/* Transparent bubble on main */
 main {
-  max-width: 900px;
+  max-width: 800px;
   margin: 2em auto;
   padding: 2em;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
   border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
   color: white;
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
-/* Articles container */
+main:hover {
+  color: #ff6f61;
+  cursor: default;
+}
+
+/* Articles Section */
+#articles {
+  margin-top: 3em;
+}
+
+/* Standardized article previews container */
 .articles-container {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
 }
 
-/* Standard stacked articles */
-.articles-container > article {
-  background: rgba(0,0,0,0.4);
+.articles-container article {
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color: white;
+  line-height: 1.6;
 }
 
-.articles-container > article img {
+.articles-container article img {
   width: 80%;
   max-width: 500px;
   height: auto;
   display: block;
   margin: 0 auto 15px auto;
   border-radius: 12px;
-}
-
-/* Headings inside articles */
-.articles-container article h2 {
-  color: #ff6f61;
-  margin-bottom: 15px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-/* Side-by-side articles */
-.articles-row {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.article-preview {
-  flex: 1 1 45%; /* Take about half the row */
-  background: rgba(0,0,0,0.4);
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  text-align: center;
-  color: white;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.article-preview:hover {
-  transform: translateY(-3px);
-  background: rgba(0,0,0,0.55);
-}
-
-.article-preview img {
-  width: 100%;
-  max-height: 300px;
   object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 10px;
+  transition: transform 0.3s ease;
 }
 
-.article-preview h3 {
-  color: #ff6f61;
-  margin-bottom: 10px;
+.articles-container article img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
-.article-preview a {
+#articles h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
   color: #ff6f61;
-  font-weight: 600;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  transition: color 0.3s ease;
+}
+
+#articles h2:hover {
+  color: #ff3b1f;
+  cursor: pointer;
+}
+
+.articles-link {
+  color: #ff6f61;
   text-decoration: none;
+  font-weight: 800;
 }
 
-.article-preview a:hover {
+.articles-link:hover {
   color: #ff3b1f;
   text-decoration: underline;
+}
+
+#articles article ul {
+  padding-left: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  list-style-type: decimal;
+}
+
+#articles article ul li {
+  margin-bottom: 0.8em;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+#articles article ul li:hover {
+  color: #ff6f61;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* Footer */
@@ -148,20 +169,126 @@ footer {
   font-size: 0.9em;
   background-color: #222;
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Responsive tweaks */
 @media (max-width: 700px) {
-  .article-preview {
-    flex: 1 1 100%; /* stack side-by-side articles on mobile */
+  main,
+  #articles article,
+  .articles-container {
+    margin: 1em;
+    padding: 1em;
+    flex-direction: column;
   }
 
-  .articles-container > article img {
-    width: 100%;
+  #articles article img,
+  .articles-container article img {
+    max-width: 100%;
   }
+}
 
-  .article-preview img {
-    width: 100%;
-    max-height: none;
+/* Make article page images smaller */
+#articles article img {
+  width: 60%; 
+  max-width: 500px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+/* Make article preview images smaller */
+main article img {
+  display: block;
+  max-width: 380px !important;
+  width: auto !important;
+  height: auto;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+}
+
+.bottom-image img {
+  max-width: 500px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+/* Bottom images on index page */
+.bottom-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.bottom-images img {
+  max-width: 500px;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+}
+
+.header-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 15px;
+  border-radius: 8px;
+}
+
+/* Article 3 specific styling */
+.article3-img {
+  max-width: 380px !important;
+  width: auto !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Make all article images the same size and style */
+article img {
+  width: 80%; 
+  max-width: 500px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Side-by-side equal-sized header images */
+.hero-pair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-pair .hero-img {
+  flex: 1 1 360px;
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Optional: force perfectly equal heights with cropping */
+.hero-pair.equal-height .hero-img {
+  height: 260px;
+  object-fit: cover;
+}
+
+@media (max-width: 700px) {
+  .hero-pair .hero-img {
+    max-width: 100%;
   }
 }
