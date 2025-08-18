@@ -6,6 +6,38 @@
   <title>Articles — Emotion Encoded</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Flex container for side-by-side article previews */
+    .articles-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .article-preview {
+      flex: 1 1 45%;
+      background: rgba(0,0,0,0.4);
+      border-radius: 15px;
+      padding: 1em;
+      color: white;
+      text-align: left;
+    }
+
+    .article-preview img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .article-preview {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -37,16 +69,29 @@
         <a href="./article1.html">Read More</a>
       </article>
 
-      <!-- Article Two Preview -->
-      <article>
-        <h2>Conducting Research Continues</h2>
-        <img src="images/articletwo.jpg" alt="Article Two Preview" />
-        <p>
-          Emotion Encoded asked participants "Would you take advice from an AI if it knew your entire personality and history?"<br/>
-          Majority said "Maybe". 15.6% said "No, that's creepy."
-        </p>
-        <a href="./article2.html">Read More</a>
-      </article>
+      <!-- Article Two & Article Six Side by Side -->
+      <div class="articles-row">
+        <!-- Article Two Preview -->
+        <article class="article-preview">
+          <h2>Conducting Research Continues</h2>
+          <img src="images/articletwo.jpg" alt="Article Two Preview" />
+          <p>
+            Emotion Encoded asked participants "Would you take advice from an AI if it knew your entire personality and history?"<br/>
+            Majority said "Maybe". 15.6% said "No, that's creepy."
+          </p>
+          <a href="./article2.html">Read More</a>
+        </article>
+
+        <!-- Article Six Preview -->
+        <article class="article-preview">
+          <h2>St. Kitts & Nevis! Who Do You Trust More?</h2>
+          <img src="images/article6.jpg" alt="Article Six Preview" />
+          <p>
+            If AI can’t ‘understand’ emotions, why do we trust it with life-altering money decisions? This challenges assumptions in AI design.
+          </p>
+          <a href="./article6.html">Read More</a>
+        </article>
+      </div>
 
       <!-- Article Three Preview -->
       <article>
