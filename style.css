@@ -74,9 +74,8 @@ main {
 }
 
 .hero-img {
-  width: 500px;        /* large enough to see */
-  height: 350px;       /* uniform height */
-  object-fit: cover;
+  width: 450px;    /* uniform width */
+  height: auto;    /* keep natural aspect ratio */
   border-radius: 12px;
 }
 
@@ -121,9 +120,8 @@ main {
 }
 
 .article-preview img {
-  width: 100%;        /* fill the card width */
-  height: 400px;      /* bigger, visually clear */
-  object-fit: cover;
+  width: 100%;     /* fill card width */
+  height: auto;    /* show full image */
   border-radius: 15px;
   margin-bottom: 15px;
 }
@@ -131,12 +129,11 @@ main {
 /* ===== Standardized Article Pages ===== */
 article img {
   width: 80%;
-  max-width: 600px;   /* larger to be visible */
-  height: 400px;
+  max-width: 600px; /* big enough to see */
+  height: auto;     /* keep full image visible */
   display: block;
   margin: 0 auto 20px;
   border-radius: 15px;
-  object-fit: cover;
 }
 
 /* ===== Bottom images on index ===== */
@@ -149,9 +146,8 @@ article img {
 }
 
 .bottom-images img {
-  width: 450px;       /* consistent width */
-  height: 300px;      /* consistent height */
-  object-fit: cover;
+  width: 400px;   /* uniform width */
+  height: auto;   /* show full image */
   border-radius: 12px;
 }
 
@@ -172,7 +168,7 @@ footer {
   article img,
   .bottom-images img {
     width: 100%;
-    height: auto; /* adjust proportionally */
+    height: auto; /* scale naturally */
   }
 
   .article-preview {
