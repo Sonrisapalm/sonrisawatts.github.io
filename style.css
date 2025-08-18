@@ -292,3 +292,53 @@ article img {
     max-width: 100%;
   }
 }
+/* ===== Side-by-side article previews ===== */
+.articles-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.article-preview {
+  flex: 1 1 45%; /* takes about half of the container each */
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  padding: 1em;
+  color: white;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.article-preview:hover {
+  transform: translateY(-3px);
+  background: rgba(0,0,0,0.55);
+}
+
+.article-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.article-preview a {
+  color: #ff6f61;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.article-preview a:hover {
+  color: #ff3b1f;
+  text-decoration: underline;
+}
+
+/* Responsive: stack side-by-side articles on small screens */
+@media (max-width: 700px) {
+  .article-preview {
+    flex: 1 1 100%;
+  }
+}
+
