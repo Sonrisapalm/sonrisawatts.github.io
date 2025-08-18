@@ -64,6 +64,22 @@ main {
   font-size: 1.2rem;
 }
 
+/* ===== Hero Pair (top index images) ===== */
+.hero-pair {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.hero-img {
+  width: 500px;        /* large enough to see */
+  height: 350px;       /* uniform height */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 /* ===== Articles Section ===== */
 #articles {
   margin-top: 3em;
@@ -105,31 +121,18 @@ main {
 }
 
 .article-preview img {
-  width: 100%;           /* fill the card width */
-  height: 320px;         /* tall enough to show details */
-  object-fit: cover;     /* crops nicely without stretching */
+  width: 100%;        /* fill the card width */
+  height: 400px;      /* bigger, visually clear */
+  object-fit: cover;
   border-radius: 15px;
   margin-bottom: 15px;
-}
-
-.article-preview a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #ff6f61;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.article-preview a:hover {
-  color: #ff3b1f;
-  text-decoration: underline;
 }
 
 /* ===== Standardized Article Pages ===== */
 article img {
   width: 80%;
-  max-width: 500px;
-  height: auto;
+  max-width: 600px;   /* larger to be visible */
+  height: 400px;
   display: block;
   margin: 0 auto 20px;
   border-radius: 15px;
@@ -146,23 +149,7 @@ article img {
 }
 
 .bottom-images img {
-  width: 380px;          /* medium-large size */
-  height: 260px;         /* uniform height */
-  object-fit: cover;     
-  border-radius: 12px;
-}
-
-/* ===== Hero Pair (top index images) ===== */
-.hero-pair {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
-  flex-wrap: wrap;
-}
-
-.hero-img {
-  width: 450px;       /* good medium-large size */
+  width: 450px;       /* consistent width */
   height: 300px;      /* consistent height */
   object-fit: cover;
   border-radius: 12px;
@@ -179,14 +166,16 @@ footer {
 }
 
 /* Responsive tweaks */
-@media (max-width: 700px) {
-  .article-preview {
-    flex: 1 1 100%; /* stack on small screens */
-  }
-
-  .bottom-images img,
-  .hero-img {
+@media (max-width: 900px) {
+  .hero-img,
+  .article-preview img,
+  article img,
+  .bottom-images img {
     width: 100%;
     height: auto; /* adjust proportionally */
+  }
+
+  .article-preview {
+    flex: 1 1 100%; /* stack on smaller screens */
   }
 }
