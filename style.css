@@ -175,3 +175,16 @@ footer {
     flex: 1 1 100%; /* stack on smaller screens */
   }
 }
+<section id="picture-references">
+  <h2>Picture References</h2>
+  <ul>
+    <li>
+      <strong>Image 1 (CRPE / RAND report)</strong><br>
+      CRPE. (2024, May). <em>AI is coming to U.S. classrooms, but who will benefit?</em> Center on Reinventing Public Education. Retrieved from <a href="https://crpe.org/ai-is-coming-to-u-s-classrooms-but-who-will-benefit/" target="_blank">CRPE website</a>.
+    </li>
+    <li>
+      <strong>Image 2 (Artificial Paintings Blog)</strong><br>
+      artmaster. (2024, June 14). <em>The Transformative Role of Artificial Intelligence in Education.</em> Artificial Paintings. Retrieved from <a href="https://artificialpaintings.com/blog/2024/06/14/the-transformative-role-of-artificial-intelligence-in-education/" target="_blank">artificialpaintings.com</a>.
+    </li>
+  </ul>
+</section>
