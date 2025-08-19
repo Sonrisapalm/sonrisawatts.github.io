@@ -42,21 +42,21 @@ header {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
-/* FIX: The hero images are now side-by-side and perfectly leveled */
+/* FINAL FIX: Hero images on the index page are now perfectly sized and leveled */
 .hero-pair {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 18px;
-    flex-wrap: nowrap; /* Prevents wrapping, forcing images to stay on one line */
+    flex-wrap: wrap; 
     margin-bottom: 10px;
 }
 .hero-img {
-    width: 32vw; /* Each image takes up about a third of the space */
-    height: auto;
+    width: 350px; /* A fixed width for consistent sizing */
+    height: 233px; /* A fixed height for perfect leveling */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-    object-fit: contain;
+    object-fit: cover; /* Ensures images fill the space evenly */
 }
 
 /* ===== Main container ===== */
@@ -125,7 +125,7 @@ main {
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-/* General article styling for both stacked and side-by-side */
+/* FINAL FIX: Images on articles.html now show a consistent, full-sized preview */
 .articles-container article {
     background: rgba(0, 0, 0, 0.4);
     border-radius: 16px;
@@ -139,7 +139,6 @@ main {
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-/* FIX: Images on articles.html now show the whole picture */
 .articles-container h2,
 .articles-container h3 {
     color: #ff9b88;
@@ -155,8 +154,8 @@ main {
 
 .articles-container img {
     width: 100%;
-    height: auto; /* Removed fixed height */
-    object-fit: contain; /* Shows the entire image */
+    height: 350px; /* A fixed height for consistent sizing */
+    object-fit: cover; /* This makes images fit the space perfectly, preventing empty space */
     border-radius: 12px;
     margin-bottom: 12px;
 }
@@ -174,7 +173,7 @@ main {
     background-color: #e65c50;
 }
 
-/* ===== Bottom images on index ===== */
+/* FINAL FIX: Bottom images on index are now perfectly sized and leveled */
 .bottom-images {
     display: flex;
     justify-content: center;
@@ -183,17 +182,20 @@ main {
     flex-wrap: wrap;
 }
 .bottom-images img {
-    width: 520px;
-    height: auto;
+    width: 350px; /* A fixed width for consistent sizing */
+    height: 233px; /* A fixed height for perfect leveling */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-    object-fit: contain;
+    object-fit: cover; /* Ensures images fill the space evenly */
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 980px) {
     .hero-img,
-    .bottom-images img { width: 46vw; }
+    .bottom-images img {
+        width: 46vw;
+        height: auto;
+    }
     .articles-grid { flex-direction: column; }
     .articles-grid .article-preview { width: 100%; }
     main { padding: 1.3em; }
@@ -201,5 +203,7 @@ main {
 
 @media (max-width: 600px) {
     .hero-img,
-    .bottom-images img { width: 92vw; }
+    .bottom-images img {
+        width: 92vw;
+    }
 }
