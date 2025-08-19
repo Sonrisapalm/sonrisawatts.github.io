@@ -1,104 +1,159 @@
-/* ===== Base ===== */
+/* ===== General Styles ===== */
 body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
   background-image: url('images/emotion-coded-web-page.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  color: #fff;
 }
 
-/* Navigation */
+/* ===== Navigation ===== */
 nav {
   background-color: #222;
   padding: 1em;
   text-align: center;
 }
+
 nav a {
   color: white;
   text-decoration: none;
   margin: 0 15px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
-nav a:hover { color: #ff6f61; text-decoration: underline; }
 
-/* Header */
+nav a:hover {
+  color: #ff6f61;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ===== Header ===== */
 header {
-  padding: 2em;
   text-align: center;
-  background: rgba(0,0,0,0.5);
-  border-radius: 15px;
-  max-width: 900px;
-  margin: 30px auto;
+  padding: 2em;
+  color: white;
+}
+
+header h1 {
+  margin-top: 0.5em;
+  font-weight: 800;
+  letter-spacing: 2px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
-header h1 { margin-top: 0; }
-header p { font-weight: 500; }
 
-/* Hero images */
+header p {
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0.5em auto 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== Hero Images Top ===== */
 .hero-pair {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 16px;
   margin-bottom: 16px;
   flex-wrap: wrap;
 }
+
 .hero-pair .hero-img {
-  flex: 1 1 360px;
-  max-width: 480px;
+  flex: 1 1 300px; /* each image gets equal space */
+  max-width: 400px;
   width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* Main content */
+/* ===== Main Content ===== */
 main {
-  max-width: 900px;
+  max-width: 800px;
   margin: 2em auto;
   padding: 2em;
   background: rgba(0,0,0,0.5);
   border-radius: 15px;
+  color: white;
   line-height: 1.8;
   font-size: 1.2rem;
 }
 
-/* Articles grid */
+/* ===== Articles Section ===== */
+#articles {
+  margin-top: 3em;
+}
+
+#articles h2 {
+  text-align: center;
+  color: #ff6f61;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 1.5em;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
 .articles-grid {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
 }
+
 .article-card {
   background: rgba(0,0,0,0.4);
   border-radius: 15px;
-  padding: 1.5em;
-  max-width: 400px;
-  flex: 1 1 300px;
+  padding: 1em;
+  color: white;
+  flex: 1 1 350px;
+  max-width: 380px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .article-card img {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  margin-bottom: 1em;
+  margin-bottom: 12px;
+  object-fit: cover;
 }
-.article-card h3 { margin-top: 0; }
-.article-card p { margin-bottom: 1em; }
-.article-card a.read-more {
+
+.article-card h3 {
+  margin: 0.5em 0;
+}
+
+.article-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.article-card .read-more {
+  display: inline-block;
+  margin-top: 10px;
   color: #ff6f61;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
 }
-.article-card a.read-more:hover { text-decoration: underline; }
 
-/* Bottom images */
+.article-card .read-more:hover {
+  color: #ff3b1f;
+  text-decoration: underline;
+}
+
+.article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* ===== Bottom Images ===== */
 .bottom-images {
   display: flex;
   justify-content: center;
@@ -106,25 +161,39 @@ main {
   margin: 30px 0;
   flex-wrap: wrap;
 }
+
 .bottom-images img {
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 8px;
+  height: auto;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 1em;
+  margin-top: 2em;
+  font-size: 0.9em;
   background-color: #222;
   color: white;
-  font-size: 0.9em;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 700px) {
-  .hero-pair, .articles-grid, .bottom-images {
-    flex-direction: column;
-    align-items: center;
+  .hero-pair .hero-img {
+    max-width: 100%;
   }
-}
+
+  main {
+    margin: 1em;
+    padding: 1em;
+  }
+
+  .article-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .bottom-images img {
+    max-wi
