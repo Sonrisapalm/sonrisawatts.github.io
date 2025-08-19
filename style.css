@@ -187,16 +187,18 @@ footer {
   .bottom-images img { width: 92vw; }
   .article-card img { max-height: 300px; }
 }
-/* Add this to your style.css file */
-
+/* Updated style for your mission statement */
 .mission-statement {
-    font-size: 1.2rem; /* Makes the font a little bigger */
-    font-weight: 600; /* Makes the font bold. You can use 700 or 800 for even bolder */
-    line-height: 1.6; /* Improves readability by giving the lines more space */
-    color: #333; /* Changes the text color to a soft black */
+    font-size: 1.2rem; /* Adjust as needed */
+    font-weight: 700; /* Makes the font bold - try 800 for even bolder */
+    line-height: 1.6;
+    color: #ffffff; /* Sets the text color to white */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Adds a subtle shadow for better readability on various backgrounds */
 }
 
-/* To improve the overall body text as well */
+/* You can also adjust the overall body text if needed */
 body {
     font-family: 'Poppins', sans-serif;
+    color: #333; /* This sets the default body text color, adjust if needed */
+    background-color: #f4f4f4; /* Example: A light grey background. Adjust as needed for your site */
 }
