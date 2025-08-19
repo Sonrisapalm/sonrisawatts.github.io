@@ -1,117 +1,189 @@
-/* ===== Homepage and general styles ===== */
+/* ===== Base / Global ===== */
+* { box-sizing: border-box; }
 
 body {
   background-image: url('images/emotion-coded-web-page.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
-  font-family: Arial, sans-serif;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  padding: 0;
   color: #fff;
+}
+
+/* ===== Navigation ===== */
+nav {
+  background: rgba(0,0,0,0.7);
+  padding: 1em;
   text-align: center;
 }
-
-h1, h2, h3 {
+nav a {
   color: #fff;
-}
-
-a {
-  color: #ffcc00;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ===== Transparent Text Container ===== */
-.content-box {
-  background-color: rgba(0, 0, 0, 0.6); /* transparent black */
-  margin: 20px auto;
-  padding: 20px;
-  width: 80%;           /* keeps text centered and neat */
-  border-radius: 12px;
-  text-align: left;     /* better readability */
-  line-height: 1.6;     /* spacing so it doesn’t look squished */
-}
-
-/* ===== Navigation bar ===== */
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px;
-}
-
-.navbar a {
   margin: 0 15px;
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  font-size: 1rem;
+  transition: color .25s ease, text-decoration-color .25s ease;
+}
+nav a:hover { color: #ff6f61; text-decoration: underline; }
+
+/* ===== Header (kept as your preferred look) ===== */
+header {
+  padding: 2em;
+  text-align: center;
+  background: rgba(0,0,0,0.55);
+  border-radius: 15px;
+  max-width: 1100px;
+  margin: 30px auto;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
-/* ===== Hero Section (top images) ===== */
-
+/* Top hero images (unchanged from “good” state) */
 .hero-pair {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 18px;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin-bottom: 10px;
 }
-
-.hero-pair .hero-img {
-  width: 480px;
-  height: auto;
+.hero-img {
+  width: 520px;   /* big, clear, same size */
+  height: auto;   /* show whole image (no crop) */
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  object-fit: contain; 
-}
-
-/* ===== Article Images (middle section) ===== */
-
-.article-images-row {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
-
-.article-images-row img {
-  width: 480px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
   object-fit: contain;
 }
 
-/* ===== Bottom Images ===== */
+/* Optional headline block under hero */
+.hero-text {
+  margin-top: 12px;
+}
 
+/* ===== Main container ===== */
+main {
+  max-width: 1200px;
+  margin: 2em auto;
+  padding: 2em;
+  background: rgba(0,0,0,0.45);
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.35);
+  line-height: 1.75;
+  font-size: 1.08rem;
+}
+
+/* ===== Articles page ===== */
+#articles { margin-top: 0.5em; }
+
+/* Section title */
+#articles > h2,
+#articles > h1 {
+  text-align: center;
+  color: #ff6f61;
+  margin: 0 0 1rem 0;
+  letter-spacing: 1px;
+}
+
+/* The grid that makes previews sit side-by-side */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2 per row on desktop */
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto 10px;
+}
+
+/* Each preview card */
+.article-card {
+  background: rgba(0,0,0,0.55);      /* transparent black box */
+  border-radius: 16px;
+  padding: 18px 18px 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  transition: transform .25s ease, background .25s ease;
+}
+.article-card:hover { transform: translateY(-3px); background: rgba(0,0,0,0.65); }
+
+.article-card h2 {
+  color: #ff9b88;
+  font-size: 1.25rem;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+/* Show full image (no cropping), consistent size */
+.article-card img {
+  width: 100%;
+  height: auto;
+  max-height: 360px;     /* big enough to see, not huge */
+  object-fit: contain;   /* NO CROPPING */
+  display: block;
+  background: rgba(255,255,255,0.06); /* gentle backdrop for letterboxing */
+  border-radius: 12px;
+  margin: 0 auto 12px;
+}
+
+/* Preview text + link */
+.article-card p { margin: 0 0 10px 0; }
+.article-card a {
+  color: #ff6f61;
+  font-weight: 600;
+  text-decoration: none;
+}
+.article-card a:hover { color: #ff3b1f; text-decoration: underline; }
+
+/* ===== Standardized images inside full article pages ===== */
+article img {
+  width: 100%;
+  max-width: 720px;      /* nice large inline images in article pages */
+  height: auto;          /* no cropping */
+  object-fit: contain;
+  display: block;
+  margin: 0.8rem auto 1.2rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+}
+
+/* ===== Bottom images on index ===== */
 .bottom-images {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
+  gap: 18px;
+  margin: 30px 0 10px;
   flex-wrap: wrap;
-  margin: 30px 0;
 }
-
 .bottom-images img {
-  width: 480px;
-  height: auto;
+  width: 520px;   /* same visual weight as hero images */
+  height: auto;   /* no crop */
   border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
   object-fit: contain;
 }
 
 /* ===== Footer ===== */
-
 footer {
+  text-align: center;
+  padding: 1em 1.2em;
+  margin: 2em auto 1em;
+  font-size: 0.95em;
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 15px;
-  margin-top: 30px;
+  color: white;
+  border-radius: 12px;
+  max-width: 1100px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .hero-img,
+  .bottom-images img { width: 46vw; }
+  .articles-grid { grid-template-columns: 1fr; } /* stack to 1 column on tablet/mobile */
+  main { padding: 1.3em; }
+}
+
+@media (max-width: 600px) {
+  .hero-img,
+  .bottom-images img { width: 92vw; }
+  .article-card img { max-height: 300px; }
 }
