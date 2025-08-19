@@ -184,3 +184,28 @@ footer {
     max-width: 90%;
   }
 }
+/* Hero section tweaks */
+.hero {
+  padding: 120px 15%; /* wider padding for a more spacious look */
+}
+
+.hero::after {
+  background-color: rgba(0,0,0,0.6); /* slightly darker, wider overlay */
+}
+
+.hero-content {
+  max-width: 1400px; /* wider content area */
+}
+
+/* Gallery tweaks */
+.gallery-item {
+  max-width: 450px; /* bigger image container */
+  padding: 25px; /* more space around images */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto; /* ensure images scale nicely */
+  border-radius: 12px;
+}
+
