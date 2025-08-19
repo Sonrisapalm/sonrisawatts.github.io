@@ -26,6 +26,17 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ===== Transparent Text Container ===== */
+.content-box {
+  background-color: rgba(0, 0, 0, 0.6); /* transparent black */
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;           /* keeps text centered and neat */
+  border-radius: 12px;
+  text-align: left;     /* better readability */
+  line-height: 1.6;     /* spacing so it doesn’t look squished */
+}
+
 /* ===== Navigation bar ===== */
 
 .navbar {
@@ -52,8 +63,8 @@ a:hover {
 }
 
 .hero-pair .hero-img {
-  width: 480px;       /* same size for all */
-  height: auto;       /* no cut-off */
+  width: 480px;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   object-fit: contain; 
@@ -72,7 +83,7 @@ a:hover {
 
 .article-images-row img {
   width: 480px;
-  height: auto;       /* keeps full pic visible */
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.3);
   object-fit: contain;
@@ -91,7 +102,7 @@ a:hover {
 
 .bottom-images img {
   width: 480px;
-  height: auto;       /* show full image */
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.3);
   object-fit: contain;
