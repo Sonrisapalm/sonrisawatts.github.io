@@ -1,211 +1,162 @@
-/* ===== Global Styles ===== */
-body {
-  background-image: url('images/emotion-coded-web-page.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  font-family: 'Poppins', sans-serif;
+/* ---------------- Global Resets ---------------- */
+* {
   margin: 0;
   padding: 0;
-  color: #333;
+  box-sizing: border-box;
 }
 
-/* ===== Navigation ===== */
-nav {
-  background-color: #222;
-  padding: 1em;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-nav a:hover, nav a.active {
-  color: #ff6f61;
-  text-decoration: underline;
-}
-
-/* ===== Header ===== */
-header {
-  padding: 2em;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  max-width: 900px;
-  margin: 30px auto;
-  color: white;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-}
-
-/* Flex container for top hero images */
-.hero-pair {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.hero-pair .hero-img {
-  flex: 1 1 300px; /* base width */
-  max-width: 400px; /* max width */
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.hero-pair .hero-img:hover {
-  transform: scale(1.03);
-}
-
-/* ===== Main ===== */
-main {
-  max-width: 900px;
-  margin: 2em auto;
-  padding: 2em;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-  color: white;
-  line-height: 1.8;
-  font-size: 1.2rem;
-}
-
-/* ===== Articles Section ===== */
-.articles-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 2em;
-}
-
-.article-card {
-  background: rgba(0,0,0,0.4);
-  border-radius: 15px;
-  padding: 1.5em;
-  color: white;
-  max-width: 420px;
-  flex: 1 1 380px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.article-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-.article-card img {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 1em;
-}
-
-.article-card h2, .article-card h3 {
-  font-weight: 700;
-  margin-bottom: 0.8em;
-}
-
-.article-card p {
-  font-weight: 400;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  color: #fff;
   line-height: 1.6;
-  margin-bottom: 1em;
 }
 
-.read-more {
-  color: #ff6f61;
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.3s ease;
-}
+/* ---------------- Hero Sections ---------------- */
 
-.read-more:hover {
-  color: #ff3b1f;
-  text-decoration: underline;
-}
-
-/* ===== Bottom Images ===== */
-.bottom-images {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px 0;
-  flex-wrap: wrap;
-}
-
-.bottom-images img {
-  max-width: 380px;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 1em;
-  margin-top: 2em;
-  font-size: 0.9em;
-  background-color: #222;
-  color: white;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 800px) {
-  .article-card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .hero-pair .hero-img {
-    max-width: 90%;
-  }
-
-  .bottom-images img {
-    max-width: 90%;
-  }
-}
-/* Hero section tweaks */
+/* Article Hero */
 .hero {
-  padding: 120px 15%; /* wider padding for a more spacious look */
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  padding: 120px 10%;
+  position: relative;
+  text-align: center;
 }
 
 .hero::after {
-  background-color: rgba(0,0,0,0.6); /* slightly darker, wider overlay */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 0;
 }
 
 .hero-content {
-  max-width: 1400px; /* wider content area */
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* Gallery tweaks */
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.8rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Index Hero */
+.index-hero {
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  padding: 100px 12%;
+  position: relative;
+  text-align: center;
+}
+
+.index-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.55);
+  z-index: 0;
+}
+
+.index-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.index-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.index-hero-content p {
+  font-size: 1.6rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---------------- Gallery Sections ---------------- */
+
+/* Article Gallery (vertical layout) */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 60px 10%;
+}
+
 .gallery-item {
-  max-width: 450px; /* bigger image container */
-  padding: 25px; /* more space around images */
+  background-color: rgba(0,0,0,0.5);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 450px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .gallery-item img {
   width: 100%;
-  height: auto; /* ensure images scale nicely */
+  height: auto;
   border-radius: 12px;
+  display: block;
+  margin-bottom: 15px;
 }
 
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item p {
+  font-size: 1.2rem;
+}
+
+/* Index Gallery (top three horizontal layout) */
+.index-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 50px 10%;
+}
+
+.index-gallery-item {
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 30%;
+  max-width: 380px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.index-gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.index-gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.index-gallery-item p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+}
