@@ -105,17 +105,16 @@ main {
     letter-spacing: 1px;
 }
 
-/* Styles the container for side-by-side articles */
+/* Fixed: This handles the side-by-side layout */
 .articles-grid {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
-/* This is the new part for side-by-side articles */
 .articles-grid .article-preview {
-    width: 48%; /* Each article takes up about half the width of the container */
+    flex: 1 1 45%; /* A professional way to get a clean side-by-side layout */
     background: rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     padding: 18px;
@@ -145,20 +144,20 @@ main {
 .articles-container h2,
 .articles-container h3 {
     color: #ff9b88;
-    font-size: 1.4rem; /* Text is now bigger */
+    font-size: 1.4rem;
     margin: 0 0 10px 0;
     text-align: center;
 }
 
 .articles-container p {
-    font-size: 1.1rem; /* Text is now bigger */
+    font-size: 1.1rem;
     margin: 0 0 10px 0;
 }
 
 .articles-container img {
     width: 100%;
-    height: auto; /* Removed fixed height to show the entire image */
-    object-fit: contain; /* Prevents cropping the image */
+    height: 300px; /* Fixed height for a uniform look */
+    object-fit: cover; /* This makes images fit the space perfectly, preventing empty space */
     border-radius: 12px;
     margin-bottom: 12px;
 }
