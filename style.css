@@ -187,3 +187,16 @@ footer {
   .bottom-images img { width: 92vw; }
   .article-card img { max-height: 300px; }
 }
+/* Add this to your style.css file */
+
+.mission-statement {
+    font-size: 1.2rem; /* Makes the font a little bigger */
+    font-weight: 600; /* Makes the font bold. You can use 700 or 800 for even bolder */
+    line-height: 1.6; /* Improves readability by giving the lines more space */
+    color: #333; /* Changes the text color to a soft black */
+}
+
+/* To improve the overall body text as well */
+body {
+    font-family: 'Poppins', sans-serif;
+}
