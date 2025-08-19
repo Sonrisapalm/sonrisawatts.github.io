@@ -51,8 +51,8 @@ header {
   margin-bottom: 10px;
 }
 .hero-img {
-  width: 520px;   /* big, clear, same size */
-  height: auto;   /* show whole image (no crop) */
+  width: 520px;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.35);
   object-fit: contain;
@@ -75,6 +75,25 @@ main {
   font-size: 1.08rem;
 }
 
+/* Updated style for your mission statement */
+.mission-statement {
+    font-size: 1.35rem; /* Slightly larger to stand out more */
+    font-weight: 700; /* Makes the font bold */
+    line-height: 1.6;
+    color: #ffffff; /* Sets the text color to white */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for better readability */
+    letter-spacing: 0.5px; /* Adds a little space between letters for a cleaner look */
+    text-align: center; /* Centers the text within its container */
+    padding: 1rem; /* Adds some padding around the text */
+    background: rgba(0, 0, 0, 0.45); /* A slightly darker background to make the white text pop */
+    border-radius: 10px; /* Optional: adds rounded corners to the background */
+    transition: transform 0.3s ease; /* Adds a smooth hover transition */
+}
+
+.mission-statement:hover {
+    transform: scale(1.02); /* Makes the text slightly bigger on hover for a nice effect */
+}
+
 /* ===== Articles page ===== */
 #articles { margin-top: 0.5em; }
 
@@ -90,7 +109,7 @@ main {
 /* The grid that makes previews sit side-by-side */
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2 per row on desktop */
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 28px;
   max-width: 1100px;
   margin: 0 auto 10px;
@@ -98,7 +117,7 @@ main {
 
 /* Each preview card */
 .article-card {
-  background: rgba(0,0,0,0.55);      /* transparent black box */
+  background: rgba(0,0,0,0.55);
   border-radius: 16px;
   padding: 18px 18px 20px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
@@ -117,10 +136,10 @@ main {
 .article-card img {
   width: 100%;
   height: auto;
-  max-height: 360px;     /* big enough to see, not huge */
-  object-fit: contain;   /* NO CROPPING */
+  max-height: 360px;
+  object-fit: contain;
   display: block;
-  background: rgba(255,255,255,0.06); /* gentle backdrop for letterboxing */
+  background: rgba(255,255,255,0.06);
   border-radius: 12px;
   margin: 0 auto 12px;
 }
@@ -137,8 +156,8 @@ main {
 /* ===== Standardized images inside full article pages ===== */
 article img {
   width: 100%;
-  max-width: 720px;      /* nice large inline images in article pages */
-  height: auto;          /* no cropping */
+  max-width: 720px;
+  height: auto;
   object-fit: contain;
   display: block;
   margin: 0.8rem auto 1.2rem;
@@ -155,8 +174,8 @@ article img {
   flex-wrap: wrap;
 }
 .bottom-images img {
-  width: 520px;   /* same visual weight as hero images */
-  height: auto;   /* no crop */
+  width: 520px;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.35);
   object-fit: contain;
@@ -178,7 +197,7 @@ footer {
 @media (max-width: 980px) {
   .hero-img,
   .bottom-images img { width: 46vw; }
-  .articles-grid { grid-template-columns: 1fr; } /* stack to 1 column on tablet/mobile */
+  .articles-grid { grid-template-columns: 1fr; }
   main { padding: 1.3em; }
 }
 
@@ -186,19 +205,4 @@ footer {
   .hero-img,
   .bottom-images img { width: 92vw; }
   .article-card img { max-height: 300px; }
-}
-/* Updated style for your mission statement */
-.mission-statement {
-    font-size: 1.2rem; /* Adjust as needed */
-    font-weight: 700; /* Makes the font bold - try 800 for even bolder */
-    line-height: 1.6;
-    color: #ffffff; /* Sets the text color to white */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Adds a subtle shadow for better readability on various backgrounds */
-}
-
-/* You can also adjust the overall body text if needed */
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #333; /* This sets the default body text color, adjust if needed */
-    background-color: #f4f4f4; /* Example: A light grey background. Adjust as needed for your site */
 }
