@@ -9,37 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Flex container for side-by-side images */
-    .article-images {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
-    }
-    .article-images img {
-      width: 300px;
-      height: auto;
-      border-radius: 12px;
-    }
-  </style>
 </head>
 <body>
 
  <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="articles.html">Articles</a>  <!-- make sure this is here -->
+  <a href="articles.html">Articles</a>
   <a href="contact.html">Contact</a>
 </nav>
 
 <header>
-  <div class="hero-pair">
+  <div class="hero-images-vertical">
     <img src="images/fortoppage.jpg" alt="Main header image" class="hero-img" />
     <img src="images/indexpic5.jpg" alt="Side header image" class="hero-img" />
     <img src="images/indexpic6.jpg" alt="Side header image" class="hero-img" />
   </div>
-</header>
 
   <div class="hero-text">
     <h1>Emotion Encoded</h1>
@@ -47,69 +32,67 @@
   </div>
 </header>
 
-  <main>
-    <h2>Welcome</h2>
-    <p>
-      Emotion Encoded is a research initiative dedicated to understanding how emotional reasoning, trust, cognitive biases,  cultural context,
-      and other psychological factors shape human responses to AI. This is important in order to faciliate the integration and adoption of AI into industries.
-    </p>
-    <p>
-      Through research and collaboration with professionals in law, medicine, and policy,
-      we aim to foster trust, transparency, and ethical AI governance.
-    </p>
+<main>
+  <h2>Welcome</h2>
+  <p>
+    Emotion Encoded is a research initiative dedicated to understanding how emotional reasoning, trust, cognitive biases, cultural context,
+    and other psychological factors shape human responses to AI. This is important in order to facilitate the integration and adoption of AI into industries.
+  </p>
+  <p>
+    Through research and collaboration with professionals in law, medicine, and policy,
+    we aim to foster trust, transparency, and ethical AI governance.
+  </p>
 
-    <section id="articles">
-      <h2><a href="articles.html" class="articles-link">Articles</a></h2>
-      <article>
-        <div class="article-images">
-          <img src="images/article1.jpg" alt="Research in Caribbean Region" />
-          <img src="images/imagessecond-picture.jpg" alt="Second research illustration" />
-        </div>
+  <section id="articles">
+    <h2><a href="articles.html" class="articles-link">Articles</a></h2>
+    <article>
+      <div class="article-images-vertical">
+        <img src="images/article1.jpg" alt="Research in Caribbean Region" />
+        <img src="images/imagessecond-picture.jpg" alt="Second research illustration" />
+      </div>
 
-        <p>
-          I conducted research in the Caribbean Region and I got some interesting answers. Most responses are from my hometown St. Kitts & Nevis.<br/>
-          I asked "Who would you trust more? An AI advisor or an AI Therapist?"<br/>
-          Here are some results. I'll publish the others next week. What do you think?
-        </p>
-        <ul>
-          <li>1. Financial advisor is a little too private for me</li>
-          <li>2. I prefer a human to deal with my money</li>
-          <li>3. Therapist errors are less likely to be lethal</li>
-          <li>4. Although both should be private and confidential, an AI therapist can draw on a large resource and apply it to challenges I may be experiencing whereas Finances are more personal.</li>
-          <li>5. Therapist work may involve actual human feelings and rational thinking, while financial advice is based on the numbers and their interpretation, the numbers speak for themselves.</li>
-          <li>6. A therapist needs a certain level of emotional intelligence that I don't think AI has developed.</li>
-          <li>9. Finance is numbers. I can sort out my own feelings.</li>
-          <li>10. Therapist has a lot more nuances and human components that robots can’t completely understand. Financial is about understanding markets, money movement, world economy..more facts, more objectives. Robot advice will be more adequate.</li>
-          <li>11. There are layers to communication which AI may not tap into within the process of therapy.</li>
-          <li>12. Might be easier to see if it is working for me or not.</li>
-          <li>13. It's research and figures, no understanding of emotions involved.</li>
-          <li>14. Health over Wealth.</li>
-          <li>15. The therapist errors are more easily corrected.</li>
-        </ul>
-        <p>
-          What does this mean?<br/>
-          Trust isn't automatic.<br/>
-          Have we considered all the risks involved with trusting an AI tool with our finances or our personal feelings?<br/>
-          Is it mainly about communicating ethically?<br/>
-          What does this mean for people who's in the career of financial advising?<br/>
-          What does this mean for psychologists?<br/>
-          Join in on the discussion.
-        </p>
-      </article>
-    </section>
-  </main>
+      <p>
+        I conducted research in the Caribbean Region and I got some interesting answers. Most responses are from my hometown St. Kitts & Nevis.<br/>
+        I asked "Who would you trust more? An AI advisor or an AI Therapist?"<br/>
+        Here are some results. I'll publish the others next week. What do you think?
+      </p>
+      <ul>
+        <li>1. Financial advisor is a little too private for me</li>
+        <li>2. I prefer a human to deal with my money</li>
+        <li>3. Therapist errors are less likely to be lethal</li>
+        <li>4. Although both should be private and confidential, an AI therapist can draw on a large resource and apply it to challenges I may be experiencing whereas Finances are more personal.</li>
+        <li>5. Therapist work may involve actual human feelings and rational thinking, while financial advice is based on the numbers and their interpretation, the numbers speak for themselves.</li>
+        <li>6. A therapist needs a certain level of emotional intelligence that I don't think AI has developed.</li>
+        <li>9. Finance is numbers. I can sort out my own feelings.</li>
+        <li>10. Therapist has a lot more nuances and human components that robots can’t completely understand. Financial is about understanding markets, money movement, world economy..more facts, more objectives. Robot advice will be more adequate.</li>
+        <li>11. There are layers to communication which AI may not tap into within the process of therapy.</li>
+        <li>12. Might be easier to see if it is working for me or not.</li>
+        <li>13. It's research and figures, no understanding of emotions involved.</li>
+        <li>14. Health over Wealth.</li>
+        <li>15. The therapist errors are more easily corrected.</li>
+      </ul>
+      <p>
+        What does this mean?<br/>
+        Trust isn't automatic.<br/>
+        Have we considered all the risks involved with trusting an AI tool with our finances or our personal feelings?<br/>
+        Is it mainly about communicating ethically?<br/>
+        What does this mean for people who's in the career of financial advising?<br/>
+        What does this mean for psychologists?<br/>
+        Join in on the discussion.
+      </p>
+    </article>
+  </section>
+</main>
 
-  
-
-<div class="bottom-images">
+<div class="bottom-images-vertical">
   <img src="images/imageforindex3.jpg" alt="Extra Image 1">
   <img src="images/imageforindex4.jpg" alt="Extra Image 2">
   <img src="images/indexpic4.jpg" alt="Extra Image 3">
 </div>
 
-  <footer>
-    © 2025 Emotion Encoded — All rights reserved.
-  </footer>
+<footer>
+  © 2025 Emotion Encoded — All rights reserved.
+</footer>
 
 </body>
 </html>
