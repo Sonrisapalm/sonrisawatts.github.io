@@ -33,7 +33,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Transparent bubble on header */
+/* Header */
 header {
   padding: 2em;
   text-align: center;
@@ -51,7 +51,21 @@ header:hover {
   color: #ff3b1f;
 }
 
-/* Main container */
+/* Hero images stacked vertically */
+.hero-images-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.hero-images-vertical .hero-img {
+  width: 500px;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Main content */
 main {
   max-width: 1200px;
   margin: 2em auto;
@@ -64,91 +78,47 @@ main {
   font-size: 1.2rem;
 }
 
-/* ===== Hero Pair (top index images) ===== */
-.hero-pair {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 20px 0;
-  flex-wrap: wrap;
-}
-
-.hero-img {
-  width: 450px;    /* uniform width */
-  height: auto;    /* keep natural aspect ratio */
-  border-radius: 12px;
-}
-
-/* ===== Articles Section ===== */
-#articles {
-  margin-top: 3em;
-}
-
-/* Grid layout for article previews */
-.articles-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-
-.article-preview {
-  flex: 1 1 45%; /* 2 per row */
-  background: rgba(0,0,0,0.4);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.article-preview:hover {
-  transform: translateY(-4px);
-  background: rgba(0,0,0,0.55);
-}
-
-.article-preview h2 {
-  margin-bottom: 12px;
+/* Articles section */
+#articles h2 a.articles-link {
   color: #ff6f61;
-  font-weight: 700;
-  text-align: center;
+  text-decoration: none;
+  font-weight: 800;
 }
 
-.article-preview p {
-  font-size: 1rem;
-  line-height: 1.6;
+#articles h2 a.articles-link:hover {
+  color: #ff3b1f;
+  text-decoration: underline;
 }
 
-.article-preview img {
-  width: 100%;     /* fill card width */
-  height: auto;    /* show full image */
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-/* ===== Standardized Article Pages ===== */
-article img {
-  width: 80%;
-  max-width: 600px; /* big enough to see */
-  height: auto;     /* keep full image visible */
-  display: block;
-  margin: 0 auto 20px;
-  border-radius: 15px;
-}
-
-/* ===== Bottom images on index ===== */
-.bottom-images {
+/* Article images stacked vertically */
+.article-images-vertical {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 20px;
-  margin: 30px 0;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
-.bottom-images img {
-  width: 400px;   /* uniform width */
-  height: auto;   /* show full image */
+.article-images-vertical img {
+  width: 450px;
+  height: auto;
   border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Bottom images stacked vertically */
+.bottom-images-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.bottom-images-vertical img {
+  width: 450px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 /* Footer */
@@ -161,30 +131,23 @@ footer {
   color: white;
 }
 
-/* Responsive tweaks */
-@media (max-width: 900px) {
-  .hero-img,
-  .article-preview img,
-  article img,
-  .bottom-images img {
-    width: 100%;
-    height: auto; /* scale naturally */
-  }
+/* Article page images */
+article img {
+  width: 80%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 15px;
+  object-fit: cover;
+}
 
-  .article-preview {
-    flex: 1 1 100%; /* stack on smaller screens */
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  .hero-images-vertical .hero-img,
+  .article-images-vertical img,
+  .bottom-images-vertical img {
+    width: 100%;
+    max-width: 100%;
   }
 }
-<section id="picture-references">
-  <h2>Picture References</h2>
-  <ul>
-    <li>
-      <strong>Image 1 (CRPE / RAND report)</strong><br>
-      CRPE. (2024, May). <em>AI is coming to U.S. classrooms, but who will benefit?</em> Center on Reinventing Public Education. Retrieved from <a href="https://crpe.org/ai-is-coming-to-u-s-classrooms-but-who-will-benefit/" target="_blank">CRPE website</a>.
-    </li>
-    <li>
-      <strong>Image 2 (Artificial Paintings Blog)</strong><br>
-      artmaster. (2024, June 14). <em>The Transformative Role of Artificial Intelligence in Education.</em> Artificial Paintings. Retrieved from <a href="https://artificialpaintings.com/blog/2024/06/14/the-transformative-role-of-artificial-intelligence-in-education/" target="_blank">artificialpaintings.com</a>.
-    </li>
-  </ul>
-</section>
