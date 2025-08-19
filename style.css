@@ -1,4 +1,4 @@
-/* ===== General Styles ===== */
+/* ===== Global Styles ===== */
 body {
   background-image: url('images/emotion-coded-web-page.png');
   background-size: cover;
@@ -11,7 +11,7 @@ body {
   color: #333;
 }
 
-/* Navigation */
+/* ===== Navigation ===== */
 nav {
   background-color: #222;
   padding: 1em;
@@ -28,107 +28,115 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover, nav a.active {
   color: #ff6f61;
   text-decoration: underline;
-  cursor: pointer;
 }
 
-/* ===== Header & Hero Row ===== */
-.hero-row {
+/* ===== Header ===== */
+header {
+  padding: 2em;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 30px auto;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Flex container for top hero images */
+.hero-pair {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 16px;
-  margin: 20px auto;
+  margin-bottom: 16px;
   flex-wrap: wrap;
 }
 
-.hero-row .hero-img {
-  flex: 1 1 300px;
-  max-width: 360px;
+.hero-pair .hero-img {
+  flex: 1 1 300px; /* base width */
+  max-width: 400px; /* max width */
   width: 100%;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
 }
 
-.hero-row .hero-img:hover {
+.hero-pair .hero-img:hover {
   transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
-/* Make indexpic6.jpg slightly bigger */
-.hero-row .hero-img.indexpic6 {
-  flex: 1.3 1 400px;
-  max-width: 420px;
-}
-
-/* Header text */
-header h1 {
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-}
-
-header p {
-  text-align: center;
-  color: white;
-  max-width: 700px;
-  margin: 0.5em auto 2em auto;
-  line-height: 1.5;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-}
-
-/* ===== Main Content ===== */
+/* ===== Main ===== */
 main {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2em auto;
   padding: 2em;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
   color: white;
   line-height: 1.8;
   font-size: 1.2rem;
 }
 
-/* Articles Grid */
+/* ===== Articles Section ===== */
 .articles-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  margin-top: 2em;
 }
 
 .article-card {
   background: rgba(0,0,0,0.4);
   border-radius: 15px;
-  padding: 1em;
+  padding: 1.5em;
   color: white;
+  max-width: 420px;
+  flex: 1 1 380px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  flex: 1 1 300px;
-  max-width: 360px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.article-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 10px;
 }
 
 .article-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.article-card img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1em;
+}
+
+.article-card h2, .article-card h3 {
+  font-weight: 700;
+  margin-bottom: 0.8em;
+}
+
+.article-card p {
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1em;
 }
 
 .read-more {
-  display: inline-block;
-  margin-top: 10px;
   color: #ff6f61;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
 .read-more:hover {
@@ -136,7 +144,7 @@ main {
   text-decoration: underline;
 }
 
-/* Bottom images row */
+/* ===== Bottom Images ===== */
 .bottom-images {
   display: flex;
   justify-content: center;
@@ -146,13 +154,12 @@ main {
 }
 
 .bottom-images img {
-  max-width: 400px;
+  max-width: 380px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  border-radius: 10px;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 1em;
@@ -162,11 +169,18 @@ footer {
   color: white;
 }
 
-/* Responsive adjustments */
-@media (max-width: 700px) {
-  .hero-row .hero-img,
-  .article-card,
-  .bottom-images img {
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+  .article-card {
+    flex: 1 1 100%;
     max-width: 100%;
+  }
+
+  .hero-pair .hero-img {
+    max-width: 90%;
+  }
+
+  .bottom-images img {
+    max-width: 90%;
   }
 }
