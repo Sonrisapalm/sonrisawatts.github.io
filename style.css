@@ -52,22 +52,22 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .hero-pair .hero-img {
-  width: 350px;
-  height: 260px;
+  width: 700px;   /* MUCH bigger */
+  height: 500px;  /* taller */
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
 }
 
 /* Main container */
 main {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 2em auto;
   padding: 2em;
   background: rgba(0, 0, 0, 0.5);
@@ -83,17 +83,17 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .article-images-row img {
-  width: 350px;
-  height: 260px;
+  width: 700px;   /* bigger */
+  height: 500px;  /* bigger */
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.35);
 }
 
 /* Bottom images side by side */
@@ -101,23 +101,23 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
-  margin: 30px 0;
+  margin: 40px 0;
 }
 
 .bottom-images img {
-  width: 350px;
-  height: 260px;
+  width: 700px;   /* bigger */
+  height: 500px;  /* bigger */
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.35);
 }
 
 /* Article pages */
 article img {
-  width: 80%;
-  max-width: 500px;
+  width: 85%;
+  max-width: 700px;
   height: auto;
   display: block;
   margin: 0 auto 20px;
@@ -136,16 +136,16 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .hero-pair .hero-img,
   .article-images-row img,
   .bottom-images img {
-    width: 45%;
+    width: 90%;
     height: auto;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .hero-pair .hero-img,
   .article-images-row img,
   .bottom-images img {
