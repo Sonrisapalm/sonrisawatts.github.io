@@ -9,7 +9,8 @@ body {
     background-attachment: fixed;
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    color: #ffffff; /* All text is now white by default */
+    color: #ffffff;
+    font-weight: 500; /* Added: makes all text a bit bolder */
 }
 
 /* ===== Navigation ===== */
@@ -29,11 +30,11 @@ nav a {
 }
 nav a:hover { color: #ff6f61; text-decoration: underline; }
 
-/* ===== Header (kept as your preferred look) ===== */
+/* ===== Header ===== */
 header {
     padding: 2em;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
     max-width: 1100px;
     margin: 30px auto;
@@ -41,7 +42,7 @@ header {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
-/* Top hero images (unchanged from “good” state) */
+/* Hero images */
 .hero-pair {
     display: flex;
     justify-content: center;
@@ -58,22 +59,16 @@ header {
     object-fit: contain;
 }
 
-/* Optional headline block under hero */
-.hero-text {
-    margin-top: 12px;
-}
-
 /* ===== Main container ===== */
 main {
     max-width: 1200px;
     margin: 2em auto;
     padding: 2em;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.35);
     line-height: 1.75;
     font-size: 1.08rem;
-    font-weight: 500;
 }
 
 /* ===== Mission Statement Styling ===== */
@@ -91,7 +86,6 @@ main {
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .mission-statement:hover {
     transform: scale(1.02);
     box-shadow: 0 6px 12px rgba(0,0,0,0.6);
@@ -118,44 +112,64 @@ main {
     justify-content: center;
 }
 
-.articles-grid article {
-    width: 48%;
-    background: rgba(255, 255, 255, 0.1);
+.articles-grid .article-preview {
+    width: 550px; /* Specific width for large images */
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     padding: 18px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     transition: transform 0.3s ease-in-out;
 }
-
-.articles-grid article:hover {
+.articles-grid .article-preview:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-.articles-grid article h2 {
+/* General article styling for both stacked and side-by-side */
+.articles-container article {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+.articles-container article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.articles-container h2,
+.articles-container h3 {
     color: #ff9b88;
     font-size: 1.25rem;
     margin: 0 0 10px 0;
     text-align: center;
 }
 
-.articles-grid article p {
+.articles-container img {
+    width: 100%;
+    height: 360px; /* Set a specific height to make images uniform */
+    object-fit: cover; /* This makes images fill the space without distortion */
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+.articles-container p {
     margin: 0 0 10px 0;
 }
-
-/* The rest of the CSS for your articles and other sections remains the same. */
-/* ===== Standardized images inside full article pages ===== */
-article img {
-    width: 100%;
-    max-width: 720px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0.8rem auto 1.2rem;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.06);
+.articles-container a {
+    display: inline-block;
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
-
+.articles-container a:hover {
+    background-color: #e65c50;
+}
 /* ===== Bottom images on index ===== */
 .bottom-images {
     display: flex;
@@ -189,12 +203,12 @@ footer {
     .hero-img,
     .bottom-images img { width: 46vw; }
     .articles-grid { flex-direction: column; }
-    .articles-grid article { width: 100%; }
+    .articles-grid .article-preview { width: 100%; }
+    .articles-container img { height: auto; }
     main { padding: 1.3em; }
 }
 
 @media (max-width: 600px) {
     .hero-img,
     .bottom-images img { width: 92vw; }
-    .article-card img { max-height: 300px; }
 }
