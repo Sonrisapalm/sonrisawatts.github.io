@@ -7,62 +7,71 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #1c1c1c;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 600;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid #ff6f61;
+    }
+
     main {
       max-width: 800px;
       margin: 2em auto;
       padding: 2em;
       background: rgba(0,0,0,0.5);
       border-radius: 15px;
-      color: white;
       line-height: 1.8;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    article img {
-      width: 80%;
-      max-width: 500px;
-      height: auto;
-      display: block;
-      margin: 1em auto;
-      border-radius: 12px;
     }
 
     h1, h2, h3 {
-      text-align: center;
       color: #ff6f61;
     }
 
-    p {
-      margin-bottom: 1em;
+    img.article-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 20px 0;
     }
 
-    footer {
-      text-align: center;
-      padding: 1em;
-      margin-top: 2em;
-      font-size: 0.9em;
-      background-color: #222;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    nav {
-      background-color: #222;
-      padding: 1em;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
+    a.read-more {
+      display: inline-block;
+      margin-top: 0.5em;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: color 0.3s ease;
+      color: #fff;
+      font-weight: 600;
+      background: #ff6f61;
+      padding: 0.4em 0.8em;
+      border-radius: 8px;
+      transition: background 0.3s ease;
     }
 
-    nav a:hover, nav a.active {
-      color: #ff6f61;
+    a.read-more:hover {
+      background: #ff3b1f;
+    }
+
+    .image-references {
+      font-size: 0.8em;
+      color: #ccc;
+      margin-top: 40px;
+      border-top: 1px solid #444;
+      padding-top: 10px;
+    }
+
+    .image-references p {
+      margin: 5px 0;
     }
   </style>
 </head>
@@ -70,59 +79,39 @@
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="articles.html">Articles</a>
   <a href="about.html">About</a>
+  <a href="articles.html" class="active">Articles</a>
   <a href="contact.html">Contact</a>
 </nav>
 
 <main>
   <h1>Emotion Encoded Research Initiative</h1>
-  <h2>Research Results in St. Kitts and Nevis</h2>
+  <h2>❕Research Results in St. Kitts and Nevis ❕</h2>
   <h3>Parents, Teachers, and Artificial Intelligence in the Classroom: Trust… BUT With Conditions</h3>
 
-  <p>
-    As part of my research initiative Emotion Encoded, I asked participants a simple but important question:
-    “Would you be comfortable if your child’s teacher used AI to help with grading or lesson planning?”
-  </p>
+  <!-- Article Image -->
+  <img src="images/articlefour.jpg" alt="AI in the Classroom" class="article-img">
+
+  <p>As part of my research initiative Emotion Encoded, I asked participants a simple but important question: <br>
+  “Would you be comfortable if your child’s teacher used AI to help with grading or lesson planning?”</p>
 
   <p>The responses depicted something powerful:</p>
 
-  <p>
-    <strong>53.7% of parents said “yes,” but only under certain conditions.</strong> They were open to AI as long as it performed its tasks and the teacher reviewed every assignment and decision. This suggests that parents prefer AI as a support tool rather than a replacement. It reflects automation bias, where people are willing to rely on automated systems but still want human oversight. It also highlights the value parents place on human reasoning, judgment, and rationale in education.
-  </p>
+  <p>53.7% of parents said “yes,” but only under certain conditions. They were open to AI as long as it performed its tasks and the teacher reviewed every assignment and decision. This suggests that parents prefer AI as a support tool rather than a replacement. It reflects automation bias, where people are willing to rely on automated systems but still want human oversight. It also highlights the value parents place on human reasoning, judgment, and rationale in education.</p>
 
-  <p>
-    <strong>26% of parents said “no.”</strong> This group showed resistance, signaling a lack of trust in AI for something as critical as a child’s education. Their responses align with algorithm aversion, a tendency to distrust automated systems, and may also involve status quo bias, as many parents prefer the familiar approach of teacher-led grading and lesson planning.
-  </p>
+  <p>26% of parents said “no.” This group showed resistance, signaling a lack of trust in AI for something as critical as a child’s education. Their responses align with algorithm aversion, a tendency to distrust automated systems, and may also involve status quo bias, as many parents prefer the familiar approach of teacher-led grading and lesson planning.</p>
 
-  <p>
-    <strong>11% of parents said “yes” without conditions.</strong> For these participants, AI was seen simply as another tool in the classroom rather than a potential threat. Their acceptance may have been influenced by the framing effect, where presenting AI as an assistant rather than a replacement helped build trust.
-  </p>
+  <p>11% of parents said “yes” without conditions. For these participants, AI was seen simply as another tool in the classroom rather than a potential threat. Their acceptance may have been influenced by the framing effect, where presenting AI as an assistant rather than a replacement helped build trust.</p>
 
-  <p>
-    The conditional trust parents display in AI use within education points to a larger message: the successful integration of AI requires attention to human psychology, not just system performance. These findings emphasize a key theme in my research initiative: AI adoption is deeply tied to how people emotionally and cognitively negotiate trust with these systems.
-  </p>
+  <p>The conditional trust parents display in AI use within education points to a larger message: the successful integration of AI requires attention to human psychology, not just system performance. These findings emphasize a key theme in my research initiative: AI adoption is deeply tied to how people emotionally and cognitively negotiate trust with these systems.</p>
 
-  <p>
-    Conditional trust for AI in the classroom from parents signals a bigger message. For AI integration into educational systems, psychology is important. Status quo Bias? Automation Bias vs. Algorithm Aversion? Or Framing Effect? This echoes a larger theme in my research initiative: AI is not simply about performance; it’s about how people emotionally negotiate trust with these systems.
-  </p>
+  <p>Conditional trust for AI in the classroom from parents signals a bigger message. For AI integration into educational systems, psychology is important. Status quo Bias? Automation Bias vs. Algorithm Aversion? Or Framing Effect? This echoes a larger theme in my research initiative: AI is not simply about performance; it’s about how people emotionally negotiate trust with these systems.</p>
 
-  <!-- Picture references -->
-  <h3>Picture References</h3>
-  <p>
-    <strong>Image 1 (CRPE / RAND report)</strong><br>
-    CRPE. (2024, May). AI is coming to U.S. classrooms, but who will benefit? Center on Reinventing Public Education. Retrieved from CRPE website.
-  </p>
-
-  <img src="images/article4_img1.jpg" alt="CRPE / RAND report image">
-
-  <p>
-    <strong>Image 2 (Artificial Paintings Blog)</strong><br>
-    artmaster. (2024, June 14). The Transformative Role of Artificial Intelligence in Education. Artificial Paintings. Retrieved from artificialpaintings.com.
-  </p>
-
-  <img src="images/article4_img2.jpg" alt="Artificial Paintings Blog image">
-
+  <div class="image-references">
+    <p><strong>Picture References:</strong></p>
+    <p>Image 1 (CRPE / RAND report): CRPE. (2024, May). AI is coming to U.S. classrooms, but who will benefit? Center on Reinventing Public Education. Retrieved from CRPE website.</p>
+    <p>Image 2 (Artificial Paintings Blog): artmaster. (2024, June 14). The Transformative Role of Artificial Intelligence in Education. Artificial Paintings. Retrieved from artificialpaintings.com.</p>
+  </div>
 </main>
 
 <footer>
