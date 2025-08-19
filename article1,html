@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Therapist vs AI Financial Advisor — Emotion Encoded</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="articles.html" class="active">Articles</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <h1>AI Therapist vs AI Financial Advisor: Who Do You Trust More?</h1>
+  <img src="images/article1.jpg" alt="Research in Caribbean Region">
+  <p>
+    I conducted research in the Caribbean Region and got some interesting answers. Most responses are from St. Kitts & Nevis.
+    I asked: "Who would you trust more: An AI Advisor or an AI Therapist?"
+  </p>
+  <ul>
+    <li>Financial advisor is a little too private for me</li>
+    <li>I prefer a human to deal with my money</li>
+    <li>Therapist errors are less likely to be lethal</li>
+    <li>Although both should be private, an AI therapist can draw on a large resource and apply it to challenges I may be experiencing whereas finances are more personal.</li>
+    <li>Therapist work may involve actual human feelings and rational thinking, while financial advice is based on numbers and their interpretation.</li>
+    <li>A therapist needs a certain level of emotional intelligence that AI has not developed.</li>
+    <li>Finance is numbers. I can sort out my own feelings.</li>
+    <li>Therapist has a lot more nuances and human components that robots can’t completely understand.</li>
+  </ul>
+  <p>
+    What does this mean?<br>
+    Trust isn't automatic.<br>
+    Have we considered all the risks involved with trusting an AI tool with our finances or personal feelings?<br>
+    Join the discussion and share your thoughts.
+  </p>
+</main>
+
+<footer>
+  © 2025 Emotion Encoded — All rights reserved.
+</footer>
+
+</body>
+</html>
