@@ -165,12 +165,14 @@ footer {
   }
 }
 .article-img {
-  width: 100%;          /* makes it responsive */
-  max-width: 800px;     /* same max width for all */
-  height: auto;         /* keeps proportions */
+  max-width: 800px;     /* keeps images at a good width */
+  max-height: 500px;    /* prevents overly tall pics */
+  width: auto;          /* no forced stretching */
+  height: auto;         /* keeps natural proportions */
   display: block;
   margin: 0 auto 20px;  /* centers + spacing */
   border-radius: 8px;   /* optional: smooth corners */
+  object-fit: contain;  /* always show full image */
 }
 /* Full-width black transparent background wrapper */
 .full-width-bg {
