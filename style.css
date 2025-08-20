@@ -1,139 +1,109 @@
-/* ===== Homepage and general styles ===== */
+/* Global Styles */
 body {
-  background-image: url('images/emotion-coded-web-page.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
+  color: white;
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
   padding: 0;
-  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1, h2, h3 {
+  color: #fff;
+  margin-top: 0;
 }
 
 /* Navigation */
 nav {
-  background-color: #222;
-  padding: 1em;
   text-align: center;
+  padding: 1em 0;
+  background: rgba(0,0,0,0.4);
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
   margin: 0 15px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-weight: 600;
 }
 
-nav a:hover {
-  color: #ff6f61;
-  text-decoration: underline;
+nav a.active {
+  border-bottom: 2px solid #ff6f61;
 }
 
-/* Header bubble */
-header {
-  padding: 2em;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  max-width: 900px;
-  margin: 30px auto;
-  color: white;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-}
-
-/* ===== Hero images ===== */
-.hero-pair {
+/* Hero Images */
+.hero-row {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 16px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* stacks on small screens */
+  margin-bottom: 20px;
 }
 
-.hero-pair .hero-img {
+.hero-row .hero-img {
   flex: 1 1 300px;
-  max-width: 380px;
-  width: 100%;
+  max-width: 400px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.hero-img-large {
-  max-width: 460px; /* makes indexpic6 bigger */
+.hero-img.indexpic6 {
+  flex: 1 1 420px;
+  max-width: 450px;
 }
 
-/* ===== Main content bubble ===== */
+/* Main Content */
 main {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2em auto;
   padding: 2em;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-  color: white;
-  line-height: 1.8;
-  font-size: 1.2rem;
 }
 
-/* Articles section */
-#articles {
-  margin-top: 3em;
-}
-
-#articles h2 {
-  text-align: center;
-  margin-bottom: 1.5em;
-  color: #ff6f61;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-}
-
-.articles-link {
-  color: #ff6f61;
-  text-decoration: none;
-  font-weight: 800;
-}
-
-.articles-link:hover {
-  color: #ff3b1f;
-  text-decoration: underline;
-}
-
-/* Articles grid */
+/* Articles Grid */
 .articles-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .article-card {
-  flex: 1 1 380px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
   border-radius: 15px;
   padding: 1em;
   color: white;
-  text-align: center;
+  flex: 1 1 45%;
+  box-sizing: border-box;
 }
 
 .article-card img {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 1em;
 }
 
-/* Bottom images */
+.read-more {
+  display: inline-block;
+  margin-top: 0.5em;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  background: #ff6f61;
+  padding: 0.4em 0.8em;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.read-more:hover {
+  background: #ff3b1f;
+}
+
+/* Bottom Images (Index Page) */
 .bottom-images {
   display: flex;
   justify-content: center;
@@ -143,35 +113,37 @@ main {
 }
 
 .bottom-images img {
-  max-width: 500px;
-  width: 100%;
-  border-radius: 10px;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+/* Footer References */
+.footer-references {
+  font-size: 0.8em;
+  color: #ddd;
+  margin-top: 2em;
+  border-top: 1px solid #fff3;
+  padding-top: 1em;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1em;
-  margin-top: 2em;
+  margin-top: 3em;
+  padding: 1em 0;
   font-size: 0.9em;
-  background-color: #222;
-  color: white;
+  color: #ddd;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 700px) {
-  main {
-    margin: 1em;
-    padding: 1em;
+  .article-card {
+    flex: 1 1 100%;
   }
-
-  .hero-pair .hero-img,
-  .hero-img-large {
-    max-width: 100%;
+  .hero-row .hero-img {
+    max-width: 90%;
   }
-
-  .articles-grid {
-    flex-direction: column;
-    align-items: center;
+  .bottom-images img {
+    max-width: 90%;
   }
 }
