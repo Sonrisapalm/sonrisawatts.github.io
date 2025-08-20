@@ -66,13 +66,15 @@ header {
 
 /* Main content */
 main {
-  max-width: 800px;
+  max-width: 1000px; /* increased from 800px */
   margin: 2em auto;
-  padding: 2em;
+  padding: 2.5em;   /* slightly more padding */
   background: rgba(0,0,0,0.5);
   border-radius: 15px;
   color: white;
   line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
 /* Articles grid */
@@ -85,9 +87,9 @@ main {
 }
 
 .article-card {
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.5); /* made slightly darker and matches wider main */
   border-radius: 15px;
-  padding: 1em;
+  padding: 1.2em;
   color: white;
   flex: 1 1 45%;
   box-sizing: border-box;
@@ -155,5 +157,10 @@ footer {
 
   .article-card {
     flex: 1 1 100%;
+  }
+
+  main {
+    max-width: 95%;
+    padding: 2em;
   }
 }
