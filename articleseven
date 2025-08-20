@@ -1,1 +1,80 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>When Lawyers Use AI Without Telling You — Emotion Encoded</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="articles.html" class="active">Articles</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header>
+    <h1>When Lawyers Use AI Without Telling You</h1>
+    <p>🤗 St. Kitts & Nevis 🤗</p>
+  </header>
+
+  <main>
+    <section id="articles">
+      <article>
+        <img src="images/article-lawyer.jpg" alt="Lawyers and AI" class="article-img" />
+
+        <p>
+          What happens to trust when professionals rely on AI but don’t disclose it?  
+          In a survey of <strong>68 people</strong>, Emotion Encoded asked:  
+          <em>“If your lawyer relied on an AI tool in your case without informing you, how would that affect your trust?”</em>
+        </p>
+
+        <ul>
+          <li><strong>39.7%</strong> said they would be fine with it <em>only if</em> the lawyer still used their own judgment</li>
+          <li><strong>22.1%</strong> felt uncomfortable with the lack of transparency</li>
+          <li><strong>13.2%</strong> said they would feel angry or betrayed</li>
+          <li><strong>11.8%</strong> weren’t surprised, assuming AI already operates behind the scenes</li>
+        </ul>
+
+        <p>
+          The strongest message is clear: <strong>Accuracy alone doesn’t build trust</strong>.  
+          An AI tool can statistically be 99.9% correct in legal analysis, but for everyday people,
+          <strong>transparency and human oversight</strong> are what truly matter.
+        </p>
+
+        <h2>Psychology Terms that Apply</h2>
+        <ul>
+          <li><strong>Automation Bias:</strong> The opposite risk — blindly accepting AI outputs without questioning them.</li>
+          <li><strong>Framing Effect:</strong> People respond differently depending on the wording.  
+          “AI support for lawyers” feels safer than “AI decision-making.”</li>
+        </ul>
+
+        <h2>Why This Matters for Domain Professionals</h2>
+        <p>
+          In high-stakes fields like law, clients aren’t just seeking efficiency.  
+          They want <strong>honesty, accountability, and reassurance</strong> that human reasoning is still central.  
+          AI doesn’t erase the need for human judgment — it makes it more valuable.
+        </p>
+
+        <p><em>Thoughts?</em></p>
+
+        <p>
+          💬 Tune into my Virtual Table Talk.  
+          📧 Contact me at <a href="mailto:sonrisawatts@gmail.com">sonrisawatts@gmail.com</a>  
+          📱 869-661-1404
+        </p>
+
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Emotion Encoded — All rights reserved.
+  </footer>
+
+</body>
+</html>
