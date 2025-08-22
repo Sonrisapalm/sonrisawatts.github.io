@@ -187,5 +187,27 @@ footer {
   margin: 0 auto 1.5rem auto; /* centers image and adds spacing */
   border-radius: 12px; /* optional: rounded corners */
 }
+/* Make the whole page feel taller */
+body {
+  min-height: 100vh; /* ensures page always fills viewport */
+}
+
+/* Add space around header section */
+header {
+  padding-top: 4rem;   /* pushes header down */
+  padding-bottom: 4rem; /* adds space below header */
+}
+
+/* Add space in the main content / articles section */
+main {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Add extra spacing at the bottom */
+.bottom-images {
+  margin-bottom: 3rem; 
+}
+
 
 
