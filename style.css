@@ -313,6 +313,24 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
+/* Medium-large responsive video containers */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 32%; /* three side-by-side with a little gap */
+  margin: 0 1% 2rem; /* spacing between videos */
+  display: inline-block; /* allows them to line up horizontally */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 
 
