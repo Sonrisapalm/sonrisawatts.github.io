@@ -263,6 +263,17 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
+.banner {
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;   /* big banner height */
+  border-radius: 12px;  /* optional rounded corners */
+  font-size: 3rem;      /* make the text large */
+  font-weight: 700;
+  margin-bottom: 2rem;  /* space below the banner so it doesn’t touch hero images */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7); /* subtle glow for readability */
+}
 
 
 
