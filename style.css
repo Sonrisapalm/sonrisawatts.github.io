@@ -260,6 +260,60 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
+/* AI NEWS section styling */
+.ai-news {
+  background-color: #111; /* dark background */
+  color: #fff;            /* white text */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.ai-news h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.ai-news p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Video container responsive */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto 2rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Images in AI NEWS */
+.ai-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ai-images img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
 
 
 
