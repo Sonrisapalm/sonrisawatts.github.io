@@ -265,14 +265,16 @@ main {
 }
 .banner {
   background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
-  color: white;
+  color: #fff;
   text-align: center;
-  padding: 2rem 1rem;   /* big banner height */
-  border-radius: 12px;  /* optional rounded corners */
-  font-size: 3rem;      /* make the text large */
-  font-weight: 700;
-  margin-bottom: 2rem;  /* space below the banner so it doesn’t touch hero images */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.7); /* subtle glow for readability */
+  padding: 1.5rem 1rem;       /* slightly shorter height */
+  border-radius: 12px;
+  font-size: 2rem;            /* smaller, friendlier size */
+  font-weight: 500;            /* medium weight instead of 700 */
+  margin-bottom: 2rem; 
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* softer shadow */
+  font-family: 'Poppins', sans-serif;       /* clean but friendly font */
+  letter-spacing: 1px;                        /* subtle spacing */
 }
 
 
