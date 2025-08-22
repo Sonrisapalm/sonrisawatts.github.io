@@ -179,4 +179,13 @@ footer {
   background: rgba(0,0,0,0.5);
   padding: 2em 0;
 }
+.hero-image {
+  max-width: 800px;   /* keeps it from getting too wide */
+  width: 100%;        /* responsive scaling */
+  height: auto;       /* keeps proportions */
+  display: block;
+  margin: 0 auto 1.5rem auto; /* centers image and adds spacing */
+  border-radius: 12px; /* optional: rounded corners */
+}
+
 
