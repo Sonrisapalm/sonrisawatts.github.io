@@ -5,8 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emotion Encoded</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Banner */
+    .banner {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px 0;
+    }
+    .banner h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 2.2rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    /* Video Row */
+    .ai-videos-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    .video-container {
+      flex: 1 1 30%;
+      max-width: 400px;
+      aspect-ratio: 16 / 9;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,9 +58,9 @@
 
 <header>
   <div class="banner">
-  <h1>Emotion Encoded</h1>
-</div>
-  <!-- Hero images lined horizontally -->
+    <h1>Emotion Encoded</h1>
+  </div>
+  <!-- Hero images -->
   <div class="hero-row">
     <img src="images/fortoppage.jpg" alt="Main header image" class="hero-img" />
     <img src="images/indexpic5.jpg" alt="Side header image 1" class="hero-img" />
@@ -41,7 +80,7 @@
       and psychological bias shape human responses to AI.
     </p>
     <p>
-     We're shaping AI people can trust by first understanding the psychological factors that shape human perception of it. By collaborating with experts in law, medicine, finance, and education, we help align AI systems with the human mind, not just with data, ensuring their effective adoption
+     We're shaping AI people can trust by first understanding the psychological factors that shape human perception of it. By collaborating with experts in law, medicine, finance, and education, we help align AI systems with the human mind, not just with data, ensuring their effective adoption.
     </p>
 
     <section id="articles">
@@ -79,10 +118,9 @@
   <img src="images/imageforindex3.jpg" alt="Extra Image 1">
   <img src="images/imageforindex4.jpg" alt="Extra Image 2">
   <img src="images/indexpic4.jpg" alt="Extra Image 3">
-  <img src="images/imagessecond-picture.jpg" alt="Extra Image 4"> <!-- NEW IMAGE ADDED -->
+  <img src="images/imagessecond-picture.jpg" alt="Extra Image 4">
 </div>
   
-<section class="ai-news">
 <section class="ai-news">
   <h2>AI NEWS</h2>
   <p>Exploring the latest insights and discussions on artificial intelligence and superintelligence.</p>
@@ -90,8 +128,8 @@
   <div class="ai-videos-row">
     <!-- Video 1 -->
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/pG1KYvsMnRE" 
-              title="AI Shorts 1" 
+      <iframe src="https://www.youtube.com/embed/g70KUszkNvQ" 
+              title="AI Video 1" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen>
@@ -100,17 +138,17 @@
 
     <!-- Video 2 -->
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/hCnhN0cJLRE" 
-              title="AI Shorts 2" 
+      <iframe src="https://www.youtube.com/embed/cCMUQC51f3Q" 
+              title="AI Video 2" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen>
       </iframe>
     </div>
 
-    <!-- Video 3 (placeholder working video) -->
+    <!-- Video 3 -->
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      <iframe src="https://www.youtube.com/embed/pG1KYvsMnRE" 
               title="AI Video 3" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -125,7 +163,6 @@
     <img src="images/superintelligence2.jpg" alt="AI Research Graphic">
   </div>
 </section>
-
 
 <footer>
   © 2025 Emotion Encoded — All rights reserved.
