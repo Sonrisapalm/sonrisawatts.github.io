@@ -3,78 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About - Emotion Encoded</title>
-  
-  <!-- Google Fonts: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="about-body">
+  <title>Emotion Encoded</title>
 
- <nav>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Banner */
+    .banner {
+      position: relative; /* changed from absolute */
+      top: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px 0;
+      z-index: 1; /* ensure nav is clickable */
+    }
+    .banner h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 2rem;
+      color: #fff;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    /* Video Row */
+    .ai-videos-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    .video-container {
+      flex: 1 1 45%;
+      max-width: 600px;  /* increased from 400px */
+      aspect-ratio: 16 / 9;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    /* AI NEWS background */
+    .ai-news {
+      background: rgba(0,0,0,0.6);
+      padding: 3rem 1rem;
+      text-align: center;
+      color: #fff;
+      border-radius: 12px;
+    }
+
+    /* AI NEWS Images */
+    .ai-images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .ai-images img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+  </style>
+</head>
+<body>
+
+<nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="articles.html">Articles</a>  <!-- make sure this is here -->
+  <a href="articles.html">Articles</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-  <header class="about-header">
-    <h1>About Emotion Encoded</h1>
-    <p>Understanding emotional reasoning and psychological bias in AI interaction.</p>
-  </header>
+<header>
+  <div class="banner">
+    <h1>Emotion Encoded</h1>
+  </div>
+  <!-- Hero images -->
+  <div class="hero-row">
+    <img src="images/fortoppage.jpg" alt="Main header image" class="hero-img" />
+    <img src="images/indexpic5.jpg" alt="Side header image 1" class="hero-img" />
+    <img src="images/indexpic6.jpg" alt="Side header image 2" class="hero-img" />
+  </div>
 
-  <main class="about-main">
-    <section>
-      <h2>Our Mission</h2>
-      <p>
-        Emotion Encoded explores the intersection of psychology and artificial intelligence,
-        focusing on how emotional reasoning, cultural contexts, and biases influence human trust in AI systems.
-        We aim to foster greater transparency, AI Trust Governance, and inclusive technologies that respect diverse human experiences and values.
-      </p>
-    </section>
+  <h1>Emotion Encoded</h1>
+  <p>By Sonrisa Watts: Exploring the intersection of psychology and AI to build trust and transparency.</p>
+</header>
 
-    <section>
-      <h2>Founder</h2>
-      <p>
-        Sonrisa Watts, 24-year old who recently graduated with a BSc psychology degree. Recently developed a profound interest in Experimental/Research Psychology, mainly in the intersection of Artificial Intelligence and Psychology. Concerned about how human perceive and trust AI,  she founded Emotion Encoded to bridge the gap between psychological science and AI development. Through her work, she promotes interdisciplinary collaboration to build AI systems that are trustworthy and empathetic.
-      </p>
-    </section>
+<!-- Full-width transparent background -->
+<div class="full-width-bg">
+  <main>
+    <h2>Welcome</h2>
+    <p>
+      Emotion Encoded is a research initiative based in St.Kitts and Nevis, dedicated to understanding how emotional reasoning, cultural context,
+      and psychological bias shape human responses to AI.
+    </p>
+    <p>
+     We're shaping AI people can trust by first understanding the psychological factors that shape human perception of it. By collaborating with experts in law, medicine, finance, and education, we help align AI systems with the human mind, not just with data, ensuring their effective adoption.
+    </p>
 
-    <section>
-      <h2>What We Do</h2>
-      <p>
-        As founder, I conduct research, facilitate dialogues and publish the findings, motivated by my interest in developing tools that investigate cognitive biases and emotional reasoning in AI adoption. By partnering with professionals in law, medicine, and policy, we strive to create frameworks that support transparent, accountable, and fair AI integration in society.
-      </p>
+    <section id="articles">
+      <h2><a href="articles.html" class="articles-link">Articles</a></h2>
+      <div class="articles-grid">
+
+        <!-- Article 1 -->
+        <article class="article-card">
+          <img src="images/article1.jpg" alt="Research in Caribbean Region" />
+          <h3>AI Advisors vs AI Therapists: Who Do We Trust?</h3>
+          <p>
+            I conducted research in the Caribbean Region (St. Kitts & Nevis) asking: 
+            "Who would you trust more: An AI Advisor or an AI Therapist?"
+          </p>
+          <a href="articles.html" class="read-more">Read More →</a>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="article-card">
+          <img src="images/article3.jpg" alt="Second research illustration" />
+          <h3>Trust & Transparency</h3>
+          <p>
+            At Emotion Encoded, we explore the intersection of psychology and artificial intelligence,
+            investigating how human perception, cognitive biases, and resistance shape the adoption and impact of emerging technologies.
+          </p>
+          <a href="articles.html" class="read-more">Read More →</a>
+        </article>
+
+      </div>
     </section>
   </main>
+</div>
+
+<div class="bottom-images">
+  <img src="images/imageforindex3.jpg" alt="Extra Image 1">
+  <img src="images/imageforindex4.jpg" alt="Extra Image 2">
+  <img src="images/indexpic4.jpg" alt="Extra Image 3">
+  <img src="images/imagessecond-picture.jpg" alt="Extra Image 4">
+</div>
   
-<section class="full-width-bg" id="about-research">
-  <div class="container" style="max-width: 800px; margin: 0 auto; padding: 2em; color: white;">
-    <h2>Why My Research is a Goldmine</h2>
+<section class="ai-news">
+  <h2>AI NEWS</h2>
+  <p>Exploring the latest insights and discussions on artificial intelligence and superintelligence.</p>
 
-    <p>While others focus on the hypothetical technical solutions to AI's grandest challenges, I am focused on the human-centered foundations of the problem.</p>
-
-    <h3>Trust</h3>
-    <p>
-      I investigate why people trust or don't trust AI. Building a safe, aligned AI is impossible if no one trusts it. My work is about building the necessary societal and psychological preconditions for AI adoption. I'm investigating the cognitive biases and psychological persepctives of humans that can affect the integration, adoption and resistance of Artificial Intelligence.
-    </p>
-
-    <h3>Transparency</h3>
-    <p>
-      My central idea is that Explainable AI is a "consumer manual for a broken tool." It is impossible to align a superintelligent system if we don't understand how it thinks. Transparency is the only way for me to audit, correct, and ultimately, align a system's behavior with human values.
-    </p>
-
-    <h3>Resistance</h3>
-    <p>
-      I study why people resist AI. This isn't just a negative reaction; it's a crucial feedback mechanism. Resistance is a signal that the AI's current design or behavior is misaligned with human values, needs, or ethics. By understanding resistance, I am identifying where the alignment problem is already happening on a smaller scale.
-    </p>
+ <div class="ai-videos-row">
+  <!-- Video 1 -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/pG1KYvsMnRE" 
+            title="AI Shorts 1" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
   </div>
+
+  <!-- Video 2 -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/hCnhN0cJLRE" 
+            title="AI Shorts 2" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Video 3 -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/g70KUszkNvQ" 
+            title="AI Video 3" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Video 4 -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/cCMUQC51f3Q" 
+            title="AI Video 4" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Video 5 -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/dsDcQmJHwQc" 
+            title="AI Video 5" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<!-- AI Images -->
+<div class="ai-images">
+  <img src="images/superintelligence1.jpg" alt="Super Intelligence Illustration">
+  <img src="images/superintelligence2.jpg" alt="AI Research Graphic">
+</div>
 </section>
 
-  <footer>
-    © 2025 Emotion Encoded — All rights reserved.
-  </footer>
+<footer>
+  © 2025 Emotion Encoded — All rights reserved.
+</footer>
 
 </body>
 </html>
