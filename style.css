@@ -281,6 +281,12 @@ main {
   aspect-ratio: 16 / 9;
   margin-bottom: 20px;
 }
+/* Make the bottom two videos slightly wider */
+.ai-videos-row .video-container:nth-child(4),
+.ai-videos-row .video-container:nth-child(5) {
+  max-width: 450px; /* slightly wider than the default 400px */
+  flex: 1 1 35%;    /* allows them to take up more horizontal space */
+}
 
 
 
