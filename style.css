@@ -276,7 +276,12 @@ main {
   font-family: 'Poppins', sans-serif;       /* clean but friendly font */
   letter-spacing: 1px;                        /* subtle spacing */
 }
-
+.video-container {
+  flex: 1 1 32%; /* slightly wider than before, keeps three in a row */
+  max-width: 500px; /* a bit wider than before */
+  aspect-ratio: 16 / 9;
+  margin-bottom: 20px;
+}
 
 
 
