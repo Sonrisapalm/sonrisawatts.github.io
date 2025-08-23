@@ -263,19 +263,18 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
+/* Fix the top banner so it doesn't block nav links */
 .banner {
-  background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
-  color: #fff;
+  position: relative;   /* keeps it in flow instead of overlaying nav */
+  top: 0;
+  width: 100%;
   text-align: center;
-  padding: 1.5rem 1rem;       /* slightly shorter height */
-  border-radius: 12px;
-  font-size: 2rem;            /* smaller, friendlier size */
-  font-weight: 500;            /* medium weight instead of 700 */
-  margin-bottom: 2rem; 
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* softer shadow */
-  font-family: 'Poppins', sans-serif;       /* clean but friendly font */
-  letter-spacing: 1px;                        /* subtle spacing */
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px 0;
+  margin-bottom: 20px; /* pushes hero images down */
+  z-index: 1;          /* ensures banner layers correctly */
 }
+
 .video-container {
   flex: 1 1 32%; /* slightly wider than before, keeps three in a row */
   max-width: 500px; /* a bit wider than before */
