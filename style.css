@@ -275,6 +275,23 @@ main {
   max-width: 450px; /* slightly wider than the default 400px */
   flex: 1 1 35%;    /* allows them to take up more horizontal space */
 }
+.banner {
+  position: relative;      /* keeps it below the nav, not overlapping */
+  margin-top: 20px;        /* adds spacing under nav */
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);  /* subtle transparent background */
+  padding: 10px 0;         /* small padding so it isn’t huge */
+}
+
+.banner h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;       /* smaller than before */
+  color: #fff;
+  margin: 0;
+}
+
 
 
 
