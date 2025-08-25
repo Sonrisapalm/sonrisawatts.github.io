@@ -252,31 +252,51 @@ footer {
 
 /* ================== Responsive Design (Mobile) ================== */
 @media (max-width: 768px) {
-    header {
-        padding-top: 5rem;
-        padding-bottom: 2rem;
+    /* Ensure the entire body scales correctly */
+    body {
+        font-size: 16px; /* Base font size for mobile */
     }
 
-    header h1 {
+    /* Adjust font sizes for mobile to prevent them from being too large */
+    h1 {
         font-size: 2rem;
     }
-
-    header p {
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    p {
         font-size: 1rem;
     }
-
-    .hero-row, .bottom-images, .ai-videos-row, .articles-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    
+    /* Simplified Flexbox and Grid layouts for stacking content */
+    .hero-row, .articles-grid, .bottom-images, .ai-videos-row {
+        display: block; /* Stacks all children vertically */
     }
 
-    .hero-row .hero-img, .bottom-images img, .article-card, .impact-image, .microgrant-images img, .video-container {
-        width: 95%; /* Adjust width for better mobile fit */
+    /* Make all content blocks fill the screen with padding */
+    .full-width-bg, main {
+        padding: 1rem;
+        margin: 1rem auto;
+        width: 95%; /* Ensures a small margin on the sides */
+    }
+
+    /* All images and video containers should fill their parent container */
+    .hero-img, .bottom-images img, .article-card, .impact-image img, .microgrant-images img, .video-container {
+        width: 100%;
         max-width: none;
+        margin: 1rem 0; /* Add vertical spacing between stacked elements */
     }
 
-    .full-width-bg, .impact-section, .microgrant-section, .ai-news {
-        margin: 1rem 0;
+    /* Video aspect ratio remains correct */
+    .video-container {
+        padding-bottom: 56.25%;
+    }
+    
+    /* Make the navigation links stack vertically */
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
     }
 }
