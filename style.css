@@ -23,6 +23,7 @@ body {
     margin: 0;
     padding: 0;
     color: var(--text-color);
+    line-height: 1.6; /* Increased for better readability on all devices */
 }
 
 .container {
@@ -37,13 +38,17 @@ h1, h2, h3 {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
 h2 {
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
 }
 
 p {
-    line-height: 1.7;
     margin-bottom: 1rem;
 }
 
@@ -63,12 +68,15 @@ p {
     left: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows links to wrap to the next line on smaller screens */
 }
 
 .main-nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0.5rem 15px; /* Added vertical margin for touch targets */
     font-weight: 500;
     letter-spacing: 1px;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -249,23 +257,58 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ================== Responsive Design ================== */
+/* ================== Mobile-Specific Styles (for screens up to 768px wide) ================== */
 @media (max-width: 768px) {
+    /* Main Navigation */
     .main-nav a {
-        display: block;
-        margin: 0.5rem 0;
+        margin: 0.5rem 10px; /* Slightly less horizontal margin */
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 6rem 0 3rem;
     }
 
     .hero-content h1 {
         font-size: 2.2rem;
     }
+    
+    .hero-content .tagline {
+        font-size: 1rem;
+    }
 
+    /* General Spacing */
+    main .section {
+        padding: 2rem 0;
+    }
+    
     h2 {
         font-size: 1.8rem;
     }
 
-    .articles-grid, .ai-videos-row {
+    p, .article-card p {
+        font-size: 0.95rem;
+    }
+
+    /* Grid Layouts - Stack vertically on small screens */
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ai-videos-row {
         flex-direction: column;
         align-items: center;
+    }
+
+    .video-container {
+        width: 100%;
+        max-width: none; /* Allows videos to fill the container */
+    }
+
+    /* Images */
+    .impact-image img, .microgrant-image img {
+        max-width: 100%;
+        height: auto;
     }
 }
