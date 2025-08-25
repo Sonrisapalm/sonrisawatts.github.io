@@ -359,6 +359,17 @@ main {
 .evidence-img:hover {
   transform: scale(1.03); /* subtle zoom on hover */
 }
+.microgrant-section {
+  background-color: #001f4d; /* navy blue */
+  color: white; /* text color */
+  padding: 50px 20px; /* space around content */
+  text-align: center;
+}
+
+.microgrant-section img {
+  max-width: 80%;
+  margin: 20px 0;
+}
 
 
 
