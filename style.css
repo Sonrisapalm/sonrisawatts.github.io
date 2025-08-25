@@ -316,17 +316,40 @@ main {
   border: none;
   display: block;
 }
-#evidence-impact {
+/* Evidence of Impact Section */
+.impact-section {
+  background: #f9f9f9; /* light professional background */
+  padding: 60px 20px;
   text-align: center;
-  margin: 40px 0;
-  padding: 20px;
-  background-color: #f9f9f9; /* subtle background */
-  border-radius: 10px;
 }
 
-#evidence-impact h2 {
+.impact-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 40px;
+}
+
+.impact-heading {
   font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 20px;
+  color: #222;
+}
+
+.impact-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.impact-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
 }
 
 .evidence-img {
@@ -431,39 +454,5 @@ main {
   margin: 30px auto;           /* spacing from other sections */
   max-width: 900px;            /* limits width for readability */
 }
-/* Evidence of Impact Section */
-.impact-section {
-  background: #f9f9f9; /* light professional background */
-  padding: 60px 20px;
-  text-align: center;
-}
 
-.impact-container {
-  max-width: 900px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  padding: 40px;
-}
-
-.impact-heading {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-.impact-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 30px;
-}
-
-.impact-image img {
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-}
 
