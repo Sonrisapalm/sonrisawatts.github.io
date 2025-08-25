@@ -384,54 +384,40 @@ main {
 }
 /* Microgrant Section */
 .microgrant-section {
-  background-color: #b71c1c; /* solid navy blue */
-  color: white;
-  padding: 80px 20px; /* lots of space around */
+  background: linear-gradient(135deg, #8B0000, #B22222); /* rich professional red gradient */
+  color: #fff;
+  padding: 80px 20px;
   text-align: center;
 }
 
+.microgrant-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .microgrant-section h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .microgrant-section p {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto 40px auto; /* centers paragraph */
+  font-size: 1.1rem;
   line-height: 1.6;
-}
-
-.microgrant-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  margin-bottom: 40px;
 }
 
 .microgrant-images img {
-  max-width: 400px;
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+  max-width: 850px;   /* makes image large but contained */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
 }
 
-.microgrant-images img:hover {
-  transform: scale(1.03);
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 700px) {
-  .microgrant-section h2 {
-    font-size: 2rem;
-  }
-
-  .microgrant-images img {
-    max-width: 90%;
-  }
-}
 .highlight-text {
   font-size: 2rem;          /* bigger text */
   font-weight: 700;         /* bold */
