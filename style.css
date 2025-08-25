@@ -269,6 +269,11 @@ footer {
     p {
         font-size: 1rem;
     }
+
+    /* 👇 This is the fix for the article text! 👇 */
+    .article-card p {
+        font-size: 0.9rem; /* Smaller font for better fit */
+    }
     
     /* Simplified Flexbox and Grid layouts for stacking content */
     .hero-row, .articles-grid, .bottom-images, .ai-videos-row {
