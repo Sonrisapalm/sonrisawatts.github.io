@@ -359,18 +359,54 @@ main {
 .evidence-img:hover {
   transform: scale(1.03); /* subtle zoom on hover */
 }
+/* Microgrant Section */
 .microgrant-section {
-  background-color: #001f4d; /* navy blue */
-  color: white; /* text color */
-  padding: 50px 20px; /* space around content */
+  background-color: #001f4d; /* solid navy blue */
+  color: white;
+  padding: 80px 20px; /* lots of space around */
   text-align: center;
 }
 
-.microgrant-section img {
-  max-width: 80%;
-  margin: 20px 0;
+.microgrant-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
+.microgrant-section p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 40px auto; /* centers paragraph */
+  line-height: 1.6;
+}
 
+.microgrant-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
+.microgrant-images img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.microgrant-images img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 700px) {
+  .microgrant-section h2 {
+    font-size: 2rem;
+  }
+
+  .microgrant-images img {
+    max-width: 90%;
+  }
+}
 
