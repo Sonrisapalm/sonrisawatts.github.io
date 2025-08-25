@@ -420,4 +420,15 @@ main {
   margin: 30px auto;        /* space above/below and center */
   box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* subtle shadow */
 }
+#research-reference {
+  color: white;               /* makes text white */
+  font-size: 1.5rem;          /* slightly larger */
+  font-weight: 600;           /* medium-bold, not too heavy */
+  background-color: rgba(0,0,0,0.4); /* subtle dark highlight behind text */
+  padding: 15px 20px;         /* space around text */
+  border-radius: 8px;         /* rounded corners */
+  text-align: center;          /* center the text */
+  margin: 30px auto;           /* spacing from other sections */
+  max-width: 900px;            /* limits width for readability */
+}
 
