@@ -409,7 +409,15 @@ main {
     max-width: 90%;
   }
 }
-<div class="highlight-text">
-  My research findings have been referenced in a national policy proposal on digital literacy in St. Kitts & Nevis.
-</div>
+.highlight-text {
+  font-size: 2rem;          /* bigger text */
+  font-weight: 700;         /* bold */
+  color: #ffdd57;           /* bright yellow for visibility */
+  text-align: center;       /* center on the page */
+  background-color: #001f4d; /* optional navy background to make it pop */
+  padding: 20px 15px;       /* spacing around text */
+  border-radius: 12px;      /* rounded edges */
+  margin: 30px auto;        /* space above/below and center */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* subtle shadow */
+}
 
