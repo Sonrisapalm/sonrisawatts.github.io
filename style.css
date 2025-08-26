@@ -250,6 +250,25 @@ footer {
     margin-top: 3rem;
 }
 
+/* New Highlight Box CSS */
+.highlight-box {
+    background-color: rgba(0, 0, 0, 0.6); /* Black background with 60% opacity */
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.highlight-box p {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.6;
+}
+
 /* ================== Responsive Design (Mobile) ================== */
 @media (max-width: 768px) {
     /* Ensure the entire body scales correctly */
@@ -270,7 +289,6 @@ footer {
         font-size: 1rem;
     }
 
-    /* 👇 This is the fix for the article text! 👇 */
     .article-card p {
         font-size: 0.9rem; /* Smaller font for better fit */
     }
@@ -281,7 +299,7 @@ footer {
     }
 
     /* Make all content blocks fill the screen with padding */
-    .full-width-bg, main {
+    .full-width-bg, main, .highlight-box {
         padding: 1rem;
         margin: 1rem auto;
         width: 95%; /* Ensures a small margin on the sides */
