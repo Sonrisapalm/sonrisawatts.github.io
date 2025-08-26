@@ -263,7 +263,7 @@ footer {
 
 .highlight-box p {
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Adjusting this for laptop screens */
     font-weight: 500;
     margin: 0;
     line-height: 1.6;
@@ -291,6 +291,11 @@ footer {
 
     .article-card p {
         font-size: 0.9rem; /* Smaller font for better fit */
+    }
+
+    /* This rule specifically targets the highlight box on phones */
+    .highlight-box p {
+        font-size: 0.9rem;
     }
     
     /* Simplified Flexbox and Grid layouts for stacking content */
