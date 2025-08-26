@@ -179,7 +179,7 @@ main h2 {
 
 .ai-videos-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    grid-template-columns: repeat(2, 1fr);  /* 2 side-by-side large videos */
     gap: 30px;
     margin-top: 2rem;
 }
@@ -213,7 +213,7 @@ main h2 {
 }
 
 .bottom-images img, .microgrant-images img {
-    max-width: 950px; 
+    max-width: 750px;   /* reduced from 950px */
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -233,7 +233,7 @@ main h2 {
 }
 
 .impact-image {
-    max-width: 600px;
+    max-width: 700px;   /* reduced for better balance */
     margin: 0 auto;
 }
 
@@ -285,8 +285,8 @@ footer {
     p { font-size: 1rem; }
 
     .hero-row, .articles-grid, .bottom-images, .ai-videos-row {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr !important;  /* stack on small screens */
+        display: grid;
         gap: 20px;
     }
 
