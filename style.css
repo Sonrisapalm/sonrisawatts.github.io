@@ -370,3 +370,21 @@ main h2 {
         height: auto;
     }
 }
+/* Sets the default grid for desktop view */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
+    gap: 20px; /* Adds space between the columns and rows */
+}
+
+/* This media query will override the desktop settings for screens smaller than 768px */
+@media (max-width: 768px) {
+    .articles-grid {
+        display: flex; /* Changes the display to flexbox */
+        flex-direction: column; /* Stacks the articles vertically */
+    }
+
+    .article-card {
+        width: 100%; /* Makes each article card take up the full width */
+    }
+}
