@@ -299,7 +299,7 @@ footer {
     /* Adjust padding and margins for mobile */
     .full-width-bg, main, .highlight-box, .impact-section, .microgrant-section, .ai-news {
         padding: 1rem;
-        margin: 1rem auto;
+        margin: 1rem auto;QQ
     }
 
     /* All images and video containers should fill their parent container */
