@@ -354,3 +354,12 @@ footer {
         margin: 0.5rem 0;
     }
 }
+/* Styling for article content with a semi-transparent black background */
+main p,
+main h2 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff; /* Sets the text color to white */
+  padding: 15px; /* Adds space inside the background box */
+  margin: 15px 0; /* Adds space between the blocks of text */
+  border-radius: 8px; /* Optional: Adds slight rounded corners */
+}
