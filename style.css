@@ -8,8 +8,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #f0f0f0; /* Light gray text for contrast */
-    line-height: 1.7; /* Improved readability */
+    color: #f0f0f0; 
+    line-height: 1.7;
 }
 
 a {
@@ -24,10 +24,10 @@ a:hover {
 
 /* ================== Navigation ================== */
 nav {
-    background-color: rgba(0, 0, 0, 0.85); /* Dark, semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.85);
     padding: 1rem;
     text-align: center;
-    position: fixed; /* Keeps navigation visible when scrolling */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -51,7 +51,7 @@ nav a:hover {
 /* ================== Header & Hero Section ================== */
 header {
     text-align: center;
-    padding: 6rem 1rem 3rem; /* Adjusted padding to prevent overlap with nav */
+    padding: 6rem 1rem 3rem;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
@@ -73,13 +73,13 @@ header p {
 .hero-row {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: wrap;
     margin-top: 2rem;
 }
 
 .hero-row .hero-img {
-    max-width: 350px; /* Consistent image size */
+    max-width: 380px; 
     width: 100%;
     height: auto;
     border-radius: 12px;
@@ -93,14 +93,17 @@ header p {
 
 /* ================== Main Content Section ================== */
 .full-width-bg {
-    background: rgba(44, 62, 80, 0.7); /* Dark semi-transparent background */
-    padding: 2rem 1rem;
+    background: rgba(44, 62, 80, 0.7);
+    padding: 2.5rem 2rem;
     margin-top: 2rem;
-    border-radius: 15px; /* Added for a clean look */
+    border-radius: 15px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 main {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 2em auto;
     padding: 2em;
     border-radius: 15px;
@@ -108,26 +111,25 @@ main {
     box-sizing: border-box;
 }
 
-/* Styling for article content with a semi-transparent black background */
 main p,
 main h2 {
     background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff; /* Sets the text color to white */
-    padding: 15px; /* Adds space inside the background box */
-    margin: 15px 0; /* Adds space between the blocks of text */
-    border-radius: 8px; /* Optional: Adds slight rounded corners */
+    color: #ffffff;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
 }
 
 /* ================== Articles Section ================== */
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns for desktop articles */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .article-card {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55);
     border-radius: 15px;
     padding: 1.5rem;
     color: white;
@@ -177,18 +179,19 @@ main h2 {
 
 .ai-videos-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Use larger minimum size for videos on desktop */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    gap: 30px;
+    margin-top: 2rem;
 }
 
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
 
 .video-container iframe {
@@ -205,16 +208,16 @@ main h2 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     margin: 3rem 0;
 }
 
 .bottom-images img, .microgrant-images img {
-    max-width: 800px; /* INCREASED SIZE for a bigger picture on laptops */
+    max-width: 950px; 
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
 .impact-section {
@@ -248,9 +251,8 @@ main h2 {
     border-radius: 15px;
 }
 
-/* New Highlight Box CSS */
 .highlight-box {
-    background-color: rgba(0, 0, 0, 0.6); /* Black background with 60% opacity */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 2rem;
     border-radius: 12px;
     margin: 2rem auto;
@@ -261,7 +263,7 @@ main h2 {
 
 .highlight-box p {
     color: #fff;
-    font-size: 1.4rem; /* Making the font larger for laptops */
+    font-size: 1.4rem;
     margin: 0;
     line-height: 1.6;
 }
@@ -276,40 +278,33 @@ footer {
     margin-top: 3rem;
 }
 
-
 /* ================== Responsive Design (Mobile) ================== */
 @media (max-width: 768px) {
-    /* Adjust font sizes for mobile to prevent them from being too large */
     h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
     p { font-size: 1rem; }
 
-    /* The main change: Use Flexbox to stack items on mobile */
     .hero-row, .articles-grid, .bottom-images, .ai-videos-row {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    /* Make article cards take full width */
     .article-card {
         width: 100%;
     }
 
-    /* Adjust padding and margins for mobile */
     .full-width-bg, main, .highlight-box, .impact-section, .microgrant-section, .ai-news {
         padding: 1rem;
         margin: 1rem auto;
     }
 
-    /* All images and video containers should fill their parent container */
     .hero-img, .bottom-images img, .article-card img, .impact-image img, .microgrant-images img, .video-container {
         width: 100%;
         max-width: none;
         margin: 1rem 0;
     }
 
-    /* Make the navigation links stack vertically */
     nav a {
         display: block;
         margin: 0.5rem 0;
