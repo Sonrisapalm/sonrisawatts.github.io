@@ -363,3 +363,10 @@ main h2 {
   margin: 15px 0; /* Adds space between the blocks of text */
   border-radius: 8px; /* Optional: Adds slight rounded corners */
 }
+/* This rule applies only to screens that are 768 pixels wide or smaller */
+@media (max-width: 768px) {
+    .article-img {
+        max-width: 100%;
+        height: auto;
+    }
+}
