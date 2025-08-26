@@ -177,7 +177,7 @@ main h2 {
 
 .ai-videos-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for videos on desktop */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Use larger minimum size for videos on desktop */
     gap: 20px;
 }
 
@@ -299,7 +299,7 @@ footer {
     /* Adjust padding and margins for mobile */
     .full-width-bg, main, .highlight-box, .impact-section, .microgrant-section, .ai-news {
         padding: 1rem;
-        margin: 1rem auto;QQ
+        margin: 1rem auto;
     }
 
     /* All images and video containers should fill their parent container */
