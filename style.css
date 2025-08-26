@@ -136,6 +136,18 @@ main {
     margin-bottom: 1rem;
 }
 
+/* New style for the transparent text box */
+.article-text-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.article-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
 .read-more {
     display: inline-block;
     margin-top: 0.5rem;
@@ -261,10 +273,10 @@ footer {
     text-align: center;
 }
 
+/* This is the rule for the highlighted text on *laptops* */
 .highlight-box p {
     color: #fff;
-    font-size: 1.1rem; /* Adjusting this for laptop screens */
-    font-weight: 500;
+    font-size: 1.4rem; /* Making the font larger for laptops */
     margin: 0;
     line-height: 1.6;
 }
@@ -289,8 +301,22 @@ footer {
         font-size: 1rem;
     }
 
-    .article-card p {
-        font-size: 0.9rem; /* Smaller font for better fit */
+    /* This rule specifically targets the article cards for mobile */
+    .article-card img {
+        max-width: 250px; /* A smaller, more manageable size for phones */
+        margin: 0 auto 1rem;
+    }
+
+    .article-text-box {
+        padding: 0.8rem;
+    }
+
+    .article-text-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .article-text-box p {
+        font-size: 0.8rem; /* Smaller font for better fit */
     }
 
     /* This rule specifically targets the highlight box on phones */
