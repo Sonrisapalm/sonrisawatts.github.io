@@ -1,90 +1,134 @@
-/* ================== General Styles ================== */
+/* ================== General & Global Styles ================== */
 body {
+    background-image: url('images/emotion-coded-web-page.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-    line-height: 1.6;
+    padding: 0;
+    color: #f0f0f0; 
+    line-height: 1.7;
 }
 
-h1, h2, h3 {
-    font-weight: 600;
-    margin-bottom: 0.8rem;
+a {
+    color: #ff6f61;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* ================== Hero Section ================== */
-.hero {
-    position: relative;
+a:hover {
+    color: #e65c50;
+}
+
+/* ================== Navigation ================== */
+nav {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 1rem;
     text-align: center;
-    color: white;
-}
-
-.hero img {
-    width: 100%;
-    max-height: 650px;
-    object-fit: cover;
-}
-
-.hero .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.55);
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    font-weight: 500;
+    margin: 0 15px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff6f61;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+/* ================== Header & Hero Section ================== */
+header {
+    text-align: center;
+    padding: 6rem 1rem 3rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-row {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
-.hero h1 {
-    font-size: 2.8rem;
-    max-width: 900px;
-}
-
-/* ================== Videos Section ================== */
-.ai-videos-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 30px;
-    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
     margin-top: 2rem;
 }
 
-.video-container {
-    position: relative;
-    max-width: 720px;
-    margin: 0 auto;
-    padding-bottom: 56.25%; /* 16:9 ratio */
-    height: 0;
-    overflow: hidden;
+.hero-row .hero-img {
+    max-width: 380px; 
+    width: 100%;
+    height: auto;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 12px;
+.hero-row .hero-img:hover {
+    transform: scale(1.03);
+}
+
+/* ================== Main Content Section ================== */
+.full-width-bg {
+    background: rgba(44, 62, 80, 0.7);
+    padding: 2.5rem 2rem;
+    margin-top: 2rem;
+    border-radius: 15px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    max-width: 1100px;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 15px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+main p,
+main h2 {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
 }
 
 /* ================== Articles Section ================== */
 .articles-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;   /* 2 cards per row */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .article-card {
-    display: flex;                   
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1.5rem;
     background: rgba(0, 0, 0, 0.55);
     border-radius: 15px;
     padding: 1.5rem;
@@ -94,26 +138,19 @@ h1, h2, h3 {
 }
 
 .article-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
 }
 
 .article-card img {
-    flex: 0 0 220px;                 
-    height: 150px;                   
-    object-fit: cover;               
-    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1rem;
 }
 
 .article-card h3 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-.article-card p {
-    margin: 0 0 0.8rem;
-    font-size: 1rem;
-    line-height: 1.5;
 }
 
 .read-more {
@@ -132,34 +169,144 @@ h1, h2, h3 {
     background: #e65c50;
 }
 
-/* ================== Balanced Images ================== */
-.bottom-images img, 
-.microgrant-images img, 
-.impact-image img {
-    max-width: 550px;   /* Balanced size */
+/* ================== Videos Section ================== */
+.ai-news {
+    background: rgba(44, 62, 80, 0.8);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.ai-videos-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 side-by-side large videos */
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ================== Other Sections ================== */
+.bottom-images, .microgrant-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 3rem 0;
+}
+
+.bottom-images img, .microgrant-images img {
+    max-width: 750px;   /* reduced from 950px */
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin: 1rem auto;
-    display: block;
     box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-/* ================== Responsive ================== */
-@media (max-width: 1024px) {
-    .articles-grid {
-        grid-template-columns: 1fr; /* stack on smaller screens */
+.impact-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.impact-section p {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+
+.impact-image {
+    max-width: 700px;   /* reduced for better balance */
+    margin: 0 auto;
+}
+
+.impact-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.microgrant-section {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.highlight-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.highlight-box p {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ================== Footer ================== */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #222;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+/* ================== Responsive Design (Mobile) ================== */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    p { font-size: 1rem; }
+
+    .hero-row, .articles-grid, .bottom-images, .ai-videos-row {
+        grid-template-columns: 1fr !important;  /* stack on small screens */
+        display: grid;
+        gap: 20px;
     }
+
     .article-card {
-        flex-direction: column;
-        align-items: center;
-    }
-    .article-card img {
         width: 100%;
-        height: auto;
-        flex: unset;
     }
-    .ai-videos-row {
-        grid-template-columns: 1fr; /* one video per row */
+
+    .full-width-bg, main, .highlight-box, .impact-section, .microgrant-section, .ai-news {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .hero-img, .bottom-images img, .article-card img, .impact-image img, .microgrant-images img, .video-container {
+        width: 100%;
+        max-width: none;
+        margin: 1rem 0;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
     }
 }
