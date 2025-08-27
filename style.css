@@ -93,7 +93,7 @@ header p {
 
 /* ================== Main Content ================== */
 .full-width-bg {
-    background: rgba(44, 62, 80, 0.35); /* lighter so bg shows */
+    background: rgba(44, 62, 80, 0.35);
     padding: 2.5rem 2rem;
     margin-top: 2rem;
     border-radius: 15px;
@@ -113,23 +113,24 @@ main {
 
 main p,
 main h2 {
-    background-color: rgba(0, 0, 0, 0.25); /* reduced opacity */
+    background-color: rgba(0, 0, 0, 0.25);
     color: #ffffff;
     padding: 15px;
     margin: 15px 0;
     border-radius: 8px;
 }
 
-/* ================== Articles ================== */
+/* ================== Articles Section ================== */
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* side by side */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* flexible 2 side by side */
     gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch;
 }
 
 .article-card {
-    background: rgba(0, 0, 0, 0.35); /* reduced opacity */
+    background: rgba(0, 0, 0, 0.35);
     border-radius: 15px;
     padding: 1.5rem;
     color: white;
@@ -152,9 +153,9 @@ main h2 {
     margin-bottom: 1rem;
 }
 
-/* ================== Videos ================== */
+/* ================== Videos Section ================== */
 .ai-news {
-    background: rgba(44, 62, 80, 0.35); /* lighter bg */
+    background: rgba(44, 62, 80, 0.35);
     padding: 3rem 1rem;
     text-align: center;
     border-radius: 15px;
@@ -162,7 +163,7 @@ main h2 {
 
 .ai-videos-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* side by side */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* side by side */
     gap: 30px;
     margin-top: 2rem;
 }
@@ -196,7 +197,7 @@ main h2 {
 }
 
 .bottom-images img, .microgrant-images img {
-    max-width: 550px; /* balanced */
+    max-width: 550px; 
     width: 100%;
     height: auto;
     border-radius: 12px;
@@ -208,7 +209,7 @@ main h2 {
 /* ================== Footer ================== */
 footer {
     text-align: center;
-    background: rgba(0, 0, 0, 0.35); /* bg shows through */
+    background: rgba(0, 0, 0, 0.35);
     padding: 1.5rem;
     margin-top: 3rem;
     border-radius: 12px;
