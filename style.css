@@ -255,30 +255,34 @@ footer {
 }
 /* ================== Evidence of Impact ================== */
 .impact-section {
-    background-color: rgba(0, 0, 0, 0.8); /* black transparent background */
-    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.85); /* solid black transparent */
+    padding: 80px 40px;  /* more space around content */
     border-radius: 15px;
-    margin: 3rem auto;
     max-width: 1100px;
+    margin: 3rem auto;
     text-align: center;
     color: #fff;
 }
 
-.impact-section h2 {
-    font-size: 2.5rem;  /* bigger */
-    font-weight: 800;   /* bold */
-    margin-bottom: 20px;
+.impact-heading {
+    font-size: 3rem;       /* bigger header */
+    font-weight: 800;      /* bold */
+    margin-bottom: 40px;   /* more spacing below header */
 }
 
-.impact-section .impact-text {
-    font-size: 1.4rem;  /* bigger paragraph text */
-    font-weight: 500;   /* slightly bold */
-    line-height: 1.8;
-    background-color: rgba(0, 0, 0, 0.65); /* slightly lighter black behind text */
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    max-width: 900px;
-    margin: 0 auto;
+.highlight-box {
+    display: block;                       /* take up full width */
+    background-color: rgba(0, 0, 0, 0.7); /* slightly transparent black */
+    padding: 40px 50px;                    /* more padding inside */
+    border-radius: 15px;
+    margin: 0 auto;                        /* center horizontally */
+    max-width: 1000px;
+}
+
+.impact-text {
+    font-size: 1.6rem;     /* bigger text */
+    font-weight: 600;      /* semi-bold */
+    line-height: 1.9;
+    color: #fff;
 }
 
