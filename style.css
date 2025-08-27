@@ -123,10 +123,10 @@ main h2 {
 /* ================== Articles Section ================== */
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* bigger cards */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
-    align-items: stretch; /* keeps equal height */
+    align-items: stretch;
 }
 
 .article-card {
@@ -161,13 +161,6 @@ main h2 {
     border-radius: 15px;
 }
 
-.ai-videos-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* bigger video columns */
-    gap: 30px;
-    margin-top: 2rem;
-}
-
 .video-container {
     position: relative;
     width: 100%;
@@ -183,6 +176,24 @@ main h2 {
     left: 0;
     width: 100%;
     height: 100%;
+    border: none;
+}
+
+/* Full-width, black background videos under Evidence of Impact */
+.video-container-full {
+    background-color: #000;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+.video-container-full iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
     border: none;
 }
 
@@ -236,5 +247,9 @@ footer {
 
     .video-container {
         height: 250px; /* smaller but still visible on phones */
+    }
+
+    .video-container-full iframe {
+        height: 300px; /* responsive for phones */
     }
 }
