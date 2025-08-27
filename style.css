@@ -123,10 +123,10 @@ main h2 {
 /* ================== Articles Section ================== */
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* flexible 2 side by side */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* bigger cards */
     gap: 2rem;
     margin-top: 2rem;
-    align-items: stretch;
+    align-items: stretch; /* keeps equal height */
 }
 
 .article-card {
@@ -163,7 +163,7 @@ main h2 {
 
 .ai-videos-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* side by side */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* bigger video columns */
     gap: 30px;
     margin-top: 2rem;
 }
@@ -171,8 +171,7 @@ main h2 {
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; 
-    height: 0;
+    height: 400px; /* bigger fixed height */
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.35);
@@ -233,5 +232,9 @@ footer {
     nav a {
         display: block;
         margin: 0.5rem 0;
+    }
+
+    .video-container {
+        height: 250px; /* smaller but still visible on phones */
     }
 }
