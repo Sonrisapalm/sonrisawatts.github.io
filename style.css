@@ -79,8 +79,8 @@ header p {
 }
 
 .hero-row .hero-img {
-    max-width: 380px; 
     width: 100%;
+    max-width: 380px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -145,11 +145,9 @@ main h2 {
     transform: translateY(-5px);
 }
 
-/* ================== Article Images FULL ================== */
 .article-card img {
     width: 100%;
-    height: auto;       /* show full image height */
-    object-fit: unset;  /* prevent cropping */
+    height: auto;  /* ensure full size is visible */
     border-radius: 12px;
     margin-bottom: 1rem;
 }
@@ -165,7 +163,7 @@ main h2 {
 .video-container {
     position: relative;
     width: 100%;
-    height: 400px; /* bigger fixed height */
+    height: 400px;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.35);
@@ -180,7 +178,7 @@ main h2 {
     border: none;
 }
 
-/* Full-width, black background videos under Evidence of Impact */
+/* Full-width black background videos */
 .video-container-full {
     background-color: #000;
     padding: 20px;
@@ -196,6 +194,7 @@ main h2 {
     max-width: 900px;
     height: 500px;
     border: none;
+    aspect-ratio: 16/9;
 }
 
 /* ================== Bottom Images ================== */
@@ -208,13 +207,45 @@ main h2 {
 }
 
 .bottom-images img, .microgrant-images img {
-    max-width: 550px; 
     width: 100%;
+    max-width: 550px;
     height: auto;
     border-radius: 12px;
     margin: 2rem auto;
     display: block;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* ================== Evidence of Impact ================== */
+.impact-section {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 80px 40px;
+    border-radius: 15px;
+    max-width: 1100px;
+    margin: 3rem auto;
+    text-align: center;
+    color: #fff;
+}
+
+.impact-heading {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.highlight-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 50px;
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.impact-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.9;
+    color: #fff;
 }
 
 /* ================== Footer ================== */
@@ -227,63 +258,58 @@ footer {
 }
 
 /* ================== Responsive ================== */
-@media (max-width: 768px) {
-    .articles-grid,
-    .ai-videos-row {
-        grid-template-columns: 1fr; /* stack on mobile */
+@media (max-width: 1024px) {
+    .hero-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .bottom-images, .microgrant-images {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    main, .full-width-bg {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .article-card img {
+        max-height: unset; /* show full image */
+    }
+
+    .video-container-full iframe {
+        height: 250px; /* mobile-friendly */
+    }
+
+    .impact-section {
+        padding: 40px 20px;
+    }
+
+    .impact-heading {
+        font-size: 2rem;
+    }
+
+    .impact-text {
+        font-size: 1.2rem;
     }
 
     nav a {
         display: block;
         margin: 0.5rem 0;
+        font-size: 0.9rem;
     }
-
-    .article-card img {
-        max-height: unset;  /* full image on mobile */
-    }
-
-    .bottom-images img, .microgrant-images img {
-        max-width: 100%;
-    }
-
-    .video-container {
-        height: 250px; /* smaller but still visible on phones */
-    }
-
-    .video-container-full iframe {
-        height: 300px; /* responsive for phones */
-    }
-}
-
-/* ================== Evidence of Impact ================== */
-.impact-section {
-    background-color: rgba(0, 0, 0, 0.85); /* solid black transparent */
-    padding: 80px 40px;  /* more space around content */
-    border-radius: 15px;
-    max-width: 1100px;
-    margin: 3rem auto;
-    text-align: center;
-    color: #fff;
-}
-
-.impact-heading {
-    font-size: 3rem;       /* bigger header */
-    font-weight: 800;      /* bold */
-    margin-bottom: 40px;   /* more spacing below header */
-}
-
-.highlight-box {
-    display: block;                       /* take up full width */
-    background-color: rgba(0, 0, 0, 0.7); /* slightly transparent black */
-    padding: 40px 50px;                    /* more padding inside */
-    border-radius: 15px;
-    margin: 0 auto;                        /* center horizontally */
-    max-width: 1000px;
-}
-
-.impact-text {
-    font-size: 1.6rem;     /* bigger text */
-    font-weight: 600;      /* semi-bold */
-    line-height: 1.9;
-    color: #fff;
 }
