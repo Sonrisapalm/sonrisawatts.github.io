@@ -313,3 +313,50 @@ footer {
         font-size: 0.9rem;
     }
 }
+<!-- Microgrant Project -->
+<section class="microgrant-section">
+  <div class="microgrant-container">
+    <h2>Emotion Encoded Small Business Innovation Microgrant Project – Artificial Intelligence</h2>
+    <p>
+      At Emotion Encoded, we are committed to empowering women and youth to harness the potential of AI in their small businesses.
+      Through our AI Small Business Innovation Project, recipients of microgrants will have the opportunity to integrate AI tools that
+      drive innovation, efficiency, and growth — all while promoting responsible and ethical AI use.
+    </p>
+    <div class="microgrant-images">
+      <img src="images/emotionencodedsmallbusinessproject.jpg" alt="Microgrant Project">
+    </div>
+
+    <!-- Apply Button -->
+    <div class="apply-button-container">
+      <a href="https://form.jotform.com/252359385925065" target="_blank" class="apply-button">
+        Click Here to Apply!
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Button Styling -->
+<style>
+  .apply-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .apply-button {
+    display: inline-block;
+    background-color: #003366; /* Dark blue */
+    color: white;
+    font-size: 1.5rem; /* Bigger text */
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  .apply-button:hover {
+    background-color: #002244; /* Darker blue on hover */
+    transform: scale(1.05);
+  }
+</style>
