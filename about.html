@@ -1,30 +1,117 @@
-<!-- About Section -->
-<section class="about-section">
-  <div class="about-container">
-    <h2 class="about-heading">About Sonrisa Watts</h2>
-    <div class="about-content">
-      <p class="about-text">
-        I'm Sonrisa Watts, a 24-year-old researcher from the island of St. Kitts and Nevis. I founded <strong>Emotion Encoded</strong> to explore how emotional reasoning, psychological resistance, and cognitive biases influence AI adoption and integration. My work bridges psychology and technology to foster trust and transparency in AI systems.
-      </p>
-      <p class="about-text">
-        With a background in psychology and a passion for technology, I aim to decode the emotional barriers that affect human interactions with AI, ensuring these systems align with human values and societal needs.
-      </p>
-    </div>
-    <div class="about-image">
-      <img src="images/sonrisa-watts.jpg" alt="Sonrisa Watts" />
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Emotion Encoded</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* About Section Specific Styling */
+    .about-section {
+      background-image: url('images/emotion-coded-web-page.png'); /* match main site bg */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
 
-<!-- AI News Section -->
-<section class="ai-news-section">
-  <h2 class="ai-news-heading">Latest in AI</h2>
-  <div class="ai-news-container">
-    <article class="ai-news-item">
-      <h3 class="ai-news-title">AI News Title</h3>
-      <p class="ai-news-summary">Summary of the latest AI development...</p>
-      <a href="link-to-full-article" class="ai-news-link">Read more</a>
-    </article>
-    <!-- Repeat for more news items -->
-  </div>
-</section>
+    .about-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: rgba(0,0,0,0.6); /* semi-transparent overlay for depth */
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+
+    .about-container h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .about-container p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-container a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 35px;
+      background-color: #003366;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .about-container a:hover {
+      background-color: #002244;
+      transform: scale(1.05);
+    }
+
+    .about-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .about-images img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 768px) {
+      .about-container h1 {
+        font-size: 2rem;
+      }
+
+      .about-container p {
+        font-size: 1rem;
+      }
+
+      .about-images img {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="Research Findings Articles.html">Research Findings Articles</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="about-section">
+    <div class="about-container">
+      <h1>About Emotion Encoded</h1>
+      <p>Hi! I’m <strong>Sonrisa Watts</strong>, 24, from the beautiful island of St. Kitts and Nevis. I founded <strong>Emotion Encoded</strong> to investigate AI integration and adoption through the lenses of <strong>cognitive bias, psychological resistance, and emotional reasoning</strong>.</p>
+      <p>Our mission is to explore how human perception, culture, and emotion influence the way people trust and adopt AI technologies. We conduct interviews, publish insights, and aim to help align AI systems with human understanding, making AI more transparent, ethical, and human-centered.</p>
+      
+      <div class="about-images">
+        <img src="images/indexpic5.jpg" alt="Emotion Encoded Research">
+        <img src="images/indexpic6.jpg" alt="AI Insights">
+      </div>
+
+      <a href="articles.html">Explore Our Research Articles →</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Emotion Encoded — All rights reserved.
+  </footer>
+</body>
+</html>
