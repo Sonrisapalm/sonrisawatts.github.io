@@ -1,219 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Emotion Encoded</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-
-  <style>
-    /* Banner */
-    .banner {
-      position: relative; /* changed from absolute */
-      top: 0;
-      width: 100%;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 15px 0;
-      z-index: 1; /* ensure nav is clickable */
-    }
-    .banner h1 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 300;
-      font-size: 2rem;
-      color: #fff;
-      letter-spacing: 1px;
-      margin: 0;
-    }
-
-    /* Video Row */
-    .ai-videos-row {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 30px 0;
-    }
-    .video-container {
-      flex: 1 1 45%;
-      max-width: 600px;  /* increased from 400px */
-      aspect-ratio: 16 / 9;
-    }
-    .video-container iframe {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-    }
-
-    /* AI NEWS background */
-    .ai-news {
-      background: rgba(0,0,0,0.6);
-      padding: 3rem 1rem;
-      text-align: center;
-      color: #fff;
-      border-radius: 12px;
-    }
-
-    /* AI NEWS Images */
-    .ai-images {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .ai-images img {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-  </style>
-</head>
-<body>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="articles.html">Articles</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<header>
-  <div class="banner">
-    <h1>Emotion Encoded</h1>
-  </div>
-  <!-- Hero images -->
-  <div class="hero-row">
-    <img src="images/fortoppage.jpg" alt="Main header image" class="hero-img" />
-    <img src="images/indexpic5.jpg" alt="Side header image 1" class="hero-img" />
-    <img src="images/indexpic6.jpg" alt="Side header image 2" class="hero-img" />
-  </div>
-
-  <h1>Emotion Encoded</h1>
-  <p>By Sonrisa Watts: Exploring the intersection of psychology and AI to build trust and transparency.</p>
-</header>
-
-<!-- Full-width transparent background -->
-<div class="full-width-bg">
-  <main>
-    <h2>Welcome</h2>
-    <p>
-      Emotion Encoded is a research initiative based in St.Kitts and Nevis that investigates how trust, cognitive bias and psychological resistance shape AI adoption in professional fields such as law, education, healthcare, and finance.
-      Dedicated to using psychology to decode emotional barriers to AI Adoption. 
-    </p>
-    <p>
-     We're shaping AI people can trust by first understanding the psychological factors that shape human perception of it. By collaborating with experts in law, medicine, finance, and education, we help align AI systems with the human mind, not just with data, ensuring their effective adoption.
-    </p>
-
-    <section id="articles">
-      <h2><a href="articles.html" class="articles-link">Articles</a></h2>
-      <div class="articles-grid">
-
-        <!-- Article 1 -->
-        <article class="article-card">
-          <img src="images/article1.jpg" alt="Research in Caribbean Region" />
-          <h3>AI Advisors vs AI Therapists: Who Do We Trust?</h3>
-          <p>
-            I conducted research in the Caribbean Region (St. Kitts & Nevis) asking: 
-            "Who would you trust more: An AI Advisor or an AI Therapist?"
-          </p>
-          <a href="articles.html" class="read-more">Read More →</a>
-        </article>
-
-        <!-- Article 2 -->
-        <article class="article-card">
-          <img src="images/article3.jpg" alt="Second research illustration" />
-          <h3>Trust & Transparency</h3>
-          <p>
-            At Emotion Encoded, we explore the intersection of psychology and artificial intelligence,
-            investigating how human perception, cognitive biases, and resistance shape the adoption and impact of emerging technologies.
-          </p>
-          <a href="articles.html" class="read-more">Read More →</a>
-        </article>
-
+<!-- About Section -->
+<section class="about-section">
+  <div class="about-container">
+    <h2 class="about-heading">About Sonrisa Watts</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="images/sonrisa.jpg" alt="Sonrisa Watts">
       </div>
-    </section>
-  </main>
-</div>
-
-<div class="bottom-images">
-  <img src="images/imageforindex3.jpg" alt="Extra Image 1">
-  <img src="images/imageforindex4.jpg" alt="Extra Image 2">
-  <img src="images/indexpic4.jpg" alt="Extra Image 3">
-  <img src="images/imagessecond-picture.jpg" alt="Extra Image 4">
-</div>
-  
-<section class="ai-news">
-  <h2>AI NEWS</h2>
-  <p>Exploring the latest insights and discussions on artificial intelligence and superintelligence.</p>
-
- <div class="ai-videos-row">
-  <!-- Video 1 -->
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/pG1KYvsMnRE" 
-            title="AI Shorts 1" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>
+      <div class="about-text">
+        <p>
+          Hello! I’m <strong>Sonrisa Watts</strong>, 24, from the beautiful island of <strong>St. Kitts and Nevis</strong>. I am the founder of <strong>Emotion Encoded</strong>, a research initiative dedicated to exploring how humans interact with Artificial Intelligence.  
+        </p>
+        <p>
+          My work focuses on understanding <strong>AI integration and adoption</strong> through the lenses of <strong>cognitive bias, psychological resistance, and emotional reasoning</strong>. By investigating how people perceive, trust, and respond to AI systems, I aim to help design technology that aligns with human values and decision-making.
+        </p>
+        <p>
+          Through Emotion Encoded, I engage with professionals, researchers, and communities to uncover insights that bridge psychology and AI, ultimately empowering people to use technology responsibly and confidently.
+        </p>
+      </div>
+    </div>
   </div>
-
-  <!-- Video 2 -->
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/hCnhN0cJLRE" 
-            title="AI Shorts 2" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- Video 3 -->
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/g70KUszkNvQ" 
-            title="AI Video 3" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- Video 4 -->
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/cCMUQC51f3Q" 
-            title="AI Video 4" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- Video 5 -->
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/dsDcQmJHwQc" 
-            title="AI Video 5" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>
-  </div>
-</div>
-
-<!-- AI Images -->
-<div class="ai-images">
-  <img src="images/superintelligence1.jpg" alt="Super Intelligence Illustration">
-  <img src="images/superintelligence2.jpg" alt="AI Research Graphic">
-</div>
 </section>
 
-<footer>
-  © 2025 Emotion Encoded — All rights reserved.
-</footer>
+<!-- About Section Styling -->
+<style>
+.about-section {
+  background: rgba(44, 62, 80, 0.35);
+  padding: 4rem 2rem;
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 4rem auto;
+  color: #fff;
+}
 
-</body>
-</html>
+.about-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.about-text {
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-image img {
+    max-width: 250px;
+    margin-bottom: 2rem;
+  }
+}
+</style>
