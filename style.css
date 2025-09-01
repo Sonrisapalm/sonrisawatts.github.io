@@ -429,5 +429,19 @@ footer {
   display: block;
   margin: 0 auto;
 }
+/* Make all images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Specifically for impact images (like your proposal pic) */
+.impact-image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* optional: center the image */
+}
 
 
