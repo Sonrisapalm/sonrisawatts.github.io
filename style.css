@@ -356,3 +356,27 @@ footer {
         font-size: 0.9rem;
     }
 }
+/* ================== Microgrant Apply Button ================== */
+.apply-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.apply-button {
+    display: inline-block;
+    background-color: #003366; /* Dark blue */
+    color: white;
+    font-size: 1.5rem; /* Bigger text */
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.apply-button:hover {
+    background-color: #002244; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
