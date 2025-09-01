@@ -422,4 +422,12 @@ footer {
   display: block;    /* remove inline spacing */
   margin: 0 auto;    /* center image if needed */
 }
+.article-page img,
+.article-image {
+  max-width: 80%;    /* image takes at most 80% of container width */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 
