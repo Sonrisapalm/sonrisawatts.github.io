@@ -31,6 +31,10 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
 }
 
 nav a {
@@ -109,6 +113,24 @@ main {
     border-radius: 15px;
     color: #fff;
     box-sizing: border-box;
+    line-height: 1.6;
+}
+
+/* Article-specific styles */
+.article-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 1em 0;
+    display: block;
+}
+
+blockquote {
+    border-left: 4px solid #555;
+    padding-left: 12px;
+    margin: 1em 0;
+    font-style: italic;
+    color: #ddd;
 }
 
 main p,
@@ -298,6 +320,32 @@ footer {
     padding: 1.5rem;
     margin-top: 3rem;
     border-radius: 12px;
+    font-size: 0.85em;
+    color: #ccc;
+}
+
+/* ================== Microgrant Apply Button ================== */
+.apply-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.apply-button {
+    display: inline-block;
+    background-color: #003366; /* Dark blue */
+    color: white;
+    font-size: 1.5rem; /* Bigger text */
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.apply-button:hover {
+    background-color: #002244; /* Darker blue on hover */
+    transform: scale(1.05);
 }
 
 /* ================== Responsive ================== */
@@ -355,28 +403,14 @@ footer {
         margin: 0.5rem 0;
         font-size: 0.9rem;
     }
-}
-/* ================== Microgrant Apply Button ================== */
-.apply-button-container {
-    text-align: center;
-    margin-top: 20px;
-}
 
-.apply-button {
-    display: inline-block;
-    background-color: #003366; /* Dark blue */
-    color: white;
-    font-size: 1.5rem; /* Bigger text */
-    font-weight: bold;
-    padding: 15px 40px;
-    border-radius: 12px;
-    text-decoration: none;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
+    h1 {
+        font-size: 1.6em;
+        margin: 0.5em 0;
+    }
 
-.apply-button:hover {
-    background-color: #002244; /* Darker blue on hover */
-    transform: scale(1.05);
+    h2 {
+        font-size: 1.2em;
+        margin-top: 1.5em;
+    }
 }
-
