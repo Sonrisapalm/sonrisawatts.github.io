@@ -224,6 +224,41 @@ main h2 {
     border-radius: 10px;
 }
 
+/* Microgrant Image */
+.microgrant-section .microgrant-img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 12px;
+    margin: 30px auto 20px auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* ================== Bottom Images (FIXED) ================== */
+.bottom-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 3rem 0;
+}
+
+.bottom-images img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.bottom-images img:hover {
+    transform: scale(1.03);
+}
+
 /* ================== Evidence of Impact ================== */
 .impact-section {
     background-color: rgba(0, 0, 0, 0.85);
