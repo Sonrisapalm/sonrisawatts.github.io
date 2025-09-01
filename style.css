@@ -414,12 +414,12 @@ footer {
         margin-top: 1.5em;
     }
 }
-/* Make article images responsive */
+/* Make all article images responsive */
+.article-page img,
 .article-image {
-  max-width: 100%;   /* never bigger than container */
-  height: auto;      /* keeps aspect ratio */
-  display: block;
-  margin: 20px auto; /* centers image and adds space */
-  border-radius: 8px; /* optional: rounded corners */
+  max-width: 100%;   /* image can’t be wider than its container */
+  height: auto;      /* maintain aspect ratio */
+  display: block;    /* remove inline spacing */
+  margin: 0 auto;    /* center image if needed */
 }
 
