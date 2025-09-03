@@ -443,14 +443,25 @@ img {
   display: block;
   margin: 0 auto; /* optional: center the image */
 }
+/* Microgrant Image */
 .microgrant-section .microgrant-img {
-    width: 100%;
-    max-width: 400px; /* smaller than 550px */
-    height: auto;
+    width: 90%;            /* takes 90% of section width */
+    max-width: 400px;      /* never bigger than 400px */
+    height: auto;           /* maintain aspect ratio */
     border-radius: 12px;
-    margin: 30px auto 20px auto;
+    margin: 30px auto 20px auto; /* center image */
     display: block;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .microgrant-section .microgrant-img {
+        width: 95%;        /* slightly bigger on mobile */
+        max-width: 300px;  /* limit max size */
+    }
+}
+
 }
 .news-card {
   background: rgba(0, 0, 0, 0.35);
