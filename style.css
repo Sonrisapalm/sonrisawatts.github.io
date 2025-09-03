@@ -445,12 +445,11 @@ img {
 }
 .microgrant-section .microgrant-img {
     width: 100%;
-    max-width: 350px; /* smaller size */
+    max-width: 400px; /* smaller than 550px */
     height: auto;
     border-radius: 12px;
     margin: 30px auto 20px auto;
     display: block;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-
 
