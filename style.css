@@ -483,5 +483,15 @@ img {
   border-radius: 10px;
   margin-bottom: 1rem;
 }
+.news-img {
+    width: 100%;          /* fill the container width */
+    max-width: 400px;     /* max width of the card */
+    height: 250px;        /* fixed height to keep cards uniform */
+    object-fit: cover;    /* crop proportionally without stretching */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
 
 
