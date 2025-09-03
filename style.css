@@ -484,14 +484,22 @@ img {
   margin-bottom: 1rem;
 }
 .news-img {
-    width: 100%;          /* fill the container width */
-    max-width: 400px;     /* max width of the card */
-    height: 250px;        /* fixed height to keep cards uniform */
-    object-fit: cover;    /* crop proportionally without stretching */
+    width: 100%;         /* fill the card width */
+    max-width: 500px;    /* increase max size from 400px to 500px */
+    height: 300px;       /* taller for bigger preview */
+    object-fit: cover;   /* crop proportionally without stretching */
+    object-position: center; /* center the image in the container */
     border-radius: 8px;
     display: block;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 15px auto; /* center within the card */
 }
+@media (max-width: 768px) {
+    .news-img {
+        max-width: 100%;
+        height: 200px; /* shorter for mobile */
+    }
+}
+
 
 
 
