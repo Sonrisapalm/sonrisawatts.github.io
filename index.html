@@ -20,13 +20,13 @@
         .text-shadow-md {
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
         }
-        .hero-video-container {
+        .hero-image-container {
             position: relative;
             width: 100%;
             height: 100vh;
             overflow: hidden;
         }
-        .hero-video {
+        .hero-image {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -52,12 +52,9 @@
 </head>
 <body class="bg-gray-900 text-gray-100">
 
-    <!-- Header Section with Video Background -->
-    <header class="hero-video-container">
-        <video class="hero-video" autoplay loop muted playsinline>
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-lines-moving-2060-large.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <!-- Header Section with Image Background -->
+    <header class="hero-image-container">
+        <img class="hero-image" src="images/background.jpg" alt="Background image with abstract digital design">
         <div class="hero-content text-center px-4">
             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-wide text-shadow-md">
                 <strong>Emotion Encoded:</strong> The Psychology of AI
@@ -105,7 +102,7 @@
                     <div class="flex-grow flex flex-col">
                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">AI Advisors vs AI Therapists: Who Do We Trust?</h3>
                         <p class="text-gray-300 text-sm md:text-base flex-grow">
-                            I conducted research in the Caribbean Region (St. Kitts & Nevis) asking: "Who would you trust more: An AI Advisor or an AI Therapist?"
+                            I conducted research in the Caribbean Region (St. Kitts & Nevis) asking: "Who would you trust more: An AI Advisor or an an AI Therapist?"
                         </p>
                         <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                     </div>
@@ -257,3 +254,18 @@
                 <div class="video-container rounded-2xl overflow-hidden shadow-xl mb-4">
                     <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/FASMejN_5gs" title="Neuralink Update, Summer 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Neuralink Update, Summer 2025</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/90 text-center py-6 mt-12 text-gray-400">
+        © 2025 Emotion Encoded — All rights reserved.
+    </footer>
+
+</body>
+</html>
