@@ -27,29 +27,29 @@
 </head>
 <body class="bg-gray-900 text-gray-100">
 
-    <!-- Header Section -->
-    <header class="text-center pt-24 pb-8 px-4 relative z-10">
-        <!-- Automatic Video Section -->
-        <div class="mb-8">
-            <!-- This video will now play automatically, loop silently, and stretch across the top of the page -->
-            <video autoplay loop muted playsinline class="w-full mx-auto rounded-3xl shadow-xl">
-                <!-- Corrected video path -->
-                <source src="videos/Artificial Intelligence - Animated Video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <!-- Header Section with video as a background and images/text overlaid -->
+    <header class="relative w-full overflow-hidden min-h-screen flex items-center justify-center pt-24 pb-8 px-4">
+        <!-- Automatic Video Section - Now serving as a background -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 rounded-3xl opacity-50">
+            <!-- Corrected video path -->
+            <source src="videos/Artificial Intelligence - Animated Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         
-        <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
-            <img src="images/fortoppage.jpg" alt="Main header image" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-            <img src="images/indexpic5.jpg" alt="Side header image 1" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-            <img src="images/indexpic6.jpg" alt="Side header image 2" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+        <!-- Content to be displayed on top of the video -->
+        <div class="relative z-10 text-center flex flex-col items-center">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
+                <img src="images/fortoppage.jpg" alt="Main header image" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+                <img src="images/indexpic5.jpg" alt="Side header image 1" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+                <img src="images/indexpic6.jpg" alt="Side header image 2" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-wide text-shadow-md">
+                Emotion Encoded
+            </h1>
+            <p class="text-lg md:text-xl font-light max-w-3xl mx-auto text-shadow-md">
+                By Sonrisa Watts: Exploring the intersection of psychology and AI to build trust and transparency. and research initiative investigating how emotional reasoning, trust, cognitive bias and psychological resistance shape AI adoption in professional fields such as law, healthcare, and finance.
+            </p>
         </div>
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-wide text-shadow-md">
-            Emotion Encoded
-        </h1>
-        <p class="text-lg md:text-xl font-light max-w-3xl mx-auto text-shadow-md">
-            By Sonrisa Watts: Exploring the intersection of psychology and AI to build trust and transparency.
-        </p>
     </header>
 
     <!-- Navigation -->
