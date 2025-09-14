@@ -1,354 +1,352 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <title>Emotion Encoded</title>
-     <!-- Tailwind CSS CDN -->
-     <script src="https://cdn.tailwindcss.com"></script>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-     <style>
-         /* Custom styles to replicate the original design and ensure smooth responsiveness */
-         body {
-             font-family: 'Poppins', sans-serif;
-             background-image: url('images/websitebackground.jpg');
-             background-size: cover;
-             background-repeat: no-repeat;
-             background-position: center;
-             background-attachment: fixed;
-             color: #f0f0f0;
-             line-height: 1.7;
-             overflow-x: hidden;
-         }
-         .text-shadow-md {
-             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-         }
-         .video-container {
-             position: relative;
-             width: 100%;
-             height: 0;
-             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-             overflow: hidden;
-             border-radius: 1rem;
-         }
-         .video-container video {
-             position: absolute;
-             top: 0;
-             left: 0;
-             width: 100%;
-             height: 100%;
-             object-fit: cover;
-         }
-     </style>
- </head>
- <body class="bg-gray-900 text-gray-100">
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emotion Encoded</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <style>
+        /* Custom styles to replicate the original design and ensure smooth responsiveness */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('images/websitebackground.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f0f0f0;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        .text-shadow-md {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
 
-     <!-- Header Section with video as a background and text overlaid -->
-     <header class="relative w-full overflow-hidden min-h-screen flex items-center justify-center pt-24 pb-8 px-4">
-         <!-- Automatic Video Section - Now serving as a background -->
-         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 rounded-3xl opacity-95">
-             <!-- Corrected video path -->
-             <source src="videos/Artificial Intelligence - Animated Video.mp4" type="video/mp4">
-             Your browser does not support the video tag.
-         </video>
-         
-         <!-- Content to be displayed on top of the video -->
-         <div class="relative z-10 text-center flex flex-col items-center max-w-7xl mx-auto">
-             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-wide text-shadow-md">
-                 Emotion Encoded
-             </h1>
-             <p class="text-lg md:text-xl font-light max-w-3xl mx-auto text-shadow-md">
-                 By Sonrisa Watts: Exploring the intersection of psychology and AI to build trust and transparency. and research initiative investigating how emotional reasoning, trust, cognitive bias and psychological resistance shape AI adoption in professional fields such as law, healthcare, and finance.
-             </p>
-         </div>
-     </header>
+    <!-- Header Section with video as a background and text overlaid -->
+    <header class="relative w-full overflow-hidden min-h-screen flex items-center justify-center pt-24 pb-8 px-4">
+        <!-- Automatic Video Section - Now serving as a background -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 rounded-3xl opacity-95">
+            <!-- Corrected video path -->
+            <source src="videos/Artificial Intelligence - Animated Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Content to be displayed on top of the video -->
+        <div class="relative z-10 text-center flex flex-col items-center max-w-7xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-wide text-shadow-md">
+                Emotion Encoded
+            </h1>
+            <p class="text-lg md:text-xl font-light max-w-3xl mx-auto text-shadow-md">
+                By Sonrisa Watts: Exploring the intersection of psychology and AI to build trust and transparency. and research initiative investigating how emotional reasoning, trust, cognitive bias and psychological resistance shape AI adoption in professional fields such as law, healthcare, and finance.
+            </p>
+        </div>
+    </header>
 
-     <!-- Navigation -->
-     <nav class="sticky top-0 z-50 bg-gray-900/90 py-4 shadow-lg text-center">
-         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-base md:text-lg font-medium max-w-7xl mx-auto px-4">
-             <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200">Home</a>
-             <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200">About</a>
-             <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200">Research Findings Articles</a>
-             <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200">Contact</a>
-         </div>
-     </nav>
-     
-     <!-- Top Images Section - Moved here to not block the video -->
-     <section class="container mx-auto mt-8 px-4">
-         <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-8">
-             <img src="images/fortoppage.jpg" alt="Main header image" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-             <img src="images/indexpic5.jpg" alt="Side header image 1" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-             <img src="images/indexpic6.jpg" alt="Side header image 2" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-         </div>
-     </section>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/90 py-4 shadow-lg text-center">
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-base md:text-lg font-medium max-w-7xl mx-auto px-4">
+            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200">Home</a>
+            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200">About</a>
+            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200">Research Findings Articles</a>
+            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Top Images Section - Moved here to not block the video -->
+    <section class="container mx-auto mt-8 px-4">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-8">
+            <img src="images/fortoppage.jpg" alt="Main header image" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/indexpic5.jpg" alt="Side header image 1" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/indexpic6.jpg" alt="Side header image 2" class="hero-img w-full max-w-sm h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+        </div>
+    </section>
 
-     <!-- Main Content -->
-     <main class="container mx-auto p-4 md:p-8 space-y-12 max-w-7xl">
+    <!-- Main Content -->
+    <main class="container mx-auto p-4 md:p-8 space-y-12 max-w-7xl">
 
-         <!-- Introduction Section -->
-         <section class="bg-gray-800/50 p-6 md:p-10 rounded-3xl shadow-lg">
-             <p class="text-lg leading-relaxed text-gray-200">
-                 Shaping AI people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, Emotion Encoded helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
-                 <br /><br />
-                 Emotion Encoded investigates how trust, cognitive bias, heuristics, and judgment distortions shape AI adoption in high-stakes domains. We are dedicated to using Psychology to Decode Emotional Barriers to AI Adoption.
-             </p>
-         </section>
+        <!-- Introduction Section -->
+        <section class="bg-gray-800/50 p-6 md:p-10 rounded-3xl shadow-lg">
+            <p class="text-lg leading-relaxed text-gray-200">
+                Shaping AI people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, Emotion Encoded helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
+                <br /><br />
+                Emotion Encoded investigates how trust, cognitive bias, heuristics, and judgment distortions shape AI adoption in high-stakes domains. We are dedicated to using Psychology to Decode Emotional Barriers to AI Adoption.
+            </p>
+        </section>
 
-         <!-- Articles Section -->
-         <section>
-             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
-                 <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200">Articles</a>
-             </h2>
-             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Articles Section -->
+        <section>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
+                <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200">Articles</a>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                 <!-- Article 1 -->
-                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                     <a href="AI-Perception-Briefs.html">
-                         <img src="images/article1.jpg" alt="Research in Caribbean Region" class="w-full h-auto rounded-2xl mb-4" />
-                     </a>
-                     <div class="flex-grow flex flex-col">
-                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">AI Advisors vs AI Therapists: Who Do We Trust?</h3>
-                         <p class="text-gray-300 text-sm md:text-base flex-grow">
-                             I conducted research in the Caribbean Region (St. Kitts & Nevis) asking: "Who would you trust more: An AI Advisor or an AI Therapist?"
-                         </p>
-                         <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                     </div>
-                 </article>
+                <!-- Article 1 -->
+                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                    <a href="AI-Perception-Briefs.html">
+                        <img src="images/article1.jpg" alt="Research in Caribbean Region" class="w-full h-auto rounded-2xl mb-4" />
+                    </a>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">AI Advisors vs AI Therapists: Who Do We Trust?</h3>
+                        <p class="text-gray-300 text-sm md:text-base flex-grow">
+                            I conducted research in the Caribbean Region (St. Kitts & Nevis) asking: "Who would you trust more: An AI Advisor or an AI Therapist?"
+                        </p>
+                        <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                    </div>
+                </article>
 
-                 <!-- Article 2 -->
-                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                     <a href="AI-Perception-Briefs.html">
-                         <img src="images/article3.jpg" alt="Second research illustration" class="w-full h-auto rounded-2xl mb-4" />
-                     </a>
-                     <div class="flex-grow flex flex-col">
-                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Insights from the General Public</h3>
-                         <p class="text-gray-300 text-sm md:text-base flex-grow">
-                             At Emotion Encoded, we explore the intersection of psychology and artificial intelligence, investigating how human perception, cognitive biases, and resistance shape the adoption and impact of emerging technologies.
-                         </p>
-                         <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                     </div>
-                 </article>
+                <!-- Article 2 -->
+                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                    <a href="AI-Perception-Briefs.html">
+                        <img src="images/article3.jpg" alt="Second research illustration" class="w-full h-auto rounded-2xl mb-4" />
+                    </a>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Insights from the General Public</h3>
+                        <p class="text-gray-300 text-sm md:text-base flex-grow">
+                            At Emotion Encoded, we explore the intersection of psychology and artificial intelligence, investigating how human perception, cognitive biases, and resistance shape the adoption and impact of emerging technologies.
+                        </p>
+                        <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                    </div>
+                </article>
 
-                 <!-- Article 3 -->
-                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                     <a href="AI-Perception-Briefs.html">
-                         <img src="images/article10.jpg" alt="Extra Image 2" class="w-full h-auto rounded-2xl mb-4" />
-                     </a>
-                     <div class="flex-grow flex flex-col">
-                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Exploring AI in Medicine</h3>
-                         <p class="text-gray-300 text-sm md:text-base flex-grow">
-                             Insights from interviews with healthcare professionals on AI’s role in patient care and medical decision-making.
-                         </p>
-                         <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                     </div>
-                 </article>
+                <!-- Article 3 -->
+                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                    <a href="AI-Perception-Briefs.html">
+                        <img src="images/article10.jpg" alt="Extra Image 2" class="w-full h-auto rounded-2xl mb-4" />
+                    </a>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Exploring AI in Medicine</h3>
+                        <p class="text-gray-300 text-sm md:text-base flex-grow">
+                            Insights from interviews with healthcare professionals on AI’s role in patient care and medical decision-making.
+                        </p>
+                        <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                    </div>
+                </article>
 
-                 <!-- New Article - Replaces Coming Soon -->
-                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                     <a href="tech-specialist-interview.html">
-                         <img src="images/article11.jpg" alt="Tech specialist with AI visuals" class="w-full h-auto rounded-2xl mb-4" />
-                     </a>
-                     <div class="flex-grow flex flex-col">
-                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-                             🧠 Emotion Encoded’s Interview with A Tech Specialist From St.Kitts
-                         </h3>
-                         <p class="text-gray-300 text-sm md:text-base flex-grow">
-                             Do we Trust AI with Our Money More Than Our Health?
-                         </p>
-                         <a href="article11.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                     </div>
-                 </article>
+                <!-- New Article - Replaces Coming Soon -->
+                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                    <a href="tech-specialist-interview.html">
+                        <img src="images/article11.jpg" alt="Tech specialist with AI visuals" class="w-full h-auto rounded-2xl mb-4" />
+                    </a>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                            🧠 Emotion Encoded’s Interview with A Tech Specialist From St.Kitts
+                        </h3>
+                        <p class="text-gray-300 text-sm md:text-base flex-grow">
+                            Do we Trust AI with Our Money More Than Our Health?
+                        </p>
+                        <a href="article11.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                    </div>
+                </article>
 
-                 <!-- Dr. Aljay Pierre Article -->
-                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                     <a href="#">
-                         <img src="images/comingsoondraljaypierre.jpg" alt="Dr. Aljay Pierre" class="w-full h-auto rounded-2xl mb-4" />
-                     </a>
-                     <div class="flex-grow flex flex-col">
-                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-                             Insights from Dr. Aljay Pierre
-                         </h3>
-                         <p class="text-gray-300 text-sm md:text-base flex-grow">
-                             Dr. Aljay Pierre shares his perspectives on the evolving role of AI in healthcare, from diagnostics to patient care.
-                         </p>
-                         <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                     </div>
-                 </article>
+                <!-- New Article - Dr. Saheley -->
+                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                    <a href="article12.html">
+                        <img src="images/article12.jpg" alt="Dr. Saheley's article" class="w-full h-auto rounded-2xl mb-4" />
+                    </a>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                            Dr. Saheley's Breakthrough
+                        </h3>
+                        <p class="text-gray-300 text-sm md:text-base flex-grow">
+                            Pioneering research on bioluminescent fungi offers a new path for sustainable energy and biological innovation.
+                        </p>
+                        <a href="article12.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                    </div>
+                </article>
 
-                 <!-- Dr. Sahely Article - NEWLY ADDED -->
-                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                     <a href="dr-sahely-article.html">
-                         <img src="https://placehold.co/400x300/525252/ffffff?text=Dr.+Sahely+Article" alt="Dr. Sahely Article" class="w-full h-auto rounded-2xl mb-4" />
-                     </a>
-                     <div class="flex-grow flex flex-col">
-                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-                             Insights from Dr. Sahely
-                         </h3>
-                         <p class="text-gray-300 text-sm md:text-base flex-grow">
-                             Dr. Sahely provides a deep dive into the psychological factors influencing the adoption of AI, emphasizing the role of cognitive bias in human-technology interaction.
-                         </p>
-                         <a href="dr-sahely-article.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                     </div>
-                 </article>
+                <!-- Article 4 -->
+                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                    <a href="#">
+                        <img src="images/comingsoondraljaypierre.jpg" alt="Coming Soon Preview" class="w-full h-auto rounded-2xl mb-4" />
+                    </a>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Insights Coming Soon</h3>
+                        <p class="text-gray-300 text-sm md:text-base flex-grow">
+                            Stay tuned for exclusive insights and reflections from upcoming research interviews.
+                        </p>
+                        <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Coming Soon →</a>
+                    </div>
+                </article>
 
-             </div>
-         </section>
+            </div>
+        </section>
 
-         <!-- Bottom Images -->
-         <section class="flex flex-wrap justify-center gap-6 mt-12">
-             <img src="images/imageforindex4.jpg" alt="Extra Image 2" class="w-full max-w-xs h-auto rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105" />
-             <img src="images/indexpic4.jpg" alt="Extra Image 3" class="w-full max-w-xs h-auto rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105" />
-             <img src="images/imagessecond-picture.jpg" alt="Extra Image 4" class="w-full max-w-xs h-auto rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105" />
-         </section>
+        <!-- Bottom Images -->
+        <section class="flex flex-wrap justify-center gap-6 mt-12">
+            <img src="images/imageforindex4.jpg" alt="Extra Image 2" class="w-full max-w-xs h-auto rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/indexpic4.jpg" alt="Extra Image 3" class="w-full max-w-xs h-auto rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/imagessecond-picture.jpg" alt="Extra Image 4" class="w-full max-w-xs h-auto rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105" />
+        </section>
 
-     </main>
+    </main>
 
-     <!-- New Video Section - Now stretched, located outside the main content container -->
-     <section class="w-full px-0 mt-12 mb-12">
-         <div class="video-container rounded-3xl shadow-xl">
-             <video class="video-player" src="videos/Artificial Intelligence video 2.mp4" autoplay loop muted playsinline></video>
-         </div>
-     </section>
+    <!-- New Video Section - Now stretched, located outside the main content container -->
+    <section class="w-full px-0 mt-12 mb-12">
+        <div class="video-container rounded-3xl shadow-xl">
+            <video class="video-player" src="videos/Artificial Intelligence video 2.mp4" autoplay loop muted playsinline></video>
+        </div>
+    </section>
 
-     <!-- Evidence of Impact -->
-     <section class="bg-gray-900/80 p-6 md:p-12 rounded-3xl shadow-2xl mt-12 max-w-7xl mx-auto">
-         <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-8">
-             <span class="text-orange-400">📑</span> Evidence of Impact
-         </h2>
-         <div class="bg-gray-800/60 p-6 md:p-10 rounded-2xl mb-8">
-             <p class="text-lg md:text-xl font-semibold text-gray-200 text-center leading-relaxed">
-                 Our research findings were referenced in a <strong class="text-orange-400">National Policy Proposal on Digital Literacy</strong> in St. Kitts & Nevis, highlighting Emotion Encoded’s influence in shaping the future of AI policy and education.
-             </p>
-         </div>
-         <div class="flex justify-center items-center flex-col">
-             <a href="proposal.pdf" target="_blank" class="w-full max-w-md transition-transform duration-300 hover:scale-105">
-                 <img src="images/policy-cover.jpg" alt="Policy Proposal Cover" class="w-full h-auto rounded-2xl shadow-lg" />
-             </a>
-             <p class="text-sm md:text-base text-gray-400 mt-2">Click the image to view the full proposal.</p>
-         </div>
-     </section>
+    <!-- Evidence of Impact -->
+    <section class="bg-gray-900/80 p-6 md:p-12 rounded-3xl shadow-2xl mt-12 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-8">
+            <span class="text-orange-400">📑</span> Evidence of Impact
+        </h2>
+        <div class="bg-gray-800/60 p-6 md:p-10 rounded-2xl mb-8">
+            <p class="text-lg md:text-xl font-semibold text-gray-200 text-center leading-relaxed">
+                Our research findings were referenced in a <strong class="text-orange-400">National Policy Proposal on Digital Literacy</strong> in St. Kitts & Nevis, highlighting Emotion Encoded’s influence in shaping the future of AI policy and education.
+            </p>
+        </div>
+        <div class="flex justify-center items-center flex-col">
+            <a href="proposal.pdf" target="_blank" class="w-full max-w-md transition-transform duration-300 hover:scale-105">
+                <img src="images/policy-cover.jpg" alt="Policy Proposal Cover" class="w-full h-auto rounded-2xl shadow-lg" />
+            </a>
+            <p class="text-sm md:text-base text-gray-400 mt-2">Click the image to view the full proposal.</p>
+        </div>
+    </section>
 
-     <!-- AI Videos Section -->
-     <section class="bg-gray-800/60 p-6 md:p-10 rounded-3xl shadow-lg max-w-7xl mx-auto">
-         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">AI NEWS</h2>
-         <p class="text-gray-300 text-center mb-8">Exploring the latest insights and discussions on artificial intelligence and superintelligence.</p>
+    <!-- AI Videos Section -->
+    <section class="bg-gray-800/60 p-6 md:p-10 rounded-3xl shadow-lg max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">AI NEWS</h2>
+        <p class="text-gray-300 text-center mb-8">Exploring the latest insights and discussions on artificial intelligence and superintelligence.</p>
 
-         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-             <!-- New Video - Added here -->
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/eSMnG6xxRSY" title="New AI Shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <!-- Video 1 -->
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/pG1KYvsMnRE" title="AI Shorts 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <!-- Video 2 -->
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/hCnhN0cJLRE" title="AI Shorts 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <!-- Video 3 -->
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/g70KUszkNvQ" title="AI Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <!-- Video 4 -->
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/cCMUQC51f3Q" title="AI Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <!-- Video 5 -->
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/dsDcQmJHwQc" title="AI Video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <!-- Video 6 -->
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/qbrcZB-1hck" title="AI Video 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <!-- Video 7 -->
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/FASMejN_5gs" title="Neuralink Update, Summer 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-         </div>
-     </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- New Video - Added here -->
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/eSMnG6xxRSY" title="New AI Shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Video 1 -->
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/pG1KYvsMnRE" title="AI Shorts 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Video 2 -->
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/hCnhN0cJLRE" title="AI Shorts 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Video 3 -->
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/g70KUszkNvQ" title="AI Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Video 4 -->
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/cCMUQC51f3Q" title="AI Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Video 5 -->
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/dsDcQmJHwQc" title="AI Video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Video 6 -->
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/qbrcZB-1hck" title="AI Video 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Video 7 -->
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/FASMejN_5gs" title="Neuralink Update, Summer 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
 
-     <!-- Microgrant Project -->
-     <section class="bg-blue-900/70 p-6 md:p-10 rounded-3xl shadow-xl mt-12 max-w-7xl mx-auto">
-         <div class="text-center">
-             <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Micro-Grant Proposal</h2>
-             <p class="text-lg text-gray-200 max-w-4xl mx-auto">
-                 At Emotion Encoded, we are committed to empowering women and youth to harness the potential of AI in their small businesses.
-                 Through our AI Small Business Innovation Project, recipients of microgrants will have the opportunity to integrate AI tools that
-                 drive innovation, efficiency, and growth, all while promoting responsible AI use. Alongside the financial support, we will host an
-                 “enlightenment period” to help them learn how to use AI tools effectively.
-             </p>
-             <img src="images/emotionencodedsmallbusinessproject.jpg" alt="Microgrant Project" class="w-full max-w-2xl h-auto rounded-2xl mx-auto my-8 shadow-lg transition-transform duration-300 hover:scale-105" />
-             <a href="https://form.jotform.com/252359385925065" target="_blank" class="inline-block bg-blue-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-all duration-300 hover:bg-blue-800 hover:scale-105">
-                 Click Here to Apply!
-             </a>
-         </div>
-     </section>
+    <!-- Microgrant Project -->
+    <section class="bg-blue-900/70 p-6 md:p-10 rounded-3xl shadow-xl mt-12 max-w-7xl mx-auto">
+        <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Micro-Grant Proposal</h2>
+            <p class="text-lg text-gray-200 max-w-4xl mx-auto">
+                At Emotion Encoded, we are committed to empowering women and youth to harness the potential of AI in their small businesses.
+                Through our AI Small Business Innovation Project, recipients of microgrants will have the opportunity to integrate AI tools that
+                drive innovation, efficiency, and growth, all while promoting responsible AI use. Alongside the financial support, we will host an
+                “enlightenment period” to help them learn how to use AI tools effectively.
+            </p>
+            <img src="images/emotionencodedsmallbusinessproject.jpg" alt="Microgrant Project" class="w-full max-w-2xl h-auto rounded-2xl mx-auto my-8 shadow-lg transition-transform duration-300 hover:scale-105" />
+            <a href="https://form.jotform.com/252359385925065" target="_blank" class="inline-block bg-blue-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-all duration-300 hover:bg-blue-800 hover:scale-105">
+                Click Here to Apply!
+            </a>
+        </div>
+    </section>
 
-     <!-- Insights -->
-     <section class="flex flex-col gap-6 items-center my-12 max-w-7xl mx-auto">
-         <div class="video-container w-full max-w-4xl rounded-2xl overflow-hidden shadow-xl">
-             <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/9lQpF3_WmkI" title="New AI Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-         </div>
-         <div class="video-container w-full max-w-4xl rounded-2xl overflow-hidden shadow-xl">
-             <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/RSdIBZX6Adw" title="AI Insights Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-         </div>
-     </section>
+    <!-- Insights -->
+    <section class="flex flex-col gap-6 items-center my-12 max-w-7xl mx-auto">
+        <div class="video-container w-full max-w-4xl rounded-2xl overflow-hidden shadow-xl">
+            <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/9lQpF3_WmkI" title="New AI Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-container w-full max-w-4xl rounded-2xl overflow-hidden shadow-xl">
+            <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/RSdIBZX6Adw" title="AI Insights Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
 
-     <!-- News Cards Section -->
-     <section class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12 max-w-7xl mx-auto">
-         <!-- News Card 1 -->
-         <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-             <img src="images/musk-xai-lawsuit.jpg" alt="Musk xAI lawsuit" class="w-full h-auto rounded-2xl mb-4" />
-             <div>
-                 <h3 class="text-xl font-bold mb-2">Musk’s xAI Sues Engineer for Allegedly Taking Secrets to OpenAI</h3>
-                 <p class="text-gray-300 text-sm mb-4">Elon Musk’s xAI filed a lawsuit claiming an engineer shared confidential information with OpenAI.</p>
-                 <a href="https://www.cnbc.com/2025/08/29/musks-xai-sues-engineer-for-allegedly-taking-secrets-to-openai.html" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
-             </div>
-         </div>
-         <!-- News Card 2 -->
-         <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-             <img src="images/anthropic-advisory-council.jpg" alt="Anthropic National Security Advisory Council" class="w-full h-auto rounded-2xl mb-4" />
-             <div>
-                 <h3 class="text-xl font-bold mb-2">Anthropic Forms National Security Advisory Council to Guide AI Use in Government</h3>
-                 <p class="text-gray-300 text-sm mb-4">Anthropic has established a National Security and Public Sector Advisory Council to deepen ties with Washington and allied governments, aiming to integrate AI into defense and strategic planning.</p>
-                 <a href="https://www.msn.com/en-us/news/technology/anthropic-forms-national-security-advisory-council-to-guide-ai-use-in-government/ar-AA1LkuFI" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
-             </div>
-         </div>
-         <!-- News Card 3 -->
-         <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl mb-4">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/u_FLDvEZ5rU" title="Trump Hosts Tech Titans at White House Dinner" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <div>
-                 <h3 class="text-xl font-bold mb-2">Trump Hosts Tech Titans at White House Dinner | Gates, Cook, Zuckerberg Attend, Musk Absent</h3>
-             </div>
-         </div>
-         <!-- News Card 4 -->
-         <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-             <img src="https://placehold.co/400x200/525252/ffffff?text=Eudia+Law+Firm" alt="Eudia Law Firm" class="w-full h-auto rounded-2xl mb-4" />
-             <div>
-                 <h3 class="text-xl font-bold mb-2">Eudia Opens AI-Augmented Law Firm for M&A</h3>
-                 <p class="text-gray-300 text-sm mb-4">Eudia's new venture, 'Eudia Counsel', is an "AI-Augmented" law firm for M&A due diligence and contract needs, leveraging a proprietary intelligence system to improve efficiency and consistency.</p>
-                 <a href="https://www.artificiallawyer.com/2025/09/03/eudia-opens-ai-augmented-law-firm-for-ma/" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
-             </div>
-         </div>
-         <!-- News Card 5 -->
-         <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-             <div class="video-container rounded-2xl overflow-hidden shadow-xl mb-4">
-                 <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/FASMejN_5gs" title="Neuralink Update, Summer 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <div>
-                 <h3 class="text-xl font-bold mb-2">Neuralink Update, Summer 2025</h3>
-             </div>
-         </div>
-     </section>
+    <!-- News Cards Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12 max-w-7xl mx-auto">
+        <!-- News Card 1 -->
+        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
+            <img src="images/musk-xai-lawsuit.jpg" alt="Musk xAI lawsuit" class="w-full h-auto rounded-2xl mb-4" />
+            <div>
+                <h3 class="text-xl font-bold mb-2">Musk’s xAI Sues Engineer for Allegedly Taking Secrets to OpenAI</h3>
+                <p class="text-gray-300 text-sm mb-4">Elon Musk’s xAI filed a lawsuit claiming an engineer shared confidential information with OpenAI.</p>
+                <a href="https://www.cnbc.com/2025/08/29/musks-xai-sues-engineer-for-allegedly-taking-secrets-to-openai.html" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
+            </div>
+        </div>
+        <!-- News Card 2 -->
+        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
+            <img src="images/anthropic-advisory-council.jpg" alt="Anthropic National Security Advisory Council" class="w-full h-auto rounded-2xl mb-4" />
+            <div>
+                <h3 class="text-xl font-bold mb-2">Anthropic Forms National Security Advisory Council to Guide AI Use in Government</h3>
+                <p class="text-gray-300 text-sm mb-4">Anthropic has established a National Security and Public Sector Advisory Council to deepen ties with Washington and allied governments, aiming to integrate AI into defense and strategic planning.</p>
+                <a href="https://www.msn.com/en-us/news/technology/anthropic-forms-national-security-advisory-council-to-guide-ai-use-in-government/ar-AA1LkuFI" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
+            </div>
+        </div>
+        <!-- News Card 3 -->
+        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl mb-4">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/u_FLDvEZ5rU" title="Trump Hosts Tech Titans at White House Dinner" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Trump Hosts Tech Titans at White House Dinner | Gates, Cook, Zuckerberg Attend, Musk Absent</h3>
+            </div>
+        </div>
+        <!-- News Card 4 -->
+        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
+            <img src="https://placehold.co/400x200/525252/ffffff?text=Eudia+Law+Firm" alt="Eudia Law Firm" class="w-full h-auto rounded-2xl mb-4" />
+            <div>
+                <h3 class="text-xl font-bold mb-2">Eudia Opens AI-Augmented Law Firm for M&A</h3>
+                <p class="text-gray-300 text-sm mb-4">Eudia's new venture, 'Eudia Counsel', is an "AI-Augmented" law firm for M&A due diligence and contract needs, leveraging a proprietary intelligence system to improve efficiency and consistency.</p>
+                <a href="https://www.artificiallawyer.com/2025/09/03/eudia-opens-ai-augmented-law-firm-for-ma/" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
+            </div>
+        </div>
+        <!-- News Card 5 -->
+        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
+            <div class="video-container rounded-2xl overflow-hidden shadow-xl mb-4">
+                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/FASMejN_5gs" title="Neuralink Update, Summer 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Neuralink Update, Summer 2025</h3>
+            </div>
+        </div>
+    </section>
 
-     <!-- Footer -->
-     <footer class="bg-gray-900/90 text-center py-6 mt-12 text-gray-400">
-         © 2025 Emotion Encoded — All rights reserved.
-     </footer>
+    <!-- Footer -->
+    <footer class="bg-gray-900/90 text-center py-6 mt-12 text-gray-400">
+        © 2025 Emotion Encoded — All rights reserved.
+    </footer>
 
- </body>
- </html>
+</body>
+</html>
