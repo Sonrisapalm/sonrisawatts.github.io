@@ -3,42 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accountability for AI Mistakes</title>
-    <!-- We need the typography plugin for the new article content -->
+    <title>Emotion Encoded Research</title>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
         
-        /* New body styles from your website's CSS */
         body {
             font-family: 'Poppins', sans-serif;
-            background-image: url('images/emotion-coded-web-page.png');
+            background-image: url('images/websitebackground.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             background-attachment: fixed;
             color: #f0f0f0;
             line-height: 1.7;
+            padding: 2rem 1rem; /* Added padding to prevent content from touching the edges */
+        }
+        
+        .content-container {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
+            gap: 2rem;
         }
 
-        /* A flexible container for all content blocks */
         .content-card {
-            background-color: rgba(44, 62, 80, 0.7); /* Dark semi-transparent background */
+            background-color: rgba(44, 62, 80, 0.7);
+            backdrop-filter: blur(5px);
             border-radius: 1rem;
             padding: 2rem;
-            max-width: 900px;
-            width: 90%;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            margin: 1rem 0;
-            text-align: center;
+            /* This flex-1 and min-w combination allows the cards to grow and wrap */
+            flex: 1; 
+            min-width: 300px;
         }
 
         .chart-container {
@@ -50,63 +48,72 @@
             padding: 1rem;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
         }
+
+        .article-container .prose p {
+            text-align: left;
+        }
     </style>
 </head>
 <body>
 
-    <div class="content-card">
-        <h1 class="text-3xl font-bold mb-4 text-white">Who is Responsible for AI Mistakes?</h1>
-        <p class="text-gray-400">Responses on who people would hold responsible if a generative AI tool made a mistake that affected them directly.</p>
-        <p class="text-gray-400 mb-8 text-sm italic">Hover over each bar to see the exact number of responses.</p>
+    <!-- Main content container for the two-column layout -->
+    <div class="content-container">
 
-        <div class="chart-container">
-            <canvas id="myChart"></canvas>
+        <!-- Chart Card -->
+        <div class="content-card max-w-lg">
+            <h1 class="text-3xl font-bold mb-4 text-white">Who is Responsible for AI Mistakes?</h1>
+            <p class="text-gray-400">Responses on who people would hold responsible if a generative AI tool made a mistake that affected them directly.</p>
+            <p class="text-gray-400 mb-8 text-sm italic">Hover over each bar to see the exact number of responses.</p>
+
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
         </div>
+
+        <!-- Main Article Content Card -->
+        <div class="content-card article-container max-w-2xl">
+            <article>
+                <header class="text-center mb-10 flex flex-col items-center">
+                    <img src="images/fortoppage.jpg" alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl lg:max-w-3xl" />
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Methods and Data</h1>
+                    <p class="text-lg md:text-xl font-light text-gray-300">A detailed overview of the research methodology for the Emotion Encoded initiative.</p>
+                </header>
+
+                <section class="prose prose-invert lg:prose-xl mx-auto">
+                    <p>The <strong>Emotion Encoded</strong> initiative is a continuous, mixed-methods research study designed to explore public and professional perceptions of AI. This research combines quantitative and qualitative data collection to provide a comprehensive understanding of emotional reasoning, biases, and ethical considerations in AI adoption. These methods ensure that findings accurately reflect both professional and public perspectives, enabling evidence-based recommendations for AI integration in high-stakes fields.</p>
+                    
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Quantitative Data Collection</h2>
+                    <p>Quantitative data is collected through a series of structured surveys distributed to over <strong>100</strong> respondents. The primary data collection instrument is <strong>Google Forms</strong>, featuring a mix of open-ended, multiple-choice, and Likert scale questions. Surveys are disseminated via social networks and in-person outreach to ensure a broad and diverse sample.</p>
+                    <p>To date, two key surveys have been completed, with ongoing monthly data collection for a longitudinal design:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-200">
+                        <li><strong>Survey 1:</strong> n≈69 respondents.</li>
+                        <li><strong>Survey 2:</strong> n≈44 respondents.</li>
+                        <li><strong>Ongoing surveys:</strong> Monthly collection to track evolving perceptions.</li>
+                    </ul>
+                    
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Qualitative Data Collection</h2>
+                    <p>Qualitative insights are gathered through <strong>semi-structured interviews</strong> with over professionals and subject-matter experts. Interviews are conducted via written responses and phone calls, allowing for flexible and detailed conversations. Participants include professionals such as Dr. Bichara Sahely (physician) and Alex Straun (finance).</p>
+                    
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Data Analysis</h2>
+                    <p>Quantitative survey data is analyzed using percentage-based analysis and descriptive statistics, with advanced inferential techniques such as <strong>ANOVA</strong> applied where appropriate. The analysis is primarily conducted using self-taught <strong>Python</strong> programming.</p>
+                    <p>Qualitative interview data undergoes <strong>thematic</strong> and <strong>semantic analysis</strong>. Transcripts are systematically coded to identify recurring ideas, sentiments, and patterns. Emergent themes are synthesized into research findings, which inform articles, policy recommendations, and public discussions.</p>
+
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Transparency and Verification</h2>
+                    <p>For full transparency, a detailed index of survey instruments, coding frameworks, and data summaries is available through the link below. This allows peers, reviewers, and scholarship committees to verify methodological rigor without overloading the main content.</p>
+                    <div class="mt-6 text-center">
+                        <a href="emotion_encoded_data.zip" download class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-colors duration-200">
+                            Download Data Package
+                        </a>
+                    </div>
+                </section>
+            </article>
+        </div>
+
     </div>
-
-    <!-- Main Article Content -->
-    <main class="container mx-auto p-4 md:p-8">
-        <article class="content-card">
-            <header class="text-center mb-10 flex flex-col items-center">
-                <img src="images/fortoppage.jpg" alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl lg:max-w-3xl" />
-                <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Methods and Data</h1>
-                <p class="text-lg md:text-xl font-light text-gray-300">A detailed overview of the research methodology for the Emotion Encoded initiative.</p>
-            </header>
-
-            <section class="prose prose-invert lg:prose-xl mx-auto text-left">
-                <p>The <strong>Emotion Encoded</strong> initiative is a continuous, mixed-methods research study designed to explore public and professional perceptions of AI. This research combines quantitative and qualitative data collection to provide a comprehensive understanding of emotional reasoning, biases, and ethical considerations in AI adoption. These methods ensure that findings accurately reflect both professional and public perspectives, enabling evidence-based recommendations for AI integration in high-stakes fields.</p>
-                
-                <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Quantitative Data Collection</h2>
-                <p>Quantitative data is collected through a series of structured surveys distributed to over <strong>100</strong> respondents. The primary data collection instrument is <strong>Google Forms</strong>, featuring a mix of open-ended, multiple-choice, and Likert scale questions. Surveys are disseminated via social networks and in-person outreach to ensure a broad and diverse sample.</p>
-                <p>To date, two key surveys have been completed, with ongoing monthly data collection for a longitudinal design:</p>
-                <ul class="list-disc list-inside space-y-2 text-gray-200">
-                    <li><strong>Survey 1:</strong> n≈69 respondents.</li>
-                    <li><strong>Survey 2:</strong> n≈44 respondents.</li>
-                    <li><strong>Ongoing surveys:</strong> Monthly collection to track evolving perceptions.</li>
-                </ul>
-                
-                <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Qualitative Data Collection</h2>
-                <p>Qualitative insights are gathered through <strong>semi-structured interviews</strong> with over <strong>15</strong> professionals and subject-matter experts. Interviews are conducted via written responses and phone calls, allowing for flexible and detailed conversations. Participants include professionals such as Dr. Bichara Sahely (physician) and Alex Straun (finance).</p>
-                
-                <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Data Analysis</h2>
-                <p>Quantitative survey data is analyzed using percentage-based analysis and descriptive statistics, with advanced inferential techniques such as <strong>ANOVA</strong> applied where appropriate. The analysis is primarily conducted using self-taught <strong>Python</strong> programming.</p>
-                <p>Qualitative interview data undergoes <strong>thematic</strong> and <strong>semantic analysis</strong>. Transcripts are systematically coded to identify recurring ideas, sentiments, and patterns. Emergent themes are synthesized into research findings, which inform articles, policy recommendations, and public discussions.</p>
-
-                <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Transparency and Verification</h2>
-                <p>For full transparency, a detailed index of survey instruments, coding frameworks, and data summaries is available through the link below. This allows peers, reviewers, and scholarship committees to verify methodological rigor without overloading the main content.</p>
-                <div class="mt-6 text-center">
-                    <a href="emotion_encoded_data.zip" download class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-colors duration-200">
-                        Download Data Package
-                    </a>
-                </div>
-            </section>
-        </article>
-    </main>
 
     <script>
         const ctx = document.getElementById('myChart').getContext('2d');
         
-        // Corrected data from the survey question: "If a generative AI tool made a mistake that affected you directly, who would you hold responsible?"
         const labels = ['Myself', 'AI Developers', 'AI itself', 'Nobody', 'Wouldn\'t use it'];
         const data = [28, 5, 2, 2, 4];
 
