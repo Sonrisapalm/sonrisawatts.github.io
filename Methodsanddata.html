@@ -102,27 +102,30 @@
             Emotion Encoded
         </div>
         <div class="navbar-links hidden md:flex">
-            <a href="#about">About</a>
-            <a href="#charts">Charts</a>
-            <a href="#methods">Methodology</a>
-            <a href="#contact">Contact</a>
+            <a href="#responsibilityChart">Charts</a>
+            <a href="#article_section">Articles</a>
         </div>
     </nav>
 
     <!-- Main content container -->
     <div class="content-container">
 
-        <!-- Chart Card: AI Responsibility -->
-        <div class="content-card max-w-lg">
+        <!-- Chart Card: AI Responsibility (Now a Donut Chart with Interactivity) -->
+        <div id="responsibilityChart" class="content-card max-w-lg">
             <h1 class="text-2xl font-bold mb-4 text-white">Who is Responsible for AI Mistakes?</h1>
             <p class="text-gray-400">Responses on who people would hold responsible if a generative AI tool made a mistake that affected them directly.</p>
-            <p class="text-gray-400 mb-8 text-sm italic">Hover over each bar to see the exact number of responses.</p>
+            <p class="text-gray-400 mb-8 text-sm italic">**Click on a slice to see a summary of that group's opinion.**</p>
             <div class="chart-container">
-                <canvas id="responsibilityChart"></canvas>
+                <canvas id="responsibilityCanvas"></canvas>
+            </div>
+            <!-- Dynamic content display area -->
+            <div id="responsibilitySummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="summaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
 
-        <!-- Chart Card: AI Misuse -->
+        <!-- Chart Card: AI Misuse (Bar Chart) -->
         <div class="content-card max-w-lg">
             <h1 class="text-2xl font-bold mb-4 text-white">How Can Powerful People Misuse AI?</h1>
             <p class="text-gray-400">Responses on how powerful people or companies can misuse AI.</p>
@@ -132,7 +135,7 @@
             </div>
         </div>
         
-        <!-- Chart Card: AI Trust -->
+        <!-- Chart Card: AI Trust (Bar Chart) -->
         <div class="content-card max-w-lg">
             <h1 class="text-2xl font-bold mb-4 text-white">How to Build Trust in AI?</h1>
             <p class="text-gray-400">What people need to know about an AI tool in order to trust it more.</p>
@@ -142,18 +145,18 @@
             </div>
         </div>
 
-        <!-- Chart Card: AI and Jobs -->
+        <!-- Chart Card: AI and Jobs (Polar Area Chart) -->
         <div class="content-card max-w-lg">
             <h1 class="text-2xl font-bold mb-4 text-white">Jobs AI Should Never Do</h1>
             <p class="text-gray-400">Which jobs people believe AI should never be allowed to do.</p>
-            <p class="text-gray-400 mb-8 text-sm italic">Hover over each bar to see the exact number of responses.</p>
+            <p class="text-gray-400 mb-8 text-sm italic">Hover over each segment to see the exact number of responses.</p>
             <div class="chart-container">
                 <canvas id="jobsChart"></canvas>
             </div>
         </div>
-        
+
         <!-- Main Article Content Card -->
-        <div class="content-card article-container max-w-2xl">
+        <div id="article_section" class="content-card article-container max-w-2xl">
             <article>
                 <header class="text-center mb-10 flex flex-col items-center">
                     <img src="images/fortoppage.jpg" alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl lg:max-w-3xl" />
@@ -172,8 +175,6 @@
                     </ul>
                     <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Qualitative Data Collection</h2>
                     <p>Qualitative insights are gathered through <strong>semi-structured interviews</strong> with over <strong>15</strong> professionals and subject-matter experts. Interviews are conducted via written responses and phone calls, allowing for flexible and detailed conversations. Participants include professionals such as Dr. Bichara Sahely (physician) and Alex Straun (finance).</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Data Analysis</h2>
-                    <p>Quantitative survey data is analyzed using percentage-based analysis and descriptive statistics, with advanced inferential techniques such as <strong>ANOVA</strong> applied where appropriate. The analysis is primarily conducted using self-taught <strong>Python</strong> programming.</p>
                     <p>Qualitative interview data undergoes <strong>thematic</strong> and <strong>semantic analysis</strong>. Transcripts are systematically coded to identify recurring ideas, sentiments, and patterns. Emergent themes are synthesized into research findings, which inform articles, policy recommendations, and public discussions.</p>
                     <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Transparency and Verification</h2>
                     <p>For full transparency, a detailed index of survey instruments, coding frameworks, and data summaries is available through the link below. This allows peers, reviewers, and scholarship committees to verify methodological rigor without overloading the main content.</p>
@@ -193,105 +194,179 @@
             labels: ['Myself', 'AI Developers', 'AI itself', 'Nobody', 'Wouldn\'t use it'],
             data: [28, 5, 2, 2, 4]
         };
-
         const misuseData = {
             labels: ['Invading people\'s privacy or sp...', 'Using personal data to train oth...', 'Manipulating opinions or behavior', 'Discriminating against certain g...', 'Over-hyping the influence of te...', 'Ignoring the moral and ethical r...', 'I don\'t care, it doesn\'t affect me.'],
             data: [48, 38, 49, 24, 18, 38, 1]
         };
-
         const trustData = {
             labels: ['Details about how the AI syste...', 'Information about the data it w...', 'Who created the AI system...', 'Whether it has been tested for...', 'How often it makes mistakes', 'If a human is involved in review...', 'Information about how my pers...', 'What\'s the motive behind devel...', 'I don\'t need to know anything...', 'I could never fully trust AI'],
             data: [30, 31, 14, 30, 30, 29, 36, 15, 3, 15]
         };
-
         const jobsData = {
             labels: ['Teacher', 'Doctor', 'Therapist', 'Lawyer', 'Chef', 'Judge', 'Babysitter', 'Cashier', 'Construction worker', 'Financial Advisor', 'Banker', 'Stylist', 'Lover', 'Farmer'],
             data: [22, 30, 23, 19, 27, 38, 46, 7, 19, 15, 14, 21, 52, 17]
         };
 
+        const backgroundColors = [
+            'rgba(244, 63, 94, 0.7)',
+            'rgba(99, 102, 241, 0.7)',
+            'rgba(167, 139, 250, 0.7)',
+            'rgba(34, 197, 94, 0.7)',
+            'rgba(255, 159, 64, 0.7)',
+            'rgba(244, 114, 182, 0.7)',
+            'rgba(251, 191, 36, 0.7)',
+            'rgba(74, 222, 128, 0.7)',
+            'rgba(139, 92, 246, 0.7)',
+            'rgba(239, 68, 68, 0.7)',
+            'rgba(16, 185, 129, 0.7)',
+            'rgba(59, 130, 246, 0.7)',
+            'rgba(250, 204, 21, 0.7)',
+            'rgba(255, 99, 132, 0.7)'
+        ];
+
+        const borderColors = [
+            'rgba(244, 63, 94, 1)',
+            'rgba(99, 102, 241, 1)',
+            'rgba(167, 139, 250, 1)',
+            'rgba(34, 197, 94, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(244, 114, 182, 1)',
+            'rgba(251, 191, 36, 1)',
+            'rgba(74, 222, 128, 1)',
+            'rgba(139, 92, 246, 1)',
+            'rgba(239, 68, 68, 1)',
+            'rgba(16, 185, 129, 1)',
+            'rgba(59, 130, 246, 1)',
+            'rgba(250, 204, 21, 1)',
+            'rgba(255, 99, 132, 1)'
+        ];
+
+        const responsibilitySummaries = {
+            'Myself': 'This group believes they are ultimately responsible for their actions and the tools they choose to use, including AI.',
+            'AI Developers': 'This group holds the creators of the AI responsible, citing their role in building and releasing the technology.',
+            'AI itself': 'This group personifies the AI, believing it should be held accountable for its own errors.',
+            'Nobody': 'This group does not believe anyone should be held responsible for an AI\'s mistakes.',
+            'Wouldn\'t use it': 'This group avoids the issue of responsibility by stating they would not use a risky AI tool in the first place.'
+        };
+
         // Function to create a new Chart.js instance
-        function createChart(canvasId, labels, data) {
+        function createChart(canvasId, type, labels, data) {
             const ctx = document.getElementById(canvasId).getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Number of Responses',
-                        data: data,
-                        backgroundColor: [
-                            'rgba(244, 63, 94, 0.7)',
-                            'rgba(99, 102, 241, 0.7)',
-                            'rgba(167, 139, 250, 0.7)',
-                            'rgba(34, 197, 94, 0.7)',
-                            'rgba(255, 159, 64, 0.7)',
-                            'rgba(244, 114, 182, 0.7)',
-                            'rgba(251, 191, 36, 0.7)',
-                            'rgba(74, 222, 128, 0.7)',
-                            'rgba(139, 92, 246, 0.7)',
-                            'rgba(239, 68, 68, 0.7)',
-                            'rgba(16, 185, 129, 0.7)',
-                            'rgba(59, 130, 246, 0.7)',
-                            'rgba(250, 204, 21, 0.7)',
-                            'rgba(255, 99, 132, 0.7)'
-                        ],
-                        borderColor: [
-                            'rgba(244, 63, 94, 1)',
-                            'rgba(99, 102, 241, 1)',
-                            'rgba(167, 139, 250, 1)',
-                            'rgba(34, 197, 94, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(244, 114, 182, 1)',
-                            'rgba(251, 191, 36, 1)',
-                            'rgba(74, 222, 128, 1)',
-                            'rgba(139, 92, 246, 1)',
-                            'rgba(239, 68, 68, 1)',
-                            'rgba(16, 185, 129, 1)',
-                            'rgba(59, 130, 246, 1)',
-                            'rgba(250, 204, 21, 1)',
-                            'rgba(255, 99, 132, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    indexAxis: 'y', // Makes the chart horizontal
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                color: '#e2e8f0'
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                color: '#e2e8f0'
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            }
-                        }
+            const options = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
                     },
-                    plugins: {
-                        legend: {
-                            display: false
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        borderColor: '#fff',
+                        borderWidth: 1,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.formattedValue + ' responses';
+                            }
                         }
                     }
                 }
+            };
+
+            const datasets = [{
+                label: 'Number of Responses',
+                data: data,
+                backgroundColor: backgroundColors.slice(0, data.length),
+                borderColor: borderColors.slice(0, data.length),
+                borderWidth: 1
+            }];
+
+            if (type === 'bar') {
+                options.indexAxis = 'y';
+                options.scales = {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#e2e8f0' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    },
+                    x: {
+                        ticks: { color: '#e2e8f0' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    }
+                };
+                options.plugins.legend.display = false;
+            } else if (type === 'doughnut') {
+                options.plugins.legend.display = true;
+                options.plugins.legend.position = 'bottom';
+                options.plugins.legend.labels = { color: '#e2e8f0' };
+                options.plugins.tooltip.callbacks.label = function(context) {
+                    let label = context.label || '';
+                    if (label) {
+                        label += ': ';
+                    }
+                    if (context.parsed !== null) {
+                        label += context.parsed;
+                    }
+                    return label;
+                };
+            } else if (type === 'polarArea') {
+                options.plugins.legend.display = true;
+                options.plugins.legend.position = 'bottom';
+                options.plugins.legend.labels = { color: '#e2e8f0' };
+                options.scales = {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.2)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.2)' },
+                        pointLabels: { color: '#e2e8f0' },
+                        ticks: {
+                            color: '#e2e8f0',
+                            backdropColor: 'transparent'
+                        }
+                    }
+                };
+            }
+
+            const chart = new Chart(ctx, {
+                type: type,
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: options
             });
+            return chart;
         }
 
-        // Initialize all charts on the page load
+        let responsibilityChart;
+        
+        // Initialize all charts and event listeners on page load
         window.onload = function() {
-            createChart('responsibilityChart', responsibilityData.labels, responsibilityData.data);
-            createChart('misuseChart', misuseData.labels, misuseData.data);
-            createChart('trustChart', trustData.labels, trustData.data);
-            createChart('jobsChart', jobsData.labels, jobsData.data);
+            responsibilityChart = createChart('responsibilityCanvas', 'doughnut', responsibilityData.labels, responsibilityData.data);
+            createChart('misuseChart', 'bar', misuseData.labels, misuseData.data);
+            createChart('trustChart', 'bar', trustData.labels, trustData.data);
+            createChart('jobsChart', 'polarArea', jobsData.labels, jobsData.data);
+
+            // Add click event listener to the responsibility chart
+            document.getElementById('responsibilityCanvas').addEventListener('click', function(evt) {
+                const activePoints = responsibilityChart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+                if (activePoints.length > 0) {
+                    const firstPoint = activePoints[0];
+                    const label = responsibilityChart.data.labels[firstPoint.index];
+                    const summaryText = responsibilitySummaries[label];
+                    const summaryElement = document.getElementById('responsibilitySummary');
+                    const textElement = document.getElementById('summaryText');
+
+                    // Update the text and make the summary visible
+                    textElement.textContent = summaryText;
+                    summaryElement.classList.remove('hidden');
+                    
+                    // Trigger a transition for a smooth fade-in effect
+                    setTimeout(() => summaryElement.style.opacity = '1', 10);
+                }
+            });
         };
     </script>
 </body>
