@@ -121,37 +121,49 @@
             <!-- Dynamic content display area -->
             <div id="responsibilitySummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="summaryText" class="text-white font-medium mt-2"></p>
+                <p id="responsibilitySummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
 
         <!-- Chart Card: AI Misuse (Bar Chart) -->
-        <div class="content-card max-w-lg">
+        <div id="misuseChart" class="content-card max-w-lg">
             <h1 class="text-2xl font-bold mb-4 text-white">How Can Powerful People Misuse AI?</h1>
             <p class="text-gray-400">Responses on how powerful people or companies can misuse AI.</p>
-            <p class="text-gray-400 mb-8 text-sm italic">Hover over each bar to see the exact number of responses.</p>
+            <p class="text-gray-400 mb-8 text-sm italic">**Click on a bar to see a summary of that group's opinion.**</p>
             <div class="chart-container">
-                <canvas id="misuseChart"></canvas>
+                <canvas id="misuseCanvas"></canvas>
+            </div>
+            <div id="misuseSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="misuseSummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
         
         <!-- Chart Card: AI Trust (Bar Chart) -->
-        <div class="content-card max-w-lg">
+        <div id="trustChart" class="content-card max-w-lg">
             <h1 class="text-2xl font-bold mb-4 text-white">How to Build Trust in AI?</h1>
             <p class="text-gray-400">What people need to know about an AI tool in order to trust it more.</p>
-            <p class="text-gray-400 mb-8 text-sm italic">Hover over each bar to see the exact number of responses.</p>
+            <p class="text-gray-400 mb-8 text-sm italic">**Click on a bar to see a summary of that group's opinion.**</p>
             <div class="chart-container">
-                <canvas id="trustChart"></canvas>
+                <canvas id="trustCanvas"></canvas>
+            </div>
+            <div id="trustSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="trustSummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
 
         <!-- Chart Card: AI and Jobs (Polar Area Chart) -->
-        <div class="content-card max-w-lg">
+        <div id="jobsChart" class="content-card max-w-lg">
             <h1 class="text-2xl font-bold mb-4 text-white">Jobs AI Should Never Do</h1>
             <p class="text-gray-400">Which jobs people believe AI should never be allowed to do.</p>
-            <p class="text-gray-400 mb-8 text-sm italic">Hover over each segment to see the exact number of responses.</p>
+            <p class="text-gray-400 mb-8 text-sm italic">**Click on a segment to see a summary of that group's opinion.**</p>
             <div class="chart-container">
-                <canvas id="jobsChart"></canvas>
+                <canvas id="jobsCanvas"></canvas>
+            </div>
+            <div id="jobsSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="jobsSummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
 
@@ -248,6 +260,43 @@
             'Nobody': 'This group does not believe anyone should be held responsible for an AI\'s mistakes.',
             'Wouldn\'t use it': 'This group avoids the issue of responsibility by stating they would not use a risky AI tool in the first place.'
         };
+        const misuseSummaries = {
+            'Invading people\'s privacy or sp...': 'This concern highlights the potential for AI to be used for mass surveillance and to gather personal data without consent.',
+            'Using personal data to train oth...': 'Respondents in this group fear that their personal data could be exploited to train other AI models, leading to further privacy breaches.',
+            'Manipulating opinions or behavior': 'A major fear is that AI could be used to create highly personalized, deceptive content to influence public opinion or individual actions.',
+            'Discriminating against certain g...': 'This concern points to the possibility of AI systems reinforcing existing societal biases, leading to unfair treatment of certain groups.',
+            'Over-hyping the influence of te...': 'Some respondents believe powerful entities might exaggerate AI\'s capabilities to create a sense of inevitability or to gain an unfair advantage.',
+            'Ignoring the moral and ethical r...': 'This group is concerned about the lack of ethical oversight in AI development and deployment, which could lead to harmful outcomes.',
+            'I don\'t care, it doesn\'t affect me.': 'This small group feels disconnected from the ethical issues surrounding AI, believing it does not impact their personal lives.'
+        };
+        const trustSummaries = {
+            'Details about how the AI syste...': 'Respondents feel that transparency in how an AI works is key to building trust. They want to know the internal logic or "black box" behind its decisions.',
+            'Information about the data it w...': 'This group believes trust is built on understanding the dataset used to train the AI. They want to ensure the data is fair, unbiased, and free from personal information.',
+            'Who created the AI system...': 'Knowing the developer behind the AI is important for this group, as it helps them gauge the creator\'s values and potential biases.',
+            'Whether it has been tested for...': 'This group requires proof of thorough testing for safety, bias, and accuracy before they can trust an AI tool.',
+            'How often it makes mistakes': 'For this group, transparency about the AI\'s error rate is crucial. They want to know its limitations and fallibility.',
+            'If a human is involved in review...': 'A human-in-the-loop approach is a key trust-builder for this group. They feel safer knowing that a person can override or correct the AI\'s output.',
+            'Information about how my pers...': 'Privacy is paramount. This group will only trust an AI that is transparent about how it handles and protects their personal data.',
+            'What\'s the motive behind devel...': 'Understanding the purpose or motivation for the AI\'s creation is a primary trust factor for this group, especially if it\'s for profit versus for public good.',
+            'I don\'t need to know anything...': 'A small subset of users who are comfortable with new technology and do not require extensive background information to trust an AI.',
+            'I could never fully trust AI': 'This group holds a fundamental skepticism towards AI, believing it is inherently untrustworthy regardless of any information provided.'
+        };
+        const jobsSummaries = {
+            'Teacher': 'This group feels that the human connection, empathy, and social-emotional learning provided by a teacher cannot be replicated by an AI.',
+            'Doctor': 'Respondents believe the nuance, diagnostic intuition, and compassionate care of a doctor are irreplaceable by a machine.',
+            'Therapist': 'The intimate and highly personal nature of therapy, which relies on human connection and trust, is seen as a role AI should never fill.',
+            'Lawyer': 'This group values the ethical judgment, courtroom presence, and nuanced understanding of justice that a human lawyer provides.',
+            'Chef': 'Creativity, passion, and the artistry of cooking are seen as uniquely human traits that an AI chef would lack.',
+            'Judge': 'The ethical, moral, and judicial responsibility of a judge is seen as too critical to be entrusted to an AI, which lacks a conscience.',
+            'Babysitter': 'The care, protection, and emotional bonding required to look after a child are considered far beyond the capabilities of an AI.',
+            'Cashier': 'This is considered a more straightforward, repetitive task that some believe could be automated, but others still value the human interaction.',
+            'Construction worker': 'Physical labor, problem-solving on the spot, and managing unpredictable situations are seen as reasons to keep this job human.',
+            'Financial Advisor': 'Trust and a deep understanding of a person\'s long-term goals and risk tolerance are seen as qualities an AI cannot fully grasp.',
+            'Banker': 'The need for human oversight, security, and personal relationships in handling finances is important to this group.',
+            'Stylist': 'Creativity, understanding personal taste, and providing a human touch in personal appearance are considered essential for a stylist.',
+            'Lover': 'This is the most common response, highlighting the belief that a romantic or personal relationship is fundamentally human and cannot be automated.',
+            'Farmer': 'The intuition, on-the-ground knowledge, and hard work required to farm are seen as uniquely human skills.'
+        };
 
         // Function to create a new Chart.js instance
         function createChart(canvasId, type, labels, data) {
@@ -341,32 +390,41 @@
         }
 
         let responsibilityChart;
+        let misuseChart;
+        let trustChart;
+        let jobsChart;
         
+        // Function to handle click events for all charts
+        function handleChartClick(chart, summaryTextElementId, summaries) {
+            return function(evt) {
+                const activePoints = chart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+                if (activePoints.length > 0) {
+                    const firstPoint = activePoints[0];
+                    const label = chart.data.labels[firstPoint.index];
+                    const summaryText = summaries[label];
+                    
+                    const summaryElement = document.getElementById(summaryTextElementId).closest('.content-card').querySelector('.mt-8');
+                    const textElement = document.getElementById(summaryTextElementId);
+
+                    textElement.textContent = summaryText;
+                    summaryElement.classList.remove('hidden');
+                    setTimeout(() => summaryElement.style.opacity = '1', 10);
+                }
+            };
+        }
+
         // Initialize all charts and event listeners on page load
         window.onload = function() {
             responsibilityChart = createChart('responsibilityCanvas', 'doughnut', responsibilityData.labels, responsibilityData.data);
-            createChart('misuseChart', 'bar', misuseData.labels, misuseData.data);
-            createChart('trustChart', 'bar', trustData.labels, trustData.data);
-            createChart('jobsChart', 'polarArea', jobsData.labels, jobsData.data);
+            misuseChart = createChart('misuseCanvas', 'bar', misuseData.labels, misuseData.data);
+            trustChart = createChart('trustCanvas', 'bar', trustData.labels, trustData.data);
+            jobsChart = createChart('jobsCanvas', 'polarArea', jobsData.labels, jobsData.data);
 
-            // Add click event listener to the responsibility chart
-            document.getElementById('responsibilityCanvas').addEventListener('click', function(evt) {
-                const activePoints = responsibilityChart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
-                if (activePoints.length > 0) {
-                    const firstPoint = activePoints[0];
-                    const label = responsibilityChart.data.labels[firstPoint.index];
-                    const summaryText = responsibilitySummaries[label];
-                    const summaryElement = document.getElementById('responsibilitySummary');
-                    const textElement = document.getElementById('summaryText');
-
-                    // Update the text and make the summary visible
-                    textElement.textContent = summaryText;
-                    summaryElement.classList.remove('hidden');
-                    
-                    // Trigger a transition for a smooth fade-in effect
-                    setTimeout(() => summaryElement.style.opacity = '1', 10);
-                }
-            });
+            // Add click event listeners to all charts
+            document.getElementById('responsibilityCanvas').addEventListener('click', handleChartClick(responsibilityChart, 'responsibilitySummaryText', responsibilitySummaries));
+            document.getElementById('misuseCanvas').addEventListener('click', handleChartClick(misuseChart, 'misuseSummaryText', misuseSummaries));
+            document.getElementById('trustCanvas').addEventListener('click', handleChartClick(trustChart, 'trustSummaryText', trustSummaries));
+            document.getElementById('jobsCanvas').addEventListener('click', handleChartClick(jobsChart, 'jobsSummaryText', jobsSummaries));
         };
     </script>
 </body>
