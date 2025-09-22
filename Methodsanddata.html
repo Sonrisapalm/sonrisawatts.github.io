@@ -6,6 +6,7 @@
     <title>Emotion Encoded Research Dashboard</title>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
         
@@ -50,6 +51,15 @@
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
         }
 
+        /* Adjustments for the 3D canvas */
+        .chart-3d-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
         .article-container .prose p {
             text-align: left;
         }
@@ -82,14 +92,15 @@
     <!-- Main content container -->
     <div class="content-container">
 
-        <!-- Chart Card: AI Responsibility (Now a Donut Chart with Interactivity) -->
+        <!-- Survey 1 Charts -->
+
+        <!-- Chart Card: AI Responsibility (Donut Chart) -->
         <div id="responsibilityChart" class="content-card max-w-lg">
             <h1 class="text-2xl font-bold mb-4 text-white">Who is Responsible for AI Mistakes?</h1>
             <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice to see a summary of that group's opinion.**</p>
             <div class="chart-container">
                 <canvas id="responsibilityCanvas"></canvas>
             </div>
-            <!-- Dynamic content display area -->
             <div id="responsibilitySummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="responsibilitySummaryText" class="text-white font-medium mt-2"></p>
@@ -137,7 +148,105 @@
                 <p id="jobsSummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
+        
+        <!-- Survey 2 Charts -->
+        
+        <!-- NEW 3D Chart: AI Trust for Confidential Advice -->
+        <div id="confidentialChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Trusting AI for Confidential Advice</h1>
+            <p class="text-gray-400">Public opinion on trusting an AI more than a human for confidential advice.</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a segment to see a summary of that group's opinion.**</p>
+            <div class="chart-3d-container" id="confidentialChartContainer"></div>
+            <div id="confidentialSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="confidentialSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
 
+        <!-- NEW 3D Chart: AI Medical Mistake Response -->
+        <div id="medicalChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Response to AI Medical Mistake</h1>
+            <p class="text-gray-400">Hypothetical responses to an AI-powered medical tool making a diagnostic mistake.</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
+            <div class="chart-3d-container" id="medicalChartContainer"></div>
+            <div id="medicalSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="medicalSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- NEW 3D Chart: Net Positive/Negative -->
+        <div id="netImpactChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">AI's Net Impact on Society</h1>
+            <p class="text-gray-400">Do you think AI is currently a net positive, net negative, or somewhere in between for society?</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a segment to see a summary of that group's opinion.**</p>
+            <div class="chart-3d-container" id="netImpactChartContainer"></div>
+            <div id="netImpactSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="netImpactSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- NEW 3D Chart: Human Connection -->
+        <div id="humanConnectionChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">AI's Impact on Human Connection</h1>
+            <p class="text-gray-400">How do you feel AI will impact the value of human connection?</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
+            <div class="chart-3d-container" id="humanConnectionChartContainer"></div>
+            <div id="humanConnectionSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="humanConnectionSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+
+        <!-- NEW 3D Chart: Misinformation -->
+        <div id="misinformationChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">How to Handle Online Misinformation</h1>
+            <p class="text-gray-400">The best way to handle misinformation online.</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a segment to see a summary of that group's opinion.**</p>
+            <div class="chart-3d-container" id="misinformationChartContainer"></div>
+            <div id="misinformationSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="misinformationSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- NEW 3D Chart: AI Emotions -->
+        <div id="emotionsChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Emotions Associated with AI</h1>
+            <p class="text-gray-400">Which emotions do you associate with AI?</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
+            <div class="chart-3d-container" id="emotionsChartContainer"></div>
+            <div id="emotionsSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="emotionsSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- NEW 3D Chart: Social Media Time -->
+        <div id="socialMediaChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Social Media Usage</h1>
+            <p class="text-gray-400">How much time do you spend on social media per week?</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
+            <div class="chart-3d-container" id="socialMediaChartContainer"></div>
+            <div id="socialMediaSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="socialMediaSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- NEW 3D Chart: AI Terms -->
+        <div id="aiTermsChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Terms Associated with AI</h1>
+            <p class="text-gray-400">When you hear about AI, which of the following terms do you associate with it?</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
+            <div class="chart-3d-container" id="aiTermsChartContainer"></div>
+            <div id="aiTermsSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="aiTermsSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
         <!-- Main Article Content Card -->
         <div id="article_section" class="content-card article-container max-w-2xl">
             <article>
@@ -182,7 +291,7 @@
     </nav>
 
     <script>
-        // Chart Data
+        // Chart Data (Survey 1)
         const responsibilityData = {
             labels: ['Myself', 'AI Developers', 'AI itself', 'Nobody', 'Wouldn\'t use it'],
             data: [28, 5, 2, 2, 4]
@@ -199,6 +308,110 @@
             labels: ['Teacher', 'Doctor', 'Therapist', 'Lawyer', 'Chef', 'Judge', 'Babysitter', 'Cashier', 'Construction worker', 'Financial Advisor', 'Banker', 'Stylist', 'Lover', 'Farmer'],
             data: [22, 30, 23, 19, 27, 38, 46, 7, 19, 15, 14, 21, 52, 17]
         };
+
+        // Chart Data (Survey 2)
+        const confidentialData = {
+            labels: ['No', 'Depends', 'Yes', 'Maybe', 'When emotions are less important...'],
+            data: [20, 13, 5, 2, 1],
+            summaries: {
+                'No': 'The majority of respondents stated they would not trust an AI more than a human for confidential advice, highlighting a strong preference for human connection and empathy in such situations.',
+                'Depends': 'This group\'s trust in AI for confidential advice is conditional. Their decision depends on the specific context and the type of advice being sought.',
+                'Yes': 'A small but significant minority would trust an AI more than a human, possibly valuing its objectivity, lack of bias, or access to vast amounts of data.',
+                'Maybe': 'This group is uncertain but open to the idea, suggesting their opinion could change with more information or positive experiences with AI.',
+                'When emotions are less important...': 'This is a very specific condition for trusting an AI, showing that for some, the crucial factor is the emotional weight of the advice. They may prefer AI for factual or logical guidance.'
+            }
+        };
+
+        const medicalData = {
+            labels: ['I would definitely sue', 'I would forgive him/her and negotiate options...', 'Neutral', 'Inquisitive', 'Angry but willing to rectify...', 'Not sure'],
+            data: [25, 13, 2, 1, 2, 1],
+            summaries: {
+                'I would definitely sue': 'The largest group would take legal action, indicating a strong belief that the doctor, as the professional using the tool, is ultimately responsible for the outcome.',
+                'I would forgive him/her and negotiate options...': 'This group would choose a more collaborative approach, focusing on finding a solution with the doctor rather than seeking punitive action.',
+                'Neutral': 'A small portion of respondents would feel neither angry nor forgiving, suggesting they would approach the situation with a purely objective mindset.',
+                'Inquisitive': 'This group would want to understand why the mistake happened, focusing on learning from the error rather than assigning blame.',
+                'Angry but willing to rectify...': 'This group expresses initial anger but is willing to work with the doctor to find a resolution, showing a mix of emotional response and practicality.',
+                'Not sure': 'This group is undecided, highlighting the complexity of the situation and the difficulty in assigning responsibility.'
+            }
+        };
+        
+        const netImpactData = {
+            labels: ['Net Positive', 'Net Negative', 'In between'],
+            data: [16, 12, 16],
+            summaries: {
+                'Net Positive': 'This group sees AI as having an overall beneficial effect on society.',
+                'Net Negative': 'This group believes AI\'s negative impacts outweigh its benefits.',
+                'In between': 'This group believes AI has both positive and negative aspects, with neither clearly dominating the other.'
+            }
+        };
+        
+        const humanConnectionData = {
+            labels: ['Enhance', 'Decrease', 'No Impact'],
+            data: [13, 24, 7],
+            summaries: {
+                'Enhance': 'This group believes AI will improve human connection by enabling new forms of communication and collaboration.',
+                'Decrease': 'The majority of respondents fear that AI will reduce the value of genuine human connection by replacing it with digital interactions.',
+                'No Impact': 'This group feels that AI will not fundamentally alter the nature of human connection.'
+            }
+        };
+        
+        const misinformationData = {
+            labels: ['Fact-checking & verification tools', 'Human moderation on social media', 'Stricter regulation of AI content', 'I don\'t care', 'Punishing purveyors of misinformation'],
+            data: [26, 22, 14, 1, 11],
+            summaries: {
+                'Fact-checking & verification tools': 'Respondents see AI-powered fact-checking tools as the best way to combat misinformation.',
+                'Human moderation on social media': 'This group believes human moderators are essential for reviewing and controlling the spread of misinformation.',
+                'Stricter regulation of AI content': 'This group thinks governments and regulatory bodies should implement strict laws on how AI-generated content is used and shared.',
+                'I don\'t care': 'A small portion of respondents feel detached from the issue of misinformation.',
+                'Punishing purveyors of misinformation': 'This group wants legal consequences for those who create and spread misinformation.'
+            }
+        };
+        
+        const emotionsData = {
+            labels: ['Anxious', 'Curious', 'Excited', 'Enthusiastic', 'Scared', 'Confused', 'Hopeful', 'Joyful', 'Angry', 'Neutral'],
+            data: [20, 19, 18, 11, 18, 18, 17, 6, 3, 13],
+            summaries: {
+                'Anxious': 'A significant number of people feel anxious about the unknown future and potential negative impacts of AI.',
+                'Curious': 'Many respondents are intellectually curious about AI and its capabilities.',
+                'Excited': 'This group is enthusiastic about the new possibilities and advancements AI can bring.',
+                'Enthusiastic': 'A subset of the excited group who are very eager about the future of AI.',
+                'Scared': 'A considerable number of people are scared of AI, possibly due to concerns about job loss, privacy, or its power.',
+                'Confused': 'Many people feel confused, indicating a need for more education and clearer information about AI.',
+                'Hopeful': 'This group holds a positive outlook on AI\'s potential to solve global problems.',
+                'Joyful': 'A small group feels a sense of joy, likely from experiencing the immediate benefits and convenience of AI tools.',
+                'Angry': 'A small number feel angry, possibly due to a sense of powerlessness or negative past experiences.',
+                'Neutral': 'This group remains indifferent, neither positive nor negative about the technology.'
+            }
+        };
+        
+        const socialMediaData = {
+            labels: ['0-1 hour', '1-3 hours', '3-5 hours', '5+ hours'],
+            data: [2, 12, 11, 19],
+            summaries: {
+                '0-1 hour': 'This group spends very little time on social media, perhaps actively avoiding it.',
+                '1-3 hours': 'A moderate group with a typical amount of social media usage.',
+                '3-5 hours': 'A significant number of people spend several hours on social media daily.',
+                '5+ hours': 'The largest group, indicating a high level of engagement and time spent on social media platforms.'
+            }
+        };
+        
+        const aiTermsData = {
+            labels: ['Data', 'Algorithms', 'Ethics', 'Humanity', 'Future', 'Jobs', 'Bias', 'Safety', 'Empathy', 'Power'],
+            data: [26, 24, 23, 22, 22, 21, 21, 21, 16, 15],
+            summaries: {
+                'Data': 'The most common association is with data, reflecting AI\'s reliance on large datasets.',
+                'Algorithms': 'Many people see AI as fundamentally a matter of algorithms and complex code.',
+                'Ethics': 'A strong association with ethics highlights growing public concern about the moral implications of AI.',
+                'Humanity': 'This term shows a concern for AI\'s impact on what it means to be human.',
+                'Future': 'AI is widely seen as a technology that will shape the future.',
+                'Jobs': 'A common association is with the impact on employment and job security.',
+                'Bias': 'People are aware of the potential for AI systems to have inherent biases.',
+                'Safety': 'Safety is a major concern, linked to the potential for AI to be harmful.',
+                'Empathy': 'This reflects the debate over whether AI can ever truly understand or replicate human empathy.',
+                'Power': 'This association points to a concern about who controls AI and the immense power it represents.'
+            }
+        };
+
 
         const backgroundColors = [
             'rgba(244, 63, 94, 0.7)',
@@ -266,7 +479,7 @@
             'Teacher': 'This group feels that the human connection, empathy, and social-emotional learning provided by a teacher cannot be replicated by an AI.',
             'Doctor': 'Respondents believe the nuance, diagnostic intuition, and compassionate care of a doctor are irreplaceable by a machine.',
             'Therapist': 'The intimate and highly personal nature of therapy, which relies on human connection and trust, is seen as a role AI should never fill.',
-            'Lawyer': 'This group values the ethical judgment, courtroom presence, and nuanced understanding of justice that a human lawyer provides.',
+            'Lawyer': 'The ethical judgment, courtroom presence, and nuanced understanding of justice that a human lawyer provides is seen as too critical to be entrusted to an AI.',
             'Chef': 'Creativity, passion, and the artistry of cooking are seen as uniquely human traits that an AI chef would lack.',
             'Judge': 'The ethical, moral, and judicial responsibility of a judge is seen as too critical to be entrusted to an AI, which lacks a conscience.',
             'Babysitter': 'The care, protection, and emotional bonding required to look after a child are considered far beyond the capabilities of an AI.',
@@ -279,7 +492,7 @@
             'Farmer': 'The intuition, on-the-ground knowledge, and hard work required to farm are seen as uniquely human skills.'
         };
 
-        // Function to create a new Chart.js instance
+        // Function to create a new Chart.js instance (for 2D charts)
         function createChart(canvasId, type, labels, data) {
             const ctx = document.getElementById(canvasId).getContext('2d');
             const options = {
@@ -375,7 +588,7 @@
         let trustChart;
         let jobsChart;
         
-        // Function to handle click events for all charts
+        // Function to handle click events for all 2D charts
         function handleChartClick(chart, summaryTextElementId, summaries) {
             return function(evt) {
                 const activePoints = chart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
@@ -394,18 +607,177 @@
             };
         }
 
+        // --- 3D Chart Logic (three.js) ---
+
+        // Variables to keep track of the mouse and raycaster
+        let raycaster = new THREE.Raycaster();
+        let mouse = new THREE.Vector2();
+        let INTERSECTED = null;
+
+        // Function to set up a 3D chart
+        function setup3DChart(containerId, chartData, type) {
+            const container = document.getElementById(containerId);
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+            directionalLight.position.set(5, 10, 7.5);
+            scene.add(directionalLight);
+
+            let chartObjects = [];
+
+            if (type === 'bar') {
+                const barWidth = 10;
+                const barGap = 5;
+                const maxVal = Math.max(...chartData.data);
+                
+                chartData.data.forEach((val, i) => {
+                    const barHeight = (val / maxVal) * 50; // Scale the height
+                    const geometry = new THREE.BoxGeometry(barWidth, barHeight, barWidth);
+                    const color = new THREE.Color(backgroundColors[i]).getHex();
+                    const material = new THREE.MeshLambertMaterial({ color: color });
+                    const bar = new THREE.Mesh(geometry, material);
+                    
+                    const xPos = i * (barWidth + barGap) - (chartData.data.length * (barWidth + barGap)) / 2;
+                    bar.position.set(xPos, barHeight / 2, 0);
+                    bar.userData = {
+                        label: chartData.labels[i],
+                        summary: chartData.summaries[chartData.labels[i]],
+                        originalColor: color
+                    };
+                    scene.add(bar);
+                    chartObjects.push(bar);
+                });
+
+                camera.position.z = chartData.data.length * 5;
+                camera.position.y = 20;
+                camera.lookAt(0, 0, 0);
+            } else if (type === 'donut') {
+                const segments = 32;
+                const innerRadius = 15;
+                const outerRadius = 25;
+                const thetaLength = (Math.PI * 2);
+                const total = chartData.data.reduce((sum, val) => sum + val, 0);
+                
+                let startAngle = 0;
+
+                chartData.data.forEach((val, i) => {
+                    const sweepAngle = (val / total) * thetaLength;
+                    const geometry = new THREE.TorusGeometry(outerRadius, outerRadius - innerRadius, segments, segments, sweepAngle);
+                    geometry.rotateX(Math.PI / 2); // Rotate to be flat
+                    const color = new THREE.Color(backgroundColors[i]).getHex();
+                    const material = new THREE.MeshLambertMaterial({ color: color });
+                    const slice = new THREE.Mesh(geometry, material);
+
+                    // Position the slice
+                    slice.rotation.z = -startAngle - sweepAngle / 2 - Math.PI / 2;
+                    slice.userData = {
+                        label: chartData.labels[i],
+                        summary: chartData.summaries[chartData.labels[i]],
+                        originalColor: color
+                    };
+                    scene.add(slice);
+                    chartObjects.push(slice);
+                    startAngle += sweepAngle;
+                });
+                camera.position.z = 50;
+                camera.position.y = 10;
+                camera.lookAt(0, 0, 0);
+            }
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+            
+            let mouseX = 0;
+            let mouseY = 0;
+            const containerCenterY = container.clientHeight / 2;
+
+            container.addEventListener('mousemove', (event) => {
+                event.preventDefault();
+                const rect = container.getBoundingClientRect();
+                mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+                mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+            });
+            
+            // Interaction logic (click)
+            container.addEventListener('mousedown', (event) => {
+                if (INTERSECTED) {
+                    const summaryElement = document.getElementById(containerId.replace('Container', 'Summary'));
+                    const summaryTextElement = document.getElementById(containerId.replace('Container', 'SummaryText'));
+                    summaryTextElement.textContent = INTERSECTED.userData.summary;
+                    summaryElement.classList.remove('hidden');
+                    setTimeout(() => summaryElement.style.opacity = '1', 10);
+                }
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Update the raycaster
+                raycaster.setFromCamera(mouse, camera);
+                const intersects = raycaster.intersectObjects(chartObjects);
+
+                // Check for intersection
+                if (intersects.length > 0) {
+                    if (INTERSECTED != intersects[0].object) {
+                        // Restore previous object color
+                        if (INTERSECTED) {
+                            INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
+                        }
+                        // Store the new intersected object and set a hover color
+                        INTERSECTED = intersects[0].object;
+                        INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+                        INTERSECTED.material.emissive.setHex(0xaaaa00);
+                    }
+                } else {
+                    // No intersection, restore previous object color
+                    if (INTERSECTED) {
+                        INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
+                    }
+                    INTERSECTED = null;
+                }
+
+                // Rotate the chart slightly for a dynamic feel
+                scene.rotation.y += 0.005;
+
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
         // Initialize all charts and event listeners on page load
         window.onload = function() {
+            // Survey 1 Charts (2D)
             responsibilityChart = createChart('responsibilityCanvas', 'doughnut', responsibilityData.labels, responsibilityData.data);
             misuseChart = createChart('misuseCanvas', 'bar', misuseData.labels, misuseData.data);
             trustChart = createChart('trustCanvas', 'bar', trustData.labels, trustData.data);
             jobsChart = createChart('jobsCanvas', 'polarArea', jobsData.labels, jobsData.data);
 
-            // Add click event listeners to all charts
+            // Add click event listeners to all 2D charts
             document.getElementById('responsibilityCanvas').addEventListener('click', handleChartClick(responsibilityChart, 'responsibilitySummaryText', responsibilitySummaries));
             document.getElementById('misuseCanvas').addEventListener('click', handleChartClick(misuseChart, 'misuseSummaryText', misuseSummaries));
             document.getElementById('trustCanvas').addEventListener('click', handleChartClick(trustChart, 'trustSummaryText', trustSummaries));
             document.getElementById('jobsCanvas').addEventListener('click', handleChartClick(jobsChart, 'jobsSummaryText', jobsSummaries));
+
+            // Survey 2 Charts (3D)
+            setup3DChart('confidentialChartContainer', confidentialData, 'donut');
+            setup3DChart('medicalChartContainer', medicalData, 'bar');
+            setup3DChart('netImpactChartContainer', netImpactData, 'donut');
+            setup3DChart('humanConnectionChartContainer', humanConnectionData, 'bar');
+            setup3DChart('misinformationChartContainer', misinformationData, 'donut');
+            setup3DChart('emotionsChartContainer', emotionsData, 'bar');
+            setup3DChart('socialMediaChartContainer', socialMediaData, 'bar');
+            setup3DChart('aiTermsChartContainer', aiTermsData, 'bar');
         };
     </script>
 </body>
