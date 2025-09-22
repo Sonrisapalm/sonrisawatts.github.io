@@ -205,58 +205,7 @@
             </div>
         </div>
         
-        <!-- Chart: Positive Impact of AI (Bar Chart) -->
-        <div id="positiveImpactChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">What would be a positive impact of AI?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
-            <div class="chart-container">
-                <canvas id="positiveImpactCanvas"></canvas>
-            </div>
-            <div id="positiveImpactSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="positiveImpactSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- Chart: AI Impact on Human Connection (Bar Chart) -->
-        <div id="humanConnectionChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">AI's impact on human connection?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
-            <div class="chart-container">
-                <canvas id="humanConnectionCanvas"></canvas>
-            </div>
-            <div id="humanConnectionSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="humanConnectionSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- Chart: AI Net Impact (Donut Chart) -->
-        <div id="netImpactChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Is AI a net positive or negative?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice for a summary.**</p>
-            <div class="chart-container">
-                <canvas id="netImpactCanvas"></canvas>
-            </div>
-            <div id="netImpactSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="netImpactSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- Chart: Handling Online Misinformation (Bar Chart) -->
-        <div id="misinformationChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Best way to handle misinformation?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
-            <div class="chart-container">
-                <canvas id="misinformationCanvas"></canvas>
-            </div>
-            <div id="misinformationSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="misinformationSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
+
         <!-- Chart: Age Range (Donut Chart) -->
         <div id="ageRangeChart" class="content-card max-w-lg">
             <h1 class="text-2xl font-bold mb-4 text-white">What's your age range?</h1>
@@ -270,18 +219,6 @@
             </div>
         </div>
         
-        <!-- Chart: Biggest Risks of Generative AI (Bar Chart) -->
-        <div id="risksChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Biggest risks of generative AI?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
-            <div class="chart-container">
-                <canvas id="risksCanvas"></canvas>
-            </div>
-            <div id="risksSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="risksSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
         
         <!-- Chart: Jobs AI Should Never Do (Bar Chart) -->
         <div id="jobsAIChart" class="content-card max-w-lg">
@@ -413,26 +350,7 @@
                     'No Impact': 'This group feels that AI will not fundamentally alter the nature of human connection.'
                 }
             },
-            netImpact: {
-                labels: ['Net Positive', 'Net Negative', 'In between'],
-                data: [16, 12, 15],
-                summaries: {
-                    'Net Positive': 'This group sees AI as having an overall beneficial effect on society.',
-                    'Net Negative': 'This group believes AI\'s negative impacts outweigh its benefits.',
-                    'In between': 'This group believes AI has both positive and negative aspects, with neither clearly dominating the other.'
-                }
-            },
-            misinformation: {
-                labels: ['Fact-checking & verification tools', 'Human moderation on social media', 'Stricter regulation of AI content', 'Punishing purveyors of misinformation', 'I don\'t care'],
-                data: [19, 15, 6, 6, 1],
-                summaries: {
-                    'Fact-checking & verification tools': 'Respondents see AI-powered fact-checking tools as the best way to combat misinformation.',
-                    'Human moderation on social media': 'This group believes human moderators are essential for reviewing and controlling the spread of misinformation.',
-                    'Stricter regulation of AI content': 'This group thinks governments and regulatory bodies should implement strict laws on how AI-generated content is used and shared.',
-                    'Punishing purveyors of misinformation': 'This group wants legal consequences for those who create and spread misinformation.',
-                    'I don\'t care': 'A small portion of respondents feel detached from the issue of misinformation.'
-                }
-            },
+        
             ageRange: {
                 labels: ['Under 18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
                 data: [9.8, 34.1, 22.0, 19.5, 9.8, 2.4, 2.4],
@@ -603,11 +521,6 @@
             createBarChart('bossEmailCanvas', chartData.bossEmail.labels, chartData.bossEmail.data, 'AI-generated email from your boss?');
             createBarChart('employeeWorkCanvas', chartData.employeeWork.labels, chartData.employeeWork.data, 'AI-generated work from your employee?');
             createBarChart('customerServiceCanvas', chartData.customerService.labels, chartData.customerService.data, 'AI customer service call?');
-            createBarChart('virtualAssistantCanvas', chartData.virtualAssistant.labels, chartData.virtualAssistant.data, 'Feelings about having a virtual assistant?');
-            createBarChart('positiveImpactCanvas', chartData.positiveImpact.labels, chartData.positiveImpact.data, 'What would be a positive impact of AI?');
-            createBarChart('humanConnectionCanvas', chartData.humanConnection.labels, chartData.humanConnection.data, 'AI\'s impact on human connection?');
-            createDonutChart('netImpactCanvas', chartData.netImpact.labels, chartData.netImpact.data, 'Is AI a net positive or negative?');
-            createBarChart('misinformationCanvas', chartData.misinformation.labels, chartData.misinformation.data, 'Best way to handle misinformation?');
             createDonutChart('ageRangeCanvas', chartData.ageRange.labels, chartData.ageRange.data, 'What\'s your age range?');
             createBarChart('risksCanvas', chartData.risks.labels, chartData.risks.data, 'Biggest risks of generative AI?');
             createBarChart('jobsAICanvas', chartData.jobsAI.labels, chartData.jobsAI.data, 'Jobs AI should never do?');
