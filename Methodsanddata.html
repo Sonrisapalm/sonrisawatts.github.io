@@ -299,41 +299,39 @@
     </div>
 
     <script>
-        // Chart Data (extracted from the PDF)
+        // Chart Data (extracted from the provided document)
         const chartData = {
             responsibility: {
-                labels: ['Myself', 'AI Developers', 'AI itself', 'Nobody', 'Wouldn\'t use it'],
-                data: [5, 28, 4, 1, 3],
+                labels: ['AI Developers', 'The user/Myself', 'The AI itself', 'No one', 'Would not use it'],
+                data: [28, 5, 4, 1, 3],
                 summaries: {
-                    'Myself': 'This group believes they are ultimately responsible for their actions and the tools they choose to use, including AI.',
-                    'AI Developers': 'This group holds the creators of the AI responsible, citing their role in building and releasing the technology.',
-                    'AI itself': 'This group personifies the AI, believing it should be held accountable for its own errors.',
-                    'Nobody': 'This group does not believe anyone should be held responsible for an AI\'s mistakes.',
-                    'Wouldn\'t use it': 'This group avoids the issue of responsibility by stating they would not use a risky AI tool in the first place.'
+                    'AI Developers': 'The largest group holds the AI developers responsible for mistakes.',
+                    'The user/Myself': 'A smaller group believes the user is ultimately responsible.',
+                    'The AI itself': 'A very small portion personifies the AI, believing it should be held accountable.',
+                    'No one': 'This small group believes no one should be held responsible.',
+                    'Would not use it': 'This group avoids the issue of responsibility by stating they would not use a risky AI tool.'
                 }
             },
             medical: {
-                labels: ['My doctor who used the tool', 'The AI developer', 'Both AI developer and my doctor', 'Nobody', 'None of the above', 'Depends'],
-                data: [33, 5, 1, 1, 1, 0],
+                labels: ['My doctor who used the tool', 'The AI developer', 'Both AI developer and my doctor', 'Nobody', 'None of the above'],
+                data: [33, 5, 1, 1, 1],
                 summaries: {
                     'My doctor who used the tool': 'The overwhelming majority holds the doctor responsible, indicating a strong belief that the professional using the tool is ultimately accountable for the outcome.',
                     'The AI developer': 'A small group believes the creator of the tool should be held responsible for its malfunction.',
                     'Both AI developer and my doctor': 'This group believes both the professional and the developer share the blame.',
                     'Nobody': 'A small number of respondents believe no one should be held responsible for the mistake.',
-                    'None of the above': 'A small number of respondents would not even be in the situation to begin with.',
-                    'Depends': 'This group\'s response is conditional based on the specifics of the situation.'
+                    'None of the above': 'A small number of respondents would not even be in the situation to begin with.'
                 }
             },
             lawyer: {
-                labels: ['My lawyer who used the tool', 'The AI developer', 'Both AI developer and my lawyer', 'Nobody', 'None of the above', 'Depends'],
-                data: [35, 2, 2, 1, 1, 0],
+                labels: ['My lawyer who used the tool', 'The AI developer', 'Both AI developer and my lawyer', 'Nobody', 'None of the above'],
+                data: [35, 2, 2, 1, 1],
                 summaries: {
                     'My lawyer who used the tool': 'The overwhelming majority holds the lawyer responsible, indicating a strong belief that the professional using the tool is ultimately accountable for the outcome.',
                     'The AI developer': 'A small group believes the creator of the tool should be held responsible for its malfunction.',
                     'Both AI developer and my lawyer': 'This group believes both the professional and the developer share the blame.',
                     'Nobody': 'A small number of respondents believe no one should be held responsible for the mistake.',
-                    'None of the above': 'A small number of respondents would not even be in the situation to begin with.',
-                    'Depends': 'This group\'s response is conditional based on the specifics of the situation.'
+                    'None of the above': 'A small number of respondents would not even be in the situation to begin with.'
                 }
             },
             jobsReplaced: {
@@ -437,7 +435,7 @@
             },
             ageRange: {
                 labels: ['Under 18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
-                data: [9.8, 34.1, 22, 19.5, 9.8, 2.4, 2.4],
+                data: [9.8, 34.1, 22.0, 19.5, 9.8, 2.4, 2.4],
                 summaries: {
                     'Under 18': 'This group represents the youngest respondents.',
                     '18-24': 'This group represents the largest demographic of respondents.',
@@ -445,181 +443,176 @@
                     '35-44': 'This group represents a large portion of respondents.',
                     '45-54': 'This group represents a smaller portion of respondents.',
                     '55-64': 'This group represents a small portion of respondents.',
-                    '65+': 'This group represents the oldest respondents.'
+                    '65+': 'This group represents the smallest portion of respondents.'
                 }
             },
             risks: {
-                labels: ['Manipulating opinions', 'Mass Surveillance', 'Privacy Invasion', 'Job Displacement', 'Bias', 'Misinformation', 'Erosion of trust'],
-                data: [25.6, 23.3, 20.9, 18.6, 16.3, 14.0, 11.6],
+                labels: ['Online misinformation', 'Not being able to tell what\'s real vs. AI', 'AI replacing jobs for humans', 'AI not being good enough to assist me', 'AI creating new jobs for humans', 'Other'],
+                data: [31.8, 25.0, 34.1, 4.5, 2.3, 2.3],
                 summaries: {
-                    'Manipulating opinions': 'The primary concern is AI\'s potential to manipulate public opinion.',
-                    'Mass Surveillance': 'A major risk is the use of AI for widespread surveillance.',
-                    'Privacy Invasion': 'Respondents are concerned about AI\'s potential to violate personal privacy.',
-                    'Job Displacement': 'A significant risk is AI replacing human jobs.',
-                    'Bias': 'The risk of AI systems exhibiting and amplifying biases is a key concern.',
-                    'Misinformation': 'The spread of misinformation via AI is seen as a major risk.',
-                    'Erosion of trust': 'The risk of AI eroding trust in institutions and other people is also a concern.'
+                    'Online misinformation': 'A significant risk identified by this group is the spread of misinformation.',
+                    'Not being able to tell what\'s real vs. AI': 'This group is concerned with the challenge of distinguishing between AI-generated and real content.',
+                    'AI replacing jobs for humans': 'The most common fear is that AI will take over human jobs.',
+                    'AI not being good enough to assist me': 'A small group is concerned that AI will be unreliable.',
+                    'AI creating new jobs for humans': 'This small group sees job creation as a risk, possibly due to the unknown nature of these new roles.',
+                    'Other': 'This group cited other risks not listed in the options.'
                 }
             },
             jobsAI: {
-                labels: ['Lover', 'Babysitter', 'Teacher', 'Therapist', 'Doctor', 'Judge', 'Chef', 'Financial Advisor', 'Banker', 'Stylist', 'Farmer', 'Construction worker', 'Lawyer', 'Cashier', 'Models', 'Paralegals', 'Retail', 'Travel agents', 'Graphic Designer', 'Customer service agents'],
-                data: [52, 46, 22, 23, 30, 38, 27, 15, 14, 21, 17, 19, 19, 7, 24, 24, 30, 13, 11, 20],
+                labels: ['Healthcare/Doctor/Surgeon', 'Legal work/lawyer', 'Governmental/political jobs', 'Customer service', 'Jobs related to creativity', 'Education/Teacher', 'Artist', 'Any job where there\'s human interaction', 'Anything that has feelings involved', 'All of the above', 'None of the above', 'Every job', 'Anything requiring human judgement'],
+                data: [40.9, 11.4, 6.8, 15.9, 2.3, 2.3, 2.3, 2.3, 2.3, 2.3, 4.5, 2.3, 4.5],
                 summaries: {
-                    'Lover': 'The most common response, highlighting the belief that a romantic or personal relationship is fundamentally human and cannot be automated.',
-                    'Babysitter': 'The care, protection, and emotional bonding required to look after a child are considered far beyond the capabilities of an AI.',
-                    'Teacher': 'This group feels that the human connection, empathy, and social-emotional learning provided by a teacher cannot be replicated by an AI.',
-                    'Therapist': 'The intimate and highly personal nature of therapy, which relies on human connection and trust, is seen as a role AI should never fill.',
-                    'Doctor': 'Respondents believe the nuance, diagnostic intuition, and compassionate care of a doctor are irreplaceable by a machine.',
-                    'Judge': 'The ethical, moral, and judicial responsibility of a judge is seen as too critical to be entrusted to an AI, which lacks a conscience.',
-                    'Chef': 'Creativity, passion, and the artistry of cooking are seen as uniquely human traits that an AI chef would lack.',
-                    'Financial Advisor': 'Trust and a deep understanding of a person\'s long-term goals and risk tolerance are seen as qualities an AI cannot fully grasp.',
-                    'Banker': 'The need for human oversight, security, and personal relationships in handling finances is important to this group.',
-                    'Stylist': 'Creativity, understanding personal taste, and providing a human touch in personal appearance are considered essential for a stylist.',
-                    'Farmer': 'The intuition, on-the-ground knowledge, and hard work required to farm are seen as uniquely human skills.',
-                    'Construction worker': 'Physical labor, problem-solving on the spot, and managing unpredictable situations are seen as reasons to keep this job human.',
-                    'Lawyer': 'The ethical judgment, courtroom presence, and nuanced understanding of justice that a human lawyer provides is seen as too critical to be entrusted to an AI.',
-                    'Cashier': 'This is considered a more straightforward, repetitive task that some believe could be automated, but others still value the human interaction.',
-                    'Models': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
-                    'Paralegals': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
-                    'Retail': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
-                    'Travel agents': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
-                    'Graphic Designer': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
-                    'Customer service agents': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.'
+                    'Healthcare/Doctor/Surgeon': 'The largest group believes AI should never be used in healthcare, likely due to the critical nature of the work.',
+                    'Legal work/lawyer': 'This group is concerned with AI\'s use in legal professions.',
+                    'Governmental/political jobs': 'This group believes AI should not be involved in government and politics.',
+                    'Customer service': 'Many people believe AI should not be used in customer service roles.',
+                    'Jobs related to creativity': 'This group feels AI lacks the creativity needed for these jobs.',
+                    'Education/Teacher': 'This group believes teaching requires a human touch that AI cannot replicate.',
+                    'Artist': 'This group feels art is a uniquely human endeavor.',
+                    'Any job where there\'s human interaction': 'This group wants human interaction to remain untouched by AI.',
+                    'Anything that has feelings involved': 'This group believes AI is incapable of understanding or handling human emotions.',
+                    'All of the above': 'This group holds a broad opposition to AI in all listed fields.',
+                    'None of the above': 'A small portion of respondents believe AI could be used in all these fields.',
+                    'Every job': 'This group feels AI should not be involved in any job.',
+                    'Anything requiring human judgement': 'This group believes human judgment is irreplaceable.'
                 }
             }
         };
 
-        const backgroundColors = [
-            'rgba(244, 63, 94, 0.7)',
-            'rgba(99, 102, 241, 0.7)',
-            'rgba(167, 139, 250, 0.7)',
-            'rgba(34, 197, 94, 0.7)',
-            'rgba(255, 159, 64, 0.7)',
-            'rgba(244, 114, 182, 0.7)',
-            'rgba(251, 191, 36, 0.7)',
-            'rgba(74, 222, 128, 0.7)',
-            'rgba(139, 92, 246, 0.7)',
-            'rgba(239, 68, 68, 0.7)',
-            'rgba(16, 185, 129, 0.7)',
-            'rgba(59, 130, 246, 0.7)',
-            'rgba(250, 204, 21, 0.7)',
-            'rgba(255, 99, 132, 0.7)'
+        const chartColors = [
+            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#E7E9ED',
+            '#5A4D4C', '#8A9A5B', '#C9A0DC', '#FFC0CB', '#B0E0E6', '#F5DEB3'
         ];
 
-        const borderColors = [
-            'rgba(244, 63, 94, 1)',
-            'rgba(99, 102, 241, 1)',
-            'rgba(167, 139, 250, 1)',
-            'rgba(34, 197, 94, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(244, 114, 182, 1)',
-            'rgba(251, 191, 36, 1)',
-            'rgba(74, 222, 128, 1)',
-            'rgba(139, 92, 246, 1)',
-            'rgba(239, 68, 68, 1)',
-            'rgba(16, 185, 129, 1)',
-            'rgba(59, 130, 246, 1)',
-            'rgba(250, 204, 21, 1)',
-            'rgba(255, 99, 132, 1)'
-        ];
-
-        // Function to create a new Chart.js instance
-        function createChart(canvasId, type, labels, data) {
+        // Function to create a bar chart
+        function createBarChart(canvasId, labels, data, title) {
             const ctx = document.getElementById(canvasId).getContext('2d');
-            const options = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: type === 'doughnut',
-                        position: 'bottom',
-                        labels: { color: '#e2e8f0' }
+            const summaryContainer = document.getElementById(canvasId.replace('Canvas', 'Summary'));
+            const summaryText = document.getElementById(canvasId.replace('Canvas', 'SummaryText'));
+
+            let chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: title,
+                        data: data,
+                        backgroundColor: chartColors,
+                        borderRadius: 10,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    onClick: (event, elements) => {
+                        if (elements.length > 0) {
+                            const firstElement = elements[0];
+                            const label = chart.data.labels[firstElement.index];
+                            const summary = chartData[canvasId.replace('Canvas', '')].summaries[label];
+                            summaryText.textContent = summary;
+                            summaryContainer.classList.remove('opacity-0', 'hidden');
+                            summaryContainer.classList.add('opacity-100');
+                        } else {
+                            summaryContainer.classList.remove('opacity-100');
+                            summaryContainer.classList.add('opacity-0', 'hidden');
+                        }
                     },
-                    tooltip: {
-                        enabled: true,
-                        backgroundColor: 'rgba(0,0,0,0.8)',
-                        titleColor: '#fff',
-                        bodyColor: '#fff',
-                        borderColor: '#fff',
-                        borderWidth: 1,
-                        displayColors: false,
-                        callbacks: {
-                            label: function(context) {
-                                return context.label + ': ' + context.formattedValue + '%';
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#e2e8f0'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#e2e8f0',
+                                autoSkip: false,
+                                maxRotation: 45,
+                                minRotation: 0
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // Function to create a donut chart
+        function createDonutChart(canvasId, labels, data, title) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            const summaryContainer = document.getElementById(canvasId.replace('Canvas', 'Summary'));
+            const summaryText = document.getElementById(canvasId.replace('Canvas', 'SummaryText'));
+
+            let chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: title,
+                        data: data,
+                        backgroundColor: chartColors,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    onClick: (event, elements) => {
+                        if (elements.length > 0) {
+                            const firstElement = elements[0];
+                            const label = chart.data.labels[firstElement.index];
+                            const summary = chartData[canvasId.replace('Canvas', '')].summaries[label];
+                            summaryText.textContent = summary;
+                            summaryContainer.classList.remove('opacity-0', 'hidden');
+                            summaryContainer.classList.add('opacity-100');
+                        } else {
+                            summaryContainer.classList.remove('opacity-100');
+                            summaryContainer.classList.add('opacity-0', 'hidden');
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#e2e8f0'
                             }
                         }
                     }
                 }
-            };
-
-            if (type === 'bar') {
-                 options.indexAxis = 'y';
-                 options.scales = {
-                    y: {
-                        ticks: { color: '#e2e8f0' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                    },
-                    x: {
-                        ticks: { color: '#e2e8f0' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                    }
-                };
-            }
-
-            const chart = new Chart(ctx, {
-                type: type,
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Response Percentage',
-                        data: data,
-                        backgroundColor: backgroundColors,
-                        borderColor: borderColors,
-                        borderWidth: 1
-                    }]
-                },
-                options: options
             });
-            return chart;
         }
 
-        // Function to handle click events for all charts
-        function handleChartClick(chart, summaryTextElementId, summaries) {
-            return function(evt) {
-                const activePoints = chart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
-                if (activePoints.length > 0) {
-                    const firstPoint = activePoints[0];
-                    const label = chart.data.labels[firstPoint.index];
-                    const summaryText = summaries[label];
-                    
-                    const summaryElement = document.getElementById(summaryTextElementId).closest('.content-card').querySelector('.mt-8');
-                    const textElement = document.getElementById(summaryTextElementId);
-
-                    textElement.textContent = summaryText;
-                    summaryElement.classList.remove('hidden');
-                    setTimeout(() => summaryElement.style.opacity = '1', 10);
-                }
-            };
-        }
-
-        // Initialize all charts and event listeners on page load
+        // Initialize all charts on window load
         window.onload = function() {
-            createChart('responsibilityCanvas', 'doughnut', chartData.responsibility.labels, chartData.responsibility.data).canvas.onclick = handleChartClick(responsibilityChart, 'responsibilitySummaryText', chartData.responsibility.summaries);
-            createChart('medicalCanvas', 'bar', chartData.medical.labels, chartData.medical.data).canvas.onclick = handleChartClick(medicalChart, 'medicalSummaryText', chartData.medical.summaries);
-            createChart('lawyerCanvas', 'bar', chartData.lawyer.labels, chartData.lawyer.data).canvas.onclick = handleChartClick(lawyerChart, 'lawyerSummaryText', chartData.lawyer.summaries);
-            createChart('jobsReplacedCanvas', 'doughnut', chartData.jobsReplaced.labels, chartData.jobsReplaced.data).canvas.onclick = handleChartClick(jobsReplacedChart, 'jobsReplacedSummaryText', chartData.jobsReplaced.summaries);
-            createChart('bossEmailCanvas', 'bar', chartData.bossEmail.labels, chartData.bossEmail.data).canvas.onclick = handleChartClick(bossEmailChart, 'bossEmailSummaryText', chartData.bossEmail.summaries);
-            createChart('employeeWorkCanvas', 'bar', chartData.employeeWork.labels, chartData.employeeWork.data).canvas.onclick = handleChartClick(employeeWorkChart, 'employeeWorkSummaryText', chartData.employeeWork.summaries);
-            createChart('customerServiceCanvas', 'bar', chartData.customerService.labels, chartData.customerService.data).canvas.onclick = handleChartClick(customerServiceChart, 'customerServiceSummaryText', chartData.customerService.summaries);
-            createChart('virtualAssistantCanvas', 'bar', chartData.virtualAssistant.labels, chartData.virtualAssistant.data).canvas.onclick = handleChartClick(virtualAssistantChart, 'virtualAssistantSummaryText', chartData.virtualAssistant.summaries);
-            createChart('positiveImpactCanvas', 'bar', chartData.positiveImpact.labels, chartData.positiveImpact.data).canvas.onclick = handleChartClick(positiveImpactChart, 'positiveImpactSummaryText', chartData.positiveImpact.summaries);
-            createChart('humanConnectionCanvas', 'bar', chartData.humanConnection.labels, chartData.humanConnection.data).canvas.onclick = handleChartClick(humanConnectionChart, 'humanConnectionSummaryText', chartData.humanConnection.summaries);
-            createChart('netImpactCanvas', 'doughnut', chartData.netImpact.labels, chartData.netImpact.data).canvas.onclick = handleChartClick(netImpactChart, 'netImpactSummaryText', chartData.netImpact.summaries);
-            createChart('misinformationCanvas', 'bar', chartData.misinformation.labels, chartData.misinformation.data).canvas.onclick = handleChartClick(misinformationChart, 'misinformationSummaryText', chartData.misinformation.summaries);
-            createChart('ageRangeCanvas', 'doughnut', chartData.ageRange.labels, chartData.ageRange.data).canvas.onclick = handleChartClick(ageRangeChart, 'ageRangeSummaryText', chartData.ageRange.summaries);
-            createChart('risksCanvas', 'bar', chartData.risks.labels, chartData.risks.data).canvas.onclick = handleChartClick(risksChart, 'risksSummaryText', chartData.risks.summaries);
-            createChart('jobsAICanvas', 'bar', chartData.jobsAI.labels, chartData.jobsAI.data).canvas.onclick = handleChartClick(jobsAIChart, 'jobsAISummaryText', chartData.jobsAI.summaries);
+            createDonutChart('responsibilityCanvas', chartData.responsibility.labels, chartData.responsibility.data, 'Who is responsible for an AI\'s mistake?');
+            createBarChart('medicalCanvas', chartData.medical.labels, chartData.medical.data, 'Who is responsible for a medical mistake?');
+            createBarChart('lawyerCanvas', chartData.lawyer.labels, chartData.lawyer.data, 'Who is responsible for a lawyer\'s mistake?');
+            createDonutChart('jobsReplacedCanvas', chartData.jobsReplaced.labels, chartData.jobsReplaced.data, 'Will AI eventually replace jobs?');
+            createBarChart('bossEmailCanvas', chartData.bossEmail.labels, chartData.bossEmail.data, 'AI-generated email from your boss?');
+            createBarChart('employeeWorkCanvas', chartData.employeeWork.labels, chartData.employeeWork.data, 'AI-generated work from your employee?');
+            createBarChart('customerServiceCanvas', chartData.customerService.labels, chartData.customerService.data, 'AI customer service call?');
+            createBarChart('virtualAssistantCanvas', chartData.virtualAssistant.labels, chartData.virtualAssistant.data, 'Feelings about having a virtual assistant?');
+            createBarChart('positiveImpactCanvas', chartData.positiveImpact.labels, chartData.positiveImpact.data, 'What would be a positive impact of AI?');
+            createBarChart('humanConnectionCanvas', chartData.humanConnection.labels, chartData.humanConnection.data, 'AI\'s impact on human connection?');
+            createDonutChart('netImpactCanvas', chartData.netImpact.labels, chartData.netImpact.data, 'Is AI a net positive or negative?');
+            createBarChart('misinformationCanvas', chartData.misinformation.labels, chartData.misinformation.data, 'Best way to handle misinformation?');
+            createDonutChart('ageRangeCanvas', chartData.ageRange.labels, chartData.ageRange.data, 'What\'s your age range?');
+            createBarChart('risksCanvas', chartData.risks.labels, chartData.risks.data, 'Biggest risks of generative AI?');
+            createBarChart('jobsAICanvas', chartData.jobsAI.labels, chartData.jobsAI.data, 'Jobs AI should never do?');
         };
+
     </script>
 </body>
 </html>
