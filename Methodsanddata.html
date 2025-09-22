@@ -12,12 +12,8 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            background-image: url('images/websitebackground.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            color: #f0f0f0;
+            background-color: #1a202c;
+            color: #e2e8f0;
             line-height: 1.7;
             padding: 2rem 1rem;
         }
@@ -32,13 +28,17 @@
         }
 
         .content-card {
-            background-color: rgba(44, 62, 80, 0.7);
-            backdrop-filter: blur(5px);
+            background-color: #2d3748;
             border-radius: 1rem;
             padding: 2rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             flex: 1; 
             min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .chart-container {
@@ -51,39 +51,12 @@
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Adjustments for the 3D canvas */
         .chart-3d-container {
             position: relative;
             height: 400px;
             width: 100%;
             border-radius: 0.5rem;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .article-container .prose p {
-            text-align: left;
-        }
-
-        /* Glow effect for navigation links */
-        .glow-hover {
-            position: relative;
-            z-index: 1;
-        }
-
-        .glow-hover::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: currentColor;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .glow-hover:hover::after {
-            opacity: 1;
         }
     </style>
 </head>
@@ -92,166 +65,11 @@
     <!-- Main content container -->
     <div class="content-container">
 
-        <!-- Survey 1 Charts -->
-
-        <!-- Chart Card: AI Responsibility (Donut Chart) -->
-        <div id="responsibilityChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Who is Responsible for AI Mistakes?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice to see a summary of that group's opinion.**</p>
-            <div class="chart-container">
-                <canvas id="responsibilityCanvas"></canvas>
-            </div>
-            <div id="responsibilitySummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="responsibilitySummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-
-        <!-- Chart Card: AI Misuse (Bar Chart) -->
-        <div id="misuseChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">How Can Powerful People Misuse AI?</h1>
-            <p class="text-gray-400">Responses on how powerful people or companies can misuse AI.</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
-            <div class="chart-container">
-                <canvas id="misuseCanvas"></canvas>
-            </div>
-            <div id="misuseSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="misuseSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- Chart Card: AI Trust (Bar Chart) -->
-        <div id="trustChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">How to Build Trust in AI?</h1>
-            <p class="text-gray-400">What people need to know about an AI tool in order to trust it more.</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
-            <div class="chart-container">
-                <canvas id="trustCanvas"></canvas>
-            </div>
-            <div id="trustSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="trustSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-
-        <!-- Chart Card: AI and Jobs (Polar Area Chart) -->
-        <div id="jobsChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Jobs AI Should Never Do</h1>
-            <p class="text-gray-400">Which jobs people believe AI should never be allowed to do.</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a segment to see a summary of that group's opinion.**</p>
-            <div class="chart-container">
-                <canvas id="jobsCanvas"></canvas>
-            </div>
-            <div id="jobsSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="jobsSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- Survey 2 Charts -->
-        
-        <!-- NEW 3D Chart: AI Trust for Confidential Advice -->
-        <div id="confidentialChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Trusting AI for Confidential Advice</h1>
-            <p class="text-gray-400">Public opinion on trusting an AI more than a human for confidential advice.</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a segment to see a summary of that group's opinion.**</p>
-            <div class="chart-3d-container" id="confidentialChartContainer"></div>
-            <div id="confidentialSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="confidentialSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-
-        <!-- NEW 3D Chart: AI Medical Mistake Response -->
-        <div id="medicalChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Response to AI Medical Mistake</h1>
-            <p class="text-gray-400">Hypothetical responses to an AI-powered medical tool making a diagnostic mistake.</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
-            <div class="chart-3d-container" id="medicalChartContainer"></div>
-            <div id="medicalSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="medicalSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- NEW 3D Chart: Net Positive/Negative -->
-        <div id="netImpactChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">AI's Net Impact on Society</h1>
-            <p class="text-gray-400">Do you think AI is currently a net positive, net negative, or somewhere in between for society?</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a segment to see a summary of that group's opinion.**</p>
-            <div class="chart-3d-container" id="netImpactChartContainer"></div>
-            <div id="netImpactSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="netImpactSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- NEW 3D Chart: Human Connection -->
-        <div id="humanConnectionChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">AI's Impact on Human Connection</h1>
-            <p class="text-gray-400">How do you feel AI will impact the value of human connection?</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
-            <div class="chart-3d-container" id="humanConnectionChartContainer"></div>
-            <div id="humanConnectionSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="humanConnectionSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-
-        <!-- NEW 3D Chart: Misinformation -->
-        <div id="misinformationChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">How to Handle Online Misinformation</h1>
-            <p class="text-gray-400">The best way to handle misinformation online.</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a segment to see a summary of that group's opinion.**</p>
-            <div class="chart-3d-container" id="misinformationChartContainer"></div>
-            <div id="misinformationSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="misinformationSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- NEW 3D Chart: AI Emotions -->
-        <div id="emotionsChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Emotions Associated with AI</h1>
-            <p class="text-gray-400">Which emotions do you associate with AI?</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
-            <div class="chart-3d-container" id="emotionsChartContainer"></div>
-            <div id="emotionsSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="emotionsSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- NEW 3D Chart: Social Media Time -->
-        <div id="socialMediaChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Social Media Usage</h1>
-            <p class="text-gray-400">How much time do you spend on social media per week?</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
-            <div class="chart-3d-container" id="socialMediaChartContainer"></div>
-            <div id="socialMediaSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="socialMediaSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
-        <!-- NEW 3D Chart: AI Terms -->
-        <div id="aiTermsChart" class="content-card max-w-lg">
-            <h1 class="text-2xl font-bold mb-4 text-white">Terms Associated with AI</h1>
-            <p class="text-gray-400">When you hear about AI, which of the following terms do you associate with it?</p>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar to see a summary of that group's opinion.**</p>
-            <div class="chart-3d-container" id="aiTermsChartContainer"></div>
-            <div id="aiTermsSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="aiTermsSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
-        
         <!-- Main Article Content Card -->
         <div id="article_section" class="content-card article-container max-w-2xl">
             <article>
                 <header class="text-center mb-10 flex flex-col items-center">
-                    <img src="images/fortoppage.jpg" alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl lg:max-w-3xl" />
+                    <img src="https://placehold.co/800x450/4B5563/FFFFFF?text=A+researcher+reviewing+data+and+charts+on+a+large+screen." alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl lg:max-w-3xl" />
                     <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Methods and Data</h1>
                     <p class="text-lg md:text-xl font-light text-gray-300">A detailed overview of the research methodology for the Emotion Encoded initiative.</p>
                 </header>
@@ -278,140 +96,398 @@
                 </section>
             </article>
         </div>
+
+        <!-- Survey 1 Charts -->
+        
+        <!-- Chart: AI Responsibility (Donut Chart) -->
+        <div id="responsibilityChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Who is responsible for AI Mistakes?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="responsibilityCanvas"></canvas>
+            </div>
+            <div id="responsibilitySummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="responsibilitySummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+
+        <!-- Chart: Medical Mistake (Bar Chart) -->
+        <div id="medicalChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Who is responsible for a medical mistake?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="medicalCanvas"></canvas>
+            </div>
+            <div id="medicalSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="medicalSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+
+        <!-- Chart: Lawyer Mistake (Bar Chart) -->
+        <div id="lawyerChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Who is responsible for a lawyer's mistake?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="lawyerCanvas"></canvas>
+            </div>
+            <div id="lawyerSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="lawyerSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+
+        <!-- Survey 2 Charts -->
+        
+        <!-- Chart: AI Replacing Jobs (Donut Chart) -->
+        <div id="jobsReplacedChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Will AI eventually replace jobs?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="jobsReplacedCanvas"></canvas>
+            </div>
+            <div id="jobsReplacedSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="jobsReplacedSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: Feelings About AI-Generated Email from Boss (Bar Chart) -->
+        <div id="bossEmailChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">AI-generated email from your boss?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="bossEmailCanvas"></canvas>
+            </div>
+            <div id="bossEmailSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="bossEmailSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: Feelings About AI-Generated Employee Work (Bar Chart) -->
+        <div id="employeeWorkChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">AI-generated work from your employee?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="employeeWorkCanvas"></canvas>
+            </div>
+            <div id="employeeWorkSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="employeeWorkSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+
+        <!-- Chart: Feelings About AI Customer Service Call (Bar Chart) -->
+        <div id="customerServiceChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">AI customer service call?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="customerServiceCanvas"></canvas>
+            </div>
+            <div id="customerServiceSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="customerServiceSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: Virtual Assistant (Bar Chart) -->
+        <div id="virtualAssistantChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Feelings about having a virtual assistant?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="virtualAssistantCanvas"></canvas>
+            </div>
+            <div id="virtualAssistantSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="virtualAssistantSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: Positive Impact of AI (Bar Chart) -->
+        <div id="positiveImpactChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">What would be a positive impact of AI?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="positiveImpactCanvas"></canvas>
+            </div>
+            <div id="positiveImpactSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="positiveImpactSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: AI Impact on Human Connection (Bar Chart) -->
+        <div id="humanConnectionChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">AI's impact on human connection?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="humanConnectionCanvas"></canvas>
+            </div>
+            <div id="humanConnectionSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="humanConnectionSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: AI Net Impact (Donut Chart) -->
+        <div id="netImpactChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Is AI a net positive or negative?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="netImpactCanvas"></canvas>
+            </div>
+            <div id="netImpactSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="netImpactSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: Handling Online Misinformation (Bar Chart) -->
+        <div id="misinformationChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Best way to handle misinformation?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="misinformationCanvas"></canvas>
+            </div>
+            <div id="misinformationSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="misinformationSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: Age Range (Donut Chart) -->
+        <div id="ageRangeChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">What's your age range?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="ageRangeCanvas"></canvas>
+            </div>
+            <div id="ageRangeSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="ageRangeSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: Biggest Risks of Generative AI (Bar Chart) -->
+        <div id="risksChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Biggest risks of generative AI?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="risksCanvas"></canvas>
+            </div>
+            <div id="risksSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="risksSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
+        <!-- Chart: Jobs AI Should Never Do (Bar Chart) -->
+        <div id="jobsAIChart" class="content-card max-w-lg">
+            <h1 class="text-2xl font-bold mb-4 text-white">Jobs AI should never do?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <div class="chart-container">
+                <canvas id="jobsAICanvas"></canvas>
+            </div>
+            <div id="jobsAISummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="jobsAISummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+        
     </div>
-    
-    <!-- Navigation Links -->
-    <nav class="py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl mt-16">
-        <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
-        <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
-        <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
-        <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
-        <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
-        <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
-    </nav>
 
     <script>
-        // Chart Data (Survey 1)
-        const responsibilityData = {
-            labels: ['Myself', 'AI Developers', 'AI itself', 'Nobody', 'Wouldn\'t use it'],
-            data: [28, 5, 2, 2, 4]
-        };
-        const misuseData = {
-            labels: ['Invading people\'s privacy or sp...', 'Using personal data to train oth...', 'Manipulating opinions or behavior', 'Discriminating against certain g...', 'Over-hyping the influence of te...', 'Ignoring the moral and ethical r...', 'I don\'t care, it doesn\'t affect me.'],
-            data: [48, 38, 49, 24, 18, 38, 1]
-        };
-        const trustData = {
-            labels: ['Details about how the AI syste...', 'Information about the data it w...', 'Who created the AI system...', 'Whether it has been tested for...', 'How often it makes mistakes', 'If a human is involved in review...', 'Information about how my pers...', 'What\'s the motive behind devel...', 'I don\'t need to know anything...', 'I could never fully trust AI'],
-            data: [30, 31, 14, 30, 30, 29, 36, 15, 3, 15]
-        };
-        const jobsData = {
-            labels: ['Teacher', 'Doctor', 'Therapist', 'Lawyer', 'Chef', 'Judge', 'Babysitter', 'Cashier', 'Construction worker', 'Financial Advisor', 'Banker', 'Stylist', 'Lover', 'Farmer'],
-            data: [22, 30, 23, 19, 27, 38, 46, 7, 19, 15, 14, 21, 52, 17]
-        };
-
-        // Chart Data (Survey 2)
-        const confidentialData = {
-            labels: ['No', 'Depends', 'Yes', 'Maybe', 'When emotions are less important...'],
-            data: [20, 13, 5, 2, 1],
-            summaries: {
-                'No': 'The majority of respondents stated they would not trust an AI more than a human for confidential advice, highlighting a strong preference for human connection and empathy in such situations.',
-                'Depends': 'This group\'s trust in AI for confidential advice is conditional. Their decision depends on the specific context and the type of advice being sought.',
-                'Yes': 'A small but significant minority would trust an AI more than a human, possibly valuing its objectivity, lack of bias, or access to vast amounts of data.',
-                'Maybe': 'This group is uncertain but open to the idea, suggesting their opinion could change with more information or positive experiences with AI.',
-                'When emotions are less important...': 'This is a very specific condition for trusting an AI, showing that for some, the crucial factor is the emotional weight of the advice. They may prefer AI for factual or logical guidance.'
+        // Chart Data (extracted from the PDF)
+        const chartData = {
+            responsibility: {
+                labels: ['Myself', 'AI Developers', 'AI itself', 'Nobody', 'Wouldn\'t use it'],
+                data: [5, 28, 4, 1, 3],
+                summaries: {
+                    'Myself': 'This group believes they are ultimately responsible for their actions and the tools they choose to use, including AI.',
+                    'AI Developers': 'This group holds the creators of the AI responsible, citing their role in building and releasing the technology.',
+                    'AI itself': 'This group personifies the AI, believing it should be held accountable for its own errors.',
+                    'Nobody': 'This group does not believe anyone should be held responsible for an AI\'s mistakes.',
+                    'Wouldn\'t use it': 'This group avoids the issue of responsibility by stating they would not use a risky AI tool in the first place.'
+                }
+            },
+            medical: {
+                labels: ['My doctor who used the tool', 'The AI developer', 'Both AI developer and my doctor', 'Nobody', 'None of the above', 'Depends'],
+                data: [33, 5, 1, 1, 1, 0],
+                summaries: {
+                    'My doctor who used the tool': 'The overwhelming majority holds the doctor responsible, indicating a strong belief that the professional using the tool is ultimately accountable for the outcome.',
+                    'The AI developer': 'A small group believes the creator of the tool should be held responsible for its malfunction.',
+                    'Both AI developer and my doctor': 'This group believes both the professional and the developer share the blame.',
+                    'Nobody': 'A small number of respondents believe no one should be held responsible for the mistake.',
+                    'None of the above': 'A small number of respondents would not even be in the situation to begin with.',
+                    'Depends': 'This group\'s response is conditional based on the specifics of the situation.'
+                }
+            },
+            lawyer: {
+                labels: ['My lawyer who used the tool', 'The AI developer', 'Both AI developer and my lawyer', 'Nobody', 'None of the above', 'Depends'],
+                data: [35, 2, 2, 1, 1, 0],
+                summaries: {
+                    'My lawyer who used the tool': 'The overwhelming majority holds the lawyer responsible, indicating a strong belief that the professional using the tool is ultimately accountable for the outcome.',
+                    'The AI developer': 'A small group believes the creator of the tool should be held responsible for its malfunction.',
+                    'Both AI developer and my lawyer': 'This group believes both the professional and the developer share the blame.',
+                    'Nobody': 'A small number of respondents believe no one should be held responsible for the mistake.',
+                    'None of the above': 'A small number of respondents would not even be in the situation to begin with.',
+                    'Depends': 'This group\'s response is conditional based on the specifics of the situation.'
+                }
+            },
+            jobsReplaced: {
+                labels: ['Yes', 'No', 'Maybe', 'Some jobs'],
+                data: [70.5, 11.4, 11.4, 6.7],
+                summaries: {
+                    'Yes': 'The majority of respondents believe AI will eventually replace jobs.',
+                    'No': 'A small group believes AI will not replace jobs.',
+                    'Maybe': 'This group is uncertain about AI\'s impact on jobs.',
+                    'Some jobs': 'This group believes AI will only replace a subset of jobs, not all of them.'
+                }
+            },
+            bossEmail: {
+                labels: ['Angry', 'Uncomfortable', 'I wouldn\'t care', 'Neutral', 'Glad innovation', 'Intrigued', 'Felt person was careless'],
+                data: [27.3, 36.4, 22.7, 9.1, 2.3, 2.3, 2.3],
+                summaries: {
+                    'Angry': 'A significant portion would be angry upon finding their boss used AI for an email.',
+                    'Uncomfortable': 'The largest group would feel uncomfortable about the use of AI in communication from their boss.',
+                    'I wouldn\'t care': 'A notable portion of respondents would be indifferent.',
+                    'Neutral': 'A small group would have a neutral reaction.',
+                    'Glad innovation': 'A very small portion would be happy about the use of AI as an innovation.',
+                    'Intrigued': 'A very small portion would be intrigued and consider using AI themselves.',
+                    'Felt person was careless': 'A very small portion felt it was careless on the part of their boss.'
+                }
+            },
+            employeeWork: {
+                labels: ['Angry', 'Uncomfortable', 'I wouldn\'t care', 'Neutral', 'Depends', 'Ok if its a low level task'],
+                data: [27.3, 18.2, 18.2, 31.8, 2.3, 2.3],
+                summaries: {
+                    'Angry': 'A significant portion would be angry if an employee used AI for their work.',
+                    'Uncomfortable': 'A smaller group would feel uncomfortable about it.',
+                    'I wouldn\'t care': 'An equally small group would be indifferent.',
+                    'Neutral': 'The largest group would have a neutral reaction, possibly seeing it as an efficiency tool.',
+                    'Depends': 'This group\'s reaction is conditional.',
+                    'Ok if its a low level task': 'This group is fine with AI if it is used for simple tasks and checked by a human.'
+                }
+            },
+            customerService: {
+                labels: ['Neutral', 'Uncomfortable', 'Angry', 'Glad innovation', 'Okay as long as it gets me the answer'],
+                data: [45.5, 34.1, 11.4, 6.8, 2.3],
+                summaries: {
+                    'Neutral': 'The largest group would feel neutral about speaking with an AI in a customer service call.',
+                    'Uncomfortable': 'A significant portion would feel uncomfortable about the interaction.',
+                    'Angry': 'A small group would be angry about speaking with an AI.',
+                    'Glad innovation': 'A very small group would be happy about the innovative use of AI.',
+                    'Okay as long as it gets me the answer': 'This group is pragmatic and only cares about the outcome of the call.'
+                }
+            },
+            virtualAssistant: {
+                labels: ['Neutral', 'Concerned', 'Excited', 'Interested', 'Comfortable', 'Depends'],
+                data: [27.3, 27.3, 22.7, 11.4, 9.1, 2.3],
+                summaries: {
+                    'Neutral': 'A large group would feel neutral about having a virtual assistant.',
+                    'Concerned': 'An equally large group would feel concerned, possibly about privacy or security.',
+                    'Excited': 'A significant number of people would be excited about the convenience and benefits of a virtual assistant.',
+                    'Interested': 'A small portion would be interested in the concept.',
+                    'Comfortable': 'A small portion of people are comfortable with the idea.',
+                    'Depends': 'This group\'s feelings are conditional on the specifics of the virtual assistant.'
+                }
+            },
+            positiveImpact: {
+                labels: ['Assistance with low-level tasks', 'Assistance with high-level tasks', 'Healthcare applications', 'Efficiency gains', 'Automating daily chores', 'Creating new jobs'],
+                data: [20.5, 15.9, 13.6, 20.5, 15.9, 13.6],
+                summaries: {
+                    'Assistance with low-level tasks': 'A significant number of people see AI\'s greatest positive impact in helping with simple, repetitive tasks.',
+                    'Assistance with high-level tasks': 'A smaller portion sees value in AI assisting with more complex, skilled tasks.',
+                    'Healthcare applications': 'This group believes AI\'s ability to improve healthcare is a major positive impact.',
+                    'Efficiency gains': 'Many people see AI\'s primary benefit as increasing efficiency in various aspects of life.',
+                    'Automating daily chores': 'This group sees AI positively for its potential to automate everyday chores.',
+                    'Creating new jobs': 'A small group believes AI will be a positive force by creating new types of jobs.'
+                }
+            },
+            humanConnection: {
+                labels: ['Enhance', 'Decrease', 'No Impact'],
+                data: [13, 24, 6],
+                summaries: {
+                    'Enhance': 'This group believes AI will improve human connection by enabling new forms of communication and collaboration.',
+                    'Decrease': 'The majority of respondents fear that AI will reduce the value of genuine human connection by replacing it with digital interactions.',
+                    'No Impact': 'This group feels that AI will not fundamentally alter the nature of human connection.'
+                }
+            },
+            netImpact: {
+                labels: ['Net Positive', 'Net Negative', 'In between'],
+                data: [16, 12, 15],
+                summaries: {
+                    'Net Positive': 'This group sees AI as having an overall beneficial effect on society.',
+                    'Net Negative': 'This group believes AI\'s negative impacts outweigh its benefits.',
+                    'In between': 'This group believes AI has both positive and negative aspects, with neither clearly dominating the other.'
+                }
+            },
+            misinformation: {
+                labels: ['Fact-checking & verification tools', 'Human moderation on social media', 'Stricter regulation of AI content', 'Punishing purveyors of misinformation', 'I don\'t care'],
+                data: [19, 15, 6, 6, 1],
+                summaries: {
+                    'Fact-checking & verification tools': 'Respondents see AI-powered fact-checking tools as the best way to combat misinformation.',
+                    'Human moderation on social media': 'This group believes human moderators are essential for reviewing and controlling the spread of misinformation.',
+                    'Stricter regulation of AI content': 'This group thinks governments and regulatory bodies should implement strict laws on how AI-generated content is used and shared.',
+                    'Punishing purveyors of misinformation': 'This group wants legal consequences for those who create and spread misinformation.',
+                    'I don\'t care': 'A small portion of respondents feel detached from the issue of misinformation.'
+                }
+            },
+            ageRange: {
+                labels: ['Under 18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
+                data: [9.8, 34.1, 22, 19.5, 9.8, 2.4, 2.4],
+                summaries: {
+                    'Under 18': 'This group represents the youngest respondents.',
+                    '18-24': 'This group represents the largest demographic of respondents.',
+                    '25-34': 'This group represents a significant portion of respondents.',
+                    '35-44': 'This group represents a large portion of respondents.',
+                    '45-54': 'This group represents a smaller portion of respondents.',
+                    '55-64': 'This group represents a small portion of respondents.',
+                    '65+': 'This group represents the oldest respondents.'
+                }
+            },
+            risks: {
+                labels: ['Manipulating opinions', 'Mass Surveillance', 'Privacy Invasion', 'Job Displacement', 'Bias', 'Misinformation', 'Erosion of trust'],
+                data: [25.6, 23.3, 20.9, 18.6, 16.3, 14.0, 11.6],
+                summaries: {
+                    'Manipulating opinions': 'The primary concern is AI\'s potential to manipulate public opinion.',
+                    'Mass Surveillance': 'A major risk is the use of AI for widespread surveillance.',
+                    'Privacy Invasion': 'Respondents are concerned about AI\'s potential to violate personal privacy.',
+                    'Job Displacement': 'A significant risk is AI replacing human jobs.',
+                    'Bias': 'The risk of AI systems exhibiting and amplifying biases is a key concern.',
+                    'Misinformation': 'The spread of misinformation via AI is seen as a major risk.',
+                    'Erosion of trust': 'The risk of AI eroding trust in institutions and other people is also a concern.'
+                }
+            },
+            jobsAI: {
+                labels: ['Lover', 'Babysitter', 'Teacher', 'Therapist', 'Doctor', 'Judge', 'Chef', 'Financial Advisor', 'Banker', 'Stylist', 'Farmer', 'Construction worker', 'Lawyer', 'Cashier', 'Models', 'Paralegals', 'Retail', 'Travel agents', 'Graphic Designer', 'Customer service agents'],
+                data: [52, 46, 22, 23, 30, 38, 27, 15, 14, 21, 17, 19, 19, 7, 24, 24, 30, 13, 11, 20],
+                summaries: {
+                    'Lover': 'The most common response, highlighting the belief that a romantic or personal relationship is fundamentally human and cannot be automated.',
+                    'Babysitter': 'The care, protection, and emotional bonding required to look after a child are considered far beyond the capabilities of an AI.',
+                    'Teacher': 'This group feels that the human connection, empathy, and social-emotional learning provided by a teacher cannot be replicated by an AI.',
+                    'Therapist': 'The intimate and highly personal nature of therapy, which relies on human connection and trust, is seen as a role AI should never fill.',
+                    'Doctor': 'Respondents believe the nuance, diagnostic intuition, and compassionate care of a doctor are irreplaceable by a machine.',
+                    'Judge': 'The ethical, moral, and judicial responsibility of a judge is seen as too critical to be entrusted to an AI, which lacks a conscience.',
+                    'Chef': 'Creativity, passion, and the artistry of cooking are seen as uniquely human traits that an AI chef would lack.',
+                    'Financial Advisor': 'Trust and a deep understanding of a person\'s long-term goals and risk tolerance are seen as qualities an AI cannot fully grasp.',
+                    'Banker': 'The need for human oversight, security, and personal relationships in handling finances is important to this group.',
+                    'Stylist': 'Creativity, understanding personal taste, and providing a human touch in personal appearance are considered essential for a stylist.',
+                    'Farmer': 'The intuition, on-the-ground knowledge, and hard work required to farm are seen as uniquely human skills.',
+                    'Construction worker': 'Physical labor, problem-solving on the spot, and managing unpredictable situations are seen as reasons to keep this job human.',
+                    'Lawyer': 'The ethical judgment, courtroom presence, and nuanced understanding of justice that a human lawyer provides is seen as too critical to be entrusted to an AI.',
+                    'Cashier': 'This is considered a more straightforward, repetitive task that some believe could be automated, but others still value the human interaction.',
+                    'Models': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
+                    'Paralegals': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
+                    'Retail': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
+                    'Travel agents': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
+                    'Graphic Designer': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.',
+                    'Customer service agents': 'The jobs of models, paralegals, retail workers, and others are seen as less critical to remain human.'
+                }
             }
         };
-
-        const medicalData = {
-            labels: ['I would definitely sue', 'I would forgive him/her and negotiate options...', 'Neutral', 'Inquisitive', 'Angry but willing to rectify...', 'Not sure'],
-            data: [25, 13, 2, 1, 2, 1],
-            summaries: {
-                'I would definitely sue': 'The largest group would take legal action, indicating a strong belief that the doctor, as the professional using the tool, is ultimately responsible for the outcome.',
-                'I would forgive him/her and negotiate options...': 'This group would choose a more collaborative approach, focusing on finding a solution with the doctor rather than seeking punitive action.',
-                'Neutral': 'A small portion of respondents would feel neither angry nor forgiving, suggesting they would approach the situation with a purely objective mindset.',
-                'Inquisitive': 'This group would want to understand why the mistake happened, focusing on learning from the error rather than assigning blame.',
-                'Angry but willing to rectify...': 'This group expresses initial anger but is willing to work with the doctor to find a resolution, showing a mix of emotional response and practicality.',
-                'Not sure': 'This group is undecided, highlighting the complexity of the situation and the difficulty in assigning responsibility.'
-            }
-        };
-        
-        const netImpactData = {
-            labels: ['Net Positive', 'Net Negative', 'In between'],
-            data: [16, 12, 16],
-            summaries: {
-                'Net Positive': 'This group sees AI as having an overall beneficial effect on society.',
-                'Net Negative': 'This group believes AI\'s negative impacts outweigh its benefits.',
-                'In between': 'This group believes AI has both positive and negative aspects, with neither clearly dominating the other.'
-            }
-        };
-        
-        const humanConnectionData = {
-            labels: ['Enhance', 'Decrease', 'No Impact'],
-            data: [13, 24, 7],
-            summaries: {
-                'Enhance': 'This group believes AI will improve human connection by enabling new forms of communication and collaboration.',
-                'Decrease': 'The majority of respondents fear that AI will reduce the value of genuine human connection by replacing it with digital interactions.',
-                'No Impact': 'This group feels that AI will not fundamentally alter the nature of human connection.'
-            }
-        };
-        
-        const misinformationData = {
-            labels: ['Fact-checking & verification tools', 'Human moderation on social media', 'Stricter regulation of AI content', 'I don\'t care', 'Punishing purveyors of misinformation'],
-            data: [26, 22, 14, 1, 11],
-            summaries: {
-                'Fact-checking & verification tools': 'Respondents see AI-powered fact-checking tools as the best way to combat misinformation.',
-                'Human moderation on social media': 'This group believes human moderators are essential for reviewing and controlling the spread of misinformation.',
-                'Stricter regulation of AI content': 'This group thinks governments and regulatory bodies should implement strict laws on how AI-generated content is used and shared.',
-                'I don\'t care': 'A small portion of respondents feel detached from the issue of misinformation.',
-                'Punishing purveyors of misinformation': 'This group wants legal consequences for those who create and spread misinformation.'
-            }
-        };
-        
-        const emotionsData = {
-            labels: ['Anxious', 'Curious', 'Excited', 'Enthusiastic', 'Scared', 'Confused', 'Hopeful', 'Joyful', 'Angry', 'Neutral'],
-            data: [20, 19, 18, 11, 18, 18, 17, 6, 3, 13],
-            summaries: {
-                'Anxious': 'A significant number of people feel anxious about the unknown future and potential negative impacts of AI.',
-                'Curious': 'Many respondents are intellectually curious about AI and its capabilities.',
-                'Excited': 'This group is enthusiastic about the new possibilities and advancements AI can bring.',
-                'Enthusiastic': 'A subset of the excited group who are very eager about the future of AI.',
-                'Scared': 'A considerable number of people are scared of AI, possibly due to concerns about job loss, privacy, or its power.',
-                'Confused': 'Many people feel confused, indicating a need for more education and clearer information about AI.',
-                'Hopeful': 'This group holds a positive outlook on AI\'s potential to solve global problems.',
-                'Joyful': 'A small group feels a sense of joy, likely from experiencing the immediate benefits and convenience of AI tools.',
-                'Angry': 'A small number feel angry, possibly due to a sense of powerlessness or negative past experiences.',
-                'Neutral': 'This group remains indifferent, neither positive nor negative about the technology.'
-            }
-        };
-        
-        const socialMediaData = {
-            labels: ['0-1 hour', '1-3 hours', '3-5 hours', '5+ hours'],
-            data: [2, 12, 11, 19],
-            summaries: {
-                '0-1 hour': 'This group spends very little time on social media, perhaps actively avoiding it.',
-                '1-3 hours': 'A moderate group with a typical amount of social media usage.',
-                '3-5 hours': 'A significant number of people spend several hours on social media daily.',
-                '5+ hours': 'The largest group, indicating a high level of engagement and time spent on social media platforms.'
-            }
-        };
-        
-        const aiTermsData = {
-            labels: ['Data', 'Algorithms', 'Ethics', 'Humanity', 'Future', 'Jobs', 'Bias', 'Safety', 'Empathy', 'Power'],
-            data: [26, 24, 23, 22, 22, 21, 21, 21, 16, 15],
-            summaries: {
-                'Data': 'The most common association is with data, reflecting AI\'s reliance on large datasets.',
-                'Algorithms': 'Many people see AI as fundamentally a matter of algorithms and complex code.',
-                'Ethics': 'A strong association with ethics highlights growing public concern about the moral implications of AI.',
-                'Humanity': 'This term shows a concern for AI\'s impact on what it means to be human.',
-                'Future': 'AI is widely seen as a technology that will shape the future.',
-                'Jobs': 'A common association is with the impact on employment and job security.',
-                'Bias': 'People are aware of the potential for AI systems to have inherent biases.',
-                'Safety': 'Safety is a major concern, linked to the potential for AI to be harmful.',
-                'Empathy': 'This reflects the debate over whether AI can ever truly understand or replicate human empathy.',
-                'Power': 'This association points to a concern about who controls AI and the immense power it represents.'
-            }
-        };
-
 
         const backgroundColors = [
             'rgba(244, 63, 94, 0.7)',
@@ -447,52 +523,7 @@
             'rgba(255, 99, 132, 1)'
         ];
 
-        const responsibilitySummaries = {
-            'Myself': 'This group believes they are ultimately responsible for their actions and the tools they choose to use, including AI.',
-            'AI Developers': 'This group holds the creators of the AI responsible, citing their role in building and releasing the technology.',
-            'AI itself': 'This group personifies the AI, believing it should be held accountable for its own errors.',
-            'Nobody': 'This group does not believe anyone should be held responsible for an AI\'s mistakes.',
-            'Wouldn\'t use it': 'This group avoids the issue of responsibility by stating they would not use a risky AI tool in the first place.'
-        };
-        const misuseSummaries = {
-            'Invading people\'s privacy or sp...': 'This concern highlights the potential for AI to be used for mass surveillance and to gather personal data without consent.',
-            'Using personal data to train oth...': 'Respondents in this group fear that their personal data could be exploited to train other AI models, leading to further privacy breaches.',
-            'Manipulating opinions or behavior': 'A major fear is that AI could be used to create highly personalized, deceptive content to influence public opinion or individual actions.',
-            'Discriminating against certain g...': 'This concern points to the possibility of AI systems reinforcing existing societal biases, leading to unfair treatment of certain groups.',
-            'Over-hyping the influence of te...': 'Some respondents believe powerful entities might exaggerate AI\'s capabilities to create a sense of inevitability or to gain an unfair advantage.',
-            'Ignoring the moral and ethical r...': 'This group is concerned about the lack of ethical oversight in AI development and deployment, which could lead to harmful outcomes.',
-            'I don\'t care, it doesn\'t affect me.': 'This small group feels disconnected from the ethical issues surrounding AI, believing it does not impact their personal lives.'
-        };
-        const trustSummaries = {
-            'Details about how the AI syste...': 'Respondents feel that transparency in how an AI works is key to building trust. They want to know the internal logic or "black box" behind its decisions.',
-            'Information about the data it w...': 'This group believes trust is built on understanding the dataset used to train the AI. They want to ensure the data is fair, unbiased, and free from personal information.',
-            'Who created the AI system...': 'Knowing the developer behind the AI is important for this group, as it helps them gauge the creator\'s values and potential biases.',
-            'Whether it has been tested for...': 'This group requires proof of thorough testing for safety, bias, and accuracy before they can trust an AI tool.',
-            'How often it makes mistakes': 'For this group, transparency about the AI\'s error rate is crucial. They want to know its limitations and fallibility.',
-            'If a human is involved in review...': 'A human-in-the-loop approach is a key trust-builder for this group. They feel safer knowing that a person can override or correct the AI\'s output.',
-            'Information about how my pers...': 'Privacy is paramount. This group will only trust an AI that is transparent about how it handles and protects their personal data.',
-            'What\'s the motive behind devel...': 'Understanding the purpose or motivation for the AI\'s creation is a primary trust factor for this group, especially if it\'s for profit versus for public good.',
-            'I don\'t need to know anything...': 'A small subset of users who are comfortable with new technology and do not require extensive background information to trust an AI.',
-            'I could never fully trust AI': 'This group holds a fundamental skepticism towards AI, believing it is inherently untrustworthy regardless of any information provided.'
-        };
-        const jobsSummaries = {
-            'Teacher': 'This group feels that the human connection, empathy, and social-emotional learning provided by a teacher cannot be replicated by an AI.',
-            'Doctor': 'Respondents believe the nuance, diagnostic intuition, and compassionate care of a doctor are irreplaceable by a machine.',
-            'Therapist': 'The intimate and highly personal nature of therapy, which relies on human connection and trust, is seen as a role AI should never fill.',
-            'Lawyer': 'The ethical judgment, courtroom presence, and nuanced understanding of justice that a human lawyer provides is seen as too critical to be entrusted to an AI.',
-            'Chef': 'Creativity, passion, and the artistry of cooking are seen as uniquely human traits that an AI chef would lack.',
-            'Judge': 'The ethical, moral, and judicial responsibility of a judge is seen as too critical to be entrusted to an AI, which lacks a conscience.',
-            'Babysitter': 'The care, protection, and emotional bonding required to look after a child are considered far beyond the capabilities of an AI.',
-            'Cashier': 'This is considered a more straightforward, repetitive task that some believe could be automated, but others still value the human interaction.',
-            'Construction worker': 'Physical labor, problem-solving on the spot, and managing unpredictable situations are seen as reasons to keep this job human.',
-            'Financial Advisor': 'Trust and a deep understanding of a person\'s long-term goals and risk tolerance are seen as qualities an AI cannot fully grasp.',
-            'Banker': 'The need for human oversight, security, and personal relationships in handling finances is important to this group.',
-            'Stylist': 'Creativity, understanding personal taste, and providing a human touch in personal appearance are considered essential for a stylist.',
-            'Lover': 'This is the most common response, highlighting the belief that a romantic or personal relationship is fundamentally human and cannot be automated.',
-            'Farmer': 'The intuition, on-the-ground knowledge, and hard work required to farm are seen as uniquely human skills.'
-        };
-
-        // Function to create a new Chart.js instance (for 2D charts)
+        // Function to create a new Chart.js instance
         function createChart(canvasId, type, labels, data) {
             const ctx = document.getElementById(canvasId).getContext('2d');
             const options = {
@@ -500,7 +531,9 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        display: false
+                        display: type === 'doughnut',
+                        position: 'bottom',
+                        labels: { color: '#e2e8f0' }
                     },
                     tooltip: {
                         enabled: true,
@@ -512,26 +545,17 @@
                         displayColors: false,
                         callbacks: {
                             label: function(context) {
-                                return context.label + ': ' + context.formattedValue + ' responses';
+                                return context.label + ': ' + context.formattedValue + '%';
                             }
                         }
                     }
                 }
             };
 
-            const datasets = [{
-                label: 'Number of Responses',
-                data: data,
-                backgroundColor: backgroundColors.slice(0, data.length),
-                borderColor: borderColors.slice(0, data.length),
-                borderWidth: 1
-            }];
-
             if (type === 'bar') {
-                options.indexAxis = 'y';
-                options.scales = {
+                 options.indexAxis = 'y';
+                 options.scales = {
                     y: {
-                        beginAtZero: true,
                         ticks: { color: '#e2e8f0' },
                         grid: { color: 'rgba(255, 255, 255, 0.1)' }
                     },
@@ -540,55 +564,26 @@
                         grid: { color: 'rgba(255, 255, 255, 0.1)' }
                     }
                 };
-                options.plugins.legend.display = false;
-            } else if (type === 'doughnut') {
-                options.plugins.legend.display = true;
-                options.plugins.legend.position = 'bottom';
-                options.plugins.legend.labels = { color: '#e2e8f0' };
-                options.plugins.tooltip.callbacks.label = function(context) {
-                    let label = context.label || '';
-                    if (label) {
-                        label += ': ';
-                    }
-                    if (context.parsed !== null) {
-                        label += context.parsed;
-                    }
-                    return label;
-                };
-            } else if (type === 'polarArea') {
-                options.plugins.legend.display = true;
-                options.plugins.legend.position = 'bottom';
-                options.plugins.legend.labels = { color: '#e2e8f0' };
-                options.scales = {
-                    r: {
-                        angleLines: { color: 'rgba(255, 255, 255, 0.2)' },
-                        grid: { color: 'rgba(255, 255, 255, 0.2)' },
-                        pointLabels: { color: '#e2e8f0' },
-                        ticks: {
-                            color: '#e2e8f0',
-                            backdropColor: 'transparent'
-                        }
-                    }
-                };
             }
 
             const chart = new Chart(ctx, {
                 type: type,
                 data: {
                     labels: labels,
-                    datasets: datasets
+                    datasets: [{
+                        label: 'Response Percentage',
+                        data: data,
+                        backgroundColor: backgroundColors,
+                        borderColor: borderColors,
+                        borderWidth: 1
+                    }]
                 },
                 options: options
             });
             return chart;
         }
 
-        let responsibilityChart;
-        let misuseChart;
-        let trustChart;
-        let jobsChart;
-        
-        // Function to handle click events for all 2D charts
+        // Function to handle click events for all charts
         function handleChartClick(chart, summaryTextElementId, summaries) {
             return function(evt) {
                 const activePoints = chart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
@@ -607,177 +602,23 @@
             };
         }
 
-        // --- 3D Chart Logic (three.js) ---
-
-        // Variables to keep track of the mouse and raycaster
-        let raycaster = new THREE.Raycaster();
-        let mouse = new THREE.Vector2();
-        let INTERSECTED = null;
-
-        // Function to set up a 3D chart
-        function setup3DChart(containerId, chartData, type) {
-            const container = document.getElementById(containerId);
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            container.appendChild(renderer.domElement);
-
-            // Add lights
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-            scene.add(ambientLight);
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-            directionalLight.position.set(5, 10, 7.5);
-            scene.add(directionalLight);
-
-            let chartObjects = [];
-
-            if (type === 'bar') {
-                const barWidth = 10;
-                const barGap = 5;
-                const maxVal = Math.max(...chartData.data);
-                
-                chartData.data.forEach((val, i) => {
-                    const barHeight = (val / maxVal) * 50; // Scale the height
-                    const geometry = new THREE.BoxGeometry(barWidth, barHeight, barWidth);
-                    const color = new THREE.Color(backgroundColors[i]).getHex();
-                    const material = new THREE.MeshLambertMaterial({ color: color });
-                    const bar = new THREE.Mesh(geometry, material);
-                    
-                    const xPos = i * (barWidth + barGap) - (chartData.data.length * (barWidth + barGap)) / 2;
-                    bar.position.set(xPos, barHeight / 2, 0);
-                    bar.userData = {
-                        label: chartData.labels[i],
-                        summary: chartData.summaries[chartData.labels[i]],
-                        originalColor: color
-                    };
-                    scene.add(bar);
-                    chartObjects.push(bar);
-                });
-
-                camera.position.z = chartData.data.length * 5;
-                camera.position.y = 20;
-                camera.lookAt(0, 0, 0);
-            } else if (type === 'donut') {
-                const segments = 32;
-                const innerRadius = 15;
-                const outerRadius = 25;
-                const thetaLength = (Math.PI * 2);
-                const total = chartData.data.reduce((sum, val) => sum + val, 0);
-                
-                let startAngle = 0;
-
-                chartData.data.forEach((val, i) => {
-                    const sweepAngle = (val / total) * thetaLength;
-                    const geometry = new THREE.TorusGeometry(outerRadius, outerRadius - innerRadius, segments, segments, sweepAngle);
-                    geometry.rotateX(Math.PI / 2); // Rotate to be flat
-                    const color = new THREE.Color(backgroundColors[i]).getHex();
-                    const material = new THREE.MeshLambertMaterial({ color: color });
-                    const slice = new THREE.Mesh(geometry, material);
-
-                    // Position the slice
-                    slice.rotation.z = -startAngle - sweepAngle / 2 - Math.PI / 2;
-                    slice.userData = {
-                        label: chartData.labels[i],
-                        summary: chartData.summaries[chartData.labels[i]],
-                        originalColor: color
-                    };
-                    scene.add(slice);
-                    chartObjects.push(slice);
-                    startAngle += sweepAngle;
-                });
-                camera.position.z = 50;
-                camera.position.y = 10;
-                camera.lookAt(0, 0, 0);
-            }
-
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                camera.aspect = container.clientWidth / container.clientHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(container.clientWidth, container.clientHeight);
-            });
-            
-            let mouseX = 0;
-            let mouseY = 0;
-            const containerCenterY = container.clientHeight / 2;
-
-            container.addEventListener('mousemove', (event) => {
-                event.preventDefault();
-                const rect = container.getBoundingClientRect();
-                mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-                mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-            });
-            
-            // Interaction logic (click)
-            container.addEventListener('mousedown', (event) => {
-                if (INTERSECTED) {
-                    const summaryElement = document.getElementById(containerId.replace('Container', 'Summary'));
-                    const summaryTextElement = document.getElementById(containerId.replace('Container', 'SummaryText'));
-                    summaryTextElement.textContent = INTERSECTED.userData.summary;
-                    summaryElement.classList.remove('hidden');
-                    setTimeout(() => summaryElement.style.opacity = '1', 10);
-                }
-            });
-
-            function animate() {
-                requestAnimationFrame(animate);
-
-                // Update the raycaster
-                raycaster.setFromCamera(mouse, camera);
-                const intersects = raycaster.intersectObjects(chartObjects);
-
-                // Check for intersection
-                if (intersects.length > 0) {
-                    if (INTERSECTED != intersects[0].object) {
-                        // Restore previous object color
-                        if (INTERSECTED) {
-                            INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
-                        }
-                        // Store the new intersected object and set a hover color
-                        INTERSECTED = intersects[0].object;
-                        INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
-                        INTERSECTED.material.emissive.setHex(0xaaaa00);
-                    }
-                } else {
-                    // No intersection, restore previous object color
-                    if (INTERSECTED) {
-                        INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
-                    }
-                    INTERSECTED = null;
-                }
-
-                // Rotate the chart slightly for a dynamic feel
-                scene.rotation.y += 0.005;
-
-                renderer.render(scene, camera);
-            }
-            animate();
-        }
-
         // Initialize all charts and event listeners on page load
         window.onload = function() {
-            // Survey 1 Charts (2D)
-            responsibilityChart = createChart('responsibilityCanvas', 'doughnut', responsibilityData.labels, responsibilityData.data);
-            misuseChart = createChart('misuseCanvas', 'bar', misuseData.labels, misuseData.data);
-            trustChart = createChart('trustCanvas', 'bar', trustData.labels, trustData.data);
-            jobsChart = createChart('jobsCanvas', 'polarArea', jobsData.labels, jobsData.data);
-
-            // Add click event listeners to all 2D charts
-            document.getElementById('responsibilityCanvas').addEventListener('click', handleChartClick(responsibilityChart, 'responsibilitySummaryText', responsibilitySummaries));
-            document.getElementById('misuseCanvas').addEventListener('click', handleChartClick(misuseChart, 'misuseSummaryText', misuseSummaries));
-            document.getElementById('trustCanvas').addEventListener('click', handleChartClick(trustChart, 'trustSummaryText', trustSummaries));
-            document.getElementById('jobsCanvas').addEventListener('click', handleChartClick(jobsChart, 'jobsSummaryText', jobsSummaries));
-
-            // Survey 2 Charts (3D)
-            setup3DChart('confidentialChartContainer', confidentialData, 'donut');
-            setup3DChart('medicalChartContainer', medicalData, 'bar');
-            setup3DChart('netImpactChartContainer', netImpactData, 'donut');
-            setup3DChart('humanConnectionChartContainer', humanConnectionData, 'bar');
-            setup3DChart('misinformationChartContainer', misinformationData, 'donut');
-            setup3DChart('emotionsChartContainer', emotionsData, 'bar');
-            setup3DChart('socialMediaChartContainer', socialMediaData, 'bar');
-            setup3DChart('aiTermsChartContainer', aiTermsData, 'bar');
+            createChart('responsibilityCanvas', 'doughnut', chartData.responsibility.labels, chartData.responsibility.data).canvas.onclick = handleChartClick(responsibilityChart, 'responsibilitySummaryText', chartData.responsibility.summaries);
+            createChart('medicalCanvas', 'bar', chartData.medical.labels, chartData.medical.data).canvas.onclick = handleChartClick(medicalChart, 'medicalSummaryText', chartData.medical.summaries);
+            createChart('lawyerCanvas', 'bar', chartData.lawyer.labels, chartData.lawyer.data).canvas.onclick = handleChartClick(lawyerChart, 'lawyerSummaryText', chartData.lawyer.summaries);
+            createChart('jobsReplacedCanvas', 'doughnut', chartData.jobsReplaced.labels, chartData.jobsReplaced.data).canvas.onclick = handleChartClick(jobsReplacedChart, 'jobsReplacedSummaryText', chartData.jobsReplaced.summaries);
+            createChart('bossEmailCanvas', 'bar', chartData.bossEmail.labels, chartData.bossEmail.data).canvas.onclick = handleChartClick(bossEmailChart, 'bossEmailSummaryText', chartData.bossEmail.summaries);
+            createChart('employeeWorkCanvas', 'bar', chartData.employeeWork.labels, chartData.employeeWork.data).canvas.onclick = handleChartClick(employeeWorkChart, 'employeeWorkSummaryText', chartData.employeeWork.summaries);
+            createChart('customerServiceCanvas', 'bar', chartData.customerService.labels, chartData.customerService.data).canvas.onclick = handleChartClick(customerServiceChart, 'customerServiceSummaryText', chartData.customerService.summaries);
+            createChart('virtualAssistantCanvas', 'bar', chartData.virtualAssistant.labels, chartData.virtualAssistant.data).canvas.onclick = handleChartClick(virtualAssistantChart, 'virtualAssistantSummaryText', chartData.virtualAssistant.summaries);
+            createChart('positiveImpactCanvas', 'bar', chartData.positiveImpact.labels, chartData.positiveImpact.data).canvas.onclick = handleChartClick(positiveImpactChart, 'positiveImpactSummaryText', chartData.positiveImpact.summaries);
+            createChart('humanConnectionCanvas', 'bar', chartData.humanConnection.labels, chartData.humanConnection.data).canvas.onclick = handleChartClick(humanConnectionChart, 'humanConnectionSummaryText', chartData.humanConnection.summaries);
+            createChart('netImpactCanvas', 'doughnut', chartData.netImpact.labels, chartData.netImpact.data).canvas.onclick = handleChartClick(netImpactChart, 'netImpactSummaryText', chartData.netImpact.summaries);
+            createChart('misinformationCanvas', 'bar', chartData.misinformation.labels, chartData.misinformation.data).canvas.onclick = handleChartClick(misinformationChart, 'misinformationSummaryText', chartData.misinformation.summaries);
+            createChart('ageRangeCanvas', 'doughnut', chartData.ageRange.labels, chartData.ageRange.data).canvas.onclick = handleChartClick(ageRangeChart, 'ageRangeSummaryText', chartData.ageRange.summaries);
+            createChart('risksCanvas', 'bar', chartData.risks.labels, chartData.risks.data).canvas.onclick = handleChartClick(risksChart, 'risksSummaryText', chartData.risks.summaries);
+            createChart('jobsAICanvas', 'bar', chartData.jobsAI.labels, chartData.jobsAI.data).canvas.onclick = handleChartClick(jobsAIChart, 'jobsAISummaryText', chartData.jobsAI.summaries);
         };
     </script>
 </body>
