@@ -53,59 +53,31 @@
         .article-container .prose p {
             text-align: left;
         }
-        
-        /* Navigation Bar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
+
+        /* Glow effect for navigation links */
+        .glow-hover {
+            position: relative;
+            z-index: 1;
+        }
+
+        .glow-hover::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
             left: 0;
             width: 100%;
-            background-color: rgba(22, 38, 51, 0.7);
-            backdrop-filter: blur(8px);
-            z-index: 10;
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            height: 2px;
+            background: currentColor;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .navbar-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.05em;
-        }
-
-        .navbar-links a {
-            color: #cbd5e1;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.2s ease-in-out;
-        }
-
-        .navbar-links a:hover {
-            color: #ffffff;
-        }
-
-        /* Adjust body padding to account for the fixed navbar */
-        body {
-            padding-top: 6rem;
+        .glow-hover:hover::after {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-logo">
-            Emotion Encoded
-        </div>
-        <div class="navbar-links hidden md:flex">
-            <a href="#responsibilityChart">Charts</a>
-            <a href="#article_section">Articles</a>
-        </div>
-    </nav>
 
     <!-- Main content container -->
     <div class="content-container">
@@ -198,6 +170,16 @@
             </article>
         </div>
     </div>
+    
+    <!-- Navigation Links -->
+    <nav class="py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl mt-16">
+        <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
+        <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
+        <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
+        <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
+        <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
+        <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
+    </nav>
 
     <script>
         // Chart Data
