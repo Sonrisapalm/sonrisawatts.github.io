@@ -18,22 +18,26 @@
         }
         
         .content-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            max-width: 1400px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .article-container {
+            grid-column: span 2;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .content-card {
             background-color: #2d3748;
             border-radius: 1rem;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            flex: 1;
-            min-width: 280px; /* Adjusted for better mobile stacking */
-            max-width: 400px; /* Added to prevent overly wide cards */
+            min-width: 280px;
+            max-width: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -43,22 +47,34 @@
 
         .chart-container {
             position: relative;
-            height: 400px;
+            height: 360px;
             width: 100%;
             background-color: #f7fafc;
             border-radius: 0.5rem;
             padding: 1rem;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
         }
+
+        @media (min-width: 1024px) {
+            .content-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .article-container {
+                grid-column: 1 / -1;
+            }
+            .content-card {
+                max-width: 380px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="content-container">
         <!-- Main Article Content Card -->
-        <div id="article_section" class="content-card article-container max-w-2xl">
+        <div id="article_section" class="content-card article-container">
             <article>
                 <header class="text-center mb-10 flex flex-col items-center">
-                    <img src="researcher_image.jpg" alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl lg:max-w-3xl" />
+                    <img src="researcher_image.jpg" alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl" />
                     <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Methods and Data</h1>
                     <p class="text-lg md:text-xl font-light text-gray-300">A detailed overview of the research methodology for the Emotion Encoded initiative.</p>
                 </header>
@@ -93,7 +109,7 @@
             <div class="chart-container">
                 <canvas id="responsibilityCanvas" aria-label="Donut chart showing responsibility for AI mistakes"></canvas>
             </div>
-            <div id="responsibilitySummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="responsibilitySummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="responsibilitySummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -105,7 +121,7 @@
             <div class="chart-container">
                 <canvas id="medicalCanvas" aria-label="Bar chart showing responsibility for medical mistakes"></canvas>
             </div>
-            <div id="medicalSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="medicalSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="medicalSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -117,7 +133,7 @@
             <div class="chart-container">
                 <canvas id="lawyerCanvas" aria-label="Bar chart showing responsibility for lawyer mistakes"></canvas>
             </div>
-            <div id="lawyerSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="lawyerSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="lawyerSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -130,7 +146,7 @@
             <div class="chart-container">
                 <canvas id="jobsReplacedCanvas" aria-label="Donut chart showing opinions on AI replacing jobs"></canvas>
             </div>
-            <div id="jobsReplacedSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="jobsReplacedSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="jobsReplacedSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -142,7 +158,7 @@
             <div class="chart-container">
                 <canvas id="bossEmailCanvas" aria-label="Bar chart showing feelings about AI-generated boss emails"></canvas>
             </div>
-            <div id="bossEmailSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="bossEmailSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="bossEmailSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -154,7 +170,7 @@
             <div class="chart-container">
                 <canvas id="employeeWorkCanvas" aria-label="Bar chart showing feelings about AI-generated employee work"></canvas>
             </div>
-            <div id="employeeWorkSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="employeeWorkSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="employeeWorkSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -166,7 +182,7 @@
             <div class="chart-container">
                 <canvas id="customerServiceCanvas" aria-label="Bar chart showing feelings about AI customer service calls"></canvas>
             </div>
-            <div id="customerServiceSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="customerServiceSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="customerServiceSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -178,7 +194,7 @@
             <div class="chart-container">
                 <canvas id="virtualAssistantCanvas" aria-label="Bar chart showing feelings about virtual assistants"></canvas>
             </div>
-            <div id="virtualAssistantSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="virtualAssistantSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="virtualAssistantSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -190,7 +206,7 @@
             <div class="chart-container">
                 <canvas id="ageRangeCanvas" aria-label="Donut chart showing age range distribution"></canvas>
             </div>
-            <div id="ageRangeSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="ageRangeSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="ageRangeSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -202,7 +218,7 @@
             <div class="chart-container">
                 <canvas id="jobsAICanvas" aria-label="Bar chart showing jobs AI should not do"></canvas>
             </div>
-            <div id="jobsAISummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="jobsAISummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="jobsAISummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -214,7 +230,7 @@
             <div class="chart-container">
                 <canvas id="positiveImpactCanvas" aria-label="Bar chart showing positive impacts of AI"></canvas>
             </div>
-            <div id="positiveImpactSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="positiveImpactSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="positiveImpactSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -226,7 +242,7 @@
             <div class="chart-container">
                 <canvas id="humanConnectionCanvas" aria-label="Donut chart showing AI's impact on human connection"></canvas>
             </div>
-            <div id="humanConnectionSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="humanConnectionSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="humanConnectionSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -238,7 +254,7 @@
             <div class="chart-container">
                 <canvas id="risksCanvas" aria-label="Bar chart showing risks of generative AI"></canvas>
             </div>
-            <div id="risksSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+            <div id="risksSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="risksSummaryText" class="text-white font-medium mt-2"></p>
             </div>
@@ -435,17 +451,18 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    onClick: (event, elements) => {
+                    onClick: (event, elements, chart) => {
                         if (elements.length > 0) {
                             const firstElement = elements[0];
                             const label = chart.data.labels[firstElement.index];
                             const summary = chartData[canvasId.replace('Canvas', '')].summaries[label];
                             summaryText.textContent = summary;
-                            summaryContainer.classList.remove('opacity-0', 'hidden');
+                            summaryContainer.classList.remove('opacity-0');
                             summaryContainer.classList.add('opacity-100');
                         } else {
+                            summaryText.textContent = '';
                             summaryContainer.classList.remove('opacity-100');
-                            summaryContainer.classList.add('opacity-0', 'hidden');
+                            summaryContainer.classList.add('opacity-0');
                         }
                     },
                     scales: {
@@ -493,17 +510,18 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    onClick: (event, elements) => {
+                    onClick: (event, elements, chart) => {
                         if (elements.length > 0) {
                             const firstElement = elements[0];
                             const label = chart.data.labels[firstElement.index];
                             const summary = chartData[canvasId.replace('Canvas', '')].summaries[label];
                             summaryText.textContent = summary;
-                            summaryContainer.classList.remove('opacity-0', 'hidden');
+                            summaryContainer.classList.remove('opacity-0');
                             summaryContainer.classList.add('opacity-100');
                         } else {
+                            summaryText.textContent = '';
                             summaryContainer.classList.remove('opacity-100');
-                            summaryContainer.classList.add('opacity-0', 'hidden');
+                            summaryContainer.classList.add('opacity-0');
                         }
                     },
                     plugins: {
