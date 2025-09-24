@@ -6,7 +6,6 @@
     <title>Emotion Encoded Research Dashboard</title>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
         
@@ -32,8 +31,9 @@
             border-radius: 1rem;
             padding: 2rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            flex: 1; 
-            min-width: 300px;
+            flex: 1;
+            min-width: 280px; /* Adjusted for better mobile stacking */
+            max-width: 400px; /* Added to prevent overly wide cards */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -50,26 +50,15 @@
             padding: 1rem;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        .chart-3d-container {
-            position: relative;
-            height: 400px;
-            width: 100%;
-            border-radius: 0.5rem;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
     </style>
 </head>
 <body>
-
-    <!-- Main content container -->
     <div class="content-container">
-
         <!-- Main Article Content Card -->
         <div id="article_section" class="content-card article-container max-w-2xl">
             <article>
                 <header class="text-center mb-10 flex flex-col items-center">
-                    <img src="https://placehold.co/800x450/4B5563/FFFFFF?text=A+researcher+reviewing+data+and+charts+on+a+large+screen." alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl lg:max-w-3xl" />
+                    <img src="researcher_image.jpg" alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl lg:max-w-3xl" />
                     <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Methods and Data</h1>
                     <p class="text-lg md:text-xl font-light text-gray-300">A detailed overview of the research methodology for the Emotion Encoded initiative.</p>
                 </header>
@@ -89,7 +78,7 @@
                     <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Transparency and Verification</h2>
                     <p>For full transparency, a detailed index of survey instruments, coding frameworks, and data summaries is available through the link below. This allows peers, reviewers, and scholarship committees to verify methodological rigor without overloading the main content.</p>
                     <div class="mt-6 text-center">
-                        <a href="emotion_encoded_data.zip" download class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-colors duration-200">
+                        <a href="/data/emotion_encoded_data.zip" download class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-colors duration-200" aria-label="Download data package for Emotion Encoded research">
                             Download Data Package
                         </a>
                     </div>
@@ -98,13 +87,11 @@
         </div>
 
         <!-- Survey 1 Charts -->
-        
-        <!-- Chart: AI Responsibility (Donut Chart) -->
-        <div id="responsibilityChart" class="content-card max-w-lg">
+        <div id="responsibilityChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">Who is responsible for AI Mistakes?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a slice for a summary.</p>
             <div class="chart-container">
-                <canvas id="responsibilityCanvas"></canvas>
+                <canvas id="responsibilityCanvas" aria-label="Donut chart showing responsibility for AI mistakes"></canvas>
             </div>
             <div id="responsibilitySummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
@@ -112,12 +99,11 @@
             </div>
         </div>
 
-        <!-- Chart: Medical Mistake (Bar Chart) -->
-        <div id="medicalChart" class="content-card max-w-lg">
+        <div id="medicalChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">Who is responsible for a medical mistake?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
             <div class="chart-container">
-                <canvas id="medicalCanvas"></canvas>
+                <canvas id="medicalCanvas" aria-label="Bar chart showing responsibility for medical mistakes"></canvas>
             </div>
             <div id="medicalSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
@@ -125,12 +111,11 @@
             </div>
         </div>
 
-        <!-- Chart: Lawyer Mistake (Bar Chart) -->
-        <div id="lawyerChart" class="content-card max-w-lg">
+        <div id="lawyerChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">Who is responsible for a lawyer's mistake?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
             <div class="chart-container">
-                <canvas id="lawyerCanvas"></canvas>
+                <canvas id="lawyerCanvas" aria-label="Bar chart showing responsibility for lawyer mistakes"></canvas>
             </div>
             <div id="lawyerSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
@@ -139,39 +124,35 @@
         </div>
 
         <!-- Survey 2 Charts -->
-        
-        <!-- Chart: AI Replacing Jobs (Donut Chart) -->
-        <div id="jobsReplacedChart" class="content-card max-w-lg">
+        <div id="jobsReplacedChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">Will AI eventually replace jobs?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a slice for a summary.</p>
             <div class="chart-container">
-                <canvas id="jobsReplacedCanvas"></canvas>
+                <canvas id="jobsReplacedCanvas" aria-label="Donut chart showing opinions on AI replacing jobs"></canvas>
             </div>
             <div id="jobsReplacedSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="jobsReplacedSummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
-        
-        <!-- Chart: Feelings About AI-Generated Email from Boss (Bar Chart) -->
-        <div id="bossEmailChart" class="content-card max-w-lg">
+
+        <div id="bossEmailChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">AI-generated email from your boss?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
             <div class="chart-container">
-                <canvas id="bossEmailCanvas"></canvas>
+                <canvas id="bossEmailCanvas" aria-label="Bar chart showing feelings about AI-generated boss emails"></canvas>
             </div>
             <div id="bossEmailSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="bossEmailSummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
-        
-        <!-- Chart: Feelings About AI-Generated Employee Work (Bar Chart) -->
-        <div id="employeeWorkChart" class="content-card max-w-lg">
+
+        <div id="employeeWorkChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">AI-generated work from your employee?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
             <div class="chart-container">
-                <canvas id="employeeWorkCanvas"></canvas>
+                <canvas id="employeeWorkCanvas" aria-label="Bar chart showing feelings about AI-generated employee work"></canvas>
             </div>
             <div id="employeeWorkSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
@@ -179,64 +160,92 @@
             </div>
         </div>
 
-        <!-- Chart: Feelings About AI Customer Service Call (Bar Chart) -->
-        <div id="customerServiceChart" class="content-card max-w-lg">
+        <div id="customerServiceChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">AI customer service call?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
             <div class="chart-container">
-                <canvas id="customerServiceCanvas"></canvas>
+                <canvas id="customerServiceCanvas" aria-label="Bar chart showing feelings about AI customer service calls"></canvas>
             </div>
             <div id="customerServiceSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="customerServiceSummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
-        
-        <!-- Chart: Virtual Assistant (Bar Chart) -->
-        <div id="virtualAssistantChart" class="content-card max-w-lg">
+
+        <div id="virtualAssistantChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">Feelings about having a virtual assistant?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
             <div class="chart-container">
-                <canvas id="virtualAssistantCanvas"></canvas>
+                <canvas id="virtualAssistantCanvas" aria-label="Bar chart showing feelings about virtual assistants"></canvas>
             </div>
             <div id="virtualAssistantSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="virtualAssistantSummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
-        
 
-        <!-- Chart: Age Range (Donut Chart) -->
-        <div id="ageRangeChart" class="content-card max-w-lg">
+        <div id="ageRangeChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">What's your age range?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a slice for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a slice for a summary.</p>
             <div class="chart-container">
-                <canvas id="ageRangeCanvas"></canvas>
+                <canvas id="ageRangeCanvas" aria-label="Donut chart showing age range distribution"></canvas>
             </div>
             <div id="ageRangeSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="ageRangeSummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
-        
-        
-        <!-- Chart: Jobs AI Should Never Do (Bar Chart) -->
-        <div id="jobsAIChart" class="content-card max-w-lg">
+
+        <div id="jobsAIChart" class="content-card">
             <h1 class="text-2xl font-bold mb-4 text-white">Jobs AI should never do?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">**Click on a bar for a summary.**</p>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
             <div class="chart-container">
-                <canvas id="jobsAICanvas"></canvas>
+                <canvas id="jobsAICanvas" aria-label="Bar chart showing jobs AI should not do"></canvas>
             </div>
             <div id="jobsAISummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
                 <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
                 <p id="jobsAISummaryText" class="text-white font-medium mt-2"></p>
             </div>
         </div>
-        
+
+        <div id="positiveImpactChart" class="content-card">
+            <h1 class="text-2xl font-bold mb-4 text-white">Positive impacts of AI?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
+            <div class="chart-container">
+                <canvas id="positiveImpactCanvas" aria-label="Bar chart showing positive impacts of AI"></canvas>
+            </div>
+            <div id="positiveImpactSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="positiveImpactSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+
+        <div id="humanConnectionChart" class="content-card">
+            <h1 class="text-2xl font-bold mb-4 text-white">AI's impact on human connection?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a slice for a summary.</p>
+            <div class="chart-container">
+                <canvas id="humanConnectionCanvas" aria-label="Donut chart showing AI's impact on human connection"></canvas>
+            </div>
+            <div id="humanConnectionSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="humanConnectionSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
+
+        <div id="risksChart" class="content-card">
+            <h1 class="text-2xl font-bold mb-4 text-white">Biggest risks of generative AI?</h1>
+            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
+            <div class="chart-container">
+                <canvas id="risksCanvas" aria-label="Bar chart showing risks of generative AI"></canvas>
+            </div>
+            <div id="risksSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0 hidden">
+                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
+                <p id="risksSummaryText" class="text-white font-medium mt-2"></p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Chart Data (extracted from the provided document)
         const chartData = {
             responsibility: {
                 labels: ['AI Developers', 'The user/Myself', 'The AI itself', 'No one', 'Would not use it'],
@@ -350,7 +359,6 @@
                     'No Impact': 'This group feels that AI will not fundamentally alter the nature of human connection.'
                 }
             },
-        
             ageRange: {
                 labels: ['Under 18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
                 data: [9.8, 34.1, 22.0, 19.5, 9.8, 2.4, 2.4],
@@ -402,13 +410,17 @@
             '#5A4D4C', '#8A9A5B', '#C9A0DC', '#FFC0CB', '#B0E0E6', '#F5DEB3'
         ];
 
-        // Function to create a bar chart
         function createBarChart(canvasId, labels, data, title) {
-            const ctx = document.getElementById(canvasId).getContext('2d');
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) {
+                console.error(`Canvas with ID ${canvasId} not found.`);
+                return;
+            }
+            const ctx = canvas.getContext('2d');
             const summaryContainer = document.getElementById(canvasId.replace('Canvas', 'Summary'));
             const summaryText = document.getElementById(canvasId.replace('Canvas', 'SummaryText'));
 
-            let chart = new Chart(ctx, {
+            new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: labels,
@@ -439,17 +451,11 @@
                     scales: {
                         y: {
                             beginAtZero: true,
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            },
-                            ticks: {
-                                color: '#e2e8f0'
-                            }
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            ticks: { color: '#e2e8f0' }
                         },
                         x: {
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
                             ticks: {
                                 color: '#e2e8f0',
                                 autoSkip: false,
@@ -458,22 +464,22 @@
                             }
                         }
                     },
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    }
+                    plugins: { legend: { display: false } }
                 }
             });
         }
 
-        // Function to create a donut chart
         function createDonutChart(canvasId, labels, data, title) {
-            const ctx = document.getElementById(canvasId).getContext('2d');
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) {
+                console.error(`Canvas with ID ${canvasId} not found.`);
+                return;
+            }
+            const ctx = canvas.getContext('2d');
             const summaryContainer = document.getElementById(canvasId.replace('Canvas', 'Summary'));
             const summaryText = document.getElementById(canvasId.replace('Canvas', 'SummaryText'));
 
-            let chart = new Chart(ctx, {
+            new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     labels: labels,
@@ -503,29 +509,54 @@
                     plugins: {
                         legend: {
                             position: 'bottom',
-                            labels: {
-                                color: '#e2e8f0'
-                            }
+                            labels: { color: '#e2e8f0' }
                         }
                     }
                 }
             });
         }
 
-        // Initialize all charts on window load
-        window.onload = function() {
-            createDonutChart('responsibilityCanvas', chartData.responsibility.labels, chartData.responsibility.data, 'Who is responsible for an AI\'s mistake?');
-            createBarChart('medicalCanvas', chartData.medical.labels, chartData.medical.data, 'Who is responsible for a medical mistake?');
-            createBarChart('lawyerCanvas', chartData.lawyer.labels, chartData.lawyer.data, 'Who is responsible for a lawyer\'s mistake?');
-            createDonutChart('jobsReplacedCanvas', chartData.jobsReplaced.labels, chartData.jobsReplaced.data, 'Will AI eventually replace jobs?');
-            createBarChart('bossEmailCanvas', chartData.bossEmail.labels, chartData.bossEmail.data, 'AI-generated email from your boss?');
-            createBarChart('employeeWorkCanvas', chartData.employeeWork.labels, chartData.employeeWork.data, 'AI-generated work from your employee?');
-            createBarChart('customerServiceCanvas', chartData.customerService.labels, chartData.customerService.data, 'AI customer service call?');
-            createDonutChart('ageRangeCanvas', chartData.ageRange.labels, chartData.ageRange.data, 'What\'s your age range?');
-            createBarChart('risksCanvas', chartData.risks.labels, chartData.risks.data, 'Biggest risks of generative AI?');
-            createBarChart('jobsAICanvas', chartData.jobsAI.labels, chartData.jobsAI.data, 'Jobs AI should never do?');
-        };
+        function initializeCharts() {
+            const charts = [
+                { id: 'responsibilityCanvas', type: 'donut', data: chartData.responsibility, title: 'Who is responsible for an AI\'s mistake?' },
+                { id: 'medicalCanvas', type: 'bar', data: chartData.medical, title: 'Who is responsible for a medical mistake?' },
+                { id: 'lawyerCanvas', type: 'bar', data: chartData.lawyer, title: 'Who is responsible for a lawyer\'s mistake?' },
+                { id: 'jobsReplacedCanvas', type: 'donut', data: chartData.jobsReplaced, title: 'Will AI eventually replace jobs?' },
+                { id: 'bossEmailCanvas', type: 'bar', data: chartData.bossEmail, title: 'AI-generated email from your boss?' },
+                { id: 'employeeWorkCanvas', type: 'bar', data: chartData.employeeWork, title: 'AI-generated work from your employee?' },
+                { id: 'customerServiceCanvas', type: 'bar', data: chartData.customerService, title: 'AI customer service call?' },
+                { id: 'virtualAssistantCanvas', type: 'bar', data: chartData.virtualAssistant, title: 'Feelings about having a virtual assistant?' },
+                { id: 'ageRangeCanvas', type: 'donut', data: chartData.ageRange, title: 'What\'s your age range?' },
+                { id: 'jobsAICanvas', type: 'bar', data: chartData.jobsAI, title: 'Jobs AI should never do?' },
+                { id: 'positiveImpactCanvas', type: 'bar', data: chartData.positiveImpact, title: 'Positive impacts of AI?' },
+                { id: 'humanConnectionCanvas', type: 'donut', data: chartData.humanConnection, title: 'AI\'s impact on human connection?' },
+                { id: 'risksCanvas', type: 'bar', data: chartData.risks, title: 'Biggest risks of generative AI?' }
+            ];
 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const canvasId = entry.target.id;
+                        const chart = charts.find(c => c.id === canvasId);
+                        if (chart) {
+                            if (chart.type === 'bar') {
+                                createBarChart(chart.id, chart.data.labels, chart.data.data, chart.title);
+                            } else {
+                                createDonutChart(chart.id, chart.data.labels, chart.data.data, chart.title);
+                            }
+                            observer.unobserve(entry.target);
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            charts.forEach(chart => {
+                const canvas = document.getElementById(chart.id);
+                if (canvas) observer.observe(canvas);
+            });
+        }
+
+        window.addEventListener('load', initializeCharts);
     </script>
 </body>
 </html>
