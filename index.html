@@ -4,81 +4,97 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emotion Encoded</title>
-    <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
     <style>
+        /* Custom styles to replicate the original design and ensure smooth responsiveness */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* A dark color fallback if background image fails */
+            font-family: 'Poppins', sans-serif;
+            background-image: url('images/websitebackground.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
             color: #f0f0f0;
             line-height: 1.7;
             overflow-x: hidden;
         }
-
         .text-shadow-md {
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
         }
-
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Custom CSS for the hover glow effect */
         .glow-hover:hover {
             text-shadow: 0 0 8px currentColor, 0 0 16px currentColor;
         }
-
-        /* Responsive background image */
-        .header-bg {
-            background-image: url('https://placehold.co/1920x1080/1a202c/e2e8f0?text=Header+Background');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        @media (min-width: 768px) {
-            .header-bg {
-                background-image: url('https://placehold.co/1920x1080/1a202c/e2e8f0?text=Header+Background');
-            }
-        }
     </style>
+    <link rel="icon" type="image/fortoppage.jpg" href="/images/favicon.png">
 </head>
 <body class="bg-gray-900 text-gray-100">
 
-    <!-- Header Section -->
-    <header class="relative w-full overflow-hidden min-h-screen flex items-center justify-center pt-24 pb-8 px-4 header-bg">
-        <div class="relative z-10 text-center flex flex-col items-center max-w-7xl mx-auto backdrop-blur-sm bg-gray-900/40 p-8 rounded-3xl">
+    <!-- Header Section with video as a background and text overlaid -->
+    <header class="relative w-full overflow-hidden min-h-screen flex items-center justify-center pt-24 pb-8 px-4">
+        <!-- Automatic Video Section - Now serving as a background -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 rounded-3xl opacity-95">
+            <!-- Corrected video path -->
+            <source src="videos/Artificial Intelligence - Animated Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Content to be displayed on top of the video -->
+        <div class="relative z-10 text-center flex flex-col items-center max-w-7xl mx-auto">
             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-wide text-shadow-md">
                 Emotion Encoded
             </h1>
             <p class="text-lg md:text-xl font-light max-w-3xl mx-auto text-shadow-md">
-                By Sonrisa Watts: A Research Initiative investigating how emotional reasoning, heuristics, cognitive bias and psychological resistance shape Artificial Intelligence adoption in high-stakes fields such as healthcare, law and finance. Our aim is to advance this field of AI & Psychology.
+                By Sonrisa Watts: A Research Initiative investigating how emotional reasoning, heuristics, cognitive bias and psychological resistance shape Artificial Intelligence adoption in high-stakes fields such as  healthcare, law and finance. Our aim is to advance this field of AI & Psychology. 
             </p>
         </div>
-
+        
         <!-- Navigation Links -->
         <nav class="absolute bottom-0 left-0 right-0 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
-            <a href="#" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
-            <a href="#" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
-            <a href="#" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
-            <a href="#" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
-            <a href="#" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
-            <a href="#" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
+            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
+            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
+            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
+            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
+            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
+            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
         </nav>
     </header>
 
-    <!-- Top Images Section -->
+    
+    <!-- Top Images Section - Now more modern and with larger images on desktop -->
     <section class="container mx-auto mt-8 px-4 bg-gray-800/50 p-6 rounded-3xl shadow-lg ring-2 ring-gray-700">
         <h2 class="text-2xl font-bold text-white mb-4">Featured Images</h2>
         <div class="flex flex-row overflow-x-auto gap-6 pb-4">
-            <img src="https://placehold.co/800x600?text=Main+Header" alt="Main header image" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-            <img src="https://placehold.co/800x600?text=Research" alt="Side header image 1" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-            <img src="https://placehold.co/800x600?text=AI+Ethics" alt="Side header image 2" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-            <img src="https://placehold.co/800x600?text=Data+Insights" alt="Extra Image 2" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-            <img src="https://placehold.co/800x600?text=AI+and+Psychology" alt="Extra Image 3" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-            <img src="https://placehold.co/800x600?text=Emotions+Encoded" alt="Extra Image 4" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/fortoppage.jpg" alt="Main header image" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/indexpic5.jpg" alt="Side header image 1" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/indexpic6.jpg" alt="Side header image 2" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/imageforindex4.jpg" alt="Extra Image 2" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/indexpic4.jpg" alt="Extra Image 3" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            <img src="images/imagessecond-picture.jpg" alt="Extra Image 4" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="container mx-auto p-4 md:p-8 space-y-12 max-w-7xl">
+
         <!-- Introduction Section -->
         <section class="bg-gray-800/50 p-6 md:p-10 rounded-3xl shadow-lg">
             <p class="text-lg leading-relaxed text-gray-200">
@@ -88,55 +104,57 @@
             </p>
         </section>
 
-        <!-- Link to Articles Page -->
-        <div class="text-center my-8">
-            <a href="#" class="inline-block px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-                Click Here To Read All Of Research AI Perception Briefs
-            </a>
-        </div>
+         <!-- New Link to Articles Page -->
+    <div class="text-center my-8">
+        <a href="AI-Perception-Briefs.html" class="inline-block px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
+            Click Here To Read All Of Research AI Perception Briefs
+        </a>
+    </div>
 
         <!-- Articles Section -->
         <section>
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
-                <a href="#" class="text-white hover:text-orange-400 transition-colors duration-200">Preview of Emotion Encoded's Research</a>
+                <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200">Preview of Emotion Encoded's Research</a>
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- Article 1 -->
                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="#">
-                        <img src="https://placehold.co/800x600?text=AI+Advisors" alt="Research in Caribbean Region" class="w-full h-auto rounded-2xl mb-4" />
+                    <a href="AI-Perception-Briefs.html">
+                        <img src="images/article1.jpg" alt="Research in Caribbean Region" class="w-full h-auto rounded-2xl mb-4" />
                     </a>
                     <div class="flex-grow flex flex-col">
                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">AI Advisors vs AI Therapists: Who Do We Trust?</h3>
                         <p class="text-gray-300 text-sm md:text-base flex-grow">
                             I conducted research in the Caribbean Region (St. Kitts & Nevis) asking: "Who would you trust more: An AI Advisor or an AI Therapist?"
                         </p>
-                        <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                        <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                     </div>
                 </article>
 
                 <!-- Article Preview for article eighteen -->
-                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="#">
-                        <img src="https://placehold.co/800x600?text=AI+in+Healthcare" alt="A visual representation of AI in healthcare" class="w-full h-auto rounded-2xl mb-4" />
-                    </a>
-                    <div class="flex-grow flex flex-col">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-                            Emotion Encoded: A Young Doctor’s Perspective on AI in Healthcare
-                        </h3>
-                        <p class="text-gray-300 text-sm md:text-base flex-grow">
-                            This article explores the perspective of a young doctor on the promises and pitfalls of AI in medicine, discussing issues of trust, over-reliance, and its expanding role in healthcare.
-                        </p>
-                        <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                    </div>
-                </article>
+<article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+    <a href="articleeighteen.html">
+        <!-- The image source below uses a relative path to a local folder.
+             This will work once the file is hosted on a web server with the image in an "images" directory. -->
+        <img src="images/article18.jpg" alt="A visual representation of AI in healthcare" class="w-full h-auto rounded-2xl mb-4" />
+    </a>
+    <div class="flex-grow flex flex-col">
+        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+            Emotion Encoded: A Young Doctor’s Perspective on AI in Healthcare
+        </h3>
+        <p class="text-gray-300 text-sm md:text-base flex-grow">
+            This article explores the perspective of a young doctor on the promises and pitfalls of AI in medicine, discussing issues of trust, over-reliance, and its expanding role in healthcare.
+        </p>
+        <a href="articleeighteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+    </div>
+</article>
 
 
                 <!-- Article Preview for article six -->
                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="#">
-                        <img src="https://placehold.co/800x600?text=Trust+in+AI" alt="An illustration representing trust in AI" class="w-full h-auto rounded-2xl mb-4" />
+                    <a href="who-do-you-trust.html">
+                        <img src="images/article6.jpg" alt="An illustration representing trust in AI" class="w-full h-auto rounded-2xl mb-4" />
                     </a>
                     <div class="flex-grow flex flex-col">
                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
@@ -145,43 +163,43 @@
                         <p class="text-gray-300 text-sm md:text-base flex-grow">
                             Our research reveals a surprising psychological division: people trust AI more with their money than with their mental health.
                         </p>
-                        <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                        <a href="who-do-you-trust.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                     </div>
                 </article>
 
 
                 <!-- Article 2 -->
                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="#">
-                        <img src="https://placehold.co/800x600?text=General+Public" alt="Second research illustration" class="w-full h-auto rounded-2xl mb-4" />
+                    <a href="AI-Perception-Briefs.html">
+                        <img src="images/article3.jpg" alt="Second research illustration" class="w-full h-auto rounded-2xl mb-4" />
                     </a>
                     <div class="flex-grow flex flex-col">
                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Insights from the General Public</h3>
                         <p class="text-gray-300 text-sm md:text-base flex-grow">
                             At Emotion Encoded, we explore the intersection of psychology and artificial intelligence, investigating how human perception, cognitive biases, and resistance shape the adoption and impact of emerging technologies.
                         </p>
-                        <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                        <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                     </div>
                 </article>
 
                 <!-- Article 3 -->
                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="#">
-                        <img src="https://placehold.co/800x600?text=AI+in+Medicine" alt="Extra Image 2" class="w-full h-auto rounded-2xl mb-4" />
+                    <a href="AI-Perception-Briefs.html">
+                        <img src="images/article10.jpg" alt="Extra Image 2" class="w-full h-auto rounded-2xl mb-4" />
                     </a>
                     <div class="flex-grow flex flex-col">
                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Exploring AI in Medicine</h3>
                         <p class="text-gray-300 text-sm md:text-base flex-grow">
                             Insights from interviews with healthcare professionals on AI’s role in patient care and medical decision-making.
                         </p>
-                        <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                        <a href="AI-Perception-Briefs.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                     </div>
                 </article>
 
                 <!-- Article Preview for articlesixteen.html (AI on the Stand) -->
                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="#">
-                        <img src="https://placehold.co/800x600?text=AI+in+Law" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
+                    <a href="articlesixteen.html">
+                        <img src="images/article16.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
                     </a>
                     <div class="flex-grow flex flex-col">
                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
@@ -190,14 +208,14 @@
                         <p class="text-gray-300 text-sm md:text-base flex-grow">
                             We asked 21 participants a pointed question: "Which did you choose: an AI jury or an AI prosecutor? And why?" The responses reveal that when it comes to the legal system, trust in AI is not just a question of capability, but of human nature itself.
                         </p>
-                        <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                        <a href="articlesixteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                     </div>
                 </article>
-
+                
                 <!-- Article Preview for article-coming-soon -->
                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                     <a href="#">
-                        <img src="https://placehold.co/800x600?text=Coming+Soon" alt="Coming Soon Preview" class="w-full h-auto rounded-2xl mb-4" />
+                        <img src="images/comingsoondraljaypierre.jpg" alt="Coming Soon Preview" class="w-full h-auto rounded-2xl mb-4" />
                     </a>
                     <div class="flex-grow flex flex-col">
                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Insights Coming Soon</h3>
@@ -208,24 +226,26 @@
                     </div>
                 </article>
 
-                <!-- Article Preview for a tech professional's verdict on AI -->
+                <!-- New Article - Replaces Coming Soon -->
                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <div>
-                        <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-                            Emotion Encoded: A Tech Professional’s Verdict on AI in High-Stakes Fields
-                        </h2>
-                        <img src="https://placehold.co/800x600?text=Tech+Perspective" alt="A tech professional discusses AI in high-stakes fields" class="w-full h-auto rounded-2xl my-4" />
-                        <p class="text-gray-300 text-sm md:text-base mb-4">
-                            This article features an interview with tech professional Mr. Enoete Inanga, who shares his insights on the human challenges of AI adoption, including fears of liability, the need for guardrails, and the importance of human oversight.
+                    <a href="tech-specialist-interview.html">
+                        <img src="images/article11.jpg" alt="Tech specialist with AI visuals" class="w-full h-auto rounded-2xl mb-4" />
+                    </a>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                            🧠 Emotion Encoded’s Interview with A Tech Specialist From St.Kitts
+                        </h3>
+                        <p class="text-gray-300 text-sm md:text-base flex-grow">
+                            Do we Trust AI with Our Money More Than Our Health?
                         </p>
+                        <a href="tech-specialist-interview.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                     </div>
-                    <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                 </article>
 
                 <!-- New Article - Dr. Saheley -->
                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="#">
-                        <img src="https://placehold.co/800x600?text=Dr+Saheley" alt="Dr. Saheley's article" class="w-full h-auto rounded-2xl mb-4" />
+                    <a href="articletwelve.html">
+                        <img src="images/article12.jpg" alt="Dr. Saheley's article" class="w-full h-auto rounded-2xl mb-4" />
                     </a>
                     <div class="flex-grow flex flex-col">
                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
@@ -234,14 +254,14 @@
                         <p class="text-gray-300 text-sm md:text-base flex-grow">
                             At Emotion Encoded, we ask not just how artificial intelligence works, but how people feel about it.
                         </p>
-                        <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                        <a href="articletwelve.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                     </div>
                 </article>
 
                 <!-- Article Preview for articleseventeen.html -->
                 <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="#">
-                        <img src="https://placehold.co/800x600?text=Finance+and+AI" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
+                    <a href="articleseventeen.html">
+                        <img src="images/article17.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
                     </a>
                     <div class="flex-grow flex flex-col">
                         <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
@@ -250,7 +270,7 @@
                         <p class="text-gray-300 text-sm md:text-base flex-grow">
                             In the fast-paced world of financial technology, a common narrative prevails: AI is the future, a perfect oracle of data-driven truth. Yet, a conversation with financial professional Alex Straun reveals a more complex, and cautionary, perspective. His insights move beyond the hype to expose a fundamental paradox.
                         </p>
-                        <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                        <a href="articleseventeen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                     </div>
                 </article>
 
@@ -260,26 +280,16 @@
                         <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
                             When AI Disagrees with Your Doctor: Who Do You Trust?
                         </h2>
-                        <img src="https://placehold.co/800x600?text=Doctor+and+Patient" alt="A doctor and a patient discussing an AI-generated diagnosis" class="w-full h-auto rounded-2xl my-4" />
+                        <img src="images/article15.jpg" alt="A doctor and a patient discussing an AI-generated diagnosis" class="w-full h-auto rounded-2xl my-4" />
                         <p class="text-gray-300 text-sm md:text-base mb-4">
                             Our survey reveals a struggle with trust as patients navigate a new landscape where AI recommendations may conflict with their doctor's advice.
                         </p>
                     </div>
-                    <a href="#" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                    <a href="articlefifteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
                 </article>
 
             </div>
         </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800/50 p-6 rounded-t-3xl shadow-lg mt-8 text-center text-sm md:text-base text-gray-400">
-        <p>&copy; 2023 Emotion Encoded. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
-
 
         <!-- Bottom Images - Now more modern and with larger images on desktop -->
         <section class="w-full overflow-hidden my-12 bg-gray-800/50 p-6 rounded-3xl shadow-lg ring-2 ring-gray-700">
