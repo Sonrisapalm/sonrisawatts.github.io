@@ -15,21 +15,21 @@
             theme: {
                 extend: {
                     colors: {
-                        'background-dark': '#1a202c', /* Original Poppins BG */
-                        'card-dark': '#2d3748', /* Original Poppins Card */
+                        'background-dark': '#1c1c1c', /* Darker background for contrast */
+                        'card-dark': '#2a2a2a', /* Card background */
                         'accent-neutral': '#607d8b', /* Muted Blue-Gray */
-                        'text-light': '#e2e8f0',
+                        'text-light': '#e0e0e0',
                         'text-muted': '#a0a0a0'
                     },
                     fontFamily: {
-                        // Using Inter for consistency, but keeping Poppins as a fallback/alternative
-                        sans: ['Inter', 'Poppins', 'sans-serif'],
+                        // Using Inter for consistency
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         body {
@@ -53,23 +53,21 @@
         .modal-overlay {
             background-color: rgba(0, 0, 0, 0.85);
         }
-        /* Base height for charts to ensure large size */
+        /* Base height for charts to ensure large size and responsiveness */
         .chart-container {
             position: relative;
-            /* Default height for smaller screens */
-            height: 24rem; 
+            height: 20rem; /* Fixed height for consistency */
         }
         @media (min-width: 768px) {
             .chart-container {
-                /* Larger height on tablets/desktops */
-                height: 28rem;
+                height: 24rem;
             }
         }
     </style>
 </head>
-<body>
+<body class="p-4 md:p-8">
 
-    <div class="max-w-7xl mx-auto p-4 md:p-8">
+    <div class="max-w-7xl mx-auto">
 
         <!-- 1. METHODOLOGY ARTICLE SECTION (Full Width) -->
         <div id="article_section" class="bg-card-dark rounded-2xl p-6 md:p-10 mb-12 shadow-2xl">
@@ -77,11 +75,11 @@
                 <header class="text-center mb-10 flex flex-col items-center">
                     <!-- Placeholder image URL used here -->
                     <img src="https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic'"
-                         alt="A researcher reviewing data and charts on a large screen." 
-                         class="rounded-2xl mb-8 shadow-md max-w-full md:max-w-3xl" />
-                    <h1 class="text-3xl md:text-5xl font-extrabold text-accent-neutral mb-4">Methods and Data</h1>
-                    <p class="text-lg md:text-xl font-light text-text-muted">A detailed overview of the research methodology for the Emotion Encoded initiative.</p>
+                        onerror="this.onerror=null;this.src='https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic'"
+                        alt="A researcher reviewing data and charts on a large screen." 
+                        class="rounded-2xl mb-8 shadow-md max-w-full md:max-w-3xl" />
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-accent-neutral mb-4">Emotion Encoded Research: Methods and Data</h1>
+                    <p class="text-lg md:text-xl font-light text-text-muted">A detailed overview of the research methodology and survey results for the AI perception initiative.</p>
                 </header>
                 <section class="prose prose-sm md:prose-lg lg:prose-xl prose-invert mx-auto">
                     <p>The <strong>Emotion Encoded</strong> initiative is a continuous, mixed-methods research study designed to explore public and professional perceptions of AI. This research combines quantitative and qualitative data collection to provide a comprehensive understanding of emotional reasoning, biases, and ethical considerations in AI adoption. These methods ensure that findings accurately reflect both professional and public perspectives, enabling evidence-based recommendations for AI integration in high-stakes fields.</p>
@@ -96,11 +94,9 @@
                     <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Qualitative Data Collection</h2>
                     <p>Qualitative insights are gathered through <strong>semi-structured interviews</strong> with over <strong>15</strong> professionals and subject-matter experts. Interviews are conducted via written responses and phone calls, allowing for flexible and detailed conversations. Participants include professionals such as Dr. Bichara Sahely (physician) and Alex Straun (finance).</p>
                     <p>Qualitative interview data undergoes <strong>thematic</strong> and <strong>semantic analysis</strong>. Transcripts are systematically coded to identify recurring ideas, sentiments, and patterns. Emergent themes are synthesized into research findings, which inform articles, policy recommendations, and public discussions.</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Transparency and Verification</h2>
-                    <p>For full transparency, a detailed index of survey instruments, coding frameworks, and data summaries is available through the link below. This allows peers, reviewers, and scholarship committees to verify methodological rigor without overloading the main content.</p>
                     <div class="mt-6 text-center">
-                        <a href="#" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-colors duration-200" aria-label="Download data package for Emotion Encoded research">
-                            Download Data Package
+                        <a href="#" class="inline-block bg-accent-neutral hover:bg-opacity-80 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors duration-200" aria-label="Download data package for Emotion Encoded research">
+                            Download Full Methodology
                         </a>
                     </div>
                 </section>
@@ -109,8 +105,8 @@
 
         <!-- 2. CHARTS HEADER -->
         <header class="text-center mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-accent-neutral mb-2">Interactive AI Perception Survey</h1>
-            <p class="text-lg text-text-muted">Click any bar to see a detailed summary of that specific response.</p>
+            <h1 class="text-3xl md:text-4xl font-bold text-accent-neutral mb-2">Interactive AI Perception Survey Results</h1>
+            <p class="text-lg text-text-muted">Click any bar on the charts below to see a detailed summary of that specific response trend.</p>
         </header>
 
         <!-- 3. CHARTS GRID -->
@@ -138,11 +134,14 @@
 
     <!-- 5. JAVASCRIPT LOGIC -->
     <script>
+        // Constants used for Chart.js styling
         const ACCENT_COLOR = '#607d8b'; // Muted Blue-Gray
         const HOVER_COLOR = '#90a4ae'; // Lighter Muted Blue-Gray
+        const TEXT_LIGHT = 'rgb(224, 224, 224)';
 
-        // Detailed survey data structure with individual response summaries (Data from previous request)
+        // COMBINED Survey Data: All 15 questions merged into a single array
         const surveyData = [
+            // --- Data from the first section ---
             {
                 id: 'jobs-replacement',
                 title: 'Do you think Artificial Intelligence will eventually replace jobs?',
@@ -218,6 +217,116 @@
                     'I don\'t trust AI': "A small, distrustful segment (**4.9%**) that appears to have fundamental concerns about AI across all applications.",
                     'Trust the person using it': "A nuanced view (**2.4%**) that shifts accountability and trust to the human operator, regardless of the industry."
                 }
+            },
+            // --- Data from the second section ---
+            {
+                id: 'verification-likelihood',
+                title: 'If an AI system makes a recommendation, how likely are you to verify it with a human expert?',
+                labels: ['Always', 'Sometimes', 'Never', 'Rarely', "I don't use AI"],
+                data: [40.0, 42.5, 5.0, 10.0, 2.5],
+                summaries: {
+                    'Always': "A strong group (**40.0%**) insists on **always** verifying AI recommendations, indicating that for many, AI is a tool for suggestions, not final decisions.",
+                    'Sometimes': "The largest group (**42.5%**) adopts a **situational approach**, verifying only when the stakes are high or the recommendation seems questionable.",
+                    'Never': "A small segment (**5.0%**) trusts AI recommendations completely, suggesting confidence in the AI's accuracy or comfort with low-stakes tasks.",
+                    'Rarely': "A similar group (**10.0%**) rarely verifies, indicating a high level of implicit trust in the AI's output for routine or common tasks.",
+                    "I don't use AI": "A small fraction (**2.5%**) avoids AI altogether, eliminating the need for verification."
+                }
+            },
+            {
+                id: 'legal-conflict',
+                title: "AI legal strategy conflicts with lawyer's advice. How would you respond?",
+                labels: ['Follow the AI suggestion', "Follow only the lawyer's advice", 'Seek a second opinion', 'Combine both suggestions', 'Discuss both options before deciding'],
+                data: [0.0, 9.8, 34.1, 4.9, 51.2],
+                summaries: {
+                    'Follow the AI suggestion': "Nobody (**0%**) would bypass their human lawyer entirely to follow the AI, confirming that in legal contexts, AI is not a final authority.",
+                    "Follow only the lawyer's advice": "A small group (**9.8%**) would stick solely with the human professional's advice, rejecting the AI conflict outright.",
+                    'Seek a second opinion': "A significant portion (**34.1%**) would **escalate the conflict** by seeking another human expert, prioritizing human validation over algorithmic speed.",
+                    'Combine both suggestions': "A small segment (**4.9%**) sees value in **synthesizing** both approaches, treating the AI suggestion as a valuable counter-perspective.",
+                    'Discuss both options before deciding': "The majority (**51.2%**) would take the most **collaborative** approach, using the AI conflict as a prompt for deeper discussion with their current lawyer."
+                }
+            },
+            {
+                id: 'hospital-conflict',
+                title: "Hospital AI treatment differs from doctor's advice. What would you do?",
+                labels: ['Follow only the AI', "Follow only the doctor's advice", 'Seek a second opinion', 'Combine both suggestions', 'Discuss both options before deciding'],
+                data: [0.0, 17.1, 31.7, 9.8, 41.5],
+                summaries: {
+                    'Follow only the AI': "Again, nobody (**0%**) would choose the AI over their doctor for treatment, highlighting the requirement for human final authority in high-stakes health matters.",
+                    "Follow only the doctor's advice": "A notable group (**17.1%**) would rely solely on the human doctor, dismissing the AI recommendation.",
+                    'Seek a second opinion': "Similar to the legal scenario, a large portion (**31.7%**) would seek a second medical opinion, indicating that **AI conflict creates user uncertainty**.",
+                    'Combine both suggestions': "A small but increased number (**9.8%**) would attempt to integrate both recommendations, perhaps seeing value in the AI's data-driven approach.",
+                    'Discuss both options before deciding': "The majority (**41.5%**) prefers **consultation and discussion**, leveraging the AI suggestion to prompt a more thorough review with their doctor."
+                }
+            },
+            {
+                id: 'disaster-prediction',
+                title: 'If an AI predicts a natural disaster risk in your area, what would you do?',
+                labels: ['Evacuate based on AI prediction', 'Depends', "Wait for human authorities' instructions", 'Monitor both AI and human advice', "I wouldn't be using the AI in the first place"],
+                data: [0.0, 4.9, 2.4, 56.1, 26.8],
+                summaries: {
+                    'Evacuate based on AI prediction': "No one (**0%**) would take drastic action based purely on an AI prediction, demonstrating caution and a need for human validation in life-threatening scenarios.",
+                    'Depends': "A small group (**4.9%**) indicates their action is situational, perhaps relying on past AI accuracy or specific disaster severity.",
+                    "Wait for human authorities' instructions": "Few respondents (**2.4%**) would rely solely on official human channels, suggesting a degree of skepticism towards authorities in this context.",
+                    'Monitor both AI and human advice': "The majority (**56.1%**) adopts a **redundancy strategy**, monitoring both sources to inform their decision, showing they treat AI as a valuable, real-time warning system.",
+                    "I wouldn't be using the AI in the first place": "A significant portion (**26.8%**) indicates a fundamental lack of trust in AI for critical safety predictions."
+                }
+            },
+            {
+                id: 'surgeon-vs-nurse',
+                title: 'Who would you trust more; a surgeon using an AI tool or a nurse using an AI tool?',
+                labels: ['Surgeon using AI', 'Nurse using AI', 'None'],
+                data: [12.2, 14.6, 73.2],
+                summaries: {
+                    'Surgeon using AI': "A small portion (**12.2%**) trusts the surgeon more, likely due to the higher perceived authority and advanced training associated with a surgeon's role.",
+                    'Nurse using AI': "A slightly larger segment (**14.6%**) trusts the nurse more, perhaps viewing their role as more focused on patient care and validation of machine data.",
+                    'None': "The overwhelming majority (**73.2%**) trusts **neither** more than the other, suggesting that for high-stakes AI-assisted tasks, trust is tied to the tool itself or the situation, not the job title."
+                }
+            },
+            {
+                id: 'fraud-vs-loan',
+                title: 'Which would you trust more, an AI Fraud detector or an AI loan officer?',
+                labels: ['AI Fraud detector', 'AI loan officer', 'None'],
+                data: [61.0, 4.9, 34.1],
+                summaries: {
+                    'AI Fraud detector': "The clear majority (**61.0%**) trusts the AI in fraud detection, where the task is objective, data-intensive, and benefits from pattern recognition, indicating trust in **AI for security**.",
+                    'AI loan officer': "Almost no one (**4.9%**) trusts the AI for loan approval, where the outcome directly affects them financially and involves subjective risk assessment.",
+                    'None': "A substantial group (**34.1%**) distrusts AI in both financial roles, suggesting general skepticism about AI's use in high-value monetary decisions."
+                }
+            },
+            {
+                id: 'jury-vs-prosecutor',
+                title: 'Which would you trust more, an AI Jury or an AI prosecutor?',
+                labels: ['AI Jury', 'AI prosecutor', 'None'],
+                data: [7.5, 15.0, 75.0],
+                summaries: {
+                    'AI Jury': "A small group (**7.5%**) trusts the AI Jury more, perhaps hoping for a purely objective interpretation of facts.",
+                    'AI prosecutor': "Twice as many (**15.0%**) trust the AI prosecutor, possibly because this role is perceived as data-driven and objective, focusing on evidence assembly.",
+                    'None': "A massive three-quarters of respondents (**75.0%**) trust **neither**, clearly rejecting the use of AI in high-stakes legal judgment roles where human empathy and ethics are critical."
+                }
+            },
+            {
+                id: 'ai-preference',
+                title: 'Would you prefer interacting with an AI tool over a human for certain tasks?',
+                labels: ['Depends', 'Yes', 'No', 'Maybe'],
+                data: [48.8, 26.8, 22.0, 2.4],
+                summaries: {
+                    'Depends': "Nearly half the respondents (**48.8%**) are conditional in their preference, suggesting a pragmatic view where AI is preferred only for specific, non-emotional tasks.",
+                    'Yes': "A large group (**26.8%**) actively prefers AI interaction, likely for tasks requiring speed, 24/7 availability, or anonymity.",
+                    'No': "A substantial segment (**22.0%**) maintains a preference for human interaction, valuing empathy, understanding, or accountability.",
+                    'Maybe': "A small group (**2.4%**) remains entirely unsure, reflecting ongoing evaluation of AI's utility in their daily lives."
+                }
+            },
+            {
+                id: 'llm-disappointment',
+                title: 'Would you feel disappointed if ChatGPT/DeepSeek or any other generative AI were removed completely from the web?',
+                labels: ['Yes', 'No', 'Maybe', "I wouldn't care"],
+                data: [47.5, 30.0, 12.5, 10.0],
+                summaries: {
+                    'Yes': "A plurality (**47.5%**) would feel disappointed, indicating that large language models (LLMs) have become a significantly integrated, valued, and relied-upon tool for almost half of the users.",
+                    'No': "A large portion (**30.0%**) would not feel disappointed, suggesting they either don't rely on LLMs or find them replaceable.",
+                    'Maybe': "A group (**12.5%**) is neutral or unsure, perhaps viewing LLMs as useful but not essential.",
+                    "I wouldn't care": "A smaller, indifferent segment (**10.0%**) that is unaffected by the presence or absence of generative AI tools."
+                }
             }
         ];
 
@@ -234,144 +343,109 @@
             document.getElementById('modal-question').innerText = `Question: ${questionData.title}`;
             document.getElementById('modal-response-title').innerText = label;
             document.getElementById('modal-percentage').innerText = percentage;
-            document.getElementById('modal-summary').innerHTML = formatSummary(summaryText);
+            document.getElementById('modal-summary').innerHTML = formatSummary(summaryText); // FIXED: completion of the line
             
-            // Show modal with transition effects
+            // Show modal with animation
             modal.classList.remove('hidden');
             setTimeout(() => {
-                modal.classList.add('opacity-100');
-                modal.querySelector('div').classList.replace('scale-95', 'scale-100');
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+                modal.querySelector('div').classList.add('scale-100');
             }, 10);
         };
 
         // Function to close the modal
         const closeModal = () => {
             const modal = document.getElementById('summary-modal');
-            
-            // Hide modal with transition effects
-            modal.classList.remove('opacity-100');
-            modal.querySelector('div').classList.replace('scale-100', 'scale-95');
-            
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
             setTimeout(() => {
                 modal.classList.add('hidden');
-            }, 300); // Duration matches CSS transition
+            }, 300);
         };
+        
+        /**
+         * Creates an individual Chart.js bar chart card.
+         * @param {Object} dataObj - The data object for the chart.
+         */
+        const createChartCard = (dataObj) => {
+            const chartContainer = document.getElementById('charts-container');
 
-        // Event listener for closing modal by clicking outside
-        document.getElementById('summary-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'summary-modal') {
-                closeModal();
-            }
-        });
+            // 1. Create the card structure
+            const card = document.createElement('div');
+            card.className = 'card p-6 md:p-8 flex flex-col justify-between'; 
+            card.id = `chart-card-${dataObj.id}`;
 
-        const generateChartElement = (dataObj) => {
-            // Tailwind classes handle height: h-96 on mobile, h-[28rem] on desktop via CSS
-            return `
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-center text-text-light">${dataObj.title}</h3>
-                    <div class="chart-container">
-                        <canvas id="${dataObj.id}"></canvas>
-                    </div>
-                    <p class="text-center text-sm text-text-muted mt-2">Click any bar for a detailed response breakdown.</p>
-                </div>
-            `;
-        };
+            // 2. Add Title
+            const title = document.createElement('h2');
+            title.className = 'text-xl md:text-2xl font-semibold mb-4 text-text-light';
+            title.innerText = dataObj.title;
+            card.appendChild(title);
 
-        const createChart = (dataObj) => {
-            const ctx = document.getElementById(dataObj.id);
+            // 3. Add Canvas container (for fixed height)
+            const chartWrapper = document.createElement('div');
+            chartWrapper.className = 'chart-container flex-grow';
+            const canvas = document.createElement('canvas');
+            canvas.id = `chart-${dataObj.id}`;
+            chartWrapper.appendChild(canvas);
+            card.appendChild(chartWrapper);
 
-            new Chart(ctx, {
+            chartContainer.appendChild(card);
+
+            // 4. Initialize Chart.js
+            new Chart(canvas, {
                 type: 'bar',
                 data: {
                     labels: dataObj.labels,
                     datasets: [{
-                        label: 'Response Percentage (%)',
                         data: dataObj.data,
                         backgroundColor: ACCENT_COLOR,
                         borderColor: ACCENT_COLOR,
+                        hoverBackgroundColor: HOVER_COLOR,
                         borderWidth: 1,
-                        borderRadius: 4,
-                        hoverBackgroundColor: HOVER_COLOR
+                        borderRadius: 4
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    onClick: (event, elements) => {
-                        // Check if an element (bar) was clicked
-                        if (elements.length > 0) {
-                            const clickedIndex = elements[0].index;
-                            const label = dataObj.labels[clickedIndex];
-                            const percentage = dataObj.data[clickedIndex];
-                            const summaryText = dataObj.summaries[label];
-                            
-                            openModal(dataObj, label, percentage, summaryText);
-                        }
-                    },
                     indexAxis: 'y', // Horizontal bars
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Percentage (%)',
-                                color: '#a0a0a0'
-                            },
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: {
-                                color: '#a0a0a0'
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.05)'
-                            }
-                        },
-                        y: {
-                            ticks: {
-                                color: '#a0a0a0'
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.05)'
-                            }
-                        }
-                    },
                     plugins: {
-                        legend: {
-                            display: false
-                        },
+                        legend: { display: false },
                         tooltip: {
-                            backgroundColor: 'rgba(42, 42, 42, 0.9)',
-                            titleColor: '#fff',
-                            bodyColor: '#e0e0e0',
                             callbacks: {
                                 label: function(context) {
-                                    return ' ' + context.parsed.x + '% of Respondents';
+                                    return `${context.label}: ${context.raw}%`;
                                 }
-                            }
+                            },
+                            titleFont: { size: 16, weight: 'bold' },
+                            bodyFont: { size: 14 }
                         }
-                    }
-                }
-            });
-        };
-
-        // Main execution function
-        const renderCharts = () => {
-            const container = document.getElementById('charts-container');
-            
-            // 1. Generate all the HTML canvas elements
-            surveyData.forEach(dataObj => {
-                container.innerHTML += generateChartElement(dataObj);
-            });
-
-            // 2. Initialize the Chart.js instances
-            surveyData.forEach(dataObj => {
-                createChart(dataObj);
-            });
-        };
-
-        // Run the render function on load
-        window.onload = renderCharts;
-
-    </script>
-
-</body>
-</html>
+                    },
+                    scales: {
+                        x: {
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Percentage of Respondents (%)',
+                                color: TEXT_LIGHT,
+                                font: { size: 14 }
+                            },
+                            ticks: { color: TEXT_LIGHT },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                        },
+                        y: {
+                            ticks: { color: TEXT_LIGHT, font: { size: 14 } },
+                            grid: { display: false }
+                        }
+                    },
+                    onClick: (evt, elements) => {
+                        if (elements.length > 0) {
+                            const chartElement = elements[0];
+                            const label = dataObj.labels[chartElement.index];
+                            const percentage = dataObj.data[chartElement.index].toFixed(1);
+                            const summary = dataObj.summaries[label];
+                            
+                            if (summary) {
+                                openModal(dataObj, label, percentage, summary);
