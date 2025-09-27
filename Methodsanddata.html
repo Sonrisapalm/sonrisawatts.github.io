@@ -1,543 +1,549 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Encoded Research Dashboard</title>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-    <!-- Navigation is moved to the body end to match original structure, but kept outside the body tag accidentally in the prompt, placing it correctly here. -->
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'background-dark': '#1c1c1c', /* Darker background for contrast */
-                        'card-dark': '#2a2a2a', /* Card background */
-                        'accent-neutral': '#607d8b', /* Muted Blue-Gray */
-                        'text-light': '#e0e0e0',
-                        'text-muted': '#a0a0a0'
-                    },
-                    fontFamily: {
-                        // Using Inter for consistency
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            /* CHANGE 1: ADD BACKGROUND IMAGE */
-            background-image: url('images/websitebackground.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-color: theme('colors.background-dark'); /* Fallback */
-            color: theme('colors.text-light');
-            font-family: theme('fontFamily.sans');
-            min-height: 100vh;
-        }
-        .card {
-            background-color: theme('colors.card-dark');
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-            border-radius: 1rem; /* rounded-2xl */
-        }
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-        }
-        .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.85);
-        }
-        /* Base height for charts to ensure large size and responsiveness */
-        .chart-container {
-            position: relative;
-            height: 20rem; /* Fixed height for consistency */
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 24rem;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Encoded Research Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'background-dark': '#1c1c1c', /* Darker background for contrast */
+                        'card-dark': '#2a2a2a', /* Card background */
+                        'accent-neutral': '#607d8b', /* Muted Blue-Gray */
+                        'text-light': '#e0e0e0',
+                        'text-muted': '#a0a0a0'
+                    },
+                    fontFamily: {
+                        // Using Inter for consistency
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: theme('colors.background-dark');
+            color: theme('colors.text-light');
+            font-family: theme('fontFamily.sans');
+            min-height: 100vh;
+        }
+        .card {
+            background-color: theme('colors.card-dark');
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            border-radius: 1rem; /* rounded-2xl */
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        }
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+        /* Base height for charts to ensure large size and responsiveness */
+        .chart-container {
+            position: relative;
+            height: 20rem; /* Fixed height for consistency */
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 24rem;
+            }
+        }
+    </style>
 </head>
-<body class="p-4 md:p-8 pb-20"> 
-    <div class="max-w-7xl mx-auto">
+<body class="p-4 md:p-8 pb-20"> <div class="max-w-7xl mx-auto">
 
-        <div id="article_section" class="bg-card-dark rounded-2xl p-6 md:p-10 mb-12 shadow-2xl">
-            <article>
-                <header class="text-center mb-10 flex flex-col items-center">
-                    <img src="https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic" 
-                        onerror="this.onerror=null;this.src='https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic'"
-                        alt="A researcher reviewing data and charts on a large screen." 
-                        class="rounded-2xl mb-8 shadow-md max-w-full md:max-w-3xl" />
-                    <h1 class="text-3xl md:text-5xl font-extrabold text-accent-neutral mb-4">Emotion Encoded Research: Methods and Data</h1>
-                    <p class="text-lg md:text-xl font-light text-text-muted">A detailed overview of the research methodology and survey results for the AI perception initiative.</p>
-                </header>
-                <section class="prose prose-sm md:prose-lg lg:prose-xl prose-invert mx-auto">
-                    <p>The <strong>Emotion Encoded</strong> initiative is a continuous, mixed-methods research study designed to explore public and professional perceptions of AI. This research combines quantitative and qualitative data collection to provide a comprehensive understanding of emotional reasoning, biases, and ethical considerations in AI adoption. These methods ensure that findings accurately reflect both professional and public perspectives, enabling evidence-based recommendations for AI integration in high-stakes fields.</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Quantitative Data Collection </h2>
-                    <p>Quantitative data is collected through a series of structured surveys distributed to over <strong>100</strong> respondents. The primary data collection instrument is <strong>Google Forms</strong>, featuring a mix of open-ended, multiple-choice, and Likert scale questions. Surveys are disseminated via social networks and in-person outreach to ensure a broad and diverse sample.</p>
-                    <p>To date, two key surveys have been completed, with ongoing monthly data collection for a longitudinal design:</p>
-                    <ul class="list-disc list-inside space-y-2 text-text-light">
-                        <li><strong>Survey 1:</strong> n≈69 respondents.</li>
-                        <li><strong>Survey 2:</strong> n≈44 respondents.</li>
-                        <li><strong>Ongoing surveys:</strong> Monthly collection to track evolving perceptions.</li>
-                    </ul>
-                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Qualitative Data Collection</h2>
-                    <p>Qualitative insights are gathered through <strong>semi-structured interviews</strong> with over <strong>15</strong> professionals and subject-matter experts. Interviews are conducted via written responses and phone calls, allowing for flexible and detailed conversations. Participants include professionals such as Dr. Bichara Sahely (physician) and Alex Straun (finance).</p>
-                    <p>Qualitative interview data undergoes <strong>thematic</strong> and <strong>semantic analysis</strong>. Transcripts are systematically coded to identify recurring ideas, sentiments, and patterns. Emergent themes are synthesized into research findings, which inform articles, policy recommendations, and public discussions.</p>
-                    <div class="mt-6 text-center">
-                        <a href="#" class="inline-block bg-accent-neutral hover:bg-opacity-80 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors duration-200" aria-label="Download data package for Emotion Encoded research">
-                            Download Full Methodology
-                        </a>
-                    </div>
-                </section>
-            </article>
-        </div>
+        <div id="article_section" class="bg-card-dark rounded-2xl p-6 md:p-10 mb-12 shadow-2xl">
+            <article>
+                <header class="text-center mb-10 flex flex-col items-center">
+                    <img src="https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic'"
+                        alt="A researcher reviewing data and charts on a large screen." 
+                        class="rounded-2xl mb-8 shadow-md max-w-full md:max-w-3xl" />
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-accent-neutral mb-4">Emotion Encoded Research: Methods and Data</h1>
+                    <p class="text-lg md:text-xl font-light text-text-muted">A detailed overview of the research methodology and survey results for the AI perception initiative.</p>
+                </header>
+                <section class="prose prose-sm md:prose-lg lg:prose-xl prose-invert mx-auto">
+                    <p>The <strong>Emotion Encoded</strong> initiative is a continuous, mixed-methods research study designed to explore public and professional perceptions of AI. This research combines quantitative and qualitative data collection to provide a comprehensive understanding of emotional reasoning, biases, and ethical considerations in AI adoption. These methods ensure that findings accurately reflect both professional and public perspectives, enabling evidence-based recommendations for AI integration in high-stakes fields.</p>
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Quantitative Data Collection</h2>
+                    <p>Quantitative data is collected through a series of structured surveys distributed to over <strong>100</strong> respondents. The primary data collection instrument is <strong>Google Forms</strong>, featuring a mix of open-ended, multiple-choice, and Likert scale questions. Surveys are disseminated via social networks and in-person outreach to ensure a broad and diverse sample.</p>
+                    <p>To date, two key surveys have been completed, with ongoing monthly data collection for a longitudinal design:</p>
+                    <ul class="list-disc list-inside space-y-2 text-text-light">
+                        <li><strong>Survey 1:</strong> n≈69 respondents.</li>
+                        <li><strong>Survey 2:</strong> n≈44 respondents.</li>
+                        <li><strong>Ongoing surveys:</strong> Monthly collection to track evolving perceptions.</li>
+                    </ul>
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Qualitative Data Collection</h2>
+                    <p>Qualitative insights are gathered through <strong>semi-structured interviews</strong> with over <strong>15</strong> professionals and subject-matter experts. Interviews are conducted via written responses and phone calls, allowing for flexible and detailed conversations. Participants include professionals such as Dr. Bichara Sahely (physician) and Alex Straun (finance).</p>
+                    <p>Qualitative interview data undergoes <strong>thematic</strong> and <strong>semantic analysis</strong>. Transcripts are systematically coded to identify recurring ideas, sentiments, and patterns. Emergent themes are synthesized into research findings, which inform articles, policy recommendations, and public discussions.</p>
+                    <div class="mt-6 text-center">
+                        <a href="#" class="inline-block bg-accent-neutral hover:bg-opacity-80 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors duration-200" aria-label="Download data package for Emotion Encoded research">
+                            Download Full Methodology
+                        </a>
+                    </div>
+                </section>
+            </article>
+        </div>
 
-        <!-- REMOVED: Redundant overall chart header, as the question is now per chart. -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-accent-neutral mb-2">Interactive AI Perception Survey Results</h1>
+            <p class="text-xl md:text-2xl font-extrabold text-accent-neutral">Click any bar to see the detailed summary.</p>
+        </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="charts-container">
-        </div>
-    </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="charts-container">
+            </div>
+    </div>
 
-    <div id="summary-modal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center hidden p-4 transition-opacity duration-300 opacity-0">
-        <div class="bg-card-dark rounded-2xl p-6 w-full max-w-lg shadow-2xl transform transition-transform duration-300 scale-95">
-            <h2 class="text-xl font-semibold mb-2 text-text-muted" id="modal-question"></h2>
-            <h3 id="modal-response-title" class="text-3xl font-bold mb-4 text-accent-neutral"></h3>
-            
-            <div class="flex items-baseline mb-4">
-                <span id="modal-percentage" class="text-5xl font-extrabold text-white mr-2"></span>
-                <span class="text-xl text-text-muted">% of Respondents</span>
-            </div>
+    <div id="summary-modal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center hidden p-4 transition-opacity duration-300 opacity-0">
+        <div class="bg-card-dark rounded-2xl p-6 w-full max-w-lg shadow-2xl transform transition-transform duration-300 scale-95">
+            <h2 class="text-xl font-semibold mb-2 text-text-muted" id="modal-question"></h2>
+            <h3 id="modal-response-title" class="text-3xl font-bold mb-4 text-accent-neutral"></h3>
+            
+            <div class="flex items-baseline mb-4">
+                <span id="modal-percentage" class="text-5xl font-extrabold text-white mr-2"></span>
+                <span class="text-xl text-text-muted">% of Respondents</span>
+            </div>
 
-            <!-- CHANGE 3: Summary Container for Dark Text on White Background -->
-            <div class="bg-white rounded-lg p-4 mb-6">
-                <p id="modal-summary" class="text-lg text-black border-l-4 border-accent-neutral pl-3 italic"></p>
-            </div>
-            <!-- END CHANGE 3 -->
-            
-            <button onclick="closeModal()" class="mt-4 w-full py-2 bg-accent-neutral hover:bg-opacity-80 transition duration-150 font-semibold rounded-lg text-white">Close</button>
-        </div>
-        </div>
+            <p id="modal-summary" class="text-lg mb-6 text-text-light border-l-4 border-accent-neutral pl-3 italic"></p>
+            
+            <button onclick="closeModal()" class="mt-4 w-full py-2 bg-accent-neutral hover:bg-opacity-80 transition duration-150 font-semibold rounded-lg text-white">Close</button>
+        </div>
+    </div>
 
-    <nav class="fixed bottom-0 inset-x-0 z-40 bg-card-dark border-t border-opacity-10 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
-        <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Home</a>
-        <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">About</a>
-        <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Methods and Data</a>
-        <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Ethical Guidelines</a>
-        <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Research Findings Articles</a>
-        <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Contact</a>
-    </nav>
+    <script>
+        // Constants used for Chart.js styling
+        const ACCENT_COLOR = '#607d8b'; // Muted Blue-Gray
+        const HOVER_COLOR = '#90a4ae'; // Lighter Muted Blue-Gray
+        const TEXT_LIGHT = 'rgb(224, 224, 224)';
+
+        // COMBINED Survey Data: All questions merged into a single array
+        const surveyData = [
+            // --- Existing Data from the first section ---
+            {
+                id: 'jobs-replacement',
+                title: 'Do you think Artificial Intelligence will eventually replace jobs?',
+                labels: ['Yes', 'No', 'Maybe', 'Some jobs'],
+                data: [11.4, 11.4, 6.8, 70.5],
+                summaries: {
+                    'Yes': "A small but significant portion (**11.4%**) sees a complete substitution of human jobs by AI, indicating high concern or a belief in AI's rapid, comprehensive capability.",
+                    'No': "A similar proportion (**11.4%**) remains confident that human roles are inherently secure and will not be ultimately replaced by artificial intelligence.",
+                    'Maybe': "A small group (**6.8%**) remains uncertain about AI's final impact, possibly believing the outcome depends heavily on regulatory or technological evolution.",
+                    'Some jobs': "The overwhelming majority (**70.5%**) believes AI's impact will be targeted, replacing specific tasks or job types rather than the workforce as a whole, favoring augmentation over replacement."
+                }
+            },
+            {
+                id: 'gen-ai-responsibility',
+                title: 'Generative AI Mistake: Who would you hold responsible?',
+                labels: ['Myself', 'AI Developers', 'AI itself', 'Nobody', "Wouldn't use it"],
+                data: [68.3, 12.2, 2.4, 4.9, 9.8],
+                summaries: {
+                    'Myself': "The overwhelming majority (**68.3%**) takes personal ownership, reflecting the understanding that using a generative tool means accepting the risk and responsibility for validating its output.",
+                    'AI Developers': "A fraction (**12.2%**) believes the creators of the tool should be accountable for flaws or errors in the AI's generation, suggesting a demand for higher reliability.",
+                    'AI itself': "Only a tiny number (**2.4%**) assigns blame to the non-sentient tool, suggesting most people view AI as a utility, not an independent, accountable entity.",
+                    'Nobody': "A few respondents (**4.9%**) view the mistake as a cost of innovation or an unavoidable risk that comes with using powerful new technology.",
+                    "Wouldn't use it": "This group (**9.8%**) avoids the dilemma entirely by choosing not to engage with generative AI, indicating a fundamental lack of trust or perceived risk."
+                }
+            },
+            {
+                id: 'doctor-ai-responsibility',
+                title: 'Doctor AI Mistake: Who would you hold responsible?',
+                labels: ['My doctor who used the tool', 'The AI developer', 'Both AI developer and my doctor', 'Nobody'],
+                data: [80.5, 12.2, 4.9, 2.4],
+                summaries: {
+                    'My doctor who used the tool': "An overwhelming majority (**80.5%**) places responsibility on the doctor, reflecting the belief that human professionals must retain final accountability and clinical judgment, even when using AI aids.",
+                    'The AI developer': "A smaller group (**12.2%**) believes the accountability lies with the company that designed and produced the faulty medical tool, highlighting the need for regulation.",
+                    'Both AI developer and my doctor': "A small minority (**4.9%**) advocates for shared responsibility between the user (doctor) and the creator (developer).",
+                    'Nobody': "An almost negligible percentage (**2.4%**) suggests the mistake is an unfortunate, unassignable error, likely due to the complexity of the systems."
+                }
+            },
+            {
+                id: 'lawyer-ai-responsibility',
+                title: 'Lawyer AI Mistake: Who would you hold responsible?',
+                labels: ['My lawyer who used the tool', 'The AI developer', 'Both AI developer and my lawyer', 'Nobody'],
+                data: [85.4, 7.3, 4.9, 2.4],
+                summaries: {
+                    'My lawyer who used the tool': "An exceptionally high majority (**85.4%**) holds the lawyer responsible, reinforcing the high standard of professional duty and oversight expected in legal matters.",
+                    'The AI developer': "Only **7.3%** assign blame to the tool's manufacturer, suggesting that in legal contexts, the professional's final sign-off is paramount.",
+                    'Both AI developer and my lawyer': "A small minority (**4.9%**) believes in dual accountability for the legal mistake.",
+                    'Nobody': "Again, a very small group (**2.4%**) views the mistake as unassignable, possibly acknowledging the complexity of legal case research."
+                }
+            },
+            {
+                id: 'confidential-advice-trust',
+                title: 'Would you trust an AI more than a human for confidential advice?',
+                labels: ['Yes', 'No', 'Maybe', 'Depends (when emotions are less important)'],
+                data: [12.2, 48.8, 31.7, 7.3],
+                summaries: {
+                    'Yes': "A small segment (**12.2%**) trusts AI more than humans, possibly valuing AI's perceived objectivity, lack of judgment, and consistent security protocols for sensitive matters.",
+                    'No': "Nearly half of respondents (**48.8%**) lack trust in AI for confidential advice, suggesting a strong preference for human empathy, discretion, and established fiduciary duty.",
+                    'Maybe': "A large portion (**31.7%**) is undecided, reflecting potential future trust if security, privacy, and regulatory clarity around AI advice improves.",
+                    'Depends (when emotions are less important)': "This conditional trust (**7.3%**) shows that AI is preferred for purely logical or factual advice (e.g., financial formulas) but not for emotionally complex or interpersonal situations."
+                }
+            },
+            {
+                id: 'industry-trust',
+                title: 'Which of the following industries do you trust AI the most in?',
+                labels: ['Healthcare', 'Law', 'ONLY research', 'Finance', 'Education', 'I don\'t trust AI', 'Trust the person using it'],
+                data: [17.1, 4.9, 48.8, 9.8, 12.2, 4.9, 2.4],
+                summaries: {
+                    'Healthcare': "A notable group (**17.1%**) trusts AI for medical applications, likely for diagnosis support, data analysis, or objective research, where accuracy is key.",
+                    'Law': "Law receives the lowest direct trust (**4.9%**), reflecting high sensitivity to risk, and the critical importance of human interpretation and nuance in legal matters.",
+                    'ONLY research': "The clear preference (**48.8%**) is for AI to be used in back-end, objective data processing and analysis roles, away from direct human interaction or high-stakes decisions.",
+                    'Finance': "Some trust AI in financial scenarios (**9.8%**), likely for automated trading, risk assessment, or algorithmic management where speed and scale are advantages.",
+                    'Education': "A small but significant number (**12.2%**) trusts AI in learning environments, perhaps for personalized tutoring or administrative tasks.",
+                    'I don\'t trust AI': "A small, distrustful segment (**4.9%**) that appears to have fundamental concerns about AI across all applications.",
+                    'Trust the person using it': "A nuanced view (**2.4%**) that shifts accountability and trust to the human operator, regardless of the industry."
+                }
+            },
+            // --- Existing Data from the second section ---
+            {
+                id: 'verification-likelihood',
+                title: 'If an AI system makes a recommendation, how likely are you to verify it with a human expert?',
+                labels: ['Always', 'Sometimes', 'Never', 'Rarely', "I don't use AI"],
+                data: [40.0, 42.5, 5.0, 10.0, 2.5],
+                summaries: {
+                    'Always': "A strong group (**40.0%**) insists on **always** verifying AI recommendations, indicating that for many, AI is a tool for suggestions, not final decisions.",
+                    'Sometimes': "The largest group (**42.5%**) adopts a **situational approach**, verifying only when the stakes are high or the recommendation seems questionable.",
+                    'Never': "A small segment (**5.0%**) trusts AI recommendations completely, suggesting confidence in the AI's accuracy or comfort with low-stakes tasks.",
+                    'Rarely': "A similar group (**10.0%**) rarely verifies, indicating a high level of implicit trust in the AI's output for routine or common tasks.",
+                    "I don't use AI": "A small fraction (**2.5%**) avoids AI altogether, eliminating the need for verification."
+                }
+            },
+            {
+                id: 'legal-conflict',
+                title: "AI legal strategy conflicts with lawyer's advice. How would you respond?",
+                labels: ['Follow the AI suggestion', "Follow only the lawyer's advice", 'Seek a second opinion', 'Combine both suggestions', 'Discuss both options before deciding'],
+                data: [0.0, 9.8, 34.1, 4.9, 51.2],
+                summaries: {
+                    'Follow the AI suggestion': "Nobody (**0%**) would bypass their human lawyer entirely to follow the AI, confirming that in legal contexts, AI is not a final authority.",
+                    "Follow only the lawyer's advice": "A small group (**9.8%**) would stick solely with the human professional's advice, rejecting the AI conflict outright.",
+                    'Seek a second opinion': "A significant portion (**34.1%**) would **escalate the conflict** by seeking another human expert, prioritizing human validation over algorithmic speed.",
+                    'Combine both suggestions': "A small segment (**4.9%**) sees value in **synthesizing** both approaches, treating the AI suggestion as a valuable counter-perspective.",
+                    'Discuss both options before deciding': "The majority (**51.2%**) would take the most **collaborative** approach, using the AI conflict as a prompt for deeper discussion with their current lawyer."
+                }
+            },
+            {
+                id: 'hospital-conflict',
+                title: "Hospital AI treatment differs from doctor's advice. What would you do?",
+                labels: ['Follow only the AI', "Follow only the doctor's advice", 'Seek a second opinion', 'Combine both suggestions', 'Discuss both options before deciding'],
+                data: [0.0, 17.1, 31.7, 9.8, 41.5],
+                summaries: {
+                    'Follow only the AI': "Again, nobody (**0%**) would choose the AI over their doctor for treatment, highlighting the requirement for human final authority in high-stakes health matters.",
+                    "Follow only the doctor's advice": "A notable group (**17.1%**) would rely solely on the human doctor, dismissing the AI recommendation.",
+                    'Seek a second opinion': "Similar to the legal scenario, a large portion (**31.7%**) would seek a second medical opinion, indicating that **AI conflict creates user uncertainty**.",
+                    'Combine both suggestions': "A small but increased number (**9.8%**) would attempt to integrate both recommendations, perhaps seeing value in the AI's data-driven approach.",
+                    'Discuss both options before deciding': "The majority (**41.5%**) prefers **consultation and discussion**, leveraging the AI suggestion to prompt a more thorough review with their doctor."
+                }
+            },
+            {
+                id: 'disaster-prediction',
+                title: 'If an AI predicts a natural disaster risk in your area, what would you do?',
+                labels: ['Evacuate based on AI prediction', 'Depends', "Wait for human authorities' instructions", 'Monitor both AI and human advice', "I wouldn't be using the AI in the first place"],
+                data: [0.0, 4.9, 2.4, 56.1, 26.8],
+                summaries: {
+                    'Evacuate based on AI prediction': "No one (**0%**) would take drastic action based purely on an AI prediction, demonstrating caution and a need for human validation in life-threatening scenarios.",
+                    'Depends': "A small group (**4.9%**) indicates their action is situational, perhaps relying on past AI accuracy or specific disaster severity.",
+                    "Wait for human authorities' instructions": "Few respondents (**2.4%**) would rely solely on official human channels, suggesting a degree of skepticism towards authorities in this context.",
+                    'Monitor both AI and human advice': "The majority (**56.1%**) adopts a **redundancy strategy**, monitoring both sources to inform their decision, showing they treat AI as a valuable, real-time warning system.",
+                    "I wouldn't be using the AI in the first place": "A significant portion (**26.8%**) indicates a fundamental lack of trust in AI for critical safety predictions."
+                }
+            },
+            {
+                id: 'surgeon-vs-nurse',
+                title: 'Who would you trust more; a surgeon using an AI tool or a nurse using an AI tool?',
+                labels: ['Surgeon using AI', 'Nurse using AI', 'None'],
+                data: [12.2, 14.6, 73.2],
+                summaries: {
+                    'Surgeon using AI': "A small portion (**12.2%**) trusts the surgeon more, likely due to the higher perceived authority and advanced training associated with a surgeon's role.",
+                    'Nurse using AI': "A slightly larger segment (**14.6%**) trusts the nurse more, perhaps viewing their role as more focused on patient care and validation of machine data.",
+                    'None': "The overwhelming majority (**73.2%**) trusts **neither** more than the other, suggesting that for high-stakes AI-assisted tasks, trust is tied to the tool itself or the situation, not the job title."
+                }
+            },
+            {
+                id: 'fraud-vs-loan',
+                title: 'Which would you trust more, an AI Fraud detector or an AI loan officer?',
+                labels: ['AI Fraud detector', 'AI loan officer', 'None'],
+                data: [61.0, 4.9, 34.1],
+                summaries: {
+                    'AI Fraud detector': "The clear majority (**61.0%**) trusts the AI in fraud detection, where the task is objective, data-intensive, and benefits from pattern recognition, indicating trust in **AI for security**.",
+                    'AI loan officer': "Almost no one (**4.9%**) trusts the AI for loan approval, where the outcome directly affects them financially and involves subjective risk assessment.",
+                    'None': "A substantial group (**34.1%**) distrusts AI in both financial roles, suggesting general skepticism about AI's use in high-value monetary decisions."
+                }
+            },
+            {
+                id: 'jury-vs-prosecutor',
+                title: 'Which would you trust more, an AI Jury or an AI prosecutor?',
+                labels: ['AI Jury', 'AI prosecutor', 'None'],
+                data: [7.5, 15.0, 75.0],
+                summaries: {
+                    'AI Jury': "A small group (**7.5%**) trusts the AI Jury more, perhaps hoping for a purely objective interpretation of facts.",
+                    'AI prosecutor': "Twice as many (**15.0%**) trust the AI prosecutor, possibly because this role is perceived as data-driven and objective, focusing on evidence assembly.",
+                    'None': "A massive three-quarters of respondents (**75.0%**) trust **neither**, clearly rejecting the use of AI in high-stakes legal judgment roles where human empathy and ethics are critical."
+                }
+            },
+            {
+                id: 'ai-preference',
+                title: 'Would you prefer interacting with an AI tool over a human for certain tasks?',
+                labels: ['Depends', 'Yes', 'No', 'Maybe'],
+                data: [48.8, 26.8, 22.0, 2.4],
+                summaries: {
+                    'Depends': "Nearly half the respondents (**48.8%**) are conditional in their preference, suggesting a pragmatic view where AI is preferred only for specific, non-emotional tasks.",
+                    'Yes': "A large group (**26.8%**) actively prefers AI interaction, likely for tasks requiring speed, 24/7 availability, or anonymity.",
+                    'No': "A substantial segment (**22.0%**) maintains a preference for human interaction, valuing empathy, understanding, or accountability.",
+                    'Maybe': "A small group (**2.4%**) remains entirely unsure, reflecting ongoing evaluation of AI's utility in their daily lives."
+                }
+            },
+            {
+                id: 'llm-disappointment',
+                title: 'Would you feel disappointed if ChatGPT/DeepSeek or any other generative AI were removed completely from the web?',
+                labels: ['Yes', 'No', 'Maybe', "I wouldn't care"],
+                data: [47.5, 30.0, 12.5, 10.0],
+                summaries: {
+                    'Yes': "A plurality (**47.5%**) would feel disappointed, indicating that large language models (LLMs) have become a significantly integrated, valued, and relied-upon tool for almost half of the users.",
+                    'No': "A large portion (**30.0%**) would not feel disappointed, suggesting they either don't rely on LLMs or find them replaceable.",
+                    'Maybe': "A group (**12.5%**) is neutral or unsure, perhaps viewing LLMs as useful but not essential.",
+                    "I wouldn't care": "A smaller, indifferent segment (**10.0%**) that is unaffected by the presence or absence of generative AI tools."
+                }
+            },
+
+            // --- NEW DATA ADDED BELOW ---
+
+            {
+                id: 'doctor-mistake-response',
+                title: 'Hypothetically, if your doctor missed a disease after using an AI tool, what would be your initial response?',
+                labels: ['I would definitely sue', 'Angry but willing to rectify...', 'I would forgive him/her and negotiate...', 'Neutral', 'Inquisitive'],
+                data: [56.8, 29.5, 6.8, 4.5, 2.3],
+                summaries: {
+                    'I would definitely sue': "The majority (**56.8%**) indicates a legal response, showing that in life-and-death situations, the failure of an AI-assisted physician is viewed as a high-stakes negligence.",
+                    'Angry but willing to rectify...': "A significant portion (**29.5%**) is primarily focused on fixing the mistake, prioritizing a resolution over immediate legal action.",
+                    'I would forgive him/her and negotiate...': "A small group (**6.8%**) would offer forgiveness and seek negotiated solutions, valuing the human relationship with the doctor.",
+                    'Neutral': "A minority (**4.5%**) expresses a neutral response, perhaps seeing this as an acceptable risk in medical practice.",
+                    'Inquisitive': "A tiny fraction (**2.3%**) would start by seeking answers, prioritizing understanding the cause of the failure."
+                }
+            },
+            {
+                id: 'bank-loan-denial',
+                title: 'Hypothetically, if your bank denied a loan using an AI tool, you would:',
+                labels: ['Be inquisitive/Ask for a reason', 'Angry but willing to rectify...', 'I would definitely sue', 'Neutral', 'I would forgive and negotiate...', 'Can\'t say'],
+                data: [52.3, 15.9, 13.6, 9.1, 6.8, 2.3],
+                summaries: {
+                    'Be inquisitive/Ask for a reason': "The primary reaction (**52.3%**) is to seek transparency and explanation, reflecting a desire to understand the AI's logic and the opportunity to appeal the decision.",
+                    'Angry but willing to rectify...': "A significant portion (**15.9%**) expresses anger but remains focused on resolving the denial through discussion and negotiation, rather than immediate legal action.",
+                    'I would definitely sue': "A notable group (**13.6%**) views a loan denial by AI as grounds for a lawsuit, likely due to potential concerns about algorithmic bias or unfair lending practices.",
+                    'Neutral': "A small segment (**9.1%**) accepts the outcome neutrally, perhaps viewing AI-driven denial as part of the modern banking process.",
+                    'I would forgive and negotiate...': "A tiny portion (**6.8%**) is willing to forgive the bank and explore other options, showing high customer loyalty or a low-confrontation approach.",
+                    'Can\'t say': "A few respondents (**2.3%**) are unsure of their reaction, reflecting the novelty of this specific scenario."
+                }
+            },
+            {
+                id: 'customer-service-preference',
+                title: 'Would you prefer to talk to an AI powered customer service bot or a human?',
+                labels: ['Human', 'AI powered chatbot', 'It depends on my question'],
+                data: [90.7, 7.0, 2.3],
+                summaries: {
+                    'Human': "An overwhelming majority (**90.7%**) strongly prefers interacting with a human, highlighting a deep-seated need for empathy, nuanced problem-solving, and human accountability in customer service.",
+                    'AI powered chatbot': "A small minority (**7.0%**) prefers the AI chatbot, likely valuing its speed, 24/7 availability, or its ability to handle simple, repetitive inquiries efficiently.",
+                    'It depends on my question': "A tiny group (**2.3%**) expresses conditional preference, suggesting AI is acceptable for transactional tasks but not for complex issues."
+                }
+            },
+            {
+                id: 'ai-trust-vs-opinion',
+                title: 'If AI provides an answer different from your opinion, how likely are you to trust it?',
+                labels: ['Moderately likely', 'Slightly likely', 'Not at all likely', 'Very likely', 'Extremely likely'],
+                data: [43.9, 22.0, 19.5, 12.2, 2.4],
+                summaries: {
+                    'Moderately likely': "The largest group (**43.9%**) indicates a willingness to trust the AI's divergent answer, but only after careful consideration, suggesting a balanced view of the AI as a valuable, but not infallible, second opinion.",
+                    'Slightly likely': "A substantial group (**22.0%**) is hesitant to fully trust the AI, suggesting a default bias towards their own established knowledge or intuition.",
+                    'Not at all likely': "Nearly one-fifth (**19.5%**) completely rejects the AI's divergent answer, indicating a strong preference for personal opinion or a lack of trust in the AI's ability to challenge it.",
+                    'Very likely': "A smaller segment (**12.2%**) has high confidence in the AI, suggesting they believe the AI's data-driven answer is superior to their own opinion.",
+                    'Extremely likely': "Only a tiny fraction (**2.4%**) expresses complete and unwavering trust in the AI, even when it contradicts their own view."
+                }
+            }
+        ];
+
+        // Utility to replace markdown bold syntax with HTML for the modal
+        const formatSummary = (text) => {
+            return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        };
+
+        // Function to open the modal
+        const openModal = (questionData, label, percentage, summaryText) => {
+            const modal = document.getElementById('summary-modal');
+            
+            // Populate the modal content
+            document.getElementById('modal-question').innerText = `Question: ${questionData.title}`;
+            document.getElementById('modal-response-title').innerText = label;
+            document.getElementById('modal-percentage').innerText = percentage;
+            document.getElementById('modal-summary').innerHTML = formatSummary(summaryText);
+            
+            // Show modal with animation
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+                modal.querySelector('div').classList.add('scale-100');
+            }, 10);
+        };
+
+        // Function to close the modal
+        const closeModal = () => {
+            const modal = document.getElementById('summary-modal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        };
+        
+        /**
+         * Creates an individual Chart.js bar chart card.
+         * @param {Object} dataObj - The data object for the chart.
+         */
+        const createChartCard = (dataObj) => {
+            const chartContainer = document.getElementById('charts-container');
+
+            // 1. Create the card structure
+            const card = document.createElement('div');
+            card.className = 'card p-6 md:p-8 flex flex-col justify-between'; 
+            card.id = `chart-card-${dataObj.id}`;
+
+            // 2. Add Title
+            const title = document.createElement('h2');
+            title.className = 'text-xl md:text-2xl font-semibold mb-2 text-accent-neutral'; 
+            title.innerText = dataObj.title;
+            card.appendChild(title);
+
+            // MODIFICATION: Instruction text is now BIG, DARK, and BOLD for prominence on each card
+            const instruction = document.createElement('p');
+            instruction.className = 'text-xl font-extrabold text-accent-neutral mb-4 cursor-default'; 
+            instruction.innerText = 'Click any bar to see the detailed summary.';
+            card.appendChild(instruction);
 
 
-    <script>
-        // Constants used for Chart.js styling
-        // REVERTING: Changing back to blue as requested by the user.
-        const ACCENT_COLOR = 'rgb(59, 130, 246)'; // Bright Blue for contrast (Tailwind Blue-500)
-        const HOVER_COLOR = 'rgb(59, 130, 246, 0.7)'; // Lighter Blue on hover
-        const TEXT_LIGHT = 'rgb(224, 224, 224)';
+            // 3. Add Canvas container (for fixed height)
+            const chartWrapper = document.createElement('div');
+            chartWrapper.className = 'chart-container flex-grow';
+            const canvas = document.createElement('canvas');
+            canvas.id = `chart-${dataObj.id}`;
+            chartWrapper.appendChild(canvas);
+            card.appendChild(chartWrapper);
 
-        // COMBINED Survey Data: All questions merged into a single array
-        const surveyData = [
-            // --- Existing Data from the first section ---
-            {
-                id: 'jobs-replacement',
-                title: 'Do you think Artificial Intelligence will eventually replace jobs?',
-                labels: ['Yes', 'No', 'Maybe', 'Some jobs'],
-                data: [11.4, 11.4, 6.8, 70.5],
-                summaries: {
-                    'Yes': "A small but significant portion (**11.4%**) sees a complete substitution of human jobs by AI, indicating high concern or a belief in AI's rapid, comprehensive capability.",
-                    'No': "A similar proportion (**11.4%**) remains confident that human roles are inherently secure and will not be ultimately replaced by artificial intelligence.",
-                    'Maybe': "A small group (**6.8%**) remains uncertain about AI's final impact, possibly believing the outcome depends heavily on regulatory or technological evolution.",
-                    'Some jobs': "The overwhelming majority (**70.5%**) believes AI's impact will be targeted, replacing specific tasks or job types rather than the workforce as a whole, favoring augmentation over replacement."
-                }
-            },
-            {
-                id: 'gen-ai-responsibility',
-                title: 'Generative AI Mistake: Who would you hold responsible?',
-                labels: ['Myself', 'AI Developers', 'AI itself', 'Nobody', "Wouldn't use it"],
-                data: [68.3, 12.2, 2.4, 4.9, 9.8],
-                summaries: {
-                    'Myself': "The overwhelming majority (**68.3%**) takes personal ownership, reflecting the understanding that using a generative tool means accepting the risk and responsibility for validating its output.",
-                    'AI Developers': "A fraction (**12.2%**) believes the creators of the tool should be accountable for flaws or errors in the AI's generation, suggesting a demand for higher reliability.",
-                    'AI itself': "Only a tiny number (**2.4%**) assigns blame to the non-sentient tool, suggesting most people view AI as a utility, not an independent, accountable entity.",
-                    'Nobody': "A few respondents (**4.9%**) view the mistake as a cost of innovation or an unavoidable risk that comes with using powerful new technology.",
-                    "Wouldn't use it": "This group (**9.8%**) avoids the dilemma entirely by choosing not to engage with generative AI, indicating a fundamental lack of trust or perceived risk."
-                }
-            },
-            {
-                id: 'doctor-ai-responsibility',
-                title: 'Doctor AI Mistake: Who would you hold responsible?',
-                labels: ['My doctor who used the tool', 'The AI developer', 'Both AI developer and my doctor', 'Nobody'],
-                data: [80.5, 12.2, 4.9, 2.4],
-                summaries: {
-                    'My doctor who used the tool': "An overwhelming majority (**80.5%**) places responsibility on the doctor, reflecting the belief that human professionals must retain final accountability and clinical judgment, even when using AI aids.",
-                    'The AI developer': "A smaller group (**12.2%**) believes the accountability lies with the company that designed and produced the faulty medical tool, highlighting the need for regulation.",
-                    'Both AI developer and my doctor': "A small minority (**4.9%**) advocates for shared responsibility between the user (doctor) and the creator (developer).",
-                    'Nobody': "An almost negligible percentage (**2.4%**) suggests the mistake is an unfortunate, unassignable error, likely due to the complexity of the systems."
-                }
-            },
-            {
-                id: 'lawyer-ai-responsibility',
-                title: 'Lawyer AI Mistake: Who would you hold responsible?',
-                labels: ['My lawyer who used the tool', 'The AI developer', 'Both AI developer and my lawyer', 'Nobody'],
-                data: [85.4, 7.3, 4.9, 2.4],
-                summaries: {
-                    'My lawyer who used the tool': "An exceptionally high majority (**85.4%**) holds the lawyer responsible, reinforcing the high standard of professional duty and oversight expected in legal matters.",
-                    'The AI developer': "Only **7.3%** assign blame to the tool's manufacturer, suggesting that in legal contexts, the professional's final sign-off is paramount.",
-                    'Both AI developer and my lawyer': "A small minority (**4.9%**) believes in dual accountability for the legal mistake.",
-                    'Nobody': "Again, a very small group (**2.4%**) views the mistake as unassignable, possibly acknowledging the complexity of legal case research."
-                }
-            },
-            {
-                id: 'confidential-advice-trust',
-                title: 'Would you trust an AI more than a human for confidential advice?',
-                labels: ['Yes', 'No', 'Maybe', 'Depends (when emotions are less important)'],
-                data: [12.2, 48.8, 31.7, 7.3],
-                summaries: {
-                    'Yes': "A small segment (**12.2%**) trusts AI more than humans, possibly valuing AI's perceived objectivity, lack of judgment, and consistent security protocols for sensitive matters.",
-                    'No': "Nearly half of respondents (**48.8%**) lack trust in AI for confidential advice, suggesting a strong preference for human empathy, discretion, and established fiduciary duty.",
-                    'Maybe': "A large portion (**31.7%**) is undecided, reflecting potential future trust if security, privacy, and regulatory clarity around AI advice improves.",
-                    'Depends (when emotions are less important)': "This conditional trust (**7.3%**) shows that AI is preferred for purely logical or factual advice (e.g., financial formulas) but not for emotionally complex or interpersonal situations."
-                }
-            },
-            {
-                id: 'industry-trust',
-                title: 'Which of the following industries do you trust AI the most in?',
-                labels: ['Healthcare', 'Law', 'ONLY research', 'Finance', 'Education', 'I don\'t trust AI', 'Trust the person using it'],
-                data: [17.1, 4.9, 48.8, 9.8, 12.2, 4.9, 2.4],
-                summaries: {
-                    'Healthcare': "A notable group (**17.1%**) trusts AI for medical applications, likely for diagnosis support, data analysis, or objective research, where accuracy is key.",
-                    'Law': "Law receives the lowest direct trust (**4.9%**), reflecting high sensitivity to risk, and the critical importance of human interpretation and nuance in legal matters.",
-                    'ONLY research': "The clear preference (**48.8%**) is for AI to be used in back-end, objective data processing and analysis roles, away from direct human interaction or high-stakes decisions.",
-                    'Finance': "Some trust AI in financial scenarios (**9.8%**), likely for automated trading, risk assessment, or algorithmic management where speed and scale are advantages.",
-                    'Education': "A small but significant number (**12.2%**) trusts AI in learning environments, perhaps for personalized tutoring or administrative tasks.",
-                    'I don\'t trust AI': "A small, distrustful segment (**4.9%**) that appears to have fundamental concerns about AI across all applications.",
-                    'Trust the person using it': "A nuanced view (**2.4%**) that shifts accountability and trust to the human operator, regardless of the industry."
-                }
-            },
-            // --- Existing Data from the second section ---
-            {
-                id: 'verification-likelihood',
-                title: 'If an AI system makes a recommendation, how likely are you to verify it with a human expert?',
-                labels: ['Always', 'Sometimes', 'Never', 'Rarely', "I don't use AI"],
-                data: [40.0, 42.5, 5.0, 10.0, 2.5],
-                summaries: {
-                    'Always': "A strong group (**40.0%**) insists on **always** verifying AI recommendations, indicating that for many, AI is a tool for suggestions, not final decisions.",
-                    'Sometimes': "The largest group (**42.5%**) adopts a **situational approach**, verifying only when the stakes are high or the recommendation seems questionable.",
-                    'Never': "A small segment (**5.0%**) trusts AI recommendations completely, suggesting confidence in the AI's accuracy or comfort with low-stakes tasks.",
-                    'Rarely': "A similar group (**10.0%**) rarely verifies, indicating a high level of implicit trust in the AI's output for routine or common tasks.",
-                    "I don't use AI": "A small fraction (**2.5%**) avoids AI altogether, eliminating the need for verification."
-                }
-            },
-            {
-                id: 'legal-conflict',
-                title: "AI legal strategy conflicts with lawyer's advice. How would you respond?",
-                labels: ['Follow the AI suggestion', "Follow only the lawyer's advice", 'Seek a second opinion', 'Combine both suggestions', 'Discuss both options before deciding'],
-                data: [0.0, 9.8, 34.1, 4.9, 51.2],
-                summaries: {
-                    'Follow the AI suggestion': "Nobody (**0%**) would bypass their human lawyer entirely to follow the AI, confirming that in legal contexts, AI is not a final authority.",
-                    "Follow only the lawyer's advice": "A small group (**9.8%**) would stick solely with the human professional's advice, rejecting the AI conflict outright.",
-                    'Seek a second opinion': "A significant portion (**34.1%**) would **escalate the conflict** by seeking another human expert, prioritizing human validation over algorithmic speed.",
-                    'Combine both suggestions': "A small segment (**4.9%**) sees value in **synthesizing** both approaches, treating the AI suggestion as a valuable counter-perspective.",
-                    'Discuss both options before deciding': "The majority (**51.2%**) would take the most **collaborative** approach, using the AI conflict as a prompt for deeper discussion with their current lawyer."
-                }
-            },
-            {
-                id: 'hospital-conflict',
-                title: "Hospital AI treatment differs from doctor's advice. What would you do?",
-                labels: ['Follow only the AI', "Follow only the doctor's advice", 'Seek a second opinion', 'Combine both suggestions', 'Discuss both options before deciding'],
-                data: [0.0, 17.1, 31.7, 9.8, 41.5],
-                summaries: {
-                    'Follow only the AI': "Again, nobody (**0%**) would choose the AI over their doctor for treatment, highlighting the requirement for human final authority in high-stakes health matters.",
-                    "Follow only the doctor's advice": "A notable group (**17.1%**) would rely solely on the human doctor, dismissing the AI recommendation.",
-                    'Seek a second opinion': "Similar to the legal scenario, a large portion (**31.7%**) would seek a second medical opinion, indicating that **AI conflict creates user uncertainty**.",
-                    'Combine both suggestions': "A small but increased number (**9.8%**) would attempt to integrate both recommendations, perhaps seeing value in the AI's data-driven approach.",
-                    'Discuss both options before deciding': "The majority (**41.5%**) prefers **consultation and discussion**, leveraging the AI suggestion to prompt a more thorough review with their doctor."
-                }
-            },
-            {
-                id: 'disaster-prediction',
-                title: 'If an AI predicts a natural disaster risk in your area, what would you do?',
-                labels: ['Evacuate based on AI prediction', 'Depends', "Wait for human authorities' instructions", 'Monitor both AI and human advice', "I wouldn't be using the AI in the first place"],
-                data: [0.0, 4.9, 2.4, 56.1, 26.8],
-                summaries: {
-                    'Evacuate based on AI prediction': "No one (**0%**) would take drastic action based purely on an AI prediction, demonstrating caution and a need for human validation in life-threatening scenarios.",
-                    'Depends': "A small group (**4.9%**) indicates their action is situational, perhaps relying on past AI accuracy or specific disaster severity.",
-                    "Wait for human authorities' instructions": "Few respondents (**2.4%**) would rely solely on official human channels, suggesting a degree of skepticism towards authorities in this context.",
-                    'Monitor both AI and human advice': "The majority (**56.1%**) adopts a **redundancy strategy**, monitoring both sources to inform their decision, showing they treat AI as a valuable, real-time warning system.",
-                    "I wouldn't be using the AI in the first place": "A significant portion (**26.8%**) indicates a fundamental lack of trust in AI for critical safety predictions."
-                }
-            },
-            {
-                id: 'surgeon-vs-nurse',
-                title: 'Who would you trust more; a surgeon using an AI tool or a nurse using an AI tool?',
-                labels: ['Surgeon using AI', 'Nurse using AI', 'None'],
-                data: [12.2, 14.6, 73.2],
-                summaries: {
-                    'Surgeon using AI': "A small portion (**12.2%**) trusts the surgeon more, likely due to the higher perceived authority and advanced training associated with a surgeon's role.",
-                    'Nurse using AI': "A slightly larger segment (**14.6%**) trusts the nurse more, perhaps viewing their role as more focused on patient care and validation of machine data.",
-                    'None': "The overwhelming majority (**73.2%**) trusts **neither** more than the other, suggesting that for high-stakes AI-assisted tasks, trust is tied to the tool itself or the situation, not the job title."
-                }
-            },
-            {
-                id: 'fraud-vs-loan',
-                title: 'Which would you trust more, an AI Fraud detector or an AI loan officer?',
-                labels: ['AI Fraud detector', 'AI loan officer', 'None'],
-                data: [61.0, 4.9, 34.1],
-                summaries: {
-                    'AI Fraud detector': "The clear majority (**61.0%**) trusts the AI in fraud detection, where the task is objective, data-intensive, and benefits from pattern recognition, indicating trust in **AI for security**.",
-                    'AI loan officer': "Almost no one (**4.9%**) trusts the AI for loan approval, where the outcome directly affects them financially and involves subjective risk assessment.",
-                    'None': "A substantial group (**34.1%**) distrusts AI in both financial roles, suggesting general skepticism about AI's use in high-value monetary decisions."
-                }
-            },
-            {
-                id: 'jury-vs-prosecutor',
-                title: 'Which would you trust more, an AI Jury or an AI prosecutor?',
-                labels: ['AI Jury', 'AI prosecutor', 'None'],
-                data: [7.5, 15.0, 75.0],
-                summaries: {
-                    'AI Jury': "A small group (**7.5%**) trusts the AI Jury more, perhaps hoping for a purely objective interpretation of facts.",
-                    'AI prosecutor': "Twice as many (**15.0%**) trust the AI prosecutor, possibly because this role is perceived as data-driven and objective, focusing on evidence assembly.",
-                    'None': "A massive three-quarters of respondents (**75.0%**) trust **neither**, clearly rejecting the use of AI in high-stakes legal judgment roles where human empathy and ethics are critical."
-                }
-            },
-            {
-                id: 'ai-preference',
-                title: 'Would you prefer interacting with an AI tool over a human for certain tasks?',
-                labels: ['Depends', 'Yes', 'No', 'Maybe'],
-                data: [48.8, 26.8, 22.0, 2.4],
-                summaries: {
-                    'Depends': "Nearly half the respondents (**48.8%**) are conditional in their preference, suggesting a pragmatic view where AI is preferred only for specific, non-emotional tasks.",
-                    'Yes': "A large group (**26.8%**) actively prefers AI interaction, likely for tasks requiring speed, 24/7 availability, or anonymity.",
-                    'No': "A substantial segment (**22.0%**) maintains a preference for human interaction, valuing empathy, understanding, or accountability.",
-                    'Maybe': "A small group (**2.4%**) remains entirely unsure, reflecting ongoing evaluation of AI's utility in their daily lives."
-                }
-            },
-            {
-                id: 'llm-disappointment',
-                title: 'Would you feel disappointed if ChatGPT/DeepSeek or any other generative AI were removed completely from the web?',
-                labels: ['Yes', 'No', 'Maybe', "I wouldn't care"],
-                data: [47.5, 30.0, 12.5, 10.0],
-                summaries: {
-                    'Yes': "A plurality (**47.5%**) would feel disappointed, indicating that large language models (LLMs) have become a significantly integrated, valued, and relied-upon tool for almost half of the users.",
-                    'No': "A large portion (**30.0%**) would not feel disappointed, suggesting they either don't rely on LLMs or find them replaceable.",
-                    'Maybe': "A group (**12.5%**) is neutral or unsure, perhaps viewing LLMs as useful but not essential.",
-                    "I wouldn't care": "A smaller, indifferent segment (**10.0%**) that is unaffected by the presence or absence of generative AI tools."
-                }
-            },
+            chartContainer.appendChild(card);
 
-            // --- NEW DATA ADDED BELOW ---
+            // 4. Initialize Chart.js
+            const chartInstance = new Chart(canvas, {
+                type: 'bar',
+                data: {
+                    labels: dataObj.labels,
+                    datasets: [{
+                        data: dataObj.data,
+                        backgroundColor: ACCENT_COLOR,
+                        borderColor: ACCENT_COLOR,
+                        hoverBackgroundColor: HOVER_COLOR,
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y', // Horizontal bars
+                    onClick: (e) => {
+                        const activeElements = chartInstance.getElementsAtEventForMode(e, 'nearest', { intersect: true }, true);
+                        if (activeElements.length > 0) {
+                            const firstElement = activeElements[0];
+                            const dataIndex = firstElement.index;
+                            const datasetIndex = firstElement.datasetIndex;
 
-            {
-                id: 'doctor-mistake-response',
-                title: 'Hypothetically, if your doctor missed a disease after using an AI tool, what would be your initial response?',
-                labels: ['I would definitely sue', 'Angry but willing to rectify...', 'I would forgive him/her and negotiate...', 'Neutral', 'Inquisitive'],
-                data: [56.8, 29.5, 6.8, 4.5, 2.3],
-                summaries: {
-                    'I would definitely sue': "The majority (**56.8%**) indicates a legal response, showing that in life-and-death situations, the failure of an AI-assisted physician is viewed as a high-stakes negligence.",
-                    'Angry but willing to rectify...': "A significant portion (**29.5%**) is primarily focused on fixing the mistake, prioritizing a resolution over immediate legal action.",
-                    'I would forgive him/her and negotiate...': "A small group (**6.8%**) would offer forgiveness and seek negotiated solutions, valuing the human relationship with the doctor.",
-                    'Neutral': "A minority (**4.5%**) expresses a neutral response, perhaps seeing this as an acceptable risk in medical practice.",
-                    'Inquisitive': "A tiny fraction (**2.3%**) would start by seeking answers, prioritizing understanding the cause of the failure."
-                }
-            },
-            {
-                id: 'bank-loan-denial',
-                title: 'Hypothetically, if your bank denied a loan using an AI tool, you would:',
-                labels: ['Be inquisitive/Ask for a reason', 'Angry but willing to rectify...', 'I would definitely sue', 'Neutral', 'I would forgive and negotiate...', 'Can\'t say'],
-                data: [52.3, 15.9, 13.6, 9.1, 6.8, 2.3],
-                summaries: {
-                    'Be inquisitive/Ask for a reason': "The primary reaction (**52.3%**) is to seek transparency and explanation, reflecting a desire to understand the AI's logic and the opportunity to appeal the decision.",
-                    'Angry but willing to rectify...': "A significant portion (**15.9%**) expresses anger but remains focused on resolving the denial through discussion and negotiation, rather than immediate legal action.",
-                    'I would definitely sue': "A notable group (**13.6%**) views a loan denial by AI as grounds for a lawsuit, likely due to potential concerns about algorithmic bias or unfair lending practices.",
-                    'Neutral': "A small segment (**9.1%**) accepts the outcome neutrally, perhaps viewing AI-driven denial as part of the modern banking process.",
-                    'I would forgive and negotiate...': "A tiny portion (**6.8%**) is willing to forgive the bank and explore other options, showing high customer loyalty or a low-confrontation approach.",
-                    'Can\'t say': "A few respondents (**2.3%**) are unsure of their reaction, reflecting the novelty of this specific scenario."
-                }
-            },
-            {
-                id: 'customer-service-preference',
-                title: 'Would you prefer to talk to an AI powered customer service bot or a human?',
-                labels: ['Human', 'AI powered chatbot', 'It depends on my question'],
-                data: [90.7, 7.0, 2.3],
-                summaries: {
-                    'Human': "An overwhelming majority (**90.7%**) strongly prefers interacting with a human, highlighting a deep-seated need for empathy, nuanced problem-solving, and human accountability in customer service.",
-                    'AI powered chatbot': "A small minority (**7.0%**) prefers the AI chatbot, likely valuing its speed, 24/7 availability, or its ability to handle routine queries efficiently.",
-                    'It depends on my question': "A small group (**2.3%**) takes a pragmatic view, preferring the bot for simple, direct inquiries and a human for complex, high-stakes, or novel problems."
-                }
-            },
-        ];
+                            const label = chartInstance.data.labels[dataIndex];
+                            const percentage = chartInstance.data.datasets[datasetIndex].data[dataIndex];
+                            const summaryText = dataObj.summaries[label];
 
-        let currentModalData = null;
+                            if (summaryText) {
+                                openModal(dataObj, label, percentage, summaryText);
+                            } else {
+                                console.log(`No summary available for: ${label}`);
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        label += context.parsed.x.toFixed(1) + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                color: TEXT_LIGHT,
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)',
+                                borderColor: TEXT_LIGHT
+                            },
+                            title: {
+                                display: true,
+                                text: 'Percentage of Respondents',
+                                color: TEXT_LIGHT,
+                                font: { weight: 'bold' }
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: TEXT_LIGHT
+                            },
+                            grid: {
+                                display: false
+                            },
+                            border: {
+                                color: TEXT_LIGHT
+                            }
+                        }
+                    }
+                }
+            });
+        };
 
-        function openModal(chartData, index) {
-            currentModalData = {
-                question: chartData.title,
-                responseTitle: chartData.labels[index],
-                percentage: chartData.data[index],
-                summary: chartData.summaries[chartData.labels[index]]
-            };
-
-            document.getElementById('modal-question').textContent = currentModalData.question;
-            document.getElementById('modal-response-title').textContent = currentModalData.responseTitle;
-            document.getElementById('modal-percentage').textContent = currentModalData.percentage.toFixed(1);
-            document.getElementById('modal-summary').innerHTML = currentModalData.summary;
-
-            const modal = document.getElementById('summary-modal');
-            const content = modal.querySelector('div:first-child');
-
-            // Show modal and start transition
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                content.classList.remove('scale-95');
-                content.classList.add('scale-100');
-            }, 10);
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('summary-modal');
-            const content = modal.querySelector('div:first-child');
-
-            // Reverse transition and hide modal
-            modal.classList.add('opacity-0');
-            content.classList.add('scale-95');
-            content.classList.remove('scale-100');
-
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300); // Wait for the transition duration
-        }
-
-        // Close modal on outside click (optional)
-        document.getElementById('summary-modal').addEventListener('click', (event) => {
-            if (event.target.id === 'summary-modal') {
-                closeModal();
-            }
-        });
-
-
-        function createChart(data, elementId) {
-            const ctx = document.getElementById(elementId).getContext('2d');
-            return new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: data.labels,
-                    datasets: [{
-                        data: data.data,
-                        backgroundColor: ACCENT_COLOR, // Using the new blue color
-                        hoverBackgroundColor: HOVER_COLOR,
-                        borderColor: ACCENT_COLOR,
-                        borderWidth: 1,
-                        borderRadius: 8, // Rounded bar tops for a modern look
-                        barPercentage: 0.9,
-                        categoryPercentage: 0.8,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false, // Hide legend
-                        },
-                        title: {
-                            display: false, // Title is handled in the HTML card
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return `${context.label}: ${context.parsed.y.toFixed(1)}%`;
-                                }
-                            },
-                            mode: 'index',
-                            intersect: false,
-                            titleColor: TEXT_LIGHT,
-                            bodyColor: TEXT_LIGHT,
-                            backgroundColor: 'rgba(42, 42, 42, 0.9)',
-                            padding: 10,
-                            boxPadding: 5,
-                            borderWidth: 1,
-                            borderColor: 'rgba(255, 255, 255, 0.1)'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: {
-                                color: TEXT_LIGHT,
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)',
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                color: TEXT_LIGHT,
-                                maxRotation: 45,
-                                minRotation: 0,
-                                font: {
-                                    size: 10, // Smaller font for x-axis labels
-                                }
-                            },
-                            grid: {
-                                display: false,
-                            }
-                        }
-                    },
-                    onClick: (e, elements) => {
-                        if (elements.length > 0) {
-                            const firstElement = elements[0];
-                            const index = firstElement.index;
-                            openModal(data, index);
-                        }
-                    }
-                }
-            });
-        }
-
-        function initializeCharts() {
-            const container = document.getElementById('charts-container');
-            
-            // Generate HTML cards for each chart
-            surveyData.forEach((data, index) => {
-                const chartId = `chart-${data.id}`;
-                
-                const cardHtml = `
-                    <div class="card p-4 md:p-6 cursor-pointer hover:border-accent-neutral">
-                        <h2 class="text-xl md:text-2xl font-semibold mb-4 text-white hover:text-accent-neutral transition-colors duration-200">
-                            ${data.title}
-                        </h2>
-                        <p class="text-text-muted text-sm mb-4">Click a bar to see the summary.</p>
-                        <div class="chart-container">
-                            <canvas id="${chartId}"></canvas>
-                        </div>
-                    </div>
-                `;
-                container.insertAdjacentHTML('beforeend', cardHtml);
-            });
-
-            // Initialize Chart.js instances
-            surveyData.forEach((data) => {
-                createChart(data, `chart-${data.id}`);
-            });
-        }
-
-        // Start the chart initialization process after the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', initializeCharts);
-
-    </script>
+        // Initialize all charts when the script loads
+        document.addEventListener('DOMContentLoaded', () => {
+            surveyData.forEach(data => createChartCard(data));
+        });
+    </script>
+    
+    <nav class="fixed bottom-0 inset-x-0 z-40 bg-card-dark border-t border-opacity-10 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
+        <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Home</a>
+        <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">About</a>
+        <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Methods and Data</a>
+        <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Ethical Guidelines</a>
+        <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Research Findings Articles</a>
+        <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Contact</a>
+    </nav>
 </body>
 </html>
