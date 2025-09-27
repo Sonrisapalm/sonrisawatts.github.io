@@ -343,7 +343,7 @@
             document.getElementById('modal-question').innerText = `Question: ${questionData.title}`;
             document.getElementById('modal-response-title').innerText = label;
             document.getElementById('modal-percentage').innerText = percentage;
-            document.getElementById('modal-summary').innerHTML = formatSummary(summaryText); // FIXED: completion of the line
+            document.getElementById('modal-summary').innerHTML = formatSummary(summaryText);
             
             // Show modal with animation
             modal.classList.remove('hidden');
@@ -443,9 +443,27 @@
                     onClick: (evt, elements) => {
                         if (elements.length > 0) {
                             const chartElement = elements[0];
-                            const label = dataObj.labels[chartElement.index];
-                            const percentage = dataObj.data[chartElement.index].toFixed(1);
-                            const summary = dataObj.summaries[label];
+                            const index = chartElement.index; // Correctly get the index
+                            const label = dataObj.labels[index];
+                            const percentage = dataObj.data[index]; // Correctly get the percentage
+                            const summaryText = dataObj.summaries[label]; // Get the summary
                             
-                            if (summary) {
-                                openModal(dataObj, label, percentage, summary);
+                            openModal(dataObj, label, percentage, summaryText);
+                        }
+                    }
+                }
+            });
+        };
+
+        // --- CHART INITIALIZATION ---
+        // This is the missing part that executes the chart creation logic
+        const initializeDashboard = () => {
+            // Wait for the window to load, then create all chart cards
+            surveyData.forEach(createChartCard);
+        };
+
+        window.onload = initializeDashboard;
+        // ----------------------------
+    </script>
+</body>
+</html>
