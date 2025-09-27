@@ -44,7 +44,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
             border-radius: 1rem; /* rounded-2xl */
-            cursor: pointer; /* Indicate clickability */
         }
         .card:hover {
             transform: translateY(-2px);
@@ -106,7 +105,7 @@
         <!-- 2. CHARTS HEADER -->
         <header class="text-center mb-12">
             <h1 class="text-3xl md:text-4xl font-bold text-accent-neutral mb-2">Interactive AI Perception Survey Results</h1>
-            <p class="text-lg text-text-muted">Click any bar on the charts below to see a detailed summary of that specific response trend.</p>
+            <p class="text-lg text-text-muted">Explore the data below. **Click any bar** on the charts to see a detailed summary of that specific response trend.</p>
         </header>
 
         <!-- 3. CHARTS GRID -->
@@ -379,9 +378,17 @@
 
             // 2. Add Title
             const title = document.createElement('h2');
-            title.className = 'text-xl md:text-2xl font-semibold mb-4 text-text-light';
+            // MODIFICATION HERE: Changed text-text-light to text-accent-neutral for prominence
+            title.className = 'text-xl md:text-2xl font-semibold mb-2 text-accent-neutral'; 
             title.innerText = dataObj.title;
             card.appendChild(title);
+
+            // NEW: Add Instruction below the title
+            const instruction = document.createElement('p');
+            instruction.className = 'text-sm font-light text-text-muted mb-4 italic cursor-default'; // Keeping this slightly muted
+            instruction.innerText = 'Click any bar to see the detailed summary.';
+            card.appendChild(instruction);
+
 
             // 3. Add Canvas container (for fixed height)
             const chartWrapper = document.createElement('div');
@@ -411,6 +418,24 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     indexAxis: 'y', // Horizontal bars
+                    onClick: (e) => {
+                        const activeElements = chartInstance.getElementsAtEventForMode(e, 'nearest', { intersect: true }, true);
+                        if (activeElements.length > 0) {
+                            const firstElement = activeElements[0];
+                            const dataIndex = firstElement.index;
+                            const datasetIndex = firstElement.datasetIndex;
+
+                            const label = chartInstance.data.labels[dataIndex];
+                            const percentage = chartInstance.data.datasets[datasetIndex].data[dataIndex];
+                            const summaryText = dataObj.summaries[label];
+
+                            if (summaryText) {
+                                openModal(dataObj, label, percentage, summaryText);
+                            } else {
+                                console.log(`No summary available for: ${label}`);
+                            }
+                        }
+                    },
                     plugins: {
                         legend: { display: false },
                         tooltip: {
@@ -432,38 +457,24 @@
                                 color: TEXT_LIGHT,
                                 font: { size: 14 }
                             },
-                            ticks: { color: TEXT_LIGHT },
-                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                            ticks: { color: TEXT_LIGHT }, // Keeping numbers light
+                            grid: { color: 'rgba(255, 255, 255, 0.08)' }
                         },
                         y: {
-                            ticks: { color: TEXT_LIGHT, font: { size: 14 } },
-                            grid: { display: false }
-                        }
-                    },
-                    onClick: (evt, elements) => {
-                        if (elements.length > 0) {
-                            const chartElement = elements[0];
-                            const index = chartElement.index; // Correctly get the index
-                            const label = dataObj.labels[index];
-                            const percentage = dataObj.data[index]; // Correctly get the percentage
-                            const summaryText = dataObj.summaries[label]; // Get the summary
-                            
-                            openModal(dataObj, label, percentage, summaryText);
+                            ticks: { color: TEXT_LIGHT, font: { size: 14 } }, // Keeping labels/numbers light
+                            grid: { color: 'rgba(255, 255, 255, 0.08)' }
                         }
                     }
                 }
             });
+            // Need to get the instance for the click handler
+            const chartInstance = Chart.getChart(canvas);
         };
 
-        // --- CHART INITIALIZATION ---
-        // This is the missing part that executes the chart creation logic
-        const initializeDashboard = () => {
-            // Wait for the window to load, then create all chart cards
-            surveyData.forEach(createChartCard);
+        // 5. Render all charts on window load
+        window.onload = () => {
+            surveyData.forEach(data => createChartCard(data));
         };
-
-        window.onload = initializeDashboard;
-        // ----------------------------
     </script>
 </body>
 </html>
