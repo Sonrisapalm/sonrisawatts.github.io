@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotion Encoded Research Dashboard</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <!-- Chart.js CDN for interactive charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <nav class="fixed bottom-0 inset-x-0 z-40 bg-card-dark border-t border-opacity-10 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
+        <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Home</a>
+        <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">About</a>
+        <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Methods and Data</a>
+        <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Ethical Guidelines</a>
+        <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Research Findings Articles</a>
+        <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Contact</a>
+    </nav>
+</body>
+</html>
     
-    <!-- Tailwind config for custom fonts and neutral colors -->
     <script>
         tailwind.config = {
             theme: {
@@ -64,15 +71,11 @@
         }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body class="p-4 md:p-8 pb-20"> <div class="max-w-7xl mx-auto">
 
-    <div class="max-w-7xl mx-auto">
-
-        <!-- 1. METHODOLOGY ARTICLE SECTION (Full Width) -->
         <div id="article_section" class="bg-card-dark rounded-2xl p-6 md:p-10 mb-12 shadow-2xl">
             <article>
                 <header class="text-center mb-10 flex flex-col items-center">
-                    <!-- Placeholder image URL used here -->
                     <img src="https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic" 
                         onerror="this.onerror=null;this.src='https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic'"
                         alt="A researcher reviewing data and charts on a large screen." 
@@ -102,20 +105,15 @@
             </article>
         </div>
 
-        <!-- 2. CHARTS HEADER -->
         <header class="text-center mb-12">
             <h1 class="text-3xl md:text-4xl font-bold text-accent-neutral mb-2">Interactive AI Perception Survey Results</h1>
-            <!-- The main instruction is kept large and bold here -->
-            <p class="text-xl md:text-2xl font-extrabold text-white">Click any bar to see the detailed summary.</p>
+            <p class="text-xl md:text-2xl font-extrabold text-accent-neutral">Click any bar to see the detailed summary.</p>
         </header>
 
-        <!-- 3. CHARTS GRID -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="charts-container">
-            <!-- Chart elements will be generated here by JavaScript -->
-        </div>
+            </div>
     </div>
 
-    <!-- 4. MODAL for Summary Display (Outside main container for fixed positioning) -->
     <div id="summary-modal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center hidden p-4 transition-opacity duration-300 opacity-0">
         <div class="bg-card-dark rounded-2xl p-6 w-full max-w-lg shadow-2xl transform transition-transform duration-300 scale-95">
             <h2 class="text-xl font-semibold mb-2 text-text-muted" id="modal-question"></h2>
@@ -132,16 +130,15 @@
         </div>
     </div>
 
-    <!-- 5. JAVASCRIPT LOGIC -->
     <script>
         // Constants used for Chart.js styling
         const ACCENT_COLOR = '#607d8b'; // Muted Blue-Gray
         const HOVER_COLOR = '#90a4ae'; // Lighter Muted Blue-Gray
         const TEXT_LIGHT = 'rgb(224, 224, 224)';
 
-        // COMBINED Survey Data: All 15 questions merged into a single array
+        // COMBINED Survey Data: All questions merged into a single array
         const surveyData = [
-            // --- Data from the first section ---
+            // --- Existing Data from the first section ---
             {
                 id: 'jobs-replacement',
                 title: 'Do you think Artificial Intelligence will eventually replace jobs?',
@@ -218,7 +215,7 @@
                     'Trust the person using it': "A nuanced view (**2.4%**) that shifts accountability and trust to the human operator, regardless of the industry."
                 }
             },
-            // --- Data from the second section ---
+            // --- Existing Data from the second section ---
             {
                 id: 'verification-likelihood',
                 title: 'If an AI system makes a recommendation, how likely are you to verify it with a human expert?',
@@ -327,6 +324,60 @@
                     'Maybe': "A group (**12.5%**) is neutral or unsure, perhaps viewing LLMs as useful but not essential.",
                     "I wouldn't care": "A smaller, indifferent segment (**10.0%**) that is unaffected by the presence or absence of generative AI tools."
                 }
+            },
+
+            // --- NEW DATA ADDED BELOW ---
+
+            {
+                id: 'doctor-mistake-response',
+                title: 'Hypothetically, if your doctor missed a disease after using an AI tool, what would be your initial response?',
+                labels: ['I would definitely sue', 'Angry but willing to rectify...', 'I would forgive him/her and negotiate...', 'Neutral', 'Inquisitive'],
+                data: [56.8, 29.5, 6.8, 4.5, 2.3],
+                summaries: {
+                    'I would definitely sue': "The majority (**56.8%**) indicates a legal response, showing that in life-and-death situations, the failure of an AI-assisted physician is viewed as a high-stakes negligence.",
+                    'Angry but willing to rectify...': "A significant portion (**29.5%**) is primarily focused on fixing the mistake, prioritizing a resolution over immediate legal action.",
+                    'I would forgive him/her and negotiate...': "A small group (**6.8%**) would offer forgiveness and seek negotiated solutions, valuing the human relationship with the doctor.",
+                    'Neutral': "A minority (**4.5%**) expresses a neutral response, perhaps seeing this as an acceptable risk in medical practice.",
+                    'Inquisitive': "A tiny fraction (**2.3%**) would start by seeking answers, prioritizing understanding the cause of the failure."
+                }
+            },
+            {
+                id: 'bank-loan-denial',
+                title: 'Hypothetically, if your bank denied a loan using an AI tool, you would:',
+                labels: ['Be inquisitive/Ask for a reason', 'Angry but willing to rectify...', 'I would definitely sue', 'Neutral', 'I would forgive and negotiate...', 'Can\'t say'],
+                data: [52.3, 15.9, 13.6, 9.1, 6.8, 2.3],
+                summaries: {
+                    'Be inquisitive/Ask for a reason': "The primary reaction (**52.3%**) is to seek transparency and explanation, reflecting a desire to understand the AI's logic and the opportunity to appeal the decision.",
+                    'Angry but willing to rectify...': "A significant portion (**15.9%**) expresses anger but remains focused on resolving the denial through discussion and negotiation, rather than immediate legal action.",
+                    'I would definitely sue': "A notable group (**13.6%**) views a loan denial by AI as grounds for a lawsuit, likely due to potential concerns about algorithmic bias or unfair lending practices.",
+                    'Neutral': "A small segment (**9.1%**) accepts the outcome neutrally, perhaps viewing AI-driven denial as part of the modern banking process.",
+                    'I would forgive and negotiate...': "A tiny portion (**6.8%**) is willing to forgive the bank and explore other options, showing high customer loyalty or a low-confrontation approach.",
+                    'Can\'t say': "A few respondents (**2.3%**) are unsure of their reaction, reflecting the novelty of this specific scenario."
+                }
+            },
+            {
+                id: 'customer-service-preference',
+                title: 'Would you prefer to talk to an AI powered customer service bot or a human?',
+                labels: ['Human', 'AI powered chatbot', 'It depends on my question'],
+                data: [90.7, 7.0, 2.3],
+                summaries: {
+                    'Human': "An overwhelming majority (**90.7%**) strongly prefers interacting with a human, highlighting a deep-seated need for empathy, nuanced problem-solving, and human accountability in customer service.",
+                    'AI powered chatbot': "A small minority (**7.0%**) prefers the AI chatbot, likely valuing its speed, 24/7 availability, or its ability to handle simple, repetitive inquiries efficiently.",
+                    'It depends on my question': "A tiny group (**2.3%**) expresses conditional preference, suggesting AI is acceptable for transactional tasks but not for complex issues."
+                }
+            },
+            {
+                id: 'ai-trust-vs-opinion',
+                title: 'If AI provides an answer different from your opinion, how likely are you to trust it?',
+                labels: ['Moderately likely', 'Slightly likely', 'Not at all likely', 'Very likely', 'Extremely likely'],
+                data: [43.9, 22.0, 19.5, 12.2, 2.4],
+                summaries: {
+                    'Moderately likely': "The largest group (**43.9%**) indicates a willingness to trust the AI's divergent answer, but only after careful consideration, suggesting a balanced view of the AI as a valuable, but not infallible, second opinion.",
+                    'Slightly likely': "A substantial group (**22.0%**) is hesitant to fully trust the AI, suggesting a default bias towards their own established knowledge or intuition.",
+                    'Not at all likely': "Nearly one-fifth (**19.5%**) completely rejects the AI's divergent answer, indicating a strong preference for personal opinion or a lack of trust in the AI's ability to challenge it.",
+                    'Very likely': "A smaller segment (**12.2%**) has high confidence in the AI, suggesting they believe the AI's data-driven answer is superior to their own opinion.",
+                    'Extremely likely': "Only a tiny fraction (**2.4%**) expresses complete and unwavering trust in the AI, even when it contradicts their own view."
+                }
             }
         ];
 
@@ -383,7 +434,7 @@
             title.innerText = dataObj.title;
             card.appendChild(title);
 
-            // MODIFICATION: Instruction text is now BIG, DARK (accent color), and BOLD for prominence on each card
+            // MODIFICATION: Instruction text is now BIG, DARK, and BOLD for prominence on each card
             const instruction = document.createElement('p');
             instruction.className = 'text-xl font-extrabold text-accent-neutral mb-4 cursor-default'; 
             instruction.innerText = 'Click any bar to see the detailed summary.';
@@ -495,5 +546,5 @@
             surveyData.forEach(data => createChartCard(data));
         });
     </script>
-</body>
-</html>
+    
+    
