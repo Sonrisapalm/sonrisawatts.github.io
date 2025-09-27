@@ -82,7 +82,7 @@
                 </header>
                 <section class="prose prose-sm md:prose-lg lg:prose-xl prose-invert mx-auto">
                     <p>The <strong>Emotion Encoded</strong> initiative is a continuous, mixed-methods research study designed to explore public and professional perceptions of AI. This research combines quantitative and qualitative data collection to provide a comprehensive understanding of emotional reasoning, biases, and ethical considerations in AI adoption. These methods ensure that findings accurately reflect both professional and public perspectives, enabling evidence-based recommendations for AI integration in high-stakes fields.</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Quantitative Data Collection</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Quantitative Data Collection  </h2>
                     <p>Quantitative data is collected through a series of structured surveys distributed to over <strong>100</strong> respondents. The primary data collection instrument is <strong>Google Forms</strong>, featuring a mix of open-ended, multiple-choice, and Likert scale questions. Surveys are disseminated via social networks and in-person outreach to ensure a broad and diverse sample.</p>
                     <p>To date, two key surveys have been completed, with ongoing monthly data collection for a longitudinal design:</p>
                     <ul class="list-disc list-inside space-y-2 text-text-light">
@@ -385,8 +385,8 @@
 
             // NEW: Add Instruction below the title
             const instruction = document.createElement('p');
-            // UPDATED CLASS: Made text larger (text-lg) and bolder (font-bold) as requested.
-            instruction.className = 'text-base md:text-lg font-bold text-accent-neutral mb-4 italic cursor-default';
+            // >>> MODIFICATION: Making text bigger (text-lg) and bolder (font-bold) and brighter (text-text-light)
+            instruction.className = 'text-lg font-bold text-text-light mb-4 italic cursor-default';
             instruction.innerText = 'Click any bar to see the detailed summary.';
             card.appendChild(instruction);
 
@@ -438,63 +438,50 @@
                         }
                     },
                     plugins: {
-                        legend: { display: false },
+                        legend: {
+                            display: false, // Hide the dataset legend
+                        },
                         tooltip: {
+                            // Custom tooltip to show percentage
                             callbacks: {
                                 label: function(context) {
-                                    let label = context.dataset.label || '';
+                                    let label = context.label || '';
                                     if (label) {
                                         label += ': ';
                                     }
-                                    // Append % sign
-                                    label += context.formattedValue + '%';
+                                    if (context.parsed.x !== null) {
+                                        label += context.parsed.x.toFixed(1) + '%';
+                                    }
                                     return label;
-                                },
-                                title: function(context) {
-                                    // Custom tooltip title to instruct user to click
-                                    return context[0].label;
-                                },
-                                afterBody: function(context) {
-                                    return 'Click for full analysis';
                                 }
-                            },
-                            titleFont: { weight: 'bold' },
-                            bodyFont: { weight: '600' },
-                            titleColor: TEXT_LIGHT,
-                            bodyColor: TEXT_LIGHT,
-                            backgroundColor: 'rgba(42, 42, 42, 0.9)', // card-dark with transparency
-                            borderColor: ACCENT_COLOR,
-                            borderWidth: 1,
-                            padding: 12,
-                            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)'
+                            }
                         }
                     },
                     scales: {
                         x: {
-                            title: {
-                                display: true,
-                                text: 'Percentage of Respondents',
-                                color: TEXT_LIGHT
+                            beginAtZero: true,
+                            max: 100, // Ensure axis goes up to 100%
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)',
+                                drawBorder: false
                             },
                             ticks: {
                                 color: TEXT_LIGHT,
-                                callback: function(value) { return value + '%'; }
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)',
-                                borderColor: 'rgba(255, 255, 255, 0.2)'
+                                callback: function(value) {
+                                    return value + '%';
+                                }
                             }
                         },
                         y: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)',
+                                drawBorder: false
+                            },
                             ticks: {
                                 color: TEXT_LIGHT,
                                 font: {
-                                    size: 12
+                                    size: 14 // Larger font for labels
                                 }
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)',
-                                borderColor: 'rgba(255, 255, 255, 0.2)'
                             }
                         }
                     }
@@ -502,25 +489,10 @@
             });
         };
 
-        // Initialize all charts on window load
-        window.onload = () => {
-            surveyData.forEach(createChartCard);
-
-            // Enable modal close on ESC key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    closeModal();
-                }
-            });
-            
-            // Enable modal close on backdrop click
-            document.getElementById('summary-modal').addEventListener('click', (e) => {
-                if (e.target.id === 'summary-modal') {
-                    closeModal();
-                }
-            });
-        };
+        // Initialize all charts on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            surveyData.forEach(data => createChartCard(data));
+        });
     </script>
-
 </body>
 </html>
