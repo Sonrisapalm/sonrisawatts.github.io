@@ -102,66 +102,329 @@
             </article>
         </div>
 
-        <!-- Survey 1 Charts -->
-        <div id="responsibilityChart" class="content-card">
-            <h1 class="text-2xl font-bold mb-4 text-white">Who is responsible for AI Mistakes?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a slice for a summary.</p>
-            <div class="chart-container">
-                <canvas id="responsibilityCanvas" aria-label="Donut chart showing responsibility for AI mistakes"></canvas>
-            </div>
-            <div id="responsibilitySummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="responsibilitySummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive AI Survey Results</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN for interactive charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <!-- Tailwind config for custom fonts and neutral colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'background-dark': '#1c1c1c',
+                        'card-dark': '#2a2a2a',
+                        'accent-neutral': '#607d8b', /* Muted Blue-Gray */
+                        'text-light': '#e0e0e0',
+                        'text-muted': '#a0a0a0'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: theme('colors.background-dark');
+            color: theme('colors.text-light');
+            font-family: theme('fontFamily.sans');
+            min-height: 100vh;
+        }
+        .card {
+            background-color: theme('colors.card-dark');
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            border-radius: 1rem; /* rounded-2xl */
+            cursor: pointer; /* Indicate clickability */
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        }
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+        /* Style for the chart container to ensure responsiveness */
+        .chart-container {
+            position: relative;
+            height: 20rem; /* Fixed height for consistency */
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 24rem;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
 
-        <div id="medicalChart" class="content-card">
-            <h1 class="text-2xl font-bold mb-4 text-white">Who is responsible for a medical mistake?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
-            <div class="chart-container">
-                <canvas id="medicalCanvas" aria-label="Bar chart showing responsibility for medical mistakes"></canvas>
-            </div>
-            <div id="medicalSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="medicalSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
+    <header class="text-center mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-accent-neutral mb-2">Interactive AI Perception Survey</h1>
+        <p class="text-lg text-text-muted">Click any bar to see a detailed summary of that specific response.</p>
+    </header>
 
-        <div id="lawyerChart" class="content-card">
-            <h1 class="text-2xl font-bold mb-4 text-white">Who is responsible for a lawyer's mistake?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
-            <div class="chart-container">
-                <canvas id="lawyerCanvas" aria-label="Bar chart showing responsibility for lawyer mistakes"></canvas>
-            </div>
-            <div id="lawyerSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="lawyerSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto" id="charts-container">
+        <!-- Chart elements will be generated here -->
+    </div>
 
-        <!-- Survey 2 Charts -->
-        <div id="jobsReplacedChart" class="content-card">
-            <h1 class="text-2xl font-bold mb-4 text-white">Will AI eventually replace jobs?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a slice for a summary.</p>
-            <div class="chart-container">
-                <canvas id="jobsReplacedCanvas" aria-label="Donut chart showing opinions on AI replacing jobs"></canvas>
+    <!-- Modal for Summary Display -->
+    <div id="summary-modal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center hidden p-4 transition-opacity duration-300 opacity-0">
+        <div class="bg-card-dark rounded-2xl p-6 w-full max-w-lg shadow-2xl transform transition-transform duration-300 scale-95">
+            <h2 class="text-xl font-semibold mb-2 text-text-muted" id="modal-question"></h2>
+            <h3 id="modal-response-title" class="text-3xl font-bold mb-4 text-accent-neutral"></h3>
+            
+            <div class="flex items-baseline mb-4">
+                <span id="modal-percentage" class="text-5xl font-extrabold text-white mr-2"></span>
+                <span class="text-xl text-text-muted">% of Respondents</span>
             </div>
-            <div id="jobsReplacedSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="jobsReplacedSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
-        </div>
 
-        <div id="bossEmailChart" class="content-card">
-            <h1 class="text-2xl font-bold mb-4 text-white">AI-generated email from your boss?</h1>
-            <p class="text-xl font-bold p-3 my-4 rounded-md bg-gray-800 text-yellow-300 shadow-lg text-center">Click on a bar for a summary.</p>
-            <div class="chart-container">
-                <canvas id="bossEmailCanvas" aria-label="Bar chart showing feelings about AI-generated boss emails"></canvas>
-            </div>
-            <div id="bossEmailSummary" class="mt-8 text-center bg-gray-700 rounded-lg p-4 transition-all duration-300 ease-in-out opacity-0">
-                <p class="text-sm italic text-gray-400">Selected Group's Opinion:</p>
-                <p id="bossEmailSummaryText" class="text-white font-medium mt-2"></p>
-            </div>
+            <p id="modal-summary" class="text-lg mb-6 text-text-light border-l-4 border-accent-neutral pl-3 italic"></p>
+            
+            <button onclick="closeModal()" class="mt-4 w-full py-2 bg-accent-neutral hover:bg-opacity-80 transition duration-150 font-semibold rounded-lg text-white">Close</button>
         </div>
+    </div>
 
-       
+    <script>
+        const ACCENT_COLOR = '#607d8b'; // Muted Blue-Gray
+        const HOVER_COLOR = '#90a4ae'; // Lighter Muted Blue-Gray
+
+        // Detailed survey data structure with individual response summaries
+        const surveyData = [
+            {
+                id: 'jobs-replacement',
+                title: 'Do you think Artificial Intelligence will eventually replace jobs?',
+                labels: ['Yes', 'No', 'Maybe', 'Some jobs'],
+                data: [11.4, 11.4, 6.8, 70.5],
+                summaries: {
+                    'Yes': "A small but significant portion (**11.4%**) sees a complete substitution of human jobs by AI, indicating high concern or a belief in AI's rapid, comprehensive capability.",
+                    'No': "A similar proportion (**11.4%**) remains confident that human roles are inherently secure and will not be ultimately replaced by artificial intelligence.",
+                    'Maybe': "A small group (**6.8%**) remains uncertain about AI's final impact, possibly believing the outcome depends heavily on regulatory or technological evolution.",
+                    'Some jobs': "The overwhelming majority (**70.5%**) believes AI's impact will be targeted, replacing specific tasks or job types rather than the workforce as a whole, favoring augmentation over replacement."
+                }
+            },
+            {
+                id: 'gen-ai-responsibility',
+                title: 'Generative AI Mistake: Who would you hold responsible?',
+                labels: ['Myself', 'AI Developers', 'AI itself', 'Nobody', "Wouldn't use it"],
+                data: [68.3, 12.2, 2.4, 4.9, 9.8],
+                summaries: {
+                    'Myself': "The overwhelming majority (**68.3%**) takes personal ownership, reflecting the understanding that using a generative tool means accepting the risk and responsibility for validating its output.",
+                    'AI Developers': "A fraction (**12.2%**) believes the creators of the tool should be accountable for flaws or errors in the AI's generation, suggesting a demand for higher reliability.",
+                    'AI itself': "Only a tiny number (**2.4%**) assigns blame to the non-sentient tool, suggesting most people view AI as a utility, not an independent, accountable entity.",
+                    'Nobody': "A few respondents (**4.9%**) view the mistake as a cost of innovation or an unavoidable risk that comes with using powerful new technology.",
+                    "Wouldn't use it": "This group (**9.8%**) avoids the dilemma entirely by choosing not to engage with generative AI, indicating a fundamental lack of trust or perceived risk."
+                }
+            },
+            {
+                id: 'doctor-ai-responsibility',
+                title: 'Doctor AI Mistake: Who would you hold responsible?',
+                labels: ['My doctor who used the tool', 'The AI developer', 'Both AI developer and my doctor', 'Nobody'],
+                data: [80.5, 12.2, 4.9, 2.4],
+                summaries: {
+                    'My doctor who used the tool': "An overwhelming majority (**80.5%**) places responsibility on the doctor, reflecting the belief that human professionals must retain final accountability and clinical judgment, even when using AI aids.",
+                    'The AI developer': "A smaller group (**12.2%**) believes the accountability lies with the company that designed and produced the faulty medical tool, highlighting the need for regulation.",
+                    'Both AI developer and my doctor': "A small minority (**4.9%**) advocates for shared responsibility between the user (doctor) and the creator (developer).",
+                    'Nobody': "An almost negligible percentage (**2.4%**) suggests the mistake is an unfortunate, unassignable error, likely due to the complexity of the systems."
+                }
+            },
+            {
+                id: 'lawyer-ai-responsibility',
+                title: 'Lawyer AI Mistake: Who would you hold responsible?',
+                labels: ['My lawyer who used the tool', 'The AI developer', 'Both AI developer and my lawyer', 'Nobody'],
+                data: [85.4, 7.3, 4.9, 2.4],
+                summaries: {
+                    'My lawyer who used the tool': "An exceptionally high majority (**85.4%**) holds the lawyer responsible, reinforcing the high standard of professional duty and oversight expected in legal matters.",
+                    'The AI developer': "Only **7.3%** assign blame to the tool's manufacturer, suggesting that in legal contexts, the professional's final sign-off is paramount.",
+                    'Both AI developer and my lawyer': "A small minority (**4.9%**) believes in dual accountability for the legal mistake.",
+                    'Nobody': "Again, a very small group (**2.4%**) views the mistake as unassignable, possibly acknowledging the complexity of legal case research."
+                }
+            },
+            {
+                id: 'confidential-advice-trust',
+                title: 'Would you trust an AI more than a human for confidential advice?',
+                labels: ['Yes', 'No', 'Maybe', 'Depends (when emotions are less important)'],
+                data: [12.2, 48.8, 31.7, 7.3],
+                summaries: {
+                    'Yes': "A small segment (**12.2%**) trusts AI more than humans, possibly valuing AI's perceived objectivity, lack of judgment, and consistent security protocols for sensitive matters.",
+                    'No': "Nearly half of respondents (**48.8%**) lack trust in AI for confidential advice, suggesting a strong preference for human empathy, discretion, and established fiduciary duty.",
+                    'Maybe': "A large portion (**31.7%**) is undecided, reflecting potential future trust if security, privacy, and regulatory clarity around AI advice improves.",
+                    'Depends (when emotions are less important)': "This conditional trust (**7.3%**) shows that AI is preferred for purely logical or factual advice (e.g., financial formulas) but not for emotionally complex or interpersonal situations."
+                }
+            },
+            {
+                id: 'industry-trust',
+                title: 'Which of the following industries do you trust AI the most in?',
+                labels: ['Healthcare', 'Law', 'ONLY research', 'Finance', 'Education', 'I don\'t trust AI', 'Trust the person using it'],
+                data: [17.1, 4.9, 48.8, 9.8, 12.2, 4.9, 2.4],
+                summaries: {
+                    'Healthcare': "A notable group (**17.1%**) trusts AI for medical applications, likely for diagnosis support, data analysis, or objective research, where accuracy is key.",
+                    'Law': "Law receives the lowest direct trust (**4.9%**), reflecting high sensitivity to risk, and the critical importance of human interpretation and nuance in legal matters.",
+                    'ONLY research': "The clear preference (**48.8%**) is for AI to be used in back-end, objective data processing and analysis roles, away from direct human interaction or high-stakes decisions.",
+                    'Finance': "Some trust AI in financial scenarios (**9.8%**), likely for automated trading, risk assessment, or algorithmic management where speed and scale are advantages.",
+                    'Education': "A small but significant number (**12.2%**) trusts AI in learning environments, perhaps for personalized tutoring or administrative tasks.",
+                    'I don\'t trust AI': "A small, distrustful segment (**4.9%**) that appears to have fundamental concerns about AI across all applications.",
+                    'Trust the person using it': "A nuanced view (**2.4%**) that shifts accountability and trust to the human operator, regardless of the industry."
+                }
+            }
+        ];
+
+        // Utility to replace markdown bold syntax with HTML for the modal
+        const formatSummary = (text) => {
+            return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        };
+
+        // Function to open the modal
+        const openModal = (questionData, label, percentage, summaryText) => {
+            const modal = document.getElementById('summary-modal');
+            
+            // Populate the modal content
+            document.getElementById('modal-question').innerText = `Question: ${questionData.title}`;
+            document.getElementById('modal-response-title').innerText = label;
+            document.getElementById('modal-percentage').innerText = percentage;
+            document.getElementById('modal-summary').innerHTML = formatSummary(summaryText);
+            
+            // Show modal with transition effects
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+                modal.querySelector('div').classList.replace('scale-95', 'scale-100');
+            }, 10);
+        };
+
+        // Function to close the modal
+        const closeModal = () => {
+            const modal = document.getElementById('summary-modal');
+            
+            // Hide modal with transition effects
+            modal.classList.remove('opacity-100');
+            modal.querySelector('div').classList.replace('scale-100', 'scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // Duration matches CSS transition
+        };
+
+        // Event listener for closing modal by clicking outside
+        document.getElementById('summary-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'summary-modal') {
+                closeModal();
+            }
+        });
+
+        const generateChartElement = (dataObj) => {
+            return `
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-center text-text-light">${dataObj.title}</h3>
+                    <div class="chart-container">
+                        <canvas id="${dataObj.id}"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-text-muted mt-2">Click any bar for a detailed response breakdown.</p>
+                </div>
+            `;
+        };
+
+        const createChart = (dataObj) => {
+            const ctx = document.getElementById(dataObj.id);
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: dataObj.labels,
+                    datasets: [{
+                        label: 'Response Percentage (%)',
+                        data: dataObj.data,
+                        backgroundColor: ACCENT_COLOR,
+                        borderColor: ACCENT_COLOR,
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        hoverBackgroundColor: HOVER_COLOR
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    onClick: (event, elements) => {
+                        // Check if an element (bar) was clicked
+                        if (elements.length > 0) {
+                            const clickedIndex = elements[0].index;
+                            const label = dataObj.labels[clickedIndex];
+                            const percentage = dataObj.data[clickedIndex];
+                            const summaryText = dataObj.summaries[label];
+                            
+                            openModal(dataObj, label, percentage, summaryText);
+                        }
+                    },
+                    indexAxis: 'y', // Horizontal bars
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Percentage (%)',
+                                color: '#a0a0a0'
+                            },
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                color: '#a0a0a0'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.05)'
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: '#a0a0a0'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.05)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(42, 42, 42, 0.9)',
+                            titleColor: '#fff',
+                            bodyColor: '#e0e0e0',
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.parsed.x + '% of Respondents';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        };
+
+        // Main execution function
+        const renderCharts = () => {
+            const container = document.getElementById('charts-container');
+            
+            // 1. Generate all the HTML canvas elements
+            surveyData.forEach(dataObj => {
+                container.innerHTML += generateChartElement(dataObj);
+            });
+
+            // 2. Initialize the Chart.js instances
+            surveyData.forEach(dataObj => {
+                createChart(dataObj);
+            });
+        };
+
+        // Run the render function on load
+        window.onload = renderCharts;
+
+    </script>
+
+</body>
+</html>
