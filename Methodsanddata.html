@@ -4,131 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotion Encoded Research Dashboard</title>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #1a202c;
-            color: #e2e8f0;
-            line-height: 1.7;
-            padding: 2rem 1rem;
-        }
-        
-        .content-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .article-container {
-            grid-column: span 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .content-card {
-            background-color: #2d3748;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            min-width: 280px;
-            max-width: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .chart-container {
-            position: relative;
-            height: 360px;
-            width: 100%;
-            background-color: #f7fafc;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        @media (min-width: 1024px) {
-            .content-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .article-container {
-                grid-column: 1 / -1;
-            }
-            .content-card {
-                max-width: 380px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="content-container">
-        <!-- Main Article Content Card -->
-        <div id="article_section" class="content-card article-container">
-            <article>
-                <header class="text-center mb-10 flex flex-col items-center">
-                    <img src="researcher_image.jpg" alt="A researcher reviewing data and charts on a large screen." class="rounded-2xl mb-8 shadow-md max-w-xl md:max-w-2xl" />
-                    <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Methods and Data</h1>
-                    <p class="text-lg md:text-xl font-light text-gray-300">A detailed overview of the research methodology for the Emotion Encoded initiative.</p>
-                </header>
-                <section class="prose prose-invert lg:prose-xl mx-auto">
-                    <p>The <strong>Emotion Encoded</strong> initiative is a continuous, mixed-methods research study designed to explore public and professional perceptions of AI. This research combines quantitative and qualitative data collection to provide a comprehensive understanding of emotional reasoning, biases, and ethical considerations in AI adoption. These methods ensure that findings accurately reflect both professional and public perspectives, enabling evidence-based recommendations for AI integration in high-stakes fields.</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Quantitative Data Collection</h2>
-                    <p>Quantitative data is collected through a series of structured surveys distributed to over <strong>100</strong> respondents. The primary data collection instrument is <strong>Google Forms</strong>, featuring a mix of open-ended, multiple-choice, and Likert scale questions. Surveys are disseminated via social networks and in-person outreach to ensure a broad and diverse sample.</p>
-                    <p>To date, two key surveys have been completed, with ongoing monthly data collection for a longitudinal design:</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-200">
-                        <li><strong>Survey 1:</strong> n≈69 respondents.</li>
-                        <li><strong>Survey 2:</strong> n≈44 respondents.</li>
-                        <li><strong>Ongoing surveys:</strong> Monthly collection to track evolving perceptions.</li>
-                    </ul>
-                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Qualitative Data Collection</h2>
-                    <p>Qualitative insights are gathered through <strong>semi-structured interviews</strong> with over <strong>15</strong> professionals and subject-matter experts. Interviews are conducted via written responses and phone calls, allowing for flexible and detailed conversations. Participants include professionals such as Dr. Bichara Sahely (physician) and Alex Straun (finance).</p>
-                    <p>Qualitative interview data undergoes <strong>thematic</strong> and <strong>semantic analysis</strong>. Transcripts are systematically coded to identify recurring ideas, sentiments, and patterns. Emergent themes are synthesized into research findings, which inform articles, policy recommendations, and public discussions.</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Transparency and Verification</h2>
-                    <p>For full transparency, a detailed index of survey instruments, coding frameworks, and data summaries is available through the link below. This allows peers, reviewers, and scholarship committees to verify methodological rigor without overloading the main content.</p>
-                    <div class="mt-6 text-center">
-                        <a href="/data/emotion_encoded_data.zip" download class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-colors duration-200" aria-label="Download data package for Emotion Encoded research">
-                            Download Data Package
-                        </a>
-                    </div>
-                </section>
-            </article>
-        </div>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive AI Survey Results</title>
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <!-- Chart.js CDN for interactive charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    
     <!-- Tailwind config for custom fonts and neutral colors -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'background-dark': '#1c1c1c',
-                        'card-dark': '#2a2a2a',
+                        'background-dark': '#1a202c', /* Original Poppins BG */
+                        'card-dark': '#2d3748', /* Original Poppins Card */
                         'accent-neutral': '#607d8b', /* Muted Blue-Gray */
-                        'text-light': '#e0e0e0',
+                        'text-light': '#e2e8f0',
                         'text-muted': '#a0a0a0'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        // Using Inter for consistency, but keeping Poppins as a fallback/alternative
+                        sans: ['Inter', 'Poppins', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             background-color: theme('colors.background-dark');
@@ -151,30 +53,73 @@
         .modal-overlay {
             background-color: rgba(0, 0, 0, 0.85);
         }
-        /* Style for the chart container to ensure responsiveness */
+        /* Base height for charts to ensure large size */
         .chart-container {
             position: relative;
-            height: 20rem; /* Fixed height for consistency */
+            /* Default height for smaller screens */
+            height: 24rem; 
         }
         @media (min-width: 768px) {
             .chart-container {
-                height: 24rem;
+                /* Larger height on tablets/desktops */
+                height: 28rem;
             }
         }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body>
 
-    <header class="text-center mb-12">
-        <h1 class="text-3xl md:text-4xl font-bold text-accent-neutral mb-2">Interactive AI Perception Survey</h1>
-        <p class="text-lg text-text-muted">Click any bar to see a detailed summary of that specific response.</p>
-    </header>
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto" id="charts-container">
-        <!-- Chart elements will be generated here -->
+        <!-- 1. METHODOLOGY ARTICLE SECTION (Full Width) -->
+        <div id="article_section" class="bg-card-dark rounded-2xl p-6 md:p-10 mb-12 shadow-2xl">
+            <article>
+                <header class="text-center mb-10 flex flex-col items-center">
+                    <!-- Placeholder image URL used here -->
+                    <img src="https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/800x200/2d3748/a0a0a0?text=Methodology+Overview+Graphic'"
+                         alt="A researcher reviewing data and charts on a large screen." 
+                         class="rounded-2xl mb-8 shadow-md max-w-full md:max-w-3xl" />
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-accent-neutral mb-4">Methods and Data</h1>
+                    <p class="text-lg md:text-xl font-light text-text-muted">A detailed overview of the research methodology for the Emotion Encoded initiative.</p>
+                </header>
+                <section class="prose prose-sm md:prose-lg lg:prose-xl prose-invert mx-auto">
+                    <p>The <strong>Emotion Encoded</strong> initiative is a continuous, mixed-methods research study designed to explore public and professional perceptions of AI. This research combines quantitative and qualitative data collection to provide a comprehensive understanding of emotional reasoning, biases, and ethical considerations in AI adoption. These methods ensure that findings accurately reflect both professional and public perspectives, enabling evidence-based recommendations for AI integration in high-stakes fields.</p>
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Quantitative Data Collection</h2>
+                    <p>Quantitative data is collected through a series of structured surveys distributed to over <strong>100</strong> respondents. The primary data collection instrument is <strong>Google Forms</strong>, featuring a mix of open-ended, multiple-choice, and Likert scale questions. Surveys are disseminated via social networks and in-person outreach to ensure a broad and diverse sample.</p>
+                    <p>To date, two key surveys have been completed, with ongoing monthly data collection for a longitudinal design:</p>
+                    <ul class="list-disc list-inside space-y-2 text-text-light">
+                        <li><strong>Survey 1:</strong> n≈69 respondents.</li>
+                        <li><strong>Survey 2:</strong> n≈44 respondents.</li>
+                        <li><strong>Ongoing surveys:</strong> Monthly collection to track evolving perceptions.</li>
+                    </ul>
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Qualitative Data Collection</h2>
+                    <p>Qualitative insights are gathered through <strong>semi-structured interviews</strong> with over <strong>15</strong> professionals and subject-matter experts. Interviews are conducted via written responses and phone calls, allowing for flexible and detailed conversations. Participants include professionals such as Dr. Bichara Sahely (physician) and Alex Straun (finance).</p>
+                    <p>Qualitative interview data undergoes <strong>thematic</strong> and <strong>semantic analysis</strong>. Transcripts are systematically coded to identify recurring ideas, sentiments, and patterns. Emergent themes are synthesized into research findings, which inform articles, policy recommendations, and public discussions.</p>
+                    <h2 class="text-2xl md:text-3xl font-bold mt-8 mb-4">Transparency and Verification</h2>
+                    <p>For full transparency, a detailed index of survey instruments, coding frameworks, and data summaries is available through the link below. This allows peers, reviewers, and scholarship committees to verify methodological rigor without overloading the main content.</p>
+                    <div class="mt-6 text-center">
+                        <a href="#" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-colors duration-200" aria-label="Download data package for Emotion Encoded research">
+                            Download Data Package
+                        </a>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <!-- 2. CHARTS HEADER -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-accent-neutral mb-2">Interactive AI Perception Survey</h1>
+            <p class="text-lg text-text-muted">Click any bar to see a detailed summary of that specific response.</p>
+        </header>
+
+        <!-- 3. CHARTS GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="charts-container">
+            <!-- Chart elements will be generated here by JavaScript -->
+        </div>
     </div>
 
-    <!-- Modal for Summary Display -->
+    <!-- 4. MODAL for Summary Display (Outside main container for fixed positioning) -->
     <div id="summary-modal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center hidden p-4 transition-opacity duration-300 opacity-0">
         <div class="bg-card-dark rounded-2xl p-6 w-full max-w-lg shadow-2xl transform transition-transform duration-300 scale-95">
             <h2 class="text-xl font-semibold mb-2 text-text-muted" id="modal-question"></h2>
@@ -191,11 +136,12 @@
         </div>
     </div>
 
+    <!-- 5. JAVASCRIPT LOGIC -->
     <script>
         const ACCENT_COLOR = '#607d8b'; // Muted Blue-Gray
         const HOVER_COLOR = '#90a4ae'; // Lighter Muted Blue-Gray
 
-        // Detailed survey data structure with individual response summaries
+        // Detailed survey data structure with individual response summaries (Data from previous request)
         const surveyData = [
             {
                 id: 'jobs-replacement',
@@ -319,6 +265,7 @@
         });
 
         const generateChartElement = (dataObj) => {
+            // Tailwind classes handle height: h-96 on mobile, h-[28rem] on desktop via CSS
             return `
                 <div class="card p-6">
                     <h3 class="text-xl font-semibold mb-4 text-center text-text-light">${dataObj.title}</h3>
