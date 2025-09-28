@@ -536,6 +536,162 @@
             surveyData.forEach(data => createChartCard(data));
         });
     </script>
+
+    head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Attitudes: Statistical Insights</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font and subtle shadow effect */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .data-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="p-4 md:p-8 w-full max-w-6xl">
+    <div class="bg-white rounded-xl data-card p-6 md:p-10">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6 border-b pb-3">
+            Statistical Analysis: The Real Drivers of AI Behavior
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">
+            Logistic Regression was used to identify the core psychological factors that significantly predict either overall AI skepticism or rational engagement (demand for transparency).
+        </p>
+
+        <!-- Insights Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- INSIGHT 1: TRANSPARENCY DRIVER (Highest Odds Ratio) -->
+            <div class="p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
+                <div class="flex items-center space-x-3 mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.103a2.036 2.036 0 013.016 0A2.036 2.036 0 0121.293 7.5L14.5 14.293 11.207 11 8.5 13.793 6.707 12 4.5 14.293l-1.414-1.414 7.071-7.071zM12 18v-2m0-4v-2m0-4V6"></path></svg>
+                    <h2 class="text-2xl font-bold text-blue-700">Transparency Driver</h2>
+                </div>
+                <p class="text-gray-700 mb-4">
+                    Trusting AI in objective roles (like fraud detection) is the strongest predictor of a rational, post-failure response.
+                </p>
+                <div class="text-4xl font-extrabold text-blue-900 leading-tight">
+                    <span class="text-5xl">2.96x</span>
+                </div>
+                <p class="mt-2 text-blue-600 font-semibold">
+                    ... more likely to respond to a loan denial by demanding an explanation.
+                </p>
+                <p class="text-sm text-gray-500 mt-4 italic">
+                    (Odds Ratio for Comfort with Objective AI)
+                </p>
+            </div>
+
+            <!-- INSIGHT 2: SKEPTICISM DRIVER -->
+            <div class="p-6 bg-yellow-50 rounded-lg border-2 border-yellow-200">
+                <div class="flex items-center space-x-3 mb-4">
+                    <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 3h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.3 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <h2 class="text-2xl font-bold text-yellow-700">Skepticism Driver</h2>
+                </div>
+                <p class="text-gray-700 mb-4">
+                    A fundamental preference for human interaction is the biggest barrier to overall AI acceptance.
+                </p>
+                <div class="text-4xl font-extrabold text-yellow-900 leading-tight">
+                    <span class="text-5xl">2.55x</span>
+                </div>
+                <p class="mt-2 text-yellow-600 font-semibold">
+                    ... more likely to be generally skeptical of AI's core societal value.
+                </p>
+                <p class="text-sm text-gray-500 mt-4 italic">
+                    (Odds Ratio for Human-Over-Machine Preference)
+                </p>
+            </div>
+        </div>
+
+        <!-- Statistical Table -->
+        <h3 class="text-2xl font-bold text-gray-700 mt-12 mb-4 border-t pt-6">Citable Statistical Results</h3>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200 rounded-lg overflow-hidden">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Predictive Factor
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Dependent Variable (Y)
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <span class="font-bold">Odds Ratio ($\mathbf{e^\beta}$)</span>
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            P-value
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <!-- Row 1: Objective Comfort (Transparency) -->
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-blue-700">
+                            Comfort with Objective AI
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            Demand for Transparency
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-lg font-bold text-blue-800">
+                            2.96
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            0.102
+                        </td>
+                    </tr>
+                    <!-- Row 2: Human Preference (Skepticism) -->
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-yellow-700">
+                            Human-Over-Machine Preference
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            General AI Skepticism
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-lg font-bold text-yellow-800">
+                            2.55
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            0.423
+                        </td>
+                    </tr>
+                    <!-- Row 3: Accountability (Secondary Skepticism Driver) -->
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700">
+                            Blame-the-User Accountability
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            General AI Skepticism
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-lg font-bold text-gray-800">
+                            1.47
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            0.551
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <p class="text-xs text-gray-400 mt-6 pt-4 border-t">
+            *Analysis based on two separate Logistic Regression models using $N=44$ observations. Odds Ratios (eβ) indicate the multiplicative increase in the odds of the outcome (Y) for a positive shift in the predictor (X).
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
+
     
     <nav class="fixed bottom-0 inset-x-0 z-40 bg-card-dark border-t border-opacity-10 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
         <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105">Home</a>
