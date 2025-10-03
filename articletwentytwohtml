@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Jobs Do People Think AI Can Replace? | Emotion Encoded Survey</title>
+    <meta name="description" content="Findings from an Emotion Encoded survey on which professions people believe AI could potentially replace, highlighting the surprising vulnerability of creative roles.">
+    </head>
+<body>
+
+    <main>
+        <article>
+            <header>
+                <h1>What Jobs Do People Think AI Can Replace?</h1>
+                <p class="subtitle">Findings from an Emotion Encoded Survey</p>
+                <figure>
+                    <img src="images/article22.jpg" alt="A conceptual image representing artificial intelligence and the future of work, such as a robot hand shaking a human hand or a digital brain.">
+                    <figcaption>Image Source: Vesota, N. (2024, May 31). What Jobs Will AI Replace? Top 12 Roles at Risk and How to Adapt. Job Blog HQ.</figcaption>
+                </figure>
+                <p>When people imagine the future of work, they often picture machines taking over tasks once reserved for humans. But which jobs do we think are most vulnerable?</p>
+                <p>In a recent Emotion Encoded survey of 43 respondents, people shared which professions they believe AI could potentially replace. The results are both predictable and surprising.</p>
+            </header>
+
+            <section class="survey-results">
+                <h2>Survey Results</h2>
+                <p>Below are the professions and the percentage of respondents who believe AI could replace them:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Profession</th>
+                            <th>Respondents (N=43)</th>
+                            <th>Percentage (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Graphic Designers</td><td>31</td><td>72.1%</td></tr>
+                        <tr><td>Software Developers</td><td>30</td><td>69.8%</td></tr>
+                        <tr><td>Writers</td><td>27</td><td>62.8%</td></tr>
+                        <tr><td>Accountants</td><td>24</td><td>55.8%</td></tr>
+                        <tr><td>Tutors</td><td>24</td><td>55.8%</td></tr>
+                        <tr><td>Paralegals</td><td>24</td><td>55.8%</td></tr>
+                        <tr><td>Cashiers</td><td>20</td><td>46.5%</td></tr>
+                        <tr><td>Retail Workers</td><td>20</td><td>46.5%</td></tr>
+                        <tr><td>Travel Agents</td><td>16</td><td>37.2%</td></tr>
+                        <tr><td>Artists</td><td>13</td><td>30.2%</td></tr>
+                        <tr><td>Movie Producers</td><td>13</td><td>30.2%</td></tr>
+                        <tr><td>Customer Service Agents</td><td>12</td><td>27.9%</td></tr>
+                        <tr><td>Photographers</td><td>11</td><td>25.6%</td></tr>
+                        <tr><td>Models</td><td>9</td><td>20.9%</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr>
+
+            <section class="key-insights">
+                <h2>Key Insights</h2>
+                
+                <h3>1. Creativity is not safe anymore.</h3>
+                <p>The single highest response was **graphic designers (72.1%)**, followed closely by **software developers (69.8%)** and **writers (62.8%)**. This suggests people no longer see creativity or technical skill as uniquely human. AI’s ability to generate art, design, code, and text is reshaping what creative work even means.</p>
+
+                <h3>2. White-collar professions — AI is coming.</h3>
+                <p>Roles such as **accountants (55.8%)**, **tutors (55.8%)**, and **paralegals (55.8%)** were also seen as replaceable. This reflects how AI is viewed as powerful enough to handle structured, repetitive, and knowledge-heavy work ranging from legal briefs to lesson plans.</p>
+
+                <h3>3. The service sector will be affected.</h3>
+                <p>**Cashiers (46.5%)**, **retail workers (46.5%)**, and **travel agents (37.2%)** ranked high. This matches real-world automation we already see in self-checkouts, booking sites, and customer service chatbots.</p>
+
+                <h3>4. Skepticism remains around human-heavy fields.</h3>
+                <p>**Photographers (25.6%)**, **artists (30.2%)**, and **movie producers (30.2%)** scored lower. Respondents may feel that emotional intuition, vision, and cultural taste are harder for AI to replicate.</p>
+
+                <h3>5. Models (20.9%) were the least selected.</h3>
+                <p>This shows a belief that physical presence and human representation, at least for now, cannot be entirely faked by machines.</p>
+            </section>
+
+            <hr>
+
+            <section class="bigger-picture">
+                <h2>The Bigger Picture</h2>
+                <p>What stands out is the psychological contradiction. People are most ready to accept that AI can replace fields built on **creativity** such as design, writing, and software. Yet they resist the idea of AI replacing roles with a heavy **human, cultural, or physical component** even if those jobs might be easier to automate in theory.</p>
+                <p class="concluding-thought">The question, then, is not only what jobs AI can do, but which human qualities we are most willing to let go of.</p>
+            </section>
+            
+            <footer>
+                <p class="source-info">
+                    <strong>Source:</strong> Vesota, N. (2024, May 31). <a href="https://jobbloghq.com/career-blog/what-jobs-will-ai-replace/" target="_blank">What Jobs Will AI Replace? Top 12 Roles at Risk and How to Adapt.</a> Job Blog HQ.
+                </p>
+            </footer>
+
+        </article>
+    </main>
+
+</body>
+</html>
