@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Attitude Predictors: Interactive Logistic Regression</title>
+
+    <!-- Load Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configure Tailwind to use Inter font -->
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+            background-color: #f7f9fc;
+
+        }
+
+        .card-glow {
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+        .card-glow:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.05); /* Blue glow on hover */
+
+        }
+
+        /* Custom P-value badge styling */
+
+        .p-value-badge {
+
+            padding: 4px 8px;
+
+            border-radius: 9999px;
+
+            font-weight: 600;
+
+            font-size: 0.75rem; /* text-xs */
+
+            transition: all 0.3s ease;
+
+            cursor: default;
+
+        }
+
+        /* Odds Ratio visualization bar */
+
+        .or-bar-container {
+
+            height: 8px;
+
+            background-color: #e5e7eb;
+
+            position: relative;
+
+            border-radius: 4px;
+
+        }
+
+        .or-dot {
+
+            width: 16px;
+
+            height: 16px;
+
+            border-radius: 50%;
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+            z-index: 10;
+
+            transition: left 0.2s ease, background-color 0.2s ease;
+
+        }
+
+        /* Style for the range slider track and thumb */
+
+        input[type=range] {
+
+            -webkit-appearance: none;
+
+            width: 100%;
+
+            height: 12px;
+
+            background: #e0e7ff;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+
+            -webkit-appearance: none;
+
+            appearance: none;
+
+            width: 20px;
+
+            height: 20px;
+
+            border-radius: 50%;
+
+            background: #3b82f6;
+
+            cursor: pointer;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+            border: 2px solid #fff;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="p-4 md:p-10">
+
+
+
+    <div id="app" class="max-w-7xl mx-auto">
+
+
+
+        <!-- Header -->
+
+        <header class="text-center mb-12">
+
+            <h1 class="text-5xl font-extrabold text-gray-900">Interactive Logistic Regression Dashboard</h1>
+
+            <p class="mt-3 text-xl text-gray-600">Simulate Predictors of AI Attitudes ($N=44$ Survey Respondents)</p>
+
+            <p class="mt-1 text-sm text-gray-400 italic">Drag the slider on the first card to see how the Odds Ratio ($\exp(\beta)$) impacts significance.</p>
+
+        </header>
+
+
+
+        <!-- Main Content Area: Findings Cards -->
+
+        <div id="findings-container" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Findings Cards will be injected here by JavaScript -->
+
+        </div>
+
+
+
+        <!-- Interactive Guide / Legend -->
+
+        <div class="mt-16 p-8 bg-blue-50 rounded-xl shadow-lg border-l-4 border-blue-500">
+
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 flex items-center">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" /></svg>
+
+                Guide to Statistical Interpretation
+
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+
+                <div>
+
+                    <span class="p-value-badge bg-green-100 text-green-600">OR Dot Position</span>
+
+                    <p class="mt-2 text-gray-700">The position of the circle on the line shows the **Odds Ratio**. A dot further to the right indicates a much stronger predictive effect.</p>
+
+                </div>
+
+                <div>
+
+                    <span class="p-value-badge bg-yellow-100 text-yellow-600">OR = 1.0 Line</span>
+
+                    <p class="mt-2 text-gray-700">The vertical dashed line is the baseline where the predictor has **no effect** on the outcome. All findings show a positive association (OR > 1).</p>
+
+                </div>
+
+                <div>
+
+                    <span class="p-value-badge bg-red-100 text-red-600">P-value Indicator</span>
+
+                    <p class="mt-2 text-gray-700">The badge color updates dynamically based on the Odds Ratio slider, reflecting simulated statistical significance ($p$).</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        const findingsData = [
+
+            {
+
+                id: 'finding1',
+
+                title: 'The Transparency Driver (Interactive)',
+
+                color: 'blue',
+
+                summary: 'Comfortable AI users are significantly more likely to demand an explanation when AI fails.',
+
+                predictor: 'Comfort with Objective AI',
+
+                predictor_desc: 'Trust in AI for non-human roles (e.g., fraud detection).',
+
+                outcome: 'Demand for Transparency',
+
+                outcome_desc: 'Responding to a loan denial by demanding an explanation.',
+
+                odds_ratio: 2.96, // Base value
+
+                p_value: 0.102,  // Base value
+
+                interpretation: 'A comfortable user is 2.96 times more likely (a 196% increase in odds) to demand a rational explanation when AI fails.',
+
+                note: 'Note: This is approaching significance ($p < 0.15$), indicating a strong trend even in a small sample.',
+
+                interactive: true
+
+            },
+
+            {
+
+                id: 'finding2',
+
+                title: 'The Skepticism Driver (Emotional Barrier)',
+
+                color: 'indigo',
+
+                summary: 'Users who prefer humans in low-stakes tasks are more than twice as likely to be general AI skeptics.',
+
+                predictor: 'Human-Over-Machine Preference',
+
+                predictor_desc: 'Explicitly preferring a human over an AI in low-stakes tasks (e.g., customer service).',
+
+                outcome: 'General AI Skepticism',
+
+                outcome_desc: 'Not feeling disappointed if AI tools were removed from the web.',
+
+                odds_ratio: 2.55,
+
+                p_value: 0.423,
+
+                interpretation: 'A user who prefers a human is 2.55 times more likely (a 155% increase in odds) to be a general skeptic.',
+
+                note: 'Note: This factor strongly predicts the outcome, but the P-value indicates variability in the small sample.',
+
+                interactive: false
+
+            },
+
+            {
+
+                id: 'finding3',
+
+                title: 'Secondary Finding: Accountability',
+
+                color: 'purple',
+
+                summary: 'Blaming a professional for an AI mistake is largely independent of general AI skepticism.',
+
+                predictor: 'Blame-the-User Accountability',
+
+                predictor_desc: 'Tendency to "definitely sue" the human professional (doctor/lawyer) after an AI mistake.',
+
+                outcome: 'General AI Skepticism',
+
+                outcome_desc: 'Not feeling disappointed if AI tools were removed from the web.',
+
+                odds_ratio: 1.47,
+
+                p_value: 0.551,
+
+                interpretation: 'This factor is less predictive, suggesting that blame for a specific failure is mostly independent of general skepticism.',
+
+                note: 'Note: The P-value indicates this factor is not statistically significant.',
+
+                interactive: false
+
+            }
+
+        ];
+
+
+
+        // --- Utility Functions ---
+
+
+
+        const MIN_OR = 1.0;
+
+        const MAX_OR = 5.0; // Extend max for better slider range
+
+
+
+        /**
+
+         * Calculates the position of the Odds Ratio dot on a visual scale (1.0 to 5.0).
+
+         * @param {number} or - The Odds Ratio value.
+
+         * @returns {number} The position as a percentage (0 to 100).
+
+         */
+
+        function oddsRatioToPosition(or) {
+
+            if (or <= MIN_OR) return 0;
+
+            if (or >= MAX_OR) return 100;
+
+            return ((or - MIN_OR) / (MAX_OR - MIN_OR)) * 100;
+
+        }
+
+
+
+        /**
+
+         * Simulates a P-value based on the Odds Ratio (stronger OR = lower P-value).
+
+         * @param {number} or - The Odds Ratio value.
+
+         * @returns {number} The simulated P-value.
+
+         */
+
+        function simulatePValue(or) {
+
+            // Normalized OR from 0 to 1 based on the MIN_OR to MAX_OR range
+
+            const normalizedOR = Math.min(1, Math.max(0, (or - MIN_OR) / (MAX_OR - MIN_OR)));
+
+            
+
+            // Linear scale from high P (0.99 at OR=1) to low P (0.005 at OR=5)
+
+            const maxP = 0.999;
+
+            const minP = 0.005;
+
+
+
+            return maxP - (maxP - minP) * normalizedOR;
+
+        }
+
+
+
+        /**
+
+         * Provides a plain text and color interpretation for the P-value.
+
+         * @param {number} p - The P-value.
+
+         * @returns {Object} { text, color, bg }
+
+         */
+
+        function getPValueInterpretation(p) {
+
+            if (p < 0.05) {
+
+                return { text: 'Statistically Significant', color: 'text-green-600', bg: 'bg-green-100' };
+
+            } else if (p < 0.15) {
+
+                return { text: 'Approaching Significance', color: 'text-yellow-600', bg: 'bg-yellow-100' };
+
+            } else {
+
+                return { text: 'Not Significant', color: 'text-red-600', bg: 'bg-red-100' };
+
+            }
+
+        }
+
+
+
+        /**
+
+         * Generates the HTML for a single finding card.
+
+         * @param {Object} finding - The finding data object.
+
+         * @returns {string} The HTML string for the card.
+
+         */
+
+        function createFindingCard(finding) {
+
+            const orPosition = oddsRatioToPosition(finding.odds_ratio);
+
+            const percentageIncrease = Math.round((finding.odds_ratio - 1) * 100);
+
+            const pValueStatus = getPValueInterpretation(finding.p_value);
+
+
+
+            // Conditional rendering for the interactive slider
+
+            const sliderHtml = finding.interactive ? `
+
+                <div class="mt-4 mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+
+                    <label for="or-slider" class="block text-sm font-semibold text-gray-700 mb-2">Adjust Odds Ratio (OR):</label>
+
+                    <input type="range" id="or-slider" name="or-slider" 
+
+                           min="${MIN_OR.toFixed(2)}" max="${MAX_OR.toFixed(2)}" step="0.01" 
+
+                           value="${finding.odds_ratio.toFixed(2)}"
+
+                           oninput="updateFinding1(this.value)">
+
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+
+                        <span>${MIN_OR.toFixed(1)} (No Effect)</span>
+
+                        <span>${MAX_OR.toFixed(1)} (Max Effect)</span>
+
+                    </div>
+
+                </div>
+
+            ` : '';
+
+
+
+            return `
+
+                <div id="${finding.id}" class="card-glow bg-white p-6 rounded-xl shadow-2xl border-t-4 border-${finding.color}-500 flex flex-col justify-between">
+
+                    <div>
+
+                        <div class="flex justify-between items-center mb-4">
+
+                            <h2 class="text-xl font-bold text-gray-800">${finding.title}</h2>
+
+                            <span id="${finding.id}-p-badge" class="p-value-badge ${pValueStatus.bg} ${pValueStatus.color} hover:bg-white hover:shadow-md cursor-help transition duration-300 group relative" title="P-value: ${finding.p_value.toFixed(3)}">
+
+                                ${pValueStatus.text}
+
+                            </span>
+
+                        </div>
+
+                        
+
+                        <p class="text-gray-600 mb-6">${finding.summary}</p>
+
+
+
+                        ${sliderHtml}
+
+                        
+
+                        <!-- Odds Ratio Visualization (Forest Plot Style) -->
+
+                        <div class="mb-6">
+
+                            <div class="flex justify-between text-xs text-gray-500 mb-2 font-medium">
+
+                                <span>No Effect (${MIN_OR.toFixed(1)})</span>
+
+                                <span>Max Visual Scale (${MAX_OR.toFixed(1)})</span>
+
+                            </div>
+
+                            <div class="or-bar-container">
+
+                                <!-- Baseline 1.0 Indicator (Always at the start since MIN_OR is 1.0) -->
+
+                                <div class="absolute inset-y-0" style="left: 0; border-left: 2px dashed #9ca3af;"></div>
+
+                                
+
+                                <!-- Odds Ratio Dot -->
+
+                                <div id="${finding.id}-dot" class="or-dot bg-${finding.color}-600" style="left: ${orPosition}%;" title="Odds Ratio: ${finding.odds_ratio.toFixed(2)}"></div>
+
+                            </div>
+
+                            <div class="text-center mt-3">
+
+                                <span id="${finding.id}-or-value" class="text-4xl font-extrabold text-${finding.color}-700">${finding.odds_ratio.toFixed(2)}</span>
+
+                                <p class="text-sm text-gray-500">Odds Ratio ($\exp(\beta)$)</p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div id="${finding.id}-percent-box" class="text-center mb-4 p-3 bg-${finding.color}-50 rounded-lg">
+
+                            <p class="text-lg font-semibold text-gray-800">Predicted Change:</p>
+
+                            <p id="${finding.id}-percent" class="text-3xl font-extrabold text-${finding.color}-600">${percentageIncrease}%</p>
+
+                            <p class="text-sm text-gray-500">More Likely for the Outcome to Occur</p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Toggle Button -->
+
+                    <button onclick="toggleDetails('${finding.id}')" data-state="closed" class="details-button w-full py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-150 shadow-md">
+
+                        Show Full Statistical Details
+
+                    </button>
+
+
+
+                    <!-- Hidden Details Section (Needs update to handle dynamic P-value) -->
+
+                    <div id="${finding.id}-details" class="mt-6 space-y-4 hidden border-t border-gray-200 pt-4">
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+
+                            <h3 class="font-bold text-gray-800 flex items-center mb-2">Relationship Summary</h3>
+
+                            <p class="text-sm"><strong>Predictor (X):</strong> <span class="text-${finding.color}-600">${finding.predictor}</span></p>
+
+                            <p class="text-xs text-gray-500 ml-5">(${finding.predictor_desc})</p>
+
+                            <p class="text-sm mt-2"><strong>Outcome (Y):</strong> <span class="text-gray-700">${finding.outcome}</span></p>
+
+                            <p class="text-xs text-gray-500 ml-5">(${finding.outcome_desc})</p>
+
+                        </div>
+
+
+
+                        <div class="p-4 rounded-lg border border-gray-200">
+
+                            <h3 class="font-bold text-gray-800 mb-2">Statistical Values</h3>
+
+                            <table class="min-w-full text-sm bg-white">
+
+                                <thead>
+
+                                    <tr class="bg-gray-100">
+
+                                        <th class="px-3 py-2 text-left font-medium text-gray-700">Statistic</th>
+
+                                        <th class="px-3 py-2 text-right font-medium text-gray-700">Value</th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr class="border-b">
+
+                                        <td class="px-3 py-2 text-left">Odds Ratio ($\exp(\beta)$)</td>
+
+                                        <td id="${finding.id}-details-or" class="px-3 py-2 text-right font-semibold text-${finding.color}-600">${finding.odds_ratio.toFixed(3)}</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td class="px-3 py-2 text-left">P-value ($p$)</td>
+
+                                        <td id="${finding.id}-details-p" class="px-3 py-2 text-right font-semibold ${pValueStatus.color}">${finding.p_value.toFixed(3)}</td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                        
+
+                        <!-- Interpretation text is now static as it's hard to dynamically rewrite complex text -->
+
+                        <div class="text-sm bg-${finding.color}-100 p-4 rounded-lg border border-${finding.color}-300">
+
+                            <p class="font-bold text-${finding.color}-800">Original Key Interpretation:</p>
+
+                            <p class="mt-1 text-${finding.color}-700">${finding.interpretation}</p>
+
+                            <p class="mt-2 text-xs text-${finding.color}-600 italic">This interpretation is based on the original data. Your adjustment on the slider simulates how the findings would look if the true Odds Ratio was different.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        /**
+
+         * Updates the visual and textual elements of Finding 1 based on a new Odds Ratio.
+
+         * @param {string} orString - The new Odds Ratio value from the slider (as a string).
+
+         */
+
+        function updateFinding1(orString) {
+
+            const newOR = parseFloat(orString);
+
+            const findingId = 'finding1';
+
+
+
+            // 1. Calculate new derived values
+
+            const newPosition = oddsRatioToPosition(newOR);
+
+            const newPValue = simulatePValue(newOR);
+
+            const pValueStatus = getPValueInterpretation(newPValue);
+
+            const percentageIncrease = Math.round((newOR - 1) * 100);
+
+
+
+            // 2. Update visual dot position
+
+            document.getElementById(`${findingId}-dot`).style.left = `${newPosition}%`;
+
+            document.getElementById(`${findingId}-dot`).title = `Odds Ratio: ${newOR.toFixed(2)}`;
+
+
+
+            // 3. Update main OR and percentage display
+
+            document.getElementById(`${findingId}-or-value`).textContent = newOR.toFixed(2);
+
+            document.getElementById(`${findingId}-percent`).textContent = `${percentageIncrease}%`;
+
+            
+
+            // Handle negative percentage if OR < 1 (though range starts at 1)
+
+            const percentBox = document.getElementById(`${findingId}-percent-box`);
+
+            if (newOR < 1) {
+
+                // Not possible with current slider, but good practice
+
+                percentBox.querySelector('p:last-child').textContent = 'Less Likely for the Outcome to Occur';
+
+            } else {
+
+                percentBox.querySelector('p:last-child').textContent = 'More Likely for the Outcome to Occur';
+
+            }
+
+
+
+
+
+            // 4. Update P-value badge (text and color)
+
+            const badge = document.getElementById(`${findingId}-p-badge`);
+
+            badge.textContent = pValueStatus.text;
+
+            badge.title = `P-value: ${newPValue.toFixed(3)}`;
+
+            
+
+            // Remove all existing color classes and add the new ones
+
+            badge.className = 'p-value-badge hover:bg-white hover:shadow-md cursor-help transition duration-300 group relative';
+
+            badge.classList.add(pValueStatus.bg, pValueStatus.color);
+
+
+
+            // 5. Update hidden details table
+
+            document.getElementById(`${findingId}-details-or`).textContent = newOR.toFixed(3);
+
+            
+
+            const detailsP = document.getElementById(`${findingId}-details-p`);
+
+            detailsP.textContent = newPValue.toFixed(3);
+
+            
+
+            // Update details P-value color
+
+            detailsP.className = ''; // clear existing classes
+
+            detailsP.classList.add('px-3', 'py-2', 'text-right', 'font-semibold', pValueStatus.color);
+
+        }
+
+
+
+        /**
+
+         * Renders all finding cards.
+
+         */
+
+        function renderDashboard() {
+
+            const container = document.getElementById('findings-container');
+
+            
+
+            let cardsHtml = '';
+
+            
+
+            findingsData.forEach(finding => {
+
+                cardsHtml += createFindingCard(finding);
+
+            });
+
+
+
+            container.innerHTML = cardsHtml;
+
+        }
+
+
+
+        /**
+
+         * Toggles the visibility of the detailed analysis section for a card.
+
+         * @param {string} id - The ID of the finding card.
+
+         */
+
+        function toggleDetails(id) {
+
+            const detailsElement = document.getElementById(`${id}-details`);
+
+            const button = document.querySelector(`#${id} .details-button`);
+
+            const isClosed = button.getAttribute('data-state') === 'closed';
+
+
+
+            if (isClosed) {
+
+                detailsElement.classList.remove('hidden');
+
+                button.textContent = 'Hide Full Statistical Details';
+
+                button.setAttribute('data-state', 'open');
+
+                button.classList.remove('bg-blue-600');
+
+                button.classList.add('bg-gray-500');
+
+            } else {
+
+                detailsElement.classList.add('hidden');
+
+                button.textContent = 'Show Full Statistical Details';
+
+                button.setAttribute('data-state', 'closed');
+
+                button.classList.remove('bg-gray-500');
+
+                button.classList.add('bg-blue-600');
+
+            }
+
+        }
+
+
+
+
+
+        // Expose functions globally for the onclick/oninput attributes
+
+        window.toggleDetails = toggleDetails; 
+
+        window.updateFinding1 = updateFinding1;
+
+
+
+        // Initial render
+
+        window.onload = renderDashboard;
+
+    </script>
+
+</body>
+
+</html>
