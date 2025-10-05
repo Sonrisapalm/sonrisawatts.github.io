@@ -1,0 +1,22 @@
+<div id="chart"></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+var data = [
+  {
+    x: ['Angry', 'Shocked', 'NotSurprised', 'Uncomfortable', 'FineIfJudged', 'Neutral', 'Inquisitive'],
+    y: [6, 2, 8, 17, 29, 3, 4],
+    name: 'Doctor',
+    type: 'bar'
+  },
+  {
+    x: ['Angry', 'Shocked', 'NotSurprised', 'Uncomfortable', 'FineIfJudged', 'Neutral', 'Inquisitive'],
+    y: [9, 4, 8, 15, 28, 3, 2],
+    name: 'Lawyer',
+    type: 'bar'
+  }
+];
+
+var layout = {barmode: 'group', title: 'Emotional Response to AI Use by Doctors vs Lawyers'};
+
+Plotly.newPlot('chart', data, layout);
+</script>
