@@ -120,11 +120,11 @@
         <header class="text-center mb-12 bg-white p-8 rounded-xl shadow-xl border-t-8 border-primary">
             <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight md:text-5xl">Interactive Logistic Regression Dashboard</h1>
             <p class="mt-3 text-xl text-gray-600 font-light">Simulate Predictors of AI Attitudes ($N=44$ and $N=23$ Survey Respondents)</p>
-            <p class="mt-4 text-md text-gray-500 italic">Drag the slider on the **Demand for Transparency** card to observe how the **Odds Ratio** ($\exp(\beta)$) visually and statistically impacts significance ($p$).</p>
+            <p class="mt-4 text-md text-gray-500 italic">Drag the slider on the **Demand for Transparency (Interactive)** card to observe how the **Odds Ratio** ($\exp(\beta)$) visually and statistically impacts significance ($p$).</p>
         </header>
 
         <div id="findings-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            </div>
+        </div>
         
         <div class="mt-16 p-8 bg-gray-100 rounded-xl shadow-2xl border-l-8 border-gray-400">
             <h2 class="text-2xl font-bold text-gray-900 mb-4">Summary Interpretation</h2>
@@ -400,6 +400,7 @@
          * Updates the visual and numerical values for the interactive card.
          * @param {string} id - The ID of the finding card.
          * @param {string} newOrString - The new Odds Ratio value from the slider.
+         * The confidence interval (CI) is kept static in this simulation.
          */
         function updateInteractiveCard(id, newOrString) {
             const newOr = parseFloat(newOrString);
@@ -449,12 +450,12 @@
             const container = document.getElementById('findings-container');
             let cardsHtml = '';
             
-            // Render the cards in a specific order (same order as the final data set)
+            // FIX: Reorder the cards to put the interactive one first (f1_comfort)
             const orderedFindings = [
-                findingsData.find(f => f.id === 'f2_transparency'), // Significant Trust
-                findingsData.find(f => f.id === 'f3_prior_use'),    // Significant Experience
-                findingsData.find(f => f.id === 'f1_comfort'),      // Interactive / Approaching Sig. Transparency
-                findingsData.find(f => f.id === 'f4_age')           // Not Sig. Age
+                findingsData.find(f => f.id === 'f1_comfort'),      // 1. Interactive Card
+                findingsData.find(f => f.id === 'f2_transparency'), // 2. Significant Trust
+                findingsData.find(f => f.id === 'f3_prior_use'),    // 3. Significant Experience
+                findingsData.find(f => f.id === 'f4_age')           // 4. Not Sig. Age
             ];
 
             orderedFindings.forEach(finding => {
