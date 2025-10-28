@@ -1,21 +1,27 @@
 <section id="preprint-publication" style="
-    padding: 40px 0; 
-    border-bottom: 2px solid #f0f0f0; 
-    font-family: Arial, sans-serif;
+    /* DARK THEME BASE STYLES */
+    padding: 60px 0; /* Increased padding for emphasis */
+    background-color: #1e293b; /* Dark Slate Blue/Grey Background */
+    color: #f0f4f8; /* Light Off-White Primary Text */
+    font-family: 'Inter', sans-serif;
+    border-top: 5px solid #9f7aea; /* Light Purple Accent Top Border */
+    border-bottom: none; /* Removed bottom border */
 ">
     <h2 style="
         text-align: center; 
-        color: #4c1d95; /* Dark Purple */
-        font-size: 2.2em; 
+        color: #9f7aea; /* Medium Purple Accent */
+        font-size: 2.5em; 
         margin-bottom: 5px;
+        font-weight: 700;
     ">
         ✨ Peer-Vetted Publication: Algorithmic Trust
     </h2>
     <p style="
         text-align: center; 
-        color: #333; 
-        font-size: 1.1em; 
-        margin-bottom: 30px;
+        color: #f0f4f8; 
+        font-size: 1.2em; 
+        font-weight: 300;
+        margin-bottom: 40px;
     ">
         The Cognitive Foundations of Algorithmic Trust: Human Reasoning in High-Stakes AI Systems
     </p>
@@ -23,21 +29,25 @@
     <!-- Acceptance & Context Description -->
     <div style="
         max-width: 800px; 
-        margin: 0 auto 30px; 
+        margin: 0 auto 40px; 
         text-align: left; 
-        line-height: 1.6; 
-        padding: 0 15px;
+        line-height: 1.7; 
+        padding: 0 20px;
+        border-left: 3px solid #f97316; /* Orange side accent */
+        padding-left: 20px;
+        background-color: #273347; /* Slightly lighter background for the text box */
+        border-radius: 8px;
     ">
-        <p style="color: #333; font-size: 1.05em; margin-bottom: 15px;">
+        <p style="color: #f0f4f8; font-size: 1.05em; margin-bottom: 15px;">
             We are thrilled to announce that this manuscript has been successfully accepted and published as a pre-print on **PsyArXiv**. This is a significant milestone, as PsyArXiv is the premier psychology repository and operates with a **pre-moderation process**, ensuring the quality and ethical compliance of submitted research prior to public posting.
         </p>
-        <p style="color: #333; font-size: 1.05em;">
+        <p style="color: #f0f4f8; font-size: 1.05em;">
             This work, completed entirely as an independent scholarly endeavor, has met the high standards required for inclusion on this platform alongside submissions from major global institutions.
         </p>
     </div>
 
     <!-- Image Display - Clickable to view PDF -->
-    <div style="text-align: center; margin-bottom: 25px;">
+    <div style="text-align: center; margin-bottom: 35px;">
         <!-- Image is now the main click target for the PDF preview/download -->
         <a href="The Cognitive Foundations of Algorithmic Trust Human Reasoning in HighStakes AI Systems.pdf" target="_blank" title="Preview and Download Manuscript PDF">
             <img 
@@ -46,49 +56,50 @@
                 style="
                     max-width: 80%; 
                     height: auto; 
-                    border: 2px solid #4c1d95; /* Dark Purple border */
-                    border-radius: 10px;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+                    border: 3px solid #9f7aea; /* Medium Purple border */
+                    border-radius: 12px;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Stronger shadow for dark mode */
                     transition: transform 0.3s ease-in-out;
                 "
                 onmouseover="this.style.transform='scale(1.02)'"
                 onmouseout="this.style.transform='scale(1)'">
         </a>
-        <p style="color: #777; font-style: italic; font-size: 0.9em; margin-top: 10px;">
+        <p style="color: #a0aec0; font-style: italic; font-size: 0.95em; margin-top: 15px;">
             Click the image to view the full PDF manuscript.
         </p>
     </div>
 
     <!-- Button Links -->
-    <p style="text-align: center; margin-bottom: 5px;">
-        <!-- Link to PsyArXiv DOI -->
+    <p style="text-align: center; margin-bottom: 10px;">
+        <!-- Link to PsyArXiv DOI - Purple Accent Button -->
         <a href="https://doi.org/10.31234/osf.io/jw36n_v1" target="_blank" style="
-            font-weight: bold; 
-            color: #4c1d95; /* Dark Purple primary color */
+            font-weight: 700; 
+            color: #f0f4f8; /* White text */
             text-decoration: none;
             font-size: 1.2em;
-            padding: 10px 20px;
-            margin: 5px;
-            border: 2px solid #4c1d95;
-            border-radius: 5px;
+            padding: 12px 25px;
+            margin: 10px;
+            border: 2px solid #9f7aea; /* Medium Purple border */
+            border-radius: 8px;
             background-color: transparent;
             transition: all 0.2s;
-        " onmouseover="this.style.backgroundColor='#fff0e5'; this.style.color='#4c1d95'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#4c1d95'">
+        " onmouseover="this.style.backgroundColor='#9f7aea'; this.style.color='#1e293b'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#f0f4f8'">
             View Official DOI Link on PsyArXiv
         </a>
         
-        <!-- Link to Local PDF File (using the corrected long name) -->
+        <!-- Link to Local PDF File - Orange Accent Button -->
         <a href="The Cognitive Foundations of Algorithmic Trust Human Reasoning in HighStakes AI Systems.pdf" target="_blank" style="
-            font-weight: bold; 
-            color: #f97316; /* Bright Orange accent */
+            font-weight: 700; 
+            color: #1e293b; /* Dark text for contrast */
             text-decoration: none;
             font-size: 1.2em;
-            padding: 10px 20px;
-            margin: 5px;
-            border: 2px solid #f97316;
-            border-radius: 5px;
+            padding: 12px 25px;
+            margin: 10px;
+            border: 2px solid #f97316; /* Bright Orange border */
+            border-radius: 8px;
+            background-color: #f97316; /* Bright Orange background */
             transition: all 0.2s;
-        " onmouseover="this.style.backgroundColor='#fff0e5'" onmouseout="this.style.backgroundColor='transparent'">
+        " onmouseover="this.style.backgroundColor='#fb923c'; this.style.borderColor='#fb923c'" onmouseout="this.style.backgroundColor='#f97316'; this.style.borderColor='#f97316'">
             Download Full Manuscript PDF
         </a>
     </p>
@@ -96,35 +107,35 @@
     <!-- Navigation Links -->
     <div style="
         text-align: center; 
-        margin-top: 40px; 
-        padding-top: 20px; 
-        border-top: 1px solid #ddd;
+        margin-top: 50px; 
+        padding-top: 30px; 
+        border-top: 1px solid #334155; /* Subtle dark divider */
     ">
-        <h3 style="color: #4c1d95; font-size: 1.4em; margin-bottom: 15px;">Site Navigation</h3>
-        <nav style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-            <a href="index.html" style="color: #4c1d95; text-decoration: none; font-weight: 500;"
-               onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='#4c1d95'">Home</a>
-            <a href="about.html" style="color: #4c1d95; text-decoration: none; font-weight: 500;"
-               onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='#4c1d95'">About</a>
-            <a href="Methodsanddata.html" style="color: #4c1d95; text-decoration: none; font-weight: 500;"
-               onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='#4c1d95'">Methods and Data</a>
-            <a href="DataAnalysisquantitative.html" style="color: #4c1d95; text-decoration: none; font-weight: 500;"
-               onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='#4c1d95'">PrePrint Publications</a>
-            <a href="ethicalguidelines.html" style="color: #4c1d95; text-decoration: none; font-weight: 500;"
-               onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='#4c1d95'">Ethical Guidelines</a>
-            <a href="AI-Perception-Briefs.html" style="color: #4c1d95; text-decoration: none; font-weight: 500;"
-               onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='#4c1d95'">Research Findings Articles</a>
-            <a href="contact.html" style="color: #4c1d95; text-decoration: none; font-weight: 500;"
-               onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='#4c1d95'">Contact</a>
+        <h3 style="color: #9f7aea; font-size: 1.6em; margin-bottom: 20px; font-weight: 600;">Site Navigation</h3>
+        <nav style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <a href="index.html" style="color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px;"
+               onmouseover="this.style.color='#f97316'; this.style.textDecoration='underline'" onmouseout="this.style.color='#f0f4f8'; this.style.textDecoration='none'">Home</a>
+            <a href="about.html" style="color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px;"
+               onmouseover="this.style.color='#f97316'; this.style.textDecoration='underline'" onmouseout="this.style.color='#f0f4f8'; this.style.textDecoration='none'">About</a>
+            <a href="Methodsanddata.html" style="color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px;"
+               onmouseover="this.style.color='#f97316'; this.style.textDecoration='underline'" onmouseout="this.style.color='#f0f4f8'; this.style.textDecoration='none'">Methods and Data</a>
+            <a href="DataAnalysisquantitative.html" style="color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px;"
+               onmouseover="this.style.color='#f97316'; this.style.textDecoration='underline'" onmouseout="this.style.color='#f0f4f8'; this.style.textDecoration='none'">PrePrint Publications</a>
+            <a href="ethicalguidelines.html" style="color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px;"
+               onmouseover="this.style.color='#f97316'; this.style.textDecoration='underline'" onmouseout="this.style.color='#f0f4f8'; this.style.textDecoration='none'">Ethical Guidelines</a>
+            <a href="AI-Perception-Briefs.html" style="color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px;"
+               onmouseover="this.style.color='#f97316'; this.style.textDecoration='underline'" onmouseout="this.style.color='#f0f4f8'; this.style.textDecoration='none'">Research Findings Articles</a>
+            <a href="contact.html" style="color: #f0f4f8; text-decoration: none; font-weight: 500; padding: 5px 10px; border-radius: 4px;"
+               onmouseover="this.style.color='#f97316'; this.style.textDecoration='underline'" onmouseout="this.style.color='#f0f4f8'; this.style.textDecoration='none'">Contact</a>
         </nav>
     </div>
     
     <p style="
         text-align: center; 
-        color: #777; 
+        color: #a0aec0; /* Subtle light grey */
         font-style: italic; 
         font-size: 0.9em; 
-        margin-top: 20px;
+        margin-top: 30px;
     ">
         \texttt{Reference: Watts, S. (2025). The Cognitive Foundations of Algorithmic Trust. \textit{PsyArXiv}. 10.31234/osf.io/jw36n\_v1}
     </p>
