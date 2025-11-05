@@ -1,176 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI in Education — Dr Sarah Owen | Emotion Encoded</title>
-  <!-- Tailwind CSS CDN -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotion Encoded AI in Education</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
-    :root { --accent:#60a5fa; --muted:#9ca3af; --card:#0b1220; --glass: rgba(255,255,255,0.04); }
-    html,body { height:100%; }
-    body { font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.06), transparent), #071027; color: #e6eef8; }
-    .lead { color: #cfe8ff; }
-    .quote-mark { font-size: 3rem; line-height: 1; color: var(--accent); }
-    .hashtag { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.03); padding: 0.25rem 0.6rem; border-radius: 999px; font-weight:500; color: #cfe8ff; }
+    /* Optional: smooth scrolling for headings */
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
-<body class="antialiased">
-  <main class="max-w-4xl mx-auto px-6 py-12">
-    <!-- Header -->
-    <header class="mb-8">
-      <nav class="flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-sky-400 rounded-lg flex items-center justify-center shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
-            </svg>
-          </div>
-          <div>
-            <h1 class="text-2xl font-bold leading-tight">AI in Education</h1>
-            <p class="text-sm text-slate-300">Insights from Dr Sarah Owen | Emotion Encoded Research Initiative</p>
-          </div>
-        </div>
-        <div class="text-sm text-slate-300">November 4, 2025</div>
-      </nav>
-    </header>
+<body class="bg-gray-900 text-gray-100 antialiased">
 
-    <!-- Hero -->
-    <section class="bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent)] rounded-2xl overflow-hidden shadow-xl border border-white/6">
-      <div class="relative">
-        <img src="article29.jpg" alt="Teacher using AI tools in classroom" class="w-full h-64 object-cover object-center brightness-90" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div class="absolute bottom-6 left-6">
-          <span class="px-3 py-1 rounded-full text-xs bg-[rgba(255,255,255,0.04)] border border-white/6 text-slate-200">Interview</span>
-          <h2 class="mt-3 text-3xl font-semibold text-white leading-tight">How AI Can Support Teaching Without Replacing the Teacher</h2>
-          <p class="mt-2 text-sm text-slate-300 max-w-xl">Dr Sarah Owen on the benefits, risks, and practical advice for using AI in Caribbean classrooms</p>
-        </div>
-      </div>
+  <!-- Container -->
+  <div class="max-w-4xl mx-auto px-4 py-12">
 
-      <div class="p-8">
-        <article class="prose prose-invert max-w-none">
-          <!-- Intro -->
-          <p class="lead text-lg font-medium">Dr Sarah Owen reflects on how AI can change teaching and learning when used thoughtfully. Her perspective emphasizes guidance, cultural fit, and preserving the human contribution to education.</p>
+    <!-- Header Image -->
+    <img src="images/article29.jpg" alt="Emotion Encoded AI in Education" class="w-full rounded-lg shadow-lg mb-8">
 
-          <!-- Theme: AI as a tool -->
-          <section class="mt-6">
-            <h3 class="text-xl font-semibold">AI as a starting point, not a replacement</h3>
-            <p>Dr Owen explains that AI can provide an efficient starting point for lesson planning and personalized learning. She warns that AI draws on existing online content and may fail to capture regional or cultural nuances relevant to Caribbean classrooms. Her core recommendation is to use AI outputs as foundations that educators adapt and enrich with their professional expertise.</p>
-            <blockquote class="mt-4 p-4 rounded-lg bg-[var(--glass)] border border-white/6">
-              <div class="flex items-start gap-4">
-                <div class="quote-mark">“</div>
-                <div>
-                  <p class="text-slate-100">AI can provide a useful starting point but experience and expertise in curriculum development should ensure plans match student needs and cultural context.</p>
-                  <p class="mt-2 text-sm text-slate-300">— Dr Sarah Owen</p>
-                </div>
-              </div>
-            </blockquote>
-          </section>
+    <!-- Title -->
+    <h1 class="text-4xl font-bold mb-6 text-white text-center">Emotion Encoded Artificial Intelligence in Education: Balancing Innovation and Intellect</h1>
 
-          <!-- Benefits and Challenges -->
-          <section class="mt-8">
-            <h3 class="text-xl font-semibold">Benefits and challenges</h3>
-            <div class="grid md:grid-cols-2 gap-6 mt-4">
-              <div class="rounded-lg p-5 bg-[rgba(255,255,255,0.02)] border border-white/6">
-                <h4 class="font-semibold">Top benefits</h4>
-                <ul class="list-disc list-inside mt-3 text-slate-200">
-                  <li>Alleviates writer's block and jumpstarts lesson planning.</li>
-                  <li>Saves time on preliminary research and resource discovery.</li>
-                  <li>Supports personalized learning pathways when guided by teachers.</li>
-                </ul>
-              </div>
+    <!-- Article -->
+    <article class="prose prose-invert prose-lg mx-auto">
 
-              <div class="rounded-lg p-5 bg-[rgba(255,255,255,0.02)] border border-white/6">
-                <h4 class="font-semibold">Key challenges</h4>
-                <ul class="list-disc list-inside mt-3 text-slate-200">
-                  <li>Risk of promoting a lazy approach when students submit AI-generated work unvetted.</li>
-                  <li>Potential spread of misinformation when outputs are not carefully checked.</li>
-                  <li>Homogenization of thought and cultural mismatch if tools are not localized.</li>
-                </ul>
-              </div>
-            </div>
-          </section>
+      <p>As artificial intelligence continues to reshape how humans interact, work, and think, educators face an important question: how can AI enhance learning without compromising the human essence of education? Dr. Sarah Owen, an experienced educator, shared her insights with the Emotion Encoded Research Initiative on how AI integration can strengthen or weaken the cognitive and emotional foundations of teaching and learning.</p>
 
-          <!-- Practical advice -->
-          <section class="mt-8">
-            <h3 class="text-xl font-semibold">Advice for teachers</h3>
-            <p>Dr Owen encourages teachers to embrace AI while maintaining professional oversight. Her practical tips stress customization, verification, and turning AI into a scaffolding tool that enhances critical thinking rather than replacing it.</p>
-            <ul class="mt-4 space-y-2">
-              <li class="text-slate-200">Start small and experiment with specific tasks such as drafting lesson outlines.</li>
-              <li class="text-slate-200">Always customize and verify AI content for accuracy and cultural relevance.</li>
-              <li class="text-slate-200">Teach students to use AI as a prompt and to build on it with original thinking.</li>
-            </ul>
-          </section>
+      <h2>AI as a Tool, Not a Replacement</h2>
+      <p>Dr. Owen believes that while AI offers tremendous potential in lesson planning and personalized learning, its use must remain guided by human judgment.</p>
+      <p>“In my opinion and experience AI can be beneficial in this context but must be carefully utilized,” she explained. “AI can provide a useful starting point, but experience and expertise in curriculum development should ensure that the learning objectives match the specific needs of the student.”</p>
+      <p>She notes that AI often draws from global datasets that may not capture regional or cultural learning differences. Within the Caribbean, this can mean that AI-generated lesson plans or learning materials may overlook crucial socio-cultural or linguistic contexts. “Because AI mines what already exists online, it may not always fit the specific learning needs of the students,” she added.</p>
+      <p>Dr. Owen encourages both teachers and students to view AI as a support system, not a substitute. “Utilize it to help you set the foundation, but build on it with your own learning, critical thinking skills, and approach to topics. In that way the students are using it as a tool in their learning, not a replacement for their unique intellect and perspective.”</p>
 
-          <!-- Pull quote -->
-          <section class="mt-8">
-            <div class="rounded-xl p-6 bg-gradient-to-r from-slate-900/50 to-slate-900/30 border border-white/6">
-              <p class="text-xl font-semibold text-white">"Use AI to set the foundation but build on it with your own learning, critical thinking, and unique perspective."</p>
-              <p class="mt-3 text-sm text-slate-300">— Dr Sarah Owen</p>
-            </div>
-          </section>
+      <h2>Benefits and Risks of AI Integration</h2>
+      <p>When asked about the main benefits and challenges of AI in education, Dr. Owen highlighted the dual nature of the technology.</p>
+      <p>Among the benefits, she pointed to AI’s ability to alleviate writer’s block and save time on preliminary research. However, she emphasized several growing concerns, including overreliance on AI-generated outputs and the risk of intellectual stagnation.</p>
+      <p>“AI can inculcate a lazy approach to work if it is used to generate a finished product without review or creativity,” she warned. “It also contributes to increased misinformation when content and images are not checked for accuracy or considered in context.”</p>
+      <p>Perhaps her most striking observation addressed a broader socio-cultural risk: “Homogenization of thought – those cultures that are more digitally literate will create the information and tools utilized by the less digitally literate, leading to a new type of colonization that may creep into societies and cultures through our education system if used without customization.”</p>
 
-          <!-- Closing -->
-          <section class="mt-8">
-            <h3 class="text-lg font-semibold">Conclusion</h3>
-            <p>Dr Owen's guidance frames AI as a powerful assistant that must be curated by teachers who understand their students. For Caribbean education systems, localization and teacher-led adaptation are essential to prevent cultural erosion and to ensure meaningful learning outcomes.</p>
-          </section>
+      <h2>Guidance for Educators Entering the AI Era</h2>
+      <p>For teachers beginning to explore AI tools, Dr. Owen recommends an open yet critical approach. “I would suggest that teachers embrace it – in most cases they are already using it without even knowing, as it is embedded in the technology usually used for research or word processing.”</p>
+      <p>Her advice centers on maintaining professional authenticity. “Always remember that AI is a tool to make our work easier and better, but not a replacement for our individual contribution. Always customize, verify, and create. Let your work continue to add value to the practice of teaching and learning.”</p>
 
-          <!-- Hashtags and share -->
-          <footer class="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div class="flex flex-wrap gap-3">
-              <span class="hashtag">#AIinEducation</span>
-              <span class="hashtag">#EdTech</span>
-              <span class="hashtag">#CaribbeanEducation</span>
-              <span class="hashtag">#AIethics</span>
-              <span class="hashtag">#TeacherTools</span>
-            </div>
-            <div class="text-sm text-slate-400">Published by Emotion Encoded • <a href="https://encodedemotion.org" target="_blank" class="text-indigo-300 hover:underline">encodedemotion.org</a></div>
-          </footer>
-        </article>
-      </div>
-    </section>
+      <h2>Reflections on Emotional Intelligence in AI Adoption</h2>
+      <p>Dr. Owen’s perspective aligns with the ongoing research at Emotion Encoded, which examines how cognitive bias, emotional reasoning, and metacognitive dissonance influence trust in AI systems. Her insights underscore a recurring theme: effective AI adoption in education demands both critical engagement and emotional awareness.</p>
+      <p>In an age where automation promises efficiency, her reminder is simple yet profound — education thrives not only on information but on imagination, empathy, and intellect.</p>
 
-    <!-- Author card -->
-    <aside class="mt-8 flex items-center gap-4 p-4 rounded-xl bg-[rgba(255,255,255,0.02)] border border-white/6">
-      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-600 to-sky-400 flex items-center justify-center text-white font-semibold">SE</div>
-      <div>
-        <div class="font-medium">Emotion Encoded Research Initiative</div>
-        <div class="text-sm text-slate-300">Research lead: Sonrisa S. E. Watts • <a href="https://encodedemotion.org" target="_blank" class="text-indigo-300 hover:underline">encodedemotion.org</a></div>
-      </div>
-    </aside>
-  </main>
+    </article>
+
+  </div>
 </body>
 </html>
-```0
-    <section className="mb-8">
-      <h2 className="text-2xl font-bold text-white mb-4">Notable Quotes</h2>
-      <blockquote className="pl-6 border-l-4 border-[#5dd0ff] italic text-gray-200">“AI can provide a useful starting point, but experience and expertise must guide how we teach and learn." — Dr. Sarah Owen</blockquote>
-      <blockquote className="mt-4 pl-6 border-l-4 border-[#ffd57a] italic text-gray-200">"Cultures that are more digitally literate will create the tools used by the less literate — customization prevents a new form of colonization." — Dr. Sarah Owen</blockquote>
-    </section>
-
-    <section className="mb-8">
-      <h2 className="text-2xl font-bold text-white mb-4">Conclusion</h2>
-      <p className="text-gray-300">Dr. Owen emphasizes balance: embrace AI for efficiency but safeguard pedagogy, culture, and student agency. For Caribbean education systems, that balance requires intentional adaptation, teacher training, and policy guidance that preserves local knowledge while responsibly integrating new tools.</p>
-    </section>
-
-    <footer className="mt-10 py-6 border-t border-[#153052]/30">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <p className="text-sm text-[#9fb4d6]">Emotion Encoded Research Initiative • Visit <a href="https://encodedemotion.org" className="text-[#7ee3ff] underline">encodedemotion.org</a></p>
-        </div>
-        <div className="text-sm text-gray-300">
-          <p className="font-medium">Share:</p>
-          <div className="flex gap-3 mt-2">
-            <span className="px-3 py-1 rounded bg-[#0f2b3f] text-[#a8e0ff]">#AIinEducation</span>
-            <span className="px-3 py-1 rounded bg-[#0f2b3f] text-[#ffd57a]">#EmotionEncoded</span>
-            <span className="px-3 py-1 rounded bg-[#0f2b3f] text-[#9fd99f]">#EdTech</span>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-</article>
-
-); }
