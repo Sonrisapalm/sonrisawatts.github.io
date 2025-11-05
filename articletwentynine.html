@@ -1,40 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI in Education — Dr Sarah Owen | Emotion Encoded</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --accent:#60a5fa; --muted:#9ca3af; --card:#0b1220; --glass: rgba(255,255,255,0.04); }
+    html,body { height:100%; }
+    body { font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.06), transparent), #071027; color: #e6eef8; }
+    .lead { color: #cfe8ff; }
+    .quote-mark { font-size: 3rem; line-height: 1; color: var(--accent); }
+    .hashtag { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.03); padding: 0.25rem 0.6rem; border-radius: 999px; font-weight:500; color: #cfe8ff; }
+  </style>
+</head>
+<body class="antialiased">
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <header class="mb-8">
+      <nav class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-sky-400 rounded-lg flex items-center justify-center shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold leading-tight">AI in Education</h1>
+            <p class="text-sm text-slate-300">Insights from Dr Sarah Owen | Emotion Encoded Research Initiative</p>
+          </div>
+        </div>
+        <div class="text-sm text-slate-300">November 4, 2025</div>
+      </nav>
+    </header>
 
-<figure className="mb-8 rounded-2xl overflow-hidden shadow-lg">
-      <img src="./article29.jpg" alt="Teacher using AI tools in classroom" className="w-full h-64 object-cover" />
-    </figure>
-
-    <section className="prose prose-invert max-w-none mb-6">
-      <p>
-        Dr. Sarah Owen argues that artificial intelligence can be a powerful classroom assistant when used deliberately. AI should set the foundation for tasks like lesson planning and personalized learning, while teachers apply their curricular expertise to adapt outputs for local needs. Across the Caribbean, contextual fit matters: datasets that power AI often miss socio-linguistic subtleties and cultural knowledge, so relying on raw AI output risks producing educational materials that do not match learners' realities.
-      </p>
-    </section>
-
-    <section className="grid gap-6 sm:grid-cols-3 mb-8">
-      <div className="p-6 rounded-xl bg-gradient-to-br from-[#071028] via-[#0e1a36] to-[#071028] border border-[#153052]/40">
-        <h3 className="text-xl font-semibold text-[#a8e0ff]">AI as a Foundation</h3>
-        <p className="mt-2 text-sm text-gray-300">"Use AI to start work, not finish it. Let teachers shape and verify outputs so learning objectives stay central."</p>
+    <!-- Hero -->
+    <section class="bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent)] rounded-2xl overflow-hidden shadow-xl border border-white/6">
+      <div class="relative">
+        <img src="article29.jpg" alt="Teacher using AI tools in classroom" class="w-full h-64 object-cover object-center brightness-90" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        <div class="absolute bottom-6 left-6">
+          <span class="px-3 py-1 rounded-full text-xs bg-[rgba(255,255,255,0.04)] border border-white/6 text-slate-200">Interview</span>
+          <h2 class="mt-3 text-3xl font-semibold text-white leading-tight">How AI Can Support Teaching Without Replacing the Teacher</h2>
+          <p class="mt-2 text-sm text-slate-300 max-w-xl">Dr Sarah Owen on the benefits, risks, and practical advice for using AI in Caribbean classrooms</p>
+        </div>
       </div>
 
-      <div className="p-6 rounded-xl bg-gradient-to-br from-[#071028] via-[#0e1a36] to-[#071028] border border-[#153052]/40">
-        <h3 className="text-xl font-semibold text-[#a8e0ff]">Cultural Context Matters</h3>
-        <p className="mt-2 text-sm text-gray-300">AI draws from global data that may not include Caribbean contexts. Customization is essential to avoid misalignment and misinformation.</p>
-      </div>
+      <div class="p-8">
+        <article class="prose prose-invert max-w-none">
+          <!-- Intro -->
+          <p class="lead text-lg font-medium">Dr Sarah Owen reflects on how AI can change teaching and learning when used thoughtfully. Her perspective emphasizes guidance, cultural fit, and preserving the human contribution to education.</p>
 
-      <div className="p-6 rounded-xl bg-gradient-to-br from-[#071028] via-[#0e1a36] to-[#071028] border border-[#153052]/40">
-        <h3 className="text-xl font-semibold text-[#a8e0ff]">Guarding Creativity</h3>
-        <p className="mt-2 text-sm text-gray-300">Beware homogenization. Overreliance risks creating a "digital colonization" in which dominant cultures shape learning for others.</p>
+          <!-- Theme: AI as a tool -->
+          <section class="mt-6">
+            <h3 class="text-xl font-semibold">AI as a starting point, not a replacement</h3>
+            <p>Dr Owen explains that AI can provide an efficient starting point for lesson planning and personalized learning. She warns that AI draws on existing online content and may fail to capture regional or cultural nuances relevant to Caribbean classrooms. Her core recommendation is to use AI outputs as foundations that educators adapt and enrich with their professional expertise.</p>
+            <blockquote class="mt-4 p-4 rounded-lg bg-[var(--glass)] border border-white/6">
+              <div class="flex items-start gap-4">
+                <div class="quote-mark">“</div>
+                <div>
+                  <p class="text-slate-100">AI can provide a useful starting point but experience and expertise in curriculum development should ensure plans match student needs and cultural context.</p>
+                  <p class="mt-2 text-sm text-slate-300">— Dr Sarah Owen</p>
+                </div>
+              </div>
+            </blockquote>
+          </section>
+
+          <!-- Benefits and Challenges -->
+          <section class="mt-8">
+            <h3 class="text-xl font-semibold">Benefits and challenges</h3>
+            <div class="grid md:grid-cols-2 gap-6 mt-4">
+              <div class="rounded-lg p-5 bg-[rgba(255,255,255,0.02)] border border-white/6">
+                <h4 class="font-semibold">Top benefits</h4>
+                <ul class="list-disc list-inside mt-3 text-slate-200">
+                  <li>Alleviates writer's block and jumpstarts lesson planning.</li>
+                  <li>Saves time on preliminary research and resource discovery.</li>
+                  <li>Supports personalized learning pathways when guided by teachers.</li>
+                </ul>
+              </div>
+
+              <div class="rounded-lg p-5 bg-[rgba(255,255,255,0.02)] border border-white/6">
+                <h4 class="font-semibold">Key challenges</h4>
+                <ul class="list-disc list-inside mt-3 text-slate-200">
+                  <li>Risk of promoting a lazy approach when students submit AI-generated work unvetted.</li>
+                  <li>Potential spread of misinformation when outputs are not carefully checked.</li>
+                  <li>Homogenization of thought and cultural mismatch if tools are not localized.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Practical advice -->
+          <section class="mt-8">
+            <h3 class="text-xl font-semibold">Advice for teachers</h3>
+            <p>Dr Owen encourages teachers to embrace AI while maintaining professional oversight. Her practical tips stress customization, verification, and turning AI into a scaffolding tool that enhances critical thinking rather than replacing it.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="text-slate-200">Start small and experiment with specific tasks such as drafting lesson outlines.</li>
+              <li class="text-slate-200">Always customize and verify AI content for accuracy and cultural relevance.</li>
+              <li class="text-slate-200">Teach students to use AI as a prompt and to build on it with original thinking.</li>
+            </ul>
+          </section>
+
+          <!-- Pull quote -->
+          <section class="mt-8">
+            <div class="rounded-xl p-6 bg-gradient-to-r from-slate-900/50 to-slate-900/30 border border-white/6">
+              <p class="text-xl font-semibold text-white">"Use AI to set the foundation but build on it with your own learning, critical thinking, and unique perspective."</p>
+              <p class="mt-3 text-sm text-slate-300">— Dr Sarah Owen</p>
+            </div>
+          </section>
+
+          <!-- Closing -->
+          <section class="mt-8">
+            <h3 class="text-lg font-semibold">Conclusion</h3>
+            <p>Dr Owen's guidance frames AI as a powerful assistant that must be curated by teachers who understand their students. For Caribbean education systems, localization and teacher-led adaptation are essential to prevent cultural erosion and to ensure meaningful learning outcomes.</p>
+          </section>
+
+          <!-- Hashtags and share -->
+          <footer class="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div class="flex flex-wrap gap-3">
+              <span class="hashtag">#AIinEducation</span>
+              <span class="hashtag">#EdTech</span>
+              <span class="hashtag">#CaribbeanEducation</span>
+              <span class="hashtag">#AIethics</span>
+              <span class="hashtag">#TeacherTools</span>
+            </div>
+            <div class="text-sm text-slate-400">Published by Emotion Encoded • <a href="https://encodedemotion.org" target="_blank" class="text-indigo-300 hover:underline">encodedemotion.org</a></div>
+          </footer>
+        </article>
       </div>
     </section>
 
-    <section className="mb-8">
-      <h2 className="text-2xl font-bold text-white mb-4">Practical Advice for Teachers</h2>
-      <ul className="list-disc list-inside space-y-2 text-gray-300">
-        <li>Start small: use AI to draft lesson outlines and save time on preliminary research.</li>
-        <li>Customize and verify: always adapt AI-generated material to local learning goals and cultural norms.</li>
-        <li>Teach students to use AI as a scaffold — not a substitute — encouraging critical thinking and original work.</li>
-      </ul>
-    </section>
-
+    <!-- Author card -->
+    <aside class="mt-8 flex items-center gap-4 p-4 rounded-xl bg-[rgba(255,255,255,0.02)] border border-white/6">
+      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-600 to-sky-400 flex items-center justify-center text-white font-semibold">SE</div>
+      <div>
+        <div class="font-medium">Emotion Encoded Research Initiative</div>
+        <div class="text-sm text-slate-300">Research lead: Sonrisa S. E. Watts • <a href="https://encodedemotion.org" target="_blank" class="text-indigo-300 hover:underline">encodedemotion.org</a></div>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
+```0
     <section className="mb-8">
       <h2 className="text-2xl font-bold text-white mb-4">Notable Quotes</h2>
       <blockquote className="pl-6 border-l-4 border-[#5dd0ff] italic text-gray-200">“AI can provide a useful starting point, but experience and expertise must guide how we teach and learn." — Dr. Sarah Owen</blockquote>
