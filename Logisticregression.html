@@ -120,8 +120,8 @@
         <header class="text-center mb-12 bg-white p-8 rounded-xl shadow-xl border-t-8 border-primary">
             <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight md:text-5xl">Interactive Logistic Regression Dashboard</h1>
             <h1 class="text-6xl font-extrabold text-primary tracking-tight mb-4">Emotion Encoded</h1>
-            <p class="mt-3 text-xl text-gray-600 font-light">Simulate Predictors of AI Attitudes ($N=44$ and $N=23$ Survey Respondents)</p>
-            <p class="mt-4 text-md text-gray-500 italic">Drag the slider on the **Demand for Transparency (Interactive)** card to observe how the **Odds Ratio** ($\exp(\beta)$) visually and statistically impacts significance ($p$).</p>
+            <p class="mt-3 text-xl text-gray-600 font-light">Simulate Predictors of AI Attitudes (N=44 and N=23 Survey Respondents)</p>
+            <p class="mt-4 text-md text-gray-500 italic">Drag the slider on the **Demand for Transparency (Interactive)** card to observe how the **Odds Ratio** (\exp(\beta)) visually and statistically impacts significance (p).</p>
         </header>
 
         <div id="findings-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -130,8 +130,8 @@
         <div class="mt-16 p-8 bg-gray-100 rounded-xl shadow-2xl border-l-8 border-gray-400">
             <h2 class="text-2xl font-bold text-gray-900 mb-4">Summary Interpretation</h2>
             <div class="space-y-4 text-lg text-gray-700">
-                <p>The first set of models ($N=44$) suggests a **cognitive-affective consistency** in algorithmic trust. Individuals who feel **comfortable with AI in objective roles** are nearly three times more likely to demand an explanation when automation fails, highlighting that rational clarity is highly valued by comfortable users ($OR=2.96, p=.102$). Critically, **Perceived Transparency** significantly increases **Trust in AI for Financial Advice** ($OR=3.80, p=.038$), a powerful, statistically significant finding.</p>
-                <p>The inferential analysis ($N=23$) shows that **Prior AI Use** fosters calibrated trust, with experienced users being approximately **twice as likely to trust** AI advice ($OR=2.06, p=.043$). While not statistically significant, the directional trend for the **Age Group 55+** suggests caution, as this group was about $33\%$ less likely to trust AI advice ($OR=0.67, p=.225$).</p>
+                <p>The first set of models (N=44) suggests a **cognitive-affective consistency** in algorithmic trust. Individuals who feel **comfortable with AI in objective roles** are nearly three times more likely to demand an explanation when automation fails, highlighting that rational clarity is highly valued by comfortable users (OR=2.96, p=.102). Critically, **Perceived Transparency** significantly increases **Trust in AI for Financial Advice** (OR=3.80, p=.038), a powerful, statistically significant finding.</p>
+                <p>The inferential analysis (N=23) shows that **Prior AI Use** fosters calibrated trust, with experienced users being approximately **twice as likely to trust** AI advice (OR=2.06, p=.043). While not statistically significant, the directional trend for the **Age Group 55+** suggests caution, as this group was about 33\% less likely to trust AI advice (OR=0.67, p=.225).</p>
             </div>
         </div>
 
@@ -192,7 +192,7 @@
                 odds_ratio: 3.80,
                 p_value: 0.038, // Significant!
                 ci: '[1.05, 8.71]',
-                interpretation: 'Perceived transparency is a powerful, significant predictor, making individuals $3.8$ times more likely to trust AI-driven financial advice.',
+                interpretation: 'Perceived transparency is a powerful, significant predictor, making individuals 3.8 times more likely to trust AI-driven financial advice.',
                 scale_max: 10.0,
                 interactive: false
             },
@@ -222,7 +222,7 @@
                 odds_ratio: 0.67, // Less than 1.0 (negative association)
                 p_value: 0.225,
                 ci: '[0.33, 1.37]',
-                interpretation: 'Participants aged 55 and older were $33\%$ less likely to trust AI. While not significant, the direction suggests greater caution among older participants.',
+                interpretation: 'Participants aged 55 and older were 33\% less likely to trust AI. While not significant, the direction suggests greater caution among older participants.',
                 scale_max: 2.5,
                 interactive: false
             }
@@ -301,9 +301,9 @@
             // Determine if a slider should be included
             const sliderHtml = finding.interactive ? `
                 <div class="mt-6">
-                    <label for="${finding.id}-range" class="block text-sm font-medium text-gray-700 mb-2">Simulate Odds Ratio (1.0 to 5.0)</label>
-                    <input type="range" id="${finding.id}-range" min="1.0" max="5.0" step="0.01" value="${finding.odds_ratio.toFixed(2)}" 
-                           oninput="updateInteractiveCard('${finding.id}', this.value)"
+                    <label for="{finding.id}-range" class="block text-sm font-medium text-gray-700 mb-2">Simulate Odds Ratio (1.0 to 5.0)</label>
+                    <input type="range" id="{finding.id}-range" min="1.0" max="5.0" step="0.01" value="{finding.odds_ratio.toFixed(2)}" 
+                           oninput="updateInteractiveCard('{finding.id}', this.value)"
                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                     <div class="flex justify-between text-xs text-gray-500 mt-1">
                         <span>1.0</span>
@@ -314,51 +314,51 @@
 
             // This is the complete card template
             return `
-                <div id="${finding.id}" class="card-glow bg-white p-6 rounded-2xl shadow-xl border-t-8 ${color.border} flex flex-col justify-between">
+                <div id="{finding.id}" class="card-glow bg-white p-6 rounded-2xl shadow-xl border-t-8 {color.border} flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-start mb-4">
-                            <h2 class="text-xl font-bold text-gray-900 leading-tight">${finding.title} ($N=${finding.n_size}$)</h2>
-                            <span id="${finding.id}-p-badge" class="p-value-badge ${pValueStatus.bg} ${pValueStatus.color} shadow-md" title="P-value: ${finding.p_value.toFixed(3)}">
-                                ${pValueStatus.text}
+                            <h2 class="text-xl font-bold text-gray-900 leading-tight">{finding.title} (N={finding.n_size})</h2>
+                            <span id="{finding.id}-p-badge" class="p-value-badge {pValueStatus.bg} {pValueStatus.color} shadow-md" title="P-value: {finding.p_value.toFixed(3)}">
+                                {pValueStatus.text}
                             </span>
                         </div>
                         
-                        <p class="text-gray-600 mb-6 font-medium">${finding.summary}</p>
+                        <p class="text-gray-600 mb-6 font-medium">{finding.summary}</p>
                         
                         <div class="mb-8">
                             <div class="flex justify-between text-xs text-gray-500 mb-3 font-semibold">
-                                <span class="text-gray-800">Odds Ratio ($\exp(\beta)$)</span>
-                                <span>Max Visual Scale ($${finding.scale_max.toFixed(1)}$)</span>
+                                <span class="text-gray-800">Odds Ratio (\exp(\beta))</span>
+                                <span>Max Visual Scale ({finding.scale_max.toFixed(1)})</span>
                             </div>
                             <div class="or-bar-container">
-                                <div id="${finding.id}-dot" class="or-dot ${color.dot}" style="left: ${oddsRatioToPosition(finding.odds_ratio, finding.scale_max)}%;" title="Odds Ratio: ${finding.odds_ratio.toFixed(2)}"></div>
+                                <div id="{finding.id}-dot" class="or-dot {color.dot}" style="left: {oddsRatioToPosition(finding.odds_ratio, finding.scale_max)}%;" title="Odds Ratio: {finding.odds_ratio.toFixed(2)}"></div>
                             </div>
                             <div class="text-center mt-4">
-                                <span id="${finding.id}-or-value" class="text-5xl font-extrabold ${valueColorClass}">${finding.odds_ratio.toFixed(2)}</span>
-                                <p class="text-md text-gray-500 font-light tracking-wide">Odds Ratio ($\exp(\beta)$)</p>
+                                <span id="{finding.id}-or-value" class="text-5xl font-extrabold {valueColorClass}">{finding.odds_ratio.toFixed(2)}</span>
+                                <p class="text-md text-gray-500 font-light tracking-wide">Odds Ratio (\exp(\beta))</p>
                             </div>
                         </div>
 
-                        <div id="${finding.id}-percent-box" class="text-center mb-4 p-4 ${color.bg_light} rounded-xl border-b-4 ${color.border} border-dashed">
+                        <div id="{finding.id}-percent-box" class="text-center mb-4 p-4 {color.bg_light} rounded-xl border-b-4 {color.border} border-dashed">
                             <p class="text-lg font-bold text-gray-800">Predicted Change:</p>
-                            <p id="${finding.id}-percent" class="text-4xl font-extrabold ${valueColorClass}">${orSign}${percentageIncrease}%</p>
-                            <p class="text-sm text-gray-600">${orLabel}</p>
+                            <p id="{finding.id}-percent" class="text-4xl font-extrabold {valueColorClass}">{orSign}{percentageIncrease}%</p>
+                            <p class="text-sm text-gray-600">{orLabel}</p>
                         </div>
                         
-                        ${sliderHtml} 
+                        {sliderHtml} 
                     </div>
 
-                    <button onclick="toggleDetails('${finding.id}')" data-state="closed" class="details-button w-full py-3 mt-4 text-white ${color.dot} rounded-xl hover:opacity-90 transition duration-150 shadow-lg">
+                    <button onclick="toggleDetails('{finding.id}')" data-state="closed" class="details-button w-full py-3 mt-4 text-white {color.dot} rounded-xl hover:opacity-90 transition duration-150 shadow-lg">
                         Show Full Statistical Details
-                        <svg id="${finding.id}-arrow" class="w-4 h-4 inline-block ml-2 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg id="{finding.id}-arrow" class="w-4 h-4 inline-block ml-2 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
 
-                    <div id="${finding.id}-details-wrapper" class="details-container">
-                        <div id="${finding.id}-details" class="mt-6 space-y-4 border-t border-gray-200 pt-4">
+                    <div id="{finding.id}-details-wrapper" class="details-container">
+                        <div id="{finding.id}-details" class="mt-6 space-y-4 border-t border-gray-200 pt-4">
                             <div class="bg-gray-100 p-4 rounded-lg">
                                 <h3 class="font-bold text-gray-900 flex items-center mb-2 text-md">Model Details</h3>
-                                <p class="text-sm"><strong>Predictor (X):</strong> <span class="${color.text_light} font-semibold">${finding.predictor}</span></p>
-                                <p class="text-sm mt-2"><strong>Outcome (Y):</strong> <span class="text-gray-700 font-semibold">${finding.outcome}</span></p>
+                                <p class="text-sm"><strong>Predictor (X):</strong> <span class="{color.text_light} font-semibold">{finding.predictor}</span></p>
+                                <p class="text-sm mt-2"><strong>Outcome (Y):</strong> <span class="text-gray-700 font-semibold">{finding.outcome}</span></p>
                             </div>
 
                             <div class="p-4 rounded-lg border border-gray-200">
@@ -372,24 +372,24 @@
                                     </thead>
                                     <tbody>
                                         <tr class="border-b">
-                                            <td class="px-3 py-2 text-left">Odds Ratio ($\exp(\beta)$)</td>
-                                            <td id="${finding.id}-table-or" class="px-3 py-2 text-right font-extrabold ${valueColorClass}">${finding.odds_ratio.toFixed(3)}</td>
+                                            <td class="px-3 py-2 text-left">Odds Ratio (\exp(\beta))</td>
+                                            <td id="{finding.id}-table-or" class="px-3 py-2 text-right font-extrabold {valueColorClass}">{finding.odds_ratio.toFixed(3)}</td>
                                         </tr>
                                         <tr class="border-b">
                                             <td class="px-3 py-2 text-left">95% Confidence Interval (CI)</td>
-                                            <td class="px-3 py-2 text-right font-semibold text-gray-700">${finding.ci}</td>
+                                            <td class="px-3 py-2 text-right font-semibold text-gray-700">{finding.ci}</td>
                                         </tr>
                                         <tr>
-                                            <td class="px-3 py-2 text-left">P-value ($p$)</td>
-                                            <td id="${finding.id}-table-p" class="px-3 py-2 text-right font-extrabold ${pValueStatus.color}">${finding.p_value.toFixed(3)}</td>
+                                            <td class="px-3 py-2 text-left">P-value (p)</td>
+                                            <td id="{finding.id}-table-p" class="px-3 py-2 text-right font-extrabold {pValueStatus.color}">{finding.p_value.toFixed(3)}</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             
-                            <div class="text-sm p-4 rounded-lg border ${color.border} ${color.details_bg}">
-                                <p class="font-bold ${color.details_text} text-md">Key Interpretation:</p>
-                                <p class="mt-2 ${color.details_text}">${finding.interpretation}</p>
+                            <div class="text-sm p-4 rounded-lg border {color.border} {color.details_bg}">
+                                <p class="font-bold {color.details_text} text-md">Key Interpretation:</p>
+                                <p class="mt-2 {color.details_text}">{finding.interpretation}</p>
                             </div>
                         </div>
                     </div>
@@ -423,25 +423,25 @@
             const valueColorClass = newOr >= 1.0 ? color.text : 'text-red-700';
 
             // Dot and OR Value
-            document.getElementById(`${id}-dot`).style.left = `${orPosition}%`;
-            document.getElementById(`${id}-or-value`).textContent = newOr.toFixed(2);
-            document.getElementById(`${id}-or-value`).className = `text-5xl font-extrabold ${valueColorClass}`;
-            document.getElementById(`${id}-table-or`).textContent = newOr.toFixed(3);
-            document.getElementById(`${id}-table-or`).className = `px-3 py-2 text-right font-extrabold ${valueColorClass}`;
+            document.getElementById(`{id}-dot`).style.left = `{orPosition}%`;
+            document.getElementById(`{id}-or-value`).textContent = newOr.toFixed(2);
+            document.getElementById(`{id}-or-value`).className = `text-5xl font-extrabold {valueColorClass}`;
+            document.getElementById(`{id}-table-or`).textContent = newOr.toFixed(3);
+            document.getElementById(`{id}-table-or`).className = `px-3 py-2 text-right font-extrabold {valueColorClass}`;
 
             // Percentage box
-            document.getElementById(`${id}-percent`).textContent = `${orSign}${percentageIncrease}%`;
-            document.getElementById(`${id}-percent`).className = `text-4xl font-extrabold ${valueColorClass}`;
+            document.getElementById(`{id}-percent`).textContent = `{orSign}{percentageIncrease}%`;
+            document.getElementById(`{id}-percent`).className = `text-4xl font-extrabold {valueColorClass}`;
 
             // P-value Badge & Table
-            const pBadge = document.getElementById(`${id}-p-badge`);
+            const pBadge = document.getElementById(`{id}-p-badge`);
             pBadge.textContent = pValueStatus.text;
-            pBadge.className = `p-value-badge ${pValueStatus.bg} ${pValueStatus.color} shadow-md`;
-            pBadge.title = `P-value: ${newPValue.toFixed(3)}`;
+            pBadge.className = `p-value-badge {pValueStatus.bg} {pValueStatus.color} shadow-md`;
+            pBadge.title = `P-value: {newPValue.toFixed(3)}`;
             
-            const pTable = document.getElementById(`${id}-table-p`);
+            const pTable = document.getElementById(`{id}-table-p`);
             pTable.textContent = newPValue.toFixed(3);
-            pTable.className = `px-3 py-2 text-right font-extrabold ${pValueStatus.color}`;
+            pTable.className = `px-3 py-2 text-right font-extrabold {pValueStatus.color}`;
         }
 
         /**
@@ -471,9 +471,9 @@
          * @param {string} id - The ID of the finding card.
          */
         function toggleDetails(id) {
-            const detailsWrapper = document.getElementById(`${id}-details-wrapper`);
-            const button = document.querySelector(`#${id} .details-button`);
-            const arrow = document.getElementById(`${id}-arrow`);
+            const detailsWrapper = document.getElementById(`{id}-details-wrapper`);
+            const button = document.querySelector(`#{id} .details-button`);
+            const arrow = document.getElementById(`{id}-arrow`);
             const isClosed = button.getAttribute('data-state') === 'closed';
 
             if (isClosed) {
