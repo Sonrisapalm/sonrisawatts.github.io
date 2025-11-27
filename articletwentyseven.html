@@ -1,64 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI in Healthcare: Dr. Al Pierre</title>
-  <style>
-    body {
-      background-color: #121212;
-      color: #e0e0e0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    h1, h2, h3 {
-      color: #fff;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    h2 {
-      margin-top: 30px;
-      margin-bottom: 10px;
-    }
-    h3 {
-      margin-top: 20px;
-      margin-bottom: 5px;
-    }
-    img {
-      max-width: 100%;
-      margin: 20px 0;
-      border-radius: 8px;
-    }
-    p {
-      margin-bottom: 15px;
-    }
-    .hashtags {
-      margin-top: 30px;
-      color: #90caf9;
-    }
-    hr {
-      border: 0;
-      height: 1px;
-      background: #333;
-      margin: 30px 0;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 15px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Healthcare: Dr. Al Pierre</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Poppins Font for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <style>
+        /* Custom Styles for an enhanced dark background and fixed header clearance */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #e0e0e0;
+            line-height: 1.7;
+            /* New Background: Subtle dark radial gradient for depth */
+            background-color: #0d0d17;
+            background-image: radial-gradient(at 50% 10%, #1c2333 0%, #0d0d17 70%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            /* Padding to clear the fixed top navigation bar */
+            padding-top: 5rem; 
+        }
+        /* Style for the fixed navigation bar */
+        #main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50; 
+            background-color: rgba(17, 24, 39, 0.95); /* Dark background with slight transparency */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .glow-hover:hover {
+            text-shadow: 0 0 8px rgba(109, 219, 255, 0.8); /* Changed glow color to a soft blue */
+        }
+    </style>
 </head>
-<body>
+<body class="text-gray-200">
+
+    <!-- FIXED NAVIGATION BAR -->
+    <header id="main-nav" class="py-4 px-6 md:px-12">
+        <nav class="flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
+            <!-- Re-using links from your first article for a consistent experience -->
+            <a href="index.html" class="text-white hover:text-cyan-300 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
+            <a href="about.html" class="text-white hover:text-cyan-300 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
+            <a href="Methodsanddata.html" class="text-white hover:text-cyan-300 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
+            <a href="ethicalguidelines.html" class="text-white hover:text-cyan-300 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
+            <a href="AI-Perception-Briefs.html" class="text-white hover:text-cyan-300 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
+            <a href="contact.html" class="text-white hover:text-cyan-300 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
+        </nav>
+    </header>
   <div style="text-align: center; margin: 2.5rem auto; max-width: 800px;">
         <img src="images/article25.jpg" alt="AI in Healthcare illustration"
     <h1>🤖 AI in Healthcare: Insights from Dr. Al Pierre, Co-Founder of GoDocta</h1>
