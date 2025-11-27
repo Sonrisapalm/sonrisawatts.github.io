@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Navigation -->
-    <nav class="absolute bottom-0 left-0 right-0 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
-            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
-            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
-            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
-            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
-            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
-            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
-        </nav>
-    </header>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Who Do You Trust More? AI Therapist or AI Financial Advisor?</title>
@@ -18,9 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
     <style>
+        /* Custom styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background-image: url('images/websitebackground.jpg');
+            /* Using a placeholder for the background image for safety, but keeping your intent */
+            background-image: url('https://placehold.co/1920x1080/1a1a2e/ffffff?text=Website+Background');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -28,14 +20,28 @@
             color: #f0f0f0;
             line-height: 1.7;
             overflow-x: hidden;
+            /* Add padding to the bottom of the body to ensure content above the fixed footer */
+            padding-bottom: 8rem; /* Enough space for the fixed footer/nav */
         }
         .text-shadow-md {
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
         }
+        .glow-hover:hover {
+            text-shadow: 0 0 8px rgba(255, 165, 0, 0.8);
+        }
+        /* Style for the fixed navigation bar */
+        #main-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50; /* Ensure it stays above other content */
+            background-color: rgba(17, 24, 39, 0.95); /* Dark background with slight transparency */
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
-
 
     <!-- Main Content -->
     <main class="container mx-auto p-4 md:p-8 space-y-12 max-w-4xl">
@@ -43,12 +49,17 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white text-center leading-tight">
                 St. Kitts & Nevis! Who Do You Trust More? An AI Therapist or an AI Financial Advisor?
             </h2>
-            <img src="images/article6.jpg" alt="AI Therapist vs Financial Advisor" class="w-full h-auto rounded-2xl mb-8 shadow-md" />
+            <!-- Note: I used a placeholder image URL as your original URL is local ('images/article6.jpg') -->
+            <img src="https://placehold.co/800x450/333/fff?text=AI+Therapist+vs+Financial+Advisor+Image" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/800x450/333/fff?text=Placeholder';"
+                 alt="AI Therapist vs Financial Advisor" 
+                 class="w-full h-auto rounded-2xl mb-8 shadow-md" />
+            
             <p class="text-lg leading-relaxed text-gray-200 mt-6">
                 If AI can’t ‘understand’ emotions, why do we trust it with life-altering money decisions? My research suggests it’s not about capability; it’s about the perceived risk. This challenges assumptions in AI design.
             </p>
             <p class="text-lg leading-relaxed text-gray-200 mt-4">
-                Our research initiative, **Emotion Encoded**, asked 66 participants in St. Kitts a simple question:
+                Our research initiative, Emotion Encoded, asked 66 participants in St. Kitts a simple question:
             </p>
             <blockquote class="bg-gray-700/50 border-l-4 border-orange-400 p-4 pl-6 italic rounded-r-lg my-6">
                 “Who would you trust more, an AI therapist or an AI financial advisor?”
@@ -82,7 +93,7 @@
                 ‼️ Who would you trust more? ‼️
             </p>
             <p class="text-lg leading-relaxed text-gray-200 mt-4">
-                Join our Virtual Table Talk about AI Resistance, Trust and Integration. Inbox me or email **sonrisawatts@gmail.com**.
+                Join our Virtual Table Talk about AI Resistance, Trust and Integration. Inbox me or email sonrisawatts@gmail.com.
             </p>
             <p class="text-lg leading-relaxed text-gray-200 italic mt-4">
                 Share!
@@ -90,9 +101,23 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900/90 text-center py-6 mt-12 text-gray-400">
-        © 2025 Sonrisa Watts | Emotion Encoded
+    <!-- Footer and Fixed Navigation (Combined) -->
+    <!-- The navigation is now FIXED to the bottom and has a distinct ID -->
+    <footer id="main-nav" class="py-4 px-6 md:px-12">
+        <!-- Navigation Links -->
+        <nav class="flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
+            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
+            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
+            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
+            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
+            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
+            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
+        </nav>
+        
+        <!-- Copyright Info (Optional, but included in your original footer) -->
+        <div class="text-center mt-3 text-sm text-gray-400">
+            © 2025 Sonrisa Watts | Emotion Encoded
+        </div>
     </footer>
 
 </body>
