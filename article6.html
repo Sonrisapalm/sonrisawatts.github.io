@@ -20,8 +20,9 @@
             color: #f0f0f0;
             line-height: 1.7;
             overflow-x: hidden;
-            /* Add padding to the bottom of the body to ensure content above the fixed footer */
-            padding-bottom: 8rem; /* Enough space for the fixed footer/nav */
+            /* CRITICAL FIX: Add padding to the top of the body to clear the fixed header/nav */
+            padding-top: 5rem; 
+            padding-bottom: 0; /* Removed unnecessary bottom padding */
         }
         .text-shadow-md {
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
@@ -29,21 +30,34 @@
         .glow-hover:hover {
             text-shadow: 0 0 8px rgba(255, 165, 0, 0.8);
         }
-        /* Style for the fixed navigation bar */
+        /* Style for the fixed navigation bar (now at the top) */
         #main-nav {
             position: fixed;
-            bottom: 0;
+            top: 0; /* Changed from bottom: 0 to top: 0 */
             left: 0;
             right: 0;
-            z-index: 50; /* Ensure it stays above other content */
+            z-index: 50; 
             background-color: rgba(17, 24, 39, 0.95); /* Dark background with slight transparency */
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow is now on the bottom edge */
         }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
 
+    <!-- FIXED NAVIGATION BAR (NOW AT THE TOP) -->
+    <header id="main-nav" class="py-4 px-6 md:px-12">
+        <nav class="flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
+            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
+            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
+            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
+            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
+            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
+            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
+        </nav>
+    </header>
+
     <!-- Main Content -->
+    <!-- The padding-top on the body ensures this content starts below the fixed header -->
     <main class="container mx-auto p-4 md:p-8 space-y-12 max-w-4xl">
         <section class="bg-gray-800/50 p-6 md:p-10 rounded-3xl shadow-lg mt-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white text-center leading-tight">
@@ -101,23 +115,9 @@
         </section>
     </main>
 
-    <!-- Footer and Fixed Navigation (Combined) -->
-    <!-- The navigation is now FIXED to the bottom and has a distinct ID -->
-    <footer id="main-nav" class="py-4 px-6 md:px-12">
-        <!-- Navigation Links -->
-        <nav class="flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
-            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
-            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
-            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
-            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
-            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
-            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
-        </nav>
-        
-        <!-- Copyright Info (Optional, but included in your original footer) -->
-        <div class="text-center mt-3 text-sm text-gray-400">
-            © 2025 Sonrisa Watts | Emotion Encoded
-        </div>
+    <!-- Simple Footer (not fixed) -->
+    <footer class="bg-gray-900/90 text-center py-6 mt-12 text-gray-400">
+        © 2025 Sonrisa Watts | Emotion Encoded
     </footer>
 
 </body>
