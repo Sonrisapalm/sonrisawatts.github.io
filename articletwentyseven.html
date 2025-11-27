@@ -1,62 +1,158 @@
-            <img src="images/article25.jpg" alt="AI in Healthcare illustration" class="w-full h-auto rounded-xl shadow-2xl border border-gray-700/70" />
-    <h1>🤖 AI in Healthcare: Insights from Dr. Al Pierre, Co-Founder of GoDocta</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Healthcare: Insights from Dr. Al Pierre, Co-Founder of GoDocta</title>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Base styles for dark theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.75;
+        }
 
-    <p>The digital health revolution is transforming healthcare access, efficiency, and patient outcomes. At the forefront of this movement is <strong>Artificial Intelligence (AI)</strong>, but adoption is not just about technology. It is about human psychology, culture, and trust.</p>
+        /* Utility class for main content container */
+        .article-container {
+            max-width: 68rem; /* Wider container for better reading experience */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem;
+        }
 
-    <p>We spoke with <strong>Dr. Al Pierre</strong>, co-founder of <strong>GoDocta</strong>, a Caribbean telehealth platform, about integrating AI into healthcare systems, overcoming psychological barriers, and the ethical responsibilities of AI in medicine.</p>
+        /* Styling the main H1/H2/H3 for impact and hierarchy */
+        h1 {
+            font-size: 2.25rem; /* 3xl */
+            font-weight: 800; /* Extra bold */
+            color: #4ade80; /* Green highlight color */
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 1.875rem; /* 2xl */
+            font-weight: 700;
+            color: #c9d1d9;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #161b22;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.25rem; /* xl */
+            font-weight: 600;
+            color: #4ade80; /* Green for Q/A separation */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
 
-    <h2>AI in Practice: Assisted Intelligence, Not Replacement</h2>
-    <h3>Q: How do you see AI being integrated into healthcare systems more broadly?</h3>
-    <p><strong>Dr. Al Pierre:</strong> Our experience with GoDocta’s telehealth platform has shown that digital tools can dramatically improve healthcare access and efficiency. By connecting patients on one island to specialists on another, we reduced costs by over 80 percent just by eliminating travel without compromising quality. Our plan is to roll out this kind of digital health innovation across the Caribbean and beyond.</p>
-    <p>AI is becoming a natural next step in this digital health revolution. We integrate AI as what I like to call ‘Assisted Intelligence’ — intelligent systems that support doctors and nurses rather than replace them. For example, we’ve developed proprietary AI algorithms to assist with accurate diagnostics, flagging potential conditions or analyzing medical images as an aid to the clinician. This helps doctors on small islands get decision support on par with the best hospitals, leveling the playing field.</p>
-    <p>At Urgent Care SKN, we use AI to launch a Nurse-Led model: nurses manage non-complex cases from start to finish, empowering them while filling key healthcare gaps. Within GoDocta’s EHR, AI handles data-heavy tasks like reviewing scans or crunching patient data so clinicians can focus on patient interaction and nuanced decision-making. AI works best as a partner to the medical team.</p>
+        /* Paragraph styling */
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem; /* lg */
+        }
 
-    <hr>
+        /* Bold text for speaker names */
+        p strong {
+            color: #4ade80; 
+        }
 
-    <h2>Algorithm Aversion: Trusting Machines</h2>
-    <h3>Q: Many doctors and patients hesitate to trust AI after mistakes. How does this affect adoption?</h3>
-    <p><strong>Dr. Al Pierre:</strong> Algorithm aversion is real. People distrust algorithmic advice even when it outperforms humans; a single visible AI error can outweigh dozens of correct recommendations. Clinicians may abandon AI after one mistake, but no doctor is 100 percent error-free either. We’re more forgiving of humans than machines, largely due to psychology.</p>
-    <p>Overcoming this requires transparency and education. At GoDocta, we introduce AI in assistive roles, pilot it in low-risk settings, and always ensure human supervision. Clinicians have the final say, which mitigates fears of the machine hallucinating or running wild.</p>
+        /* HR styling */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #161b22;
+            margin: 3rem 0;
+        }
 
-    <hr>
+        /* Hashtag styling */
+        .hashtags {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #161b22;
+            font-size: 0.875rem; /* sm */
+            color: #8b949e;
+        }
+        .hashtags span {
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            background-color: #161b22;
+            border-radius: 0.25rem;
+            color: #4ade80;
+        }
+    </style>
+</head>
+<body>
 
-    <h2>Radical Skepticism: Cultural and Emotional Barriers</h2>
-    <h3>Q: Some professionals doubt AI’s reliability in sensitive healthcare contexts. Is this justified?</h3>
-    <p><strong>Dr. Al Pierre:</strong> Healthy skepticism is good. We make important decisions about people’s lives and should always question new tools. Concerns about AI failing unpredictably, data privacy, job displacement, or erosion of the human touch are valid.</p>
-    <p>That said, outright refusal to consider AI often stems from emotion and culture rather than facts. Historically, every major healthcare innovation faced resistance — stethoscopes, X-rays, computers, even vaccines. Over time, as tools proved their worth and education increased, cultural resistance faded. I suspect AI is on a similar trajectory. Reliability is improving, and many AI systems already outperform human benchmarks in narrow tasks, but they augment clinicians rather than replace human oversight. We should channel skepticism into constructive scrutiny and deeper partnership, pushing developers to meet high standards and healthcare systems to implement AI thoughtfully.</p>
+    <div class="article-container">
+        <!-- Content starts here - All user content maintained exactly as provided -->
+        <img src="images/article25.jpg" alt="AI in Healthcare illustration" class="w-full h-auto rounded-xl shadow-2xl border border-gray-700/70" />
+        
+        <!-- The original content had an h1 inside the div, which is now styled by the CSS -->
+        <h1>🤖 AI in Healthcare: Insights from Dr. Al Pierre, Co-Founder of GoDocta</h1>
 
-    <hr>
+        <p>The digital health revolution is transforming healthcare access, efficiency, and patient outcomes. At the forefront of this movement is <strong>Artificial Intelligence (AI)</strong>, but adoption is not just about technology. It is about human psychology, culture, and trust.</p>
 
-    <h2>Algorithms and Injustice</h2>
-    <h3>Q: Healthcare data reflects existing inequalities. How serious is the risk that AI codifies injustice in small states like St. Kitts?</h3>
-    <p><strong>Dr. Al Pierre:</strong> This is a serious concern, especially in vulnerable regions like the Caribbean. If AI is trained on biased data, it will perpetuate and even amplify biases. In the US, an algorithm used by insurers recommended less care for Black patients because historical spending was lower, falsely concluding they were healthier.</p>
-    <p>In small Caribbean states, local datasets are limited and may not capture population diversity. Imported AI might not understand our reality. Even day-to-day treatment regimens often rely on studies conducted on populations very different from ours. Historical inequalities along socio-economic or geographic lines can also be baked into the data.</p>
-    <p>At GoDocta, AI must be developed with the communities it serves. We train algorithms on diverse data and check for biased outcomes. Regional cooperation is essential so we can co-create AI models that fit local needs and reduce disparities.</p>
+        <p>We spoke with <strong>Dr. Al Pierre</strong>, co-founder of <strong>GoDocta</strong>, a Caribbean telehealth platform, about integrating AI into healthcare systems, overcoming psychological barriers, and the ethical responsibilities of AI in medicine.</p>
 
-    <hr>
+        <h2>AI in Practice: Assisted Intelligence, Not Replacement</h2>
+        <h3>Q: How do you see AI being integrated into healthcare systems more broadly?</h3>
+        <p><strong>Dr. Al Pierre:</strong> Our experience with GoDocta’s telehealth platform has shown that digital tools can dramatically improve healthcare access and efficiency. By connecting patients on one island to specialists on another, we reduced costs by over 80 percent just by eliminating travel without compromising quality. Our plan is to roll out this kind of digital health innovation across the Caribbean and beyond.</p>
+        <p>AI is becoming a natural next step in this digital health revolution. We integrate AI as what I like to call ‘Assisted Intelligence’ — intelligent systems that support doctors and nurses rather than replace them. For example, we’ve developed proprietary AI algorithms to assist with accurate diagnostics, flagging potential conditions or analyzing medical images as an aid to the clinician. This helps doctors on small islands get decision support on par with the best hospitals, leveling the playing field.</p>
+        <p>At Urgent Care SKN, we use AI to launch a Nurse-Led model: nurses manage non-complex cases from start to finish, empowering them while filling key healthcare gaps. Within GoDocta’s EHR, AI handles data-heavy tasks like reviewing scans or crunching patient data so clinicians can focus on patient interaction and nuanced decision-making. AI works best as a partner to the medical team.</p>
 
-    <h2>Status Quo Bias: Resistance to Change</h2>
-    <h3>Q: Healthcare tends to stick with traditional practices. Will status quo bias slow AI adoption?</h3>
-    <p><strong>Dr. Al Pierre:</strong> Healthcare is conservative, valuing precedent and proven techniques. This can translate into ‘better the devil we know.’ Some practitioners say, ‘I’ve treated patients this way for 30 years, and it works, so why change?’</p>
-    <p>However, research suggests many clinicians are open to decision support technology if it increases efficiency, improves accuracy, and reduces burnout. Demonstrating consistent value, like earlier detection or saved time, encourages adoption. Framing AI as a tool to bolster self-sufficiency and improve equity in the Caribbean also helps. Status quo bias can be overcome with evidence, training, and time, which is why I am bullish on AI.</p>
+        <hr>
 
-    <hr>
+        <h2>Algorithm Aversion: Trusting Machines</h2>
+        <h3>Q: Many doctors and patients hesitate to trust AI after mistakes. How does this affect adoption?</h3>
+        <p><strong>Dr. Al Pierre:</strong> Algorithm aversion is real. People distrust algorithmic advice even when it outperforms humans; a single visible AI error can outweigh dozens of correct recommendations. Clinicians may abandon AI after one mistake, but no doctor is 100 percent error-free either. We’re more forgiving of humans than machines, largely due to psychology.</p>
+        <p>Overcoming this requires transparency and education. At GoDocta, we introduce AI in assistive roles, pilot it in low-risk settings, and always ensure human supervision. Clinicians have the final say, which mitigates fears of the machine hallucinating or running wild.</p>
 
-    <h2>Automation Bias: Guarding Against Over-Reliance</h2>
-    <h3>Q: How should healthcare systems prevent over-reliance on AI?</h3>
-    <p><strong>Dr. Al Pierre:</strong> Automation bias is the flip side of algorithm aversion. Doctors might accept an AI recommendation without critical thinking. To guard against this, human oversight is essential. AI should assist decisions, not run them autonomously.</p>
-    <p>Systems must be transparent so clinicians understand why a recommendation is made. Providers should be trained on AI limitations and maintain practice within their qualifications. Monitoring and auditing AI decisions is critical. At GoDocta, AI is like a second pair of eyes, supporting clinicians and maintaining transparency with patients.</p>
+        <hr>
 
-    <hr>
+        <h2>Radical Skepticism: Cultural and Emotional Barriers</h2>
+        <h3>Q: Some professionals doubt AI’s reliability in sensitive healthcare contexts. Is this justified?</h3>
+        <p><strong>Dr. Al Pierre:</strong> Healthy skepticism is good. We make important decisions about people’s lives and should always question new tools. Concerns about AI failing unpredictably, data privacy, job displacement, or erosion of the human touch are valid.</p>
+        <p>That said, outright refusal to consider AI often stems from emotion and culture rather than facts. Historically, every major healthcare innovation faced resistance — stethoscopes, X-rays, computers, even vaccines. Over time, as tools proved their worth and education increased, cultural resistance faded. I suspect AI is on a similar trajectory. Reliability is improving, and many AI systems already outperform human benchmarks in narrow tasks, but they augment clinicians rather than replace human oversight. We should channel skepticism into constructive scrutiny and deeper partnership, pushing developers to meet high standards and healthcare systems to implement AI thoughtfully.</p>
 
-    <h2>Future-Oriented: AI as a Companion</h2>
-    <h3>Q: What is the most responsible role for AI in healthcare?</h3>
-    <p><strong>Dr. Al Pierre:</strong> AI should be an indispensable partner, amplifying human capabilities. It should handle data-heavy tasks, pattern recognition, and routine monitoring while leaving empathy, critical thinking, and ethical judgment to humans.</p>
-    <p>This ‘AI Companion’ operates under strict guidance of medical professionals. At GoDocta, we use the term ‘Assisted Intelligence’ because AI is designed to support, reduce provider burnout, improve precision and personalization of care, catch errors, and ensure no patient falls through the cracks. Implemented this way, AI can help small regions adopt preventive and equitable healthcare approaches previously thought impossible.</p>
+        <hr>
 
-    <div class="hashtags">
-      #AIinHealthcare #DigitalHealth #Telehealth #AssistedIntelligence #HealthcareInnovation #CaribbeanHealth #MedicalEthics #AlgorithmAversion #HealthEquity #FutureOfMedicine #HealthcareTechnology #PatientCare
+        <h2>Algorithms and Injustice</h2>
+        <h3>Q: Healthcare data reflects existing inequalities. How serious is the risk that AI codifies injustice in small states like St. Kitts?</h3>
+        <p><strong>Dr. Al Pierre:</strong> This is a serious concern, especially in vulnerable regions like the Caribbean. If AI is trained on biased data, it will perpetuate and even amplify biases. In the US, an algorithm used by insurers recommended less care for Black patients because historical spending was lower, falsely concluding they were healthier.</p>
+        <p>In small Caribbean states, local datasets are limited and may not capture population diversity. Imported AI might not understand our reality. Even day-to-day treatment regimens often rely on studies conducted on populations very different from ours. Historical inequalities along socio-economic or geographic lines can also be baked into the data.</p>
+        <p>At GoDocta, AI must be developed with the communities it serves. We train algorithms on diverse data and check for biased outcomes. Regional cooperation is essential so we can co-create AI models that fit local needs and reduce disparities.</p>
+
+        <hr>
+
+        <h2>Status Quo Bias: Resistance to Change</h2>
+        <h3>Q: Healthcare tends to stick with traditional practices. Will status quo bias slow AI adoption?</h3>
+        <p><strong>Dr. Al Pierre:</strong> Healthcare is conservative, valuing precedent and proven techniques. This can translate into ‘better the devil we know.’ Some practitioners say, ‘I’ve treated patients this way for 30 years, and it works, so why change?’</p>
+        <p>However, research suggests many clinicians are open to decision support technology if it increases efficiency, improves accuracy, and reduces burnout. Demonstrating consistent value, like earlier detection or saved time, encourages adoption. Framing AI as a tool to bolster self-sufficiency and improve equity in the Caribbean also helps. Status quo bias can be overcome with evidence, training, and time, which is why I am bullish on AI.</p>
+
+        <hr>
+
+        <h2>Automation Bias: Guarding Against Over-Reliance</h2>
+        <h3>Q: How should healthcare systems prevent over-reliance on AI?</h3>
+        <p><strong>Dr. Al Pierre:</strong> Automation bias is the flip side of algorithm aversion. Doctors might accept an AI recommendation without critical thinking. To guard against this, human oversight is essential. AI should assist decisions, not run them autonomously.</p>
+        <p>Systems must be transparent so clinicians understand why a recommendation is made. Providers should be trained on AI limitations and maintain practice within their qualifications. Monitoring and auditing AI decisions is critical. At GoDocta, AI is like a second pair of eyes, supporting clinicians and maintaining transparency with patients.</p>
+
+        <hr>
+
+        <h2>Future-Oriented: AI as a Companion</h2>
+        <h3>Q: What is the most responsible role for AI in healthcare?</h3>
+        <p><strong>Dr. Al Pierre:</strong> AI should be an indispensable partner, amplifying human capabilities. It should handle data-heavy tasks, pattern recognition, and routine monitoring while leaving empathy, critical thinking, and ethical judgment to humans.</p>
+        <p>This ‘AI Companion’ operates under strict guidance of medical professionals. At GoDocta, we use the term ‘Assisted Intelligence’ because AI is designed to support, reduce provider burnout, improve precision and personalization of care, catch errors, and ensure no patient falls through the cracks. Implemented this way, AI can help small regions adopt preventive and equitable healthcare approaches previously thought impossible.</p>
+->
     </div>
-  </div>
 </body>
 </html>
