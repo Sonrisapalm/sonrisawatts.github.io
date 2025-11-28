@@ -5,84 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Jobs Do People Think AI Can Replace? | Emotion Encoded Survey</title>
     <meta name="description" content="Findings from an Emotion Encoded survey on which professions people believe AI could potentially replace, highlighting the surprising vulnerability of creative roles.">
-    </head>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use the Inter font family -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc; /* Light background for the page */
+        }
+    </style>
+</head>
 <body>
 
-    <main>
-        <article>
-            <header>
-                <h1>What Jobs Do People Think AI Can Replace?</h1>
-                <p class="subtitle">Findings from an Emotion Encoded Survey</p>
-                <figure>
-                    <img src="images/article22.jpg" alt="A conceptual image representing artificial intelligence and the future of work, such as a robot hand shaking a human hand or a digital brain.">
-                    <figcaption>Image Source: Vesota, N. (2024, May 31). What Jobs Will AI Replace? Top 12 Roles at Risk and How to Adapt. Job Blog HQ.</figcaption>
+    <main class="min-h-screen p-4 sm:p-8 lg:p-12">
+        <article class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden ring-1 ring-gray-100">
+            
+            <!-- Article Header -->
+            <header class="p-6 sm:p-10 border-b border-gray-100">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">
+                    What Jobs Do People Think AI Can Replace?
+                </h1>
+                <p class="mt-2 text-xl font-medium text-indigo-600">
+                    Findings from an Emotion Encoded Survey
+                </p>
+                
+                <!-- Featured Image Placeholder -->
+                <figure class="mt-6 w-full h-56 sm:h-80 bg-gray-200 rounded-xl overflow-hidden">
+                    <img 
+                        src="https://placehold.co/1000x400/312e81/ffffff?text=AI+%2B+Future+of+Work" 
+                        alt="A conceptual image representing artificial intelligence and the future of work, such as a robot hand shaking a human hand or a digital brain." 
+                        class="w-full h-full object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/1000x400/312e81/ffffff?text=AI+%2B+Future+of+Work';"
+                    >
+                    <figcaption class="mt-2 text-xs text-gray-500 text-center">
+                        Image Source: Conceptual image representing AI's impact on employment.
+                    </figcaption>
                 </figure>
-                <p>When people imagine the future of work, they often picture machines taking over tasks once reserved for humans. But which jobs do we think are most vulnerable?</p>
-                <p>In a recent Emotion Encoded survey of 43 respondents, people shared which professions they believe AI could potentially replace. The results are both predictable and surprising.</p>
+
+                <p class="mt-6 text-lg text-gray-700">When people imagine the future of work, they often picture machines taking over tasks once reserved for humans. But which jobs do we think are most vulnerable?</p>
+                <p class="mt-4 text-lg text-gray-700">In a recent Emotion Encoded survey of 43 respondents, people shared which professions they believe AI could potentially replace. The results are both predictable and surprising.</p>
             </header>
 
-            <section class="survey-results">
-                <h2>Survey Results</h2>
-                <p>Below are the professions and the percentage of respondents who believe AI could replace them:</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Profession</th>
-                            <th>Respondents (N=43)</th>
-                            <th>Percentage (%)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Graphic Designers</td><td>31</td><td>72.1%</td></tr>
-                        <tr><td>Software Developers</td><td>30</td><td>69.8%</td></tr>
-                        <tr><td>Writers</td><td>27</td><td>62.8%</td></tr>
-                        <tr><td>Accountants</td><td>24</td><td>55.8%</td></tr>
-                        <tr><td>Tutors</td><td>24</td><td>55.8%</td></tr>
-                        <tr><td>Paralegals</td><td>24</td><td>55.8%</td></tr>
-                        <tr><td>Cashiers</td><td>20</td><td>46.5%</td></tr>
-                        <tr><td>Retail Workers</td><td>20</td><td>46.5%</td></tr>
-                        <tr><td>Travel Agents</td><td>16</td><td>37.2%</td></tr>
-                        <tr><td>Artists</td><td>13</td><td>30.2%</td></tr>
-                        <tr><td>Movie Producers</td><td>13</td><td>30.2%</td></tr>
-                        <tr><td>Customer Service Agents</td><td>12</td><td>27.9%</td></tr>
-                        <tr><td>Photographers</td><td>11</td><td>25.6%</td></tr>
-                        <tr><td>Models</td><td>9</td><td>20.9%</td></tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <hr>
-
-            <section class="key-insights">
-                <h2>Key Insights</h2>
+            <!-- Survey Results Section (Table & Visualization) -->
+            <section class="p-6 sm:p-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-indigo-500 pl-3">Survey Results: Professions at Risk</h2>
                 
-                <h3>1. Creativity is not safe anymore.</h3>
-                <p>The single highest response was **graphic designers (72.1%)**, followed closely by **software developers (69.8%)** and **writers (62.8%)**. This suggests people no longer see creativity or technical skill as uniquely human. AI’s ability to generate art, design, code, and text is reshaping what creative work even means.</p>
+                <p class="mb-4 text-gray-600">Below are the professions and the percentage of respondents who believe AI could replace them, ranked by vulnerability:</p>
 
-                <h3>2. White-collar professions — AI is coming.</h3>
-                <p>Roles such as **accountants (55.8%)**, **tutors (55.8%)**, and **paralegals (55.8%)** were also seen as replaceable. This reflects how AI is viewed as powerful enough to handle structured, repetitive, and knowledge-heavy work ranging from legal briefs to lesson plans.</p>
-
-                <h3>3. The service sector will be affected.</h3>
-                <p>**Cashiers (46.5%)**, **retail workers (46.5%)**, and **travel agents (37.2%)** ranked high. This matches real-world automation we already see in self-checkouts, booking sites, and customer service chatbots.</p>
-
-                <h3>4. Skepticism remains around human-heavy fields.</h3>
-                <p>**Photographers (25.6%)**, **artists (30.2%)**, and **movie producers (30.2%)** scored lower. Respondents may feel that emotional intuition, vision, and cultural taste are harder for AI to replicate.</p>
-
-                <h3>5. Models (20.9%) were the least selected.</h3>
-                <p>This shows a belief that physical presence and human representation, at least for now, cannot be entirely faked by machines.</p>
+                <!-- Data Table -->
+                <div class="overflow-x-auto shadow-md rounded-lg">
+                    <table class="min-w-full divide-y divide-indigo-200 bg-white">
+                        <thead class="bg-indigo-50">
+                            <tr>
+                                <th scope="col" class="px-4 py-3 text-left text-sm font-semibold text-indigo-700 uppercase tracking-wider rounded-tl-lg">
+                                    Profession
+                                </th>
+                                <th scope="col" class="px-4 py-3 text-right text-sm font-semibold text-indigo-700 uppercase tracking-wider">
+                                    Count (N=43)
+                                </th>
+                                <th scope="col" class="px-4 py-3 text-right text-sm font-semibold text-indigo-700 uppercase tracking-wider rounded-tr-lg">
+                                    Percentage (%)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Graphic Designers</td><td class="text-right">31</td><td class="text-right font-medium text-red-600">72.1%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Software Developers</td><td class="text-right">30</td><td class="text-right font-medium text-red-600">69.8%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Writers</td><td class="text-right">27</td><td class="text-right font-medium text-orange-600">62.8%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Accountants</td><td class="text-right">24</td><td class="text-right font-medium text-yellow-600">55.8%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Tutors</td><td class="text-right">24</td><td class="text-right font-medium text-yellow-600">55.8%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Paralegals</td><td class="text-right">24</td><td class="text-right font-medium text-yellow-600">55.8%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Cashiers</td><td class="text-right">20</td><td class="text-right text-gray-700">46.5%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Retail Workers</td><td class="text-right">20</td><td class="text-right text-gray-700">46.5%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Travel Agents</td><td class="text-right">16</td><td class="text-right text-gray-700">37.2%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Artists</td><td class="text-right">13</td><td class="text-right text-gray-700">30.2%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Movie Producers</td><td class="text-right">13</td><td class="text-right text-gray-700">30.2%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Customer Service Agents</td><td class="text-right">12</td><td class="text-right text-gray-700">27.9%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Photographers</td><td class="text-right">11</td><td class="text-right text-gray-700">25.6%</td></tr>
+                            <tr class="hover:bg-indigo-50/50 transition duration-150"><td>Models</td><td class="text-right">9</td><td class="text-right font-light text-green-600">20.9%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
-            <hr>
+            <hr class="border-gray-200 mx-6 sm:mx-10">
 
-            <section class="bigger-picture">
-                <h2>The Bigger Picture</h2>
-                <p>What stands out is the psychological contradiction. People are most ready to accept that AI can replace fields built on **creativity** such as design, writing, and software. Yet they resist the idea of AI replacing roles with a heavy **human, cultural, or physical component** even if those jobs might be easier to automate in theory.</p>
-                <p class="concluding-thought">The question, then, is not only what jobs AI can do, but which human qualities we are most willing to let go of.</p>
+            <!-- Key Insights Section -->
+            <section class="p-6 sm:p-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-indigo-500 pl-3">Key Insights from the Data</h2>
+                
+                <!-- Insight 1: Creativity -->
+                <div class="mb-8 p-4 bg-indigo-50 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M3.636 5.636l.707.707M7.293 17.293A8.001 8.001 0 0112 15c3.243 0 6.136 1.442 8.083 3.738C20.47 21.01 16.51 22 12 22 7.49 22 3.53 21.01 3.917 19.031A8.001 8.001 0 017.293 17.293zM12 12V6m-2 4h4"></path></svg>
+                        1. Creativity is not safe anymore.
+                    </h3>
+                    <p class="text-gray-700">The single highest response was <strong class="text-indigo-700">graphic designers (72.1%)</strong>, followed closely by <strong class="text-indigo-700">software developers (69.8%)</strong> and <strong class="text-indigo-700">writers (62.8%)</strong>. This suggests people no longer see creativity or technical skill as uniquely human. AI’s ability to generate art, design, code, and text is reshaping what creative work even means.</p>
+                </div>
+
+                <!-- Insight 2: White-collar -->
+                <div class="mb-8 p-4 bg-indigo-50 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h-2M5 21h2m7-9h2m-2-4h2m-2 8h2M7 7h4v4H7V7zm6 0h4v4h-4V7zm0 6h4v4h-4v-4zm-6 0h4v4H7v-4z"></path></svg>
+                        2. White-collar professions — AI is coming.
+                    </h3>
+                    <p class="text-gray-700">Roles such as <strong class="text-indigo-700">accountants (55.8%)</strong>, <strong class="text-indigo-700">tutors (55.8%)</strong>, and <strong class="text-indigo-700">paralegals (55.8%)</strong> were also seen as replaceable. This reflects how AI is viewed as powerful enough to handle structured, repetitive, and knowledge-heavy work ranging from legal briefs to lesson plans.</p>
+                </div>
+
+                <!-- Insight 3: Service Sector -->
+                <div class="mb-8 p-4 bg-indigo-50 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v4m-2 5h4m-4 0a1 1 0 01-1-1v-2a1 1 0 011-1h4a1 1 0 011 1v2a1 1 0 01-1 1h-4z"></path></svg>
+                        3. The service sector will be affected.
+                    </h3>
+                    <p class="text-gray-700"><strong class="text-indigo-700">Cashiers (46.5%)</strong>, <strong class="text-indigo-700">retail workers (46.5%)</strong>, and <strong class="text-indigo-700">travel agents (37.2%)</strong> ranked high. This matches real-world automation we already see in self-checkouts, booking sites, and customer service chatbots.</p>
+                </div>
+
+                <!-- Insight 4 & 5: Human-heavy fields -->
+                <div class="p-4 bg-indigo-50 rounded-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        4 & 5. Skepticism remains around human-heavy fields.
+                    </h3>
+                    <p class="text-gray-700">Roles requiring strong human intuition, like <strong class="text-indigo-700">photographers (25.6%)</strong>, <strong class="text-indigo-700">artists (30.2%)</strong>, and <strong class="text-indigo-700">movie producers (30.2%)</strong>, scored lower. Similarly, <strong class="text-indigo-700">Models (20.9%)</strong> were the least selected, suggesting a current belief that physical presence and human representation cannot be entirely faked by machines.</p>
+                </div>
             </section>
             
-            <footer>
-                <p class="source-info">
-                    <strong>Source:</strong> Vesota, N. (2024, May 31). <a href="https://jobbloghq.com/career-blog/what-jobs-will-ai-replace/" target="_blank">What Jobs Will AI Replace? Top 12 Roles at Risk and How to Adapt.</a> Job Blog HQ.
+            <hr class="border-gray-200 mx-6 sm:mx-10">
+
+            <!-- Conclusion -->
+            <section class="p-6 sm:p-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-indigo-500 pl-3">The Bigger Picture</h2>
+                <p class="text-lg text-gray-700">What stands out is the psychological contradiction. People are most ready to accept that AI can replace fields built on <strong class="font-bold text-indigo-800">creativity</strong> such as design, writing, and software. Yet they resist the idea of AI replacing roles with a heavy <strong class="font-bold text-indigo-800">human, cultural, or physical component</strong>, even if those jobs might be easier to automate in theory.</p>
+                <div class="mt-6 p-4 bg-indigo-100 rounded-lg text-center">
+                    <p class="text-xl font-semibold text-indigo-800 italic">
+                        The question, then, is not only what jobs AI can do, but which human qualities we are most willing to let go of.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Footer/Source -->
+            <footer class="p-6 sm:p-10 bg-gray-50 border-t border-gray-100">
+                <p class="text-sm text-gray-600">
+                    <strong>Source:</strong> Vesota, N. (2024, May 31). <a href="https://jobbloghq.com/career-blog/what-jobs-will-ai-replace/" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-150">What Jobs Will AI Replace? Top 12 Roles at Risk and How to Adapt.</a> Job Blog HQ.
                 </p>
             </footer>
 
