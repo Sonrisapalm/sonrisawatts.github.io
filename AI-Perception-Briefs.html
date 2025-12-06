@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Articles — Emotion Encoded</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <style>
@@ -23,12 +22,23 @@
         .text-shadow-md {
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
         }
+        /* Custom style for the fixed navigation */
+        .nav-fixed {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(18, 18, 18, 0.95); /* Dark background with slight transparency */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .glow-hover:hover {
+            filter: drop-shadow(0 0 5px rgba(255, 111, 0, 0.8));
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
 
-    <!-- Navigation Links -->
-        <nav class="absolute bottom-0 left-0 right-0 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
+    <header class="nav-fixed">
+        <nav class="py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
             <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
             <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
             <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
@@ -38,8 +48,6 @@
             <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
         </nav>
     </header>
-
-    <!-- Header Section -->
     <header class="text-center pt-16 pb-8 px-4 relative z-10">
         <p class="text-lg md:text-xl font-light max-w-3xl mx-auto text-shadow-md">Dive deeper into research, interviews, and insights from Emotion Encoded.</p>
         <blockquote class="bg-gray-800/50 p-6 md:p-8 rounded-2xl shadow-lg mt-8 max-w-2xl mx-auto">
@@ -49,11 +57,9 @@
         </blockquote>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto mt-8 p-4 md:p-8 space-y-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- Article 1 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">AI Therapist vs AI Financial Advisor: Who Do You Trust More?</h2>
@@ -62,8 +68,7 @@
                 </div>
                 <a href="./article1.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
-            
-            <!-- Article 21 -->
+
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">👨🏾‍⚕Emotion Encoded : Who Do We Trust with AI: Surgeons, Nurses, or Neither?👨🏾‍⚕
@@ -77,7 +82,6 @@
             </article>
 
 
-            <!-- Article 2 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Conducting Research Continues</h2>
@@ -90,7 +94,6 @@
                 <a href="./article2.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
 
-            <!-- Article 3 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">AI Trust: What Do People Need to Know?</h2>
@@ -104,36 +107,33 @@
             </article>
 
 
-            <!-- Article 29 -->
-                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="/.articletwentynine.html"
-                        <img src="images/article29.jpg" alt="AI in Education" class="w-full h-auto rounded-2xl mb-4" />
-                    </a>
-                    <div class="flex-grow flex flex-col">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Artificial Intelligence in Education : Dr
-                            Owen</h3>
-                        <p class="text-gray-300 text-sm md:text-base flex-grow">
-                            Insights from Dr. Owen on Artificial Intelligence integration into Education
-                        </p>
-                        <a href="/.articletwentynine.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                    </div>
-    </article>
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <a href="./articletwentynine.html">
+                    <img src="images/article29.jpg" alt="AI in Education" class="w-full h-auto rounded-2xl mb-4" />
+                </a>
+                <div class="flex-grow flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Artificial Intelligence in Education : Dr
+                        Owen</h3>
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        Insights from Dr. Owen on Artificial Intelligence integration into Education
+                    </p>
+                    <a href="./articletwentynine.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                </div>
+            </article>
 
-             <!-- Article Preview for article-coming-soon -->
-                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="articletwentyseven.html">
-                        <img src="images/article25.jpg" alt="Coming Soon Preview" class="w-full h-auto rounded-2xl mb-4" />
-                    </a>
-                    <div class="flex-grow flex flex-col">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight"> Emotion Encoded's Interview with Dr. Aljay Pierre- Insights</h3>
-                        <p class="text-gray-300 text-sm md:text-base flex-grow">
-                            Interview with Dr. Aljay Pierre- Cofounder of Telehealth GoDocta
-                        </p>
-                        <a href="articletwentyseven.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                    </div>
-                </article>
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <a href="articletwentyseven.html">
+                    <img src="images/article25.jpg" alt="Coming Soon Preview" class="w-full h-auto rounded-2xl mb-4" />
+                </a>
+                <div class="flex-grow flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight"> Emotion Encoded's Interview with Dr. Aljay Pierre- Insights</h3>
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        Interview with Dr. Aljay Pierre- Cofounder of Telehealth GoDocta
+                    </p>
+                    <a href="articletwentyseven.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                </div>
+            </article>
 
-            <!-- Article 4 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Emotion Encoded Research Initiative: AI in the Classroom</h2>
@@ -147,7 +147,6 @@
                 <a href="./article4.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
 
-            <!-- Article 5 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Another Research Topic</h2>
@@ -158,41 +157,37 @@
                 </div>
                 <a href="./article5.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
-            
-            <!-- Article Preview for article16.html -->
-<article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-    <div>
-        <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            AI on the Stand: The Public's Verdict on AI Juries and Prosecutors
-        </h2>
-        <img src="images/article16.jpg" alt="A futuristic courtroom with an AI interface at the judge's bench" class="w-full h-auto rounded-2xl my-4" />
-        <p class="text-gray-300 text-sm md:text-base mb-4">
-            When asked to choose between an AI jury or an AI prosecutor, the majority of respondents chose neither. Their responses reveal a deep-seated belief that human empathy is essential to the justice system.
-        </p>
-    </div>
-    <a href="articlesixteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-</article>
 
-            <!-- Article Preview for article thirtytwo-->
-<article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-    <a href="articlethirtytwo.html">
-        <!-- The image source below uses a relative path to a local folder.
-             This will work once the file is hosted on a web server with the image in an "images" directory. -->
-        <img src="images/article32.jpg" alt="A visual representation of AI in psychiatry" class="w-full h-auto rounded-2xl mb-4" />
-    </a>
-    <div class="flex-grow flex flex-col">
-        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            Emotion Encoded: Psychiatrist's Perspective on AI
-        </h3>
-       <p class="text-gray-300 text-sm md:text-base flex-grow">
-    Preview: A Conversation with Dr. Izben Williams on AI, Humanity, and the Mind
-</p>
-<a href="articlethirtytwo.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">
-    Read More →
-</a>
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        AI on the Stand: The Public's Verdict on AI Juries and Prosecutors
+                    </h2>
+                    <img src="images/article16.jpg" alt="A futuristic courtroom with an AI interface at the judge's bench" class="w-full h-auto rounded-2xl my-4" />
+                    <p class="text-gray-300 text-sm md:text-base mb-4">
+                        When asked to choose between an AI jury or an AI prosecutor, the majority of respondents chose neither. Their responses reveal a deep-seated belief that human empathy is essential to the justice system.
+                    </p>
+                </div>
+                <a href="articlesixteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+            </article>
 
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <a href="articlethirtytwo.html">
+                    <img src="images/article32.jpg" alt="A visual representation of AI in psychiatry" class="w-full h-auto rounded-2xl mb-4" />
+                </a>
+                <div class="flex-grow flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        Emotion Encoded: Psychiatrist's Perspective on AI
+                    </h3>
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        Preview: A Conversation with Dr. Izben Williams on AI, Humanity, and the Mind
+                    </p>
+                    <a href="articlethirtytwo.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">
+                        Read More →
+                    </a>
+                </div>
+            </article>
 
-            <!-- Article 6 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">St. Kitts & Nevis! Who Do You Trust More?</h2>
@@ -205,7 +200,6 @@
                 <a href="./article6.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
 
-            <!-- Article 7 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Trust - When Your Lawyer Uses AI</h2>
@@ -217,42 +211,38 @@
                 </div>
                 <a href="./articleseven.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
-            
-             </article>
-                <!-- Article Preview for articlethirtyone.html -->
-                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="articlethirtyone.html">
-                        <img src="images/article31.jpg" alt="An abstract representation of AI and psychology" class="w-full h-auto rounded-2xl mb-4" />
-                    </a>
-                    <div class="flex-grow flex flex-col">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-                            The Human Core of Mental Health Care: Dr. Clarke on AI, Empathy, and Clinical Judgment
-                        </h3>
-                        <p class="text-gray-300 text-sm md:text-base flex-grow">
-                           A Conversation with a Nevisian Clinical Psychologist and Founder of Respite
-                        </p>
-                        <a href="articlethirtyone.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                    </div>
-                </article>
+
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <a href="articlethirtyone.html">
+                    <img src="images/article31.jpg" alt="An abstract representation of AI and psychology" class="w-full h-auto rounded-2xl mb-4" />
+                </a>
+                <div class="flex-grow flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        The Human Core of Mental Health Care: Dr. Clarke on AI, Empathy, and Clinical Judgment
+                    </h3>
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        A Conversation with a Nevisian Clinical Psychologist and Founder of Respite
+                    </p>
+                    <a href="articlethirtyone.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                </div>
+            </article>
 
 
-  <!-- Article Preview for article twentysix-->
-<article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-    <a href="articletwentysix.html">
-        <img src="images/article26.jpg" alt="A visual representation of AI in law" class="w-full h-auto rounded-2xl mb-4" />
-    </a>
-    <div class="flex-grow flex flex-col">
-        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            Emotion Encoded: Lawyer's Perspective on AI
-        </h3>
-        <p class="text-gray-300 text-sm md:text-base flex-grow">
-            Insights from a Seasoned Lawyer: The Reality of AI 
-        </p>
-        <a href="articletwentysix.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-    </div>
-</article>
-            
-            <!-- Article 8 -->
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <a href="articletwentysix.html">
+                    <img src="images/article26.jpg" alt="A visual representation of AI in law" class="w-full h-auto rounded-2xl mb-4" />
+                </a>
+                <div class="flex-grow flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        Emotion Encoded: Lawyer's Perspective on AI
+                    </h3>
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        Insights from a Seasoned Lawyer: The Reality of AI
+                    </p>
+                    <a href="articletwentysix.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                </div>
+            </article>
+
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Interview with a Counselor</h2>
@@ -265,39 +255,34 @@
                 <a href="./articleeight.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
 
-            <!-- Article 9 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">if AI was a Human?</h2>
                     <img src="images/article9.jpg" alt="Article Nine Preview" class="w-full h-auto rounded-2xl my-4" />
                     <p class="text-gray-300 text-sm md:text-base mb-4">
                         🤗St. Kitts & Nevis 🤗
-                     If AI were a human...
+                        If AI were a human...
                     </p>
                 </div>
                 <a href="./articlenine.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
 
-            <!-- Article Preview for article thirty-->
-<article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-    <a href="thirty.html">
-        <!-- The image source below uses a relative path to a local folder.
-             This will work once the file is hosted on a web server with the image in an "images" directory. -->
-        <img src="images/article30.jpg" alt="A visual representation of AI in law" class="w-full h-auto rounded-2xl mb-4" />
-    </a>
-    <div class="flex-grow flex flex-col">
-        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            Emotion Encoded: The Humana Element in AI-Driven Medicine
-        </h3>
-        <p class="text-gray-300 text-sm md:text-base flex-grow">
-            Featuring Dr. Dwain Archibald, District Medical officer
-        </p>
-        <a href="articlethirty.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-    </div>
-</article>
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <a href="articlethirty.html">
+                    <img src="images/article30.jpg" alt="A visual representation of AI in law" class="w-full h-auto rounded-2xl mb-4" />
+                </a>
+                <div class="flex-grow flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        Emotion Encoded: The Humana Element in AI-Driven Medicine
+                    </h3>
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        Featuring Dr. Dwain Archibald, District Medical officer
+                    </p>
+                    <a href="articlethirty.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                </div>
+            </article>
 
 
-            <!-- Article 10 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Interview with a Young Doctor- General Practicioner</h2>
@@ -311,22 +296,20 @@
             </article>
 
 
-            <!--Article 24-->
-   <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-       <div>
-        <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            Bridging Biology and Algorithms: Dr. Warren Grayson on AI’s Role in Tissue Engineering
-        </h2>
-        <img src="images/article24.jpg" alt="A microscopic view of tissue engineering with digital data overlay" class="w-full h-auto rounded-2xl my-4" />
-        <p class="text-gray-300 text-sm md:text-base mb-4">
-            Dr. Warren Grayson, Professor of Biomedical Engineering at Johns Hopkins, discusses how AI can augment creativity, predict healing, and the current challenges with datasets in tissue engineering.
-        </p>
-    </div>
-    <a href="articletwentyfour.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-</article>
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        Bridging Biology and Algorithms: Dr. Warren Grayson on AI’s Role in Tissue Engineering
+                    </h2>
+                    <img src="images/article24.jpg" alt="A microscopic view of tissue engineering with digital data overlay" class="w-full h-auto rounded-2xl my-4" />
+                    <p class="text-gray-300 text-sm md:text-base mb-4">
+                        Dr. Warren Grayson, Professor of Biomedical Engineering at Johns Hopkins, discusses how AI can augment creativity, predict healing, and the current challenges with datasets in tissue engineering.
+                    </p>
+                </div>
+                <a href="articletwentyfour.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+            </article>
 
-            
-            <!-- Article 11 -->
+
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Emotion Encoded’s Interview with A Tech Specialist from St.Kitts</h2>
@@ -338,7 +321,6 @@
                 <a href="./article11.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
 
-            <!-- Article 12 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Emotion Encoded's Interview with Dr. Bichara Sahely: Trust, Bias, and the Emotional Compass in AI</h2>
@@ -350,7 +332,6 @@
                 <a href="./articletwelve.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
 
-            <!-- Article 13 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">Article: Why Wouldn't People Blame AI Developers?</h2>
@@ -362,7 +343,6 @@
                 <a href="./articlethirteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
             </article>
 
-            <!-- Article 14 -->
             <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
@@ -375,139 +355,106 @@
                 </div>
                 <a href="./articlefourteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
             </article>
-            
-            <!-- Article Preview for articleseventeen.html -->
-<article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-    <div>
-        <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            Navigating the AI Paradox in Finance: A Deeper Look at Alex Straun's Warnings
-        </h2>
-        <img src="images/article17.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
-        <p class="text-gray-300 text-sm md:text-base flex-grow">
-            In the fast-paced world of financial technology, a common narrative prevails: AI is the future, a perfect oracle of data-driven truth. Yet, a conversation with financial professional Alex Straun reveals a more complex, and cautionary, perspective. His insights move beyond the hype to expose a fundamental paradox.
-        </p>
-    </div>
-    <a href="articleseventeen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-</article>
-            <!-- Article Preview for articlefifteen.html -->
-<article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-    <div>
-        <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            When AI Disagrees with Your Doctor: Who Do You Trust?
-        </h2>
-        <img src="images/article15.jpg" alt="A doctor and a patient discussing an AI-generated diagnosis" class="w-full h-auto rounded-2xl my-4" />
-        <p class="text-gray-300 text-sm md:text-base mb-4">
-            Our survey reveals a struggle with trust as patients navigate a new landscape where AI recommendations may conflict with their doctor's advice.
-        </p>
-    </div>
-    <a href="articlefifteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-</article>
-            <!-- Article Preview for articleeighteen.html -->
-<article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-    <div>
-        <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            Emotion Encoded: A Young Doctor’s Perspective on AI in Healthcare
-        </h2>
-        <img src="images/article18.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
-        <p class="text-gray-300 text-sm md:text-base flex-grow">
-            This article explores the perspective of a young doctor on the promises and pitfalls of AI in medicine, discussing issues of trust, over-reliance, and its expanding role in healthcare. 
-        </p>
-    </div>
-    <a href="articleeighteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-</article>
 
-             <!-- Article Preview for articlenineteen.html -->
-<article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-    <div>
-        <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            Interview with Tech Professionals: AI In High Stakes Fields
-        </h2>
-        <img src="images/article19.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
-        <p class="text-gray-300 text-sm md:text-base flex-grow">
-            Mr. Enoete Inanga, a technology professional with sharp insight into the promises and pitfalls of AI.
-        </p>
-    </div>
-    <a href="articlenineteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-</article>
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        Navigating the AI Paradox in Finance: A Deeper Look at Alex Straun's Warnings
+                    </h2>
+                    <img src="images/article17.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        In the fast-paced world of financial technology, a common narrative prevails: AI is the future, a perfect oracle of data-driven truth. Yet, a conversation with financial professional Alex Straun reveals a more complex, and cautionary, perspective. His insights move beyond the hype to expose a fundamental paradox.
+                    </p>
+                </div>
+                <a href="articleseventeen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+            </article>
 
-        <!-- Article Preview for articletwenty.html -->
-                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="articletwenty.html">
-                        <img src="images/article20.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
-                    </a>
-                    <div class="flex-grow flex flex-col">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-                            AI Should Remain a Tool, Never a Master: A Lawyer’s Perspective
-                        </h3>
-                        <p class="text-gray-300 text-sm md:text-base flex-grow">
-                           Lawyer Gumbs warns against the temptation to elevate AI into a position of authority within legal reasoning.
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        When AI Disagrees with Your Doctor: Who Do You Trust?
+                    </h2>
+                    <img src="images/article15.jpg" alt="A doctor and a patient discussing an AI-generated diagnosis" class="w-full h-auto rounded-2xl my-4" />
+                    <p class="text-gray-300 text-sm md:text-base mb-4">
+                        Our survey reveals a struggle with trust as patients navigate a new landscape where AI recommendations may conflict with their doctor's advice.
+                    </p>
+                </div>
+                <a href="articlefifteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+            </article>
+
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        Emotion Encoded: A Young Doctor’s Perspective on AI in Healthcare
+                    </h2>
+                    <img src="images/article18.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        This article explores the perspective of a young doctor on the promises and pitfalls of AI in medicine, discussing issues of trust, over-reliance, and its expanding role in healthcare.
+                    </p>
+                </div>
+                <a href="articleeighteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+            </article>
+
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        Interview with Tech Professionals: AI In High Stakes Fields
+                    </h2>
+                    <img src="images/article19.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        Mr. Enoete Inanga, a technology professional with sharp insight into the promises and pitfalls of AI.
+                    </p>
+                </div>
+                <a href="articlenineteen.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+            </article>
+
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <a href="articletwenty.html">
+                    <img src="images/article20.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
+                </a>
+                <div class="flex-grow flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        AI Should Remain a Tool, Never a Master: A Lawyer’s Perspective
+                    </h3>
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
+                        Lawyer Gumbs warns against the temptation to elevate AI into a position of authority within legal reasoning.
+                    </p>
+                    <a href="articletwenty.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                </div>
+            </article>
+
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <a href="articletwentytwo.html">
+                    <img src="images/article22.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
+                </a>
+                <div class="flex-grow flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
+                        Public Perception on AI in Replacing Jobs
+                    </h3>
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
                         </p>
-                        <a href="articletwenty.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                    </div>
-                </article>
+                    <a href="articletwentytwo.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                </div>
+            </article>
 
-            <!-- Article Preview for articletwentytwo.html -->
-                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="articletwentytwo.html">
-                        <img src="images/article22.jpg" alt="An abstract representation of AI and finance" class="w-full h-auto rounded-2xl mb-4" />
-                    </a>
-                    <div class="flex-grow flex flex-col">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-                            Public Perception on AI in Replacing Jobs
+            <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
+                <a href="articletwentythree.html">
+                    <img src="images/article23.jpg" alt="Interview with psychologist" class="w-full h-auto rounded-2xl mb-4" />
+                </a>
+                <div class="flex-grow flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
                         </h3>
-                        <a href="articletwenty.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                    </div>
-                </article>
-
-    <!-- Article Preview for Article 23 -->
-                <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-                    <a href="articletwentythree.html">
-                        <img src="images/article23.jpg" alt="Interview with psychologist" class="w-full h-auto rounded-2xl mb-4" />
-                    </a>
-                    <div class="flex-grow flex flex-col">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight"> Emotion Encoded's Interview with Dr. Jeune - Psychologist</h3>
-                        <p class="text-gray-300 text-sm md:text-base flex-grow">
-                            Interview with Dr. Jeune - Psychologist
+                    <p class="text-gray-300 text-sm md:text-base flex-grow">
                         </p>
-                        <a href="articletwentythree.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                    </div>
-                </article>
+                    <a href="articletwentythree.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
+                </div>
+            </article>
 
-    <!-- Article Preview for article six -->
-               <article class="bg-gray-800/50 rounded-3xl p-6 shadow-lg transition-transform duration-300 hover:scale-105 flex flex-col justify-between">
-    <a href="articletwentyeight.html" class="block w-full h-48 overflow-hidden rounded-2xl mb-4">
-        <img src="images/article28.jpg"
-             </a>
-              <div class="flex-grow flex flex-col">
-              <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight"> Emotion Encoded : AI in the Legal Profession</h3>
-               <p class="text-gray-300 text-sm md:text-base flex-grow">
-            alt="AI in the legal profession: enhancing research without replacing human judgment"
-               </p>
-           <a href="articletwentyeight.html" class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200">Read More →</a>
-                    </div>
-      </article>
+        </div>
+    </main>
 
-                   
-    <div class="flex-grow flex flex-col">
-        <h3 class="text-xl md:text-2xl font-semibold mb-2 leading-tight">
-            AI in the Legal Profession: Enhancing Research Without Replacing Human Judgment
-        </h3>
-        <p class="text-gray-300 text-sm md:text-base flex-grow">
-            A practicing lawyer reflects on how AI accelerates legal research while keeping moral reasoning human.
-        </p>
-        <a
-            href="articletwentyeight.html"
-            class="mt-4 text-orange-400 hover:text-orange-500 font-medium transition-colors duration-200"
-        >
-            Read More →
-        </a>
-    </div>
-</article>
-    
-
-    <!-- Footer -->
     <footer class="bg-gray-900/90 text-center py-6 mt-12 text-gray-400">
-        © 2025 Emotion Encoded — All rights reserved.
+        &copy; 2025 Emotion Encoded — All rights reserved.
     </footer>
 
 </body>
