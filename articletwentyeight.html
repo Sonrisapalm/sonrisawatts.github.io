@@ -3,83 +3,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI in the Legal Profession</title>
-    <!-- 1. CORRECTED: Load Tailwind CSS CDN -->
+    <title>AI in the Legal Profession | Encoded Emotion</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet" />
     <style>
+        /* Custom styles integrated with Tailwind for fine-tuning */
         body {
-            /* Using Tailwind classes for background/color/font family here for consistency */
-            /* Tailwind classes below will now work because the CDN is loaded */
-            background-color: #0f0f0f;
-            color: #e6e6e6;
+            /* Fallback font */
             font-family: "Inter", system-ui, sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            padding-top: 8rem; /* Added padding to ensure content starts below the sticky header */
-        }
-
-        img.header-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 16px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        h1 {
-            color: #fff;
-            font-size: 2rem;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-bottom: 1.3rem;
-            color: #d2d2d2;
-        }
-
-        strong {
-            color: #fff;
-        }
-
-        footer {
-            margin-top: 3rem;
-            padding-top: 1rem;
-            font-size: 0.9rem;
-            color: #888;
-            border-top: 1px solid #333;
-            text-align: center;
-        }
-
-        a {
-            color: #66b3ff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
         /* Custom glow effect for the navigation links */
         .glow-hover:hover {
             filter: drop-shadow(0 0 4px rgba(255, 165, 0, 0.7)); /* Orange glow */
         }
+        /* Remove unused CSS from the original */
+        .article-content h2, .article-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        /* Style for the article paragraph text */
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #d2d2d2;
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body class="bg-gray-950 text-gray-100 min-h-screen antialiased">
 
-    <!-- 2. CORRECTED: Navigation moved into a proper, sticky header and placed before the body content -->
-    <header class="sticky top-0 z-10 bg-gray-900/95 backdrop-blur-sm shadow-xl border-b border-gray-700">
-        <!-- Navigation Links -->
-        <!-- Fixed positioning and spacing -->
+    <header class="sticky top-0 z-10 bg-gray-950/90 backdrop-blur-md shadow-2xl border-b border-orange-500/30">
         <nav class="py-4 px-4 md:px-12 flex flex-wrap justify-center gap-4 text-sm md:text-base lg:text-lg">
             <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover p-2 rounded-lg">Home</a>
             <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover p-2 rounded-lg">About</a>
@@ -91,41 +44,65 @@
         </nav>
     </header>
 
-    <div class="container">
-        <!-- Image placeholder is missing a proper URL; using a fallback placeholder -->
-        <img src="https://placehold.co/800x400/3d3d3d/ffffff?text=AI+in+Legal+Profession" alt="AI and Law" class="header-image" />
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16 max-w-4xl">
 
-        <h1>AI in the Legal Profession: Enhancing Research Without Replacing Human Judgment</h1>
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
+                AI in the Legal Profession: Enhancing Research Without Replacing Human Judgment
+            </h1>
+            <p class="text-sm text-gray-400 italic">An interview with a practicing lawyer on the opportunities and challenges of AI in law.</p>
+        </header>
 
-        <p>
-            The integration of artificial intelligence (AI) into the legal profession is rapidly changing the way attorneys conduct research, strategize, and interact with clients. We spoke to a practicing lawyer about the opportunities and challenges AI presents in the courtroom and beyond.
-        </p>
+        <figure class="mb-10">
+            <img 
+                src="images/article28.jpg" 
+                alt="Abstract representation of AI data flowing into legal scales of justice" 
+                class="w-full h-auto max-h-[500px] object-cover rounded-xl shadow-2xl shadow-gray-900/50" 
+            />
+            <figcaption class="text-center text-sm text-gray-500 mt-2">
+                Image: The convergence of data and legal judgment.
+            </figcaption>
+        </figure>
 
-        <p>
-            When asked whether AI could improve the legal process, she responded affirmatively, albeit cautiously. “Yes, partially being the operative word,” she noted. AI, she explained, promises to accelerate legal proceedings and enable more in-depth research. “Information will just be a click away, and new cutting-edge legal reasoning is available with minimal research,” she said, emphasizing that the technology allows attorneys to focus on strategic thinking rather than spending most of their time on case research.
-        </p>
+        <section class="article-content max-w-3xl mx-auto text-lg leading-relaxed">
+            <p class="first-letter:text-4xl first-letter:font-bold first-letter:text-orange-400 first-letter:float-left first-letter:mr-2">
+                The integration of artificial intelligence (AI) into the legal profession is rapidly changing the way attorneys conduct research, strategize, and interact with clients. We spoke to a practicing lawyer about the opportunities and challenges AI presents in the courtroom and beyond.
+            </p>
 
-        <p>
-            AI also reshapes the attorney-client dynamic. According to the lawyer, it challenges practitioners in a positive way. “It allows information to be at the fingertips of our clients, so they come in prepared, understanding what the outcome will likely be. This is a good thing,” she said. By streamlining research, attorneys can devote more time to strategy, increasing productivity and enabling them to serve more clients. “The attorney’s productivity and the legal process are therefore accelerated. The billable hours will still be there, but they are spread over more clients. More volume and more value delivered,” she explained.
-        </p>
+            <p>
+                When asked whether AI could improve the legal process, she responded affirmatively, albeit cautiously. “Yes, partially being the operative word,” she noted. **AI, she explained, promises to accelerate legal proceedings and enable more in-depth research.** “Information will just be a click away, and new cutting-edge legal reasoning is available with minimal research,” she said, emphasizing that the technology allows attorneys to focus on strategic thinking rather than spending most of their time on case research.
+            </p>
 
-        <p>
-            Despite the advantages, she expressed concern over overreliance on AI. “Yes, I am quite anxious,” she admitted, noting instances where attorneys submitted cases based on AI-generated information that was inaccurate. “The science is still developing, and because the tool is far from perfect, in my view it should be used as an extended research tool rather than the primary basis of our work,” she cautioned.
-        </p>
+            <h2 class="text-2xl font-bold border-l-4 border-orange-500 pl-3 mt-8 mb-4">Rethinking Attorney-Client Dynamics</h2>
+            <p>
+                AI also reshapes the attorney-client dynamic. According to the lawyer, it challenges practitioners in a positive way. “It allows information to be at the fingertips of our clients, so they come in prepared, understanding what the outcome will likely be. This is a good thing,” she said. By streamlining research, attorneys can devote more time to strategy, increasing productivity and enabling them to serve more clients. **“The attorney’s productivity and the legal process are therefore accelerated. The billable hours will still be there, but they are spread over more clients. More volume and more value delivered,” she explained.**
+            </p>
 
-        <p>
-            Central to her perspective is the importance of human judgment. “The attorney and judiciary must be accountable. The tool is there to guide, but we are the drivers. The ultimate legal reasoning should never be from an inanimate tool,” she stressed. AI, she emphasized, should enhance the profession, not replace the nuanced human reasoning that underpins judicial precedent. Without this human element, distinguishing cases and evolving legal principles could be stunted, leading to potential injustice.
-        </p>
+            <h2 class="text-2xl font-bold border-l-4 border-orange-500 pl-3 mt-8 mb-4">The Cautionary Note: Overreliance</h2>
+            <p>
+                Despite the advantages, she expressed concern over **overreliance on AI**. “Yes, I am quite anxious,” she admitted, noting instances where attorneys submitted cases based on AI-generated information that was inaccurate. “The science is still developing, and because the tool is far from perfect, in my view it should be used as an extended research tool rather than the primary basis of our work,” she cautioned.
+            </p>
 
-        <p>
-            She concluded by highlighting the enduring value of human insight in the law. “Resulting trust and constructive trust principles from equity all came from the human frame that is sometimes needed in our practice. AI will only enhance it. It should never replace it.”
-        </p>
+            <p>
+                Central to her perspective is the importance of **human judgment**. “The attorney and judiciary must be accountable. The tool is there to guide, but we are the drivers. The ultimate legal reasoning should never be from an inanimate tool,” she stressed. AI, she emphasized, should enhance the profession, not replace the nuanced human reasoning that underpins judicial precedent. Without this human element, distinguishing cases and evolving legal principles could be stunted, leading to potential injustice.
+            </p>
 
-        <p>
-            The lawyer’s reflections underscore a balanced approach. AI can be a powerful ally for attorneys, improving efficiency and client service, but it cannot substitute for the judgment, accountability, and creativity that define the legal profession. As technology evolves, the challenge will be to integrate AI responsibly while preserving the human element that ensures fairness, insight, and justice.
-        </p>
+            <h2 class="text-2xl font-bold border-l-4 border-orange-500 pl-3 mt-8 mb-4">The Enduring Value of Human Insight</h2>
+            <p>
+                She concluded by highlighting the enduring value of human insight in the law. “Resulting trust and constructive trust principles from equity all came from the human frame that is sometimes needed in our practice. **AI will only enhance it. It should never replace it.”**
+            </p>
 
-        <footer>© 2025 Encoded Emotion — Independent Research</footer>
-    </div>
+            <p class="border-t border-gray-700 pt-6 mt-6 italic text-gray-400">
+                The lawyer’s reflections underscore a balanced approach. AI can be a powerful ally for attorneys, improving efficiency and client service, but it cannot substitute for the judgment, accountability, and creativity that define the legal profession. As technology evolves, the challenge will be to integrate AI responsibly while preserving the human element that ensures fairness, insight, and justice.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer class="mt-16 py-8 border-t border-gray-800 bg-gray-900/50 text-center text-sm text-gray-500">
+        © 2025 Encoded Emotion — Independent Research
+    </footer>
+
 </body>
 </html>
