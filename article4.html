@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emotion Encoded Research Initiative</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Encoded Research Initiative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a; /* Dark Blue/Slate Background */
+            color: #f1f5f9; /* Light text color */
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        /* Fixed Nav Style for placement and backdrop effect */
+        .fixed-nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background-color: rgba(15, 23, 42, 0.95); /* Semi-transparent dark background */
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.3);
+        }
+        .glow-hover:hover {
+            filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.8));
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
-<body>
-  <!-- Navigation -->
-  <nav class="absolute bottom-0 left-0 right-0 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
+<body class="bg-slate-900 text-slate-100">
+
+    <header class="fixed-nav">
+        <nav class="py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
             <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
             <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
             <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
@@ -18,60 +42,73 @@
         </nav>
     </header>
 
-  <!-- Main Article -->
-  <main>
-    <h1>Emotion Encoded Research Initiative</h1>
-    <h2>❕Research Results in St. Kitts and Nevis ❕</h2>
+    <main class="container mx-auto mt-24 mb-12 p-4 md:p-8 max-w-4xl bg-gray-800/70 rounded-lg shadow-2xl">
+        
+        <h1 class="text-4xl md:text-5xl font-extrabold text-center text-orange-400 mb-2">Emotion Encoded Research Initiative</h1>
+        <h2 class="text-xl md:text-2xl font-semibold text-center text-yellow-300 mb-8">
+            <span class="mr-2">❕</span>Research Results in St. Kitts and Nevis <span class="ml-2">❕</span>
+        </h2>
 
-    <img src="images/articlefour.jpg" alt="Parents, Teachers, and AI in the Classroom" style="width:100%; border-radius:12px; margin: 1em 0;">
+        <img src="images/articlefour.jpg" alt="Parents, Teachers, and AI in the Classroom" class="w-full h-auto rounded-xl shadow-lg border-2 border-orange-500/50 mb-6">
 
-    <h3>Parents, Teachers, and Artificial Intelligence in the Classroom: Trust .... BUT With Conditions</h3>
+        <h3 class="text-3xl font-bold text-orange-300 mb-4 border-b border-gray-600 pb-2">Parents, Teachers, and Artificial Intelligence in the Classroom: Trust .... BUT With Conditions</h3>
 
-    <p>
-      As part of my research initiative <strong>Emotion Encoded</strong>, I asked participants a simple but important question:
-      <em>“Would you be comfortable if your child’s teacher used AI to help with grading or lesson planning?”</em>
-    </p>
+        <section class="space-y-6 text-lg text-gray-200">
+            <p>
+                As part of my research initiative **Emotion Encoded**, I asked participants a simple but important question:
+                *“Would you be comfortable if your child’s teacher used AI to help with grading or lesson planning?”*
+            </p>
 
-    <p>
-      The responses depicted something powerful:
-    </p>
+            <p class="font-bold text-xl text-orange-200">
+                The responses depicted something powerful:
+            </p>
 
-    <p><strong>53.7%</strong> of parents said “yes,” but only under certain conditions. They were open to AI as long as it performed its tasks and the teacher reviewed every assignment and decision. This suggests that parents prefer AI as a support tool rather than a replacement. It reflects automation bias, where people are willing to rely on automated systems but still want human oversight. It also highlights the value parents place on human reasoning, judgment, and rationale in education.</p>
+            <p class="bg-gray-700/50 p-4 rounded-lg border-l-4 border-orange-500">
+                **53.7%** of parents said **“yes,” but only under certain conditions.** They were open to AI as long as it performed its tasks and the teacher reviewed every assignment and decision. This suggests that parents prefer AI as a **support tool** rather than a replacement. It reflects **automation bias**, where people are willing to rely on automated systems but still want human oversight. It also highlights the value parents place on human reasoning, judgment, and rationale in education.
+            </p>
 
-    <p><strong>26%</strong> of parents said “no.” This group showed resistance, signaling a lack of trust in AI for something as critical as a child’s education. Their responses align with algorithm aversion, a tendency to distrust automated systems, and may also involve status quo bias, as many parents prefer the familiar approach of teacher-led grading and lesson planning.</p>
+            <p class="bg-gray-700/50 p-4 rounded-lg border-l-4 border-red-500">
+                **26%** of parents said **“no.”** This group showed resistance, signaling a lack of trust in AI for something as critical as a child’s education. Their responses align with **algorithm aversion**, a tendency to distrust automated systems, and may also involve **status quo bias**, as many parents prefer the familiar approach of teacher-led grading and lesson planning.
+            </p>
 
-    <p><strong>11%</strong> of parents said “yes” without conditions. For these participants, AI was seen simply as another tool in the classroom rather than a potential threat. Their acceptance may have been influenced by the framing effect, where presenting AI as an assistant rather than a replacement helped build trust.</p>
+            <p class="bg-gray-700/50 p-4 rounded-lg border-l-4 border-green-500">
+                **11%** of parents said **“yes” without conditions.** For these participants, AI was seen simply as another tool in the classroom rather than a potential threat. Their acceptance may have been influenced by the **framing effect**, where presenting AI as an assistant rather than a replacement helped build trust.
+            </p>
 
-    <p>
-      The conditional trust parents display in AI use within education points to a larger message: the successful integration of AI requires attention to human psychology, not just system performance. These findings emphasize a key theme in my research initiative: AI adoption is deeply tied to how people emotionally and cognitively negotiate trust with these systems.
-    </p>
+            <p>
+                The **conditional trust** parents display in AI use within education points to a larger message: the successful integration of AI requires attention to **human psychology**, not just system performance. These findings emphasize a key theme in my research initiative: AI adoption is deeply tied to how people emotionally and cognitively negotiate trust with these systems.
+            </p>
 
-    <p>
-      Conditional trust for AI in the classroom from parents signals a bigger message. For AI integration into educational systems, psychology is important.
-    </p>
+            <p>
+                Conditional trust for AI in the classroom from parents signals a bigger message. For AI integration into educational systems, **psychology is important**.
+            </p>
 
-    <p>
-      <em>Status quo Bias? Automation Bias vs. Algorithm Aversion? Or Framing Effect?</em>
-    </p>
+            <p class="italic text-yellow-300 font-medium">
+                *Status quo Bias? Automation Bias vs. Algorithm Aversion? Or Framing Effect?*
+                
+            </p>
 
-    <p>
-      This echoes a larger theme in my research initiative: AI is not simply about performance; it’s about how people emotionally negotiate trust with these systems.
-    </p>
+            <p>
+                This echoes a larger theme in my research initiative: AI is not simply about performance; it’s about how people **emotionally negotiate trust** with these systems.
+            </p>
+        </section>
 
-    <!-- Picture References -->
-    <footer style="font-size: 0.8em; margin-top: 2em; background: none; color: #ccc;">
-      <p><strong>Picture References</strong></p>
-      <p>Image 1 (CRPE / RAND report)<br>
-      CRPE. (2024, May). <em>AI is coming to U.S. classrooms, but who will benefit?</em> Center on Reinventing Public Education. Retrieved from CRPE website.</p>
+        <footer class="mt-8 pt-4 border-t border-gray-600" style="font-size: 0.9em; color: #a1a1aa;">
+            <p class="font-bold text-gray-300 mb-2">Picture References</p>
+            <p>
+                Image 1 (CRPE / RAND report)<br>
+                CRPE. (2024, May). <em>AI is coming to U.S. classrooms, but who will benefit?</em> Center on Reinventing Public Education. Retrieved from CRPE website.
+            </p>
 
-      <p>Image 2 (Artificial Paintings Blog)<br>
-      artmaster. (2024, June 14). <em>The Transformative Role of Artificial Intelligence in Education.</em> Artificial Paintings. Retrieved from artificialpaintings.com.</p>
+            <p class="mt-2">
+                Image 2 (Artificial Paintings Blog)<br>
+                artmaster. (2024, June 14). <em>The Transformative Role of Artificial Intelligence in Education.</em> Artificial Paintings. Retrieved from artificialpaintings.com.
+            </p>
+        </footer>
+    </main>
+
+    <footer class="text-center py-6 border-t border-gray-700/50 bg-gray-900/50">
+        <p class="text-sm text-gray-400">&copy; 2025 Emotion Encoded. All rights reserved.</p>
     </footer>
-  </main>
-
-  <!-- Global Footer -->
-  <footer>
-    <p>&copy; 2025 Emotion Encoded. All rights reserved.</p>
-  </footer>
 </body>
 </html>
