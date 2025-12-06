@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Article Two — Emotion Encoded</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Article Two — Emotion Encoded</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* Custom styles to match the typical dark theme/background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('images/websitebackground.jpg'); /* Assuming a dark background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f0f0f0; /* Light text color */
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .text-shadow-md {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        /* Fixed Nav Style for placement and backdrop effect */
+        .fixed-nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background-color: rgba(15, 23, 42, 0.95); /* Semi-transparent dark background */
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.3);
+        }
+        .glow-hover:hover {
+            filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.8));
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-100">
 
-  <nav>
-   <nav class="absolute bottom-0 left-0 right-0 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
+    <header class="fixed-nav">
+        <nav class="py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-sm md:text-base lg:text-xl">
             <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
             <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
             <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
@@ -19,46 +48,82 @@
             <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
         </nav>
     </header>
-  <header>
-    <h1>Conducting Research Continues</h1>
-    <p>Insights from the latest Emotion Encoded study.</p>
-  </header>
 
-  <main>
-    <article>
-      <img src="images/articletwo.jpg" alt="Article Two Illustration" />
+    <header class="text-center pt-24 pb-8 px-4 relative z-10 bg-gray-900/10">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-orange-400 mb-2 text-shadow-md">Conducting Research Continues</h1>
+        <p class="text-lg md:text-xl font-light text-gray-300">Insights from the latest Emotion Encoded study.</p>
+    </header>
 
-      <p>
-        Emotion Encoded asked participants "Would you take advice from an AI if it knew your entire personality and history?"<br/>
-        Majority of people said "Maybe".<br/>
-        15.6% said "No, that's creepy."
-      </p>
+    <main class="container mx-auto mt-4 mb-12 p-4 md:p-8 max-w-4xl">
+        <article class="bg-gray-800/80 p-6 md:p-10 rounded-xl shadow-2xl space-y-6">
 
-      <p>
-        This suggests that people are placing a limit on the amount and type of data that AI would have about them. Imagine an AI bot that knows information about you that you have never known yourself or details that are sacred to you and your family. For some, this idea feels intrusive and unsettling, even if the AI’s advice could potentially improve their decision-making or health outcomes.
-      </p>
+            <figure class="mb-8">
+                <img src="images/articletwo.jpg" alt="Article Two Illustration" class="w-full h-auto rounded-xl shadow-lg border-2 border-orange-500/50" />
+            </figure>
 
-      <p>
-        Some people are completely against the idea of relying on artificial intelligence. Many admit that they could never adapt to a new reality centered around advanced technology. Not even transparency or clear explanations can change their minds. This reaction may stem from status quo bias. Status quo bias is the tendency to prefer existing norms, processes, or decisions even when there are better alternatives. For these individuals, innovation feels threatening because it disrupts long-standing traditions and ways of life.
-      </p>
+            <section class="text-lg">
+                <h2 class="text-2xl font-semibold mb-3 text-orange-400">The Comfort Zone vs. Deep AI Knowledge</h2>
+                <p>
+                    Emotion Encoded asked participants **"Would you take advice from an AI if it knew your entire personality and history?"**
+                </p>
+                <ul class="list-disc list-inside ml-4 mt-2 font-bold text-gray-200">
+                    <li>Majority of people said **"Maybe"**.</li>
+                    <li>**15.6%** said **"No, that's creepy."**</li>
+                </ul>
+            </section>
 
-      <p>
-        Consider how this plays out in industries. In healthcare, AI could offer early detection of diseases by analyzing scans more quickly than doctors. Yet some patients would still refuse AI-driven recommendations because they prefer advice from a human doctor they know and trust. In law, AI could help lawyers sift through thousands of cases to strengthen arguments, but some professionals resist because they fear losing the human judgment that defines legal reasoning. In finance, AI can model risks and predict market trends, but many investors are skeptical of algorithms, worrying that the technology strips away the personal relationship they have with their advisors.
-      </p>
+            <hr class="border-gray-700">
 
-      <p>
-        These examples reveal that resistance is not always about the performance of AI systems. Instead, it is about human comfort and cultural attachment to existing methods. Status quo bias reinforces the idea that even when an option is objectively better, people will still prefer what feels familiar and controllable. This resistance can slow down the adoption of new technologies, even in areas where the benefits are clear.
-      </p>
+            <section class="text-lg">
+                <h2 class="text-2xl font-semibold mb-3 text-orange-400">Setting Boundaries on AI Intrusiveness</h2>
+                <p>
+                    This suggests that people are placing a limit on the amount and type of data that AI would have about them. Imagine an AI bot that knows information about you that you have never known yourself or details that are sacred to you and your family. For some, this idea feels intrusive and unsettling, even if the AI’s advice could potentially improve their decision-making or health outcomes.
+                </p>
+            </section>
 
-      <p>
-        What does this mean for AI? It means that developers and policymakers must account for the psychology of human decision-making, not just the technical efficiency of their systems. Building systems that explain their reasoning, allow for human input, and respect personal boundaries around data may increase acceptance. Yet, there will always be groups who refuse to engage with AI, and this human factor will shape how quickly or slowly the technology becomes part of daily life.
-      </p>
-    </article>
-  </main>
+            <section class="text-lg">
+                <h2 class="text-2xl font-semibold mb-3 text-orange-400">The Power of Status Quo Bias</h2>
+                <p>
+                    Some people are completely against the idea of relying on artificial intelligence. Many admit that they could never adapt to a new reality centered around advanced technology. Not even transparency or clear explanations can change their minds. This reaction may stem from **status quo bias**. Status quo bias is the tendency to prefer existing norms, processes, or decisions even when there are better alternatives. For these individuals, innovation feels threatening because it disrupts long-standing traditions and ways of life.
+                </p>
+            </section>
 
-  <footer>
-    © 2025 Emotion Encoded — All rights reserved.
-  </footer>
+            <section class="text-lg">
+                <h2 class="text-2xl font-semibold mb-3 text-orange-400">Resistance Across Industries</h2>
+                <p>
+                    Consider how this plays out in industries:
+                </p>
+                <ul class="space-y-4 ml-4 mt-4">
+                    <li>
+                        <strong class="text-orange-300">In healthcare:</strong> AI could offer early detection of diseases by analyzing scans more quickly than doctors. Yet some patients would still refuse AI-driven recommendations because they prefer advice from a **human doctor** they know and trust.
+                    </li>
+                    <li>
+                        <strong class="text-orange-300">In law:</strong> AI could help lawyers sift through thousands of cases to strengthen arguments, but some professionals resist because they fear losing the **human judgment** that defines legal reasoning.
+                    </li>
+                    <li>
+                        <strong class="text-orange-300">In finance:</strong> AI can model risks and predict market trends, but many investors are skeptical of algorithms, worrying that the technology strips away the **personal relationship** they have with their advisors.
+                    </li>
+                </ul>
+                <p class="mt-4">
+                    These examples reveal that resistance is not always about the performance of AI systems. Instead, it is about human comfort and cultural attachment to existing methods.
+                </p>
+            </section>
+
+            <section class="text-lg">
+                <h2 class="text-2xl font-semibold mb-3 text-orange-400">The Human Factor in AI Adoption</h2>
+                <p>
+                    Status quo bias reinforces the idea that even when an option is objectively better, people will still prefer what feels **familiar and controllable**. This resistance can slow down the adoption of new technologies, even in areas where the benefits are clear.
+                </p>
+                <p class="pt-2 italic text-gray-300">
+                    What does this mean for AI? It means that developers and policymakers must account for the **psychology of human decision-making**, not just the technical efficiency of their systems. Building systems that explain their reasoning, allow for human input, and respect personal boundaries around data may increase acceptance. Yet, there will always be groups who refuse to engage with AI, and this human factor will shape how quickly or slowly the technology becomes part of daily life.
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="text-center py-6 border-t border-gray-700/50 bg-gray-900/50">
+        <p class="text-sm text-gray-400">© 2025 Emotion Encoded — All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
