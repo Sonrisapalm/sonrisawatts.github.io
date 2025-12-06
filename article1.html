@@ -1,77 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Advisor vs AI Therapist — Emotion Encoded</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Advisor vs AI Therapist — Emotion Encoded</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <style>
+        /* Base styles for the dark background and font */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #f3f4f6; /* light gray text */
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Fallback for transparency */
+            
+            /* --- BACKGROUND IMAGE STYLES --- */
+            background-image: url('images/websitebackground.jpg');
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            background-attachment: fixed; /* Keeps the background image fixed during scroll */
+            background-position: center; /* Centers the image */
+        }
+        
+        /* Ensures the content container is centered and readable with a semi-transparent dark background */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            background-color: rgba(15, 23, 42, 0.9); /* slate-900 with high transparency */
+            min-height: 100vh; /* Minimum height for better background display */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Specific article element styling */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700;
+            color: #f97316; /* orange-500 */
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #d1d5db; /* gray-300 */
+        }
+        
+        strong {
+            color: #fef08a; /* yellow-200 for emphasis */
+        }
+
+        blockquote {
+            border-left: 4px solid #f97316;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #9ca3af; /* gray-400 */
+        }
+        
+        .article-img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .glow-hover:hover {
+            filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.8));
+        }
+
+        /* Navigation Fix: Make it fixed and place it at the top */
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            background-color: rgba(15, 23, 42, 0.95); /* Semi-transparent dark background */
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.3);
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <nav class="absolute bottom-0 left-0 right-0 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
-            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
-            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
-            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
-            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
-            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
-            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
+    <header class="fixed-nav py-4 px-6 md:px-12">
+        <nav class="flex flex-wrap justify-center space-x-4 md:space-x-8 text-sm md:text-base lg:text-xl">
+            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover p-2">Home</a>
+            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover p-2">About</a>
+            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover p-2">Methods and Data</a>
+            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover p-2">Ethical Guidelines</a>
+            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover p-2">Research Findings Articles</a>
+            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover p-2">Contact</a>
         </nav>
     </header>
-  </nav>
 
-  <header>
-    <h1>Who Would You Trust More: An AI Advisor or an AI Therapist?</h1>
-    <p>Insights from Emotion Encoded community responses.</p>
-  </header>
+    <main class="article-container">
+        
+        <header class="mb-8 pt-16">
+            <h1>Who Would You Trust More: An AI Advisor or an AI Therapist?</h1>
+            <p class="text-center text-gray-400">Insights from Emotion Encoded community responses.</p>
+        </header>
 
-  <main>
-    <article>
-      <!-- Top image (optional) -->
-      <img src="images/article1.jpg" alt="AI Advisor vs AI Therapist" class="article-img" />
+        <article>
+            <img src="images/article1.jpg" alt="AI Advisor vs AI Therapist" class="article-img" />
 
-      <p><strong>“Who would you trust more: An AI Advisor or an AI Therapist?”</strong></p>
-      <p>The answers were telling.</p>
+            <p class="text-xl">
+                <strong>“Who would you trust more: An AI Advisor or an AI Therapist?”</strong>
+            </p>
+            <p>The answers were telling.</p>
 
-      <blockquote>“Financial advisor is a little too private for me.”</blockquote>
-      <blockquote>“I prefer a human to deal with my money.”</blockquote>
-      <blockquote>“Therapist errors are less likely to be lethal.”</blockquote>
-      <blockquote>“Although both should be private, an AI therapist can draw on a large resource and apply it to challenges I may be experiencing, whereas finances are more personal.”</blockquote>
-      <blockquote>“Therapist work may involve actual human feelings and rational thinking, while financial advice is based on numbers and their interpretation.”</blockquote>
-      <blockquote>“A therapist needs a certain level of emotional intelligence that AI has not developed.”</blockquote>
-      <blockquote>“Finance is numbers. I can sort out my own feelings.”</blockquote>
-      <blockquote>“Therapist has a lot more nuances and human components that robots can’t completely understand.”</blockquote>
+            <blockquote>“Financial advisor is a little too private for me.”</blockquote>
+            <blockquote>“I prefer a human to deal with my money.”</blockquote>
+            <blockquote>“Therapist errors are less likely to be lethal.”</blockquote>
+            <blockquote>“Although both should be private, an AI therapist can draw on a large resource and apply it to challenges I may be experiencing, whereas finances are more personal.”</blockquote>
+            <blockquote>“Therapist work may involve actual human feelings and rational thinking, while financial advice is based on numbers and their interpretation.”</blockquote>
+            <blockquote>“A therapist needs a certain level of emotional intelligence that AI has not developed.”</blockquote>
+            <blockquote>“Finance is numbers. I can sort out my own feelings.”</blockquote>
+            <blockquote>“Therapist has a lot more nuances and human components that robots can’t completely understand.”</blockquote>
 
-      <h2>What This Reveals</h2>
-      <p>
-        These responses highlight something bigger than just preferences..they expose how people weigh
-        risk and trust differently across domains.
-      </p>
+            <h2>What This Reveals</h2>
+            <p>
+                These responses highlight something bigger than just preferences...they expose how people weigh
+                **risk and trust differently across domains**.
+            </p>
 
-      <p>
-        For some, money feels too intimate to hand over to a machine. To them, a wrong move from an
-        AI advisor could mean real, irreversible losses. On the other hand, therapy was sometimes
-        seen as safer for experimentation: an AI can pull from vast psychological resources, and if
-        it’s ‘wrong’, the consequences may not feel as severe as financial errors.
-      </p>
+            <p>
+                For some, money feels too intimate to hand over to a machine. To them, a wrong move from an
+                AI advisor could mean real, irreversible losses. On the other hand, therapy was sometimes
+                seen as safer for experimentation: an AI can pull from vast psychological resources, and if
+                it’s ‘wrong’, the consequences may not feel as severe as financial errors.
+            </p>
 
-      <p>
-        Others saw the opposite. Therapy requires empathy, nuance, and human warmth—qualities AI
-        cannot truly replicate. Financial advice, being grounded in data and numbers, was perceived
-        as something AI should be better at.
-      </p>
+            <p>
+                Others saw the opposite. Therapy requires empathy, nuance, and human warmth—qualities AI
+                cannot truly replicate. Financial advice, being grounded in data and numbers, was perceived
+                as something AI should be better at.
+            </p>
 
-      <p>
-        This tension shows that trust isn’t automatic; it’s situational. People ask:
-        <em>What’s at stake? What can go wrong? What do I lose if the AI makes a mistake?</em>
-      </p>
-    </article>
-  </main>
+            <p>
+                This tension shows that trust isn’t automatic; it’s situational. People ask:
+                *What’s at stake? What can go wrong? What do I lose if the AI makes a mistake?*
+            </p>
+        </article>
+    </main>
 
-  <footer>
-    © 2025 Emotion Encoded — All rights reserved.
-  </footer>
+    <footer class="text-center text-sm py-6 mt-10 border-t border-gray-700/50">
+        © 2025 Emotion Encoded — All rights reserved.
+    </footer>
 
 </body>
 </html>
