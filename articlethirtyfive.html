@@ -3,97 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Encoded | Research</title>
+    <title>Emotion Encoded | Dr. Yazigi Interview</title>
     <style>
-        body, html {
+        body, html, header, nav, a, div, h1, h2, p, span, section, img {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             background-color: #0a0b10;
             color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            height: 100%;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.8;
+            padding-bottom: 80px;
+        }
+
+        header {
+            width: 100%;
+            padding: 30px 20px;
+            background: rgba(10, 11, 16, 0.95);
+            border-bottom: 1px solid #00f2ff33;
+            margin-bottom: 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            gap: 20px;
         }
 
-        .container {
-            text-align: center;
-            padding: 40px;
-            border: 1px solid #00f2ff;
-            border-radius: 15px;
-            box-shadow: 0 0 20px #00f2ff33, inset 0 0 10px #00f2ff11;
-            max-width: 600px;
-            background: rgba(10, 11, 16, 0.8);
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
-        .project-title {
+        nav a:hover {
             color: #00f2ff;
-            font-size: 0.9rem;
+            text-shadow: 0 0 10px #00f2ff;
+            transform: scale(1.05);
+        }
+
+        .research-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-article-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #00f2ff55;
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.2);
+            margin-bottom: 50px;
+            display: block;
+        }
+
+        .header-meta {
+            color: #00f2ff;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 4px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 8px #00f2ff;
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 25px;
             font-weight: 300;
         }
 
-        .highlight {
+        .author-tag {
             color: #00f2ff;
             font-weight: 600;
+            border-bottom: 1px solid #00f2ff;
+            padding-bottom: 5px;
+            margin-bottom: 50px;
+            display: inline-block;
+        }
+
+        .intro-text {
+            font-size: 1.25rem;
+            color: #b0b0b0;
+            margin-bottom: 45px;
+            font-style: italic;
+            border-left: 2px solid #00f2ff;
+            padding-left: 20px;
+        }
+
+        h2 {
+            color: #00f2ff;
+            font-size: 1.4rem;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .quote-block {
+            background: rgba(0, 242, 255, 0.04);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-left: 4px solid #00f2ff;
+            padding: 25px 35px;
+            margin: 40px 0;
+            font-size: 1.15rem;
+            color: #ffffff;
+            border-radius: 0 10px 10px 0;
         }
 
         p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #a0a0a0;
+            margin-bottom: 25px;
+            color: #c5c5c5;
+            font-size: 1.05rem;
         }
 
-        .status-tag {
-            display: inline-block;
-            padding: 5px 15px;
-            border: 1px solid #00f2ff;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        .conclusion {
+            margin-top: 80px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            text-align: center;
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .neon-glow {
             color: #00f2ff;
-            margin-top: 30px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        .glow-line {
-            height: 1px;
-            width: 100px;
-            background: #00f2ff;
-            margin: 20px auto;
-            box-shadow: 0 0 10px #00f2ff;
+            text-shadow: 0 0 8px #00f2ff;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="project-title">Emotion Encoded Research</div>
-        <div class="glow-line"></div>
-        <h1>Coming Soon</h1>
-        <p>
-            An exclusive interview with <span class="highlight">Dr. Yazigi</span> 
-            regarding his expert perspective on the integration of 
-            <span class="highlight">Artificial Intelligence</span> in 
-            Modern Medicine and Oncology.
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="Methodsanddata.html">Methods and Data</a>
+            <a href="DataAnalysisquantitative.html">Publications</a>
+            <a href="ethicalguidelines.html">Ethical Guidelines</a>
+            <a href="AI-Perception-Briefs.html">Research Findings</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="research-container">
+        <img src="images/article35.jpg" alt="AI and Oncology Research" class="main-article-image">
+        
+        <div class="header-meta">Emotion Encoded Research Initiative</div>
+        <h1>When AI Meets Oncology: Why Human Judgment Still Leads</h1>
+        <div class="author-tag">Interview with Dr. Hanybal Yazigi</div>
+
+        <p class="intro-text">
+            Artificial intelligence is becoming more common in cancer care. But as these systems grow more advanced, one question remains: What role should AI play in decisions that affect real people facing life-changing diagnoses?
         </p>
-        <div class="status-tag">Transmission Incoming</div>
-    </div>
+
+        <h2>Trusting Judgment Over Algorithms</h2>
+        <p>When asked what he does when an AI recommendation feels wrong, Dr. Yazigi is direct:</p>
+        
+        <div class="quote-block">
+            "I would always trust my own clinical judgment. AI can be a very useful support tool, but it does not see the patient, does not examine them, and does not know the full story, context, or nuances of the case."
+        </div>
+
+        <p>For him, being a physician is not just about data. It is about understanding the patient’s history, comorbidities, social context, and subtle clinical clues.</p>
+
+        <h2>Should AI Ever Act Alone?</h2>
+        <p>Dr. Yazigi believes AI should always remain in a supporting role rather than a decision-making one.</p>
+
+        <div class="quote-block">
+            "I wouldn’t rely on AI to manage a case independently. Any suggestion it provides should be reviewed, verified, and researched by the physician. Never take an AI recommendation at face value."
+        </div>
+
+        <h2>What Must Always Stay Human</h2>
+        <p>When asked what decisions should never be handed over to AI, he did not hesitate: <span class="neon-glow">"Everything basically."</span></p>
+
+        <p>He explains that these decisions are deeply personal, ethical, and emotional. They require understanding the patient’s values, fears, and wishes.</p>
+
+        <h2>Where AI Truly Helps</h2>
+        <p>Despite his caution, Dr. Yazigi sees a place for technology to optimize workflow and act as a sounding board, but he draws a final line:</p>
+        
+        <div class="quote-block">
+            "The final responsibility medically, ethically, and morally must always rest with the treating physician."
+        </div>
+
+        <div class="conclusion">
+            The future of oncology will not be defined by smarter machines alone, but by how well we protect human judgment at the center of care.
+            <br><br>
+            Emotion Encoded | 2026 Research Series
+        </div>
+    </section>
 
 </body>
 </html>
