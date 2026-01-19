@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotion Encoded | Dr. Yazigi Interview</title>
     <style>
-        body, html, header, nav, a, div, h1, h2, p, span, section, img {
+        body, html, header, nav, a, div, h1, h2, h3, p, span, section, img {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -16,132 +16,140 @@
             color: #e0e0e0;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.8;
-            padding-bottom: 80px;
+            padding-bottom: 100px;
         }
 
         header {
             width: 100%;
-            padding: 30px 20px;
-            background: rgba(10, 11, 16, 0.95);
-            border-bottom: 1px solid #00f2ff33;
-            margin-bottom: 40px;
+            padding: 25px 20px;
+            background: rgba(10, 11, 16, 0.98);
+            border-bottom: 1px solid #00f2ff22;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         nav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         nav a {
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
             transition: all 0.3s ease;
-            font-weight: 500;
         }
 
         nav a:hover {
             color: #00f2ff;
             text-shadow: 0 0 10px #00f2ff;
-            transform: scale(1.05);
         }
 
         .research-container {
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
 
         .main-article-image {
             width: 100%;
             height: auto;
-            border-radius: 12px;
-            border: 1px solid #00f2ff55;
-            box-shadow: 0 0 25px rgba(0, 242, 255, 0.2);
+            border-radius: 8px;
+            border: 1px solid #00f2ff33;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
             margin-bottom: 50px;
-            display: block;
         }
 
         .header-meta {
             color: #00f2ff;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 4px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             color: #ffffff;
-            line-height: 1.1;
-            margin-bottom: 25px;
+            line-height: 1.2;
+            margin-bottom: 10px;
             font-weight: 300;
         }
 
-        .author-tag {
+        .subheadline {
+            font-size: 1.4rem;
             color: #00f2ff;
-            font-weight: 600;
-            border-bottom: 1px solid #00f2ff;
-            padding-bottom: 5px;
-            margin-bottom: 50px;
-            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: 400;
         }
 
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0, 242, 255, 0.03);
+            border: 1px solid #00f2ff22;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .stat-item { text-align: center; }
+        .stat-num { color: #00f2ff; font-size: 1.5rem; display: block; }
+        .stat-label { font-size: 0.65rem; text-transform: uppercase; color: #888; }
+
         .intro-text {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #b0b0b0;
-            margin-bottom: 45px;
-            font-style: italic;
-            border-left: 2px solid #00f2ff;
-            padding-left: 20px;
+            margin-bottom: 40px;
+            border-left: 3px solid #00f2ff;
+            padding-left: 25px;
         }
 
         h2 {
             color: #00f2ff;
             font-size: 1.4rem;
-            margin-top: 60px;
-            margin-bottom: 25px;
+            margin: 50px 0 20px 0;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .quote-block {
-            background: rgba(0, 242, 255, 0.04);
-            border: 1px solid rgba(0, 242, 255, 0.2);
+            background: rgba(0, 242, 255, 0.05);
             border-left: 4px solid #00f2ff;
-            padding: 25px 35px;
-            margin: 40px 0;
+            padding: 30px;
+            margin: 35px 0;
             font-size: 1.15rem;
             color: #ffffff;
-            border-radius: 0 10px 10px 0;
+            font-style: italic;
         }
 
-        p {
-            margin-bottom: 25px;
-            color: #c5c5c5;
-            font-size: 1.05rem;
-        }
+        p { margin-bottom: 25px; color: #c0c0c0; }
 
-        .conclusion {
+        .highlight-text { color: #00f2ff; font-weight: 500; }
+
+        .footer-reflection {
             margin-top: 80px;
             padding: 40px;
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 10px;
+            border-radius: 15px;
             text-align: center;
-            color: #888;
-            font-size: 0.95rem;
         }
 
-        .neon-glow {
+        .website-link {
+            display: block;
+            text-align: center;
             color: #00f2ff;
-            text-shadow: 0 0 8px #00f2ff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -160,48 +168,58 @@
     </header>
 
     <section class="research-container">
+        <a href="https://encodedemotion.org" class="website-link">encodedemotion.org</a>
+        
         <img src="images/article35.jpg" alt="AI and Oncology Research" class="main-article-image">
         
         <div class="header-meta">Emotion Encoded Research Initiative</div>
-        <h1>When AI Meets Oncology: Why Human Judgment Still Leads</h1>
-        <div class="author-tag">Interview with Dr. Hanybal Yazigi</div>
+        <h1>When AI Meets Oncology:</h1>
+        <div class="subheadline">Why Human Judgment Still Leads</div>
+        <p>Interview with Antiguan Oncologist <span class="highlight-text">Dr. Hanybal Yazigi</span></p>
+
+        <div class="stats-bar">
+            <div class="stat-item"><span class="stat-num">20+</span><span class="stat-label">Expert Interviews</span></div>
+            <div class="stat-item"><span class="stat-num">133</span><span class="stat-label">Quantitative Samples</span></div>
+            <div class="stat-item"><span class="stat-num">St. Kitts</span><span class="stat-label">Research Base</span></div>
+        </div>
 
         <p class="intro-text">
-            Artificial intelligence is becoming more common in cancer care. But as these systems grow more advanced, one question remains: What role should AI play in decisions that affect real people facing life-changing diagnoses?
+            Artificial intelligence is becoming more common in cancer care. It is used for research, predictions, workflow support, and clinical suggestions. But as these systems grow more advanced, one question remains: What role should AI play in decisions that affect real people facing life-changing diagnoses?
         </p>
+
+        <p>In this interview, oncologist Dr. Hanybal Yazigi shares a grounded perspective. While he sees value in AI, he believes it should always remain a support tool, never a decision-making entity.</p>
 
         <h2>Trusting Judgment Over Algorithms</h2>
         <p>When asked what he does when an AI recommendation feels wrong, Dr. Yazigi is direct:</p>
-        
-        <div class="quote-block">
-            "I would always trust my own clinical judgment. AI can be a very useful support tool, but it does not see the patient, does not examine them, and does not know the full story, context, or nuances of the case."
-        </div>
+        <div class="quote-block">“I would always trust my own clinical judgment.”</div>
 
-        <p>For him, being a physician is not just about data. It is about understanding the patient’s history, comorbidities, social context, and subtle clinical clues.</p>
+        <p>He explains that AI can be helpful, but it lacks what truly matters in patient care:</p>
+        <div class="quote-block">“AI can be a very useful support tool, but it does not see the patient, does not examine them, and does not know the full story, context, or nuances of the case.”</div>
+
+        <p>For him, being a physician is not just about data. It is about understanding people: “As physicians, we integrate far more than just data. We integrate the patient’s history, comorbidities, social context, preferences, and subtle clinical clues.”</p>
+        <p>And when something feels wrong, he trusts that instinct: <span class="highlight-text">“If something feels off, that instinct usually comes from experience, and I would always prioritize that over an AI suggestion."</span></p>
 
         <h2>Should AI Ever Act Alone?</h2>
-        <p>Dr. Yazigi believes AI should always remain in a supporting role rather than a decision-making one.</p>
-
-        <div class="quote-block">
-            "I wouldn’t rely on AI to manage a case independently. Any suggestion it provides should be reviewed, verified, and researched by the physician. Never take an AI recommendation at face value."
-        </div>
+        <p>Some people lose trust in AI after one clear mistake. Dr. Yazigi sees the issue differently: “I wouldn’t rely on AI to manage a case independently in the first place.”</p>
+        <p>For him, AI should always remain in a supporting role: “In my view, AI should always be used as a supportive tool, not as a decision-maker.”</p>
+        <p>He believes every AI output must be questioned and verified: “Any suggestion it provides should be reviewed, verified, and researched by the physician before being applied to a real patient.”</p>
+        <p>His advice is simple: <span class="highlight-text">“Never take an AI recommendation at face value.”</span></p>
 
         <h2>What Must Always Stay Human</h2>
-        <p>When asked what decisions should never be handed over to AI, he did not hesitate: <span class="neon-glow">"Everything basically."</span></p>
-
-        <p>He explains that these decisions are deeply personal, ethical, and emotional. They require understanding the patient’s values, fears, and wishes.</p>
-
-        <h2>Where AI Truly Helps</h2>
-        <p>Despite his caution, Dr. Yazigi sees a place for technology to optimize workflow and act as a sounding board, but he draws a final line:</p>
+        <p>When asked what decisions in cancer care should never be handed over to AI, he did not hesitate: “Everything basically.”</p>
+        <p>He explains: “The overall diagnosis, treatment, management strategy and goals of care must always remain human. These decisions are not just technical. They are deeply personal, ethical, and emotional. They require understanding the patient’s values, fears, family situation, and wishes.”</p>
         
-        <div class="quote-block">
-            "The final responsibility medically, ethically, and morally must always rest with the treating physician."
-        </div>
+        <p>Because of this, he believes AI can never replace a doctor:</p>
+        <div class="quote-block">“No matter how advanced AI becomes, it cannot replace the physician's responsibility of managing and optimizing a patient, understanding them, and guiding them through their illness.”</div>
 
-        <div class="conclusion">
-            The future of oncology will not be defined by smarter machines alone, but by how well we protect human judgment at the center of care.
-            <br><br>
-            Emotion Encoded | 2026 Research Series
+        <h2>Where AI Truly Helps?</h2>
+        <p>Dr. Yazigi does see a real place for AI in medicine: “I do think there is a valid place for AI.”</p>
+        <p>He uses it to save time and mental energy: “In my daily practice, I use AI to optimize time and workflow. It can help point toward relevant literature or act as a sounding board when a diagnosis is difficult.”</p>
+        <p>But he draws a clear line: <span class="highlight-text">“It should never dictate how a patient is managed. The final responsibility medically, ethically, and morally must always rest with the treating physician.”</span></p>
+
+        <div class="footer-reflection">
+            <h3>Final Reflection</h3>
+            <p>AI may be powerful, but power is not the same as responsibility. In cancer care, decisions are shaped not only by data, but by human values, fear, hope, and lived experience. AI can assist, organize, and support, but it cannot replace the role of a physician who truly understands the person behind the diagnosis. The future of oncology will not be defined by smarter machines alone, but by how well we protect human judgment at the center of care.</p>
         </div>
     </section>
 
