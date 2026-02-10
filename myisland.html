@@ -39,19 +39,17 @@
     <script>
         var map = L.map('map').setView([17.25, -62.67], 11);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap'
-        }).addTo(map);
+       // Satellite Imagery Layer
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+}).addTo(map);
 
-        const sk = [17.33, -62.75];
-        const nv = [17.15, -62.58];
-
-        L.marker(sk).addTo(map).bindPopup('<b class="text-lg">St. Kitts</b><br>Land of the Caribs.');
-        L.marker(nv).addTo(map).bindPopup('<b class="text-lg">Nevis</b><br>Dulcina.');
-
-        function zoomToSK() { map.flyTo(sk, 13, { duration: 1.5 }); }
-        function zoomToNevis() { map.flyTo(nv, 13, { duration: 1.5 }); }
-        function resetMap() { map.setView([17.25, -62.67], 11); }
+// Optional: Add a second layer for labels (roads/town names) so it's not just green trees
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; CARTO',
+    subdomains: 'abcd',
+    pane: 'shadowPane' // Keeps labels on top of the satellite image
+}).addTo(map);
     </script>
 </body>
 </html>
