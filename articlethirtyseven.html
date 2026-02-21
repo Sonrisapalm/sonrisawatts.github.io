@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Encoded | Sasha Lloyd Interview</title>
+    <title>Emotion Encoded | Research Article 37</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -12,7 +12,6 @@
             --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.1);
             --text-main: #e0e0e0;
-            --text-muted: #a0a0a0;
         }
 
         body {
@@ -33,8 +32,8 @@
 
         .hero-image {
             width: 100%;
-            height: 500px;
-            object-fit: cover;
+            height: auto; 
+            display: block;
             border-radius: 24px;
             margin-bottom: 60px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
@@ -84,7 +83,6 @@
             display: block;
         }
 
-        /* Glassmorphism Quote Styling */
         .raw-quote-box {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -114,6 +112,12 @@
             color: var(--text-main);
         }
 
+        .separator {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--glass-border), transparent);
+            margin: 100px 0;
+        }
+
         .article-footer {
             margin-top: 120px;
             text-align: center;
@@ -130,7 +134,6 @@
         }
 
         @media (max-width: 600px) {
-            .hero-image { height: 300px; }
             .raw-quote-box { padding: 25px; }
         }
     </style>
@@ -138,52 +141,75 @@
 <body>
 
     <div class="container">
-        <img src="images/article36.jpg" alt="AI in Law Research" class="hero-image">
+        
+        <article id="legal">
+            <img src="images/article36.jpg" alt="Sasha Lloyd Interview" class="hero-image">
 
-        <header class="brand-header">
-            <span class="brand-name">Emotion Encoded Initiative</span>
-            <h1>Artificial Intelligence in Law: Insights from Sasha Lloyd</h1>
-        </header>
+            <header class="brand-header">
+                <span class="brand-name">Emotion Encoded Initiative</span>
+                <h1>The Legal Black Box: Insights from Sasha Lloyd</h1>
+            </header>
 
-        <p class="intro-text">
-            I asked a young lawyer some questions for my Emotion Encoded research initiative! I just got some incredible insights from Sasha Lloyd that really challenge how we think about the "black box" of AI in professional fields.
-        </p>
+            <p class="intro-text">
+                I asked Sasha Lloyd, a young lawyer, about the "black box" of AI in professional fields. Her insights highlight a crucial tension: in law, a fast answer is worthless if you cannot verify the path taken to reach it.
+            </p>
 
-        <div class="content-section">
-            <span class="section-label">The Path vs. the Destination</span>
-            <p>I started by asking her if she’d rather have a fast answer or one that actually proves its work. For Sasha, there isn't even a debate. She said:</p>
-            
-            <div class="raw-quote-box">
-                <div class="quote-text">
-                    "The latter, without question. Transparency in legal reasoning is non-negotiable; you need to see the path, not just the destination. The practical concern, however, is that most authoritative legal resources are not freely accessible. Platforms like Westlaw, LexisNexis, and even regional databases like the Eastern Caribbean Supreme Court portal operate on paid subscriptions. So an AI confidently citing a case is one thing, but whether it can actually link you to a verified, full text source you can open and read is a very different matter. Even where a citation is real, it may refer to an entirely different case or legal context than the one being discussed, which introduces its own significant risk."
+            <div class="content-section">
+                <span class="section-label">Transparency as a Requirement</span>
+                <div class="raw-quote-box">
+                    <div class="quote-text">
+                        "Transparency in legal reasoning is non-negotiable; you need to see the path, not just the destination. The practical concern is that most authoritative legal resources are not freely accessible. An AI confidently citing a case is one thing, but whether it can actually link you to a verified, full text source is a very different matter."
+                    </div>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="content-section">
-            <span class="section-label">What should AI never touch?</span>
-            <p>When we talked about what AI should never touch, Sasha pointed out that the tech is fundamentally limited by what it can't see or "feel" out in a relationship. Her take was:</p>
+        <div class="separator"></div>
 
-            <div class="raw-quote-box">
-                <div class="quote-text">
-                    "When examined critically, the question largely answers itself. AI can only work with what it is given access to. It has no independent investigative capacity, no privileged client relationship, and no knowledge of what has not been disclosed to it. On the question of precedent and moral reasoning, courts follow established legal principles and AI can certainly identify and map those patterns. As for emotional connection to a client, that is not strictly a professional legal function in the formal sense. The more precise concern is that AI's limitations are fundamentally rooted in issues of access and context, and any meaningful application of it within legal practice must be approached with a thorough and clear-eyed understanding of those constraints."
+        <article id="medical">
+            <img src="images/medical_ai.jpg" alt="Dr. Sharon Cordner Interview" class="hero-image">
+
+            <header class="brand-header">
+                <span class="brand-name">Emotion Encoded Initiative</span>
+                <h1>Clinical Intuition vs. The Algorithm: Dr. Sharon Cordner</h1>
+            </header>
+
+            <p class="intro-text">
+                In internal medicine, a diagnosis is a weight carried by a human being. I spoke with Dr. Sharon Cordner to explore the tension between a doctor's seasoned intuition and the cold objectivity of AI.
+            </p>
+
+            <div class="content-section">
+                <span class="section-label">The Emotional Alarm</span>
+                <p>When an algorithm contradicts a doctor’s gut feeling, it triggers an immediate sense of responsibility.</p>
+                <div class="raw-quote-box">
+                    <div class="quote-text">
+                        "My first emotion would be concern. I would be concerned that the AI could be misleading less informed people. Sometimes, we use AI for a quick summary, so if the response is not in line with medical reality, I would be concerned."
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="content-section">
-            <span class="section-label">The Reality of Verification</span>
-            <p>I also wanted to know how she actually verifies AI outputs, and she brought up a massive point about ethics and why summaries are so dangerous. She explained:</p>
-
-            <div class="raw-quote-box">
-                <div class="quote-text">
-                    "The starting point is that confidentiality makes AI use in live casework a serious ethical concern. Feeding privileged client information into a third party system risks breaching professional obligations, and so active casework remains off the table entirely. Where AI does surface a case citation in another context, the verification process is straightforward: locate the actual judgment and read it in full. A selective reading of a case, or worse a hallucinated one, can appear entirely plausible on the surface. The ratio, the full procedural history, and whether the matter was subsequently appealed or overturned are details that do not survive a summary. The source must always be consulted directly."
+            <div class="content-section">
+                <span class="section-label">Interrogation over Acceptance</span>
+                <div class="raw-quote-box">
+                    <div class="quote-text">
+                        "A physician should trust collaboration with a team, and use AI for a differential which must be interrogated and substantiated. You really do need to read the studies, or look at evidence before accepting AI conclusions as they might also be biased."
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="content-section">
+                <span class="section-label">The Shadow of Complacency</span>
+                <p>Dr. Cordner warns that leaning too hard on the machine might cause us to lose the very drive to learn from experience.</p>
+                <div class="raw-quote-box">
+                    <div class="quote-text">
+                        "It could reshape the experience by causing complacency and laziness. Relying on AI will change how a physician might otherwise learn from experience."
+                    </div>
+                </div>
+            </div>
+        </article>
 
         <footer class="article-footer">
-            <p>For my Emotion Encoded initiative, this is the core of it. Sasha’s insights show that when we lose the "path" or settle for a summary, it seems as if we're losing the context and the truth that only a human-centered approach can protect.</p>
+            <p>This is the core of Article 37. Whether in Law or Medicine, the human element—the ability to interrogate and protect—is what keeps the system honest.</p>
             <br><br>
             <a href="https://encodedemotion.org" class="footer-logo">encodedemotion.org</a>
         </footer>
