@@ -4,15 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About – Emotion Encoded</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
     /* About Section Specific Styling */
     .about-section {
-      background-image: url('images/emotion-coded-web-page.png'); /* match main site bg */
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
+      background-color: #020617;
       color: #fff;
       padding: 80px 20px;
       text-align: center;
@@ -21,10 +18,11 @@
     .about-container {
       max-width: 1000px;
       margin: 0 auto;
-      background-color: rgba(0,0,0,0.6); /* semi-transparent overlay for depth */
+      background-color: rgba(255, 255, 255, 0.05);
       padding: 40px 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      border-radius: 25px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
 
     .about-container h1 {
@@ -34,133 +32,177 @@
     }
 
     .about-container p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.8;
       margin-bottom: 20px;
+      color: #cbd5e1;
     }
 
-    .about-container a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 35px;
-      background-color: #003366;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease, background-color 0.2s ease;
+    /* Diary Styling - Integrated into About */
+    .diary-entry {
+      background-color: #fefcfb;
+      color: #1e293b;
+      text-align: left;
+      padding: 40px;
+      margin: 40px 0;
+      border-radius: 0 20px 20px 0;
+      border-left: 10px solid #0d9488;
+      box-shadow: 10px 10px 0px rgba(13, 148, 136, 0.1);
+      position: relative;
     }
 
-    .about-container a:hover {
-      background-color: #002244;
-      transform: scale(1.05);
-    }
-
-    .about-images {
+    .diary-header {
+      font-family: 'Playfair Display', serif;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 30px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .diary-body {
+      font-size: 1.05rem;
+      line-height: 2;
+      font-weight: 400;
+    }
+
+    .diary-body p {
+      color: #334155 !important;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-box {
+      background-color: #f0fdfa;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 3px solid #0d9488;
+      font-style: italic;
     }
 
     .about-images img {
       width: 100%;
-      max-width: 400px;
+      max-width: 500px;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      margin: 30px auto;
+      display: block;
     }
 
-    @media (max-width: 768px) {
-      .about-container h1 {
-        font-size: 2rem;
-      }
+    .cta-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 35px;
+      background-color: #0d9488;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-      .about-container p {
-        font-size: 1rem;
-      }
+    .cta-button:hover {
+      background-color: #0f766e;
+      transform: translateY(-2px);
+    }
 
-      .about-images img {
-        max-width: 90%;
-      }
+    /* News Grid */
+    .news-container {
+      display: grid;
+      grid-template-cols: 1fr;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .news-container { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .news-card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: left;
     }
   </style>
 </head>
 <body>
-  <!-- Navigation Links -->
-        <nav class="absolute bottom-0 left-0 right-0 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
-            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
-            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
-            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
-            <a href="DataAnalysisquantitative.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Publications</a>
-            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
-            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
-            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
-        </nav>
-    </header>
 
   <section class="about-section">
     <div class="about-container">
       <h1>About Emotion Encoded</h1>
       <p>Hi! I’m <strong>Sonrisa Watts</strong>, 24 years old from the beautiful island of St. Kitts and Nevis. I founded <strong>Emotion Encoded</strong> in June 2025 to investigate AI integration and adoption through the lenses of <strong>cognitive bias, psychological resistance, and emotional reasoning</strong>.</p>
-      Disclaimer:
-      <p> <strong> These research briefs summarize findings from interviews and surveys conducted as part of ongoing research. They have not been peer reviewed. The content is shared openly to foster transparency, scholarly dialogue, and public understanding. Readers are encouraged to interpret these briefs as part of a developing body of work and not as final or formally validated research outputs</strong>.</p>
-      <p>Our mission is to explore how human perception, culture, and emotion influence the way people trust and adopt AI technologies. We conduct interviews, distribute questionnaires, publish insights, and aim to help align AI systems with human understanding.</p>
-      <p> I am now trying to gain research experience after recently graduating with a BSc in Psychology from UWI. 
+
+      <div class="diary-entry">
+        <div class="diary-header">
+          <div>
+            <span style="display:block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #94a3b8;">Personal Archive</span>
+            <span style="font-size: 1.5rem; font-weight: 700;">Foundation & Choice</span>
+          </div>
+          <span style="font-style: italic; color: #0d9488;">Entry No. 001</span>
+        </div>
+
+        <div class="diary-body">
+          <p>Sonrisa was born on December 13th, 2000, in St. Kitts and Nevis. Growing up in <strong>Conaree</strong>, her early years were defined by a family that poured everything they had into her growth.</p>
+          
+          <p>Her father, a teacher, was a constant presence from her childhood through her teens. She still relies on the lessons from their long beach walks and morning meditations. He taught her how to treat people, the importance of exercise, and how to stay involved in the world around her. Her mother was just as invested, ensuring Sonrisa had the space to find her own identity through piano, dance, and modeling. Both parents simply wanted the best for her.</p>
+
+          <p>However, when Sonrisa was around 12 or 13, her world began to shift when her parents divorced. It was a difficult transition that required a strength she didn't know she had yet—though, looking back, it was only the beginning of what "life" had in store.</p>
+
+          <p>Fast forward to 2025. At 24 years old, on Christmas Day, Sonrisa faced a deeply traumatic and violent experience while walking through town to go home. In the aftermath, she felt she couldn't open up to anyone. She was left with two choices: let the weight of the trauma pull her into depression, or find a way to move through the pain.</p>
+
+          <div class="highlight-box">
+            She chose the latter. To distract herself and begin the process of healing, she threw herself into research. She chose to keep her mind busy and her spirit focused. That decision to turn internal pain into external action was the real start of her independent work.
+          </div>
+
+          <p style="margin-top: 20px; font-size: 0.8rem; letter-spacing: 1px; color: #94a3b8; text-transform: uppercase;">To be continued...</p>
+        </div>
+      </div>
+
+      <p><strong>Disclaimer:</strong> These research briefs summarize findings from interviews and surveys conducted as part of ongoing research. They have not been peer reviewed. The content is shared openly to foster transparency, scholarly dialogue, and public understanding.</p>
+      
+      <p>Our mission is to explore how human perception, culture, and emotion influence the way people trust and adopt AI technologies. I am now trying to gain research experience after recently graduating with a BSc in Psychology from UWI.</p>
+
       <div class="about-images">
         <img src="images/articleeight.jpg" alt="Emotion Encoded Research">
       </div>
 
-      <a href="AI-Perception-Briefs.html">Explore Our Research Articles →</a>
-    </div>
-  </section>
-  <section id="ai-news" class="p-10 bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
-  <h2 class="text-4xl font-extrabold mb-8 text-center">🚀 Latest in AI</h2>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-      <!-- AI News Section -->
-<section id="ai-news">
-  <h2>AI News</h2>
-  <div class="news-container">
-
-    <div class="news-card">
-      <h3>China Proposes Global AI Cooperation Organization</h3>
-      <p>At the Shanghai AI conference, Premier Li Qiang urged the creation of an international AI body to promote inclusive, coordinated governance.</p>
-      <a href="https://www.reuters.com/world/china/china-proposes-new-global-ai-cooperation-organisation-2025-07-26/" target="_blank">Read More →</a>
-    </div>
-
-    <div class="news-card">
-      <h3>EU Outlines Guidelines for High-Risk AI Models</h3>
-      <p>The European Commission laid out compliance guidelines for AI models with systemic risks as part of the EU AI Act framework.</p>
-      <a href="https://www.reuters.com/sustainability/boards-policy-regulation/ai-models-with-systemic-risks-given-pointers-how-comply-with-eu-ai-rules-2025-07-18/" target="_blank">Read More →</a>
-    </div>
-
-    <div class="news-card">
-      <h3>BRICS Leaders Call for Data Protections in AI</h3>
-      <p>At the Rio summit, BRICS countries urged protections against unauthorized AI data use and fair mechanisms for AI training materials.</p>
-      <a href="https://www.reuters.com/world/china/brics-leaders-call-data-protections-against-unauthorized-ai-use-2025-07-06/" target="_blank">Read More →</a>
-    </div>
-
-    <div class="news-card">
-      <h3>Anthropic Launches Security Advisory Council</h3>
-      <p>Anthropic formed a national security advisory council to guide integration of AI in government and defense with ethical standards.</p>
-      <a href="https://www.reuters.com/technology/anthropic-forms-national-security-advisory-council-guide-ai-use-government-2025-08-27/" target="_blank">Read More →</a>
-    </div>
-
-  </div>
-</section>
-
+      <a href="AI-Perception-Briefs.html" class="cta-button">Explore Our Research Articles →</a>
     </div>
   </section>
 
-</body>
-</html>
-</section>
+  <section id="ai-news" class="p-10 bg-gradient-to-r from-slate-900 to-slate-800 text-white" style="padding: 80px 20px;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h2 class="text-4xl font-extrabold mb-8 text-center" style="font-size: 2.5rem; margin-bottom: 40px;">🚀 Latest in AI</h2>
+      
+      <div class="news-container">
+        <div class="news-card">
+          <h3 style="font-weight: 700; margin-bottom: 10px;">China Proposes Global AI Cooperation</h3>
+          <p style="font-size: 0.9rem; color: #94a3b8;">At the Shanghai AI conference, Premier Li Qiang urged the creation of an international AI body to promote inclusive governance.</p>
+          <a href="https://www.reuters.com/world/china/china-proposes-new-global-ai-cooperation-organisation-2025-07-26/" target="_blank" style="color: #0d9488; text-decoration: none; font-size: 0.8rem; font-weight: bold;">Read More →</a>
+        </div>
 
+        <div class="news-card">
+          <h3 style="font-weight: 700; margin-bottom: 10px;">EU Guidelines for High-Risk AI</h3>
+          <p style="font-size: 0.9rem; color: #94a3b8;">The European Commission laid out compliance guidelines for AI models with systemic risks as part of the EU AI Act.</p>
+          <a href="https://www.reuters.com/sustainability/boards-policy-regulation/ai-models-with-systemic-risks-given-pointers-how-comply-with-eu-ai-rules-2025-07-18/" target="_blank" style="color: #0d9488; text-decoration: none; font-size: 0.8rem; font-weight: bold;">Read More →</a>
+        </div>
 
-  <footer>
+        <div class="news-card">
+          <h3 style="font-weight: 700; margin-bottom: 10px;">BRICS Call for Data Protections</h3>
+          <p style="font-size: 0.9rem; color: #94a3b8;">Leaders urged protections against unauthorized AI data use and fair mechanisms for training materials.</p>
+          <a href="https://www.reuters.com/world/china/brics-leaders-call-data-protections-against-unauthorized-ai-use-2025-07-06/" target="_blank" style="color: #0d9488; text-decoration: none; font-size: 0.8rem; font-weight: bold;">Read More →</a>
+        </div>
+
+        <div class="news-card">
+          <h3 style="font-weight: 700; margin-bottom: 10px;">Anthropic Advisory Council</h3>
+          <p style="font-size: 0.9rem; color: #94a3b8;">Anthropic formed a council to guide AI integration in defense with ethical standards.</p>
+          <a href="https://www.reuters.com/technology/anthropic-forms-national-security-advisory-council-guide-ai-use-government-2025-08-27/" target="_blank" style="color: #0d9488; text-decoration: none; font-size: 0.8rem; font-weight: bold;">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="text-align: center; padding: 40px; background: #020617; color: #475569; font-size: 0.8rem;">
     © 2025 Emotion Encoded — All rights reserved.
   </footer>
 </body>
