@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Entry | Sonrisa Watts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #f4f4f5; 
+            font-family: 'Inter', sans-serif;
+        }
+        .serif { font-family: 'Playfair Display', serif; }
+        .paper {
+            background-color: #fefcfb;
+            background-image: radial-gradient(#e5e7eb 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="py-12 md:py-20">
+
+    <main class="max-w-2xl mx-auto px-4">
+        
+        <a href="index.html" class="inline-flex items-center text-gray-400 hover:text-teal-600 mb-8 transition-colors group text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Initiative
+        </a>
+
+        <div class="paper p-8 md:p-16 shadow-2xl border-l-[12px] border-teal-600 rounded-r-2xl relative">
+            
+            <div class="flex justify-between items-center mb-12 border-b border-gray-100 pb-6">
+                <div>
+                    <h1 class="serif text-3xl text-gray-900">Personal Archive</h1>
+                    <p class="text-xs text-gray-400 uppercase tracking-[0.2em] mt-1 font-semibold">Entry No. 001</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-teal-700 serif italic text-lg">St. Kitts & Nevis</p>
+                    <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">December 2025</p>
+                </div>
+            </div>
+
+            <div class="space-y-8 text-gray-800 text-lg leading-[2.2rem] font-light">
+                
+                <p>
+                    Sonrisa was born on December 13th, 2000, in St. Kitts and Nevis. Growing up in <span class="text-gray-900 font-semibold border-b-2 border-teal-100">Conaree</span>, her early years were defined by a family that poured everything they had into her growth.
+                </p>
+
+                <p>
+                    Her father, a teacher, was a constant presence from her childhood through her teens. She still relies on the lessons from their long beach walks and morning meditations. He taught her how to treat people, the importance of exercise, and how to stay involved in the world around her. Her mother was just as invested, ensuring Sonrisa had the space to find her own identity through piano, dance, and modeling. Both parents simply wanted the best for her.
+                </p>
+
+                <p>
+                    However, when Sonrisa was around 12 or 13, her world began to shift when her parents divorced. It was a difficult transition that required a strength she didn't know she had yet—though, looking back, it was only the beginning of what <span class="serif italic">"life"</span> had in store.
+                </p>
+
+                <div class="py-4 flex items-center justify-center space-x-2">
+                    <span class="h-1 w-1 bg-teal-200 rounded-full"></span>
+                    <span class="h-1 w-1 bg-teal-300 rounded-full"></span>
+                    <span class="h-1 w-1 bg-teal-200 rounded-full"></span>
+                </div>
+
+                <p>
+                    Fast forward to 2025. At 24 years old, on Christmas Day, Sonrisa faced a deeply traumatic and violent experience while walking through town to go home. In the aftermath, she felt she couldn't open up to anyone. She was left with two choices: let the weight of the trauma pull her into depression, or find a way to move through the pain.
+                </p>
+
+                <p class="bg-teal-50/70 p-8 rounded-2xl border-l-2 border-teal-400 serif italic text-gray-900 text-xl shadow-sm">
+                    She chose the latter. To distract herself and begin the process of healing, she threw herself into research. She chose to keep her mind busy and her spirit focused. That decision to turn internal pain into external action was the real start of her independent work.
+                </p>
+
+                <p class="text-gray-400 font-semibold tracking-widest pt-10 uppercase text-xs">
+                    To be continued...
+                </p>
+
+            </div>
+
+            <div class="absolute bottom-8 right-8 opacity-10">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-teal-900">
+                    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                    <path d="M2 2l7.5 1.5"></path>
+                    <path d="M7 11l5-5"></path>
+                </svg>
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center text-gray-400 text-xs tracking-tighter uppercase font-medium">
+            &copy; 2026 Emotion Encoded // Independent Research Initiative
+        </footer>
+
+    </main>
+
+</body>
+</html>
