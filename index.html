@@ -145,12 +145,34 @@
         <!-- Introduction Section -->
        <section class="bg-gray-800/50 p-6 md:p-10 rounded-[2.5rem] shadow-lg border border-gray-700/50 relative overflow-hidden">
     
+   <div class="relative overflow-hidden bg-zinc-950 p-12 rounded-[2.5rem] border border-zinc-800 shadow-2xl">
     <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full"></div>
 
-    <p class="text-xl leading-relaxed text-gray-200 relative z-10">
-        Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, <span class="text-teal-400 font-bold">Emotion Encoded</span> helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
-        
-        <br /><br />
+    <p class="text-xl leading-relaxed text-gray-200 relative z-10 animate-reveal">
+        Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, 
+        <span class="text-teal-400 font-bold">Emotion Encoded</span> 
+        helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
+    </p>
+</div>
+
+<style>
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.animate-reveal {
+    animation: reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+</style>
 
        <div style="background-color: #09090b; padding: 40px; border-radius: 30px; border: 1px solid #27272a; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
     <span class="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent text-2xl font-black leading-tight mb-4" style="display: block; background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
@@ -158,9 +180,41 @@
     </span>
 </div>
 
-        Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains. I am dedicated to using Psychology to Decode Emotional Barriers to AI Adoption.
+       <div class="relative overflow-hidden bg-zinc-950 p-10 rounded-[2.5rem] border border-zinc-800 shadow-2xl max-w-3xl mx-auto">
+    <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full"></div>
 
-        <br /><br />
+    <p class="text-2xl leading-tight font-black text-teal-400 mb-6 animate-slide-in-1">
+        Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
+    </p>
+
+    <p class="text-xl leading-relaxed text-gray-300 relative z-10 animate-slide-in-2">
+        I am dedicated to using <span class="text-white font-semibold">Psychology to Decode Emotional Barriers to AI Adoption.</span>
+    </p>
+</div>
+
+<style>
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.animate-slide-in-1 {
+    animation: slideIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-2 {
+    opacity: 0; /* Starts hidden */
+    animation: slideIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; /* 0.4s delay */
+}
+</style>
 
         <div class="mt-6 p-6 bg-slate-900/80 rounded-2xl border-l-4 border-teal-500 shadow-inner">
             <p class="text-white font-extrabold text-lg tracking-tight mb-2">
