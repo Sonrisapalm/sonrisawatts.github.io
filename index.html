@@ -148,76 +148,63 @@
     <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full"></div>
 
     <p class="text-xl leading-relaxed text-gray-200 relative z-10 animate-reveal">
-        Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, 
-        <span class="text-teal-400 font-bold">Emotion Encoded</span> 
-        helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
-    </p>
-</div>
+        <main class="container mx-auto p-4 md:p-8 space-y-12 max-w-7xl">
+
+    <section class="relative overflow-hidden bg-zinc-950 p-12 rounded-[2.5rem] border border-zinc-800 shadow-2xl animate-reveal-1">
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full"></div>
+        <p class="text-xl leading-relaxed text-gray-200 relative z-10">
+            Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, 
+            <span class="text-teal-400 font-bold">Emotion Encoded</span> 
+            helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
+        </p>
+    </section>
+
+    <section class="relative overflow-hidden bg-zinc-950 p-10 rounded-[2.5rem] border border-zinc-800 shadow-2xl animate-reveal-2">
+        <span class="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent text-2xl font-black leading-tight" style="display: block; background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Founded by Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis, following the completion of my Psychology degree. This research initiative ran for 6-7 months. All interviews (anonymous or not) and research results will be posted to my website eventually.
+        </span>
+    </section>
+
+    <section class="relative overflow-hidden bg-zinc-950 p-10 rounded-[2.5rem] border border-zinc-800 shadow-2xl animate-reveal-3">
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full"></div>
+        <div class="relative z-10 space-y-6">
+            <p class="text-2xl leading-tight font-black text-teal-400">
+                Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
+            </p>
+            <p class="text-xl leading-relaxed text-gray-300">
+                I am dedicated to using <span class="text-white font-semibold">Psychology to Decode Emotional Barriers to AI Adoption.</span>
+            </p>
+        </div>
+    </section>
+
+</main>
 
 <style>
-@keyframes reveal {
-    from {
+    /* THE ANIMATION ENGINE */
+    @keyframes revealUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+            filter: blur(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+    }
+
+    /* Target all sections to start hidden */
+    .animate-reveal-1, .animate-reveal-2, .animate-reveal-3 {
         opacity: 0;
-        transform: translateY(20px);
-        filter: blur(5px);
+        animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-    }
-}
 
-.animate-reveal {
-    animation: reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
+    /* Staggered Timing: Each block appears slightly after the last */
+    .animate-reveal-1 { animation-delay: 0.1s; }
+    .animate-reveal-2 { animation-delay: 0.4s; }
+    .animate-reveal-3 { animation-delay: 0.7s; }
 </style>
-
-       <div style="background-color: #09090b; padding: 40px; border-radius: 30px; border: 1px solid #27272a; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
-    <span class="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent text-2xl font-black leading-tight mb-4" style="display: block; background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        Founded by Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis, following the completion of my Psychology degree. This research initiative ran for 6-7 months. All interviews (anonymous or not) and research results will be posted to my website eventually.
-    </span>
-</div>
-
-       <div class="relative overflow-hidden bg-zinc-950 p-10 rounded-[2.5rem] border border-zinc-800 shadow-2xl max-w-3xl mx-auto my-20 reveal-section">
-    
-    <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full"></div>
-
-    <div class="relative z-10">
-        <p class="text-2xl leading-tight font-black text-teal-400 mb-6 translate-y-8 opacity-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] reveal-item">
-            Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
-        </p>
-
-        <p class="text-xl leading-relaxed text-gray-300 translate-y-8 opacity-0 transition-all duration-1000 delay-300 ease-[cubic-bezier(0.16,1,0.3,1)] reveal-item">
-            I am dedicated to using <span class="text-white font-semibold">Psychology to Decode Emotional Barriers to AI Adoption.</span>
-        </p>
-    </div>
-</div>
-
-<script>
-    // The "Intersection Observer" watches for when the bubble enters the screen
-    const observerOptions = {
-        threshold: 0.2 // Trigger when 20% of the bubble is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Find all the reveal items inside this bubble and activate them
-                const items = entry.target.querySelectorAll('.reveal-item');
-                items.forEach(item => {
-                    item.classList.remove('opacity-0', 'translate-y-8');
-                    item.classList.add('opacity-100', 'translate-y-0');
-                });
-            }
-        });
-    }, observerOptions);
-
-    // Tell the observer to watch your section
-    document.querySelectorAll('.reveal-section').forEach(section => {
-        observer.observe(section);
-    });
-</script>
 
            <div style="background-color: #09090b; padding: 40px; border-radius: 30px; border: 1px solid #27272a; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
     <span class="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent text-2xl font-black leading-tight mb-4" style="display: block; background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
