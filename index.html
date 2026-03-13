@@ -140,7 +140,7 @@
 
     <main class="w-full max-w-4xl mx-auto px-4 py-10 space-y-6 md:space-y-12">
 
-    <section class="hero-reveal bg-zinc-950 p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.1s;">
+    <section class="research-card bg-zinc-950 p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.1s;">
         <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/10 blur-[60px] rounded-full"></div>
         <p class="text-[1.1rem] md:text-xl leading-relaxed text-gray-200 relative z-10 font-medium">
             Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, 
@@ -149,13 +149,13 @@
         </p>
     </section>
 
-    <section class="hero-reveal bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.4s;">
+    <section class="research-card bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.4s;">
         <span class="block text-xl md:text-2xl font-black leading-tight text-transparent bg-clip-text" style="background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
             Founded by Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis, following the completion of my Psychology degree. This research initiative ran for 6-7 months. All interviews (anonymous or not) and research results will be posted to my website eventually.
         </span>
     </section>
 
-    <section class="hero-reveal bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.7s;">
+    <section class="research-card bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.7s;">
         <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/10 blur-[60px] rounded-full"></div>
         <div class="relative z-10 space-y-4">
             <p class="text-xl md:text-2xl leading-tight font-black text-teal-400">
@@ -170,38 +170,37 @@
 </main>
 
 <style>
-    @keyframes slideUpFade {
-        0% {
+    /* 1. The Slide-Up Animation */
+    @keyframes fadeInUp {
+        from {
             opacity: 0;
-            -webkit-transform: translateY(30px);
             transform: translateY(30px);
-            -webkit-filter: blur(8px);
-            filter: blur(8px);
+            filter: blur(10px);
         }
-        100% {
+        to {
             opacity: 1;
-            -webkit-transform: translateY(0);
             transform: translateY(0);
-            -webkit-filter: blur(0);
             filter: blur(0);
         }
     }
 
-    .hero-reveal {
+    /* 2. Apply to the research cards ONLY */
+    .research-card {
+        /* This ensures the cards are hidden BEFORE the animation starts */
         opacity: 0;
-        /* 'both' ensures the animation runs on page load and stays visible */
-        animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-        -webkit-animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        animation: fadeInUp 0.8s ease-out forwards;
+        /* Webkit for iPhone/Safari support */
+        -webkit-animation: fadeInUp 0.8s ease-out forwards;
     }
 
-    /* Phone specific formatting */
+    /* 3. Mobile Tweaks */
     @media (max-width: 640px) {
-        .hero-reveal {
+        .research-card {
             padding: 1.25rem !important;
-            margin-bottom: 1rem !important;
+            margin-bottom: 1.5rem !important;
             border-radius: 1.25rem !important;
         }
-        .hero-reveal p, .hero-reveal span {
+        .research-card p, .research-card span {
             font-size: 1.05rem !important;
             line-height: 1.5 !important;
         }
