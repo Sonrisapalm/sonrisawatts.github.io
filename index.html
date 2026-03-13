@@ -138,9 +138,9 @@
         </div>
     </section>
 
-   <main class="w-full max-w-4xl mx-auto px-4 py-10 space-y-6 md:space-y-12">
+  <main class="w-full max-w-4xl mx-auto px-4 py-10 space-y-6 md:space-y-12">
 
-    <section class="research-card bg-zinc-950 p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.1s;">
+    <section class="research-card bg-zinc-950 p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden">
         <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/10 blur-[60px] rounded-full"></div>
         <p class="text-[1.1rem] md:text-xl leading-relaxed text-gray-200 relative z-10 font-medium">
             Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, 
@@ -149,13 +149,13 @@
         </p>
     </section>
 
-    <section class="research-card bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.4s;">
+    <section class="research-card bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden">
         <span class="block text-xl md:text-2xl font-black leading-tight text-transparent bg-clip-text" style="background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
             Founded by Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis, following the completion of my Psychology degree. This research initiative ran for 6-7 months. All interviews (anonymous or not) and research results will be posted to my website eventually.
         </span>
     </section>
 
-    <section class="research-card bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.7s;">
+    <section class="research-card bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden">
         <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/10 blur-[60px] rounded-full"></div>
         <div class="relative z-10 space-y-4">
             <p class="text-xl md:text-2xl leading-tight font-black text-teal-400">
@@ -168,73 +168,45 @@
     </section>
 
 </main>
-    
-<style>
-    @keyframes slideUp {
-        0% {
-            opacity: 0;
-            transform: translateY(30px);
-            -webkit-transform: translateY(30px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-            -webkit-transform: translateY(0);
-        }
-    }
 
-    /* This now matches the name in your HTML exactly */
+<style>
+    /* 1. Initial hidden state */
     .research-card {
         opacity: 0;
-        animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        -webkit-animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        transform: translateY(50px);
+        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: transform, opacity;
+    }
+
+    /* 2. State when the card enters the screen */
+    .research-card.active {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     /* Mobile Cleanup */
     @media (max-width: 768px) {
         .research-card {
             padding: 1.25rem !important;
-            margin-bottom: 1rem !important;
-            border-radius: 1.25rem !important;
-        }
-        .research-card p, .research-card span {
-            font-size: 1.05rem !important;
-            line-height: 1.5 !important;
+            margin-bottom: 1.5rem !important;
+            border-radius: 1.5rem !important;
         }
     }
 </style>
 
-    <style>
-    /* The "Waiting" State */
-    .scroll-reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        will-change: transform, opacity;
-    }
-
-    /* The "Active" State (When scrolled into view) */
-    .scroll-reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
 <script>
-    const observerOptions = {
-        threshold: 0.15 // Triggers when 15% of the card is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
+    // This script watches for the "research-card" class specifically
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Tell the observer to watch every card with the "scroll-reveal" class
-    document.querySelectorAll('.scroll-reveal').forEach(card => {
-        observer.observe(card);
+    // Link the script to your HTML sections
+    document.querySelectorAll('.research-card').forEach(obj => {
+        revealObserver.observe(obj);
     });
 </script>
     
