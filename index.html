@@ -170,39 +170,40 @@
 </main>
 
 <style>
-    /* 1. The Slide-Up Animation */
-    @keyframes fadeInUp {
-        from {
+    /* 1. The Animation Logic */
+    @keyframes slideUpFade {
+        0% {
             opacity: 0;
             transform: translateY(30px);
-            filter: blur(10px);
+            -webkit-transform: translateY(30px);
         }
-        to {
+        100% {
             opacity: 1;
             transform: translateY(0);
-            filter: blur(0);
+            -webkit-transform: translateY(0);
         }
     }
 
-    /* 2. Apply to the research cards ONLY */
-    .research-card {
-        /* This ensures the cards are hidden BEFORE the animation starts */
-        opacity: 0;
-        animation: fadeInUp 0.8s ease-out forwards;
-        /* Webkit for iPhone/Safari support */
-        -webkit-animation: fadeInUp 0.8s ease-out forwards;
+    /* 2. Apply to the cards */
+    .reveal-card {
+        /* We use 'both' so the browser handles the hidden-to-visible transition automatically */
+        animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        -webkit-animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        
+        /* This ensures the cards are visible even if the animation lags */
+        visibility: visible; 
     }
 
-    /* 3. Mobile Tweaks */
-    @media (max-width: 640px) {
-        .research-card {
-            padding: 1.25rem !important;
+    /* 3. Mobile Specific Formatting */
+    @media (max-width: 768px) {
+        .reveal-card {
+            padding: 1.5rem !important;
             margin-bottom: 1.5rem !important;
-            border-radius: 1.25rem !important;
+            border-radius: 1.5rem !important;
         }
-        .research-card p, .research-card span {
-            font-size: 1.05rem !important;
-            line-height: 1.5 !important;
+        .reveal-card p, .reveal-card span {
+            font-size: 1.1rem !important;
+            line-height: 1.6 !important;
         }
     }
 </style>
@@ -215,6 +216,7 @@
 
     
          <!-- New Link to Articles Page -->
+    <section>
     <div class="text-center my-8">
         <a href="AI-Perception-Briefs.html" class="inline-block px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
             Click Here To Read All Of Research AI Perception Briefs
