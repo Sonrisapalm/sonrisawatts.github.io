@@ -148,30 +148,30 @@
     <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full"></div>
 
     <p class="text-xl leading-relaxed text-gray-200 relative z-10 animate-reveal">
-        <main class="container mx-auto p-4 md:p-8 space-y-12 max-w-7xl">
+       <main class="w-full max-w-7xl mx-auto px-4 py-8 space-y-8 md:space-y-12">
 
-    <section class="relative overflow-hidden bg-zinc-950 p-12 rounded-[2.5rem] border border-zinc-800 shadow-2xl animate-reveal-1">
-        <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full"></div>
-        <p class="text-xl leading-relaxed text-gray-200 relative z-10">
+    <section class="reveal-box bg-zinc-950 p-6 md:p-12 rounded-[2rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.1s;">
+        <div class="absolute -top-12 -right-12 w-48 h-48 bg-teal-500/10 blur-[80px] rounded-full"></div>
+        <p class="text-lg md:text-xl leading-relaxed text-gray-200 relative z-10">
             Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, 
             <span class="text-teal-400 font-bold">Emotion Encoded</span> 
             helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
         </p>
     </section>
 
-    <section class="relative overflow-hidden bg-zinc-950 p-10 rounded-[2.5rem] border border-zinc-800 shadow-2xl animate-reveal-2">
-        <span class="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent text-2xl font-black leading-tight" style="display: block; background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+    <section class="reveal-box bg-zinc-950 p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.4s;">
+        <span class="block text-xl md:text-2xl font-black leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400" style="background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
             Founded by Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis, following the completion of my Psychology degree. This research initiative ran for 6-7 months. All interviews (anonymous or not) and research results will be posted to my website eventually.
         </span>
     </section>
 
-    <section class="relative overflow-hidden bg-zinc-950 p-10 rounded-[2.5rem] border border-zinc-800 shadow-2xl animate-reveal-3">
-        <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 blur-[100px] rounded-full"></div>
-        <div class="relative z-10 space-y-6">
-            <p class="text-2xl leading-tight font-black text-teal-400">
+    <section class="reveal-box bg-zinc-950 p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.7s;">
+        <div class="absolute -top-12 -right-12 w-48 h-48 bg-teal-500/10 blur-[80px] rounded-full"></div>
+        <div class="relative z-10 space-y-4 md:space-y-6">
+            <p class="text-xl md:text-2xl leading-tight font-black text-teal-400">
                 Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
             </p>
-            <p class="text-xl leading-relaxed text-gray-300">
+            <p class="text-lg md:text-xl leading-relaxed text-gray-300">
                 I am dedicated to using <span class="text-white font-semibold">Psychology to Decode Emotional Barriers to AI Adoption.</span>
             </p>
         </div>
@@ -180,12 +180,12 @@
 </main>
 
 <style>
-    /* THE ANIMATION ENGINE */
-    @keyframes revealUp {
+    /* Bulletproof Animation for Mobile & Desktop */
+    @keyframes rollUpReveal {
         0% {
             opacity: 0;
             transform: translateY(30px);
-            filter: blur(10px);
+            filter: blur(8px);
         }
         100% {
             opacity: 1;
@@ -194,16 +194,19 @@
         }
     }
 
-    /* Target all sections to start hidden */
-    .animate-reveal-1, .animate-reveal-2, .animate-reveal-3 {
+    .reveal-box {
         opacity: 0;
-        animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        /* Using 'both' ensures the animation state is honored on all browsers */
+        animation: rollUpReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
-    /* Staggered Timing: Each block appears slightly after the last */
-    .animate-reveal-1 { animation-delay: 0.1s; }
-    .animate-reveal-2 { animation-delay: 0.4s; }
-    .animate-reveal-3 { animation-delay: 0.7s; }
+    /* Prevents the containers from being too wide on small screens */
+    @media (max-width: 768px) {
+        .reveal-box {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
 </style>
 
            <div style="background-color: #09090b; padding: 40px; border-radius: 30px; border: 1px solid #27272a; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
