@@ -138,7 +138,7 @@
         </div>
     </section>
 
-    <main class="w-full max-w-4xl mx-auto px-4 py-10 space-y-6 md:space-y-12">
+   <main class="w-full max-w-4xl mx-auto px-4 py-10 space-y-6 md:space-y-12">
 
     <section class="research-card bg-zinc-950 p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden" style="animation-delay: 0.1s;">
         <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/10 blur-[60px] rounded-full"></div>
@@ -168,10 +168,9 @@
     </section>
 
 </main>
-
+    
 <style>
-    /* 1. The Animation Logic */
-    @keyframes slideUpFade {
+    @keyframes slideUp {
         0% {
             opacity: 0;
             transform: translateY(30px);
@@ -184,26 +183,23 @@
         }
     }
 
-    /* 2. Apply to the cards */
-    .reveal-card {
-        /* We use 'both' so the browser handles the hidden-to-visible transition automatically */
-        animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-        -webkit-animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-        
-        /* This ensures the cards are visible even if the animation lags */
-        visibility: visible; 
+    /* This now matches the name in your HTML exactly */
+    .research-card {
+        opacity: 0;
+        animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        -webkit-animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     }
 
-    /* 3. Mobile Specific Formatting */
+    /* Mobile Cleanup */
     @media (max-width: 768px) {
-        .reveal-card {
-            padding: 1.5rem !important;
-            margin-bottom: 1.5rem !important;
-            border-radius: 1.5rem !important;
+        .research-card {
+            padding: 1.25rem !important;
+            margin-bottom: 1rem !important;
+            border-radius: 1.25rem !important;
         }
-        .reveal-card p, .reveal-card span {
-            font-size: 1.1rem !important;
-            line-height: 1.6 !important;
+        .research-card p, .research-card span {
+            font-size: 1.05rem !important;
+            line-height: 1.5 !important;
         }
     }
 </style>
