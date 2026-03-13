@@ -142,55 +142,68 @@
 
     <section class="research-card bg-zinc-950 p-6 md:p-12 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden">
         <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/10 blur-[60px] rounded-full"></div>
-        <p class="text-[1.1rem] md:text-xl leading-relaxed text-gray-200 relative z-10 font-medium">
-            Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, 
-            <span class="text-teal-400 font-bold">Emotion Encoded</span> 
-            helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
-        </p>
+        <div class="overflow-hidden">
+            <p class="reveal-text text-[1.1rem] md:text-xl leading-relaxed text-gray-200 relative z-10 font-medium">
+                Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population, 
+                <span class="text-teal-400 font-bold">Emotion Encoded</span> 
+                helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
+            </p>
+        </div>
     </section>
 
     <section class="research-card bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden">
-        <span class="block text-xl md:text-2xl font-black leading-tight text-transparent bg-clip-text" style="background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-            Founded by Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis, following the completion of my Psychology degree. This research initiative ran for 6-7 months. All interviews (anonymous or not) and research results will be posted to my website eventually.
-        </span>
+        <div class="overflow-hidden">
+            <span class="reveal-text block text-xl md:text-2xl font-black leading-tight text-transparent bg-clip-text" style="background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                Founded by Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis, following the completion of my Psychology degree. This research initiative ran for 6-7 months. All interviews (anonymous or not) and research results will be posted to my website eventually.
+            </span>
+        </div>
     </section>
 
     <section class="research-card bg-zinc-950 p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] border border-zinc-800 shadow-2xl relative overflow-hidden">
         <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/10 blur-[60px] rounded-full"></div>
         <div class="relative z-10 space-y-4">
-            <p class="text-xl md:text-2xl leading-tight font-black text-teal-400">
-                Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
-            </p>
-            <p class="text-[1.1rem] md:text-xl leading-relaxed text-gray-300">
-                I am dedicated to using <span class="text-white font-semibold">Psychology to Decode Emotional Barriers to AI Adoption.</span>
-            </p>
+            <div class="overflow-hidden">
+                <p class="reveal-text text-xl md:text-2xl leading-tight font-black text-teal-400">
+                    Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
+                </p>
+            </div>
+            <div class="overflow-hidden">
+                <p class="reveal-text text-[1.1rem] md:text-xl leading-relaxed text-gray-300">
+                    I am dedicated to using <span class="text-white font-semibold">Psychology to Decode Emotional Barriers to AI Adoption.</span>
+                </p>
+            </div>
         </div>
     </section>
 
 </main>
 
 <style>
-    /* 1. Initial hidden state */
+    /* 1. The Box Animation (Slightly slower/subtle) */
     .research-card {
         opacity: 0;
-        transform: translateY(50px);
-        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-        will-change: transform, opacity;
+        transition: opacity 1.2s ease-out;
     }
-
-    /* 2. State when the card enters the screen */
     .research-card.active {
         opacity: 1;
+    }
+
+    /* 2. The Text Animation (The "Rising" effect) */
+    .reveal-text {
+        display: block;
+        transform: translateY(100%); /* Start completely below the "window" */
+        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform;
+    }
+
+    /* When the box is active, the text slides up to 0 */
+    .research-card.active .reveal-text {
         transform: translateY(0);
     }
 
-    /* Mobile Cleanup */
+    /* Mobile adjustments */
     @media (max-width: 768px) {
-        .research-card {
-            padding: 1.25rem !important;
-            margin-bottom: 1.5rem !important;
-            border-radius: 1.5rem !important;
-        }
+        .research-card { padding: 1.25rem !important; }
+        .reveal-text { font-size: 1rem !important; }
     }
 </style>
 
