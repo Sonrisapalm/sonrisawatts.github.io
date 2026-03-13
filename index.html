@@ -178,48 +178,66 @@
 </main>
 
 <style>
-    /* 1. The Box Animation (Slightly slower/subtle) */
-    .research-card {
-        opacity: 0;
-        transition: opacity 1.2s ease-out;
-    }
-    .research-card.active {
-        opacity: 1;
+    /* 1. The Container Window */
+    .clip-window {
+        overflow: hidden;
+        display: block;
+        width: 100%;
     }
 
-    /* 2. The Text Animation (The "Rising" effect) */
+    /* 2. The Words (Snappier Animation) */
     .reveal-text {
         display: block;
-        transform: translateY(100%); /* Start completely below the "window" */
-        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-        will-change: transform;
+        opacity: 0;
+        transform: translateY(60px); /* Reduced distance so it finishes faster */
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease-out;
+        will-change: transform, opacity;
     }
 
-    /* When the box is active, the text slides up to 0 */
-    .research-card.active .reveal-text {
+    /* 3. The Box */
+    .research-card {
+        opacity: 0;
+        transform: translateY(20px); /* Minimal box movement */
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    /* TRIGGER */
+    .research-card.active {
+        opacity: 1;
         transform: translateY(0);
     }
 
-    /* Mobile adjustments */
+    .research-card.active .reveal-text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     @media (max-width: 768px) {
-        .research-card { padding: 1.25rem !important; }
-        .reveal-text { font-size: 1rem !important; }
+        /* Make it even faster on mobile to keep up with fast scrolling */
+        .reveal-text {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out;
+        }
     }
 </style>
 
 <script>
-    // This script watches for the "research-card" class specifically
-    const revealObserver = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                // Once it's animated, stop watching it to save phone battery
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { 
+        /* The FIX: 0.05 means trigger when only 5% of the box is visible */
+        threshold: 0.05,
+        /* rootMargin adds a "buffer" so it starts animating 50px BEFORE it even hits the screen */
+        rootMargin: "0px 0px -50px 0px" 
+    });
 
-    // Link the script to your HTML sections
-    document.querySelectorAll('.research-card').forEach(obj => {
-        revealObserver.observe(obj);
+    document.querySelectorAll('.research-card').forEach(el => {
+        observer.observe(el);
     });
 </script>
     
