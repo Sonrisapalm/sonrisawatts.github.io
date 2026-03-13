@@ -203,6 +203,41 @@
         }
     }
 </style>
+
+    <style>
+    /* The "Waiting" State */
+    .scroll-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        will-change: transform, opacity;
+    }
+
+    /* The "Active" State (When scrolled into view) */
+    .scroll-reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+<script>
+    const observerOptions = {
+        threshold: 0.15 // Triggers when 15% of the card is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    // Tell the observer to watch every card with the "scroll-reveal" class
+    document.querySelectorAll('.scroll-reveal').forEach(card => {
+        observer.observe(card);
+    });
+</script>
+    
            <div style="background-color: #09090b; padding: 40px; border-radius: 30px; border: 1px solid #27272a; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
     <span class="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent text-2xl font-black leading-tight mb-4" style="display: block; background: linear-gradient(to right, #2dd4bf, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
         I had No institutional backing, no team, and no funding: just agency and drive.
