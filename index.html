@@ -175,30 +175,40 @@
     @keyframes slideUpFade {
         0% {
             opacity: 0;
-            transform: translateY(25px);
+            -webkit-transform: translateY(30px);
+            transform: translateY(30px) translateZ(0); /* translateZ for Android GPU */
+            -webkit-filter: blur(8px);
             filter: blur(8px);
         }
         100% {
             opacity: 1;
-            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            transform: translateY(0) translateZ(0);
+            -webkit-filter: blur(0);
             filter: blur(0);
         }
     }
 
     .reveal-card {
-        opacity: 0;
-        /* 'both' ensures it stays hidden before it starts and visible after it ends */
-        animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-        will-change: transform, opacity; /* Helps mobile performance */
+        opacity: 0; /* Hidden until script runs */
+        will-change: transform, opacity;
+    }
+
+    /* THE TRIGGER CLASS */
+    .start-animation {
+        animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+        -webkit-animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
     }
 
     /* 2. Responsive Typography Safety */
     @media (max-width: 640px) {
-        .reveal-card p {
-            line-height: 1.5; /* More breathable on small screens */
-        }
         .reveal-card {
-            border-radius: 1.25rem; /* Slightly less rounded on mobile to save space */
+            padding: 1.5rem !important;
+            border-radius: 1.25rem !important;
+        }
+        .reveal-card p, .reveal-card span {
+            font-size: 1.05rem !important;
+            line-height: 1.5 !important;
         }
     }
 </style>
