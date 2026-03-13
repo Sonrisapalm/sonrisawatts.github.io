@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Medicine | Dr. Navi Muradali</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --bg: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --skeleton: #f1f5f9;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .article-container {
+            max-width: 700px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .category {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin: 1rem 0;
+            line-height: 1.1;
+            color: #0f172a;
+        }
+
+        .author-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* Coming Soon Overlay */
+        .content-preview {
+            position: relative;
+        }
+
+        .skeleton-line {
+            height: 18px;
+            background: var(--skeleton);
+            margin-bottom: 15px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skeleton-line::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .coming-soon-card {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            border: 1px solid #e2e8f0;
+            z-index: 10;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <article class="article-container">
+        <span class="category">Executive Perspective</span>
+        <h1>AI in Modern Medicine: Transforming the Patient Connection</h1>
+        
+        <div class="author-meta">
+            <div class="author-info">
+                <h4>Dr. Navi Muradali</h4>
+                <p>Founder & CEO, Patient Connect</p>
+            </div>
+        </div>
+
+        <div class="content-preview">
+            <div class="skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton-line" style="width: 95%;"></div>
+            <div class="skeleton-line" style="width: 90%;"></div>
+            <div class="skeleton-line" style="width: 40%; margin-bottom: 40px;"></div>
+            
+            <div class="skeleton-line" style="width: 100%;"></div>
+            <div class="skeleton-line" style="width: 92%;"></div>
+            <div class="skeleton-line" style="width: 85%;"></div>
+
+            <div class="coming-soon-card">
+                <h3>Insights Pending Final Review</h3>
+                <p>This research article is currently being finalized. Check back soon for Dr. Muradali’s full perspective on AI integration.</p>
+                <a href="https://github.com/your-profile" class="btn">Follow for Updates</a>
+            </div>
+        </div>
+    </article>
+
+</body>
+</html>
