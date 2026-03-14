@@ -133,38 +133,57 @@
         Click to View My Island where I was Born and Raised and did this Independent Research!
     </a>
 </div>
-    <div style="background-color: #09090b; border-radius: 20px; border: 1px solid #27272a; width: 95%; max-width: 320px; margin: 20px auto; overflow: hidden; position: relative; display: flex; flex-direction: column; align-items: center; padding: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
+  <div class="map-card" style="background-color: #09090b; border-radius: 24px; border: 1px solid #27272a; width: 100%; max-width: 400px; margin: 20px auto; padding: 30px; text-align: center; position: relative;">
     
-    <div style="position: relative; width: 180px; height: 180px; margin-bottom: 15px;">
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; filter: drop-shadow(0 0 15px rgba(45, 212, 191, 0.25));">
-            
-            <path d="M15 15C18 12 25 10 32 12C40 15 42 22 38 30C34 38 32 42 35 48C38 54 48 60 55 62C58 63 60 62 62 60C64 58 64 55 62 53C60 51 55 48 58 45C61 42 65 42 68 45C72 48 74 52 72 56C70 60 60 68 55 70C50 72 42 70 35 65C28 60 22 52 18 45C14 38 12 25 15 15Z" 
-                  fill="#020617" stroke="#2dd4bf" stroke-width="0.8" />
-            
-            <path d="M65 75C62 72 60 78 62 85C64 92 72 98 80 95C88 92 92 85 90 78C88 72 82 70 75 72C70 73 68 78 65 75Z" 
-                  fill="#020617" stroke="#2dd4bf" stroke-width="0.8" />
-            
-            <g style="cursor: pointer;">
-                <circle cx="34" cy="38" r="2" fill="#2dd4bf">
-                    <animate attributeName="r" values="1.5;2.5;1.5" dur="2s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="34" cy="38" r="6" stroke="#2dd4bf" stroke-width="0.5">
-                    <animate attributeName="r" values="3;10;3" dur="2s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite" />
-                </circle>
-                <title>Basseterre, St. Kitts</title>
+    <h3 style="color: #94a3b8; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 20px;">Interactive Geography</h3>
+
+    <div class="svg-container" style="width: 250px; height: 250px; margin: 0 auto;">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <style>
+                .island-part {
+                    fill: #161618;
+                    stroke: #2dd4bf;
+                    stroke-width: 0.5;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                }
+                .island-part:hover {
+                    fill: rgba(45, 212, 191, 0.2);
+                    stroke-width: 1.5;
+                    filter: drop-shadow(0 0 8px #2dd4bf);
+                }
+            </style>
+
+            <g class="island-group">
+                <path class="island-part" d="M12 20C15 15 25 12 35 15C45 18 48 30 42 45C38 55 30 65 25 60C20 55 10 30 12 20Z">
+                    <title>Northern Parishes (St. Paul, St. John, St. Anne)</title>
+                </path>
+                
+                <path class="island-part" d="M38 45C42 42 50 45 52 50C54 55 48 62 42 60C36 58 35 50 38 45Z">
+                    <title>St. George Basseterre</title>
+                </path>
+
+                <path class="island-part" d="M52 50C55 48 65 42 70 45C75 48 78 55 72 60C65 65 55 60 52 50Z">
+                    <title>South East Peninsula (Frigate Bay, Salt Plage)</title>
+                </path>
             </g>
+
+            <g class="island-group">
+                <path class="island-part" d="M65 75C60 70 65 65 75 65C85 65 95 75 90 85C85 95 70 95 65 85C60 80 65 75 65 75Z">
+                    <title>Nevis (St. John, St. George, St. Paul, St. Thomas, St. James)</title>
+                </path>
+            </g>
+
+            <circle cx="43" cy="52" r="1.5" fill="#2dd4bf">
+                <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite" />
+            </circle>
         </svg>
     </div>
 
-    <div style="text-align: center;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: #4b5563; font-weight: 900; display: block; margin-bottom: 4px;">Locally Based</span>
-        <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 900; color: #f8fafc; margin: 0; background: linear-gradient(to right, #ffffff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-            St. Kitts & Nevis
-        </p>
-    </div>
+    <p style="margin-top: 15px; font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #f8fafc; font-weight: 700;">
+        Hover parts to explore
+    </p>
 </div>
-
     <div class="h-px w-24 bg-gradient-to-r from-transparent via-zinc-400 to-transparent"></div>
 </div>
     <!-- Top Images Section -->
