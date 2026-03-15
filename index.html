@@ -133,67 +133,58 @@
         Click to View My Island where I was Born and Raised and did this Independent Research!
     </a>
 </div>
-<div style="background: rgba(9, 9, 11, 0.95); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-radius: 40px; border: 1px solid rgba(45, 212, 191, 0.15); width: 100%; max-width: 550px; margin: 20px auto; padding: 45px; text-align: center; box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.8);">
+<div style="background: rgba(9, 9, 11, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 40px; border: 1px solid rgba(45, 212, 191, 0.3); width: 100%; max-width: 550px; margin: 20px auto; padding: 50px; text-align: center; box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 1);">
     
-    <div style="width: 100%; height: 500px; margin: 0 auto; position: relative;">
-        <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; overflow: visible;">
+    <div style="width: 100%; height: 550px; margin: 0 auto; position: relative;">
+        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; overflow: visible;">
             <defs>
-                <filter id="ultra-glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="6" result="blur" />
+                <filter id="neon-glow-pro" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
                     <feComposite in="SourceGraphic" in2="blur" operator="over" />
                 </filter>
             </defs>
 
             <style>
-                .island-path {
-                    fill: #09090b;
+                .skn-outline {
+                    fill: transparent;
                     stroke: #2dd4bf;
-                    stroke-width: 1.2;
-                    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+                    stroke-width: 1.5;
+                    stroke-linejoin: round;
+                    transition: all 0.4s ease;
                     cursor: crosshair;
                 }
-                .island-path:hover {
+                .skn-outline:hover {
                     fill: rgba(45, 212, 191, 0.08);
                     stroke-width: 2.5;
-                    filter: url(#ultra-glow);
-                    transform: translateY(-5px) scale(1.02);
+                    filter: url(#neon-glow-pro);
                 }
             </style>
 
-            <path class="island-path" d="M45,35 C30,45 25,75 35,95 C45,115 65,125 85,115 C95,110 105,95 105,75 C105,50 85,30 65,30 C55,30 50,32 45,35 
-                                       M85,115 C95,120 100,125 105,135 C115,155 125,185 135,195 C145,205 135,215 125,195 C115,175 105,145 100,130 C95,120 90,115 85,115" 
-                onmouseenter="updateLabel('ST. KITTS', 'From Mt. Liamuiga to the Southeast Peninsula')" />
+            <path class="skn-outline" 
+                  d="M105,45 C85,45 60,65 55,95 C50,135 75,175 115,195 C145,210 175,210 195,185 C210,165 220,135 210,105 C200,75 175,45 145,40 C125,40 115,45 105,45 
+                     M195,185 L225,215 L255,255 L285,305 C295,320 310,320 315,305 L320,285 C325,265 310,255 295,260 L285,275 L255,235 L225,195 L195,185" 
+                  onmouseenter="updateLabel('ST. KITTS', 'Trace: Teardrop Mainland & Southeast Peninsula')" />
 
-            <path class="island-path" d="M125,225 C110,225 105,255 120,275 C135,295 175,295 185,270 C195,245 180,220 150,220 C140,220 135,222 125,225" 
-                onmouseenter="updateLabel('NEVIS', 'The majestic volcanic silhouette of Nevis Peak')" />
+            <path class="skn-outline" 
+                  d="M280,355 C260,355 250,385 265,415 C280,445 320,460 350,445 C380,430 395,395 385,365 C375,335 340,325 310,335 C295,340 290,355 280,355" 
+                  onmouseenter="updateLabel('NEVIS', 'Trace: Circular Volcanic Profile')" />
 
-            <circle cx="95" cy="115" r="3" fill="#2dd4bf" style="filter: drop-shadow(0 0 8px #2dd4bf);">
-                <animate attributeName="opacity" values="1;0.2;1" dur="3s" repeatCount="indefinite" />
+            <circle cx="188" cy="192" r="3" fill="#2dd4bf">
+                <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite" />
             </circle>
         </svg>
     </div>
 
-    <div id="info-card" style="margin-top: 30px; padding: 25px; background: rgba(255, 255, 255, 0.02); border-radius: 24px; border: 1px solid rgba(45, 212, 191, 0.2); transition: all 0.4s ease;">
-        <div id="region-title" style="font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #2dd4bf; font-weight: 900; letter-spacing: 0.5em; text-transform: uppercase; margin-bottom: 10px;">Territory Sync</div>
-        <div id="region-desc" style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #94a3b8; font-weight: 500; line-height: 1.5;">Hover to explore regional insights</div>
+    <div id="trace-panel" style="margin-top: 35px; padding: 25px; background: rgba(45, 212, 191, 0.05); border-radius: 20px; border: 1px solid rgba(45, 212, 191, 0.3);">
+        <div id="map-title" style="font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #2dd4bf; font-weight: 900; letter-spacing: 0.5em; text-transform: uppercase;">Reference Aligned</div>
+        <div id="map-coord" style="font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #e2e8f0; font-weight: 400; margin-top: 8px;">17.3578° N, 62.7830° W</div>
     </div>
 </div>
 
 <script>
-function updateLabel(title, desc) {
-    const titleEl = document.getElementById('region-title');
-    const descEl = document.getElementById('region-desc');
-    const card = document.getElementById('info-card');
-    
-    card.style.transform = 'translateY(5px)';
-    card.style.background = 'rgba(45, 212, 191, 0.05)';
-    
-    setTimeout(() => {
-        titleEl.innerText = title;
-        descEl.innerText = desc;
-        card.style.transform = 'translateY(0px)';
-        card.style.background = 'rgba(255, 255, 255, 0.02)';
-    }, 100);
+function updateLabel(name, coord) {
+    document.getElementById('map-title').innerText = name;
+    document.getElementById('map-coord').innerText = coord;
 }
 </script>
     <!-- Top Images Section -->
