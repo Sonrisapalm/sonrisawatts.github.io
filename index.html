@@ -1363,72 +1363,68 @@ body {
     </div>
 </section>
     <style>
-    /* This handles the layering over your collage image */
+    /* This creates the 'layer' for the stars */
     #galaxy-bg {
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: 0; /* Changed to 0 to sit right on top of the background image */
+        z-index: 1; /* Sits right in front of your JPG */
         pointer-events: none;
+        opacity: 0.8;
     }
-    
-    /* Ensures your content stays above the stars */
-    .research-card, header, nav, section {
-        position: relative;
-        z-index: 10;
+
+    /* We need to make sure your background image doesn't cover the stars */
+    body {
+        background-color: #000 !important;
     }
 </style>
 
 <script>
     (function() {
-        // Automatically creates the canvas so you don't have to find the <body> tag
+        // This creates the canvas and puts it in the right spot
         const canvas = document.createElement('canvas');
         canvas.id = 'galaxy-bg';
+        // We prepend it so it's the first thing the browser sees
         document.body.prepend(canvas);
 
         const ctx = canvas.getContext('2d');
         let stars = [];
 
-        function initGalaxy() {
+        function init() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             stars = [];
-            for (let i = 0; i < 120; i++) {
+            for (let i = 0; i < 150; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    size: Math.random() * 1.8 + 0.2,
-                    speed: Math.random() * 0.3 + 0.05,
-                    opacity: Math.random()
+                    size: Math.random() * 2 + 0.5,
+                    speed: Math.random() * 0.5 + 0.1,
+                    // Giving them a bright color to test visibility
+                    color: Math.random() > 0.5 ? "#fff" : "#00f6ff" 
                 });
             }
         }
 
-        function drawGalaxy() {
+        function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            stars.forEach(star => {
-                ctx.fillStyle = "rgba(255, 255, 255, " + star.opacity + ")";
+            stars.forEach(s => {
+                ctx.fillStyle = s.color;
                 ctx.beginPath();
-                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
                 ctx.fill();
-                
-                star.y -= star.speed;
-                if (star.y < 0) star.y = canvas.height;
+                s.y -= s.speed;
+                if (s.y < 0) s.y = canvas.height;
             });
-            requestAnimationFrame(drawGalaxy);
+            requestAnimationFrame(animate);
         }
 
-        window.addEventListener('resize', initGalaxy);
-        initGalaxy();
-        drawGalaxy();
+        window.addEventListener('resize', init);
+        init();
+        animate();
     })();
 </script>
-
-<footer>
-    <div class="container">
-        <p>&copy; 2025 Emotion Encoded Research Initiative. All Rights Reserved.</p>
-    </div>
 </footer>
                     
