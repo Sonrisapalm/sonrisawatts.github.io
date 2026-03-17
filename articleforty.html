@@ -7,11 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
     <style>
         :root {
-            --primary: #2dd4bf; /* Teal from your main site */
-            --bg: #09090b;      /* Dark zinc background */
+            --primary: #2dd4bf; 
+            --bg: #09090b;      
             --card-bg: #111114;
             --text: #f1f5f9;
             --muted: #94a3b8;
+            --nav-hover: #fb923c; /* Orange-400 */
         }
 
         body {
@@ -23,9 +24,54 @@
             line-height: 1.8;
         }
 
+        /* Navigation Styling */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem 1rem;
+            gap: 1.5rem;
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--nav-hover);
+            transform: scale(1.05);
+            text-shadow: 0 0 8px rgba(251, 146, 60, 0.6);
+        }
+
+        /* Header Image */
+        .header-image-container {
+            width: 100%;
+            max-height: 450px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #27272a;
+        }
+
+        .header-image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
         .article-container {
             max-width: 750px;
-            margin: 60px auto;
+            margin: 40px auto;
             padding: 0 25px;
         }
 
@@ -39,45 +85,22 @@
 
         h1 {
             font-size: 2.5rem;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             line-height: 1.2;
             color: #ffffff;
             font-weight: 800;
         }
 
-        .url-link {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 2rem;
-        }
-
-        .url-link:hover { color: var(--primary); }
-
         .author-meta {
             padding: 1.5rem 0;
             border-top: 1px solid #27272a;
             border-bottom: 1px solid #27272a;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+            margin-top: 1rem;
         }
 
         .author-info h4 { margin: 0; font-size: 1.2rem; color: var(--primary); }
         .author-info p { margin: 0; color: var(--muted); font-size: 0.9rem; }
-
-        .intro-text {
-            font-size: 1.15rem;
-            color: #e2e8f0;
-            margin-bottom: 3rem;
-            font-weight: 300;
-        }
-
-        h2.section-title {
-            font-size: 1.8rem;
-            border-left: 4px solid var(--primary);
-            padding-left: 15px;
-            margin: 3rem 0 1.5rem 0;
-        }
 
         .q-box {
             background: var(--card-bg);
@@ -92,12 +115,6 @@
             color: var(--primary);
             display: block;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .quote {
-            color: #d1d5db;
-            position: relative;
         }
 
         .conclusion {
@@ -109,17 +126,31 @@
             font-style: italic;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            nav a { font-size: 0.9rem; }
             h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="Methodsanddata.html">Methods and Data</a>
+        <a href="DataAnalysisquantitative.html">Publications</a>
+        <a href="ethicalguidelines.html">Ethical Guidelines</a>
+        <a href="AI-Perception-Briefs.html">Research Findings Articles</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-image-container">
+        <img src="images/40.jpg" alt="AI in Medicine Research Header">
+    </div>
+
     <article class="article-container">
         <span class="category">Emotion Encoded Expert Series</span>
         <h1>The "Convincing" Trap: Why Dr. Navi Muradali Thinks AI Needs a Human Co-Pilot</h1>
-        <a href="https://encodedemotion.org" class="url-link">encodedemotion.org</a>
         
         <div class="author-meta">
             <div class="author-info">
@@ -128,41 +159,33 @@
             </div>
         </div>
 
-        <p class="intro-text">
-            In the latest installment of the Emotion Encoded expert series, I spoke with Dr. Navi Muradali about the friction between clinical intuition and algorithmic advice. It focused on the reality of medical accountability and why "Explainable AI" might actually create new risks for seasoned professionals.
-        </p>
+        <p>In the latest installment of the Emotion Encoded expert series, I spoke with Dr. Navi Muradali about the friction between clinical intuition and algorithmic advice. It focused on the reality of medical accountability and why "Explainable AI" might actually create new risks for seasoned professionals.</p>
 
-        <h2 class="section-title">The Interview</h2>
+        <h2 style="color: var(--primary); margin-top: 2rem;">The Interview</h2>
 
         <div class="q-box">
-            <span class="question">1. On Trust: What do you think is the main reason doctors reject AI... is it a lack of trust in the data, or a fear of losing their own professional 'feel' for a patient?</span>
+            <span class="question">1. On Trust: What do you think is the main reason doctors reject AI?</span>
             <div class="quote">
-                "I don’t think it’s just about trust in the data; it’s really about responsibility. At the end of the day, the physician is the one accountable for the outcome, so there’s always going to be some hesitation in relying on a system you didn’t personally train or fully understand. 
-                <br><br>
-                There’s also the human side of medicine. Over time, you develop a kind of clinical instinct—that “feel” for a patient that doesn’t always show up in data. In the AI tools we’re building for employee wellness in the Caribbean, we’re very clear that AI is there to support that instinct, not replace it."
+                "I don’t think it’s just about trust in the data; it’s really about responsibility. At the end of the day, the physician is the one accountable for the outcome, so there’s always going to be some hesitation in relying on a system you didn’t personally train or fully understand."
             </div>
         </div>
 
         <div class="q-box">
-            <span class="question">2. Explainable AI: What happens if an AI gives a perfectly 'convincing' explanation for a wrong decision; could 'Explainable AI' actually make it harder for a doctor to spot a mistake?</span>
+            <span class="question">2. Explainable AI: Could 'Explainable AI' actually make it harder for a doctor to spot a mistake?</span>
             <div class="quote">
-                "That’s actually a real concern. Just because an explanation sounds convincing doesn’t mean it’s right; and in some cases, it might make it harder to question the result. 
-                <br><br>
-                In medicine, we’re used to this. A scan or lab result can look very clear-cut, but we still step back and ask, “Does this actually fit the patient in front of me?” AI has to be treated the same way. In the systems we’re developing, we try not to present AI as giving a final answer, but rather showing trends and signals that the physician can interpret."
+                "That’s actually a real concern. Just because an explanation sounds convincing doesn’t mean it’s right. In the systems we’re developing, we try not to present AI as giving a final answer, but rather showing trends and signals that the physician can interpret."
             </div>
         </div>
 
         <div class="q-box">
-            <span class="question">3. On the Final Call: Do you think in the future, the doctor will always truly be the sole decision-maker?</span>
+            <span class="question">3. On the Final Call: Will the doctor always be the sole decision-maker?</span>
             <div class="quote">
-                "I think the physician will still make the final call, but the way we get to that decision is definitely going to change. Medicine has always used tools; guidelines, scoring systems, imaging. AI is really just the next step in that evolution.
-                <br><br>
-                Where it becomes really powerful is in prevention. In platforms like OMNI, which we’re developing for workplace health in the Caribbean, AI acts more like a co-pilot. It helps you see what’s coming, but the responsibility for the decision still sits with the physician."
+                "I think the physician will still make the final call. AI acts more like a co-pilot. It helps you see what’s coming, but the responsibility for the decision still sits with the physician."
             </div>
         </div>
 
         <div class="conclusion">
-            <strong>Conclusion:</strong> Dr. Muradali’s insights highlight a critical pivot in the AI conversation: the move from "trusting the tech" to "retaining accountability." His warning about the deceptive nature of convincing explanations serves as a necessary reminder that in high-stakes environments, the human expert must remain the final filter.
+            Dr. Muradali’s insights highlight a critical pivot: the move from "trusting the tech" to "retaining accountability." The human expert must remain the final filter.
         </div>
     </article>
 
