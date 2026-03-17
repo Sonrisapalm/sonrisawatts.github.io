@@ -3,119 +3,240 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Who Do You Trust More? AI Therapist or AI Financial Advisor?</title>
-    <!-- Tailwind CSS CDN -->
+    <title>AI Therapist vs Financial Advisor | Emotion Encoded</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
     <style>
-        /* Custom styles */
+        :root {
+            --primary: #2dd4bf; /* Teal - Representative of Psychology/Therapy */
+            --accent: #fb923c;  /* Orange - Representative of Finance/Logic */
+            --bg: #09090b;      
+            --card-bg: #111114;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
-            background-image: url('images/websitebackground.jpg')
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            background-image: url('images/websitebackground.jpg');
             background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
             background-attachment: fixed;
-            color: #f0f0f0;
-            line-height: 1.7;
-            overflow-x: hidden;
-            /* CRITICAL FIX: Add padding to the top of the body to clear the fixed header/nav */
-            padding-top: 5rem; 
-            padding-bottom: 0; /* Removed unnecessary bottom padding */
+            background-position: center;
         }
-        .text-shadow-md {
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+
+        /* Modern Navigation Overlay */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1.5rem;
+            gap: 2rem;
+            background: rgba(9, 9, 11, 0.9);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .glow-hover:hover {
-            text-shadow: 0 0 8px rgba(255, 165, 0, 0.8);
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
-        /* Style for the fixed navigation bar (now at the top) */
-        #main-nav {
-            position: fixed;
-            top: 0; /* Changed from bottom: 0 to top: 0 */
-            left: 0;
-            right: 0;
-            z-index: 50; 
-            background-color: rgba(17, 24, 39, 0.95); /* Dark background with slight transparency */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow is now on the bottom edge */
+
+        nav a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(251, 146, 60, 0.4);
+        }
+
+        /* The 'Bigger Box' Image Treatment */
+        .header-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 60px 20px 40px 20px;
+        }
+
+        .header-image-container img {
+            max-width: 98%; 
+            height: auto;
+            max-height: 85vh; 
+            object-fit: contain; 
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8);
+        }
+
+        .article-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 25px 100px 25px;
+        }
+
+        .category-tag {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            display: block;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            line-height: 1.2;
+            text-align: center;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            color: #ffffff;
+        }
+
+        /* Content Card Styling */
+        .article-body {
+            background: var(--card-bg);
+            padding: 3.5rem;
+            border-radius: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .highlight-quote {
+            background: rgba(45, 212, 191, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            border-radius: 0 1.5rem 1.5rem 0;
+            font-size: 1.2rem;
+            color: #f1f5f9;
+        }
+
+        h3 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 3.5rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p {
+            margin-bottom: 1.8rem;
+            color: #d1d5db;
+            font-size: 1.1rem;
+        }
+
+        .cta-box {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background: linear-gradient(145deg, #1a1a1e, #111114);
+            border: 1px solid rgba(251, 146, 60, 0.3);
+            border-radius: 2rem;
+            text-align: center;
+        }
+
+        .cta-title {
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 5rem 1rem;
+            color: var(--muted);
+            background: rgba(9, 9, 11, 0.95);
+        }
+
+        @media (max-width: 768px) {
+            .article-body { padding: 2rem 1.5rem; }
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body>
 
-    <!-- FIXED NAVIGATION BAR (NOW AT THE TOP) -->
-    <header id="main-nav" class="py-4 px-6 md:px-12">
-        <nav class="flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
-            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
-            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
-            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
-            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
-            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
-            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="Methodsanddata.html">Methods and Data</a>
+        <a href="ethicalguidelines.html">Ethical Guidelines</a>
+        <a href="AI-Perception-Briefs.html">Research Findings</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <!-- Main Content -->
-    <!-- The padding-top on the body ensures this content starts below the fixed header -->
-    <main class="container mx-auto p-4 md:p-8 space-y-12 max-w-4xl">
-        <section class="bg-gray-800/50 p-6 md:p-10 rounded-3xl shadow-lg mt-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white text-center leading-tight">
-                St. Kitts & Nevis! Who Do You Trust More? An AI Therapist or an AI Financial Advisor?
-            </h2>
-            <img src="images/article6.jpg" 
-                 onerror="this.onerror=null;this.src='https://placehold.co/800x450/333/fff?text=Placeholder';"
-                 alt="AI Therapist vs Financial Advisor" 
-                 class="w-full h-auto rounded-2xl mb-8 shadow-md" />
-            
-            <p class="text-lg leading-relaxed text-gray-200 mt-6">
+    <div class="header-image-container">
+        <img src="images/article6.jpg" alt="AI Therapist vs Financial Advisor Visualization">
+    </div>
+
+    <main class="article-container">
+        <span class="category-tag">Public Perception Study — St. Kitts & Nevis</span>
+        <h1>Who Do You Trust More? An AI Therapist or an AI Financial Advisor?</h1>
+
+        <section class="article-body">
+            <p>
                 If AI can’t ‘understand’ emotions, why do we trust it with life-altering money decisions? My research suggests it’s not about capability; it’s about the perceived risk. This challenges assumptions in AI design.
             </p>
-            <p class="text-lg leading-relaxed text-gray-200 mt-4">
+            
+            <p>
                 Our research initiative, Emotion Encoded, asked 66 participants in St. Kitts a simple question:
             </p>
-            <blockquote class="bg-gray-700/50 border-l-4 border-orange-400 p-4 pl-6 italic rounded-r-lg my-6">
+
+            <div class="highlight-quote">
                 “Who would you trust more, an AI therapist or an AI financial advisor?”
-            </blockquote>
-            <p class="text-lg leading-relaxed text-gray-200 mt-4">
+            </div>
+
+            <p>
                 The results revealed an interesting psychological division on how people view trust, emotions, and something as personal as their money.
             </p>
 
-            <h3 class="text-2xl font-bold text-orange-400 mt-8 mb-4">🇰🇳 AI Therapist?</h3>
-            <p class="text-lg leading-relaxed text-gray-200 mt-4">
+            <h3>🇰🇳 AI Therapist?</h3>
+            <p>
                 Many participants rejected this idea outright. They felt that therapy requires empathy, compassion, and emotional intelligence. They suggested that these are human connection qualities AI cannot replicate. One participant stated: <em>"Human psychology is too delicate. I don’t trust artificial agents.”</em>
             </p>
 
-            <h3 class="text-2xl font-bold text-orange-400 mt-8 mb-4">🇰🇳 AI Financial Advisor?</h3>
-            <p class="text-lg leading-relaxed text-gray-200 mt-4">
+            <h3>🇰🇳 AI Financial Advisor?</h3>
+            <p>
                 The responses seemed to be more favorable towards using artificial intelligence for financial advice. Participants noted that finance is “numbers-based, logical, and supported by research.” Unlike humans, AI was seen as less likely to carry bias or ulterior motives. Some said they would trust AI to budget and audit their business for long-term success, since it has “no reason to steal my money.”
             </p>
-            <p class="text-lg leading-relaxed text-gray-200 mt-4">
+            
+            <p>
                 Still, resistance is at the forefront: <em>“AI is man-made. I don’t trust it.”</em>
             </p>
-            <p class="text-lg leading-relaxed text-gray-200 mt-4">
+            
+            <p>
                 This contrast highlights a key insight from Emotion Encoded’s study: People are more open to AI in impersonal, data-driven fields like finance, but deeply resist it in emotion-centered spaces like therapy.
             </p>
-            <p class="text-lg leading-relaxed text-gray-200 mt-4">
-                At Emotion Encoded, we use psychology to explore these emotional barriers to AI adoption.
-            </p>
-            <p class="text-lg leading-relaxed text-gray-200 mt-4">
+
+            <div class="cta-box">
+                <span class="cta-title">‼️ Who would you trust more? ‼️</span>
+                <p>
+                    Join our Virtual Table Talk about AI Resistance, Trust and Integration. Inbox me or email <span class="text-teal-400">sonrisawatts@gmail.com</span>.
+                </p>
+                <p class="italic text-sm text-gray-400">Share!</p>
+            </div>
+
+            <p class="mt-12 text-center text-muted text-sm border-t border-gray-800 pt-8">
+                At Emotion Encoded, we use psychology to explore these emotional barriers to AI adoption. <br>
                 📧 Contact: sonrisaawatts@gmail.com
-            </p>
-            <p class="text-xl font-bold text-orange-400 mt-8 mb-4">
-                ‼️ Who would you trust more? ‼️
-            </p>
-            <p class="text-lg leading-relaxed text-gray-200 mt-4">
-                Join our Virtual Table Talk about AI Resistance, Trust and Integration. Inbox me or email sonrisawatts@gmail.com.
-            </p>
-            <p class="text-lg leading-relaxed text-gray-200 italic mt-4">
-                Share!
             </p>
         </section>
     </main>
 
-    <!-- Simple Footer (not fixed) -->
-    <footer class="bg-gray-900/90 text-center py-6 mt-12 text-gray-400">
-        © 2025 Sonrisa Watts | Emotion Encoded
+    <footer>
+        <p>&copy; 2026 Sonrisa Watts — Emotion Encoded — All rights reserved.</p>
     </footer>
 
 </body>
