@@ -50,104 +50,112 @@
 
         nav a:hover { color: var(--nav-hover); }
 
-        /* THE CINEMA HERO SECTION */
+        /* THE DR. CORDNER STYLE HERO SECTION */
         .hero-section {
-            width: 100%;
+            width: 100vw;
+            height: 85vh; /* Large cinematic height */
             background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0;
-            margin: 0;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(45, 212, 191, 0.2);
         }
 
         .hero-section img {
             width: 100%;
-            max-width: 100%; /* Spans the full width of the screen */
-            height: auto;
-            max-height: 90vh; /* Prevents excessive vertical scrolling */
-            object-fit: contain; /* FITTED: Shows the entire photo without cropping */
+            height: 100%;
+            /* FITTED: Shows the whole image like a high-end gallery piece */
+            object-fit: contain; 
             display: block;
         }
 
         /* Article Container */
         .article-container {
-            max-width: 900px; /* Slightly wider for better text flow */
+            max-width: 950px; /* Spacious for readability */
             margin: 0 auto;
-            padding: 4rem 2rem 6rem 2rem;
+            padding: 5rem 2rem 8rem 2rem;
         }
 
         .category-meta {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .website-link {
             color: var(--primary);
             text-decoration: none;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-size: clamp(2.5rem, 6vw, 4rem);
             line-height: 1.1;
             color: #ffffff;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
+            letter-spacing: -1px;
         }
 
         .author-meta {
-            padding: 2rem 0;
+            padding: 2.5rem 0;
             border-top: 1px solid rgba(255,255,255,0.1);
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
             text-align: center;
         }
 
-        .author-info h4 { margin: 0; font-size: 1.5rem; color: var(--primary); }
-        .author-info p { margin: 0; color: var(--muted); }
+        .author-info h4 { margin: 0; font-size: 1.6rem; color: var(--primary); font-weight: 700; }
+        .author-info p { margin: 5px 0 0; color: var(--muted); font-size: 1.1rem; }
 
-        /* Q&A Styling */
+        /* Q&A Boxes */
         .q-box {
             background: var(--card-bg);
-            padding: 3rem;
-            border-radius: 2rem;
-            border: 1px solid rgba(255,255,255,0.05);
-            margin-bottom: 3.5rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            padding: 4rem;
+            border-radius: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.03);
+            margin-bottom: 4rem;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
         .question {
             font-weight: 700;
             color: var(--primary);
             display: block;
-            margin-bottom: 1.5rem;
-            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
             line-height: 1.4;
+            border-left: 4px solid var(--nav-hover);
+            padding-left: 1.5rem;
         }
 
         .quote-text {
             color: #e2e8f0;
-            font-size: 1.15rem;
-            white-space: pre-line; /* Preserves your paragraph breaks */
+            font-size: 1.2rem;
+            white-space: pre-line;
         }
 
         .conclusion-box {
-            margin-top: 5rem;
-            padding: 3rem;
-            background: linear-gradient(145deg, #16161a, #09090b);
-            border-radius: 2rem;
-            border: 1px solid rgba(45, 212, 191, 0.2);
+            margin-top: 6rem;
+            padding: 4rem;
+            background: linear-gradient(145deg, #1a1a1e, #09090b);
+            border-radius: 3rem;
+            border: 1px solid rgba(45, 212, 191, 0.15);
             font-style: italic;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #cbd5e1;
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .q-box { padding: 1.5rem; }
+            .hero-section { height: 50vh; }
+            h1 { font-size: 2.2rem; }
+            .q-box { padding: 2rem; }
         }
     </style>
 </head>
@@ -164,13 +172,13 @@
     </nav>
 
     <div class="hero-section">
-        <img src="images/article40.jpg" alt="AI in Medicine Research Dr. Navi Muradali">
+        <img src="images/article40.jpg" alt="Dr. Navi Muradali x Emotion Encoded">
     </div>
 
     <article class="article-container">
         <div class="category-meta">
             <a href="https://encodedemotion.org" class="website-link">encodedemotion.org</a>
-            <p class="text-sm uppercase tracking-widest text-muted mt-2">Emotion Encoded Expert Series</p>
+            <p class="text-sm uppercase tracking-widest text-muted mt-2" style="letter-spacing: 4px;">Expert Series</p>
         </div>
         
         <h1>The "Convincing" Trap: Why Dr. Navi Muradali Thinks AI Needs a Human Co-Pilot</h1>
@@ -182,13 +190,13 @@
             </div>
         </div>
 
-        <p class="text-center italic text-xl mb-12">
+        <p class="text-center italic text-xl mb-12" style="max-width: 800px; margin-left: auto; margin-right: auto; color: #94a3b8;">
             In the latest installment of the Emotion Encoded expert series, I spoke with Dr. Navi Muradali about the friction between clinical intuition and algorithmic advice. It focused on the reality of medical accountability and why "Explainable AI" might actually create new risks for seasoned professionals.
         </p>
 
         <p class="text-center font-bold text-primary tracking-widest uppercase text-sm mb-16">The following is the full transcript of our interview.</p>
 
-        <h2 style="color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 3rem; font-weight: 800;">The Interview</h2>
+        <h2 style="color: var(--primary); text-align: center; font-size: 2.5rem; margin-bottom: 4rem; font-weight: 800;">The Interview</h2>
 
         <div class="q-box">
             <span class="question">1. On Trust: What do you think is the main reason doctors reject AI... is it a lack of trust in the data, or a fear of losing their own professional 'feel' for a patient?</span>
