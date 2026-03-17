@@ -3,218 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article 41 | Dr. Mikhail C.S.S. Higgins</title>
+    <title>The Convincing Trap | Dr. Navi Muradali x Emotion Encoded</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent: #2dd4bf; /* High-end Teal */
-            --bg: #030712;
-            --card-bg: #111827;
-            --text-main: #f9fafb;
-            --text-dim: #9ca3af;
+            --bg-dark: #0a0a0b;
+            --accent-teal: #2dd4bf;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #e0e0e0;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg);
+            background-color: var(--bg-dark);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            letter-spacing: -0.01em;
+        }
+
+        /* Navigation Styling */
+        nav {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
+            padding: 1.5rem 1rem;
+            gap: 1.5rem;
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--glass-border);
         }
 
-        .bg-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(45, 212, 191, 0.08) 0%, rgba(3, 7, 18, 0) 70%);
-            top: -150px;
-            right: -100px;
-            z-index: 0;
-        }
-
-        .article-card {
-            position: relative;
-            z-index: 1;
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 40px;
-            padding: clamp(2rem, 5vw, 4rem);
-            max-width: 650px;
-            width: 90%;
-            box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(12px);
-        }
-
-        /* Top metadata layout */
-        .top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .badge {
-            background: rgba(45, 212, 191, 0.1);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 800;
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 1px solid rgba(45, 212, 191, 0.2);
+            letter-spacing: 0.1em;
         }
 
-        .origin-brief {
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            font-weight: 600;
+        nav a:hover {
+            color: #fb923c;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* BIG IMAGE - EXACTLY LIKE CORDNER ARTICLE */
+        .hero-image {
+            width: 100%;
+            height: auto; 
+            display: block;
+            border-radius: 24px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .brand-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .brand-name {
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.3em;
+            color: var(--accent-teal);
+            margin-bottom: 10px;
+            display: block;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            line-height: 0.9;
-            margin: 0 0 2rem 0;
-            background: linear-gradient(135deg, #fff 40%, rgba(255,255,255,0.4));
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin: 0;
+            background: linear-gradient(to right, #fff, #888);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .profile-info {
-            margin-bottom: 3.5rem;
+        .intro-text {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-top: 40px;
+            border-left: 2px solid var(--accent-teal);
+            padding-left: 30px;
+            font-style: italic;
         }
 
-        .name {
+        .content-section {
+            margin-top: 80px;
+        }
+
+        .section-label {
+            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            font-weight: 700;
+            margin-bottom: 25px;
             color: #fff;
-            margin-bottom: 8px;
             display: block;
         }
 
-        /* Caribbean Emphasis Styling */
-        .active-location {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(45, 212, 191, 0.05);
-            padding: 8px 16px;
-            border-radius: 12px;
-            border-left: 3px solid var(--accent);
-            margin-top: 10px;
-        }
-
-        .location-text {
-            color: var(--accent);
-            font-weight: 800;
+        /* QUESTION STYLING */
+        .question-text {
+            font-weight: 600;
+            color: var(--accent-teal);
+            margin-bottom: 15px;
+            display: block;
             font-size: 1.1rem;
-            letter-spacing: -0.02em;
         }
 
-        .pulse-dot {
-            height: 8px;
-            width: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.9); opacity: 1; }
-            70% { transform: scale(1.5); opacity: 0; }
-            100% { transform: scale(0.9); opacity: 0; }
-        }
-
-        .research-summary {
-            margin-top: 20px;
-            font-size: 1rem;
-            color: var(--text-dim);
-            line-height: 1.6;
-            max-width: 480px;
-        }
-
-        /* Footer Progress */
-        .status-footer {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 1.5rem;
-        }
-
-        .loading-bar {
-            width: 100%;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 1rem;
+        .raw-quote-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            position: relative;
             overflow: hidden;
         }
 
-        .loading-fill {
-            width: 30%;
-            height: 100%;
-            background: var(--accent);
-            animation: flow 3s infinite ease-in-out;
+        .raw-quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 10rem;
+            color: rgba(45, 212, 191, 0.1);
+            font-family: 'Playfair Display', serif;
         }
 
-        @keyframes flow {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(350%); }
+        .quote-text {
+            position: relative;
+            z-index: 1;
+            font-size: 1.15rem;
+            color: var(--text-main);
+            white-space: pre-line;
         }
 
-        .coming-soon {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--text-dim);
+        .article-footer {
+            margin-top: 100px;
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(to bottom, transparent, rgba(45, 212, 191, 0.05));
+            border-radius: 40px;
+        }
+
+        .footer-logo {
+            font-weight: 600;
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
         }
 
         @media (max-width: 600px) {
-            .article-card { padding: 2.5rem 1.5rem; }
-            .top-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .raw-quote-box { padding: 25px; }
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="Methodsanddata.html">Methods and Data</a>
+        <a href="DataAnalysisquantitative.html">Publications</a>
+        <a href="ethicalguidelines.html">Ethical Guidelines</a>
+        <a href="AI-Perception-Briefs.html">Research Findings Articles</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <div class="article-card">
-        <div class="top-row">
-            <div class="badge">Article 39</div>
-            <div class="origin-brief">India / Austria <span style="opacity: 0.3; margin-left: 5px;">| Founding Expertise</span></div>
-        </div>
+    <div class="container">
+        <img src="images/article40.jpg" alt="Dr. Navi Muradali x Emotion Encoded" class="hero-image">
 
-        <h1>Oncology<br>Decoded.</h1>
-        
-        <div class="profile-info">
-            <span class="name">Dr. Mikhail C.S.S. Higgins </span>
+        <header class="brand-header">
+            <span class="brand-name">Emotion Encoded Expert Series</span>
+            <h1>The "Convincing" Trap: Why Dr. Navi Muradali Thinks AI Needs a Human Co-Pilot</h1>
+        </header>
+
+        <p class="intro-text">
+            In the latest installment of the Emotion Encoded expert series, I spoke with Dr. Navi Muradali about the friction between clinical intuition and algorithmic advice. It focused on the reality of medical accountability and why "Explainable AI" might actually create new risks for seasoned professionals.
+        </p>
+
+        <p style="text-align: center; margin-top: 40px; font-weight: 600; color: var(--accent-teal); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem;">
+            The following is the full transcript of our interview.
+        </p>
+
+        <div class="content-section">
+            <span class="section-label">1. On Trust</span>
+            <span class="question-text">What do you think is the main reason doctors reject AI... is it a lack of trust in the data, or a fear of losing their own professional 'feel' for a patient?</span>
             
-            <div class="active-location">
-                <div class="pulse-dot"></div>
-                <span class="location-text">Bahamas</span>
-            </div>
+            <div class="raw-quote-box">
+                <div class="quote-text">
+                    "I don’t think it’s just about trust in the data; it’s really about responsibility. At the end of the day, the physician is the one accountable for the outcome, so there’s always going to be some hesitation in relying on a system you didn’t personally train or fully understand.
 
-            <p class="research-summary">
-                Mikhail C.S.S. Higgins, MD MPH, is Bahamas's first board-certified fellowship-trained Interventional Radiologist (IR), specializing in image-guided minimally invasive interventions. 
+                    There’s also the human side of medicine. Over time, you develop a kind of clinical instinct—that “feel” for a patient that doesn’t always show up in data. In the AI tools we’re building for employee wellness in the Caribbean, we’re very clear that AI is there to support that instinct, not replace it. It can pick up patterns across sleep, activity, or metabolic risk that we might miss at scale, but the interpretation still has to come from the doctor."
+                </div>
+            </div>
         </div>
 
-        <div class="status-footer"> 
-            <div class="loading-bar">
-                <div class="loading-fill"></div>
-            </div>
-            <div class="coming-soon">
-                <span style="letter-spacing: 0.1em;">ENCODING RESEARCH</span>
-                <span style="color: #fff;">MARCH 2026</span>
+        <div class="content-section">
+            <span class="section-label">2. Explainable AI</span>
+            <span class="question-text">What happens if an AI gives a perfectly 'convincing' explanation for a wrong decision; could 'Explainable AI' actually make it harder for a doctor to spot a mistake?</span>
+
+            <div class="raw-quote-box">
+                <div class="quote-text">
+                    "That’s actually a real concern. Just because an explanation sounds convincing doesn’t mean it’s right; and in some cases, it might make it harder to question the result.
+
+                    In medicine, we’re used to this. A scan or lab result can look very clear-cut, but we still step back and ask, “Does this actually fit the patient in front of me?” AI has to be treated the same way. In the systems we’re developing, we try not to present AI as giving a final answer, but rather showing trends and signals that the physician can interpret. That way, you’re less likely to blindly accept something that doesn’t make clinical sense."
+                </div>
             </div>
         </div>
+
+        <div class="content-section">
+            <span class="section-label">3. On the Final Call</span>
+            <span class="question-text">Do you think in the future, the doctor will always truly be the sole decision-maker anymore when AI integration in medicine becomes more frequent?</span>
+
+            <div class="raw-quote-box">
+                <div class="quote-text">
+                    "I think the physician will still make the final call, but the way we get to that decision is definitely going to change. Medicine has always used tools; guidelines, scoring systems, imaging. AI is really just the next step in that evolution.
+
+                    Where it becomes really powerful is in prevention. AI can continuously look at things like wearable data, body composition, lifestyle habits; things we don’t traditionally monitor closely. AI can also flag risks much earlier. In platforms like OMNI, which we’re developing for workplace health in the Caribbean, AI acts more like a co-pilot. It helps you see what’s coming, but the responsibility for the decision still sits with the physician."
+                </div>
+            </div>
+        </div>
+
+        <footer class="article-footer">
+            <p>
+                Dr. Muradali’s insights highlight a critical pivot in the AI conversation: the move from "trusting the tech" to "retaining accountability." His warning about the deceptive nature of convincing explanations serves as a necessary reminder that in high-stakes environments, the human expert must remain the final filter. As we continue to scale these tools across the region, the goal isn't to replace the clinician’s "gut feel," but to build systems that respect it as the ultimate safeguard.
+            </p>
+            <br><br>
+            <a href="https://encodedemotion.org" class="footer-logo">encodedemotion.org</a>
+        </footer>
     </div>
 
 </body>
