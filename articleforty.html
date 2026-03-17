@@ -3,157 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI in Medicine | Dr. Navi Muradali</title>
+    <title>The Convincing Trap | Dr. Navi Muradali x Emotion Encoded</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
     <style>
         :root {
-            --primary: #0284c7;
-            --bg: #ffffff;
-            --text: #1e293b;
-            --muted: #64748b;
-            --skeleton: #f1f5f9;
+            --primary: #2dd4bf; /* Teal from your main site */
+            --bg: #09090b;      /* Dark zinc background */
+            --card-bg: #111114;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, system-ui, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .article-container {
-            max-width: 700px;
-            margin: 80px auto;
-            padding: 0 20px;
+            max-width: 750px;
+            margin: 60px auto;
+            padding: 0 25px;
         }
 
         .category {
             color: var(--primary);
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
         }
 
         h1 {
-            font-size: 2.8rem;
-            margin: 1rem 0;
-            line-height: 1.1;
-            color: #0f172a;
+            font-size: 2.5rem;
+            margin: 1.5rem 0;
+            line-height: 1.2;
+            color: #ffffff;
+            font-weight: 800;
         }
+
+        .url-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        .url-link:hover { color: var(--primary); }
 
         .author-meta {
-            display: flex;
-            align-items: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid #27272a;
+            border-bottom: 1px solid #27272a;
             margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #e2e8f0;
         }
 
-        .author-info h4 {
-            margin: 0;
+        .author-info h4 { margin: 0; font-size: 1.2rem; color: var(--primary); }
+        .author-info p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+        .intro-text {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        h2.section-title {
+            font-size: 1.8rem;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin: 3rem 0 1.5rem 0;
+        }
+
+        .q-box {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            border: 1px solid #27272a;
+            margin-bottom: 2.5rem;
+        }
+
+        .question {
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 1rem;
             font-size: 1.1rem;
         }
 
-        .author-info p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        /* Coming Soon Overlay */
-        .content-preview {
+        .quote {
+            color: #d1d5db;
             position: relative;
         }
 
-        .skeleton-line {
-            height: 18px;
-            background: var(--skeleton);
-            margin-bottom: 15px;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skeleton-line::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-            animation: shimmer 1.5s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .coming-soon-card {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
+        .conclusion {
+            margin-top: 4rem;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 80%;
-            border: 1px solid #e2e8f0;
-            z-index: 10;
+            background: linear-gradient(145deg, #111114, #09090b);
+            border-radius: 1.5rem;
+            border: 1px solid #2dd4bf33;
+            font-style: italic;
         }
-
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 10px 20px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: opacity 0.2s;
-        }
-
-        .btn:hover { opacity: 0.9; }
 
         @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
     <article class="article-container">
-        <span class="category">Executive Perspective</span>
-        <h1>AI in Modern Medicine: Transforming the Patient Connection</h1>
+        <span class="category">Emotion Encoded Expert Series</span>
+        <h1>The "Convincing" Trap: Why Dr. Navi Muradali Thinks AI Needs a Human Co-Pilot</h1>
+        <a href="https://encodedemotion.org" class="url-link">encodedemotion.org</a>
         
         <div class="author-meta">
             <div class="author-info">
                 <h4>Dr. Navi Muradali</h4>
-                <p>Founder & CEO, Patient Connect</p>
+                <p>Founder & CEO, Patient Connect | Former Mayor of San Fernando</p>
             </div>
         </div>
 
-        <div class="content-preview">
-            <div class="skeleton-line" style="width: 100%;"></div>
-            <div class="skeleton-line" style="width: 95%;"></div>
-            <div class="skeleton-line" style="width: 90%;"></div>
-            <div class="skeleton-line" style="width: 40%; margin-bottom: 40px;"></div>
-            
-            <div class="skeleton-line" style="width: 100%;"></div>
-            <div class="skeleton-line" style="width: 92%;"></div>
-            <div class="skeleton-line" style="width: 85%;"></div>
+        <p class="intro-text">
+            In the latest installment of the Emotion Encoded expert series, I spoke with Dr. Navi Muradali about the friction between clinical intuition and algorithmic advice. It focused on the reality of medical accountability and why "Explainable AI" might actually create new risks for seasoned professionals.
+        </p>
 
-            <div class="coming-soon-card">
-                <h3>Insights Pending Final Review</h3>
-                <p>This research article is currently being finalized. Check back soon for Dr. Muradali’s full perspective on AI integration.</p>
-                <a href="https://github.com/your-profile" class="btn">Follow for Updates</a>
+        <h2 class="section-title">The Interview</h2>
+
+        <div class="q-box">
+            <span class="question">1. On Trust: What do you think is the main reason doctors reject AI... is it a lack of trust in the data, or a fear of losing their own professional 'feel' for a patient?</span>
+            <div class="quote">
+                "I don’t think it’s just about trust in the data; it’s really about responsibility. At the end of the day, the physician is the one accountable for the outcome, so there’s always going to be some hesitation in relying on a system you didn’t personally train or fully understand. 
+                <br><br>
+                There’s also the human side of medicine. Over time, you develop a kind of clinical instinct—that “feel” for a patient that doesn’t always show up in data. In the AI tools we’re building for employee wellness in the Caribbean, we’re very clear that AI is there to support that instinct, not replace it."
             </div>
+        </div>
+
+        <div class="q-box">
+            <span class="question">2. Explainable AI: What happens if an AI gives a perfectly 'convincing' explanation for a wrong decision; could 'Explainable AI' actually make it harder for a doctor to spot a mistake?</span>
+            <div class="quote">
+                "That’s actually a real concern. Just because an explanation sounds convincing doesn’t mean it’s right; and in some cases, it might make it harder to question the result. 
+                <br><br>
+                In medicine, we’re used to this. A scan or lab result can look very clear-cut, but we still step back and ask, “Does this actually fit the patient in front of me?” AI has to be treated the same way. In the systems we’re developing, we try not to present AI as giving a final answer, but rather showing trends and signals that the physician can interpret."
+            </div>
+        </div>
+
+        <div class="q-box">
+            <span class="question">3. On the Final Call: Do you think in the future, the doctor will always truly be the sole decision-maker?</span>
+            <div class="quote">
+                "I think the physician will still make the final call, but the way we get to that decision is definitely going to change. Medicine has always used tools; guidelines, scoring systems, imaging. AI is really just the next step in that evolution.
+                <br><br>
+                Where it becomes really powerful is in prevention. In platforms like OMNI, which we’re developing for workplace health in the Caribbean, AI acts more like a co-pilot. It helps you see what’s coming, but the responsibility for the decision still sits with the physician."
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <strong>Conclusion:</strong> Dr. Muradali’s insights highlight a critical pivot in the AI conversation: the move from "trusting the tech" to "retaining accountability." His warning about the deceptive nature of convincing explanations serves as a necessary reminder that in high-stakes environments, the human expert must remain the final filter.
         </div>
     </article>
 
