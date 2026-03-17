@@ -22,9 +22,9 @@
             padding: 0;
             line-height: 1.8;
             letter-spacing: -0.01em;
+            overflow-x: hidden;
         }
 
-        /* Navigation Styling */
         nav {
             display: flex;
             flex-wrap: wrap;
@@ -49,24 +49,28 @@
             letter-spacing: 0.1em;
         }
 
-        nav a:hover {
-            color: #fb923c;
+        nav a:hover { color: #fb923c; }
+
+        /* THE FIX: FULL WIDTH HERO WRAPPER */
+        .hero-wrap {
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            background: #000;
+        }
+
+        .hero-image-full {
+            width: 100%;
+            height: auto;
+            max-height: 85vh; /* Prevents it from being too tall while staying wide */
+            display: block;
+            object-fit: cover; /* Ensures it fills the width perfectly */
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* BIG IMAGE - EXACTLY LIKE CORDNER ARTICLE */
-        .hero-image {
-            width: 100%;
-            height: auto; 
-            display: block;
-            border-radius: 24px;
-            margin-bottom: 60px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            padding: 60px 20px;
         }
 
         .brand-header {
@@ -102,9 +106,7 @@
             font-style: italic;
         }
 
-        .content-section {
-            margin-top: 80px;
-        }
+        .content-section { margin-top: 80px; }
 
         .section-label {
             font-family: 'Playfair Display', serif;
@@ -114,7 +116,6 @@
             display: block;
         }
 
-        /* QUESTION STYLING */
         .question-text {
             font-weight: 600;
             color: var(--accent-teal);
@@ -126,7 +127,6 @@
         .raw-quote-box {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 40px;
@@ -187,9 +187,11 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="container">
-        <img src="images/article40.jpg" alt="Dr. Navi Muradali x Emotion Encoded" class="hero-image">
+    <div class="hero-wrap">
+        <img src="images/article40.jpg" alt="Dr. Navi Muradali x Emotion Encoded" class="hero-image-full">
+    </div>
 
+    <div class="container">
         <header class="brand-header">
             <span class="brand-name">Emotion Encoded Expert Series</span>
             <h1>The "Convincing" Trap: Why Dr. Navi Muradali Thinks AI Needs a Human Co-Pilot</h1>
@@ -244,7 +246,7 @@
 
         <footer class="article-footer">
             <p>
-                Dr. Muradali’s insights highlight a critical pivot in the AI conversation: the move from "trusting the tech" to "retaining accountability." His warning about the deceptive nature of convincing explanations serves as a necessary reminder that in high-stakes environments, the human expert must remain the final filter. As we continue to scale these tools across the region, the goal isn't to replace the clinician’s "gut feel," but to build systems that respect it as the ultimate safeguard.
+                Dr. Muradali’s insights highlight a critical pivot in the AI conversation: the move from trusting the tech to retaining accountability. His warning about the deceptive nature of convincing explanations serves as a necessary reminder that in high-stakes environments, the human expert must remain the final filter. As we continue to scale these tools across the region, the goal isn't to replace the clinician’s "gut feel," but to build systems that respect it as the ultimate safeguard.
             </p>
             <br><br>
             <a href="https://encodedemotion.org" class="footer-logo">encodedemotion.org</a>
