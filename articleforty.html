@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Convincing Trap | Dr. Navi Muradali x Emotion Encoded</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet" />
     <style>
         :root {
             --primary: #2dd4bf; 
@@ -31,11 +31,12 @@
             justify-content: center;
             padding: 2rem 1rem;
             gap: 1.5rem;
-            background: rgba(9, 9, 11, 0.8);
+            background: rgba(9, 9, 11, 0.9);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         nav a {
@@ -52,40 +53,55 @@
             text-shadow: 0 0 8px rgba(251, 146, 60, 0.6);
         }
 
-        /* Header Image */
-        /* Container that holds the 'box' */
-/* Container that holds the 'box' */
-.header-image-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 0; /* Increased padding for a more 'gallery' feel */
-    background-color: var(--bg);
-}
+        /* HEADER IMAGE UPDATE: MASSIVE CINEMATIC BOX */
+        .header-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 0; 
+            background-color: var(--bg);
+        }
 
-/* The 'Bigger Box' styling */
-.header-image-container img {
-    /* Increased from 90% to 98% to let it breathe near the edges but feel huge */
-    max-width: 98%; 
-    height: auto;
-    
-    /* Increased from 70vh to 90vh so it can take up almost the full screen height */
-    max-height: 90vh; 
-    
-    /* Keep contain to ensure his full face/frame is never cropped */
-    object-fit: contain; 
-    
-    border-radius: 20px; /* Slightly larger radius for the larger scale */
-    border: 1px solid rgba(45, 212, 191, 0.3); /* Using your teal for a subtle glow border */
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8); /* Deeper shadow for a more 'expensive' lift */
-}
+        .header-image-container img {
+            /* Breaks out of the narrow text container for a premium feel */
+            width: 100%;
+            max-width: 1200px; 
+            height: auto;
+            max-height: 90vh; 
+            
+            /* 'Cover' ensures the image fills the massive frame properly */
+            object-fit: cover; 
+            
+            border-radius: 40px; 
+            border: 1px solid rgba(45, 212, 191, 0.2); 
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+            display: block;
+        }
+
+        /* Article Body Constraints */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
+        }
+
         h1 {
             font-size: 2.5rem;
             margin: 1rem 0;
             line-height: 1.2;
             color: #ffffff;
             font-weight: 800;
+        }
+
+        .category {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            display: block;
+            margin-top: 2rem;
         }
 
         .author-meta {
@@ -119,13 +135,17 @@
             padding: 2rem;
             background: linear-gradient(145deg, #111114, #09090b);
             border-radius: 1.5rem;
-            border: 1px solid #2dd4bf33;
+            border: 1px solid rgba(45, 212, 191, 0.2);
             font-style: italic;
         }
 
         @media (max-width: 768px) {
             nav a { font-size: 0.9rem; }
             h1 { font-size: 1.8rem; }
+            .header-image-container img {
+                max-width: 95%;
+                border-radius: 20px;
+            }
         }
     </style>
 </head>
@@ -142,7 +162,7 @@
     </nav>
 
     <div class="header-image-container">
-        <img src="images/article40.jpg" alt="AI in Medicine Research Dr. Navi Muradali ">
+        <img src="images/article40.jpg" alt="AI in Medicine Research Dr. Navi Muradali">
     </div>
 
     <article class="article-container">
