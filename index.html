@@ -62,6 +62,7 @@
     <link rel="icon" type="image/fortoppage.jpg" href="/images/favicon.png">
 </head>
 <body class="bg-gray-900 text-gray-100">
+    <canvas id="galaxy-bg"></canvas>
 
     <!-- Header Section with video as a background and text overlaid -->
     <header class="relative w-full overflow-hidden min-h-screen flex items-center justify-center pt-24 pb-8 px-4">
@@ -251,6 +252,24 @@
         margin-top: 8px;
         letter-spacing: 1px;
     }
+    #galaxy-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Sits behind content but above the body background image */
+    pointer-events: none;
+}
+
+/* This makes sure your body background image stays as the base layer */
+body {
+    position: relative;
+    background-image: url('images/websitebackground.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #000; /* Fallback */
+}
 </style>
 
 <script>
@@ -1343,6 +1362,69 @@
         </iframe>
     </div>
 </section>
+    <style>
+    /* This handles the layering over your collage image */
+    #galaxy-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0; /* Changed to 0 to sit right on top of the background image */
+        pointer-events: none;
+    }
+    
+    /* Ensures your content stays above the stars */
+    .research-card, header, nav, section {
+        position: relative;
+        z-index: 10;
+    }
+</style>
+
+<script>
+    (function() {
+        // Automatically creates the canvas so you don't have to find the <body> tag
+        const canvas = document.createElement('canvas');
+        canvas.id = 'galaxy-bg';
+        document.body.prepend(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+
+        function initGalaxy() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            stars = [];
+            for (let i = 0; i < 120; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 1.8 + 0.2,
+                    speed: Math.random() * 0.3 + 0.05,
+                    opacity: Math.random()
+                });
+            }
+        }
+
+        function drawGalaxy() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                ctx.fillStyle = "rgba(255, 255, 255, " + star.opacity + ")";
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                star.y -= star.speed;
+                if (star.y < 0) star.y = canvas.height;
+            });
+            requestAnimationFrame(drawGalaxy);
+        }
+
+        window.addEventListener('resize', initGalaxy);
+        initGalaxy();
+        drawGalaxy();
+    })();
+</script>
 
 <footer>
     <div class="container">
