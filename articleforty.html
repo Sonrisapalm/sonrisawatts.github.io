@@ -12,7 +12,7 @@
             --card-bg: #111114;
             --text: #f1f5f9;
             --muted: #94a3b8;
-            --nav-hover: #fb923c; /* Orange-400 */
+            --nav-hover: #fb923c;
         }
 
         body {
@@ -22,6 +22,7 @@
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* Navigation Styling */
@@ -31,7 +32,7 @@
             justify-content: center;
             padding: 2rem 1rem;
             gap: 1.5rem;
-            background: rgba(9, 9, 11, 0.9);
+            background: rgba(9, 9, 11, 0.95);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -53,99 +54,98 @@
             text-shadow: 0 0 8px rgba(251, 146, 60, 0.6);
         }
 
-        /* HEADER IMAGE UPDATE: MASSIVE CINEMATIC BOX */
+        /* CINEMA SCREENING IMAGE UPDATE */
         .header-image-container {
-            width: 100%;
+            width: 100vw; /* Full Viewport Width */
+            height: 95vh; /* Near Full Viewport Height */
+            overflow: hidden;
+            background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 60px 0; 
-            background-color: var(--bg);
+            margin-bottom: 4rem;
         }
 
         .header-image-container img {
-            /* Breaks out of the narrow text container for a premium feel */
             width: 100%;
-            max-width: 1200px; 
-            height: auto;
-            max-height: 90vh; 
-            
-            /* 'Cover' ensures the image fills the massive frame properly */
+            height: 100%;
+            /* 'Cover' ensures it fills the entire 100vw x 95vh screen like a movie */
             object-fit: cover; 
-            
-            border-radius: 40px; 
-            border: 1px solid rgba(45, 212, 191, 0.2); 
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+            object-position: center 20%; /* Adjusts focus slightly up to keep faces in frame */
             display: block;
+            filter: brightness(0.9); /* Cinematic slightly darker tone */
         }
 
         /* Article Body Constraints */
         .article-container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 0 20px 100px 20px;
+            padding: 0 25px 100px 25px;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin: 1rem 0;
-            line-height: 1.2;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            margin: 1.5rem 0;
+            line-height: 1.1;
             color: #ffffff;
             font-weight: 800;
+            text-align: center;
         }
 
         .category {
             color: var(--primary);
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
             display: block;
-            margin-top: 2rem;
+            text-align: center;
         }
 
         .author-meta {
-            padding: 1.5rem 0;
+            padding: 2rem 0;
             border-top: 1px solid #27272a;
             border-bottom: 1px solid #27272a;
-            margin-bottom: 2.5rem;
-            margin-top: 1rem;
+            margin-bottom: 3.5rem;
+            margin-top: 2rem;
+            text-align: center;
         }
 
-        .author-info h4 { margin: 0; font-size: 1.2rem; color: var(--primary); }
-        .author-info p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+        .author-info h4 { margin: 0; font-size: 1.4rem; color: var(--primary); }
+        .author-info p { margin: 0; color: var(--muted); font-size: 1rem; }
 
         .q-box {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 1.5rem;
+            padding: 3rem;
+            border-radius: 2rem;
             border: 1px solid #27272a;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
         .question {
             font-weight: 700;
             color: var(--primary);
             display: block;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .conclusion {
-            margin-top: 4rem;
-            padding: 2rem;
+            margin-top: 5rem;
+            padding: 3rem;
             background: linear-gradient(145deg, #111114, #09090b);
-            border-radius: 1.5rem;
+            border-radius: 2rem;
             border: 1px solid rgba(45, 212, 191, 0.2);
             font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
-            nav a { font-size: 0.9rem; }
+            .header-image-container { height: 60vh; } /* Taller than usual on mobile */
             h1 { font-size: 1.8rem; }
-            .header-image-container img {
-                max-width: 95%;
-                border-radius: 20px;
-            }
+            .q-box { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -178,7 +178,7 @@
 
         <p>In the latest installment of the Emotion Encoded expert series, I spoke with Dr. Navi Muradali about the friction between clinical intuition and algorithmic advice. It focused on the reality of medical accountability and why "Explainable AI" might actually create new risks for seasoned professionals.</p>
 
-        <h2 style="color: var(--primary); margin-top: 2rem;">The Interview</h2>
+        <h2 style="color: var(--primary); margin: 3rem 0 2rem 0; font-size: 2rem; text-align: center;">The Interview</h2>
 
         <div class="q-box">
             <span class="question">1. On Trust: What do you think is the main reason doctors reject AI?</span>
