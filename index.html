@@ -309,6 +309,67 @@ body {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+    /* The Main Container */
+.neon-wrapper {
+    position: relative;
+    background: #000000; /* Pure black background */
+    border-radius: 1.5rem; /* Matches rounded-3xl (24px) */
+    padding: 24px;
+    z-index: 1;
+    overflow: hidden;
+    display: block;
+}
+
+/* The Animated Glow Layer */
+.neon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        #00d2ff, /* Bright Neon Blue */
+        #3a86ff, /* Deeper Royal Blue */
+        transparent 25%
+    );
+    animation: rotate-glow 3s linear infinite;
+    z-index: -2;
+}
+
+/* The "Inner Mask" to keep the center black */
+.neon-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 3px; /* Controls border thickness */
+    background: #000000;
+    border-radius: calc(1.5rem - 3px);
+    z-index: -1;
+}
+
+/* Optional: Outer Blur for extra intensity */
+.neon-glow-effect {
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+}
+
+@keyframes rotate-glow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Horizontal Scrollbar Styling for Dark Theme */
+.flex-row::-webkit-scrollbar {
+    height: 8px;
+}
+.flex-row::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 10px;
+}
+.flex-row::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
 </style>
 
 <script>
@@ -328,14 +389,23 @@ body {
     });
 </script>
     <!-- Top Images Section -->
-   <section class="container mx-auto mt-8 px-4 animated-ring p-6 rounded-3xl shadow-lg">
-    <h2 class="text-2xl font-bold text-white mb-4">Featured Images</h2>
-    <div class="flex flex-row overflow-x-auto gap-6 pb-4">
-        <img src="images/fortoppage.jpg" alt="Main header image" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-        <img src="images/indexpic5.jpg" alt="Side header image 1" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-        <img src="images/indexpic4.jpg" alt="Side header image 2" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+   <section class="container mx-auto mt-8 px-4">
+    <div class="neon-wrapper neon-glow-effect">
+        <h2 class="text-2xl font-bold text-white mb-4">Featured Images</h2>
+        
+        <div class="flex flex-row overflow-x-auto gap-6 pb-4">
+            <img src="images/fortoppage.jpg" alt="Main header image" 
+                 class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            
+            <img src="images/indexpic5.jpg" alt="Side header image 1" 
+                 class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+            
+            <img src="images/indexpic4.jpg" alt="Side header image 2" 
+                 class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+        </div>
     </div>
 </section>
+
 
   <main class="w-full max-w-4xl mx-auto px-4 py-10 space-y-6 md:space-y-12">
 
