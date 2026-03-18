@@ -270,6 +270,45 @@ body {
     background-attachment: fixed;
     background-color: #000; /* Fallback */
 }
+    /* Animated Border Container */
+.animated-ring {
+    position: relative;
+    background: #111827; /* Matches your gray-800 */
+    z-index: 1;
+    overflow: hidden; /* Clips the rotating light */
+}
+
+/* The "Rotating Light" effect */
+.animated-ring::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        rgba(45, 212, 191, 0.3), /* Teal/Cyan glow */
+        transparent 30%
+    );
+    animation: rotate 4s linear infinite;
+    z-index: -1;
+}
+
+/* The inner "mask" to make it look like a thin border */
+.animated-ring::after {
+    content: '';
+    position: absolute;
+    inset: 2px; /* This controls the border thickness */
+    background: #111827; 
+    border-radius: 22px; /* Slightly smaller than the parent to match curve */
+    z-index: -1;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 </style>
 
 <script>
@@ -289,14 +328,14 @@ body {
     });
 </script>
     <!-- Top Images Section -->
-    <section class="container mx-auto mt-8 px-4 bg-gray-800/50 p-6 rounded-3xl shadow-lg ring-2 ring-gray-700">
-        <h2 class="text-2xl font-bold text-white mb-4">Featured Images</h2>
-        <div class="flex flex-row overflow-x-auto gap-6 pb-4">
-            <img src="images/fortoppage.jpg" alt="Main header image" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-            <img src="images/indexpic5.jpg" alt="Side header image 1" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-            <img src="images/indexpic4.jpg" alt="Side header image 1" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
-        </div>
-    </section>
+   <section class="container mx-auto mt-8 px-4 animated-ring p-6 rounded-3xl shadow-lg">
+    <h2 class="text-2xl font-bold text-white mb-4">Featured Images</h2>
+    <div class="flex flex-row overflow-x-auto gap-6 pb-4">
+        <img src="images/fortoppage.jpg" alt="Main header image" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+        <img src="images/indexpic5.jpg" alt="Side header image 1" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+        <img src="images/indexpic4.jpg" alt="Side header image 2" class="flex-shrink-0 w-80 md:w-96 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105" />
+    </div>
+</section>
 
   <main class="w-full max-w-4xl mx-auto px-4 py-10 space-y-6 md:space-y-12">
 
