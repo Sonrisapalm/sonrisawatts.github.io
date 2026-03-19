@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Passive Verifier | Radiology x Emotion Encoded</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0b;
+            --accent-teal: #2dd4bf;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            letter-spacing: -0.01em;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+            gap: 1.5rem;
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        nav a:hover { color: #fb923c; }
+
+        .hero-wrap {
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            background: #000;
+        }
+
+        .hero-image-full {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .brand-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .brand-name {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--accent-teal);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin: 0;
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-text {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-top: 40px;
+            border-left: 2px solid var(--accent-teal);
+            padding-left: 30px;
+            font-style: italic;
+        }
+
+        .content-section { margin-top: 80px; }
+
+        .section-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #fff;
+            display: block;
+        }
+
+        .question-text {
+            font-weight: 600;
+            color: var(--accent-teal);
+            margin-bottom: 15px;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .raw-quote-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .raw-quote-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 10rem;
+            color: rgba(45, 212, 191, 0.1);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-text {
+            position: relative;
+            z-index: 1;
+            font-size: 1.15rem;
+            color: var(--text-main);
+            white-space: pre-line;
+        }
+
+        .article-footer {
+            margin-top: 100px;
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(to bottom, transparent, rgba(45, 212, 191, 0.05));
+            border-radius: 40px;
+        }
+
+        .footer-logo {
+            font-weight: 600;
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 600px) {
+            .raw-quote-box { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="Methodsanddata.html">Methods and Data</a>
+        <a href="DataAnalysisquantitative.html">Publications</a>
+        <a href="ethicalguidelines.html">Ethical Guidelines</a>
+        <a href="AI-Perception-Briefs.html">Research Findings Articles</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="hero-wrap">
+        <img src="images/article42.jpg" alt="Sonrisa Watts & Jamaican Consultant Radiologist - Interview Emotion Encoded" class="hero-image-full">
+    </div>
+
+    <div class="container">
+        <header class="brand-header">
+            <span class="brand-name">Emotion Encoded Expert Series</span>
+            <h1>Artificial Intelligence in Radiology: The Consultant's Verdict</h1>
+        </header>
+
+        <p class="intro-text">
+            This research brief explores the intersection of clinical intuition and algorithmic dependence through the lens of a Consultant Radiologist. As AI moves from a theoretical tool to a functional teammate in diagnostic imaging, the psychological shift from active searcher to passive verifier creates a new landscape for potential error and miscalibrated trust.
+        </p>
+
+        <p style="text-align: center; margin-top: 40px; font-weight: 600; color: var(--accent-teal); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem;">
+            The following is the full interview transcript.
+        </p>
+
+        <div class="content-section">
+            <span class="section-label">1. On Observer Laziness</span>
+            <span class="question-text">I asked whether AI might make radiologists lazy observers who stop hunting for anomalies because the software didn't flag them.</span>
+            
+            <div class="raw-quote-box">
+                <div class="quote-text">
+                    "It depends on how the AI is adopted: "If the AI is trusted as a stand-alone triage solution for separating 'normals' from 'abnormals...i.e. flagging an abnormality', and the radiologist won't look at the 'normals', potentially resulting in misses by the AI. Here, the understanding is that the radiologist only looks at the abnormals.....this won't cause 'laziness' but can result in significant problems if the AI is missing things. 
+                    
+                    The other scenario is that the radiologist prioritize the 'abnormals' flagged, reporting those first. He/she then goes through the 'normals' to verify their findings. In this scenario, if the radiologist finds that the AI is getting it right all of the time, he/she might just not bother to formally re-evaluate these images, and essentially 'rubber stamp' the results.....resulting in them becoming 'lazy' (i.e. dangerous) observers."
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <span class="section-label">2. On Explainable AI</span>
+            <span class="question-text">Is diagnosing without understanding the machine's logic just a trust-fall into a black box?</span>
+
+            <div class="raw-quote-box">
+                <div class="quote-text">
+                    "Inherently the 'logic' AI uses isn't explainable in most cases. If it is reliably and consistently getting the answers correct, we will inevitably have to trust the process."
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <span class="section-label">3. On Algorithm Aversion</span>
+            <span class="question-text">Regarding how one recovers trust after the AI makes a stupid mistake that even a first-year resident wouldn't make:</span>
+
+            <div class="raw-quote-box">
+                <div class="quote-text">
+                    "Yes. These mistakes are typically the result of training. If wrong data is introduced in the training process, mistakes will happen. The important thing is to pick these up early and re-evaluate the training data and make the necessary corrections."
+                </div>
+            </div>
+        </div>
+
+        <footer class="article-footer">
+            <p>
+                As AI becomes a teammate in diagnostic imaging, the goal remains preserving the radiologist's hunt for anomalies while leveraging the machine's speed. Accuracy in medicine is not just a digital metric, but a safeguard maintained by the human expert.
+            </p>
+            <br><br>
+            <a href="https://encodedemotion.org" class="footer-logo">encodedemotion.org</a>
+        </footer>
+    </div>
+
+</body>
+</html>
