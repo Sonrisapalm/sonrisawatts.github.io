@@ -531,51 +531,63 @@ body {
     }
     /* --- MOBILE RESPONSIVE OVERRIDES --- */
 @media (max-width: 768px) {
-    /* 1. Fix the Header: Don't let the text get cut off */
+    /* 1. Header: Adjust height for phone screens */
     header {
-        padding-top: 60px !important;
+        padding-top: 40px !important;
         min-height: auto !important;
-        height: 600px !important;
+        height: 550px !important;
     }
 
     header h1 {
-        font-size: 1.8rem !important; /* Smaller text for smaller glass */
+        font-size: 1.6rem !important; 
         padding: 0 10px;
     }
 
     header p {
-        font-size: 0.95rem !important;
+        font-size: 0.9rem !important;
         padding: 0 15px;
     }
 
-    /* 2. Navigation: Stack the links so they don't overlap */
+    /* 2. NAVIGATION FIX: Keeps it horizontal and swipable */
     nav {
-        flex-direction: column !important;
-        gap: 10px !important;
-        position: relative !important;
-        background: rgba(0,0,0,0.6);
-        padding: 20px !important;
+        flex-direction: row !important; /* Back to a horizontal line */
+        flex-wrap: nowrap !important; /* Forces links to stay on ONE line */
+        overflow-x: auto !important; /* Allows you to swipe left/right to see all links */
+        justify-content: flex-start !important; /* Aligns to left so "Home" is first */
+        gap: 20px !important;
+        padding: 15px 20px !important;
+        background: rgba(0, 0, 0, 0.85) !important; /* Slightly darker for better contrast */
+        position: absolute !important; 
+        bottom: 0 !important;
+        width: 100% !important;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iPhones */
     }
 
-    /* 3. The Neon Cards: Reduce padding so the text isn't a tiny skinny column */
+    nav a {
+        font-size: 0.9rem !important; /* Slightly smaller text for mobile */
+        white-space: nowrap !important; /* Prevents "Ethical Guidelines" from breaking into 2 lines */
+        flex-shrink: 0 !important; /* Prevents the browser from squashing the words */
+    }
+
+    /* 3. The Neon Cards: Fix margins */
     .neon-wrapper {
-        margin: 15px 10px !important; /* Adds space on the left/right of the phone */
-        width: calc(100% - 20px) !important;
+        margin: 20px auto !important;
+        width: 95% !important;
     }
 
     .neon-card-inner {
-        padding: 20px !important; /* Less wasted space on the sides */
+        padding: 20px !important;
     }
 
-    /* 4. Images: Make sure they fit the phone width perfectly */
+    /* 4. Images: Fix horizontal scroll for featured images */
     .flex-row img {
-        width: 280px !important; /* Slightly smaller for phone scrolling */
+        width: 260px !important; 
     }
 
-    /* 5. Article Grid: Force 1 column on phones */
+    /* 5. Article Grid: Single column is best for reading on phones */
     .grid {
         grid-template-columns: 1fr !important;
-        padding: 0 10px !important;
+        padding: 0 15px !important;
     }
 
     /* 6. The Interactive Map: Scale it down */
