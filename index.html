@@ -412,6 +412,18 @@ body {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+    .video-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Makes the laptop scroll feel high-end */
+    -ms-overflow-style: none;  /* Hides scrollbar IE/Edge */
+    scrollbar-width: none;     /* Hides scrollbar Firefox */
+}
+
+/* Hides scrollbar Chrome/Safari so it stays clean on laptops */
+.video-scroll-container::-webkit-scrollbar {
+    display: none;
+}
 </style>
 
 <script>
@@ -429,6 +441,16 @@ body {
             label.style.color = '#fff';
         });
     });
+    /* --- LAPTOP SCROLL FIX --- */
+const scrollContainer = document.querySelector(".video-scroll-container");
+
+if (scrollContainer) {
+    scrollContainer.addEventListener("wheel", (evt) => {
+        // Only scroll horizontally if the mouse is over the video box
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+    }, { passive: false });
+}
 </script>
     <!-- Top Images Section -->
    <section class="container mx-auto mt-8 px-4">
