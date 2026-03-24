@@ -1,1 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Encoded | AI in Surgery: Dr. Dawit Daniel Kabiye</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #000; 
+            color: #fff; 
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
 
+        .nav-item {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            font-weight: 400;
+        }
+        .nav-item:hover { 
+            color: #fff; 
+            letter-spacing: 0.4em; 
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+            overflow: hidden;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .q-box {
+            border-left: 2px solid #2dd4bf;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .ans-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
+        }
+
+        .verdict-box {
+            background: rgba(45, 212, 191, 0.03);
+            border: 1px solid rgba(45, 212, 191, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <section style="
+        min-height: 100vh;
+        padding: 60px 20px;
+        background: radial-gradient(circle at top, #0d0d0d 0%, #000 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    ">
+
+        <nav class="reveal" style="
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+            max-width: 900px;
+        ">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="Methodsanddata.html" class="nav-item">Methods</a>
+            <a href="DataAnalysisquantitative.html" class="nav-item">PrePrint</a>
+            <a href="ethicalguidelines.html" class="nav-item">Ethics</a>
+            <a href="AI-Perception-Briefs.html" class="nav-item" style="color: #2dd4bf; border-bottom: 1px solid #2dd4bf;">Findings</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <div class="glass-card reveal">
+            
+            <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+                <img src="images/article44.jpg" alt="AI in Surgery Header" style="width: 100%; height: auto; display: block;">
+            </div>
+
+            <div style="padding: 50px 60px;">
+                
+                <span style="font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; color: #2dd4bf; margin-bottom: 15px; display: inline-block; text-align: left; width: 100%;">
+                    ARTIFICIAL INTELLIGENCE IN MEDICINE: SURGERY
+                </span>
+                
+                <span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 25px; display: block; text-align: left; width: 100%;">
+                    EMOTION ENCODED: INDEPENDENT RESEARCH INITIATIVE // ENCODEDEMOTION.ORG
+                </span>
+
+                <h1 style="
+                    font-size: 2.5rem;
+                    font-weight: 900;
+                    letter-spacing: -0.02em;
+                    line-height: 1.2;
+                    margin-bottom: 35px;
+                    background: linear-gradient(to right, #ffffff, #a1a1aa);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-align: left;
+                ">
+                    Surgical Intuition vs. Algorithmic Authority in the Operating Room
+                </h1>
+
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 1.15rem; margin-bottom: 30px; text-align: left; font-weight: 400;">
+                    When cutting-edge AI is dropped into high-stakes surgical environments, does it act as a safety net or a psychological trap? To find out, we interviewed one of the Caribbean’s leading surgical specialists to see how master clinicians view the rise of machine intelligence.
+                </p>
+
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 1.1rem; margin-bottom: 30px; text-align: left;">
+                    Dr. Dawit Daniel Kabiye, MD, DM, is a Consultant General Surgeon and lead specialist at Amise Medical Services, based at Tapion Hospital in Castries, Saint Lucia.
+                </p>
+
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 1.1rem; margin-bottom: 50px; text-align: left;">
+                    Providing expert care in advanced endoscopy, endocrine, vascular, trauma, and cancer surgery, Dr. Kabiye integrates the latest surgical technologies with compassionate, patient-centered care. Known for his meticulous technique and evidence-based approach, his commitment to clinical excellence ensures that each patient receives safe, effective, and personalized treatment.
+                </p>
+
+                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">Automation Bias vs. Aversion</h3>
+                
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: In a time-critical surgical crisis, do you think surgeons are more likely to over-rely on a computer prompt, or ignore it completely and trust their own gut?</p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                        Dr. Kabiye's Response: "In time-critical surgical situations, the experienced surgeon relies first on clinical judgment, situational awareness, and real-time feedback from the patient. Technology can support decision-making, but it does not replace it. I have observed that younger or less experienced clinicians may lean more heavily on prompts, whereas seasoned surgeons tend to use them as a reference rather than a directive. The safest approach is a balance.. AI can inform, but the surgeon must remain the final decision-maker."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 50px; text-align: left;">
+                    Surgeons aren’t trying to get replaced by a machine; they just want a smart analytical partner. Dr. Kabiye flags a major generational gap here in tech. While veteran surgeons use AI as a passive reference tool, younger doctors are at risk of just leaning on it too much (automation bias). Real integration means treating AI as a suggestion engine, not a boss.
+                </p>
+
+
+                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">The Danger of "Convincing" XAI</h3>
+
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: Do you think if a surgical AI explains its advice so convincingly that it sounds perfect, it makes it harder for a surgeon to spot a flaw in the recommendation?</p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                        Dr. Kabiye's Response: "A highly convincing AI explanation can indeed be problematic. In surgery, we are trained to question even what appears correct. When something sounds too perfect, it should prompt deeper scrutiny. The risk is that persuasive outputs may reduce that natural skepticism. In my experience, the key is maintaining a mindset of verification, always correlating with the clinical picture rather than accepting any recommendation at face value."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 50px; text-align: left;">
+                    Tech developers love smooth, shiny interfaces because they think it builds trust, but it actually does the opposite for experts. When an algorithm hides its work behind perfect grammar, it kills natural skepticism. To keep patients safe, doctors have to keep an active verification mindset, checking the math against the real patient in front of them.
+                </p>
+
+
+                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">Liability and Gut Feeling</h3>
+
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: If a surgeon goes against the AI and a complication happens, does the legal risk kill traditional surgical intuition?</p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                        Dr. Kabiye's Response: "Legal considerations are increasingly relevant, but they should not override sound clinical judgment. Surgical 'gut feeling' is not mere instinct..is built on years of accumulated experience and pattern recognition. If clinicians feel compelled to follow AI purely for medico-legal protection, it may undermine good practice. There must be room for justified clinical deviation, provided it is well-reasoned and properly documented."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 30px; text-align: left;">
+                    Surgical intuition isn't just a random guess; it is super-fast internal pattern recognition built over a career. If hospitals force doctors to follow a screen just to avoid getting sued, patient care takes a dive. There has to be room for human judgment.
+                </p>
+
+                <div class="verdict-box">
+                    <span style="font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: #2dd4bf; display: block; margin-bottom: 15px;">The Verdict</span>
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.1rem; font-weight: 600;">
+                        AI is a tool, not a replacement for responsibility. The real danger happens when the tech pulls a doctor's focus away from the patient. True innovation combines machine data with human intuition without letting the screen run the show.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="reveal" style="text-align: center; margin-top: 50px;">
+            <p style="font-family: 'Courier New', monospace; color: rgba(255,255,255,0.2); font-size: 10px; letter-spacing: 0.1em;">
+                Sonrisa Watts // Emotion Encoded // 2026
+            </p>
+        </div>
+
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
