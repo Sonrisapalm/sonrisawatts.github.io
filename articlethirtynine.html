@@ -15,7 +15,7 @@
 
         body {
             margin: 0;
-            padding: 0;
+            padding: 2rem 0; /* Changed to allow scrolling */
             background-color: var(--bg);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
@@ -23,7 +23,6 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
         }
 
         .bg-glow {
@@ -142,6 +141,53 @@
             max-width: 480px;
         }
 
+        /* Article Content Section */
+        .article-content {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 2.5rem 0 1rem 0;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header span {
+            font-size: 1.5rem;
+        }
+
+        p.analysis {
+            font-size: 1rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            border-left: 2px solid var(--accent);
+            position: relative;
+        }
+
+        blockquote p {
+            margin: 0;
+            color: #fff;
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
         /* Footer Progress */
         .status-footer {
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -205,6 +251,43 @@
             <p class="research-summary">
                 Senior Medical Oncologist dedicated to <span style="color: #fff; font-weight: 600;">Caribbean healthcare dynamics</span>, bridging global innovation with regional patient-centered insights.
             </p>
+        </div>
+
+        <div class="article-content">
+
+            <div class="section-header"><span>🧠</span> 1. Algorithm Aversion and the Ties That Bind</div>
+            <p class="analysis">
+                When AI disagrees with a human expert, a conflict occurs. Dr. Vineetha’s tie breaking protocol reveals a clear hierarchy of clinical trust. She does not automatically default to the machine. Instead, she utilizes a three step verification process: personal clinical experience, evidence review, and peer consultation.
+            </p>
+            <blockquote>
+                <p>"If there is a disagreement, I rely on my experience, check the evidence available and discuss with a peer . If still a tie , will choose the path that minimizes patient harm"</p>
+            </blockquote>
+            <p class="analysis">
+                When a true deadlock occurs, the ultimate tie breaker is risk mitigation. The choice defaults to whichever path minimizes patient harm. In high stakes medicine, human accountability overrides algorithmic superiority. The machine is a tool, but the clinician remains the final safety net.
+            </p>
+
+            <div class="section-header"><span>⚖️</span> 2. Automation Bias and Cognitive Resistance</div>
+            <p class="analysis">
+                There is a common fear that time crunches force doctors to blindly trust machines. Dr. Vineetha’s responses demonstrate a strong resistance to automation bias. If an AI suggestion contradicts her internal clinical intuition, her default reaction is skepticism.
+            </p>
+            <blockquote>
+                <p>"If the AI suggestion is different from the plan based on my instinct and experience, I would not depend on it. I would then think whether my decision is justifiable or not in the light of available evidence and risk to patient and proceed."</p>
+            </blockquote>
+            <p class="analysis">
+                Rather than succumbing to the pressure of the moment, she uses the machine's disagreement as a trigger for metacognition. She stops to evaluate if her own human decision is justifiable based on evidence and risk. In this framework, the AI does not replace human judgment. Instead, it acts as a friction point that forces the doctor to double check her own homework.
+            </p>
+
+            <div class="section-header"><span>🔍</span> 3. The Seduction of Explainable AI (XAI)</div>
+            <p class="analysis">
+                The push for Explainable AI is often viewed as a cure all for trust. Dr. Vineetha offers a vital counterpoint: convincing explanations can be dangerous. Because AI models are trained to be syntactically perfect and confident, their explanations sound authoritative.
+            </p>
+            <blockquote>
+                <p>"Definitely. AI explanations are precisely worded and sounds confident even if wrong so it can mislead doctors AND patients easily."</p>
+            </blockquote>
+            <p class="analysis">
+                This creates a high risk of overtrust. A fluently written but incorrect AI explanation can trick a doctor into missing a critical machine error. Her insights suggest that explainability without traceability is a psychological trap. True medical AI trust requires the ability to interrogate how the machine arrived at that conclusion.
+            </p>
+
         </div>
 
         <div class="status-footer">
