@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Encoded | Artificial Intelligence in Surgery</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #000; 
+            color: #fff; 
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .nav-item {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            font-weight: 400;
+        }
+        .nav-item:hover { 
+            color: #fff; 
+            letter-spacing: 0.4em; 
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+            overflow: hidden;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .q-box {
+            border-left: 2px solid #2dd4bf;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .ans-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <section style="
+        min-height: 100vh;
+        padding: 60px 20px;
+        background: radial-gradient(circle at top, #0d0d0d 0%, #000 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    ">
+
+        <nav class="reveal" style="
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+            max-width: 900px;
+        ">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="Methodsanddata.html" class="nav-item">Methods</a>
+            <a href="DataAnalysisquantitative.html" class="nav-item">PrePrint</a>
+            <a href="ethicalguidelines.html" class="nav-item">Ethics</a>
+            <a href="AI-Perception-Briefs.html" class="nav-item" style="color: #2dd4bf; border-bottom: 1px solid #2dd4bf;">Findings</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <div class="glass-card reveal">
+            
+            <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+                <img src="images/45.jpg" alt="AI in Surgery Header" style="width: 100%; height: auto; display: block;">
+            </div>
+
+            <div style="padding: 50px 60px;">
+                
+                <span style="font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; color: #2dd4bf; margin-bottom: 15px; display: inline-block; text-align: left; width: 100%;">
+                    ARTIFICIAL INTELLIGENCE IN MEDICINE: SURGERY
+                </span>
+                
+                <span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 25px; display: block; text-align: left; width: 100%;">
+                    EMOTION ENCODED: INDEPENDENT RESEARCH INITIATIVE
+                </span>
+
+                <h1 style="
+                    font-size: 2.5rem;
+                    font-weight: 900;
+                    letter-spacing: -0.02em;
+                    line-height: 1.2;
+                    margin-bottom: 35px;
+                    background: linear-gradient(to right, #ffffff, #a1a1aa);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-align: left;
+                ">
+                    Surgical Intuition vs. Algorithmic Authority in the Operating Room
+                </h1>
+
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 1.15rem; margin-bottom: 30px; text-align: left; font-weight: 400;">
+                    When cutting-edge AI is dropped into high-stakes surgical environments, does it act as a safety net or a psychological trap? To find out, we interviewed one of the Caribbean’s leading surgical authorities to see how master clinicians view the rise of machine intelligence.
+                </p>
+
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 1.1rem; margin-bottom: 50px; text-align: left;">
+                    Dr. Shamir Cawich is a full Professor of Liver and Pancreas Surgery at the University of the West Indies. He is a Fellow of the American College of Surgeons, has authored hundreds of peer-reviewed research articles, and has pioneered advanced surgical proctorships and mentorships across the Caribbean. He holds several advanced fellowships, including from the Royal College of Surgeons and Imperial Medical in the UK, specializing in Minimally Invasive Surgery and Robotic Navigation.
+                </p>
+
+                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">Experience vs. Automation</h3>
+                
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: If the AI tells a surgeon to do one thing, but their 20 years of experience says to do another, do you think they feel pressured to trust the screen over their own eyes?</p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                        Dr. Cawich's Response: "While I understand the value of artificial intelligence, there are also limitations. Most significantly, it is an accumulation of knowledge / data acquired from multiple sources, many without rigorous scientific validation. Therefore, while I would consider the advice given by an AI source, I think it must also be validated by the clinician. in the end, it is the clinician who is responsible for patient outcomes and so his or her judgment should be the predominant source of decision, with suggestions but not instructions, but the AI source."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 50px; text-align: left;">
+                    Surgeons are not looking for an automated pilot; they are looking for a co-pilot. Dr. Cawich highlights a massive gap in current AI development: the lack of accountability. An algorithm can process data, but it cannot stand in a courtroom or carry the moral weight of a patient's life. True integration means treating AI as a suggestion engine, not an instructor.
+                </p>
+
+
+                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">The Danger of "Smooth" Explanations</h3>
+
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: In the operating room, would you prefer a super simple AI that just gives a one-sentence "why," or a complex AI that gives you deep data and statistics?</p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                        Dr. Cawich's Response: "While a one-sentence why is convenient, the clinician must be able to evaluate the data / evidence that is behind every clinical decision. To follow a one sentence instruction from an AI source, in my mind, would be inappropriate. Surgeons must always evaluate the data and perform all manoeuvres with purpose and reason - not solely by instruction. Therefore, deep data and statistics are required."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 50px; text-align: left;">
+                    Tech developers assume busy experts want over-simplified, push-button interfaces. Dr. Cawich’s response proves the exact opposite. Oversimplification breeds distrust. In a crisis, a master surgeon doesn't want a smooth one-liner from a computer; they want the raw math so they can verify it. If AI hides its work, experts will reject it.
+                </p>
+
+
+                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">Intuition vs. Calculation</h3>
+
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: Do you personally think it's always clinical intuition over any type of advice an AI can give in surgery?</p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                        Dr. Cawich's Response: "No. Clinician intuition plays a role, but neither AI advice nor intuition should be considered 'more important'. They are both valuable sources of information that contribute to any decision. The clinician's duty is to combine all sources of information / data and to make a calculated decision on which will be better in an individualised circumstance on the operating table."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; text-align: left; margin-bottom: 25px;">
+                    This is the ultimate take on modern human-machine collaboration.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; text-align: left;">
+                    The master surgeon's ultimate duty is taking disparate data pointsdecision, clinical gut instinct and machine data, and making a localized, split-second human decision.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="reveal" style="text-align: center; margin-top: 50px;">
+            <p style="font-family: 'Courier New', monospace; color: rgba(255,255,255,0.2); font-size: 10px; letter-spacing: 0.1em;">
+                Sonrisa Watts // Emotion Encoded // 2026
+            </p>
+        </div>
+
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
