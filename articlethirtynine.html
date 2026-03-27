@@ -41,11 +41,29 @@
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 40px;
-            padding: clamp(2rem, 5vw, 4rem);
             max-width: 650px;
             width: 90%;
             box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(12px);
+            overflow: hidden; /* Added to clip the top image to the card's border radius */
+        }
+
+        /* Hero Image Container */
+        .article-hero {
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: #000; /* Dark backdrop for letterboxing if image is weird size */
+        }
+
+        .article-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain; /* Prevents cropping */
+        }
+
+        .article-body {
+            padding: clamp(2rem, 5vw, 4rem);
         }
 
         /* Top metadata layout */
@@ -223,7 +241,7 @@
         }
 
         @media (max-width: 600px) {
-            .article-card { padding: 2.5rem 1.5rem; }
+            .article-body { padding: 2.5rem 1.5rem; }
             .top-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
         }
     </style>
@@ -233,73 +251,79 @@
     <div class="bg-glow"></div>
 
     <div class="article-card">
-        <div class="top-row">
-            <div class="badge">Article 39</div>
-            <div class="origin-brief">India / Austria <span style="opacity: 0.3; margin-left: 5px;">| Founding Expertise</span></div>
-        </div>
-
-        <h1>Oncology<br>Decoded.</h1>
         
-        <div class="profile-info">
-            <span class="name">Dr. Vineetha Binoy</span>
+        <div class="article-hero">
+            <img src="images/39.jpg" alt="Dr. Vineetha Binoy Profile Header">
+        </div>
+
+        <div class="article-body">
+            <div class="top-row">
+                <div class="badge">Article 39</div>
+                <div class="origin-brief">India / Austria <span style="opacity: 0.3; margin-left: 5px;">| Founding Expertise</span></div>
+            </div>
+
+            <h1>Oncology<br>Decoded.</h1>
             
-            <div class="active-location">
-                <div class="pulse-dot"></div>
-                <span class="location-text">Cayman Islands</span>
+            <div class="profile-info">
+                <span class="name">Dr. Vineetha Binoy</span>
+                
+                <div class="active-location">
+                    <div class="pulse-dot"></div>
+                    <span class="location-text">Cayman Islands</span>
+                </div>
+
+                <p class="research-summary">
+                    Senior Medical Oncologist dedicated to <span style="color: #fff; font-weight: 600;">Caribbean healthcare dynamics</span>, bridging global innovation with regional patient-centered insights.
+                </p>
             </div>
 
-            <p class="research-summary">
-                Senior Medical Oncologist dedicated to <span style="color: #fff; font-weight: 600;">Caribbean healthcare dynamics</span>, bridging global innovation with regional patient-centered insights.
-            </p>
-        </div>
+            <div class="article-content">
 
-        <div class="article-content">
+                <div class="section-header"><span>🧠</span> 1. Algorithm Aversion and the Ties That Bind</div>
+                <p class="analysis">
+                    When AI disagrees with a human expert, a conflict occurs. Dr. Vineetha’s tie breaking protocol reveals a clear hierarchy of clinical trust. She does not automatically default to the machine. Instead, she utilizes a three step verification process: personal clinical experience, evidence review, and peer consultation.
+                </p>
+                <blockquote>
+                    <p>"If there is a disagreement, I rely on my experience, check the evidence available and discuss with a peer . If still a tie , will choose the path that minimizes patient harm"</p>
+                </blockquote>
+                <p class="analysis">
+                    When a true deadlock occurs, the ultimate tie breaker is risk mitigation. The choice defaults to whichever path minimizes patient harm. In high stakes medicine, human accountability overrides algorithmic superiority. The machine is a tool, but the clinician remains the final safety net.
+                </p>
 
-            <div class="section-header"><span>🧠</span> 1. Algorithm Aversion and the Ties That Bind</div>
-            <p class="analysis">
-                When AI disagrees with a human expert, a conflict occurs. Dr. Vineetha’s tie breaking protocol reveals a clear hierarchy of clinical trust. She does not automatically default to the machine. Instead, she utilizes a three step verification process: personal clinical experience, evidence review, and peer consultation.
-            </p>
-            <blockquote>
-                <p>"If there is a disagreement, I rely on my experience, check the evidence available and discuss with a peer . If still a tie , will choose the path that minimizes patient harm"</p>
-            </blockquote>
-            <p class="analysis">
-                When a true deadlock occurs, the ultimate tie breaker is risk mitigation. The choice defaults to whichever path minimizes patient harm. In high stakes medicine, human accountability overrides algorithmic superiority. The machine is a tool, but the clinician remains the final safety net.
-            </p>
+                <div class="section-header"><span>⚖️</span> 2. Automation Bias and Cognitive Resistance</div>
+                <p class="analysis">
+                    There is a common fear that time crunches force doctors to blindly trust machines. Dr. Vineetha’s responses demonstrate a strong resistance to automation bias. If an AI suggestion contradicts her internal clinical intuition, her default reaction is skepticism.
+                </p>
+                <blockquote>
+                    <p>"If the AI suggestion is different from the plan based on my instinct and experience, I would not depend on it. I would then think whether my decision is justifiable or not in the light of available evidence and risk to patient and proceed."</p>
+                </blockquote>
+                <p class="analysis">
+                    Rather than succumbing to the pressure of the moment, she uses the machine's disagreement as a trigger for metacognition. She stops to evaluate if her own human decision is justifiable based on evidence and risk. In this framework, the AI does not replace human judgment. Instead, it acts as a friction point that forces the doctor to double check her own homework.
+                </p>
 
-            <div class="section-header"><span>⚖️</span> 2. Automation Bias and Cognitive Resistance</div>
-            <p class="analysis">
-                There is a common fear that time crunches force doctors to blindly trust machines. Dr. Vineetha’s responses demonstrate a strong resistance to automation bias. If an AI suggestion contradicts her internal clinical intuition, her default reaction is skepticism.
-            </p>
-            <blockquote>
-                <p>"If the AI suggestion is different from the plan based on my instinct and experience, I would not depend on it. I would then think whether my decision is justifiable or not in the light of available evidence and risk to patient and proceed."</p>
-            </blockquote>
-            <p class="analysis">
-                Rather than succumbing to the pressure of the moment, she uses the machine's disagreement as a trigger for metacognition. She stops to evaluate if her own human decision is justifiable based on evidence and risk. In this framework, the AI does not replace human judgment. Instead, it acts as a friction point that forces the doctor to double check her own homework.
-            </p>
+                <div class="section-header"><span>🔍</span> 3. The Seduction of Explainable AI (XAI)</div>
+                <p class="analysis">
+                    The push for Explainable AI is often viewed as a cure all for trust. Dr. Vineetha offers a vital counterpoint: convincing explanations can be dangerous. Because AI models are trained to be syntactically perfect and confident, their explanations sound authoritative.
+                </p>
+                <blockquote>
+                    <p>"Definitely. AI explanations are precisely worded and sounds confident even if wrong so it can mislead doctors AND patients easily."</p>
+                </blockquote>
+                <p class="analysis">
+                    This creates a high risk of overtrust. A fluently written but incorrect AI explanation can trick a doctor into missing a critical machine error. Her insights suggest that explainability without traceability is a psychological trap. True medical AI trust requires the ability to interrogate how the machine arrived at that conclusion.
+                </p>
 
-            <div class="section-header"><span>🔍</span> 3. The Seduction of Explainable AI (XAI)</div>
-            <p class="analysis">
-                The push for Explainable AI is often viewed as a cure all for trust. Dr. Vineetha offers a vital counterpoint: convincing explanations can be dangerous. Because AI models are trained to be syntactically perfect and confident, their explanations sound authoritative.
-            </p>
-            <blockquote>
-                <p>"Definitely. AI explanations are precisely worded and sounds confident even if wrong so it can mislead doctors AND patients easily."</p>
-            </blockquote>
-            <p class="analysis">
-                This creates a high risk of overtrust. A fluently written but incorrect AI explanation can trick a doctor into missing a critical machine error. Her insights suggest that explainability without traceability is a psychological trap. True medical AI trust requires the ability to interrogate how the machine arrived at that conclusion.
-            </p>
-
-        </div>
-
-        <div class="status-footer">
-            <div class="loading-bar">
-                <div class="loading-fill"></div>
             </div>
-            <div class="coming-soon">
-                <span style="letter-spacing: 0.1em;">ENCODING RESEARCH</span>
-                <span style="color: #fff;">MARCH 2026</span>
+
+            <div class="status-footer">
+                <div class="loading-bar">
+                    <div class="loading-fill"></div>
+                </div>
+                <div class="coming-soon">
+                    <span style="letter-spacing: 0.1em;">ENCODING RESEARCH</span>
+                    <span style="color: #fff;">MARCH 2026</span>
+                </div>
             </div>
-        </div>
-    </div>
+        </div> </div>
 
 </body>
 </html>
