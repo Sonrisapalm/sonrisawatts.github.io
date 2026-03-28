@@ -1,178 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About – Emotion Encoded</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* About Section Specific Styling */
-    .about-section {
-      background-color: #020617;
-      color: #fff;
-      padding: 80px 20px;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive | Emotion Encoded</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #2dd4bf;
+            --bg: #030712;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+        }
 
-    .about-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 40px 30px;
-      border-radius: 25px;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    }
+        body {
+            background-color: var(--bg);
+            color: #f9fafb;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .bio-title {
-      font-size: 4rem; /* Big Title */
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: -2px;
-      margin-bottom: 40px;
-      color: #fff;
-      line-height: 1;
-    }
+        /* NAVIGATION BAR STYLE */
+        .nav-item {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            font-weight: 400;
+        }
+        .nav-item:hover { 
+            color: #fff; 
+            letter-spacing: 0.4em; 
+        }
 
-    /* Diary Styling */
-    .diary-entry {
-      background-color: #fefcfb;
-      color: #1e293b;
-      text-align: left;
-      padding: 40px;
-      margin: 40px 0;
-      border-radius: 0 20px 20px 0;
-      border-left: 12px solid #0d9488;
-      box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.4);
-      position: relative;
-    }
+        .nav-active {
+            color: var(--accent);
+            border-bottom: 1px solid var(--accent);
+        }
 
-    .diary-header {
-      font-family: 'Playfair Display', serif;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 15px;
-      margin-bottom: 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        /* ARCHIVE STYLES */
+        .archive-container {
+            max-width: 850px;
+            margin: 60px auto 100px auto;
+            padding: 0 20px;
+        }
 
-    .diary-body {
-      font-size: 1.1rem;
-      line-height: 1.9;
-    }
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: clamp(2rem, 8vw, 5rem);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+        }
 
-    .diary-body p {
-      color: #334155 !important;
-      margin-bottom: 1.5rem;
-    }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
 
-    .highlight-box {
-      background-color: #f0fdfa;
-      padding: 25px;
-      border-radius: 12px;
-      border-left: 4px solid #0d9488;
-      font-style: italic;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      color: #0f766e;
-    }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    .cta-button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 35px;
-      background-color: #0d9488;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+        .tag {
+            font-size: 10px;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 12px;
+        }
 
-    /* News Grid */
-    .news-container {
-      display: grid;
-      grid-template-cols: 1fr;
-      gap: 20px;
-      margin-top: 30px;
-    }
+        h1 {
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            margin-bottom: 40px;
+            background: linear-gradient(to bottom right, #fff 40%, rgba(255,255,255,0.4));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    @media (min-width: 768px) {
-      .news-container { grid-template-columns: repeat(2, 1fr); }
-      .bio-title { font-size: 6rem; }
-    }
-  </style>
+        .highlight-box {
+            background: rgba(45, 212, 191, 0.04);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 20px 20px 0;
+            padding: 35px;
+            margin: 50px 0;
+        }
+
+        .archive-entry-meta {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        p {
+            margin-bottom: 28px;
+            color: rgba(255,255,255,0.75);
+            font-size: 1.05rem;
+            text-align: left;
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #6b7280;
+            border-top: 1px solid var(--border);
+            padding-top: 40px;
+            margin-top: 80px;
+            line-height: 1.8;
+        }
+
+        .glow-spot {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(45, 212, 191, 0.07) 0%, transparent 70%);
+            top: -250px;
+            right: -200px;
+            z-index: -1;
+        }
+    </style>
 </head>
 <body>
 
-  <section class="about-section">
-    <div class="about-container">
-      <h1 class="bio-title">PERSONAL BIO</h1>
-      
-      <p>Hi! I’m <strong>Sonrisa Watts</strong>, 24 years old from the beautiful island of St. Kitts and Nevis. I founded <strong>Emotion Encoded</strong> in June 2025 to investigate AI integration and adoption through the lenses of <strong>cognitive bias, psychological resistance, and emotional reasoning</strong>.</p>
+    <nav class="reveal active" style="
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 30px; 
+        padding: 40px 20px;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+    ">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item nav-active">About</a>
+        <a href="Methodsanddata.html" class="nav-item">Methods</a>
+        <a href="DataAnalysisquantitative.html" class="nav-item">PrePrint</a>
+        <a href="ethicalguidelines.html" class="nav-item">Ethics</a>
+        <a href="AI-Perception-Briefs.html" class="nav-item">Findings</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+    </nav>
 
-      <div class="diary-entry">
-        <div class="diary-header">
-          <div>
-            <span style="display:block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #94a3b8; font-weight: 800;">Personal Archive</span>
-            <span style="font-size: 1.8rem; font-weight: 700; color: #0f172a;">Foundation & Choice</span>
-          </div>
-          <span style="font-style: italic; color: #0d9488; font-family: 'Playfair Display';">Entry No. 001</span>
-        </div>
+    <div class="archive-container">
+        
+        <header class="reveal" style="margin-bottom: 80px; text-align: left;">
+            <span class="tag">Founder & Principal Researcher</span>
+            <h1>Sonrisa Watts.</h1>
+            <p style="font-size: 1.2rem; color: #9ca3af; max-width: 650px;">
+                Hi! I’m Sonrisa Watts, 24 years old from the beautiful island of St. Kitts and Nevis. I founded Emotion Encoded in June 2025 to investigate AI integration and adoption through the lenses of cognitive bias, psychological resistance, and emotional reasoning.
+            </p>
+        </header>
 
-        <div class="diary-body">
-          <p>Sonrisa was born on December 13th, 2000, in St. Kitts and Nevis. Growing up in <strong>Conaree</strong>, her early years were defined by a family that poured everything they had into her growth.</p>
-          
-          <p>Her father, a teacher and skills trainer has always been her rock from childhood to adulthood.  She still relies on the lessons from their long beach walks and morning meditations. He taught her how to treat people, the importance of exercise, of communication, of love, of finding the right mental spaces,  of teachings and how to stay involved in the world around her. He didn’t just raise her; he shaped her perspective.</p>
-
-          <p>Her mother invested heavily into Sonrisa, ensuring she had the space to find her own identity through piano, dance, and modeling. Their relationship would be described as <strong>inseparable</strong>.  Her teachings about the universe, about making decisions and about staying reslient in this world has always been the topic of conversation. Both parents simply wanted the best for her.</p>
-
-          <p>Her parents were most definetly her foundation and she constantly quotes "I owe them the world."
+        <div class="glass-panel reveal">
+            <div class="glow-spot"></div>
             
-          <p>However, when Sonrisa was around 12 or 13, her world began to shift when her parents divorced. It was a difficult transition that required a strength she didn't know she had yet... though, looking back, it was only the beginning of what "life" had in store.</p>
+            <span class="archive-entry-meta">Personal Archive // Foundation & Choice // No. 001</span>
+            
+            <p>Sonrisa was born on December 13, 2000, in St. Kitts and Nevis. Growing up in Conaree, her early years were defined by a family that poured everything they had into her growth. Her father, a teacher and skills trainer, has always been her rock from childhood to adulthood. She still relies on the lessons from their long beach walks and morning meditations. He taught her how to treat people, the importance of exercise, of communication, of love, of finding the right mental spaces, of teachings, and how to stay involved in the world around her. He did not just raise her; he shaped her perspective.</p>
 
-          <p>Fast forward to 2025. At 24 years old, on Christmas Day, Sonrisa faced a deeply traumatic and violent experience while walking through town to go home. In the aftermath, she felt she couldn't open up to anyone. She was left with two choices: let the weight of the trauma pull her into depression, or find a way to move through the pain.</p>
+            <p>Her mother invested heavily into Sonrisa, ensuring she had the space to find her own identity through piano, dance, and modeling. Their relationship would be described as inseparable. Her teachings about the universe, about making decisions, and about staying resilient in this world has always been the topic of conversation. Both parents simply wanted the best for her. Her parents were most definitely her foundation and she constantly quotes, "I owe them the world."</p>
 
-          <div class="highlight-box">
-            She chose the latter. To distract herself and begin the process of healing, she threw herself into research. She chose to keep her mind busy and her spirit focused. That decision to turn internal pain into external action was the real start of her independent work.
-          </div>
+            <p>However, when Sonrisa was around 12 or 13, her world began to shift when her parents divorced. It was a difficult transition that required a strength she did not know she had yet. Looking back, it was only the beginning of what life had in store.</p>
 
-          <p style="margin-top: 30px; font-size: 0.8rem; letter-spacing: 2px; color: #94a3b8; text-transform: uppercase; font-weight: bold;">To be continued...</p>
+            <p>Fast forward to 2025. At 24 years old, on Christmas Day, Sonrisa faced a deeply traumatic and violent experience while walking through town to go home. In the aftermath, she felt she could not open up to anyone. She was left with two choices: let the weight of the trauma pull her into depression, or find a way to move through the pain. She chose the latter. To distract herself and begin the process of healing, she threw herself into research. She chose to keep her mind busy and her spirit focused. That decision to turn internal pain into external action was the real start of her independent work.</p>
+
+            <div class="highlight-box">
+                <span style="font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 15px;">The Research Catalyst</span>
+                <p style="color: #fff; font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;">
+                    During this time, while using AI mental health chatbots, Sonrisa found them to be empathetic towards her only once. It felt cold. It managed to give the illusion of making her feel like it cared, although it was just a machine. After spending the 3 to 4 years of her bachelor's degree not knowing about AI for any type of automation, she was introduced to it in early 2025 when trying to fix a bad car deal. 
+                </p>
+                <p style="color: #fff; font-size: 1.15rem; font-weight: 600; line-height: 1.6;">
+                    She realized how convincing it was, that even when it hallucinated case laws, it still managed to sound as if it knew exactly what it was talking about. Then she wondered, "What would be the implications of this type of AI being integrated into high stakes fields like medicine, law, finance, etc.?" That is when it hit her that she had a question that needed solving.
+                </p>
+            </div>
+
+            <p style="letter-spacing: 0.2em; font-size: 0.75rem; color: var(--accent); font-weight: 800; margin-top: 40px;">TO BE CONTINUED...</p>
+
+            <div class="disclaimer">
+                <p style="font-size: 0.85rem; color: #4b5563; margin-bottom: 10px;">
+                    Disclaimer: These research briefs summarize findings from interviews and surveys conducted as part of ongoing research. They have not been peer reviewed. The content is shared openly to foster transparency and public understanding.
+                </p>
+                <p style="font-size: 0.85rem; color: #9ca3af; font-weight: 600;">
+                    I am now seeking to expand my research experience after recently graduating with a BSc in Psychology from UWI.
+                </p>
+            </div>
         </div>
-      </div>
 
-      <p><strong>Disclaimer:</strong> These research briefs summarize findings from interviews and surveys conducted as part of ongoing research. They have not been peer reviewed. The content is shared openly to foster transparency and public understanding.</p>
-      
-      <p>I am now seeking to expand my research experience after recently graduating with a BSc in Psychology from UWI.</p>
+        <footer style="text-align: center; margin-top: 80px; border-top: 1px solid var(--border); padding-top: 40px;">
+            <p style="font-size: 10px; letter-spacing: 0.2em; color: rgba(255,255,255,0.2); text-transform: uppercase;">
+                &copy; 2026 EMOTION ENCODED &mdash; ALL RIGHTS RESERVED.
+            </p>
+        </footer>
 
-      <a href="AI-Perception-Briefs.html" class="cta-button">Explore Research Articles →</a>
     </div>
-  </section>
 
-  <section id="ai-news" class="p-10 bg-gradient-to-r from-slate-950 to-slate-900 text-white" style="padding: 80px 20px;">
-    <div style="max-width: 1000px; margin: 0 auto;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 40px; text-align: center; font-weight: 800;">🚀 LATEST IN AI</h2>
-      
-      <div class="news-container">
-        <div class="news-card" style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
-          <h3 style="font-weight: 700; margin-bottom: 10px;">Global AI Cooperation</h3>
-          <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 15px;">China proposes a new international body for coordinated governance at the Shanghai AI conference.</p>
-          <a href="#" style="color: #0d9488; text-decoration: none; font-size: 0.8rem; font-weight: bold;">Read More →</a>
-        </div>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
 
-        <div class="news-card" style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
-          <h3 style="font-weight: 700; margin-bottom: 10px;">EU High-Risk Guidelines</h3>
-          <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 15px;">European Commission outlines pointers for models with systemic risks under the new AI Act.</p>
-          <a href="#" style="color: #0d9488; text-decoration: none; font-size: 0.8rem; font-weight: bold;">Read More →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer style="text-align: center; padding: 40px; background: #020617; color: #475569; font-size: 0.8rem; letter-spacing: 1px;">
-    © 2026 EMOTION ENCODED — ALL RIGHTS RESERVED.
-  </footer>
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
