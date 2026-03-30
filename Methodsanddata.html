@@ -600,26 +600,23 @@ const chartInstance = new Chart(canvas, {
             borderRadius: 4
         }]
     },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        indexAxis: 'y', // Horizontal bars
-        onClick: (e, elements, chart) => {
-            // This is the clean, working logic
-            if (elements.length > 0) {
-                const idx = elements[0].index;
-                const label = chart.data.labels[idx];
-                const val = chart.data.datasets[0].data[idx];
-                const summaryText = dataObj.summaries[label];
+   options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y', 
+                    onClick: (e, elements, chart) => {
+                        if (elements.length > 0) {
+                            const idx = elements[0].index;
+                            const label = chart.data.labels[idx];
+                            const val = chart.data.datasets[0].data[idx];
+                            const summaryText = dataObj.summaries[label];
 
-                if (summaryText) {
-                    openModal(dataObj, label, val, summaryText);
-                } else {
-                    console.log(`No summary available for: ${label}`);
-                }
-            }
-        },
-        plugins: {
+                            if (summaryText) {
+                                openModal(dataObj, label, val, summaryText);
+                            }
+                        }
+                    },
+                    plugins: {
             legend: { display: false },
             tooltip: {
                 callbacks: {
