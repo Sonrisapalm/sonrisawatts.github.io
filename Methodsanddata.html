@@ -396,21 +396,7 @@
                     'Slightly likely': "A substantial group (**22.0%**) is hesitant to fully trust the AI, suggesting a default bias towards their own established knowledge or intuition.",
                     'Not at all likely': "Nearly one-fifth (**19.5%**) completely rejects the AI's divergent answer, indicating a strong preference for personal opinion or a lack of trust in the AI's ability to challenge it.",
                     'Very likely': "A smaller segment (**12.2%**) has high confidence in the AI, suggesting they believe the AI's data-driven answer is superior to their own opinion.",
-                    'Extremely likely': "Only a tiny fraction (**2.4%**) expresses complete and unwavering trust in the AI, even when it contradicts their own view."
-                }
-            }
-        ];
-{
-                {
-    id: 'job-replacement-sentiment',
-    title: 'Do you think Artificial Intelligence will eventually replace jobs?',
-    labels: ['Some jobs', 'Yes', 'Maybe', 'No'],
-    data: [70.5, 11.4, 11.4, 6.8],
-    summaries: {
-        'Some jobs': "A dominant majority (70.5%) believes AI will replace specific roles rather than the entire workforce, suggesting a shift toward task-specific automation.",
-        'Yes': "A portion (11.4%) expects a total overhaul of the job market, viewing AI as a direct replacement for human labor across the board.",
-        'Maybe': "Equivalent to the 'Yes' group, (11.4%) remains uncertain, reflecting the unpredictable nature of AI evolution.",
-        'No': "A small optimistic minority (6.8%) believes human jobs are safe from AI replacement."
+                    'Extremely likely': "Only a tiny fraction (**2.4%**) expresses complete and unwavering trust in the AI, even when it contradicts their own view." 
     }
 },
 {
@@ -542,7 +528,7 @@
             // Populate the modal content
             document.getElementById('modal-question').innerText = `Question: ${questionData.title}`;
             document.getElementById('modal-response-title').innerText = label;
-            document.getElementById('modal-percentage').innerText = percentage;
+            document.getElementById('modal-percentage').innerText = percentage + '%';
             document.getElementById('modal-summary').innerHTML = formatSummary(summaryText);
             
             // Show modal with animation
@@ -601,94 +587,90 @@
             chartContainer.appendChild(card);
 
             // 4. Initialize Chart.js
-            const chartInstance = new Chart(canvas, {
-                type: 'bar',
-                data: {
-                    labels: dataObj.labels,
-                    datasets: [{
-                        data: dataObj.data,
-                        backgroundColor: ACCENT_COLOR,
-                        borderColor: ACCENT_COLOR,
-                        hoverBackgroundColor: HOVER_COLOR,
-                        borderWidth: 1,
-                        borderRadius: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    indexAxis: 'y', // Horizontal bars
-                    onClick: (e) => {
-                        const activeElements = chartInstance.getElementsAtEventForMode(e, 'nearest', { intersect: true }, true);
-                        if (activeElements.length > 0) {
-                            const firstElement = activeElements[0];
-                            const dataIndex = firstElement.index;
-                            const datasetIndex = firstElement.datasetIndex;
+const chartInstance = new Chart(canvas, {
+    type: 'bar',
+    data: {
+        labels: dataObj.labels,
+        datasets: [{
+            data: dataObj.data,
+            backgroundColor: ACCENT_COLOR,
+            borderColor: ACCENT_COLOR,
+            hoverBackgroundColor: HOVER_COLOR,
+            borderWidth: 1,
+            borderRadius: 4
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        indexAxis: 'y', // Horizontal bars
+        onClick: (e, elements, chart) => {
+            // This is the clean, working logic
+            if (elements.length > 0) {
+                const idx = elements[0].index;
+                const label = chart.data.labels[idx];
+                const val = chart.data.datasets[0].data[idx];
+                const summaryText = dataObj.summaries[label];
 
-                            const label = chartInstance.data.labels[dataIndex];
-                            const percentage = chartInstance.data.datasets[datasetIndex].data[dataIndex];
-                            const summaryText = dataObj.summaries[label];
-
-                            if (summaryText) {
-                                openModal(dataObj, label, percentage, summaryText);
-                            } else {
-                                console.log(`No summary available for: ${label}`);
-                            }
+                if (summaryText) {
+                    openModal(dataObj, label, val, summaryText);
+                } else {
+                    console.log(`No summary available for: ${label}`);
+                }
+            }
+        },
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        let label = context.dataset.label || '';
+                        if (label) {
+                            label += ': ';
                         }
-                    },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let label = context.dataset.label || '';
-                                    if (label) {
-                                        label += ': ';
-                                    }
-                                    if (context.parsed.x !== null) {
-                                        label += context.parsed.x.toFixed(1) + '%';
-                                    }
-                                    return label;
-                                }
-                            }
+                        if (context.parsed.x !== null) {
+                            label += context.parsed.x.toFixed(1) + '%';
                         }
-                    },
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: {
-                                color: TEXT_LIGHT,
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            },
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)',
-                                borderColor: TEXT_LIGHT
-                            },
-                            title: {
-                                display: true,
-                                text: 'Percentage of Respondents',
-                                color: TEXT_LIGHT,
-                                font: { weight: 'bold' }
-                            }
-                        },
-                        y: {
-                            ticks: {
-                                color: TEXT_LIGHT
-                            },
-                            grid: {
-                                display: false
-                            },
-                            border: {
-                                color: TEXT_LIGHT
-                            }
-                        }
+                        return label;
                     }
                 }
-            });
-        };
+            }
+        },
+        scales: {
+            x: {
+                beginAtZero: true,
+                max: 100,
+                ticks: {
+                    color: TEXT_LIGHT,
+                    callback: function(value) {
+                        return value + '%';
+                    }
+                },
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.1)',
+                    borderColor: TEXT_LIGHT
+                },
+                title: {
+                    display: true,
+                    text: 'Percentage of Respondents',
+                    color: TEXT_LIGHT,
+                    font: { weight: 'bold' }
+                }
+            },
+            y: {
+                ticks: {
+                    color: TEXT_LIGHT
+                },
+                grid: {
+                    display: false
+                },
+                border: {
+                    color: TEXT_LIGHT
+                }
+            }
+        }
+    }
+});
 
         // Initialize all charts when the script loads
         document.addEventListener('DOMContentLoaded', () => {
