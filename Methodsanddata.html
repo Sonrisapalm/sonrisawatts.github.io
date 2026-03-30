@@ -62,21 +62,18 @@
     </style>
 </head>
 <body class="p-4 md:p-8 pb-20"> <div class="max-w-7xl mx-auto">
-     <footer class="mt-20 border-t border-zinc-800/50">
-        <nav class="py-12 px-6 md:px-12 flex flex-wrap justify-center gap-y-6 md:gap-x-12 text-base md:text-lg">
-            <a href="index.html" class="text-zinc-400 hover:text-orange-400 transition-all duration-200 transform hover:scale-105">Home</a>
-            <a href="about.html" class="text-zinc-400 hover:text-orange-400 transition-all duration-200 transform hover:scale-105">About</a>
-            <a href="Methodsanddata.html" class="text-zinc-400 hover:text-orange-400 transition-all duration-200 transform hover:scale-105">Methods and Data</a>
-            <a href="DataAnalysisquantitative.html" class="text-zinc-400 hover:text-orange-400 transition-all duration-200 transform hover:scale-105">Publications</a>
-            <a href="ethicalguidelines.html" class="text-zinc-400 hover:text-orange-400 transition-all duration-200 transform hover:scale-105">Ethics</a>
-            <a href="AI-Perception-Briefs.html" class="text-zinc-400 hover:text-orange-400 transition-all duration-200 transform hover:scale-105">Research</a>
-            <a href="contact.html" class="text-zinc-400 hover:text-orange-400 transition-all duration-200 transform hover:scale-105">Contact</a>
+      <!-- Navigation Links -->
+        <nav class="absolute bottom-0 left-0 right-0 py-4 px-6 md:px-12 flex flex-wrap justify-center md:space-x-8 space-x-4 text-base md:text-xl lg:text-2xl">
+            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
+            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
+            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
+            <a href="DataAnalysisquantitative.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Publications</a>
+            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
+            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
+            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
         </nav>
-        <p class="text-center text-[10px] tracking-[0.5em] text-zinc-600 uppercase pb-12">
-            Emotion Encoded © 2026
-        </p>
-    </footer>
-    
+    </header>
+
         <div id="article_section" class="bg-card-dark rounded-2xl p-6 md:p-10 mb-12 shadow-2xl">
             <article>
                 <header class="text-center mb-10 flex flex-col items-center">
@@ -344,11 +341,10 @@
                     'Maybe': "A group (**12.5%**) is neutral or unsure, perhaps viewing LLMs as useful but not essential.",
                     "I wouldn't care": "A smaller, indifferent segment (**10.0%**) that is unaffected by the presence or absence of generative AI tools."
                 }
-            }
-            ];
+            },
 
             // --- NEW DATA ADDED BELOW ---
-const surveyData = [
+
             {
                 id: 'doctor-mistake-response',
                 title: 'Hypothetically, if your doctor missed a disease after using an AI tool, what would be your initial response?',
@@ -397,126 +393,11 @@ const surveyData = [
                     'Slightly likely': "A substantial group (**22.0%**) is hesitant to fully trust the AI, suggesting a default bias towards their own established knowledge or intuition.",
                     'Not at all likely': "Nearly one-fifth (**19.5%**) completely rejects the AI's divergent answer, indicating a strong preference for personal opinion or a lack of trust in the AI's ability to challenge it.",
                     'Very likely': "A smaller segment (**12.2%**) has high confidence in the AI, suggesting they believe the AI's data-driven answer is superior to their own opinion.",
-                    'Extremely likely': "Only a tiny fraction (**2.4%**) expresses complete and unwavering trust in the AI, even when it contradicts their own view." 
-    }
-},
-{
-    id: 'professional-responsibility',
-    title: 'Who is held responsible if an AI tool makes a mistake?',
-    labels: ['My Lawyer/Doctor', 'Both AI Dev & Professional', 'Myself', 'AI Itself'],
-    data: [82.9, 9.8, 4.9, 2.4],
-    summaries: {
-        'My Lawyer/Doctor': "The vast majority (82.9%) places the burden of proof on the human professional, indicating that users view AI as a tool that does not absolve experts of their duty of care.",
-        'Both AI Dev & Professional': "A segment (9.8%) believes responsibility should be shared between the software creators and the end-user professional.",
-        'Myself': "A few (4.9%) accept personal risk when agreeing to use AI-assisted services.",
-        'AI Itself': "Only a tiny fraction (2.4%) views the algorithm as a sentient entity capable of carrying its own legal or moral responsibility."
-    }
-},
-{
-    id: 'surgeon-vs-nurse-ai',
-    title: 'Who would you trust more: A Surgeon or a Nurse using AI?',
-    labels: ['Nurse using AI', 'Surgeon using AI'],
-    data: [54.5, 45.5],
-    summaries: {
-        'Nurse using AI': "Interestingly, more than half (54.5%) trust the nurse-AI combo. This may suggest that respondents view nurses as more likely to use AI as a collaborative safety check rather than a dominant authority.",
-        'Surgeon using AI': "A large portion (45.5%) prefers the surgeon, likely correlating surgical expertise with the ability to better oversee complex algorithmic outputs."
-    }
-},
-{
-    id: 'legal-ai-trust',
-    title: 'Legal AI Preference: AI Jury vs. AI Prosecutor',
-    labels: ['AI Prosecutor', 'AI Jury', 'Need Human Element'],
-    data: [60.0, 30.0, 10.0],
-    summaries: {
-        'AI Prosecutor': "The majority (60.0%) trusts AI more in a prosecutorial role, perhaps viewing it as a more objective way to handle evidence and case building.",
-        'AI Jury': "Thirty percent (30.0%) would trust an AI jury, potentially seeking to eliminate human bias from the verdict process.",
-        'Need Human Element': "A firm (10.0%) maintains that judging is a fundamentally human trait that cannot be outsourced to a machine."
-    }
-},
-{
-    id: 'verification-frequency',
-    title: 'How often do users verify AI recommendations with a human expert?',
-    labels: ['Sometimes', 'Always', 'Rarely', 'Never'],
-    data: [42.5, 40.0, 10.0, 2.5],
-    summaries: {
-        'Sometimes': "The largest group (42.5%) selectively verifies AI data, implying a high level of trust that is only checked when a result seems 'off'.",
-        'Always': "A strong segment (40.0%) refuses to trust AI blindly, insisting on human oversight for every single recommendation.",
-        'Rarely': "A small group (10.0%) has transitioned to almost full reliance on the tool's accuracy.",
-        'Never': "Only (2.5%) of respondents trust the machine implicitly without any human verification."
-    }
-},
-{
-    id: 'confidential-advice-trust',
-    title: 'Would you trust an AI more than a human for confidential advice?',
-    labels: ['No', 'Depends', 'Yes', 'Maybe'],
-    data: [48.8, 31.7, 12.2, 7.3],
-    summaries: {
-        'No': "Nearly half (48.8%) reject AI for sensitive personal guidance, reinforcing that confidentiality is tied to human empathy and trust.",
-        'Depends': "A large group (31.7%) is open to it depending on the topic, suggesting AI is seen as a safe space for non-judgmental facts.",
-        'Yes': "A smaller segment (12.2%) actually prefers the AI, perhaps valuing its impartiality or lack of social bias.",
-        'Maybe': "The remaining group is still weighing the trade-offs of machine privacy versus human understanding."
-    }
-},
-{
-    id: 'legal-advice-conflict',
-    title: 'If AI legal advice conflicts with your lawyer, how would you respond?',
-    labels: ['Discuss both options', 'Seek a second opinion', 'Follow lawyer only', 'Combine both'],
-    data: [51.2, 34.1, 9.8, 4.9],
-    summaries: {
-        'Discuss both options': "The majority (51.2%) would use the AI insight as a conversation starter with their lawyer, treating AI as a secondary research tool.",
-        'Seek a second opinion': "Over a third (34.1%) would seek a third party to break the tie, showing how AI generates doubt in professional human advice.",
-        'Follow lawyer only': "Surprisingly, less than (10%) would automatically dismiss the AI, showing that people give significant weight to algorithmic strategies.",
-        'Combine both': "A tiny fraction (4.9%) would try to merge the two paths into a single legal strategy."
-    }
-},
-{
-    id: 'medical-advice-conflict',
-    title: 'If AI medical advice conflicts with your doctor, what would you do?',
-    labels: ['Discuss both options', 'Seek a second opinion', 'Follow doctor only', 'Combine both'],
-    data: [41.5, 31.7, 17.1, 9.8],
-    summaries: {
-        'Discuss both options': "Mirroring the legal field, (41.5%) prioritize open dialogue between the machine's data and the doctor's experience.",
-        'Seek a second opinion': "Nearly (31.7%) would ask another specialist, treating the AI suggestion as a credible alternative.",
-        'Follow doctor only': "At (17.1%), respondents are nearly twice as likely to trust their doctor over an AI than they are to trust their lawyer over an AI.",
-        'Combine both': "A small group (9.8%) would attempt to integrate both treatments."
-    }
-},
-{
-    id: 'disaster-prediction-response',
-    title: 'How would you respond to an AI natural disaster prediction?',
-    labels: ['Monitor both AI & Human', 'Wait for Authorities', 'Evacuate based on AI', 'I wouldn\'t use it'],
-    data: [56.1, 26.8, 4.9, 4.9],
-    summaries: {
-        'Monitor both AI & Human': "Most people (56.1%) would use AI as an early warning system but wouldn't move until they saw human experts confirm it.",
-        'Wait for Authorities': "About a quarter (26.8%) only trust official human channels during life-threatening events.",
-        'Evacuate based on AI': "Only (4.9%) have enough faith in algorithmic modeling to leave their homes without human confirmation.",
-        'I wouldn\'t use it': "An equal portion remains totally skeptical of AI's role in emergency management."
-    }
-},
-{
-    id: 'industry-trust-leader',
-    title: 'Which industry do you trust AI the most in?',
-    labels: ['Research Only', 'No Trust', 'Education', 'Finance'],
-    data: [48.8, 17.1, 12.2, 9.8],
-    summaries: {
-        'Research Only': "AI is viewed primarily as a search and data tool (48.8%), rather than a decision-maker in specialized fields.",
-        'No Trust': "A firm (17.1%) has zero trust in AI across any major industry, representing the segment of 'AI Skeptics'.",
-        'Education': "Learning and tutoring (12.2%) is seen as a safe and effective application for the technology.",
-        'Finance': "Even with high automation, only (9.8%) trust AI most in finance, likely due to the high personal stakes involved."
-    }
-},
-{
-    id: 'fraud-vs-loan-preference',
-    title: 'Trust: AI Fraud Detector vs. AI Loan Officer',
-    labels: ['AI Fraud Detector', 'AI Loan Officer'],
-    data: [92.6, 7.4],
-    summaries: {
-        'AI Fraud Detector': "An overwhelming (92.6%) trust AI to find patterns of fraud, likely because this task is seen as purely mathematical.",
-        'AI Loan Officer': "Less than (7.4%) want AI deciding their financial future, suggesting people find the loan process requires human judgment that machines lack."
-    }
-}
-    
-];   
+                    'Extremely likely': "Only a tiny fraction (**2.4%**) expresses complete and unwavering trust in the AI, even when it contradicts their own view."
+                }
+            }
+        ];
+
         // Utility to replace markdown bold syntax with HTML for the modal
         const formatSummary = (text) => {
             return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -529,7 +410,7 @@ const surveyData = [
             // Populate the modal content
             document.getElementById('modal-question').innerText = `Question: ${questionData.title}`;
             document.getElementById('modal-response-title').innerText = label;
-            document.getElementById('modal-percentage').innerText = percentage + '%';
+            document.getElementById('modal-percentage').innerText = percentage;
             document.getElementById('modal-summary').innerHTML = formatSummary(summaryText);
             
             // Show modal with animation
@@ -588,87 +469,94 @@ const surveyData = [
             chartContainer.appendChild(card);
 
             // 4. Initialize Chart.js
-const chartInstance = new Chart(canvas, {
-    type: 'bar',
-    data: {
-        labels: dataObj.labels,
-        datasets: [{
-            data: dataObj.data,
-            backgroundColor: ACCENT_COLOR,
-            borderColor: ACCENT_COLOR,
-            hoverBackgroundColor: HOVER_COLOR,
-            borderWidth: 1,
-            borderRadius: 4
-        }]
-    },
-   options: {
+            const chartInstance = new Chart(canvas, {
+                type: 'bar',
+                data: {
+                    labels: dataObj.labels,
+                    datasets: [{
+                        data: dataObj.data,
+                        backgroundColor: ACCENT_COLOR,
+                        borderColor: ACCENT_COLOR,
+                        hoverBackgroundColor: HOVER_COLOR,
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    indexAxis: 'y', 
-                    onClick: (e, elements, chart) => {
-                        if (elements.length > 0) {
-                            const idx = elements[0].index;
-                            const label = chart.data.labels[idx];
-                            const val = chart.data.datasets[0].data[idx];
+                    indexAxis: 'y', // Horizontal bars
+                    onClick: (e) => {
+                        const activeElements = chartInstance.getElementsAtEventForMode(e, 'nearest', { intersect: true }, true);
+                        if (activeElements.length > 0) {
+                            const firstElement = activeElements[0];
+                            const dataIndex = firstElement.index;
+                            const datasetIndex = firstElement.datasetIndex;
+
+                            const label = chartInstance.data.labels[dataIndex];
+                            const percentage = chartInstance.data.datasets[datasetIndex].data[dataIndex];
                             const summaryText = dataObj.summaries[label];
 
                             if (summaryText) {
-                                openModal(dataObj, label, val, summaryText);
+                                openModal(dataObj, label, percentage, summaryText);
+                            } else {
+                                console.log(`No summary available for: ${label}`);
                             }
                         }
                     },
                     plugins: {
-            legend: { display: false },
-            tooltip: {
-                callbacks: {
-                    label: function(context) {
-                        let label = context.dataset.label || '';
-                        if (label) {
-                            label += ': ';
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        label += context.parsed.x.toFixed(1) + '%';
+                                    }
+                                    return label;
+                                }
+                            }
                         }
-                        if (context.parsed.x !== null) {
-                            label += context.parsed.x.toFixed(1) + '%';
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                color: TEXT_LIGHT,
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)',
+                                borderColor: TEXT_LIGHT
+                            },
+                            title: {
+                                display: true,
+                                text: 'Percentage of Respondents',
+                                color: TEXT_LIGHT,
+                                font: { weight: 'bold' }
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: TEXT_LIGHT
+                            },
+                            grid: {
+                                display: false
+                            },
+                            border: {
+                                color: TEXT_LIGHT
+                            }
                         }
-                        return label;
                     }
                 }
-            }
-        },
-        scales: {
-            x: {
-                beginAtZero: true,
-                max: 100,
-                ticks: {
-                    color: TEXT_LIGHT,
-                    callback: function(value) {
-                        return value + '%';
-                    }
-                },
-                grid: {
-                    color: 'rgba(255, 255, 255, 0.1)',
-                    borderColor: TEXT_LIGHT
-                },
-                title: {
-                    display: true,
-                    text: 'Percentage of Respondents',
-                    color: TEXT_LIGHT,
-                    font: { weight: 'bold' }
-                }
-            },
-            y: {
-                ticks: {
-                    color: TEXT_LIGHT
-                },
-                grid: {
-                    display: false
-                },
-                border: {
-                    color: TEXT_LIGHT
-                }
-            }
-        }
-    }
-});
+            });
+        };
 
         // Initialize all charts when the script loads
         document.addEventListener('DOMContentLoaded', () => {
