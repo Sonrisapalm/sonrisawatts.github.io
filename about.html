@@ -3,224 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archive | Emotion Encoded</title>
+    <title>Sonrisa Watts | Private Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --accent: #2dd4bf;
-            --bg: #030712;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
-        }
-
-        body {
-            background-color: var(--bg);
-            color: #f9fafb;
-            font-family: 'Inter', sans-serif;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #000; 
+            color: #fff; 
             margin: 0;
-            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        /* NAVIGATION BAR STYLE */
-        .nav-item {
-            color: rgba(255,255,255,0.4);
-            text-decoration: none;
-            font-size: 10px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
-            font-weight: 400;
-        }
-        .nav-item:hover { 
-            color: #fff; 
-            letter-spacing: 0.4em; 
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 1px;
+            background: #fff; width: 0%; z-index: 10001;
         }
 
-        .nav-active {
-            color: var(--accent);
-            border-bottom: 1px solid var(--accent);
+        #custom-cursor {
+            width: 12px; height: 12px; background: #fff; border-radius: 50%;
+            position: fixed; pointer-events: none; z-index: 9999;
+            mix-blend-mode: difference; transition: transform 0.3s ease;
+            display: none;
         }
-
-        /* ARCHIVE STYLES */
-        .archive-container {
-            max-width: 850px;
-            margin: 60px auto 100px auto;
-            padding: 0 20px;
-        }
-
-        .glass-panel {
-            background: var(--glass);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid var(--border);
-            border-radius: 40px;
-            padding: clamp(2rem, 8vw, 5rem);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
-        }
+        @media (min-width: 1024px) { #custom-cursor { display: block; } }
 
         .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+            opacity: 0; transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            align-items: start;
+            grid-auto-flow: dense;
+        }
+        
+        @media (min-width: 768px) { 
+            .archive-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } 
+        }
+        @media (min-width: 1024px) { 
+            .archive-grid { grid-template-columns: repeat(4, 1fr); gap: 3rem; } 
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .media-card {
+            position: relative; overflow: hidden; width: 100%;
+            background: #0a0a0a; border-radius: 2px;
+            transition: all 0.5s ease;
         }
 
-        .tag {
-            font-size: 10px;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: var(--accent);
-            display: block;
-            margin-bottom: 12px;
+        .media-card img, .media-card video {
+            width: 100%; height: 100%; display: block; object-fit: cover;
         }
 
-        h1 {
-            font-size: clamp(2.5rem, 10vw, 4rem);
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            line-height: 1;
-            margin-bottom: 40px;
-            background: linear-gradient(to bottom right, #fff 40%, rgba(255,255,255,0.4));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .span-2 { grid-column: span 2; }
+        .row-2 { grid-row: span 2; }
+
+        .video-feature-box {
+            grid-column: span 2;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px; 
+            padding: 18px 15px;
+            display: flex; flex-direction: column; gap: 10px;
+            margin: 5px 0;
         }
 
-        .highlight-box {
-            background: rgba(45, 212, 191, 0.04);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 20px 20px 0;
-            padding: 35px;
-            margin: 50px 0;
+        .nav-link {
+            letter-spacing: 0.5em; text-transform: uppercase;
+            font-size: 9px; color: rgba(255,255,255,0.4);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover { color: #fff; }
+
+        #zoomModal {
+            display: none; position: fixed; inset: 0;
+            background: #000; z-index: 10000;
+            justify-content: center; align-items: center;
         }
 
-        .archive-entry-meta {
-            font-size: 10px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.3);
-            margin-bottom: 20px;
-            display: block;
+        .video-scroll-container {
+            display: flex; overflow-x: auto; gap: 12px;
+            padding-bottom: 5px; scrollbar-width: none;
+        }
+        .video-scroll-container::-webkit-scrollbar { display: none; }
+
+        .mini-video-card {
+            flex: 0 0 140px; aspect-ratio: 9/16;
+            background: #000; border-radius: 10px; overflow: hidden;
         }
 
-        p {
-            margin-bottom: 28px;
-            color: rgba(255,255,255,0.75);
-            font-size: 1.05rem;
-            text-align: left;
-        }
-
-        .disclaimer {
-            font-size: 0.85rem;
-            color: #6b7280;
-            border-top: 1px solid var(--border);
-            padding-top: 40px;
-            margin-top: 80px;
-            line-height: 1.8;
-        }
-
-        .glow-spot {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(45, 212, 191, 0.07) 0%, transparent 70%);
-            top: -250px;
-            right: -200px;
-            z-index: -1;
+        /* Fixed logic to prevent overlapping */
+        .featured-image {
+            grid-column: span 2;
+            z-index: 10;
+            position: relative;
         }
     </style>
 </head>
 <body>
+    <div id="progress-bar"></div>
+    <div id="custom-cursor"></div>
 
-    <nav class="reveal active" style="
-        display: flex; 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        gap: 30px; 
-        padding: 40px 20px;
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-    ">
-        <a href="index.html" class="nav-item">Home</a>
-        <a href="about.html" class="nav-item nav-active">About</a>
-        <a href="Methodsanddata.html" class="nav-item">Methods</a>
-        <a href="DataAnalysisquantitative.html" class="nav-item">PrePrint</a>
-        <a href="ethicalguidelines.html" class="nav-item">Ethics</a>
-        <a href="AI-Perception-Briefs.html" class="nav-item">Findings</a>
-        <a href="contact.html" class="nav-item">Contact</a>
+    <nav class="flex justify-center items-center space-x-6 py-10 reveal">
+        <div class="flex space-x-4">
+            <a href="index.html" class="text-white border-b border-white pb-1 text-[10px] tracking-widest uppercase">01</a>
+            <a href="page2.html" class="text-zinc-500 hover:text-white text-[10px] tracking-widest uppercase transition-all">02</a>
+            <a href="page3.html" class="text-zinc-500 hover:text-white text-[10px] tracking-widest uppercase transition-all">03</a>
+        </div>
     </nav>
 
-    <div class="archive-container">
-        
-        <header class="reveal" style="margin-bottom: 80px; text-align: left;">
-            <span class="tag">Founder & Principal Researcher</span>
-            <h1>Sonrisa Watts.</h1>
-            <p style="font-size: 1.2rem; color: #9ca3af; max-width: 650px;">
-                Hi! I’m Sonrisa Watts, 24 years old from the beautiful island of St. Kitts and Nevis. I founded Emotion Encoded in June 2025 to investigate AI integration and adoption through the lenses of cognitive bias, psychological resistance, and emotional reasoning.
-            </p>
-        </header>
+    <header class="pt-10 pb-16 px-6 text-center reveal">
+        <h1 class="text-3xl md:text-6xl font-black tracking-tighter uppercase">SONRISA WATTS</h1>
+        <p class="text-[8px] tracking-[1em] text-zinc-600 uppercase mt-4">Private Archive / Blog 01</p>
+    </header>
 
-        <div class="glass-panel reveal">
-            <div class="glow-spot"></div>
+    <main class="max-w-[1600px] mx-auto px-4 pb-40">
+        <div class="archive-grid">
             
-            <span class="archive-entry-meta">Personal Archive // Foundation & Choice // No. 001</span>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts52.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card span-2 reveal" onclick="openZoom(this)"><img src="images/2025-12-03-11-46-59-873.jpg" alt="Sonrisa Watts"></div>
             
-            <p>Sonrisa was born on December 13, 2000, in St. Kitts and Nevis. Growing up in Conaree, her early years were defined by a family that poured everything they had into her growth. Her father, a teacher and skills trainer, has always been her rock from childhood to adulthood. She still relies on the lessons from their long beach walks and morning meditations. He taught her how to treat people, the importance of exercise, of communication, of love, of finding the right mental spaces, of teachings, and how to stay involved in the world around her. He did not just raise her; he shaped her perspective.</p>
-
-            <p>Her mother invested heavily into Sonrisa, ensuring she had the space to find her own identity through piano, dance, and modeling. Their relationship would be described as inseparable. Her teachings about the universe, about making decisions, and about staying resilient in this world has always been the topic of conversation. Both parents simply wanted the best for her. Her parents were most definitely her foundation and she constantly quotes, "I owe them the world."</p>
-
-            <p>However, when Sonrisa was around 12 or 13, her world began to shift when her parents divorced. It was a difficult transition that required a strength she did not know she had yet. Looking back, it was only the beginning of what life had in store.</p>
-
-            <p>Fast forward to 2025. At 24 years old, on Christmas Day, Sonrisa faced a deeply traumatic and violent experience while walking through town to go home. In the aftermath, she felt she could not open up to anyone. She was left with two choices: let the weight of the trauma pull her into depression, or find a way to move through the pain. She chose the latter. To distract herself and begin the process of healing, she threw herself into research. She chose to keep her mind busy and her spirit focused. That decision to turn internal pain into external action was the real start of her independent work.</p>
-
-            <div class="highlight-box">
-                <span style="font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 15px;">The Research Catalyst</span>
-                <p style="color: #fff; font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;">
-                    During this time, while using AI mental health chatbots, Sonrisa found them to be empathetic towards her only once. It felt cold. It managed to give the illusion of making her feel like it cared, although it was just a machine. After spending the 3 to 4 years of her bachelor's degree not knowing about AI for any type of automation, she was introduced to it in early 2025 when trying to fix a bad car deal. 
-                </p>
-                <p style="color: #fff; font-size: 1.15rem; font-weight: 600; line-height: 1.6;">
-                    She realized how convincing it was, that even when it hallucinated case laws, it still managed to sound as if it knew exactly what it was talking about. Then she wondered, "What would be the implications of this type of AI being integrated into high stakes fields like medicine, law, finance, etc.?" That is when it hit her that she had a question that needed solving.
-                </p>
+            <div class="video-feature-box reveal">
+                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Live Snapshots</span>
+                <div class="video-scroll-container">
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260120-WA0027.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20251203_053441_483.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250614-WA0030.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260104-WA0024.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisa-wattsupdated.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250614-WA0028.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260131-WA0011.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20250712-WA0022.mp4.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/IMG_20260314_115502_191 (1).jpg" alt="Sonrisa Watts"></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20251024-WA0041.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID-20260131-WA0009.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                </div>
             </div>
 
-            <p style="letter-spacing: 0.2em; font-size: 0.75rem; color: var(--accent); font-weight: 800; margin-top: 40px;">TO BE CONTINUED...</p>
-
-            <div class="disclaimer">
-                <p style="font-size: 0.85rem; color: #4b5563; margin-bottom: 10px;">
-                    Disclaimer: These research briefs summarize findings from interviews and surveys conducted as part of ongoing research. They have not been peer reviewed. The content is shared openly to foster transparency and public understanding.
-                </p>
-                <p style="font-size: 0.85rem; color: #9ca3af; font-weight: 600;">
-                    I am now seeking to expand my research experience after recently graduating with a BSc in Psychology from UWI.
-                </p>
+            <div class="media-card reveal featured-image" onclick="openZoom(this)">
+                <img src="images/update.jpg" alt="Sonrisa Watts" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
             </div>
+
+            <div class="mini-video-card" onclick="openZoom(this)"><img src="images/sonrisawatts50.jpg" alt="Sonrisa Watts"></div>
+
+            <div class="media-card reveal featured-image" onclick="openZoom(this)">
+                <img src="images/sonrisawatts20.jpg" alt="Sonrisa Watts" style="border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            </div>
+
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew.jpg" alt="Sonrisa Watts"></div>
+
+            <div class="video-feature-box reveal">
+                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Natural Hair Care</span>
+                <div class="video-scroll-container">
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/sonrisawatts11.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><img src="images/hair1.jpg" alt="Sonrisa Watts"></div>
+                </div>
+            </div>
+            
+            <div class="media-card row-2 reveal" onclick="openZoom(this)"><video src="images/sonrisawatts.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts53.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-57-05-769.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts10.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0017.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawattshair.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-wattsnew2.jpg" alt="Sonrisa Watts"></div>
+
+            <div class="video-feature-box reveal">
+                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">March Snapshots & Throwbacks</span>
+                <div class="video-scroll-container">
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20250621_152444_149.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20251203_053441_483.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_080643_207.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_080706_439.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082624_031.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                </div>
+            </div>
+
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-04-22-56-815.jpg" alt="Sonrisa Watts"></div>
+
+            <div class="video-feature-box reveal">
+                <span class="text-[8px] uppercase tracking-[0.4em] text-zinc-500 mb-3 block">Archive Clippings</span>
+                <div class="video-scroll-container">
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082630_816.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082637_797.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                    <div class="mini-video-card" onclick="openZoom(this)"><video src="images/VID_20260322_082646_274.mp4" title="Sonrisa Watts" muted loop autoplay playsinline></video></div>
+                </div>
+            </div>
+
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/VID_20260322_081947_139.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts1.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisa-wattsupdated.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm2.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/risapalm3.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonriswatts (3).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-43-28.jpeg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-12-39-34-840.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG_20260314_115826_533.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_10-52-00 (2).jpeg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0041.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-02-48-56-974.jpg" alt="Sonrisa Watts"></div>
+            
+            <div class="media-card reveal flex items-center justify-center border border-zinc-900 bg-zinc-950 p-4">
+                <p class="text-[9px] leading-relaxed tracking-widest text-zinc-400 italic text-center">"I never know what to do with my hair"</p>
+            </div>
+
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risawatts.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-18_01-50-51.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-09-16_21-59-45.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts78.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-09-16_22-11-27.jpeg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts51.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts12.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts093.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts232.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts249.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts75.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts21.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts22.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts56.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts0.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonriswatts (2).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><video src="images/sonrisawatts1.mp4" title="Sonrisa Watts" autoplay loop muted playsinline></video></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/safiapalm.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/safiapalm2.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/risapalm1.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0011.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0000.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-00-04-06-506.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251018-WA0042.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-03-08-42-04-558.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts7 (1).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-02-23-09-29-310.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-09-41-06-769.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts7 (2).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisa-watts1.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-03-11-04-432.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-10-23_04-38-12.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG_20260314_115739_884 (1).jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/IMG-20251122-WA0001.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_1720759104019781841.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_5247651368015219800.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/FB_IMG_1740100769847.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/2025-12-01-00-06-25-295.jpg" alt="Sonrisa Watts"></div>
+
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update 3.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/update2.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/495383937_23874224295534835_237346029115264525_n.jpg" alt="Sonrisa Watts"></div>
+            <div class="media-card reveal" onclick="openZoom(this)"><img src="images/sonrisawatts24.jpg" alt="Sonrisa Watts"></div>
         </div>
 
-        <footer style="text-align: center; margin-top: 80px; border-top: 1px solid var(--border); padding-top: 40px;">
-            <p style="font-size: 10px; letter-spacing: 0.2em; color: rgba(255,255,255,0.2); text-transform: uppercase;">
-                &copy; 2026 EMOTION ENCODED &mdash; ALL RIGHTS RESERVED.
-            </p>
-        </footer>
+        <nav class="mt-40 flex justify-center space-x-12 reveal">
+            <a href="about.html" class="nav-link">Bio</a>
+            <a href="Methodsanddata.html" class="nav-link">Methods</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </main>
 
+    <div id="zoomModal" onclick="this.style.display='none'">
+        <div id="modalContent" class="p-4 flex justify-center items-center"></div>
     </div>
 
     <script>
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', e => {
+            if(cursor) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            }
+        });
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function openZoom(el) {
+            const modal = document.getElementById('zoomModal');
+            const content = document.getElementById('modalContent');
+            const sourceMedia = el.querySelector('img, video');
+            if(!sourceMedia) return;
+            const media = sourceMedia.cloneNode(true);
+            if(media.tagName === 'VIDEO') { media.controls = true; media.autoplay = true; }
+            content.innerHTML = '';
+            content.appendChild(media);
+            modal.style.display = 'flex';
+        }
     </script>
 </body>
 </html>
