@@ -424,145 +424,83 @@ body {
 .video-scroll-container::-webkit-scrollbar {
     display: none;
 }
-    /* --- EXPENSIVE FLOATING ROBOT --- */
-<style>
-    /* Main fixed container that sits in the corner */
+   
+
     .robot-terminal {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 320px; /* Wider to hold the text inside */
-        height: auto;
-        z-index: 999999; /* Stay on top of other content */
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 300px;
+        z-index: 9999999 !important;
         cursor: pointer;
-        text-decoration: none; /* Remove underline from link */
-        animation: robotTerminalFloat 4s ease-in-out infinite;
-        transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-        font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        text-decoration: none !important;
+        animation: robotFloat 4s ease-in-out infinite;
+        font-family: sans-serif;
     }
 
-    /* Subtle float effect */
-    @keyframes robotTerminalFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-
-    /* The glowing antenna at the top */
-    .robot-terminal::before {
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 12px;
-        height: 12px;
-        background: #2dd4bf; /* Your teal accent */
-        border-radius: 50%;
-        box-shadow: 0 0 20px #2dd4bf;
-        z-index: 10;
-        opacity: 0.8;
-        animation: terminalPulse 3s infinite;
-    }
-
-    /* Antenna signal pulse */
-    @keyframes terminalPulse {
-        0%, 100% { opacity: 0.8; box-shadow: 0 0 15px #2dd4bf; }
-        50% { opacity: 1; box-shadow: 0 0 35px #2dd4bf; }
-    }
-
-    /* The main "expensive" glassmorphic body */
     .robot-terminal-body {
-        width: 100%;
-        background: rgba(15, 15, 20, 0.85); /* Slightly darker for readability */
+        background: rgba(10, 10, 15, 0.9);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         border: 1px solid rgba(45, 212, 191, 0.4);
-        border-radius: 25px; /* Rounded corners for that modern feel */
-        padding: 25px;
-        box-shadow: 0 15px 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(45, 212, 191, 0.05);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.8);
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        overflow: hidden;
-    }
-
-    /* Glow effect on hover */
-    .robot-terminal:hover .robot-terminal-body {
-        border-color: #2dd4bf;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(45, 212, 191, 0.2);
-    }
-
-    /* Container for the robot eyes */
-    .terminal-eyes {
-        display: flex;
         gap: 12px;
-        justify-content: flex-start;
-        opacity: 0.7;
     }
 
-    /* The thin digital eyes */
-    .terminal-eye {
-        width: 15px;
-        height: 3px;
-        background: #2dd4bf;
-        border-radius: 2px;
-        box-shadow: 0 0 10px rgba(45, 212, 191, 0.8);
-        animation: terminalBlink 6s infinite;
-    }
-
-    /* Eye blink animation */
-    @keyframes terminalBlink {
-        0%, 90%, 100% { transform: scaleY(1); }
-        95% { transform: scaleY(0.1); }
-    }
-
-    /* The text content inside the robot */
-    .terminal-text {
-        font-size: 13px;
-        line-height: 1.5;
-        color: rgba(255,255,255,0.9);
-        margin: 0;
-        font-weight: 300;
-        letter-spacing: 0.02em;
-    }
-
-    /* Ensure the strong tags pop */
-    .terminal-text strong {
-        color: #fff;
-        font-weight: 600;
-    }
-
-    /* The 'Read More' type tag */
     .terminal-label {
         color: #2dd4bf;
         font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: bold;
-        display: inline-block;
         border-bottom: 1px solid rgba(45, 212, 191, 0.2);
-        padding-bottom: 5px;
-        margin-bottom: 5px;
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+        display: inline-block;
     }
+
+    .terminal-text {
+        font-size: 13px;
+        line-height: 1.4;
+        color: #e4e4e7;
+        margin: 0;
+    }
+
+    .terminal-eyes {
+        display: flex;
+        gap: 8px;
+    }
+
+    .terminal-eye {
+        width: 12px;
+        height: 3px;
+        background: #2dd4bf;
+        box-shadow: 0 0 8px #2dd4bf;
+        animation: eyeBlink 5s infinite;
+    }
+
+    @keyframes robotFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes eyeBlink { 0%, 90%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
 </style>
 
-<a href="DataAnalysisquantitative.html" class="robot-terminal" aria-label="Access Quantitative Data Analysis Portal">
+<a href="DataAnalysisquantitative.html" class="robot-terminal">
     <div class="robot-terminal-body">
-        
         <p class="terminal-text">
-            <span class="terminal-label">Data Analysis Portal</span>
-            Click to view <strong>Logistic Regression</strong>, Data Analysis, and Quantitative Data from the first preprint publication.
+            <span class="terminal-label">Data Analysis Portal</span><br>
+            Click to view <strong>Logistic Regression</strong>, Data Analysis, and Quantitative Data.
         </p>
-
         <div class="terminal-eyes">
             <div class="terminal-eye"></div>
             <div class="terminal-eye"></div>
         </div>
-        
     </div>
 </a>
-</style>
 
+    
 <script>
     // Minimal script to update the text label on hover
     const groups = document.querySelectorAll('.parish-group');
