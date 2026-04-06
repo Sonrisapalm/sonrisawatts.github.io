@@ -425,119 +425,142 @@ body {
     display: none;
 }
     /* --- EXPENSIVE FLOATING ROBOT --- */
-.robot-floater {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 120px;
-    height: 120px;
-    z-index: 1000;
-    cursor: pointer;
-    perspective: 1000px;
-    animation: robotFloat 4s ease-in-out infinite;
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
+<style>
+    /* Main fixed container that sits in the corner */
+    .robot-terminal {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 320px; /* Wider to hold the text inside */
+        height: auto;
+        z-index: 999999; /* Stay on top of other content */
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from link */
+        animation: robotTerminalFloat 4s ease-in-out infinite;
+        transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
 
-.robot-floater:hover {
-    transform: translateY(-10px) scale(1.05);
-}
+    /* Subtle float effect */
+    @keyframes robotTerminalFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
 
-/* Robot Head - Glassmorphic Base */
-.robot-head {
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50% 50% 30% 30%;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6), inset 0 0 20px rgba(45, 212, 191, 0.1);
-}
+    /* The glowing antenna at the top */
+    .robot-terminal::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 12px;
+        height: 12px;
+        background: #2dd4bf; /* Your teal accent */
+        border-radius: 50%;
+        box-shadow: 0 0 20px #2dd4bf;
+        z-index: 10;
+        opacity: 0.8;
+        animation: terminalPulse 3s infinite;
+    }
 
-/* Robot Eyes - Pulsing Teal */
-.robot-head::before, .robot-head::after {
-    content: '';
-    position: absolute;
-    top: 45px;
-    width: 20px;
-    height: 6px;
-    background: #2dd4bf; /* Teal Accent */
-    border-radius: 4px;
-    box-shadow: 0 0 20px rgba(45, 212, 191, 0.9);
-    animation: eyePulse 6s infinite;
-}
+    /* Antenna signal pulse */
+    @keyframes terminalPulse {
+        0%, 100% { opacity: 0.8; box-shadow: 0 0 15px #2dd4bf; }
+        50% { opacity: 1; box-shadow: 0 0 35px #2dd4bf; }
+    }
 
-.robot-head::before { left: 30px; }
-.robot-head::after { right: 30px; }
+    /* The main "expensive" glassmorphic body */
+    .robot-terminal-body {
+        width: 100%;
+        background: rgba(15, 15, 20, 0.85); /* Slightly darker for readability */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(45, 212, 191, 0.4);
+        border-radius: 25px; /* Rounded corners for that modern feel */
+        padding: 25px;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(45, 212, 191, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        overflow: hidden;
+    }
 
-/* The Antenna - Signal Glow */
-.robot-antenna {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 25px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 4px;
-}
+    /* Glow effect on hover */
+    .robot-terminal:hover .robot-terminal-body {
+        border-color: #2dd4bf;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(45, 212, 191, 0.2);
+    }
 
-.robot-antenna::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    background: #2dd4bf;
-    border-radius: 50%;
-    box-shadow: 0 0 25px #2dd4bf;
-    animation: signalPulse 2s infinite;
-}
+    /* Container for the robot eyes */
+    .terminal-eyes {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+        opacity: 0.7;
+    }
 
-/* Hover Tooltip (The Text Payload) */
-.robot-tooltip {
-    position: absolute;
-    bottom: 130%;
-    right: 0;
-    width: 280px;
-    background: rgba(10, 12, 16, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 20px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.4s ease;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.8);
-}
+    /* The thin digital eyes */
+    .terminal-eye {
+        width: 15px;
+        height: 3px;
+        background: #2dd4bf;
+        border-radius: 2px;
+        box-shadow: 0 0 10px rgba(45, 212, 191, 0.8);
+        animation: terminalBlink 6s infinite;
+    }
 
-.robot-floater:hover .robot-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+    /* Eye blink animation */
+    @keyframes terminalBlink {
+        0%, 90%, 100% { transform: scaleY(1); }
+        95% { transform: scaleY(0.1); }
+    }
 
-/* Animations */
-@keyframes robotFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
+    /* The text content inside the robot */
+    .terminal-text {
+        font-size: 13px;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.9);
+        margin: 0;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+    }
 
-@keyframes signalPulse {
-    0% { box-shadow: 0 0 10px rgba(45, 212, 191, 0.3); opacity: 0.5; }
-    50% { box-shadow: 0 0 30px rgba(45, 212, 191, 1); opacity: 1; }
-    100% { box-shadow: 0 0 10px rgba(45, 212, 191, 0.3); opacity: 0.5; }
-}
+    /* Ensure the strong tags pop */
+    .terminal-text strong {
+        color: #fff;
+        font-weight: 600;
+    }
 
-@keyframes eyePulse {
-    0%, 90%, 100% { transform: scaleY(1); opacity: 1; }
-    95% { transform: scaleY(0.1); opacity: 0.5; } /* Blink */
-}
+    /* The 'Read More' type tag */
+    .terminal-label {
+        color: #2dd4bf;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        display: inline-block;
+        border-bottom: 1px solid rgba(45, 212, 191, 0.2);
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+</style>
+
+<a href="DataAnalysisquantitative.html" class="robot-terminal" aria-label="Access Quantitative Data Analysis Portal">
+    <div class="robot-terminal-body">
+        
+        <p class="terminal-text">
+            <span class="terminal-label">Data Analysis Portal</span>
+            Click to view <strong>Logistic Regression</strong>, Data Analysis, and Quantitative Data from the first preprint publication.
+        </p>
+
+        <div class="terminal-eyes">
+            <div class="terminal-eye"></div>
+            <div class="terminal-eye"></div>
+        </div>
+        
+    </div>
+</a>
 </style>
 
 <script>
@@ -1512,21 +1535,7 @@ if (scrollContainer) {
     </a>
 </div>
 
-                <a href="DataAnalysisquantitative.html" class="robot-floater">
-    <div class="robot-tooltip">
-        <span style="color: #2dd4bf; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 5px;">Data Portal</span>
-        <p style="color: white; font-size: 13px; margin: 0; line-height: 1.4;">
-            Click to view <b>Logistic Regression</b>, Data Analysis, and Quantitative Data from the first preprint publication.
-        </p>
-    </div>
-    
-    <div class="robot-head">
-        <div class="antenna"></div>
-        <div class="eye"></div>
-        <div class="eye"></div>
-    </div>
-</a>
-
+           
         <!-- Bottom Images - Now more modern and with larger images on desktop -->
         <section class="w-full overflow-hidden my-12 bg-gray-800/50 p-6 rounded-3xl shadow-lg ring-2 ring-gray-700">
             <div class="flex flex-row overflow-x-auto gap-6 pb-4">
