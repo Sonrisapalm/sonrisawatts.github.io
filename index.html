@@ -424,6 +424,120 @@ body {
 .video-scroll-container::-webkit-scrollbar {
     display: none;
 }
+    /* --- EXPENSIVE FLOATING ROBOT --- */
+.robot-floater {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    z-index: 1000;
+    cursor: pointer;
+    perspective: 1000px;
+    animation: robotFloat 4s ease-in-out infinite;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.robot-floater:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* Robot Head - Glassmorphic Base */
+.robot-head {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50% 50% 30% 30%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), inset 0 0 20px rgba(45, 212, 191, 0.1);
+}
+
+/* Robot Eyes - Pulsing Teal */
+.robot-head::before, .robot-head::after {
+    content: '';
+    position: absolute;
+    top: 45px;
+    width: 20px;
+    height: 6px;
+    background: #2dd4bf; /* Teal Accent */
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.9);
+    animation: eyePulse 6s infinite;
+}
+
+.robot-head::before { left: 30px; }
+.robot-head::after { right: 30px; }
+
+/* The Antenna - Signal Glow */
+.robot-antenna {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 25px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+}
+
+.robot-antenna::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #2dd4bf;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #2dd4bf;
+    animation: signalPulse 2s infinite;
+}
+
+/* Hover Tooltip (The Text Payload) */
+.robot-tooltip {
+    position: absolute;
+    bottom: 130%;
+    right: 0;
+    width: 280px;
+    background: rgba(10, 12, 16, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+}
+
+.robot-floater:hover .robot-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes robotFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes signalPulse {
+    0% { box-shadow: 0 0 10px rgba(45, 212, 191, 0.3); opacity: 0.5; }
+    50% { box-shadow: 0 0 30px rgba(45, 212, 191, 1); opacity: 1; }
+    100% { box-shadow: 0 0 10px rgba(45, 212, 191, 0.3); opacity: 0.5; }
+}
+
+@keyframes eyePulse {
+    0%, 90%, 100% { transform: scaleY(1); opacity: 1; }
+    95% { transform: scaleY(0.1); opacity: 0.5; } /* Blink */
+}
 </style>
 
 <script>
@@ -1397,7 +1511,21 @@ if (scrollContainer) {
         </span>
     </a>
 </div>
+
+                <a href="DataAnalysisquantitative.html" class="robot-floater">
+    <div class="robot-tooltip">
+        <span style="color: #2dd4bf; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 5px;">Data Portal</span>
+        <p style="color: white; font-size: 13px; margin: 0; line-height: 1.4;">
+            Click to view <b>Logistic Regression</b>, Data Analysis, and Quantitative Data from the first preprint publication.
+        </p>
+    </div>
     
+    <div class="robot-head">
+        <div class="antenna"></div>
+        <div class="eye"></div>
+        <div class="eye"></div>
+    </div>
+</a>
 
         <!-- Bottom Images - Now more modern and with larger images on desktop -->
         <section class="w-full overflow-hidden my-12 bg-gray-800/50 p-6 rounded-3xl shadow-lg ring-2 ring-gray-700">
