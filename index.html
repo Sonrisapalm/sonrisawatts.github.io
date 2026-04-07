@@ -162,12 +162,24 @@
 
 /* Responsive: Move moon above box on smaller screens */
 @media (max-width: 1100px) {
+  .subsystem-moon-container {
+    position: relative; /* Changed from absolute */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+    /* This pushes it to the right of the box without using calc(50%) */
+    margin-left: 550px; 
+    margin-top: -150px; /* Pulls it up to be level with your card */
+    width: fit-content;
+}
+
+/* This ensures that on smaller screens, it doesn't stay 550px to the right */
+@media (max-width: 1100px) {
     .subsystem-moon-container {
-        position: relative;
-        left: 0;
-        top: 0;
-        margin: 0 auto 30px;
-        order: -1; /* Puts it above the text box */
+        margin: 20px auto;
+        position: static;
     }
 }
     </style>
