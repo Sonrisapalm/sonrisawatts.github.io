@@ -1859,106 +1859,85 @@ if (scrollContainer) {
             </a>
         </div>
     </section>
-
-        <section class="my-24 max-w-7xl mx-auto px-4 md:px-8 reveal">
-    <h2 class="text-3xl md:text-4xl font-bold leading-tight text-white text-center mb-12">Video Insights</h2>
+<section class="my-24 max-w-7xl mx-auto px-4 md:px-8 reveal">
+    <h2 class="text-3xl md:text-4xl font-bold leading-tight text-white text-center mb-12">Intelligence Feed</h2>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <div class="video-card bg-[#11141b] border border-white/5 p-6 rounded-[32px] shadow-2xl flex flex-col">
-            <div class="video-container w-full rounded-2xl overflow-hidden aspect-video">
-                <iframe class="w-full h-full" 
-                        src="https://www.youtube.com/embed/9lQpF3_WmkI" 
-                        title="New AI Video" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
+        <div class="bg-[#11141b] border border-white/5 p-6 rounded-[32px] shadow-2xl flex flex-col h-full">
+            <div class="w-full rounded-2xl overflow-hidden aspect-video bg-black">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/9lQpF3_WmkI" title="New AI Video" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="mt-6 px-2">
+            <div class="mt-6">
                 <span class="text-[9px] tracking-[0.4em] uppercase text-teal-400 font-bold opacity-70">Research Brief // Clinical Data</span>
-                <p class="text-zinc-400 mt-3 text-sm leading-relaxed">
-                    Exploring the intersection of diagnostic reasoning and algorithmic accuracy in high-stakes medical environments.
-                </p>
+                <p class="text-zinc-400 mt-3 text-sm leading-relaxed">Exploring the intersection of diagnostic reasoning and algorithmic accuracy in high-stakes medical environments.</p>
             </div>
         </div>
 
-        <div class="video-card bg-[#11141b] border border-white/5 p-6 rounded-[32px] shadow-2xl flex flex-col">
-            <div class="video-container w-full rounded-2xl overflow-hidden aspect-video">
-                <iframe class="w-full h-full" 
-                        src="https://www.youtube.com/embed/HFHAshs8I_Y" 
-                        title="Jensen Huang on AI" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
+        <div class="bg-[#11141b] border border-white/5 p-6 rounded-[32px] shadow-2xl flex flex-col h-full">
+            <div class="w-full rounded-2xl overflow-hidden aspect-video bg-black">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/HFHAshs8I_Y" title="Jensen Huang on AI" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="mt-6 px-2">
+            <div class="mt-6">
                 <span class="text-[9px] tracking-[0.4em] uppercase text-teal-400 font-bold opacity-70">Expert Insight // AI Philosophy</span>
-                <p class="text-zinc-400 mt-3 text-sm leading-relaxed">
-                    Jensen Huang discusses the "human core"—arguing that empathy and clinical presence are the ultimate assets as AI commoditizes technical skill.
-                </p>
+                <p class="text-zinc-400 mt-3 text-sm leading-relaxed">Jensen Huang discusses the "human core"—arguing that empathy is the ultimate asset as AI commoditizes technical skill.</p>
             </div>
+        </div>
+
+        <div class="bg-gray-800/70 p-6 rounded-[32px] shadow-xl flex flex-col h-full transition-transform duration-300 hover:scale-105">
+            <img src="images/musk-xai-lawsuit.jpg" alt="Musk xAI lawsuit" class="w-full h-48 object-cover rounded-2xl mb-4" />
+            <div class="flex flex-col flex-grow">
+                <h3 class="text-xl font-bold mb-2 text-white">Musk’s xAI Sues Engineer</h3>
+                <p class="text-gray-300 text-sm mb-4">Claiming an engineer shared confidential information with OpenAI.</p>
+                <a href="https://www.cnbc.com/2025/08/29/musks-xai-sues-engineer-for-allegedly-taking-secrets-to-openai.html" target="_blank" class="mt-auto text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
+            </div>
+        </div>
+
+        <div class="bg-gray-800/70 p-6 rounded-[32px] shadow-xl flex flex-col h-full transition-transform duration-300 hover:scale-105">
+            <img src="images/aichatbots.jpg" alt="Healthcare AI Chatbots" class="w-full h-48 object-cover rounded-2xl mb-4" />
+            <div class="flex flex-col flex-grow">
+                <h3 class="text-xl font-bold mb-2 text-white">Anthropic & Google Healthcare</h3>
+                <p class="text-gray-300 text-sm mb-4">Launching specialized healthcare AI models to revolutionize clinical workflows and diagnostics.</p>
+                <a href="https://www.digitalhealth.net/2026/01/anthropic-and-google-follow-chatgpt-to-launch-healthcare-ai/" target="_blank" class="mt-auto text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
+            </div>
+        </div>
+
+        <div class="bg-gray-800/70 p-6 rounded-[32px] shadow-xl flex flex-col h-full transition-transform duration-300 hover:scale-105">
+            <img src="images/anthropic-advisory-council.jpg" alt="Anthropic Council" class="w-full h-48 object-cover rounded-2xl mb-4" />
+            <div class="flex flex-col flex-grow">
+                <h3 class="text-xl font-bold mb-2 text-white">National Security Council</h3>
+                <p class="text-gray-300 text-sm mb-4">Anthropic forms a council to guide AI use in government and strategic planning.</p>
+                <a href="https://www.msn.com/en-us/news/technology/anthropic-forms-national-security-advisory-council-to-guide-ai-use-in-government/ar-AA1LkuFI" target="_blank" class="mt-auto text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
+            </div>
+        </div>
+
+        <div class="bg-gray-800/70 p-6 rounded-[32px] shadow-xl flex flex-col h-full transition-transform duration-300 hover:scale-105">
+            <div class="w-full rounded-2xl overflow-hidden aspect-video bg-black mb-4">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/u_FLDvEZ5rU" title="Trump Tech Dinner" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-white">White House Tech Dinner</h3>
+            <p class="text-gray-300 text-sm">Gates, Cook, and Zuckerberg attend high-level dinner with Trump.</p>
+        </div>
+
+        <div class="bg-gray-800/70 p-6 rounded-[32px] shadow-xl flex flex-col h-full transition-transform duration-300 hover:scale-105">
+            <img src="https://placehold.co/400x200/525252/ffffff?text=Eudia+Law+Firm" alt="Eudia Law" class="w-full h-48 object-cover rounded-2xl mb-4" />
+            <div class="flex flex-col flex-grow">
+                <h3 class="text-xl font-bold mb-2 text-white">Eudia: AI-Augmented M&A</h3>
+                <p class="text-gray-300 text-sm mb-4">A new AI-Augmented law firm leveraging intelligence systems for M&A due diligence.</p>
+                <a href="https://www.artificiallawyer.com/2025/09/03/eudia-opens-ai-augmented-law-firm-for-ma/" target="_blank" class="mt-auto text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
+            </div>
+        </div>
+
+        <div class="bg-gray-800/70 p-6 rounded-[32px] shadow-xl flex flex-col h-full transition-transform duration-300 hover:scale-105">
+            <div class="w-full rounded-2xl overflow-hidden aspect-video bg-black mb-4">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/FASMejN_5gs" title="Neuralink Update" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-white">Neuralink Update 2025</h3>
+            <p class="text-gray-300 text-sm">Latest clinical developments in brain-computer interface technologies.</p>
         </div>
 
     </div>
 </section>
-            
-        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-            <img src="images/musk-xai-lawsuit.jpg" alt="Musk xAI lawsuit" class="w-full h-auto rounded-2xl mb-4" />
-            <div>
-                <h3 class="text-xl font-bold mb-2">Musk’s xAI Sues Engineer for Allegedly Taking Secrets to OpenAI</h3>
-                <p class="text-gray-300 text-sm mb-4">Elon Musk’s xAI filed a lawsuit claiming an engineer shared confidential information with OpenAI.</p>
-                <a href="https://www.cnbc.com/2025/08/29/musks-xai-sues-engineer-for-allegedly-taking-secrets-to-openai.html" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
-            </div>
-        </div>
-
-        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-            <img src="images/aichatbots.jpg" alt="Healthcare AI Chatbots" class="w-full h-auto rounded-2xl mb-4" />
-            <div>
-                <h3 class="text-xl font-bold mb-2">Anthropic and Google follow ChatGPT to launch healthcare AI</h3>
-                <p class="text-gray-300 text-sm mb-4">Anthropic and Google have joined OpenAI in launching specialized healthcare AI models, aiming to revolutionize clinical workflows, diagnostics, and patient care management.</p>
-                <a href="https://www.digitalhealth.net/2026/01/anthropic-and-google-follow-chatgpt-to-launch-healthcare-ai/" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
-            </div>
-        </div>
-        
-        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-            <img src="images/anthropic-advisory-council.jpg" alt="Anthropic National Security Advisory Council" class="w-full h-auto rounded-2xl mb-4" />
-            <div>
-                <h3 class="text-xl font-bold mb-2">Anthropic Forms National Security Advisory Council to Guide AI Use in Government</h3>
-                <p class="text-gray-300 text-sm mb-4">Anthropic has established a National Security and Public Sector Advisory Council to deepen ties with Washington and allied governments, aiming to integrate AI into defense and strategic planning.</p>
-                <a href="https://www.msn.com/en-us/news/technology/anthropic-forms-national-security-advisory-council-to-guide-ai-use-in-government/ar-AA1LkuFI" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
-            </div>
-        </div>
-
-        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-            <div class="video-container rounded-2xl overflow-hidden shadow-xl mb-4">
-                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/u_FLDvEZ5rU" title="Trump Hosts Tech Titans at White House Dinner" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-2">Trump Hosts Tech Titans at White House Dinner | Gates, Cook, Zuckerberg Attend, Musk Absent</h3>
-            </div>
-        </div>
-
-        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-            <img src="https://placehold.co/400x200/525252/ffffff?text=Eudia+Law+Firm" alt="Eudia Law Firm" class="w-full h-auto rounded-2xl mb-4" />
-            <div>
-                <h3 class="text-xl font-bold mb-2">Eudia Opens AI-Augmented Law Firm for M&A</h3>
-                <p class="text-gray-300 text-sm mb-4">Eudia's new venture, 'Eudia Counsel', is an "AI-Augmented" law firm for M&A due diligence and contract needs, leveraging a proprietary intelligence system to improve efficiency and consistency.</p>
-                <a href="https://www.artificiallawyer.com/2025/09/03/eudia-opens-ai-augmented-law-firm-for-ma/" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Read More →</a>
-            </div>
-        </div>
-
-        <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
-            <div class="video-container rounded-2xl overflow-hidden shadow-xl mb-4">
-                <iframe class="w-full h-auto aspect-video" src="https://www.youtube.com/embed/FASMejN_5gs" title="Neuralink Update, Summer 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-2">Neuralink Update: Summer 2025 Progress Report</h3>
-                <p class="text-gray-300 text-sm mb-4">A progress update on Neuralink's latest technology advancements, focusing on new features and clinical trial developments.</p>
-                <a href="https://www.youtube.com/watch?v=FASMejN_5gs" target="_blank" class="text-orange-400 hover:text-orange-500 font-medium">Watch Video →</a>
-            </div>
-        </div>
 
         <div class="bg-gray-800/70 p-6 rounded-3xl shadow-xl flex flex-col justify-between transition-transform duration-300 hover:scale-105">
             <div>
