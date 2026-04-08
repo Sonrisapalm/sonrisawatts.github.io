@@ -523,24 +523,6 @@ body {
             bottom: 30px !important; 
         }
     }
-    /* This only affects screens smaller than 768px (phones/small tablets) */
-@media (max-width: 768px) {
-    .video-container {
-        /* This forces the container to be taller on a phone */
-        height: 450px; 
-        overflow: hidden;
-        border-radius: 20px; /* Keeps your rounded corners consistent */
-    }
-
-    .video-player {
-        height: 100%;
-        width: 100%;
-        /* This is the magic: it makes the video cover the taller area 
-           without stretching the faces or shapes in the video */
-        object-fit: cover; 
-        object-position: center;
-    }
-}
 </style>
 
 <a href="Methodsanddata.html" class="robot-head-portal">
