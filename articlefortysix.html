@@ -60,7 +60,6 @@
 
         .nav-item:hover { color: #fff; }
 
-        /* HERO IMAGE STYLE */
         .hero-image-container {
             width: 100%;
             max-width: 900px;
@@ -70,7 +69,7 @@
 
         .hero-image {
             width: 100%;
-            height: auto; /* Ensures NO CROPPING */
+            height: auto;
             display: block;
             border-radius: 24px;
             border: 1px solid var(--border);
@@ -80,7 +79,7 @@
         .archive-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 60px 24px 120px 24px; /* Reduced top padding since image is above */
+            padding: 60px 24px 120px 24px;
         }
 
         .glass-panel {
@@ -141,6 +140,43 @@
             border-radius: 8px 32px 32px 8px;
             padding: 40px;
             margin: 60px 0;
+        }
+
+        /* NEW LOADING BOX STYLES */
+        .loading-box {
+            background: rgba(45, 212, 191, 0.03);
+            border: 1px solid rgba(45, 212, 191, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-family: monospace;
+            position: relative;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent);
+            animation: tech-pulse 1.5s infinite;
+        }
+
+        .loading-text {
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        @keyframes tech-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         p {
@@ -213,19 +249,24 @@
 
             <p style="font-weight: 500; color: #fff;">For future oncologists, the ability to provide human empathy and a physical presence at the bedside becomes their most valuable asset—marking a clear boundary where the algorithm ends and the physician begins.</p>
 
+            <div class="loading-box reveal">
+                <div class="pulse-dot"></div>
+                <div class="loading-text">Full Research Insights Loading...</div>
+            </div>
+
             <div class="disclaimer">
                 <p style="margin-bottom: 12px;">
                     Disclaimer: This brief summarizes findings from qualitative interviews conducted by Emotion Encoded. These insights are shared to foster transparency in the study of AI adoption in high-stakes fields.
                 </p>
                 <p style="color: var(--text-muted); font-weight: 600;">
-                    encodedemotion.org &bull; Independent Research Initiative
+                    encodedemotion.org • Independent Research Initiative
                 </p>
             </div>
         </div>
 
         <footer>
             <p style="font-size: 10px; letter-spacing: 0.4em; color: rgba(255,255,255,0.15); text-transform: uppercase; font-weight: 500;">
-                &copy; 2026 EMOTION ENCODED &bull; ALL RIGHTS RESERVED.
+                © 2026 EMOTION ENCODED • ALL RIGHTS RESERVED.
             </p>
         </footer>
     </div>
