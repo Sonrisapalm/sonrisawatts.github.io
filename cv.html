@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Preview | Emotion Encoded</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #2dd4bf;
+            --bg: #0a0c10;
+            --border: rgba(255, 255, 255, 0.06);
+            --text-muted: #9ca3af;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow: hidden; /* Prevents double scrollbars */
+        }
+
+        .nav-container {
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            background: rgba(10, 12, 16, 0.7);
+            height: 80px;
+        }
+
+        .cv-wrapper {
+            height: calc(100vh - 80px); /* Fill screen minus nav height */
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-container flex items-center justify-center">
+        <div class="flex gap-8">
+            <a href="index.html" class="text-[11px] uppercase tracking-[.25em] text-zinc-500 hover:text-white transition">Back to Home</a>
+            <span class="text-[11px] uppercase tracking-[.25em] text-[#2dd4bf] font-bold">Curriculum Vitae</span>
+        </div>
+    </nav>
+
+    <main class="cv-wrapper">
+        <iframe src="images/sonrisawattscv.pdf#toolbar=0" type="application/pdf">
+            <p>It appears your browser doesn't support PDFs. 
+               <a href="images/sonrisawattscv.pdf">Click here to download it.</a>
+            </p>
+        </iframe>
+    </main>
+
+</body>
+</html>
