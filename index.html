@@ -1590,147 +1590,95 @@ if (scrollContainer) {
 <section id="ai-health-preview" 
   style="
     max-width:1000px;
-    margin:60px auto;
-    padding:40px;
+    width: 95%;
+    margin:40px auto;
+    padding: 5% 6%; /* Responsive padding */
     border-radius:20px;
     backdrop-filter: blur(16px) saturate(160%);
     -webkit-backdrop-filter: blur(16px) saturate(160%);
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0,0,0,0.15);
     color:white;
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    box-sizing: border-box; /* Crucial for mobile sizing */
   "
 >
 
-  <div style="display:flex;flex-wrap:wrap;gap:30px;align-items:center;">
+  <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center; margin-bottom: 30px;">
     <img src="images/Aiinhealthcarenews.jpg" 
       alt="AI in Healthcare News"
       style="
         width:100%;
         max-width:360px;
+        height: auto;
         border-radius:16px;
         box-shadow:0 8px 30px rgba(0,0,0,0.25);
       ">
     
-    <div style="flex:1;min-width:260px;">
-      <h2 style="margin:0 0 10px;font-size:28px;font-weight:700;letter-spacing:-0.5px;">
+    <div style="flex:1; min-width:280px;">
+      <h2 style="margin:10px 0; font-size: clamp(22px, 5vw, 28px); font-weight:700; letter-spacing:-0.5px;">
         Diagnostic AI: The Next Leap
       </h2>
-      <p style="margin:0;font-size:16px;line-height:1.6;color:#e5e7eb;">
-        A breakthrough moment in healthcare AI .. SDBench enables interactive diagnostic reasoning simulations, while MAI-DxO orchestrates specialized AI agents to deliver unprecedented accuracy and efficiency in clinical decision-making.
+      <p style="margin:0; font-size:16px; line-height:1.6; color:#e5e7eb;">
+        A breakthrough moment in healthcare AI. SDBench enables interactive diagnostic reasoning simulations, while MAI-DxO orchestrates specialized AI agents to deliver unprecedented accuracy and efficiency in clinical decision-making.
       </p>
     </div>
   </div>
 
-  <p style="margin-top:24px;line-height:1.7;font-size:16px;color:#f3f4f6;">
-    SDBench converts 304 NEJM cases into real-time diagnostic simulations. MAI-DxO then elevates this further by coordinating a virtual panel of AI “physician agents,” reaching <strong>85.5% diagnostic accuracy</strong>.  
-    Together, they redefine what precision and scalable clinical decision support can look like.
+  <p style="line-height:1.7; font-size:16px; color:#f3f4f6; margin-bottom: 20px;">
+    SDBench converts 304 NEJM cases into real-time diagnostic simulations. MAI-DxO coordinating a virtual panel reaches <strong>85.5% accuracy</strong>.
   </p>
 
-  <div style="margin-top:28px;display:flex;flex-direction:column;gap:12px;">
-    <a href="https://www.businessinsider.com/microsoft-ai-diagnosed-accurate-doctors-medicine-study-2025-7"
-      target="_blank"
-      style="color:#93c5fd;font-weight:600;text-decoration:none;">
-      ▸ Business Insider — New health AI outperforms doctors
-    </a>
-
-    <a href="https://www.ft.com/content/149296b9-41b6-4fba-b72c-c72502d01800"
-      target="_blank"
-      style="color:#93c5fd;font-weight:600;text-decoration:none;">
-      ▸ Financial Times — Diagnostic tool surpasses clinicians
-    </a>
-
-    <a href="https://www.theguardian.com/technology/2025/jun/30/microsoft-ai-system-better-doctors-diagnosing-health-conditions-research"
-      target="_blank"
-      style="color:#93c5fd;font-weight:600;text-decoration:none;">
-      ▸ The Guardian — AI system beats doctors on complex cases
-    </a>
+  <div style="display:flex; flex-direction:column; gap:12px; margin-bottom: 40px; border-left: 2px solid var(--accent); padding-left: 15px;">
+    <a href="https://www.businessinsider.com/microsoft-ai-diagnosed-accurate-doctors-medicine-study-2025-7" target="_blank" style="color:#93c5fd; font-weight:600; text-decoration:none; font-size: 14px;">▸ Business Insider — New health AI outperforms doctors</a>
+    <a href="https://www.ft.com/content/149296b9-41b6-4fba-b72c-c72502d01800" target="_blank" style="color:#93c5fd; font-weight:600; text-decoration:none; font-size: 14px;">▸ Financial Times — Diagnostic tool surpasses clinicians</a>
   </div>
 
-   <div style="margin-top:40px;">
-    <div style="flex:1;min-width:260px;">
-        <h2 style="margin:0 0 10px;font-size:28px;font-weight:700;letter-spacing:-0.5px;">
-            Security Agent Jails: The New Threat
-        </h2>
-        <div class="aspect-4/3 max-w-xs mx-auto mb-4">
-            <img 
-                src="images/anthropicnewsarticle.jpg" 
-                alt="A hacker in a hoodie with AI symbols in the background" 
-                class="w-full h-full object-cover rounded-2xl" 
-            />
-        </div>
-        <p style="margin:0;font-size:16px;line-height:1.6;color:#e5e7eb;">
-            The rise of powerful AI agents brings a dual risk: automation for defense, and exploitation for attack. A recent incident reveals how state-sponsored groups are 'jailbreaking' models to weaponize their code-writing and reconnaissance abilities for large-scale cyber operations.
-        </p>
-    </div>
-    
-    <p style="margin-top:24px;line-height:1.7;font-size:16px;color:#f3f4f6;">
-        The attack used a technique to bypass safety filters, enabling the AI to handle 80-90% of a massive operation targeting tech, finance, and government sectors. This marks a significant shift in threat capability, demanding urgent attention to defensive AI system design.
-    </p>
+  <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
 
-    <div style="margin-top:28px;display:flex;flex-direction:column;gap:12px;">
-        <a href="https://www.businessinsider.com/anthropic-chinese-hackers-claude-agentic-ai-cyberattack-2025-11"
-          target="_blank"
-          style="color:#93c5fd;font-weight:600;text-decoration:none;">
-          ▸ Business Insider — Chinese hackers jailbroke AI for large-scale cyberattack
-        </a>
-    </div>
-</div>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 40px 0;">
-
-  <div style="flex:1; min-width:260px; background: #1f2937; color: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-
-    <h2 style="margin:0 0 10px; font-size:28px; font-weight:700; letter-spacing:-0.5px;">
-
-      Claude Code’s Update Just Did The Impossible
-
+  <div style="margin-top:40px;">
+    <h2 style="margin:0 0 15px; font-size: clamp(22px, 5vw, 28px); font-weight:700; letter-spacing:-0.5px;">
+        Security Agent Jails: The New Threat
     </h2>
-
+    <div style="width: 100%; max-width: 400px; margin-bottom: 20px;">
+        <img src="images/anthropicnewsarticle.jpg" alt="Security Threat" style="width:100%; height:auto; border-radius:16px; object-cover: cover;">
+    </div>
     <p style="margin:0; font-size:16px; line-height:1.6; color:#e5e7eb;">
-
-      <strong>Major update blowing minds right now.</strong> A Google principal engineer just revealed Claude Code built in <strong>one hour</strong> what her team spent <strong>a full year</strong> on .. turning AI from helper to full-speed creator.
-
+        The rise of powerful AI agents brings a dual risk: automation for defense and exploitation for attack. State-sponsored groups are 'jailbreaking' models to weaponize their capabilities.
     </p>
-
+    <a href="https://www.businessinsider.com/anthropic-chinese-hackers-claude-agentic-ai-cyberattack-2025-11" target="_blank" style="display:block; margin-top:15px; color:#93c5fd; font-weight:600; text-decoration:none; font-size: 14px;">▸ Business Insider — Hackers jailbroke AI for cyberattack</a>
   </div>
 
-  <div style="flex:1; min-width:260px;">
+  <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
 
-    <!-- claude) -->
-
-    <img src="images/CLAUDECODE.jpg" 
-
-         alt="Claude Code update in action – AI generating complex code impossibly fast" 
-
-         style="width:100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); margin-bottom: 16px;">
-
-    <!-- Optional: Small caption or teaser below the image -->
-
-    <p style="margin:0; font-size:14px; line-height:1.5; color:#9ca3af; text-align:center;">
-
-      The shift is here: From coding scratch to instant iteration. Anthropic pulling ahead.
-
-    </p>
-
-    <!-- CTA button for the full article -->
-
-    <a href="https://siliconvalleygradient.com/claude-codes-update-just-did-the-impossible-d6cb24f501e6" 
-
-       target="_blank" 
-
-       rel="noopener noreferrer"
-
-       style="display: block; margin: 16px auto 0; width: fit-content; background: #6366f1; color: white; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: background 0.3s;">
-
-      Read the Full Breakdown →
-
-    </a>
-
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 40px 0;">
+    <div style="flex:1; min-width:280px; background: rgba(31, 41, 55, 0.5); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+      <h2 style="margin:0 0 10px; font-size: 24px; font-weight:700; color: #fff;">Claude Code update Just Did The Impossible</h2>
+      <p style="font-size:15px; color:#e5e7eb;">
+        Built in <strong>one hour</strong> what her team spent <strong>a full year</strong> on.
+      </p>
+    </div>
+    <div style="flex:1; min-width:280px; text-align: center;">
+      <img src="images/CLAUDECODE.jpg" alt="Claude Code" style="width:100%; max-width: 100%; border-radius: 12px; margin-bottom: 10px;">
+      <a href="https://siliconvalleygradient.com/claude-codes-update-just-did-the-impossible-d6cb24f501e6" target="_blank" style="display: inline-block; background: #6366f1; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px;">Read Full Breakdown →</a>
+    </div>
   </div>
 
-</div>
+  <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
+
+  <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
+    <img src="images/interesting.jpeg" alt="Research Paper" style="width:100%; max-width:300px; border-radius:16px; height:auto;">
+    <div style="flex:1; min-width:280px;">
+      <h2 style="margin:0 0 10px; font-size: 24px; font-weight:700;">Human Judgment & AI Trust</h2>
+      <p style="margin:0; font-size:16px; line-height:1.6; color:#e5e7eb;">
+        <strong>Epistemia:</strong> The feeling of knowing without evaluation. Fluent language creates a credibility bias where humans over-believe AI.
+      </p>
+      <a href="https://osf.io/preprints/psyarxiv/c5gh8_v1" target="_blank" style="display:inline-block; margin-top:15px; color:#93c5fd; font-weight:600; text-decoration:none;">▸ View Research Paper</a>
+    </div>
+  </div>
+
+</section>
 
       <img src="images/interesting.jpeg"
     alt="Featured research paper preview"
@@ -1881,7 +1829,7 @@ if (scrollContainer) {
             </div>
             <div class="mt-6">
                 <span class="text-[9px] tracking-[0.4em] uppercase text-teal-400 font-bold opacity-70"> Insights </span>
-                <p class="text-zinc-400 mt-3 text-sm leading-relaxed">Exploring the intersection of diagnostic reasoning and algorithmic accuracy in high-stakes medical environments.</p>
+                <p class="text-zinc-400 mt-3 text-sm leading-relaxed">Interesting watch.</p>
             </div>
         </div>
 
