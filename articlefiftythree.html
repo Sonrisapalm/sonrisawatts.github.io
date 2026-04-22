@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Brief | Dr. Alexander | Emotion Encoded</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #2dd4bf;
+            --bg: #0a0c10;
+            --surface: #11141b;
+            --glass: rgba(255, 255, 255, 0.02);
+            --border: rgba(255, 255, 255, 0.06);
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at 50% -20%, rgba(45, 212, 191, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .archive-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px 120px 24px;
+        }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--border);
+            border-radius: 48px;
+            padding: clamp(2rem, 8vw, 5rem);
+            position: relative;
+            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);
+        }
+
+        .tag {
+            font-size: 10px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 7vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 40px 0 20px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-strip {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .quote-box {
+            background: rgba(45, 212, 191, 0.03);
+            border-left: 3px solid var(--accent);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .analysis-label {
+            color: var(--accent);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 24px;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .verdict-box {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-sig {
+            margin-top: 80px;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .nav-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        
+        .nav-link:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+
+    <div class="archive-container">
+        <div class="glass-panel">
+            <header>
+                <span class="tag">Independent Research Initiative</span>
+                <h1>Emotion Encoded: ARTIFICIAL INTELLIGENCE IN MEDICINE: ONCOLOGY</h1>
+                <div class="meta-strip">
+                    <a href="https://encodedemotion.org" class="nav-link">encodedemotion.org</a> &nbsp;<<<-- View Website!
+                </div>
+            </header>
+
+            <h2>The Alignment Gap: Clinical Wisdom vs. Data-Driven Logic</h2>
+            <p>When AI enters the oncology clinic, where treatment plans are obsolete in minutes and data can be skewed, how does a master clinician decide when to trust the machine? To find out, we interviewed one of Jamaica’s foremost oncological specialists to understand the psychological thresholds of algorithmic belief.</p>
+
+            <p><strong>Dr. Stephen Akhaan Alexander</strong> is a highly respected Consultant Radiation and Clinical Oncology specialist. He serves as the Senior Medical Officer at Hope Institute Hospital and Consultant Oncologist at Ruthven Medical Centre in Kingston, Jamaica. Known for his commitment to continuous learning and patient-centered care, Dr. Alexander balances rigorous evidence-based medicine with the compassionate realities of cancer treatment.</p>
+
+            <h2>The Threshold of Belief</h2>
+            <p><em>Question: When a colleague explains a decision, they use logic. When an AI tool explains a decision, what do you actually need to see to believe it? Is it a similar past case, statistical evidence of a specific lab value it flagged, or maybe a link to a medical paper?</em></p>
+
+            <div class="quote-box">
+                <p style="color: #fff; font-style: italic; margin-bottom: 0;">
+                    "To believe the results of AI, I must have a good understanding of the subject matter, though my logic may not give me the correct answer, my logic and that logic of the AI should align, linking to a medical article will help but bear in my mind that data in these articles can be skewed. Please note that having a good understanding of the subject matter will require years of clinical experience coupled with evidence based medical studying."
+                </p>
+            </div>
+
+            <span class="analysis-label">Analysis</span>
+            <p>Dr. Alexander highlights that logic alignment is the true metric for believing the AI. Even if the AI provides a medical paper, a seasoned oncologist remains skeptical because they know data can be biased. True verification requires a subject matter expertise that only comes from years of clinical experience. AI doesn't replace the expert; it must audition for them.</p>
+
+            <h2>The Collective Intelligence Rethink</h2>
+            <p><em>Question: In a few years, can you see a situation where ignoring an AI's treatment plan for a patient actually feels more dangerous, even negligent, than just trusting your own gut?</em></p>
+
+            <div class="quote-box">
+                <p style="color: #fff; font-style: italic; margin-bottom: 0;">
+                    "Yes, this may be a possibility, AI is becoming comprehensive, constantly being upgraded and remodelled with knowledge and experience from real physicians. Medical information can change rapidly, and it is difficult to keep up with all the changes. AI will provide knowledge and experience of hundreds of medical doctors, so If AI has a different solution to a medical problem than myself that would require a rethink on my part, to verify my own decision before proceeding to get the best outcome for the patient."
+                </p>
+            </div>
+
+            <span class="analysis-label">Analysis</span>
+            <p>We are moving toward a Collective Authority. When an AI is modeled on the cumulative knowledge of hundreds of physicians, a deviation from the machine is no longer just gut feeling but it is a prompt for a "rethink." Dr. Alexander views AI as a high-level peer review that forces the clinician to verify their own decision-making before proceeding.</p>
+
+            <h2>The Accountability Anchor</h2>
+            <p><em>Question: If a patient asks 'Why did this happen?', do you think an oncologist should always be telling them that it was the oncologist’s mistake or a glitch in the AI software they used?</em></p>
+
+            <div class="quote-box">
+                <p style="color: #fff; font-style: italic; margin-bottom: 0;">
+                    "Mistakes will happen whether It was an oncologist decision or not, a patient's situation can change rapidly, a plan which you made for the patient now may be obsolete in minutes. AI is a tool that an oncologist uses; the final decision rests with the oncologist who has undergone training coupled with experience."
+                </p>
+            </div>
+
+            <p>In the high-stakes environment of oncology, there is no room for blaming the glitch. Dr. Alexander firmly anchors professional accountability in the human expert. Because patient vitals and plans can become obsolete in minutes, the AI is relegated to its proper place: a tool. The final decision and the weight of that decision, rests solely on the person with the training and the experience.</p>
+
+            <div class="verdict-box">
+                <span class="tag">The Verdict</span>
+                <p>The oncologist’s expertise acts as the final filter for machine intelligence. AI is respected as a comprehensive knowledge aggregator, but it lacks the situational agility to handle a patient whose status changes in minutes. For Dr. Alexander, trust is a product of alignment, not blind obedience.</p>
+            </div>
+
+            <footer class="footer-sig">
+                Sonrisa Watts // Emotion Encoded // 2026
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
