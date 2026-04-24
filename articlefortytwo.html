@@ -51,19 +51,19 @@
 
         nav a:hover { color: #fb923c; }
 
-        .hero-wrap {
-            width: 100vw;
-            margin: 0;
-            padding: 0;
-            background: #000;
+      .hero-wrap {
+            width: 100%;
+            background: #000; /* Framing color if screen is ultra-wide */
+            display: flex;
+            justify-content: center;
         }
 
         .hero-image-full {
             width: 100%;
             height: auto;
-            max-height: 85vh;
+            max-height: 90vh; /* Keeps it from being too tall on huge monitors */
             display: block;
-            object-fit: cover;
+            object-fit: contain; /* Ensures the whole image shows with NO cropping */
         }
 
         .container {
