@@ -3,207 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Encoded | Surgical AI Research</title>
+    <title>Emotion Encoded | AI in Surgery: Dr. Shabier St. John</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@200;300;400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --accent: #fb923c; /* orange-400 */
-            --bg: #050505;
-            --glass: rgba(255, 255, 255, 0.02);
-            --border: rgba(255, 255, 255, 0.08);
-            --text-main: #a1a1aa;
-        }
-
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text-main); 
-            line-height: 1.85;
+            background-color: #000; 
+            color: #fff; 
+            margin: 0;
             -webkit-font-smoothing: antialiased;
-        }
-
-        h1 { 
-            font-family: 'Playfair Display', serif; 
-            color: #fff;
-            font-weight: 900;
-            letter-spacing: -0.02em;
-        }
-
-        h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .glass-nav { 
-            background: rgba(5, 5, 5, 0.85); 
-            backdrop-filter: blur(30px); 
-            border-bottom: 1px solid var(--border); 
-        }
-
-        /* THE FIX: MASSIVE, UN-CROPPED HERO */
-        .hero-section {
+            overflow-x: hidden;
             width: 100%;
-            margin-top: 40px;
-            margin-bottom: 100px;
-            display: flex;
-            justify-content: center;
-            background: #000;
-            border-radius: 60px; 
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: 0 100px 150px -50px rgba(0,0,0,0.9);
         }
 
-        .hero-image {
-            width: 100%;
-            height: auto;
-            max-height: 85vh; /* Larger visual footprint */
-            display: block;
-            object-fit: contain; /* Ensures ZERO cropping */
-        }
-
-        .content-limit {
-            max-width: 850px; /* Refined for editorial readability */
-            margin: 0 auto;
-        }
-
-        .interpretation-box { 
-            background: rgba(251, 146, 60, 0.02); 
-            border: 1px solid rgba(251, 146, 60, 0.1); 
-            border-radius: 48px;
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.4);
-        }
-
-        blockquote {
-            background: rgba(255, 255, 255, 0.01);
-            border-left: 3px solid var(--accent);
-            border-radius: 4px 40px 40px 4px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .nav-link {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .nav-link:hover { 
-            color: var(--accent);
+        .nav-item {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 10px;
             letter-spacing: 0.3em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            font-weight: 400;
+        }
+        .nav-item:hover { 
+            color: #fff; 
+            letter-spacing: 0.4em; 
         }
 
-        .footer-card {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid var(--border);
-            border-radius: 48px;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            max-width: 900px;
+            width: 95%;
+            margin: 0 auto;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+            overflow: hidden;
+        }
+
+        .card-body {
+            padding: 30px 20px;
+        }
+        @media (min-width: 768px) {
+            .card-body {
+                padding: 50px 60px;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .q-box {
+            border-left: 2px solid #2dd4bf;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .ans-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
+        }
+
+        .verdict-box {
+            background: rgba(45, 212, 191, 0.03);
+            border: 1px solid rgba(45, 212, 191, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .metric-item {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
         }
     </style>
 </head>
-<body class="pt-32 pb-24 px-6">
+<body>
 
-    <nav class="fixed top-0 left-0 right-0 z-[100] glass-nav">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex flex-wrap justify-center items-center gap-4 md:gap-8 text-[10px] tracking-[0.2em] uppercase font-black">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="Methodsanddata.html" class="nav-link">Methods and Data</a>
-            <a href="DataAnalysisquantitative.html" class="nav-link">Publications</a>
-            <a href="ethicalguidelines.html" class="nav-link">Ethical Guidelines</a>
-            <a href="AI-Perception-Briefs.html" class="nav-link text-orange-400">Research Findings Articles</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-    </nav>
+    <section style="
+        min-height: 100vh;
+        padding: 40px 0;
+        background: radial-gradient(circle at top, #0d0d0d 0%, #000 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    ">
 
-    <main class="max-w-6xl mx-auto">
-        
-        <div class="hero-section">
-            <img src="images/article51.jpg" alt="AI in Surgery Header" class="hero-image">
-        </div>
+        <nav class="reveal active" style="
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            width: 90%;
+            max-width: 900px;
+        ">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="Methodsanddata.html" class="nav-item">Methods</a>
+            <a href="DataAnalysisquantitative.html" class="nav-item">Publications</a>
+            <a href="ethicalguidelines.html" class="nav-item">Ethics</a>
+            <a href="AI-Perception-Briefs.html" class="nav-item" style="color: #2dd4bf; border-bottom: 1px solid #2dd4bf;">Findings</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
 
-        <article class="content-limit">
-            <header class="pb-16 mb-16 border-b border-white/5">
-                <span class="text-orange-400 text-[10px] tracking-[0.6em] uppercase font-black block mb-8">Expert Brief // No. 51</span>
-                <h1 class="text-5xl md:text-7xl mb-12 leading-[1.05]">Emotion Encoded: Artificial Intelligence and Decision Making in Surgery:</h1>
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 text-[11px] tracking-[0.3em] uppercase font-bold text-zinc-500">
-                    <p class="text-orange-400">Solo Researcher: Sonrisa Watts</p>
-                    <p>Read full article brief on : Encodedemotion.org</p>
-                </div>
-            </header>
+        <div class="glass-card reveal">
+            
+            <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: #000; display: flex; justify-content: center;">
+                <img src="images/surgery_header.jpg" 
+                     alt="AI in Surgery Header" 
+                     style="width: 100%; height: auto; display: block; object-fit: contain;">
+            </div>
 
-            <div class="space-y-16 text-lg">
-                <p class="text-2xl text-white font-light italic leading-relaxed font-serif">I’m obsessing over why high-stakes experts might be rejecting 'perfect AI', and I don't think it's because they are tech-phobic. It’s because the tools the world is building might be fundamentally broken for the real world.</p>
+            <div class="card-body">
                 
-                <p>I interviewed <strong>Dr. Shabier St. John</strong>, a Colorectal Surgeon and Endoscopist operating in Barbados who's exactly the person whose life gets harder when a tool doesn't account for accountability.</p>
+                <span style="font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: #2dd4bf; margin-bottom: 12px; display: block; text-align: left;">
+                    ARTIFICIAL INTELLIGENCE IN MEDICINE: SURGERY
+                </span>
+                
+                <span style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 25px; display: block; text-align: left;">
+                    EMOTION ENCODED: INDEPENDENT RESEARCH INITIATIVE // ENCODEDEMOTION.ORG
+                </span>
 
-                <p>My first question was 'Which do you prefer: a "black box" AI that is 99% accurate but can’t explain itself, or a human colleague who is 70% accurate but can explain every step?'</p>
+                <h1 style="
+                    font-size: clamp(1.8rem, 6vw, 2.5rem);
+                    font-weight: 900;
+                    letter-spacing: -0.02em;
+                    line-height: 1.1;
+                    margin-bottom: 35px;
+                    background: linear-gradient(to right, #ffffff, #a1a1aa);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-align: left;
+                ">
+                    Emotion Encoded: Artificial Intelligence and Decision Making in Surgery
+                </h1>
 
-                <blockquote class="py-14 px-12 italic text-white text-2xl leading-relaxed">
-                    Answer: "I prefer a human colleague who is less accurate but can explain every step. This justification is important to both the medical team and the patient and their relatives. Often patients need full disclosure in order to exercise autonomy."
-                </blockquote>
+                <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 20px; text-align: left;">
+                    Dr. Shabier St. John
+                </h2>
 
-                <p>This suggests that <strong>Traceability > Precision</strong>. Dr St. John is doubling down by saying that in surgery, a "why" is a survival requirement for patient autonomy. If you can't explain the move, it wouldn't be ethical. This is why "black box" logic is a non-starter in an OR; it strips the human out of the ethical loop.</p>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 30px; text-align: left;">
+                    I’m obsessing over why high-stakes experts might be rejecting 'perfect AI', and I don't think it's because they are tech-phobic. It’s because the tools the world is building might be fundamentally broken for the real world. I interviewed Dr. Shabier St. John, a Colorectal Surgeon and Endoscopist operating in Barbados who's exactly the person whose life gets harder when a tool doesn't account for accountability.
+                </p>
 
-                <p>I asked , 'In the middle of a procedure, can you picture AI being a necessity rather than just a 'back check' tool?'</p>
-
-                <blockquote class="py-14 px-12 italic text-white text-2xl leading-relaxed">
-                    He replied, "Yes in cases with difficult anatomy if AI can be integrated with pre-operative images and real time anatomy it could be helpful. Some procedures require skilled assistant not always available and AI can assist with this once correctly calibrated."
-                </blockquote>
-
-                <p>I then followed up, asking ' In your opinion, who bears the weight of a surgical error if you were just following the AI's lead? Surgeon or AI developer?'</p>
-
-                <blockquote class="py-14 px-12 italic text-white text-2xl leading-relaxed">
-                    Answer: Under current legislation the surgeon bears responsibility as AI and its developer is just a tool. When a surgeon has a complication due to equipment failure the developer of the equipment is not responsible. Until legal frameworks change AI can not be held responsible.
-                </blockquote>
-
-                <div class="interpretation-box p-12 md:p-16 shadow-2xl space-y-8 my-20">
-                    <span class="text-orange-400 text-[10px] tracking-[0.6em] uppercase font-black block">Interpretation: The Liability Trap</span>
-                    <p class="text-white text-2xl font-serif italic leading-relaxed">Since current laws treat AI like a scalpel, the developer has zero skin in the game. The surgeon takes 100% of the fall. This forces experts into a 'babysitting' role, expending massive mental energy double-checking a machine they are already legally responsible for. This <strong>Manual Verification Burden</strong> is the real barrier to adoption.</p>
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
+                        Question: Which do you prefer: a "black box" AI that is 99% accurate but can’t explain itself, or a human colleague who is 70% accurate but can explain every step?
+                    </p>
                 </div>
 
-                <div class="space-y-10 pt-10">
-                    <h2 class="text-5xl tracking-tight">Conclusion</h2>
-                    <p class="text-zinc-400 text-xl font-light">The world is building high-performance engines an Dr.St. John’s reality in Barbados shows that experts don't want smarter boxes; they want accountable partners. Until AI can provide a "why" alongside its "what," the cognitive cost of using it will always stay higher than the benefit. For the surgeon, the risk is absolute and for the developer, it’s zero.</p>
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
+                        "I prefer a human colleague who is less accurate but can explain every step. This justification is important to both the medical team and the patient and their relatives. Often patients need full disclosure in order to exercise autonomy."
+                    </p>
                 </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 50px; text-align: left;">
+                    This suggests that <strong>Traceability > Precision</strong>. Dr St. John is doubling down by saying that in surgery, a "why" is a survival requirement for patient autonomy. If you can't explain the move, it wouldn't be ethical. This is why "black box" logic is a non-starter in an OR; it strips the human out of the ethical loop.
+                </p>
+
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
+                        Question: In the middle of a procedure, can you picture AI being a necessity rather than just a 'back check' tool?
+                    </p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
+                        "Yes in cases with difficult anatomy if AI can be integrated with pre-operative images and real time anatomy it could be helpful. Some procedures require skilled assistant not always available and AI can assist with this once correctly calibrated."
+                    </p>
+                </div>
+
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
+                        Question: In your opinion, who bears the weight of a surgical error if you were just following the AI's lead? Surgeon or AI developer?
+                    </p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
+                        "Under current legislation the surgeon bears responsibility as AI and its developer is just a tool. When a surgeon has a complication due to equipment failure the developer of the equipment is not responsible. Until legal frameworks change AI can not be held responsible."
+                    </p>
+                </div>
+
+                <h3 style="font-size: 1.1rem; color: #fff; font-weight: 700; margin-bottom: 15px;">Interpretation: The Liability Trap</h3>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 40px; text-align: left;">
+                    Since current laws treat AI like a scalpel, the developer has zero skin in the game. The surgeon takes 100% of the fall. This forces experts into a 'babysitting' role, expending massive mental energy double-checking a machine they are already legally responsible for. This <strong>Manual Verification Burden</strong> is the real barrier to adoption.
+                </p>
+
+                <div class="metric-grid">
+                    <div class="metric-item">
+                        <span style="color: #2dd4bf; font-size: 10px; font-weight: 800; display: block; margin-bottom: 5px;">01 / PREFERENCE</span>
+                        <p style="font-size: 13px; color: #fff; margin-bottom: 0;">Traceability > Precision. Justification is vital for medical teams.</p>
+                    </div>
+                    <div class="metric-item">
+                        <span style="color: #2dd4bf; font-size: 10px; font-weight: 800; display: block; margin-bottom: 5px;">02 / UTILITY</span>
+                        <p style="font-size: 13px; color: #fff; margin-bottom: 0;">AI could assist in difficult anatomy once calibrated.</p>
+                    </div>
+                    <div class="metric-item">
+                        <span style="color: #2dd4bf; font-size: 10px; font-weight: 800; display: block; margin-bottom: 5px;">03 / LIABILITY</span>
+                        <p style="font-size: 13px; color: #fff; margin-bottom: 0;">The Fall Guy: Surgeon bears 100% responsibility.</p>
+                    </div>
+                </div>
+
+                <div class="verdict-box">
+                    <span style="font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: #2dd4bf; margin-bottom: 12px; display: block;">CONCLUSION</span>
+                    <p style="color: #fff; line-height: 1.7; font-size: 1.05rem; margin-bottom: 20px;">
+                        The world is building high-performance engines but Dr. St. John’s reality shows that experts don't want smarter boxes; they want accountable partners. Until AI can provide a "why" alongside its "what," the cognitive cost of using it will always stay higher than the benefit. For the surgeon, the risk is absolute and for the developer, it’s zero.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 0; font-style: italic;">
+                        Direct Inquiries: ST_JOHN_FINAL
+                    </p>
+                </div>
+
+                <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08);">
+                    <h2 style="font-size: 1rem; color: #fff; font-weight: 700; margin-bottom: 15px;">National Impact // Emotion Encoded</h2>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.6;">
+                        I had no institutional backing, no team, and no funding: just agency and drive. I founded this project because I needed research experience but had no access to traditional research opportunities, mentors or labs.
+                    </p>
+                </div>
+
             </div>
+        </div>
 
-            <div class="mt-32 footer-card p-12 md:p-16">
-                <div class="flex justify-between items-center mb-16 border-b border-white/5 pb-10">
-                    <h3 class="text-3xl">Direct Inquiries</h3>
-                    <span class="text-zinc-700 font-mono text-[9px] tracking-[0.5em]">ST_JOHN_FINAL_CORE</span>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                    <div class="space-y-6">
-                        <p class="text-[9px] font-black text-orange-400 tracking-[0.4em] uppercase">01 / Preference</p>
-                        <h4 class="text-white text-xl">Traceability > Precision</h4>
-                        <p class="text-zinc-500 text-sm leading-relaxed">Justification is vital for medical teams and patient autonomy.</p>
-                    </div>
-                    <div class="space-y-6">
-                        <p class="text-[9px] font-black text-orange-400 tracking-[0.4em] uppercase">02 / Utility</p>
-                        <h4 class="text-white text-xl">Anatomy & Assistants</h4>
-                        <p class="text-zinc-500 text-sm leading-relaxed">AI could assist in difficult anatomy once correctly calibrated.</p>
-                    </div>
-                    <div class="space-y-6">
-                        <p class="text-[9px] font-black text-orange-400 tracking-[0.4em] uppercase">03 / Liability</p>
-                        <h4 class="text-white text-xl">The Fall Guy</h4>
-                        <p class="text-zinc-500 text-sm leading-relaxed">The surgeon bears 100% responsibility under current law.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="reveal" style="text-align: center; margin-top: 50px; padding-bottom: 50px;">
+            <p style="font-family: 'Courier New', monospace; color: rgba(255,255,255,0.2); font-size: 10px; letter-spacing: 0.1em;">
+                Sonrisa Watts // Emotion Encoded // 2026
+            </p>
+        </div>
 
-            <div class="mt-28 p-[1px] bg-gradient-to-tr from-teal-500/30 to-transparent rounded-[48px] neon-card-inner">
-                <div class="bg-[#080808] p-12 md:p-16 rounded-[47px] space-y-10"> 
-                    <h2 class="text-3xl md:text-4xl leading-tight">
-                        I had no institutional backing, no team, and no funding: just agency and drive.
-                    </h2>
-                    <h2 class="text-3xl md:text-4xl leading-tight bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                        I founded this project because I needed research experience but had no access to traditional research opportunities, mentors or labs.
-                    </h2>
-                    <div class="pt-10 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-[10px] tracking-[0.4em] uppercase text-zinc-600 font-black">National Impact // Emotion Encoded</span>
-                        <span class="text-zinc-600 text-[10px] font-black uppercase">2026</span>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </main>
+    </section>
+
+    <script>
+        window.addEventListener('load', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.05 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
