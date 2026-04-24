@@ -10,7 +10,6 @@
         :root {
             --accent: #2dd4bf;
             --bg: #0a0c10;
-            --surface: #11141b;
             --glass: rgba(255, 255, 255, 0.02);
             --border: rgba(255, 255, 255, 0.08);
             --text-main: #e5e7eb;
@@ -50,33 +49,29 @@
             -webkit-backdrop-filter: blur(30px);
             border: 1px solid var(--border);
             border-radius: 40px;
-            overflow: hidden; /* Clips the image to the border radius */
+            overflow: hidden;
             position: relative;
             box-shadow: 0 50px 100px -20px rgba(0,0,0,0.6);
         }
 
+        /* The No-Crop Header Container */
         .image-header {
             width: 100%;
-            height: 400px;
-            position: relative;
+            height: auto;
+            background: #000; /* Deep black background for any letterboxing if needed */
             border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .image-header img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            max-height: 70vh; /* Prevents the image from being taller than the screen */
             display: block;
-        }
-
-        /* Subtle gradient fade on image for premium feel */
-        .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40%;
-            background: linear-gradient(to top, rgba(10, 12, 16, 0.4), transparent);
+            /* Ensures NO cropping happens */
+            object-fit: contain; 
         }
 
         .content-padding {
@@ -133,7 +128,6 @@
             margin: 40px 0;
             border-radius: 0 20px 20px 0;
             border: 1px solid rgba(255,255,255,0.03);
-            border-left: 2px solid var(--accent);
         }
 
         .analysis-label {
@@ -198,7 +192,7 @@
         <div class="glass-panel">
             
             <div class="image-header">
-                <img src="images/article53.jpg" alt="AI in Surgery Header">
+                <img src="images/article53.jpg" alt="AI in Oncology Header">
                 <div class="image-overlay"></div>
             </div>
 
