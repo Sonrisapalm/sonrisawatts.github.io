@@ -66,14 +66,12 @@
         }
 
         .image-header img {
-            width: 100%;
-            height: auto;
-            max-height: 70vh; /* Prevents the image from being taller than the screen */
-            display: block;
-            /* Ensures NO cropping happens */
-            object-fit: contain; 
-        }
-
+    width: 100%;
+    height: 500px; /* Forces a consistent big height */
+    display: block;
+    object-fit: cover; /* Crops it to fill the width perfectly */
+    object-position: center;
+}
         .content-padding {
             padding: clamp(2rem, 8vw, 5rem);
         }
