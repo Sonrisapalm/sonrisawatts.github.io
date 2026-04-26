@@ -715,60 +715,61 @@ if (scrollContainer) {
     /* --- MOBILE RESPONSIVE FIXES --- */
     
 @media (max-width: 768px) {
-    /* 1. Header: Let content breathe, don't force a height */
+    /* 1. Fix the Header Squish */
     header {
-        padding-top: 100px !important; /* Give space for the status bar */
-        min-height: 100vh !important;
-        height: auto !important;
-        padding-bottom: 160px !important; /* Space for the floating nav */
+        min-height: 110vh !important; /* Extra height to fit the nav + text */
+        padding-top: 100px !important;
+        padding-bottom: 150px !important;
     }
 
-    /* 2. Headline: Keep it big and impactful, just scaled for phone */
-    header h1 {
-        font-size: 3.2rem !important; /* Much more 'expensive' than 1.6rem */
-        padding: 0 10px;
-        margin-bottom: 1rem !important;
+    /* 2. Scale down the massive title */
+    h1 {
+        font-size: 3.2rem !important; /* Prevents "Emotion Encoded" from breaking into 3 lines */
+        letter-spacing: -2px !important;
     }
 
-    /* 3. Name & Location: Keep them on separate lines for readability */
-    .flex-col.md\:flex-row {
-        gap: 1rem !important;
-        margin-bottom: 2rem !important;
-    }
-
-    /* 4. Paragraph Text: Clean and legible */
-    header p {
-        font-size: 1rem !important;
-        line-height: 1.6 !important;
-        padding: 0 10px;
-    }
-
-    /* 5. Navigation: The Swipeable "Pill" */
+    /* 3. Fix the Navigation Overlap */
     nav {
-        width: 90% !important;
-        bottom: 20px !important;
-    }
-
-    nav div {
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        justify-content: flex-start !important;
-        padding: 12px 20px !important;
-        scrollbar-width: none; /* Hide scrollbar Firefox */
-    }
-    
-    nav div::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
-
-    nav a {
-        font-size: 11px !important;
-        white-space: nowrap !important;
-        letter-spacing: 0.1em;
-    }
-
-    /* 6. Neon Cards: Fix width so they don't hit the screen edges */
-    .neon-wrapper {
+        bottom: 25px !important;
         width: 92% !important;
-        margin: 15px auto !important;
+    }
+
+    .nav-link-premium {
+        font-size: 0.7rem !important; /* Smaller text to keep links on one or two lines */
+        padding: 0.4rem 0.6rem !important;
+    }
+
+    /* 4. Fix the Neon Map Container */
+    .neon-wrapper {
+        max-width: 90% !important; /* Ensure it doesn't touch the screen edges */
+        margin: 20px auto !important;
+        padding: 2px !important; /* Thinner border for smaller screens */
+    }
+
+    .neon-card-inner {
+        padding: 1.5rem !important;
+    }
+
+    /* 5. Shrink the Robot Head for mobile */
+    .robot-head-portal {
+        width: 180px !important; /* Smaller silhouette so it doesn't block content */
+        bottom: 20px !important;
+        right: 15px !important;
+    }
+
+    .head-text {
+        font-size: 10px !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* 6. Fix the "My Island" Button */
+    .my-12.max-w-xl {
+        width: 90% !important;
+        padding: 1.5rem !important;
+    }
+
+    .my-12 h3 {
+        font-size: 1.5rem !important;
     }
 }
     
