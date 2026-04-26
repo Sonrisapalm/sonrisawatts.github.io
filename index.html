@@ -712,77 +712,62 @@ if (scrollContainer) {
         transform: translateY(0);
     }
 
-    @media (max-width: 768px) {
-        /* Make it even faster on mobile to keep up with fast scrolling */
-        .reveal-text {
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out;
-        }
-    }
-    /* --- MOBILE RESPONSIVE OVERRIDES --- */
+    /* --- MOBILE RESPONSIVE FIXES --- */
 @media (max-width: 768px) {
-    /* 1. Header: Adjust height for phone screens */
+    /* 1. Header: Let content breathe, don't force a height */
     header {
-        padding-top: 40px !important;
-        min-height: auto !important;
-        height: 550px !important;
+        padding-top: 100px !important; /* Give space for the status bar */
+        min-height: 100vh !important;
+        height: auto !important;
+        padding-bottom: 160px !important; /* Space for the floating nav */
     }
 
+    /* 2. Headline: Keep it big and impactful, just scaled for phone */
     header h1 {
-        font-size: 1.6rem !important; 
+        font-size: 3.2rem !important; /* Much more 'expensive' than 1.6rem */
+        padding: 0 10px;
+        margin-bottom: 1rem !important;
+    }
+
+    /* 3. Name & Location: Keep them on separate lines for readability */
+    .flex-col.md\:flex-row {
+        gap: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    /* 4. Paragraph Text: Clean and legible */
+    header p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
         padding: 0 10px;
     }
 
-    header p {
-        font-size: 0.9rem !important;
-        padding: 0 15px;
+    /* 5. Navigation: The Swipeable "Pill" */
+    nav {
+        width: 90% !important;
+        bottom: 20px !important;
     }
 
-    /* 2. NAVIGATION FIX: Keeps it horizontal and swipable */
-    nav {
-        flex-direction: row !important; /* Back to a horizontal line */
-        flex-wrap: nowrap !important; /* Forces links to stay on ONE line */
-        overflow-x: auto !important; /* Allows you to swipe left/right to see all links */
-        justify-content: flex-start !important; /* Aligns to left so "Home" is first */
-        gap: 20px !important;
-        padding: 15px 20px !important;
-        background: rgba(0, 0, 0, 0.85) !important; /* Slightly darker for better contrast */
-        position: absolute !important; 
-        bottom: 0 !important;
-        width: 100% !important;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iPhones */
+    nav div {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        padding: 12px 20px !important;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
     }
+    
+    nav div::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
 
     nav a {
-        font-size: 0.9rem !important; /* Slightly smaller text for mobile */
-        white-space: nowrap !important; /* Prevents "Ethical Guidelines" from breaking into 2 lines */
-        flex-shrink: 0 !important; /* Prevents the browser from squashing the words */
+        font-size: 11px !important;
+        white-space: nowrap !important;
+        letter-spacing: 0.1em;
     }
 
-    /* 3. The Neon Cards: Fix margins */
+    /* 6. Neon Cards: Fix width so they don't hit the screen edges */
     .neon-wrapper {
-        margin: 20px auto !important;
-        width: 95% !important;
-    }
-
-    .neon-card-inner {
-        padding: 20px !important;
-    }
-
-    /* 4. Images: Fix horizontal scroll for featured images */
-    .flex-row img {
-        width: 260px !important; 
-    }
-
-    /* 5. Article Grid: Single column is best for reading on phones */
-    .grid {
-        grid-template-columns: 1fr !important;
-        padding: 0 15px !important;
-    }
-
-    /* 6. The Interactive Map: Scale it down */
-    .map-wrapper svg {
-        width: 100% !important;
-        max-height: 250px;
+        width: 92% !important;
+        margin: 15px auto !important;
     }
 }
 </style>
