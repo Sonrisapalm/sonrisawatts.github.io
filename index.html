@@ -678,102 +678,113 @@ if (scrollContainer) {
 </main>
     
 <style>
-   /* --- RESET & GLOBAL FIXES --- */
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
-    color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Stops the "side-to-side" wobble */
-    width: 100%;
-}
-
-/* --- THE VIDEO FIX --- */
-/* This forces the video to fill the screen without making the page wider */
-header video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-/* --- THE CONTENT BOXES FIX --- */
-/* This ensures every "box" shrinks to fit the phone screen */
-.neon-wrapper, 
-.my-12, 
-.max-w-xl, 
-.max-w-2xl {
-    max-width: 92% !important; /* Forces 8% margin so it doesn't touch edges */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: auto !important;
-}
-
-/* --- MOBILE SPECIFIC TWEAKS --- */
-@media (max-width: 768px) {
-    /* 1. Header Text Fix */
-    h1 {
-        font-size: 2.8rem !important; /* Shrinks 'Emotion Encoded' */
-        line-height: 1.1 !important;
-        margin-top: 20px !important;
+    /* 1. The Container Window */
+    .clip-window {
+        overflow: hidden;
+        display: block;
+        width: 100%;
     }
 
-    .text-5xl { font-size: 2.5rem !important; }
+    /* 2. The Words (Snappier Animation) */
+    .reveal-text {
+        display: block;
+        opacity: 0;
+        transform: translateY(60px); /* Reduced distance so it finishes faster */
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease-out;
+        will-change: transform, opacity;
+    }
 
-    /* 2. Text "Weirdness" Fix */
-    p {
-        font-size: 1rem !important;
-        line-height: 1.5 !important;
+    /* 3. The Box */
+    .research-card {
+        opacity: 0;
+        transform: translateY(20px); /* Minimal box movement */
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    /* TRIGGER */
+    .research-card.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .research-card.active .reveal-text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        /* Make it even faster on mobile to keep up with fast scrolling */
+        .reveal-text {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out;
+        }
+    }
+    /* --- MOBILE RESPONSIVE OVERRIDES --- */
+@media (max-width: 768px) {
+    /* 1. Header: Adjust height for phone screens */
+    header {
+        padding-top: 40px !important;
+        min-height: auto !important;
+        height: 550px !important;
+    }
+
+    header h1 {
+        font-size: 1.6rem !important; 
         padding: 0 10px;
     }
 
-    /* 3. The Navigation Fix */
-    /* On mobile, we stack them slightly so they aren't a tiny messy line */
+    header p {
+        font-size: 0.9rem !important;
+        padding: 0 15px;
+    }
+
+    /* 2. NAVIGATION FIX: Keeps it horizontal and swipable */
     nav {
-        position: relative !important;
+        flex-direction: row !important; /* Back to a horizontal line */
+        flex-wrap: nowrap !important; /* Forces links to stay on ONE line */
+        overflow-x: auto !important; /* Allows you to swipe left/right to see all links */
+        justify-content: flex-start !important; /* Aligns to left so "Home" is first */
+        gap: 20px !important;
+        padding: 15px 20px !important;
+        background: rgba(0, 0, 0, 0.85) !important; /* Slightly darker for better contrast */
+        position: absolute !important; 
         bottom: 0 !important;
-        left: 0 !important;
-        transform: none !important;
         width: 100% !important;
-        margin-top: -80px; /* Pulls it up into the header area */
-        padding: 10px !important;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iPhones */
     }
 
-    nav div {
-        flex-wrap: wrap !important;
-        gap: 10px !important;
-        border-radius: 20px !important;
-        padding: 15px !important;
+    nav a {
+        font-size: 0.9rem !important; /* Slightly smaller text for mobile */
+        white-space: nowrap !important; /* Prevents "Ethical Guidelines" from breaking into 2 lines */
+        flex-shrink: 0 !important; /* Prevents the browser from squashing the words */
     }
 
-    .nav-link-premium {
-        font-size: 11px !important;
-        letter-spacing: 1px !important;
+    /* 3. The Neon Cards: Fix margins */
+    .neon-wrapper {
+        margin: 20px auto !important;
+        width: 95% !important;
     }
 
-    /* 4. Robot Head Shrink */
-    .robot-head-portal {
-        width: 160px !important;
-        bottom: 15px !important;
-        right: 10px !important;
+    .neon-card-inner {
+        padding: 20px !important;
     }
 
-    /* 5. SVG Map Fix */
-    /* This makes sure your island map stays inside the neon box */
-    svg {
+    /* 4. Images: Fix horizontal scroll for featured images */
+    .flex-row img {
+        width: 260px !important; 
+    }
+
+    /* 5. Article Grid: Single column is best for reading on phones */
+    .grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 15px !important;
+    }
+
+    /* 6. The Interactive Map: Scale it down */
+    .map-wrapper svg {
         width: 100% !important;
-        height: auto !important;
+        max-height: 250px;
     }
 }
-    
 </style>
 
 <script>
