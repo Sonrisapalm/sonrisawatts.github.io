@@ -1604,32 +1604,57 @@ if (scrollContainer) {
     </div>
 </section>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;800&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
-
-<div class="w-full px-6 py-12 flex flex-col items-center">
+<div class="w-full px-6 py-24 flex flex-col items-center relative overflow-hidden">
     
-    <header class="relative z-10 text-center mb-10 w-full max-w-4xl">
-        <span style="letter-spacing: 0.6em; color: #39FF14; font-family: 'Inter', sans-serif;" 
-              class="text-[10px] uppercase font-extrabold mb-4 block opacity-90">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#39FF14]/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+    <header class="relative z-10 text-center mb-16">
+        <span style="font-family: 'Inter', sans-serif; letter-spacing: 0.6em; color: #39FF14;" 
+              class="text-[9px] uppercase font-black mb-6 block opacity-80">
             Institutional Recognition
         </span>
-        <h2 style="font-family: 'Playfair Display', serif; line-height: 1.1;" 
-            class="text-4xl md:text-7xl font-black text-white tracking-tighter">
+        <h2 style="font-family: 'Playfair Display', serif; line-height: 1;" 
+            class="text-5xl md:text-8xl font-black text-white tracking-tighter">
             Evidence of Impact
         </h2>
     </header>
 
-    <div class="relative z-10 w-full max-w-3xl mx-auto">
-        <p style="font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.7);" 
-           class="text-lg md:text-2xl font-light text-center leading-[1.8] md:leading-[1.6]">
-            Emotion Encoded's research findings were recognized and referenced in a 
-            <span style="color: #39FF14; border-bottom: 1px solid rgba(57, 255, 20, 0.4);" class="font-semibold inline-block">
-                National Policy Proposal on Digital Literacy
-            </span> 
-            in St. Kitts & Nevis, highlighting Emotion Encoded’s influence in shaping the future of AI policy and education.
-        </p>
+    <div class="relative z-10 w-full max-w-4xl mx-auto mb-16">
+        <div style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);" 
+             class="p-10 md:p-16 rounded-[3rem] shadow-2xl">
+            
+            <p style="font-family: 'Inter', sans-serif;" 
+               class="text-xl md:text-3xl font-extralight text-white/90 text-center leading-[1.7] tracking-tight">
+                Emotion Encoded's research findings were recognized and referenced in a 
+                <span class="text-[#39FF14] font-bold block mt-4 md:inline md:mt-0 tracking-tighter">
+                    National Policy Proposal on Digital Literacy
+                </span> 
+                <span class="block md:inline text-white/50">— in St. Kitts & Nevis,</span> 
+                shaping the future of AI policy and education.
+            </p>
+        </div>
     </div>
 
+    <div class="relative z-10 flex flex-col items-center">
+        <div class="group relative">
+            <div class="absolute -inset-4 bg-white/5 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            
+            <a href="proposal.pdf" target="_blank" class="block relative transition-transform duration-500 hover:scale-[1.02]">
+                <img src="images/policy-cover.jpg" 
+                     alt="Policy Proposal Cover" 
+                     class="w-full max-w-sm h-auto rounded-3xl shadow-2xl border border-white/20" />
+                
+                <div style="backdrop-filter: blur(10px); background: rgba(57, 255, 20, 0.15); border: 1px solid rgba(57, 255, 20, 0.3);" 
+                     class="absolute -bottom-4 -right-4 px-5 py-2 rounded-full">
+                    <span class="text-white text-[9px] font-black uppercase tracking-widest">Open PDF Archive</span>
+                </div>
+            </a>
+        </div>
+        
+        <p style="letter-spacing: 0.4em;" class="text-[10px] uppercase text-gray-500 mt-12 font-bold opacity-60">
+            Click cover to inspect full archive
+        </p>
+    </div>
 </div>
 
 <style>
