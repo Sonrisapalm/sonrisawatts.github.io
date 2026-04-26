@@ -719,70 +719,94 @@ if (scrollContainer) {
         }
     }
     /* --- MOBILE RESPONSIVE OVERRIDES --- */
+/* --- THE CLEAN MOBILE FIX --- */
 @media (max-width: 768px) {
-    /* 1. Header: Adjust height for phone screens */
+    /* 1. Fix Header & Video Aspect Ratio */
     header {
-        padding-top: 40px !important;
-        min-height: auto !important;
-        height: 550px !important;
+        padding-top: 60px !important;
+        min-height: 80vh !important; /* Give it more room so stuff doesn't overlap */
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Force the video to look "Horizontal" (Landscape) */
+    header video {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover; /* This keeps the 'landscape' feel without stretching */
     }
 
     header h1 {
-        font-size: 1.6rem !important; 
-        padding: 0 10px;
+        font-size: 2.2rem !important; /* Bigger, bolder, but stays in bounds */
+        line-height: 1.1 !important;
+        margin-bottom: 15px !important;
+        z-index: 10;
     }
 
-    header p {
-        font-size: 0.9rem !important;
-        padding: 0 15px;
-    }
-
-    /* 2. NAVIGATION FIX: Keeps it horizontal and swipable */
+    /* 2. NAVIGATION: The "Swipeable Bar" Fix */
     nav {
-        flex-direction: row !important; /* Back to a horizontal line */
-        flex-wrap: nowrap !important; /* Forces links to stay on ONE line */
-        overflow-x: auto !important; /* Allows you to swipe left/right to see all links */
-        justify-content: flex-start !important; /* Aligns to left so "Home" is first */
-        gap: 20px !important;
-        padding: 15px 20px !important;
-        background: rgba(0, 0, 0, 0.85) !important; /* Slightly darker for better contrast */
-        position: absolute !important; 
-        bottom: 0 !important;
+        position: relative !important; /* Moves it BELOW the text so it doesn't overlap */
+        bottom: auto !important;
+        transform: none !important;
+        left: auto !important;
         width: 100% !important;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iPhones */
+        margin-top: 40px !important;
+        overflow-x: auto !important; /* This lets you swipe the menu left/right */
+        display: block !important;
+        z-index: 30;
     }
 
-    nav a {
-        font-size: 0.9rem !important; /* Slightly smaller text for mobile */
-        white-space: nowrap !important; /* Prevents "Ethical Guidelines" from breaking into 2 lines */
-        flex-shrink: 0 !important; /* Prevents the browser from squashing the words */
+    nav div {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* Force them to stay on one line */
+        white-space: nowrap !important;
+        padding: 10px 20px !important;
+        gap: 25px !important;
+        justify-content: flex-start !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        backdrop-filter: blur(10px);
     }
 
-    /* 3. The Neon Cards: Fix margins */
-    .neon-wrapper {
+    .nav-link-premium {
+        flex-shrink: 0 !important; /* Stops the browser from squishing your links */
+        font-size: 13px !important;
+    }
+
+    /* 3. NEON BOXES: Kill the "Too Big" issue */
+    .neon-wrapper, 
+    .my-12, 
+    [style*="max-width: 550px"], 
+    [style*="max-width: 400px"] {
+        max-width: 92% !important; /* Overrides the hard-coded pixels */
+        width: 92% !important;
         margin: 20px auto !important;
-        width: 95% !important;
     }
 
     .neon-card-inner {
-        padding: 20px !important;
+        padding: 25px 15px !important;
     }
 
-    /* 4. Images: Fix horizontal scroll for featured images */
-    .flex-row img {
-        width: 260px !important; 
-    }
-
-    /* 5. Article Grid: Single column is best for reading on phones */
-    .grid {
-        grid-template-columns: 1fr !important;
-        padding: 0 15px !important;
-    }
-
-    /* 6. The Interactive Map: Scale it down */
-    .map-wrapper svg {
+    /* 4. THE MAP: Prevent it from bleeding off screen */
+    .map-wrapper {
         width: 100% !important;
-        max-height: 250px;
+        overflow: hidden;
+    }
+    
+    svg {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 300px;
+    }
+
+    /* 5. ROBOT HEAD: Shrink to prevent blocking */
+    .robot-head-portal {
+        width: 150px !important;
+        right: 10px !important;
+        bottom: 10px !important;
     }
 }
 </style>
