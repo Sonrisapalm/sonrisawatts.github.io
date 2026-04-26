@@ -1582,45 +1582,50 @@ if (scrollContainer) {
     </div>
 </section>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;300;600&display=swap" rel="stylesheet">
 
-<section style="font-family: 'Inter', sans-serif;" class="relative overflow-hidden p-8 md:p-20 rounded-[40px] mt-16 max-w-5xl mx-auto bg-white/[0.02] border border-white/10 backdrop-blur-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
+<section class="relative z-10 max-w-5xl mx-auto px-6 py-20">
     
-    <div style="background: radial-gradient(circle at center, #39FF14 0%, transparent 70%);" class="absolute -top-24 -left-24 w-64 h-64 opacity-10 pointer-events-none"></div>
-
-    <header class="relative z-10 text-center mb-12">
-        <span style="letter-spacing: 0.5em; color: #39FF14;" class="text-[10px] uppercase font-extrabold mb-4 block">
+    <header class="text-center mb-12">
+        <span style="font-family: 'Inter', sans-serif; letter-spacing: 0.6em; color: #39FF14;" 
+              class="text-[10px] uppercase font-bold mb-4 block opacity-80">
             Institutional Recognition
         </span>
-        <h2 style="font-family: 'Playfair Display', serif;" class="text-4xl md:text-6xl font-black text-white leading-tight">
-            Evidence of Impact
+        <h2 style="font-family: 'Playfair Display', serif; line-height: 1.1;" 
+            class="text-5xl md:text-7xl font-black text-white tracking-tight">
+            Evidence of <span class="italic font-light">Impact</span>
         </h2>
     </header>
 
-    <div class="relative z-10 max-w-3xl mx-auto mb-16">
-        <p class="text-xl md:text-2xl font-light text-gray-300 text-center leading-[1.8]">
+    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05);" 
+         class="relative z-10 max-w-4xl mx-auto p-8 md:p-16 rounded-[40px] backdrop-blur-sm">
+        
+        <p style="font-family: 'Inter', sans-serif;" 
+           class="text-xl md:text-3xl font-extralight text-gray-200 text-center leading-relaxed md:leading-[1.6] tracking-tight">
             Emotion Encoded's research findings were recognized and referenced in a 
-            <span style="color: #39FF14; border-bottom: 1px solid rgba(57, 255, 20, 0.3);" class="font-semibold">
+            <span style="color: #39FF14;" class="font-semibold block md:inline mt-4 md:mt-0">
                 National Policy Proposal on Digital Literacy
             </span> 
-            in St. Kitts & Nevis, highlighting Emotion Encoded’s influence in shaping the future of AI policy and education.
+            in St. Kitts & Nevis, highlighting the initiative’s influence in shaping the future of AI policy and education.
         </p>
-    </div>
 
-    <div class="relative z-10 flex justify-center items-center flex-col">
-        <div class="group relative">
-            <div style="background: #39FF14;" class="absolute inset-0 rounded-3xl blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-            
-            <a href="proposal.pdf" target="_blank" class="block relative transition-transform duration-700 ease-out group-hover:scale-[1.02]">
-                <img src="images/policy-cover.jpg" alt="Policy Proposal Cover" class="w-full max-w-sm h-auto rounded-3xl shadow-2xl border border-white/10" />
-            </a>
-        </div>
-        
-        <p style="letter-spacing: 0.2em;" class="text-[10px] uppercase text-gray-500 mt-8 font-medium">
-            Click cover to inspect full archive
-        </p>
+        <div class="w-12 h-[1px] bg-[#39FF14] mx-auto mt-12 opacity-30"></div>
     </div>
 </section>
+
+<style>
+    /* Prevent text from looking jagged on high-res screens */
+    h2, p {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+    
+    /* Ensure the "National Policy" span doesn't look weird on small phones */
+    @media (max-width: 640px) {
+        h2 { font-size: 2.5rem !important; }
+        p { font-size: 1.1rem !important; }
+    }
+</style>
 
 
     <section class="my-16 px-4">
