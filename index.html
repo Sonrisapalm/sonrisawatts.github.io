@@ -1582,37 +1582,43 @@ if (scrollContainer) {
     </div>
 </section>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;800&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
 
-<section class="relative z-10 max-w-5xl mx-auto px-6 py-20">
+<div class="w-full px-6 py-12 flex flex-col items-center">
     
-    <header class="text-center mb-12">
-        <span style="font-family: 'Inter', sans-serif; letter-spacing: 0.6em; color: #39FF14;" 
-              class="text-[10px] uppercase font-bold mb-4 block opacity-80">
+    <header class="relative z-10 text-center mb-10 w-full max-w-4xl">
+        <span style="letter-spacing: 0.6em; color: #39FF14; font-family: 'Inter', sans-serif;" 
+              class="text-[10px] uppercase font-extrabold mb-4 block opacity-90">
             Institutional Recognition
         </span>
         <h2 style="font-family: 'Playfair Display', serif; line-height: 1.1;" 
-            class="text-5xl md:text-7xl font-black text-white tracking-tight">
-            Evidence of <span class="italic font-light">Impact</span>
+            class="text-4xl md:text-7xl font-black text-white tracking-tighter">
+            Evidence of Impact
         </h2>
     </header>
 
-    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05);" 
-         class="relative z-10 max-w-4xl mx-auto p-8 md:p-16 rounded-[40px] backdrop-blur-sm">
-        
-        <p style="font-family: 'Inter', sans-serif;" 
-           class="text-xl md:text-3xl font-extralight text-gray-200 text-center leading-relaxed md:leading-[1.6] tracking-tight">
+    <div class="relative z-10 w-full max-w-3xl mx-auto">
+        <p style="font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.7);" 
+           class="text-lg md:text-2xl font-light text-center leading-[1.8] md:leading-[1.6]">
             Emotion Encoded's research findings were recognized and referenced in a 
-            <span style="color: #39FF14;" class="font-semibold block md:inline mt-4 md:mt-0">
+            <span style="color: #39FF14; border-bottom: 1px solid rgba(57, 255, 20, 0.4);" class="font-semibold inline-block">
                 National Policy Proposal on Digital Literacy
             </span> 
-            in St. Kitts & Nevis, highlighting the initiative’s influence in shaping the future of AI policy and education.
+            in St. Kitts & Nevis, highlighting Emotion Encoded’s influence in shaping the future of AI policy and education.
         </p>
-
-        <div class="w-12 h-[1px] bg-[#39FF14] mx-auto mt-12 opacity-30"></div>
     </div>
-</section>
 
+</div>
+
+<style>
+    /* Ensures the font rendering is sharp and expensive-looking */
+    h2, p, span {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-wrap: balance; /* Keeps text from having awkward single words on a new line */
+    }
+</style>
+                
 <style>
     /* Prevent text from looking jagged on high-res screens */
     h2, p {
