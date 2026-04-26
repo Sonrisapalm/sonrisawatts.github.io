@@ -678,98 +678,99 @@ if (scrollContainer) {
 </main>
     
 <style>
-    /* 1. The Container Window */
-    .clip-window {
-        overflow: hidden;
-        display: block;
-        width: 100%;
-    }
+   /* --- RESET & GLOBAL FIXES --- */
+* {
+    box-sizing: border-box;
+}
 
-    /* 2. The Words (Snappier Animation) */
-    .reveal-text {
-        display: block;
-        opacity: 0;
-        transform: translateY(60px); /* Reduced distance so it finishes faster */
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease-out;
-        will-change: transform, opacity;
-    }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Stops the "side-to-side" wobble */
+    width: 100%;
+}
 
-    /* 3. The Box */
-    .research-card {
-        opacity: 0;
-        transform: translateY(20px); /* Minimal box movement */
-        transition: opacity 0.4s ease, transform 0.4s ease;
-    }
+/* --- THE VIDEO FIX --- */
+/* This forces the video to fill the screen without making the page wider */
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
 
-    /* TRIGGER */
-    .research-card.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* --- THE CONTENT BOXES FIX --- */
+/* This ensures every "box" shrinks to fit the phone screen */
+.neon-wrapper, 
+.my-12, 
+.max-w-xl, 
+.max-w-2xl {
+    max-width: 92% !important; /* Forces 8% margin so it doesn't touch edges */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+}
 
-    .research-card.active .reveal-text {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* --- MOBILE RESPONSIVE FIXES --- */
-    
+/* --- MOBILE SPECIFIC TWEAKS --- */
 @media (max-width: 768px) {
-    /* 1. Fix the Header Squish */
-    header {
-        min-height: 110vh !important; /* Extra height to fit the nav + text */
-        padding-top: 100px !important;
-        padding-bottom: 150px !important;
-    }
-
-    /* 2. Scale down the massive title */
+    /* 1. Header Text Fix */
     h1 {
-        font-size: 3.2rem !important; /* Prevents "Emotion Encoded" from breaking into 3 lines */
-        letter-spacing: -2px !important;
+        font-size: 2.8rem !important; /* Shrinks 'Emotion Encoded' */
+        line-height: 1.1 !important;
+        margin-top: 20px !important;
     }
 
-    /* 3. Fix the Navigation Overlap */
+    .text-5xl { font-size: 2.5rem !important; }
+
+    /* 2. Text "Weirdness" Fix */
+    p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        padding: 0 10px;
+    }
+
+    /* 3. The Navigation Fix */
+    /* On mobile, we stack them slightly so they aren't a tiny messy line */
     nav {
-        bottom: 25px !important;
-        width: 92% !important;
+        position: relative !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        margin-top: -80px; /* Pulls it up into the header area */
+        padding: 10px !important;
+    }
+
+    nav div {
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        border-radius: 20px !important;
+        padding: 15px !important;
     }
 
     .nav-link-premium {
-        font-size: 0.7rem !important; /* Smaller text to keep links on one or two lines */
-        padding: 0.4rem 0.6rem !important;
+        font-size: 11px !important;
+        letter-spacing: 1px !important;
     }
 
-    /* 4. Fix the Neon Map Container */
-    .neon-wrapper {
-        max-width: 90% !important; /* Ensure it doesn't touch the screen edges */
-        margin: 20px auto !important;
-        padding: 2px !important; /* Thinner border for smaller screens */
-    }
-
-    .neon-card-inner {
-        padding: 1.5rem !important;
-    }
-
-    /* 5. Shrink the Robot Head for mobile */
+    /* 4. Robot Head Shrink */
     .robot-head-portal {
-        width: 180px !important; /* Smaller silhouette so it doesn't block content */
-        bottom: 20px !important;
-        right: 15px !important;
+        width: 160px !important;
+        bottom: 15px !important;
+        right: 10px !important;
     }
 
-    .head-text {
-        font-size: 10px !important;
-        margin-bottom: 8px !important;
-    }
-
-    /* 6. Fix the "My Island" Button */
-    .my-12.max-w-xl {
-        width: 90% !important;
-        padding: 1.5rem !important;
-    }
-
-    .my-12 h3 {
-        font-size: 1.5rem !important;
+    /* 5. SVG Map Fix */
+    /* This makes sure your island map stays inside the neon box */
+    svg {
+        width: 100% !important;
+        height: auto !important;
     }
 }
     
