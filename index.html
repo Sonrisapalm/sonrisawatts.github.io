@@ -737,27 +737,32 @@ if (scrollContainer) {
         }
 
         /* FIX THE NAVIGATION: Put it below the text, not on top of it */
-        nav {
-            position: relative !important; 
-            bottom: auto !important; 
-            left: auto !important;
-            transform: none !important; 
-            width: 100% !important; 
-            margin-top: 40px !important;
-            overflow-x: auto !important; 
-            display: block !important;
-            z-index: 20 !important;
-        }
+       /* Inside your @media (max-width: 768px) */
+nav {
+    position: relative !important;
+    width: 100% !important;
+    margin-top: 30px !important;
+    display: block !important;
+}
 
-        nav div {
-            display: flex !important; 
-            flex-wrap: nowrap !important; 
-            white-space: nowrap !important;
-            padding: 15px 20px !important; 
-            gap: 20px !important;
-            background: rgba(0, 0, 0, 0.8) !important; 
-            border-radius: 50px !important;
-        }
+nav div {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Prevents links from stacking/vanishing */
+    overflow-x: auto !important; /* Enables swiping */
+    -webkit-overflow-scrolling: touch;
+    gap: 15px !important;
+    padding: 12px 20px !important;
+    justify-content: flex-start !important;
+}
+
+nav a {
+    flex: 0 0 auto !important; /* This is the fix: it forces links to stay visible */
+    font-size: 10px !important;
+    letter-spacing: 0.1em;
+}
+
+/* Optional: Hides the scrollbar line for a cleaner look */
+nav div::-webkit-scrollbar { display: none; }
 
         /* FIX THE TEXT BOXES (The "No Institutional Backing" box) */
         .neon-wrapper, [style*="max-width: 550px"], [style*="max-width: 400px"] {
