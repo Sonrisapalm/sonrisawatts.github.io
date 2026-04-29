@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Encoded | Article 49: AI in Radiology</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #000; 
+            color: #fff; 
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .nav-item {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            font-weight: 400;
+        }
+        .nav-item:hover { 
+            color: #fff; 
+            letter-spacing: 0.4em; 
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+            overflow: hidden;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .q-box {
+            border-left: 2px solid #2dd4bf;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .ans-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <section style="
+        min-height: 100vh;
+        padding: 60px 20px;
+        background: radial-gradient(circle at top, #0d0d0d 0%, #000 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    ">
+
+        <nav class="reveal" style="
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+            max-width: 900px;
+        ">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="Methodsanddata.html" class="nav-item">Methods</a>
+            <a href="DataAnalysisquantitative.html" class="nav-item">PrePrint</a>
+            <a href="ethicalguidelines.html" class="nav-item">Ethics</a>
+            <a href="AI-Perception-Briefs.html" class="nav-item" style="color: #2dd4bf; border-bottom: 1px solid #2dd4bf;">Findings</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <div class="glass-card reveal">
+            
+            <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+                <img src="images/article49.jpg" alt="AI in Radiology Header" style="width: 100%; height: auto; display: block;">
+            </div>
+
+            <div style="padding: 50px 60px;">
+                
+                <span style="font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; color: #2dd4bf; margin-bottom: 15px; display: inline-block; text-align: left; width: 100%;">
+                    ARTICLE 49 // RADIOLOGY
+                </span>
+                
+                <span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 25px; display: block; text-align: left; width: 100%;">
+                    EMOTION ENCODED: INDEPENDENT RESEARCH INITIATIVE
+                </span>
+
+                <h1 style="
+                    font-size: 2.5rem;
+                    font-weight: 900;
+                    letter-spacing: -0.02em;
+                    line-height: 1.2;
+                    margin-bottom: 35px;
+                    background: linear-gradient(to right, #ffffff, #a1a1aa);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-align: left;
+                ">
+                    Burnout, Bias, and the Black Box
+                </h1>
+
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 1.15rem; margin-bottom: 30px; text-align: left; font-weight: 400;">
+                    In the high-volume world of radiology, where thousands of images are scanned daily and a single missed pixel can change a life, there is significant pressure on human visual acuity. I spoke with Dr. Nalini Kokaram to explore how clinical intuition mixes with automated detection.
+                </p>
+
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; margin-bottom: 50px;">
+                    <h2 style="font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Dr. Nalini Kokaram, MBBS, FRCR</h2>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.6;">
+                        A Fellow of the Royal College of Radiologists (UK) and graduate of UWI with over two decades of clinical experience. She has served as Head of Radiology at Sangre Grande Hospital and Port of Spain General Hospital. A pioneer who introduced vascular imaging to the public health sector in Trinidad and Tobago.
+                    </p>
+                </div>
+
+                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">The Myth of Shared Blame</h3>
+                
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: Do you think other radiologists may use AI because it’s better at finding things, or because it’s a safety net to share blame if a mistake happens?</p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                        Dr. Kokaram's Response: "As Radiologists, our fundamental purpose is to diagnose the underlying condition and guide the referring clinician... So 'sharing blame if a mistake happens' is not a consideration. In a normal work day, it is understandable how a Radiologist may be prone to human errors as focus wanes. It is for this reason, I believe that AI is an asset... it acts as an extra pair of eyes for the Radiologist to ensure diagnostic accuracy."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 50px; text-align: left;">
+                    Dr. Kokaram frames AI as a mechanical necessity to combat fatigue rather than a legal shield. In a sector where volume surpasses specialists, AI ensures that the "extra pair of eyes" never gets tired, even when the human ones do.
+                </p>
+
+                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">The Requirement of Explanation</h3>
+
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: If an algorithm gives a diagnosis but can’t explain “why” or show the specific pixels, do you accept the finding or ignore the AI?</p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                        Dr. Kokaram's Response: "For every differential that is disregarded there must be a data driven reason. So if an algorithm provides a diagnosis without an explanation, then I think it should be ignored as ultimately we, as Radiologists, must base all our diagnoses with clear and convincing data driven evidence."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 50px; text-align: left;">
+                    Trust in radiology is not built on the "what," but on the "how." If an AI cannot participate in the logical process of exclusion, it cannot be integrated into a final clinical report.
+                </p>
+
+                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">Gut Instinct vs. The 99%</h3>
+
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: When a 99% accurate AI says a scan is Normal but your gut says it’s High Risk, do you find yourself looking for reasons to agree with the machine?</p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                        Dr. Kokaram's Response: "Calling something Normal because AI claims it is, even though your gut—your years of knowledge and experience—tells you otherwise, would be irresponsible. It is always better practice to seek more information before committing to a final diagnosis. This protocol will serve Radiologists well as we navigate a new world in AI."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; text-align: left;">
+                    Dr. Kokaram defines "gut instinct" not as a guess, but as the synthesis of years of high-level experience. While AI is a tireless partner, it cannot replace the human courage required to remain "safe" in the face of algorithmic certainty.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="reveal" style="text-align: center; margin-top: 50px;">
+            <p style="font-family: 'Courier New', monospace; color: rgba(255,255,255,0.2); font-size: 10px; letter-spacing: 0.1em;">
+                Sonrisa Watts // Emotion Encoded // 2026
+            </p>
+        </div>
+
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
