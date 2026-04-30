@@ -633,56 +633,51 @@ if (scrollContainer) {
     </div>
 </section>
 
-<main class="w-full max-w-4xl mx-auto px-4 py-10 space-y-12">
+<div class="w-full max-w-5xl mx-auto px-4 py-12 space-y-12">
+    
+    <div class="research-card reveal relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden">
+        <div class="bg-[#09090b] rounded-[calc(2.5rem-1px)] p-8 md:p-12 relative">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-teal-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+            <p class="text-[1.05rem] md:text-xl leading-[1.8] text-zinc-400 font-extralight tracking-tight relative z-10">
+                Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population 
+                <span class="text-teal-400/90 font-medium italic">from and working in the Caribbean Region,</span> 
+                <span class="text-white font-semibold tracking-tighter">Emotion Encoded</span> 
+                helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
+            </p>
+        </div>
+    </div>
 
-<main class="w-full max-w-4xl mx-auto px-6 py-16 space-y-20">
+    <div class="research-card reveal relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden">
+        <div class="bg-[#09090b] rounded-[calc(2.5rem-1px)] p-8 md:p-12">
+            <p class="text-lg md:text-2xl font-light leading-snug text-zinc-100 tracking-tight">
+                Founded by <span class="font-medium text-white">Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis,</span> following the completion of my Psychology BSc degree. 
+                <span class="block mt-6 text-base md:text-lg text-zinc-400 font-extralight leading-relaxed">
+                    This research initiative ran for 6-7 months and will end in a few months. All interviews (anonymous or not) and research results will be posted to my website eventually.
+                </span>
+            </p>
+        </div>
+    </div>
 
-    <div class="research-card reveal group"> 
-        <div class="relative p-[1px] rounded-[3rem] overflow-hidden bg-white/5">
-            <div class="bg-[#09090b] rounded-[calc(3rem-1px)] p-10 md:p-16 relative overflow-hidden">
-                <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/5 blur-[90px] rounded-full"></div>
-                
-                <p class="text-lg md:text-xl leading-[1.8] text-zinc-400 font-extralight tracking-tight">
-                    Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population 
-                    <span class="text-teal-400/90 font-medium tracking-normal italic">from and working in the Caribbean Region,</span> 
-                    <span class="text-white font-semibold tracking-tighter">Emotion Encoded</span> 
-                    helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
+    <div class="research-card reveal relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden">
+        <div class="bg-[#09090b] rounded-[calc(2.5rem-1px)] p-8 md:p-12 relative">
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-teal-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+            <div class="relative z-10 space-y-6">
+                <p class="text-lg md:text-2xl leading-tight font-extralight text-teal-400 tracking-tight">
+                    Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
+                </p>
+                <p class="text-[1.05rem] md:text-xl leading-relaxed text-zinc-300 font-extralight">
+                    I am dedicated to using <span class="text-white font-medium">Psychology to Decode Emotional Barriers to AI Adoption.</span>
                 </p>
             </div>
         </div>
     </div>
 
-    <div class="research-card reveal group">
-        <div class="relative p-[1px] rounded-[3rem] overflow-hidden bg-white/5">
-            <div class="bg-[#09090b] rounded-[calc(3rem-1px)] p-10 md:p-16">
-                <span class="block text-xl md:text-2xl font-light leading-snug text-zinc-100 tracking-tight">
-                    Founded by <span class="font-medium text-white">Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis,</span> following the completion of my Psychology BSc degree. 
-                    <span class="block mt-6 text-[15px] md:text-lg text-zinc-400 font-extralight leading-relaxed">
-                        This research initiative ran for 6-7 months and will end in a few months. All interviews (anonymous or not) and research results will be posted to my website eventually.
-                    </span>
-                </span>
-            </div>
-        </div>
-    </div>
+</div> ```
 
-    <div class="research-card reveal group">
-        <div class="relative p-[1px] rounded-[3rem] overflow-hidden bg-white/5">
-            <div class="bg-[#09090b] rounded-[calc(3rem-1px)] p-10 md:p-16 relative overflow-hidden">
-                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-teal-500/5 blur-[90px] rounded-full"></div>
-                
-                <div class="relative z-10 space-y-8">
-                    <p class="text-xl md:text-2xl leading-tight font-extralight text-teal-400 tracking-tight">
-                        Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
-                    </p>
-                    
-                    <p class="text-lg md:text-xl leading-relaxed text-zinc-300 font-extralight">
-                        I am dedicated to using <span class="text-white font-medium">Psychology to Decode Emotional Barriers to AI Adoption.</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+### Why this fixes the Article layout:
+1. **Scope Control:** By closing the `</div>` before your Articles start, the Articles can now use their own full-width grid or layout without being trapped inside the introductory container.
+2. **Width Freedom:** Your Article section can now expand to whatever width you originally set for it (like `max-w-7xl` or `w-full`).
+3. **Clean Break:** The `space-y-12` only applies to the three intro cards above, so it won't add weird gaps between your Article images and headlines below.
     
 <style>
     /* --- 1. CORE ANIMATIONS & DESKTOP BASICS --- */
