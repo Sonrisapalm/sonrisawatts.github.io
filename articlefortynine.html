@@ -16,17 +16,23 @@
             margin: 0;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            width: 100%;
         }
 
         .nav-item {
             color: rgba(255,255,255,0.4);
             text-decoration: none;
             font-size: 10px;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.2em; 
             text-transform: uppercase;
             transition: all 0.4s ease;
             font-weight: 400;
         }
+
+        @media (min-width: 768px) {
+            .nav-item { letter-spacing: 0.3em; }
+        }
+
         .nav-item:hover { 
             color: #fff; 
             letter-spacing: 0.4em; 
@@ -37,16 +43,26 @@
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 40px;
+            border-radius: 30px;
             max-width: 900px;
+            width: 95%;
             margin: 0 auto;
             box-shadow: 0 40px 100px rgba(0,0,0,0.7);
             overflow: hidden;
         }
 
+        .card-body {
+            padding: 30px 20px;
+        }
+        @media (min-width: 768px) {
+            .card-body {
+                padding: 50px 60px;
+            }
+        }
+
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal.active {
@@ -56,7 +72,7 @@
 
         .q-box {
             border-left: 2px solid #2dd4bf;
-            padding-left: 20px;
+            padding-left: 15px;
             margin-bottom: 20px;
             text-align: left;
         }
@@ -64,10 +80,15 @@
         .ans-box {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 20px;
-            padding: 30px;
+            padding: 20px;
             margin-bottom: 30px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .ans-box { padding: 30px; }
+            .q-box { padding-left: 20px; }
         }
     </style>
 </head>
@@ -75,23 +96,22 @@
 
     <section style="
         min-height: 100vh;
-        padding: 60px 20px;
+        padding: 40px 0;
         background: radial-gradient(circle at top, #0d0d0d 0%, #000 100%);
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
     ">
 
-        <nav class="reveal" style="
+        <nav class="reveal active" style="
             display: flex; 
             flex-wrap: wrap; 
             justify-content: center; 
-            gap: 30px; 
-            margin-bottom: 60px;
+            gap: 15px 25px; 
+            margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
-            width: 100%;
+            width: 90%;
             max-width: 900px;
         ">
             <a href="index.html" class="nav-item">Home</a>
@@ -105,25 +125,27 @@
 
         <div class="glass-card reveal">
             
-            <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
-                <img src="images/article49.jpg" alt="AI in Radiology Header" style="width: 100%; height: auto; display: block;">
+            <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: #000; display: flex; justify-content: center;">
+                <img src="images/article49.jpg" 
+                     alt="AI in Radiology Header" 
+                     style="width: 100%; height: auto; display: block; object-fit: contain;">
             </div>
 
-            <div style="padding: 50px 60px;">
+            <div class="card-body">
                 
-                <span style="font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; color: #2dd4bf; margin-bottom: 15px; display: inline-block; text-align: left; width: 100%;">
+                <span style="font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: #2dd4bf; margin-bottom: 12px; display: block; text-align: left;">
                     ARTICLE 49 // RADIOLOGY
                 </span>
                 
-                <span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 25px; display: block; text-align: left; width: 100%;">
-                    EMOTION ENCODED: INDEPENDENT RESEARCH INITIATIVE
+                <span style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 25px; display: block; text-align: left;">
+                    EMOTION ENCODED: INDEPENDENT RESEARCH INITIATIVE // ENCODEDEMOTION.ORG
                 </span>
 
                 <h1 style="
-                    font-size: 2.5rem;
+                    font-size: clamp(1.8rem, 6vw, 2.5rem);
                     font-weight: 900;
                     letter-spacing: -0.02em;
-                    line-height: 1.2;
+                    line-height: 1.1;
                     margin-bottom: 35px;
                     background: linear-gradient(to right, #ffffff, #a1a1aa);
                     -webkit-background-clip: text;
@@ -133,69 +155,75 @@
                     Burnout, Bias, and the Black Box
                 </h1>
 
-                <p style="color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 1.15rem; margin-bottom: 30px; text-align: left; font-weight: 400;">
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.05rem; margin-bottom: 30px; text-align: left;">
                     In the high-volume world of radiology, where thousands of images are scanned daily and a single missed pixel can change a life, there is significant pressure on human visual acuity. I spoke with Dr. Nalini Kokaram to explore how clinical intuition mixes with automated detection.
                 </p>
 
-                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; margin-bottom: 50px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 20px; margin-bottom: 50px; text-align: left;">
                     <h2 style="font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 10px;">Dr. Nalini Kokaram, MBBS, FRCR</h2>
-                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.6;">
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6;">
                         A Fellow of the Royal College of Radiologists (UK) and graduate of UWI with over two decades of clinical experience. She has served as Head of Radiology at Sangre Grande Hospital and Port of Spain General Hospital. A pioneer who introduced vascular imaging to the public health sector in Trinidad and Tobago.
                     </p>
                 </div>
 
-                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">The Myth of Shared Blame</h3>
+                <h3 style="font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left; opacity: 0.8;">The Myth of Shared Blame</h3>
                 
                 <div class="q-box">
-                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: Do you think other radiologists may use AI because it’s better at finding things, or because it’s a safety net to share blame if a mistake happens?</p>
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6; font-size: 0.95rem;">
+                        Question: Do you think other radiologists may use AI because it’s better at finding things, or because it’s a safety net to share blame if a mistake happens?
+                    </p>
                 </div>
 
                 <div class="ans-box">
-                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                    <p style="color: #fff; line-height: 1.7; font-size: 1rem;">
                         Dr. Kokaram's Response: "As Radiologists, our fundamental purpose is to diagnose the underlying condition and guide the referring clinician... So 'sharing blame if a mistake happens' is not a consideration. In a normal work day, it is understandable how a Radiologist may be prone to human errors as focus wanes. It is for this reason, I believe that AI is an asset... it acts as an extra pair of eyes for the Radiologist to ensure diagnostic accuracy."
                     </p>
                 </div>
 
-                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 50px; text-align: left;">
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 50px; text-align: left; font-size: 1rem;">
                     Dr. Kokaram frames AI as a mechanical necessity to combat fatigue rather than a legal shield. In a sector where volume surpasses specialists, AI ensures that the "extra pair of eyes" never gets tired, even when the human ones do.
                 </p>
 
-                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">The Requirement of Explanation</h3>
+                <h3 style="font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left; opacity: 0.8;">The Requirement of Explanation</h3>
 
                 <div class="q-box">
-                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: If an algorithm gives a diagnosis but can’t explain “why” or show the specific pixels, do you accept the finding or ignore the AI?</p>
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6; font-size: 0.95rem;">
+                        Question: If an algorithm gives a diagnosis but can’t explain “why” or show the specific pixels, do you accept the finding or ignore the AI?
+                    </p>
                 </div>
 
                 <div class="ans-box">
-                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                    <p style="color: #fff; line-height: 1.7; font-size: 1rem;">
                         Dr. Kokaram's Response: "For every differential that is disregarded there must be a data driven reason. So if an algorithm provides a diagnosis without an explanation, then I think it should be ignored as ultimately we, as Radiologists, must base all our diagnoses with clear and convincing data driven evidence."
                     </p>
                 </div>
 
-                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 50px; text-align: left;">
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 50px; text-align: left; font-size: 1rem;">
                     Trust in radiology is not built on the "what," but on the "how." If an AI cannot participate in the logical process of exclusion, it cannot be integrated into a final clinical report.
                 </p>
 
-                <h3 style="font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left;">Gut Instinct vs. The 99%</h3>
+                <h3 style="font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: #fff; margin-bottom: 25px; text-align: left; opacity: 0.8;">Gut Instinct vs. The 99%</h3>
 
                 <div class="q-box">
-                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">Question: When a 99% accurate AI says a scan is Normal but your gut says it’s High Risk, do you find yourself looking for reasons to agree with the machine?</p>
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6; font-size: 0.95rem;">
+                        Question: When a 99% accurate AI says a scan is Normal but your gut says it’s High Risk, do you find yourself looking for reasons to agree with the machine?
+                    </p>
                 </div>
 
                 <div class="ans-box">
-                    <p style="color: #fff; line-height: 1.8; font-size: 1.05rem;">
+                    <p style="color: #fff; line-height: 1.7; font-size: 1rem;">
                         Dr. Kokaram's Response: "Calling something Normal because AI claims it is, even though your gut—your years of knowledge and experience—tells you otherwise, would be irresponsible. It is always better practice to seek more information before committing to a final diagnosis. This protocol will serve Radiologists well as we navigate a new world in AI."
                     </p>
                 </div>
 
-                <p style="color: rgba(255,255,255,0.7); line-height: 1.8; text-align: left;">
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 30px; text-align: left; font-size: 1rem;">
                     Dr. Kokaram defines "gut instinct" not as a guess, but as the synthesis of years of high-level experience. While AI is a tireless partner, it cannot replace the human courage required to remain "safe" in the face of algorithmic certainty.
                 </p>
 
             </div>
         </div>
 
-        <div class="reveal" style="text-align: center; margin-top: 50px;">
+        <div class="reveal" style="text-align: center; margin-top: 50px; padding-bottom: 50px;">
             <p style="font-family: 'Courier New', monospace; color: rgba(255,255,255,0.2); font-size: 10px; letter-spacing: 0.1em;">
                 Sonrisa Watts // Emotion Encoded // 2026
             </p>
@@ -204,15 +232,17 @@
     </section>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
+        window.addEventListener('load', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.05 });
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
     </script>
 </body>
 </html>
