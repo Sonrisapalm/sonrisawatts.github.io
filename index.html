@@ -673,11 +673,6 @@ if (scrollContainer) {
     </div>
 
 </div> ```
-
-### Why this fixes the Article layout:
-1. **Scope Control:** By closing the `</div>` before your Articles start, the Articles can now use their own full-width grid or layout without being trapped inside the introductory container.
-2. **Width Freedom:** Your Article section can now expand to whatever width you originally set for it (like `max-w-7xl` or `w-full`).
-3. **Clean Break:** The `space-y-12` only applies to the three intro cards above, so it won't add weird gaps between your Article images and headlines below.
     
 <style>
     /* --- 1. CORE ANIMATIONS & DESKTOP BASICS --- */
