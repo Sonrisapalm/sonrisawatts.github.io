@@ -635,20 +635,22 @@ if (scrollContainer) {
 
 <div class="w-full max-w-5xl mx-auto px-4 py-12 space-y-12">
     
-    <div class="research-card reveal relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden">
-        <div class="bg-[#09090b] rounded-[calc(2.5rem-1px)] p-8 md:p-12 relative">
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-teal-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+    <!-- Card 1 -->
+    <div class="research-card reveal neon-wrapper relative p-[2px] rounded-[2.5rem]">
+        <div class="inner-content rounded-[calc(2.5rem-2px)] p-8 md:p-12">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-green-500/10 blur-[80px] rounded-full pointer-events-none"></div>
             <p class="text-[1.05rem] md:text-xl leading-[1.8] text-zinc-400 font-extralight tracking-tight relative z-10">
                 Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population 
-                <span class="text-teal-400/90 font-medium italic">from and working in the Caribbean Region,</span> 
+                <span class="text-green-400/90 font-medium italic">from and working in the Caribbean Region,</span> 
                 <span class="text-white font-semibold tracking-tighter">Emotion Encoded</span> 
                 helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
             </p>
         </div>
     </div>
 
-    <div class="research-card reveal relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden">
-        <div class="bg-[#09090b] rounded-[calc(2.5rem-1px)] p-8 md:p-12">
+    <!-- Card 2 -->
+    <div class="research-card reveal neon-wrapper relative p-[2px] rounded-[2.5rem]">
+        <div class="inner-content rounded-[calc(2.5rem-2px)] p-8 md:p-12">
             <p class="text-lg md:text-2xl font-light leading-snug text-zinc-100 tracking-tight">
                 Founded by <span class="font-medium text-white">Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis,</span> following the completion of my Psychology BSc degree. 
                 <span class="block mt-6 text-base md:text-lg text-zinc-400 font-extralight leading-relaxed">
@@ -658,11 +660,12 @@ if (scrollContainer) {
         </div>
     </div>
 
-    <div class="research-card reveal relative p-[1px] rounded-[2.5rem] bg-white/5 overflow-hidden">
-        <div class="bg-[#09090b] rounded-[calc(2.5rem-1px)] p-8 md:p-12 relative">
-            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-teal-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+    <!-- Card 3 -->
+    <div class="research-card reveal neon-wrapper relative p-[2px] rounded-[2.5rem]">
+        <div class="inner-content rounded-[calc(2.5rem-2px)] p-8 md:p-12">
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-500/10 blur-[80px] rounded-full pointer-events-none"></div>
             <div class="relative z-10 space-y-6">
-                <p class="text-lg md:text-2xl leading-tight font-extralight text-teal-400 tracking-tight">
+                <p class="text-lg md:text-2xl leading-tight font-extralight text-green-400 tracking-tight">
                     Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
                 </p>
                 <p class="text-[1.05rem] md:text-xl leading-relaxed text-zinc-300 font-extralight">
@@ -672,7 +675,7 @@ if (scrollContainer) {
         </div>
     </div>
 
-</div> ```
+</div>
     
 <style>
     /* --- 1. CORE ANIMATIONS & DESKTOP BASICS --- */
@@ -804,6 +807,43 @@ nav div::-webkit-scrollbar { display: none; }
 .head-text { 
     font-size: 11px !important; 
     line-height: 1.3 !important;
+}
+        @keyframes rotate-neon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.neon-wrapper {
+    position: relative;
+    overflow: hidden; /* Clips the rotating gradient */
+}
+
+/* The animated light layer */
+.neon-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 200%; /* Larger than container to cover corners while rotating */
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    /* Neon Green Gradient */
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 25%,
+        #22c55e 50%, /* Tailwind green-500 */
+        #4ade80 75%, /* Tailwind green-400 */
+        transparent 100%
+    );
+    animation: rotate-neon 4s linear infinite;
+    z-index: 0;
+}
+
+/* Ensure the inner content stays on top and hides the "inside" of the gradient */
+.inner-content {
+    position: relative;
+    z-index: 10;
+    background: #09090b; /* Matches your dark theme */
 }
 </style>
 
