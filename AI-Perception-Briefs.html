@@ -76,6 +76,60 @@
         .text-shadow-md {
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
         }
+        /* --- UPDATED NEON WRAPPER (Blue & Green) --- */
+.neon-wrapper {
+    position: relative; 
+    background: #000; 
+    border-radius: 1.5rem; /* Matches your rounded-3xl look */
+    padding: 2px; /* Border Thickness */
+    z-index: 1; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column;
+    height: 100%; /* Ensures all cards in the grid stay the same height */
+    transition: transform 0.3s ease;
+}
+
+.neon-wrapper:hover {
+    transform: scale(1.05); /* Matches your hover:scale-105 effect */
+}
+
+.neon-wrapper::before {
+    content: ''; 
+    position: absolute; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    /* The Blue to Green Gradient */
+    background: conic-gradient(
+        transparent, 
+        #00d2ff, /* Electric Blue */
+        #3a86ff, /* Deep Blue */
+        #22c55e, /* Neon Green */
+        #4ade80, /* Emerald Green */
+        transparent 35%
+    );
+    animation: rotate-glow 4s linear infinite; 
+    z-index: -2;
+}
+
+/* This creates the solid dark center of the card */
+.neon-card-inner { 
+    background: #1f2937; /* Matches your bg-gray-800/50 look */
+    border-radius: calc(1.5rem - 2px); 
+    padding: 1.5rem; 
+    z-index: 1; 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@keyframes rotate-glow { 
+    from { transform: rotate(0deg); } 
+    to { transform: rotate(360deg); } 
+}
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
