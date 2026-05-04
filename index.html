@@ -890,53 +890,48 @@ nav div::-webkit-scrollbar { display: none; }
     </div> 
 </div>
     
-<!-- --- FAQ PROMPT SECTION (Brushed Obsidian / Matte Vibe) --- -->
-<section class="py-24 px-8 flex justify-center" style="background: #09090b;">
-    <a href="FAQ.html" class="group relative block max-w-2xl w-full">
+<!-- --- FAQ SUBTLE AURA MODULE --- -->
+<section class="py-12 px-6 flex justify-center">
+    <a href="FAQ.html" class="group relative block max-w-xl w-full">
         
-        <!-- The "Matte" Card -->
-        <div class="relative overflow-hidden rounded-2xl bg-[#121214] border border-white/5 p-10 md:p-14 transition-all duration-500 group-hover:border-zinc-500/50 shadow-[20px_20px_60px_#050506,-20px_-20px_60px_#0f0f12]">
+        <!-- The Aura (Soft diffused glow) -->
+        <div class="absolute inset-0 bg-blue-500/10 blur-[60px] rounded-full opacity-40 group-hover:opacity-100 group-hover:bg-blue-400/20 transition-all duration-1000"></div>
+        
+        <!-- The Compact Interface -->
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 md:p-8 backdrop-blur-md transition-all duration-500 group-hover:border-blue-500/30">
             
-            <!-- Subtle Grain Overlay (Simulated) -->
-            <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
-
-            <!-- Animated Status Light -->
-            <div class="flex items-center space-x-3 mb-8 relative z-10">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span class="text-[9px] font-bold tracking-[0.5em] text-zinc-500 uppercase">Archive Link Protocol</span>
+            <!-- Status Row (Tightened) -->
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-2">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    <span class="text-[9px] font-bold tracking-[0.3em] text-blue-400/80 uppercase">Query Ready</span>
+                </div>
+                <!-- Mini Code Tag -->
+                <span class="text-[7px] font-mono text-white/20 tracking-widest uppercase">Auth: SOLO_RES_01</span>
             </div>
 
-            <!-- Content -->
-            <div class="space-y-6 relative z-10">
-                <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.85] text-zinc-100">
-                    Skepticism <br><span class="text-zinc-600 group-hover:text-emerald-500 transition-colors duration-500">& Logic</span>
+            <!-- Content (Stacked for space efficiency) -->
+            <div class="space-y-2">
+                <h2 class="text-2xl md:text-3xl font-light tracking-tighter uppercase text-white">
+                    Have <span class="italic font-extralight text-zinc-500">Questions?</span>
                 </h2>
-                <p class="text-zinc-500 text-sm md:text-base font-medium max-w-xs tracking-tight leading-snug">
-                    Detailed responses regarding the methodology and solo execution of Emotion Encoded.
+                <p class="text-zinc-400 text-xs md:text-sm font-light max-w-sm tracking-wide leading-relaxed">
+                    Access the automated inquiry module to learn more about the solo research behind Emotion Encoded.
                 </p>
             </div>
 
-            <!-- Action Label -->
-            <div class="mt-12 flex items-center justify-between text-zinc-400 group-hover:text-white transition-all duration-500 relative z-10">
-                <span class="text-[10px] font-bold tracking-[0.4em] uppercase">Open FAQ Module</span>
-                <div class="flex space-x-1">
-                    <div class="h-1 w-1 rounded-full bg-zinc-800 group-hover:bg-emerald-500 transition-colors"></div>
-                    <div class="h-1 w-4 rounded-full bg-zinc-800 group-hover:bg-emerald-500 transition-all group-hover:w-8"></div>
+            <!-- Interaction Label -->
+            <div class="mt-6 flex items-center justify-between">
+                <div class="flex items-center space-x-2 text-white text-[9px] font-bold tracking-[0.4em] uppercase group-hover:text-blue-400 transition-colors">
+                    <span>Click to View FAQ</span>
+                    <span class="transform transition-transform group-hover:translate-x-1">→</span>
                 </div>
-            </div>
-
-            <!-- Technical Detail Corner -->
-            <div class="absolute top-10 right-10 text-[7px] font-mono text-zinc-800 tracking-widest text-right leading-loose uppercase">
-                <span class="block">Ref: EE_CORE_04</span>
-                <span class="block text-zinc-700">Non-Institutional Init.</span>
+                <span class="text-[7px] font-mono text-white/10 uppercase">v.2026.04</span>
             </div>
         </div>
-
-        <!-- Subtle Inner Glow (Hover) -->
-        <div class="absolute inset-0 -z-10 bg-emerald-500/5 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
     </a>
 </section>
 
