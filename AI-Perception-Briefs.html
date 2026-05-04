@@ -130,6 +130,30 @@
     from { transform: rotate(0deg); } 
     to { transform: rotate(360deg); } 
 }
+        .neon-card-inner { 
+    background: #000000; /* Pure black */
+    border-radius: calc(1.5rem - 2px); 
+    padding: 2rem; /* Slightly more padding for a cleaner look */
+    z-index: 1; 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* TEXT CONTRAST FIXES */
+    color: #ffffff; /* Forces main title text to be pure white */
+}
+
+.neon-card-inner p {
+    color: #d1d5db; /* Light gray (text-gray-300) for the description to keep it easy on the eyes */
+    line-height: 1.6;
+}
+
+.neon-card-inner h2, .neon-card-inner h3 {
+    color: #ffffff; /* Ensures headers are bold and bright */
+    margin-bottom: 1rem;
+}
+        
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
