@@ -3,94 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Brief 055 | Emotion Encoded</title>
+    <title>Emotion Encoded | Artificial Intelligence in Radiology: Dr. Fidel Rampersad</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --accent: #2dd4bf;
-            --bg: #0a0c10;
-            --surface: #11141b;
-            --glass: rgba(255, 255, 255, 0.02);
-            --border: rgba(255, 255, 255, 0.06);
-            --text-main: #e5e7eb;
-            --text-muted: #9ca3af;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #000; 
+            color: #fff; 
             margin: 0;
-            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
-        }
-
-        .ambient-glow {
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle at 50% -20%, rgba(45, 212, 191, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .nav-container {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            background: rgba(10, 12, 16, 0.7);
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .nav-item {
-            color: var(--text-muted);
+            color: rgba(255,255,255,0.4);
             text-decoration: none;
-            font-size: 11px;
-            letter-spacing: 0.25em;
+            font-size: 10px;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
             transition: all 0.4s ease;
-            font-weight: 500;
+            font-weight: 400;
+        }
+        .nav-item:hover { 
+            color: #fff; 
+            letter-spacing: 0.4em; 
         }
 
-        .nav-item:hover { color: #fff; }
-
-        .hero-image-container {
-            width: 100%;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
             max-width: 900px;
-            margin: 60px auto 0 auto;
-            padding: 0 24px;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px rgba(45, 212, 191, 0.1);
-        }
-
-        .archive-container {
-            max-width: 900px;
+            width: 95%;
             margin: 0 auto;
-            padding: 60px 24px 120px 24px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+            overflow: hidden;
         }
 
-        .glass-panel {
-            background: var(--glass);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border: 1px solid var(--border);
-            border-radius: 48px;
-            padding: clamp(2.5rem, 10vw, 6rem);
-            position: relative;
-            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);
+        .card-body {
+            padding: 30px 20px;
+        }
+        @media (min-width: 768px) {
+            .card-body {
+                padding: 50px 60px;
+            }
         }
 
         .reveal {
@@ -98,224 +60,186 @@
             transform: translateY(20px);
             transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
         }
-
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .tag {
-            font-size: 11px;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            color: var(--accent);
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 24px;
+        .q-box {
+            border-left: 2px solid #2dd4bf;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            text-align: left;
         }
 
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-            margin-bottom: 48px;
-            color: #fff;
+        .ans-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
         }
 
-        .archive-entry-meta {
-            font-size: 11px;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--accent);
-            opacity: 0.6;
-            margin-bottom: 32px;
-            display: block;
-        }
-
-        .highlight-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent);
-            border-radius: 8px 32px 32px 8px;
-            padding: 40px;
-            margin: 60px 0;
-        }
-
-        .loading-box {
+        .verdict-box {
             background: rgba(45, 212, 191, 0.03);
-            border: 1px solid rgba(45, 212, 191, 0.2);
-            border-radius: 16px;
-            padding: 24px;
-            margin: 40px 0;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            font-family: monospace;
-            position: relative;
-        }
-
-        .pulse-dot {
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 15px var(--accent);
-            animation: tech-pulse 1.5s infinite;
-        }
-
-        .loading-text {
-            font-size: 11px;
-            letter-spacing: 0.3em;
-            color: var(--accent);
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        @keyframes tech-pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.4); opacity: 0.4; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        p {
-            margin-bottom: 32px;
-            color: rgba(255,255,255,0.8);
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-
-        .disclaimer {
-            font-size: 0.9rem;
-            color: #4b5563;
-            border-top: 1px solid var(--border);
-            padding-top: 48px;
-            margin-top: 80px;
-        }
-
-        footer {
-            margin-top: 100px;
-            padding-bottom: 60px;
-            text-align: center;
+            border: 1px solid rgba(45, 212, 191, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
+    <section style="
+        min-height: 100vh;
+        padding: 40px 0;
+        background: radial-gradient(circle at top, #0d0d0d 0%, #000 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    ">
 
-    <nav class="nav-container">
-        <div class="flex flex-wrap justify-center gap-8 py-8 px-6 max-w-[1200px] mx-auto">
+        <nav class="reveal active" style="
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            width: 90%;
+            max-width: 900px;
+        ">
             <a href="index.html" class="nav-item">Home</a>
             <a href="about.html" class="nav-item">About</a>
             <a href="Methodsanddata.html" class="nav-item">Methods</a>
             <a href="DataAnalysisquantitative.html" class="nav-item">PrePrint</a>
             <a href="ethicalguidelines.html" class="nav-item">Ethics</a>
-            <a href="AI-Perception-Briefs.html" class="nav-item">Findings</a>
+            <a href="AI-Perception-Briefs.html" class="nav-item" style="color: #2dd4bf; border-bottom: 1px solid #2dd4bf;">Findings</a>
             <a href="contact.html" class="nav-item">Contact</a>
-        </div>
-    </nav>
+        </nav>
 
-     <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: #000; display: flex; justify-content: center;">
-                <img src="images/article55.jpg" 
-                     alt="Artificial Intelligence in Radiology Header" 
-                     style="width: 100%; height: auto; display: block; object-fit: contain;">
-            </div>
-
-
-    <div class="archive-container">
-        
-        <header class="reveal" style="margin-bottom: 100px;">
-            <span class="tag">ARTIFICIAL INTELLIGENCE IN MEDICINE: RADIOLOGY</span>
-            <h1>Emotion Encoded: Artificial Intelligence in Radiology</h1>
-            <p class="text-xl text-zinc-400 font-light">An Expert Brief featuring insights from Dr. Fidel Rampersad.</p>
-        </header>
-
-        <div class="glass-panel reveal">
-            <span class="archive-entry-meta">EMOTION ENCODED: INDEPENDENT RESEARCH INITIATIVE // No. 055</span>
+        <div class="glass-card reveal">
             
-            <div class="bio-section" style="margin-bottom: 60px; border-bottom: 1px solid var(--border); padding-bottom: 40px;">
-                <span class="tag" style="color: #fff; opacity: 0.5;">Biography</span>
-                <p style="font-weight: 600; color: var(--accent); margin-bottom: 10px;">Dr. Fidel Shilendra Rampersad MBBS DM FRCR</p>
-                <p style="font-size: 0.95rem;">Dr. Fidel Rampersad is a Consultant Vascular and Interventional Radiologist, Lecturer/Unit Lead in Radiology at the University of West Indies (UWI), St. Augustine Campus. He is also the Co-ordinator of the DM Radiology Programme, UWI.</p>
-                <p style="font-size: 0.95rem;">He is an Honorary Consultant at Eric Williams Medical Sciences Complex (EWMSC), Trinidad, and former Head of Radiology and the Eastern Regional Health Authority (ERHA). He has over 20 years experience in the field of Radiology, and is a Consultant for several Private Centres and Non-Governmental Organizations.</p>
-                <p style="font-size: 0.95rem;">He completed the DM Radiology Post Graduate Programme at UWI, and is a Fellow of the Royal College of Radiologists in the United Kingdom (UK), and well as a Fellow in Vascular and Interventional Radiology from the Singapore General Hospital, National University of Singapore. He has multiple publications in several international journals and has attended/presented at many Conferences and completed multiple Observerships, Courses and Electives, in various disciplines such as interventional radiology, breast radiology, vascular radiology, PET/CT and musculoskeletal radiology.</p>
-                <p style="font-size: 0.95rem;">He is also a founding member and the Secretary of the Radiological Society of Trinidad and Tobago (RSTT), a member of the Radiological Society of North America (RSNA) and the Caribbean Society of Radiologists (CSR), is Chairman of the South Cancer Support Group and a Director of Vitas House.</p>
-            </div>
+          <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: #000; display: flex; justify-content: center;">
+    <img src="images/article55.jpg" 
+         alt="AI in Radiology Header" 
+         style="width: 100%; height: auto; display: block; object-fit: contain;">
+</div>
 
-            <p>When AI acts as a second set of eyes in the reading room, the value lies in precision over abstraction. Dr. Rampersad examines the necessity of visual evidence, the risk of diagnostic blunting in junior trainees, and why detecting pathology is the only true way to build clinical confidence in the machine.</p>
+            <div class="card-body">
+                
+                <span style="font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: #2dd4bf; margin-bottom: 12px; display: block; text-align: left;">
+                    ARTIFICIAL INTELLIGENCE IN MEDICINE: RADIOLOGY
+                </span>
+                
+                <span style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 25px; display: block; text-align: left;">
+                    EMOTION ENCODED: INDEPENDENT RESEARCH INITIATIVE // ENCODEDEMOTION.ORG
+                </span>
 
-            <div style="margin-top: 60px;">
-                <span style="font-size: 11px; letter-spacing: 0.2em; color: var(--accent); font-weight: 600;">Question: When an AI gives a reason for its answer, would you prefer it to circle the specific pixels or show similar scans?</span>
-                <p style="margin-top: 15px;"><strong>He replied:</strong> "If AI is being used in radiology, especially as a second reader, I’d definitely prefer it to point out exactly where it thinks the abnormality is. A simple circle, arrow, or marker is more than enough. That way I can immediately look at the area and decide if I agree or not. It fits naturally into how we already read scans. Showing similar scans from a database isn’t really necessary in day-to-day practice. It might be useful for teaching, but when I’m reporting, I just want the AI to clearly show me what it’s seeing."</p>
-            </div>
+                <h1 style="
+                    font-size: clamp(1.8rem, 6vw, 2.5rem);
+                    font-weight: 900;
+                    letter-spacing: -0.02em;
+                    line-height: 1.1;
+                    margin-bottom: 35px;
+                    background: linear-gradient(to right, #ffffff, #a1a1aa);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-align: left;
+                ">
+                    Emotion Encoded: Artificial Intelligence in Radiology
+                </h1>
 
-            <div class="highlight-box">
-                <span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin-bottom: 20px;">Researcher Insight</span>
-                <p style="color: #fff; font-size: 1.1rem; font-weight: 400; line-height: 1.6; margin: 0;">
+                <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 20px; text-align: left;">
+                    Dr. Fidel Shilendra Rampersad MBBS DM FRCR
+                </h2>
+
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 30px; text-align: left;">
+                    Dr. Fidel Rampersad is a Consultant Vascular and Interventional Radiologist, Lecturer/Unit Lead in Radiology at the University of West Indies (UWI), St. Augustine Campus. He is also the Co-ordinator of the DM Radiology Programme, UWI. He has over 20 years experience in the field of Radiology, and is a Consultant for several Private Centres and Non-Governmental Organizations. When AI acts as a second set of eyes in the reading room, the value lies in precision over abstraction. Dr. Rampersad examines the necessity of visual evidence, the risk of diagnostic blunting in junior trainees, and why detecting pathology is the only true way to build clinical confidence in the machine.
+                </p>
+
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
+                        Question: When an AI gives a reason for its answer, would you prefer it to circle the specific pixels or show similar scans?
+                    </p>
+                </div>
+
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
+                        "If AI is being used in radiology, especially as a second reader, I’d definitely prefer it to point out exactly where it thinks the abnormality is. A simple circle, arrow, or marker is more than enough. That way I can immediately look at the area and decide if I agree or not. It fits naturally into how we already read scans. Showing similar scans from a database isn’t really necessary in day-to-day practice. It might be useful for teaching, but when I’m reporting, I just want the AI to clearly show me what it’s seeing."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 50px; text-align: left;">
                     Dr. Rampersad emphasizes that utility in radiology is tied to spatial confirmation. The clinician does not need a library of comparisons; they need a pointer. By requesting a simple circle or arrow, the radiologist retains the final authority to agree or disagree, ensuring the AI serves the existing workflow rather than complicating it with redundant data.
                 </p>
-            </div>
 
-            <div style="margin-top: 40px;">
-                <span style="font-size: 11px; letter-spacing: 0.2em; color: var(--accent); font-weight: 600;">Question: Would you trust AI more if it found hidden abnormalities or handled routine tasks?</span>
-                <p style="margin-top: 15px;"><strong>He replied:</strong> "The routine stuff like measurements is helpful and saves time, but that’s not really where the real value is. I’d trust AI more if it can reliably pick up subtle findings or things that could easily be missed. That’s where it actually adds to what we do, acting as a second set of eyes. Ideally, it should do both, but if I had to choose, detecting pathology is what really builds confidence in the system."</p>
-            </div>
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
+                        Question: Would you trust AI more if it found hidden abnormalities or handled routine tasks?
+                    </p>
+                </div>
 
-            <div class="highlight-box">
-                <span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin-bottom: 20px;">Researcher Insight</span>
-                <p style="color: #fff; font-size: 1.1rem; font-weight: 400; line-height: 1.6; margin: 0;">
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
+                        "The routine stuff like measurements is helpful and saves time, but that’s not really where the real value is. I’d trust AI more if it can reliably pick up subtle findings or things that could easily be missed. That’s where it actually adds to what we do, acting as a second set of eyes. Ideally, it should do both, but if I had to choose, detecting pathology is what really builds confidence in the system."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 50px; text-align: left;">
                     While automation of routine tasks is convenient, Dr. Rampersad identifies the subtle finding as the psychological threshold for trust. For a radiologist, trust isn’t earned through efficiency, but through the AI's ability to augment human perception. Confidence in the system is built only when the machine proves it can see what the eye might miss.
                 </p>
-            </div>
 
-            <div style="margin-top: 40px;">
-                <span style="font-size: 11px; letter-spacing: 0.2em; color: var(--accent); font-weight: 600;">Question: Do you think junior radiologists might rely too much on AI and lose their instinct?</span>
-                <p style="margin-top: 15px;"><strong>He replied:</strong> "Yes, that’s definitely a risk. If trainees start depending on AI too early, they may stop pushing themselves to think through cases properly. Over time, that can blunt their diagnostic instincts. Radiology is very much about pattern recognition and clinical judgement, and those skills need to be developed actively. I think the best approach is for them to review the scan, come up with their own impression first, and then use AI as a way to check themselves. That way it becomes a learning tool rather than a crutch."</p>
-            </div>
+                <div class="q-box">
+                    <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
+                        Question: Do you think junior radiologists might rely too much on AI and lose their instinct?
+                    </p>
+                </div>
 
-            <div class="highlight-box">
-                <span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin-bottom: 20px;">Researcher Insight</span>
-                <p style="color: #fff; font-size: 1.1rem; font-weight: 400; line-height: 1.6; margin: 0;">
+                <div class="ans-box">
+                    <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
+                        "Yes, that’s definitely a risk. If trainees start depending on AI too early, they may stop pushing themselves to think through cases properly. Over time, that can blunt their diagnostic instincts. Radiology is very much about pattern recognition and clinical judgement, and those skills need to be developed actively. I think the best approach is for them to review the scan, come up with their own impression first, and then use AI as a way to check themselves. That way it becomes a learning tool rather than a crutch."
+                    </p>
+                </div>
+
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 30px; text-align: left;">
                     Rampersad is flagging a major risk here: diagnostic blunting. If juniors lean on AI before they’ve actually built their own clinical instincts, they’re going to lose that edge. To keep AI from becoming a total crutch, he’s calling for a clear workflow. Doctors should form their own opinion first and use the tech only to double-check. At the end of the day, pattern recognition has to be an active skill you practice, not just something you passively accept from a screen.
                 </p>
-            </div>
 
-            <div style="margin-top: 60px; padding: 40px; border: 1px solid var(--accent); border-radius: 24px; background: rgba(45, 212, 191, 0.05);">
-                <span class="tag">RESEARCH VERDICT</span>
-                <p style="color: #fff; font-weight: 500; font-size: 1.2rem; margin: 0;">In radiology, AI is most valuable as a support system, not a replacement. Trust is anchored in the machine's ability to detect pathology that challenges the human eye, yet professional safety requires that the final call remains human. Efficiency is secondary to diagnostic accuracy.</p>
-            </div>
+                <div class="verdict-box">
+                    <p style="color: #2dd4bf; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Research Verdict</p>
+                    <p style="color: rgba(255,255,255,0.9); line-height: 1.7;">
+                        In radiology, AI is most valuable as a support system, not a replacement. Trust is anchored in the machine's ability to detect pathology that challenges the human eye, yet professional safety requires that the final call remains human. Efficiency is secondary to diagnostic accuracy.
+                    </p>
+                </div>
 
-            <div class="loading-box reveal">
-                <div class="pulse-dot"></div>
-                <div class="loading-text">Full Research Insights Loading...</div>
-            </div>
-
-            <div class="disclaimer">
-                <p style="margin-bottom: 12px;">
-                    Disclaimer: This brief summarizes findings from qualitative interviews conducted by Emotion Encoded. These insights are shared to foster transparency in the study of AI adoption in high-stakes fields.
-                </p>
-                <p style="color: var(--text-muted); font-weight: 600;">
-                    Website: ENCODEDEMOTION.ORG • Independent Research Initiative
-                </p>
             </div>
         </div>
 
-        <footer>
-            <p style="font-size: 10px; letter-spacing: 0.4em; color: rgba(255,255,255,0.15); text-transform: uppercase; font-weight: 500;">
+        <div class="reveal" style="text-align: center; margin-top: 50px; padding-bottom: 50px;">
+            <p style="font-family: 'Courier New', monospace; color: rgba(255,255,255,0.2); font-size: 10px; letter-spacing: 0.1em;">
                 Sonrisa Watts // Emotion Encoded // 2026
             </p>
-        </footer>
-    </div>
+        </div>
+
+    </section>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        window.addEventListener('load', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.05 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
     </script>
 </body>
 </html>
-
