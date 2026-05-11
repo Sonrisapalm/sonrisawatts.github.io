@@ -20,7 +20,7 @@
             overflow-x: hidden;
         }
 
-        /* MODERN GLASS NAVIGATION */
+        /* NAVIGATION */
         .nav-fixed {
             position: sticky;
             top: 15px; 
@@ -45,41 +45,19 @@
             color: rgba(255, 255, 255, 0.7);
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             border-radius: 50px;
-            letter-spacing: 0.02em;
         }
 
         .nav-link:hover {
             color: #ffffff;
             background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-1px);
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 6px;
-            left: 20%;
-            width: 0%;
-            height: 2px;
-            background: #f97316; 
-            box-shadow: 0 0 10px #f97316;
-            transition: width 0.3s ease;
-            border-radius: 10px;
-        }
-
-        .nav-link:hover::after {
-            width: 60%;
-        }
-
-        .text-shadow-md {
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-        }
-
+        /* THE NEON GLASS WRAPPER */
         .neon-wrapper {
             position: relative; 
-            background: #000; 
+            background: transparent; 
             border-radius: 1.5rem; 
-            padding: 2px; 
+            padding: 2px; /* This creates the border width */
             z-index: 1; 
             overflow: hidden; 
             display: flex; 
@@ -89,9 +67,10 @@
         }
 
         .neon-wrapper:hover {
-            transform: scale(1.05); 
+            transform: scale(1.03); 
         }
 
+        /* The Spinning Neon Light */
         .neon-wrapper::before {
             content: ''; 
             position: absolute; 
@@ -111,15 +90,18 @@
             z-index: -2;
         }
 
+        /* THE DARK GLASS INNER CARD */
         .neon-card-inner { 
-            background: #000000; 
+            /* This is your beautiful dark article glass */
+            background: rgba(0, 0, 0, 0.75); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: calc(1.5rem - 2px); 
-            padding: 2rem; 
+            padding: 1.5rem; 
             z-index: 1; 
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             color: #ffffff;
         }
 
@@ -128,26 +110,17 @@
             to { transform: rotate(360deg); } 
         }
 
-        .neon-card-inner p {
-            color: #d1d5db; 
-            line-height: 1.6;
-        }
-
-        .neon-card-inner h2, .neon-card-inner h3 {
-            color: #ffffff; 
+        .neon-card-inner img {
+            border-radius: 1rem;
             margin-bottom: 1rem;
-        }
-
-        /* Glass Article Style */
-        .article-glass {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            height: 200px;
+            object-cover: cover;
         }
         
     </style>
 </head>
-<body class="text-gray-100">
+<body>
 
     <header class="nav-fixed">
         <nav class="flex flex-wrap items-center justify-center">
