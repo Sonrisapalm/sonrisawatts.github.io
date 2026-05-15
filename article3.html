@@ -3,142 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Article 3 | Emotion Encoded</title>
+  <title>AI Trust Results | Emotion Encoded</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Poppins Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --primary-color: #f97316; /* orange-500 */
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
-      padding-bottom: 7rem; /* space for fixed nav */
+      background-image: url('images/websitebackground.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-color: #0a0a0a;
+      color: #e5e7eb;
+      line-height: 1.8;
+    }
+
+    /* Dark Glassmorphism Panel */
+    .glass-panel {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
 
     .hero-image {
       width: 100%;
-      height: 45vh; /* taller hero */
+      height: 45vh;
       object-fit: cover;
-      display: block;
+      filter: brightness(0.8);
     }
 
-    .glow-hover {
-      transition: all 0.3s ease;
-      position: relative;
+    .stat-highlight {
+      color: #fb923c; /* orange-400 */
+      font-weight: 700;
+      font-size: 1.25rem;
     }
 
-    .glow-hover:hover {
-      color: var(--primary-color);
-      text-shadow: 0 0 10px rgba(249, 115, 22, 0.7),
-                   0 0 20px rgba(249, 115, 22, 0.5);
+    /* High-end tracking for headings */
+    h1, h2 {
+      letter-spacing: -0.02em;
     }
 
-    .article-content {
-      max-width: 768px;
-    }
+    /* Modern scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
   </style>
 </head>
 
-<body class="bg-gray-900 text-gray-200 antialiased">
+<body class="antialiased pb-32">
 
-  <!-- HEADER -->
-  <header class="mb-8">
-    <div class="overflow-hidden">
+  <header class="relative w-full">
+    <div class="overflow-hidden rounded-b-[3rem] shadow-2xl border-b border-white/10">
       <img
         src="images/article3.jpg"
-        onerror="this.onerror=null;this.src='https://placehold.co/1200x450/1f2937/d1d5db?text=AI+Trust+Survey+Illustration';"
-        alt="AI Trust Survey Illustration"
-        class="hero-image rounded-b-3xl shadow-2xl transition-transform duration-500 hover:scale-[1.03]"
+        onerror="this.onerror=null;this.src='https://placehold.co/1200x450/111827/ffffff?text=AI+Trust+Survey';"
+        alt="AI Trust Survey"
+        class="hero-image transition-transform duration-700 hover:scale-105"
       />
     </div>
 
-    <div class="px-4 md:px-12 mt-8 text-center">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-2 leading-tight">
-        <span class="text-orange-400">👏 St. Kitts & Nevis 👏</span>
+    <div class="px-6 max-w-4xl mx-auto mt-12 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+        <span class="text-orange-500">St. Kitts & Nevis</span>
       </h1>
-      <p class="text-xl sm:text-2xl text-gray-400">
-        Results On What People Need to Trust AI
+      <p class="text-xl md:text-2xl font-light text-gray-400 tracking-wide">
+        Foundations of Trust: What Users Demand from AI
       </p>
+      <div class="h-1 w-20 bg-orange-500 mx-auto mt-6 rounded-full"></div>
     </div>
   </header>
 
-  <!-- MAIN ARTICLE -->
-  <div class="flex justify-center w-full px-4">
-    <main class="article-content w-full p-6 bg-gray-800 rounded-xl shadow-2xl">
+  <main class="container mx-auto px-4 mt-12 max-w-4xl">
+    <div class="glass-panel p-8 md:p-14 rounded-[2.5rem]">
 
-      <p class="text-lg mb-6 leading-relaxed">
-        In an Emotion Encoded survey, I asked 66 people:
+      <p class="text-lg md:text-xl font-light mb-8 text-gray-100">
+        In a dedicated <span class="text-orange-400 font-semibold">Emotion Encoded</span> survey, I engaged 66 participants with a fundamental question regarding the future of technology:
       </p>
 
-      <blockquote class="border-l-4 border-orange-400 pl-4 py-2 my-6 italic text-xl text-gray-300 bg-gray-700 p-4 rounded-lg">
+      <blockquote class="border-l-4 border-orange-500 pl-8 py-6 my-10 bg-white/5 rounded-r-2xl italic text-xl md:text-2xl text-gray-200">
         “What would you need to know about an AI tool in order to trust it more?”
       </blockquote>
 
-      <p class="text-lg mb-8 leading-relaxed">
-        The responses to this question highlight that trust in AI is not automatic. It must be earned. People do not simply accept technology because it works—they demand conditions that make them feel secure, informed, and respected.
+      <p class="text-lg font-light mb-10">
+        The responses highlight that trust in AI is not a default setting—it is a earned currency. People do not simply accept technology because it is "new"; they demand transparency, safety, and respect.
       </p>
 
-      <ul class="space-y-4 list-disc list-inside text-lg">
-        <li>
-          <strong class="text-orange-300">47%</strong> want clear information about the data the AI was trained on. People care about the foundation of the system, what it has learned from, because this determines whether it can be biased, fair, or representative of reality.
-        </li>
-        <li>
-          <strong class="text-orange-300">45.5%</strong> want details about how the AI works. They do not necessarily need to read code, but they want a digestible explanation of the logic and mechanics behind decisions.
-        </li>
-        <li>
-          <strong class="text-orange-300">45.5%</strong> also want to know how often the AI makes mistakes. Accuracy alone is not enough. Users want transparency about failure rates and limitations, not just success stories.
-        </li>
-        <li>
-          <strong class="text-orange-300">43.9%</strong> said they would trust AI more if a human was still involved in the process. This suggests that many people still need the reassurance of human judgment, especially when outcomes directly affect lives.
-        </li>
-        <li>
-          <strong class="text-orange-300">21.2%</strong> cared most about who created the AI. This shows that the brand behind a tool is less important than how it performs and explains itself.
-        </li>
-        <li>
-          <strong class="text-orange-300">22.7%</strong> admitted they could “never fully trust AI,” revealing a baseline skepticism that may never be overcome, no matter the design.
-        </li>
-      </ul>
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <span class="stat-highlight">47%</span>
+          <p class="text-lg font-light">Prioritize clear information about <strong>training data</strong>. Users care about the foundation of the system to ensure it is fair and representative of reality.</p>
+        </div>
+        
+        <div class="flex gap-6 items-start">
+          <span class="stat-highlight">45.5%</span>
+          <p class="text-lg font-light">Demand a <strong>digestible explanation</strong> of the logic and mechanics. They don't need code; they need the "why" behind the decision.</p>
+        </div>
 
-      <p class="text-lg mt-8 leading-relaxed">
-        Tech companies have tried to address these fears by promoting Explainable AI (XAI). This is a set of tools and frameworks designed to clarify AI decision-making and reduce the fear of the black box. Influential tech giants and policymakers have treated XAI as the cure to public distrust. The reality, however, is more complex. Simply offering algorithmic explanations does not automatically create trust.
-      </p>
+        <div class="flex gap-6 items-start">
+          <span class="stat-highlight">45.5%</span>
+          <p class="text-lg font-light">Want transparency regarding <strong>failure rates</strong>. Accuracy is irrelevant without an honest account of where the system makes mistakes.</p>
+        </div>
 
-      <p class="text-lg mt-6 leading-relaxed">
-        From a psychological perspective, trust in AI is less about liking machines and more about reducing uncertainty. Humans are naturally risk averse. We build trust in one another by showing consistency, reliability, and accountability over time. The same principle applies to AI. People feel safer when they know how systems make decisions, when they have evidence of accuracy and error rates, and when they see that a human can intervene if necessary.
-      </p>
+        <div class="flex gap-6 items-start">
+          <span class="stat-highlight">43.9%</span>
+          <p class="text-lg font-light">Require <strong>Human-in-the-Loop</strong> (HITL) oversight. Reassurance from human judgment remains essential for high-stakes outcomes.</p>
+        </div>
 
-      <p class="text-lg mt-6 leading-relaxed">
-        These findings echo a deeper truth. Trust is built through transparency, accountability, and reliability, not marketing or promises of perfection. Without these qualities, even the most statistically accurate AI systems risk rejection. Once rejected, the potential benefits of the technology in healthcare, law, or education can be lost entirely.
-      </p>
+        <div class="flex gap-6 items-start">
+          <span class="stat-highlight">21.2%</span>
+          <p class="text-lg font-light">Cared about the <strong>developer's identity</strong>, suggesting performance and explanation outweigh brand names.</p>
+        </div>
 
-      <p class="text-lg mt-6 leading-relaxed">
-        Ultimately, building trust in AI is not just a technical challenge but also a psychological one. Trust must be earned through openness, through admitting limitations, and through respecting the human need for clarity and control. AI that fails to meet these conditions will continue to face resistance, no matter how advanced it becomes.
-      </p>
+        <div class="flex gap-6 items-start">
+          <span class="stat-highlight">22.7%</span>
+          <p class="text-lg font-light">Expressed they could <strong>"never fully trust AI,"</strong> revealing a psychological baseline of skepticism that technology alone may not solve.</p>
+        </div>
+      </div>
 
-    </main>
-  </div>
+      <hr class="my-12 border-white/10" />
 
-  <!-- NAVIGATION -->
-  <nav class="fixed bottom-0 left-0 right-0 py-4 px-6 bg-gray-900 border-t border-gray-700 shadow-2xl z-50">
-            <a href="index.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Home</a>
-            <a href="about.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">About</a>
-            <a href="Methodsanddata.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Methods and Data</a>
-            <a href="DataAnalysisquantitative.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Publications</a>
-            <a href="ethicalguidelines.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Ethical Guidelines</a>
-            <a href="AI-Perception-Briefs.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Research Findings Articles</a>
-            <a href="contact.html" class="text-white hover:text-orange-400 transition-colors duration-200 transform hover:scale-105 glow-hover">Contact</a>
-        </nav>
-    </header>
+      <section class="space-y-6 text-lg font-light text-gray-300">
+        <p>
+          Tech companies often promote <strong>Explainable AI (XAI)</strong> as a cure-all for public distrust. The reality, however, is more complex. Simply offering algorithmic explanations does not automatically foster a connection.
+        </p>
+
+        <p>
+          From a psychological perspective, trust is about <strong>reducing uncertainty</strong>. Humans are naturally risk-averse. We build trust through consistency and accountability. AI must mirror these human qualities to be accepted into sensitive sectors like healthcare or law.
+        </p>
+
+        <p class="text-white font-normal italic">
+          "Ultimately, building trust in AI is not just a technical challenge, but a psychological one. It is built through openness and respecting the human need for clarity and control."
+        </p>
+      </section>
+
     </div>
+  </main>
 
-  <!-- FOOTER -->
-  <footer class="text-center text-sm text-gray-500 py-4 mt-8">
+  <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-fit">
+    <div class="bg-black/80 backdrop-blur-2xl border border-white/10 px-6 py-4 rounded-full shadow-2xl">
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[10px] tracking-[0.2em] uppercase font-semibold">
+        <a href="index.html" class="text-white/50 hover:text-orange-400 transition-all">Home</a>
+        <a href="about.html" class="text-white/50 hover:text-orange-400 transition-all">About</a>
+        <a href="Methodsanddata.html" class="text-white/50 hover:text-orange-400 transition-all">Methods</a>
+        <a href="DataAnalysisquantitative.html" class="text-white/50 hover:text-orange-400 transition-all">Publications</a>
+        <a href="AI-Perception-Briefs.html" class="text-white/50 hover:text-orange-400 transition-all">Findings</a>
+        <a href="contact.html" class="text-white/50 hover:text-orange-400 transition-all">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <footer class="text-center text-gray-600 text-xs tracking-widest uppercase py-10">
     © 2025 Emotion Encoded — All rights reserved.
   </footer>
 
