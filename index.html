@@ -739,63 +739,6 @@ if (scrollContainer) {
     .neon-card-inner { background: #09090b; border-radius: calc(2rem - 2px); padding: 2rem; z-index: 1; }
     @keyframes rotate-glow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-    /* ROBOT HEAD (DESKTOP) */
-    .robot-head-portal {
-        position: fixed !important; bottom: 30px; right: 24px; width: 300px; z-index: 9999;
-        animation: cyberFloat 4s ease-in-out infinite;
-    }
-    .head-shell {
-        background: rgba(15, 15, 20, 0.9); backdrop-filter: blur(15px);
-        border: 1px solid rgba(45, 212, 191, 0.3); border-radius: 60px 60px 25px 25px;
-        padding: 25px; text-align: center;
-    }
-    @keyframes cyberFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-
-    /* --- 2. THE NUCLEAR MOBILE FIXES --- */
-    @media (max-width: 768px) {
-        /* FIX THE HEADER MESS */
-        header { 
-            padding-top: 80px !important; 
-            min-height: 100vh !important; 
-            display: flex !important; 
-            flex-direction: column !important; 
-            justify-content: flex-start !important;
-            align-items: center !important;
-        }
-
-        header h1 { 
-            font-size: 2.8rem !important; 
-            margin-top: 20px !important;
-            margin-bottom: 20px !important; 
-            position: relative !important;
-            z-index: 10 !important;
-        }
-
-        /* FIX THE NAVIGATION: Put it below the text, not on top of it */
-       /* Inside your @media (max-width: 768px) */
-nav {
-    position: relative !important;
-    width: 100% !important;
-    margin-top: 30px !important;
-    display: block !important;
-}
-
-nav div {
-    display: flex !important;
-    flex-wrap: nowrap !important; /* Prevents links from stacking/vanishing */
-    overflow-x: auto !important; /* Enables swiping */
-    -webkit-overflow-scrolling: touch;
-    gap: 15px !important;
-    padding: 12px 20px !important;
-    justify-content: flex-start !important;
-}
-
-nav a {
-    flex: 0 0 auto !important; /* This is the fix: it forces links to stay visible */
-    font-size: 10px !important;
-    letter-spacing: 0.1em;
-}
-
 /* Optional: Hides the scrollbar line for a cleaner look */
 nav div::-webkit-scrollbar { display: none; }
 
