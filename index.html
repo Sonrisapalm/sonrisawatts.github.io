@@ -65,20 +65,19 @@
     <canvas id="galaxy-bg"></canvas>
 
     <!-- Header Section with video as a background and text overlaid -->
-  <header class="relative w-full h-[100dvh] overflow-hidden">
-    <!-- Rounded Container Wrapper -->
-    <div class="absolute inset-0 w-full h-full md:rounded-[2rem] overflow-hidden">
-        <video 
-            autoplay 
-            loop 
-            muted 
-            playsinline 
-            class="absolute top-0 left-0 w-full h-full object-cover"
-        >
-            <source src="videos/Artificial Intelligence - Animated Video.mp4" type="video/mp4">
-        </video>
-    </div>
-</header>
+  <header class="relative w-full h-screen overflow-hidden flex items-center justify-center">
+    <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline 
+        class="absolute inset-0 w-full h-full object-cover z-0 rounded-none md:rounded-[2rem] opacity-95"
+    >
+        <source src="videos/Artificial Intelligence - Animated Video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+        
+
 
         
         <!-- Content to be displayed on top of the video -->
