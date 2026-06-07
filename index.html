@@ -71,57 +71,55 @@
     <canvas id="galaxy-bg"></canvas>
 
     <!-- Header Section with video as a background and text overlaid -->
-  <header class="relative w-full h-screen overflow-hidden flex items-center justify-center">
+ <header class="relative w-full h-screen overflow-hidden flex items-center justify-center">
     <video 
         autoplay 
         loop 
         muted 
         playsinline 
-        class="absolute inset-0 w-full h-full object-cover z-0 rounded-none md:rounded-[2rem] opacity-95"
+        class="absolute inset-0 w-full h-full object-cover z-0"
     >
         <source src="videos/Artificial Intelligence - Animated Video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
     </video>
         
-        <!-- Content to be displayed on top of the video -->
-       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@200;400&display=swap" rel="stylesheet">
+    <!-- Main Content Wrapper -->
+    <div class="relative z-10 text-center flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-6 h-full">
+        
+        <span style="font-family: 'Inter', sans-serif; letter-spacing: 0.5em; color: #39FF14;" 
+              class="text-[9px] md:text-xs uppercase font-black mb-8 block opacity-90">
+            Independent Research Initiative
+        </span>
 
-<div class="relative z-10 flex flex-col items-center justify-center w-full h-[100dvh] px-6 text-center">
+        <h1 style="font-family: 'Playfair Display', serif; line-height: 1;" 
+            class="text-5xl md:text-9xl font-black mb-4 tracking-tighter text-white">
+            Emotion Encoded
+        </h1>
+
+        <div style="font-family: 'Inter', sans-serif;" 
+             class="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-10">
+            
+            <span class="text-white text-base md:text-xl font-medium tracking-[0.35em] uppercase opacity-100">
+                Sonrisa Watts
+            </span>
+
+            <div class="hidden md:block w-[1px] h-6 bg-white/30"></div>
+
+            <span class="text-[#39FF14] text-[10px] md:text-sm font-bold tracking-[0.4em] uppercase opacity-90">
+                St. Kitts & Nevis
+            </span>
+        </div>
+
+        <div class="w-12 h-[1px] bg-white/30 mb-10"></div>
+
+        <div class="w-full max-w-2xl">
+            <p style="font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.75);" 
+               class="text-base md:text-xl font-extralight leading-relaxed md:leading-[1.9] tracking-wide">
+                Investigating how <span class="text-white font-medium">emotional reasoning</span>, heuristics, and psychological resistance shape Artificial Intelligence adoption in high-stakes fields.
+            </p>
+        </div>
+    </div>
+</header>
     
-    <span style="font-family: 'Inter', sans-serif; letter-spacing: 0.5em; color: #39FF14;" 
-          class="text-[9px] md:text-xs uppercase font-black mb-8 block opacity-90">
-        Independent Research Initiative
-    </span>
-
-    <h1 style="font-family: 'Playfair Display', serif; line-height: 1; overflow: visible; margin-top: 10px;" 
-    class="text-5xl md:text-9xl font-black mb-4 tracking-tighter text-white">
-    Emotion Encoded
-</h1>
-
-    <div style="font-family: 'Inter', sans-serif;" 
-         class="flex flex-col items-center gap-4">
-        <span class="text-white text-base md:text-xl font-medium tracking-[0.35em] uppercase opacity-100">
-            Sonrisa Watts
-        </span>
-    </div>
-</div>
-
-        <div class="hidden md:block w-[1px] h-6 bg-white/30"></div>
-
-        <span class="text-[#39FF14] text-[10px] md:text-sm font-bold tracking-[0.4em] uppercase opacity-90">
-            St. Kitts & Nevis
-        </span>
-    </div>
-
-    <div class="w-12 h-[1px] bg-white/30 mb-10"></div>
-
-    <div class="w-full max-w-2xl">
-        <p style="font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.75);" 
-           class="text-base md:text-xl font-extralight leading-relaxed md:leading-[1.9] tracking-wide">
-            Investigating how <span class="text-white font-medium">emotional reasoning</span>, heuristics, and psychological resistance shape Artificial Intelligence adoption in high-stakes fields. Advancing the intersection of <span class="text-white font-medium">Human Psychology</span> and machine intelligence.
-        </p>
-    </div>
-</div>
 <style>
     /* Ensures the video background container has enough height on mobile to fit the text */
     header {
