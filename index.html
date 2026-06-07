@@ -129,6 +129,33 @@
     h1, p, span {
         text-shadow: 0 5px 15px rgba(0,0,0,0.7);
     }
+    /* Update your header to be full screen on all devices */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensures it takes up the full height of the phone screen */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure the video inside the header covers the full area */
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the video fill the container */
+    z-index: 0;
+}
+
+/* Adjust the content overlay to ensure it stays centered */
+header .relative.z-10 {
+    position: relative;
+    z-index: 10;
+}
 </style>
         <!-- Navigation Links -->
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
