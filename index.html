@@ -71,7 +71,7 @@
     <canvas id="galaxy-bg"></canvas>
 
     <!-- Header Section with video as a background and text overlaid -->
- <header class="relative w-full h-screen overflow-hidden flex items-center justify-center">
+<header class="relative w-full h-screen overflow-hidden flex items-center justify-center">
     <video 
         autoplay 
         loop 
@@ -82,9 +82,7 @@
         <source src="videos/Artificial Intelligence - Animated Video.mp4" type="video/mp4">
     </video>
         
-    <!-- Main Content Wrapper -->
     <div class="relative z-10 text-center flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-6 h-full">
-        
         <span style="font-family: 'Inter', sans-serif; letter-spacing: 0.5em; color: #39FF14;" 
               class="text-[9px] md:text-xs uppercase font-black mb-8 block opacity-90">
             Independent Research Initiative
@@ -97,13 +95,10 @@
 
         <div style="font-family: 'Inter', sans-serif;" 
              class="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-10">
-            
             <span class="text-white text-base md:text-xl font-medium tracking-[0.35em] uppercase opacity-100">
                 Sonrisa Watts
             </span>
-
             <div class="hidden md:block w-[1px] h-6 bg-white/30"></div>
-
             <span class="text-[#39FF14] text-[10px] md:text-sm font-bold tracking-[0.4em] uppercase opacity-90">
                 St. Kitts & Nevis
             </span>
@@ -118,50 +113,27 @@
             </p>
         </div>
     </div>
+
+    <nav class="absolute bottom-6 left-0 w-full z-20 flex justify-center">
+        <div id="nav-container" class="bg-black/40 backdrop-blur-xl border border-white/10 rounded-full py-3 px-6 flex flex-row flex-nowrap items-center gap-x-6 overflow-x-auto shadow-2xl" style="scrollbar-width: none;">
+            <style>
+                #nav-container::-webkit-scrollbar { display: none; }
+                .nav-link-p { font-family: 'Inter', sans-serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.7); text-decoration: none; white-space: nowrap; transition: 0.3s; }
+                .nav-link-p:hover { color: #ffffff; }
+            </style>
+            <a href="index.html" class="nav-link-p" style="color: #39FF14;">Home</a>
+            <a href="about.html" class="nav-link-p">About</a>
+            <a href="Accomplishments.html" class="nav-link-p">Accomplishments</a>
+            <a href="Methodsanddata.html" class="nav-link-p">Methods</a>
+            <a href="DataAnalysisquantitative.html" class="nav-link-p">Publications</a>
+            <a href="ethicalguidelines.html" class="nav-link-p">Ethical Guidelines Protocol</a>
+            <a href="AI-Perception-Briefs.html" class="nav-link-p">Research Findings</a>
+            <a href="contact.html" class="nav-link-p">Contact</a>
+        </div>
+    </nav>
 </header>
+
     
-<style>
-    /* Ensures the video background container has enough height on mobile to fit the text */
-    header {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 60px;
-        padding-bottom: 120px; /* Space for the floating nav */
-    }
-
-    h1, p, span {
-        text-shadow: 0 5px 15px rgba(0,0,0,0.7);
-    }
-    /* Update your header to be full screen on all devices */
-header {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Ensures it takes up the full height of the phone screen */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Ensure the video inside the header covers the full area */
-header video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This makes the video fill the container */
-    z-index: 0;
-}
-
-/* Adjust the content overlay to ensure it stays centered */
-header .relative.z-10 {
-    position: relative;
-    z-index: 10;
-}
-</style>
      <nav style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; z-index: 999999; display: flex; justify-content: center;">
     <div style="background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50px; padding: 12px 20px; display: flex; flex-direction: row; gap: 20px; overflow-x: auto; white-space: nowrap; scrollbar-width: none;">
         <style>
