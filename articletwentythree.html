@@ -6,163 +6,79 @@
     <title>A Psychologist’s Perspective on AI, Emotion, and the Human Machine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Base Dark Mode Setup */
-        body {
-            background-color: #121212; /* Deep Black/Dark Grey */
-            font-family: 'Inter', sans-serif;
-            color: #e5e7eb; /* Off-white text for high contrast */
-        }
-        /* Article Container Styling */
+        body { background-color: #121212; font-family: 'Inter', sans-serif; color: #e5e7eb; }
         .article-container {
-            background-color: #1e1e1e; /* Slightly lighter body for content card */
-            line-height: 1.75;
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2.5rem 2rem; /* Increased padding */
-            border-radius: 12px; /* Softer rounded corners */
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* More pronounced shadow */
+            background-color: #1e1e1e; line-height: 1.8; max-width: 800px;
+            margin: 2rem auto; padding: 3rem; border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
-        /* Custom styles for blockquotes (Pull-Quotes) */
         .pull-quote {
-            border-left: 4px solid #f97316; /* Bold Orange/Empathy color */
-            background-color: #262626; /* Darker background for quote block */
-            color: #d1d5db;
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
-            border-radius: 6px;
-            font-style: italic;
-            font-weight: 500;
+            border-left: 4px solid #f97316; background-color: #262626;
+            color: #d1d5db; padding: 1.5rem 2rem; margin: 2rem 0;
+            border-radius: 0 12px 12px 0; font-style: italic; font-weight: 400;
         }
-        /* Custom styles for headings */
-        .article-heading {
-            color: #f97316; /* Use the same bold orange for section headings */
-            font-weight: 700;
-            margin-top: 3rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #4b5563; /* Subtle dividing line */
-        }
-        /* Custom styles for links */
-        .dark-link {
-            color: #f97316; /* Orange link color */
-            text-decoration: none;
-            font-weight: 600;
-        }
+        .article-heading { color: #f97316; font-weight: 800; margin-top: 3.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #333; }
+        .dark-link { color: #f97316; text-decoration: none; font-weight: 600; }
+        .q-section { margin-top: 3rem; }
+        .q-title { color: #f97316; font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .summary-note { font-size: 0.95rem; color: #9ca3af; font-style: italic; margin-top: 1.5rem; padding: 1rem; border-left: 2px solid #4b5563; background: rgba(255,255,255,0.02); }
     </style>
 </head>
 <body>
 
 <article class="article-container">
-    
-    <header style="margin-bottom: 3rem; border-bottom: 1px solid #4b5563; padding-bottom: 1.5rem;">
-        <h2 style="font-size: 2.5rem; font-weight: 800; color: #f97316; margin-top: 0; line-height: 1.2;">
-            🧩 “Just Because Something Cannot Tell You Everything…”:
-            <br> A Psychologist’s Perspective on AI, Emotion, and the Human Machine
+    <header style="margin-bottom: 3rem; border-bottom: 1px solid #333; padding-bottom: 2rem;">
+        <h2 style="font-size: 2.2rem; font-weight: 900; color: #f97316; line-height: 1.2;">
+            “Just Because Something Cannot Tell You Everything…”: A Psychologist’s Perspective on AI
         </h2>
-        <p style="font-size: 1.1rem; color: #a1a1aa; margin-top: 1rem;">
-            <strong>By Sonrisa Watts</strong> | 
-            <a href="https://encodedemotion.org" target="_blank" class="dark-link">Emotion Encoded</a> |
-            <span style="font-style: italic;">Published: October 28, 2025</span>
+        <p style="font-size: 1rem; color: #a1a1aa; margin-top: 1.5rem;">
+            <strong>By Sonrisa Watts</strong> | <a href="https://encodedemotion.org" target="_blank" class="dark-link">Emotion Encoded</a> | Published: October 28, 2025
         </p>
     </header>
 
-    <div style="text-align: center; margin: 2.5rem 0;">
-        <img src="images/article23.jpg" alt="A stylized image representing the complexity of human emotion and AI technology" 
-             style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); border: 1px solid #333;">
-        <p style="font-size: 0.9rem; color: #9ca3af; margin-top: 0.5rem; font-style: italic;">
-            Figure 1: Title of the image, e.g., The Intersecting Fields of Psychology and AI.
-        </p>
+    <p>Psychological medicine is not mechanical; it is a relational exchange. In this interview, Dr. Jeune explores the fragile boundary between AI utility and the necessity of the human touch.</p>
+
+    <!-- Q1 -->
+    <div class="q-section">
+        <p class="q-title">1. Algorithm Aversion</p>
+        <p><strong>Question:</strong> “If an AI therapy app gave harmful advice once, should patients ever trust it again, or is one mistake enough to end its credibility?”</p>
+        <p><strong>Dr. Jeune:</strong> “I am all for progress, but human machines are very tricky. Psychological medicine is not comparable to giving directions/instructions on repairing a fault in a mechanical engine. Harmful advice can end a life at worst and harm several lives at best. However, the reality is that when a person is distressed they will seek out any support that may soothe them. Although in my opinion giving harmful therapeutic advice would lose my confidence, there are many patients who may have a different attitude and worldview that would not be as dismissive as I am.”</p>
+        <p class="summary-note">Dr. Jeune’s distinction between professional standards and patient desperation sets the stage for how emotional availability governs trust in technology.</p>
     </div>
-    
-    <p>When asked whether a single harmful response from an AI therapy app should end its credibility, psychologist <strong>Dr. Jeune</strong> paused, then offered a reflection that captures the tension between progress and precaution in mental health care.</p>
 
-    <blockquote class="pull-quote">
-        “Psychological medicine is not comparable to repairing a mechanical engine. Harmful advice can end a life at worst and harm several lives at best.”
-    </blockquote>
+    <!-- Q2 -->
+    <div class="q-section">
+        <p class="q-title">2. Automation Bias</p>
+        <p><strong>Question:</strong> “Why do you think some professionals follow AI advice even when their own judgment tells them it might be wrong?”</p>
+        <p><strong>Dr. Jeune:</strong> “All self-respecting professionals work between minimal standards and maximum standards. As human machines, they are affected by their mood, emotional availability and knowledge base. It is my view that professionals that are working at their minimal standard would be more likely to take AI advice even if their own experience and knowledge base contradicts that advice. When a professional is working at their maximum standard they will trust their judgement over anyone else’s including AI.”</p>
+        <p class="summary-note">This internal fluctuation in professional performance explains why reliance on AI is often a symptom of human fatigue rather than a lack of competence.</p>
+    </div>
 
-    <p>Her statement reminds us that therapy is not a mechanical process. It is a living, relational exchange between minds. AI, no matter how advanced, can simulate language but not lived empathy. Still, Dr. Jeune does not dismiss AI outright. She acknowledges a truth that lies at the heart of <em>Emotion Encoded</em>: people in distress will reach for whatever offers relief, and attitudes toward AI vary as widely as the emotions that drive them.</p>
+    <!-- Q3 -->
+    <div class="q-section">
+        <p class="q-title">3. Algorithms Codifying Injustice</p>
+        <p><strong>Question:</strong> “If AI learns from biased human data, can it ever really be fair, or will it always repeat society’s prejudices?”</p>
+        <p><strong>Dr. Jeune:</strong> “If data is biased then it cannot be fair can it? There is no practical reason why AI cannot give samples of a range of views and explanations. When you train as a psychologist, you learn a range of personality theories and apply what fits the issue best. There is no reason why a patient should not ask the same question in slightly different ways to see if there is integrity in the information—consistent, repeated messages—which would reduce the risk of bias.”</p>
+        <p class="summary-note">By advocating for multiple perspectives rather than a singular truth, Dr. Jeune suggests a path toward bias reduction through integrative, patient-centered inquiry.</p>
+    </div>
 
-    <blockquote class="pull-quote">
-        “Although giving harmful therapeutic advice would lose my confidence,” she explained, “there are many patients who may have a different attitude and worldview that would not be as dismissive as I am.”
-    </blockquote>
+    <!-- Q4 -->
+    <div class="q-section">
+        <p class="q-title">4. Illusion of Explainability</p>
+        <p><strong>Question:</strong> “In psychology, would patients feel reassured by a simple AI explanation of their condition, even if it wasn’t entirely accurate?”</p>
+        <p><strong>Dr. Jeune:</strong> “Patients are not homogenous. They all have different attitudes, personalities, moods, intellect, communication styles, and comprehension ability. Some may want a ‘quick fix’ and therefore are prepared to accept any explanation that is expedient or reduces their angst the quickest. So if they just want a generic explanation in that moment, it will be sufficient, but if they want something more permanent or enduring as a solution, then they will not be satisfied.”</p>
+        <p class="summary-note">This variance in user depth-of-need highlights the fundamental impossibility of a one-size-fits-all AI solution for emotional health.</p>
+    </div>
 
-    <p>This willingness of some to forgive and others to condemn reveals how emotional reasoning shapes trust in technology, not just logic or accuracy.</p>
+    <!-- Q5 -->
+    <div class="q-section">
+        <p class="q-title">5. AI Taking Jobs</p>
+        <p><strong>Question:</strong> “Could AI ever replace the human empathy at the heart of therapy, or will psychology always need the human touch?”</p>
+        <p><strong>Dr. Jeune:</strong> “In my opinion, AI cannot replicate the therapeutic encounter. The responses and reactions that pass between a therapist and the help-seeker can be palpable. However, just because something cannot tell you everything does not mean that it cannot tell you anything. For those who do not value human contact, it may be satisfying to them. But for those who form the majority of humankind, those thinking, feeling, caring, sociable people, AI will be quite insufficient.”</p>
+        <p class="summary-note">Concluding with a balanced view, Dr. Jeune reminds us that while AI may serve a specific niche, it remains a shadow of the essential, palpable human encounter.</p>
+    </div>
 
-    <h3 class="article-heading" style="font-size: 1.8rem;">
-        🧠 Professionals as “Human Machines”
-    </h3>
-    <p>In response to a question on automation bias—why some professionals follow AI advice even when it contradicts their own judgment—Dr. Jeune described something striking:</p>
-
-    <blockquote class="pull-quote">
-        “As human machines, professionals are affected by their mood, emotional availability and knowledge base.”
-    </blockquote>
-
-    <p>She recognizes that even experts are not immune to human fluctuation. When working at their minimal standard, professionals may lean on AI out of fatigue or self-doubt. When operating at their maximum standard, they tend to rely on intuition and experience.</p>
-
-    <blockquote class="pull-quote">
-        “When a professional is working at their maximum standard, they will trust their judgement over anyone else’s, including AI.”
-    </blockquote>
-
-    <p>This distinction captures a core theme of <em>Emotion Encoded</em>: the variable emotional states that influence when and why humans defer to machines.</p>
-
-    <h3 class="article-heading" style="font-size: 1.8rem;">
-        ⚖️ Bias, Fairness, and the Question of Data
-    </h3>
-    <p>When asked if AI trained on biased human data could ever truly be fair, Dr. Jeune responded with grounded logic:</p>
-
-    <blockquote class="pull-quote">
-        “If data is biased, then it cannot be fair, can it?”
-    </blockquote>
-
-    <p>Yet she also suggested a practical way forward. Rather than seeing bias as an immovable flaw, she proposed an approach reminiscent of therapeutic pluralism, offering users multiple perspectives and letting them choose what resonates most:</p>
-
-    <blockquote class="pull-quote">
-        “There is no practical reason why AI cannot give samples of a range of views and explanations. The help-seeker can opt for an explanation that fits their situation best.”
-    </blockquote>
-
-    <p>Her thinking parallels the principle of integrative therapy, where different models are combined to suit each client. It is an invitation for AI to move away from rigidity and toward contextual flexibility.</p>
-
-    <h3 class="article-heading" style="font-size: 1.8rem;">
-        💬 The Illusion of Explainability
-    </h3>
-    <p>When asked whether patients would feel reassured by simple AI explanations, even if they were incomplete, Dr. Jeune’s answer was clear:</p>
-
-    <blockquote class="pull-quote">
-        “Patients are not homogenous. They all have different attitudes, personalities, moods, intellect, communication styles, reading ability, comprehension ability, infinite differences between patients.”
-    </blockquote>
-
-    <p>This insight challenges the illusion that there can ever be one-size-fits-all emotional intelligence in AI. Some users might be satisfied with a quick, soothing answer. Others will crave depth, nuance, and genuine human reflection.</p>
-
-    <h3 class="article-heading" style="font-size: 1.8rem;">
-        ❤️ The Human Touch
-    </h3>
-    <p>Perhaps the most resonant part of the conversation came when discussing whether AI could replace empathy in therapy.</p>
-
-    <blockquote class="pull-quote">
-        “In my opinion, AI cannot replicate the therapeutic encounter. The responses and reactions that pass between a therapist and the help-seeker can be palpable.”
-    </blockquote>
-
-    <p>She acknowledges that while virtual or AI-assisted interventions may offer accessibility, they also carry emotional loss, a thinning of presence.</p>
-    
-    <p>Yet she remains measured:</p>
-
-    <blockquote class="pull-quote">
-        “Just because something cannot tell you everything does not mean that it cannot tell you anything.”
-    </blockquote>
-
-    <p>This line, quietly profound, captures the nuance that defines <em>Emotion Encoded</em>’s mission. AI can inform, guide, and support, but it cannot yet feel. For those who value human connection, it will always fall short. For others, it may be enough.</p>
-
-    <h3 class="article-heading" style="font-size: 1.8rem;">
-        🌐 Reframing AI Through Emotional Perception
-    </h3>
-    <p>Dr. Jeune’s reflections reveal not opposition to AI, but emotional realism about it. She neither romanticizes nor rejects it. Her insights illustrate the complexity of trust, shaped by personal worldview, emotional state, and the human desire for reassurance.</p>
-
-    <p>In this way, she redefines the conversation: not <em>Can AI replace us?</em>, but <em>What parts of ourselves do we trust AI with?</em></p>
-
-    <p style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #4b5563; color: #a1a1aa; font-size: 0.95rem;">
-        *&nbsp;<strong>Emotion Encoded</strong> continues to collect perspectives like hers from lawyers, doctors, and counselors to uncover how emotional reasoning, bias, and empathy shape humanity’s evolving relationship with intelligent machines.*
-    </p>
-
-    <p style="font-style: italic; color: #a1a1aa; font-size: 0.95rem;">
+    <p style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #333; color: #a1a1aa; font-style: italic;">
         Because, as Dr. Jeune reminds us, even “human machines” have hearts.
     </p>
 </article>
