@@ -3,82 +3,81 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interview with Dr. Bichara Sahely: Trust, Bias, and the Emotional Compass in AI</title>
+    <title>Dr. Bichara Sahely: The Emotional Compass in AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #030712; color: #f3f4f6; }
-        .glass-panel { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .quote-box { border-left: 3px solid #f97316; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #d1d5db; line-height: 1.8; }
-        .theme-tag { color: #f97316; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 800; }
+        body { font-family: 'Inter', sans-serif; background: #050505; color: #e5e7eb; }
+        .glass-luxury { background: rgba(10, 10, 10, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .tech-border { border: 1px solid rgba(255, 255, 255, 0.08); }
+        .gradient-text { background: linear-gradient(90deg, #ffffff, #9ca3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .quote-raw { border-left: 2px solid #3b82f6; padding-left: 1.5rem; font-style: italic; color: #a1a1aa; line-height: 1.7; }
+        .nav-link { letter-spacing: 0.15em; font-size: 0.7rem; color: #6b7280; transition: color 0.3s ease; }
+        .nav-link:hover { color: #ffffff; }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
+<body class="antialiased selection:bg-blue-500/30">
 
-    <!-- Navigation -->
-    <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-4xl">
-        <div class="bg-black/70 backdrop-blur-xl border border-white/10 px-4 py-3 rounded-2xl md:rounded-full shadow-2xl">
-            <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-3 md:gap-x-8">
-                <a href="index.html" class="text-[10px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-all">Home</a>
-                <a href="about.html" class="text-[10px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-all">About</a>
-                <a href="Methodsanddata.html" class="text-[10px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-all">Methods</a>
-                <a href="DataAnalysisquantitative.html" class="text-[10px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-all">PrePrint</a>
-                <a href="AI-Perception-Briefs.html" class="text-[10px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-all">Findings</a>
-                <a href="contact.html" class="text-[10px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-all">Contact</a>
-            </div>
+    <!-- Luxury Nav -->
+    <nav class="fixed top-8 left-0 right-0 z-50 flex justify-center">
+        <div class="glass-luxury px-8 py-4 rounded-full tech-border flex gap-8">
+            <a href="index.html" class="nav-link">HOME</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+            <a href="Methodsanddata.html" class="nav-link">METHODS</a>
+            <a href="DataAnalysisquantitative.html" class="nav-link">PREPRINT</a>
+            <a href="AI-Perception-Briefs.html" class="nav-link">FINDINGS</a>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 pt-32 pb-12 max-w-4xl">
-        <div class="glass-panel p-8 md:p-16 rounded-3xl shadow-2xl">
+    <main class="max-w-4xl mx-auto pt-40 pb-24 px-6">
+        
+        <header class="mb-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold gradient-text mb-8 tracking-tight">Trust, Bias, and the Emotional Compass</h1>
+            <div class="tech-border rounded-3xl overflow-hidden shadow-2xl mb-8">
+                <img src="images/article12.jpeg" alt="Dr. Bichara Sahely" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-700" />
+            </div>
+            <p class="text-sm uppercase tracking-[0.2em] text-blue-500 font-semibold">Exclusive Interview: Dr. Bichara Sahely</p>
+        </header>
+
+        <section class="space-y-24">
             
-            <header class="mb-12 text-center">
-                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Trust, Bias, and the Emotional Compass in AI</h1>
-                <div class="relative mb-8">
-                    <img src="images/article12.jpeg" alt="Dr. Bichara Sahely being interviewed" class="w-full h-auto rounded-2xl shadow-2xl border border-white/5" />
-                </div>
-                <p class="text-gray-400 font-light italic">Interview with Dr. Bichara Sahely, Consultant Physician in Internal Medicine.</p>
-            </header>
+            <!-- Q1 -->
+            <div class="glass-luxury p-10 rounded-3xl tech-border">
+                <span class="text-blue-500 font-bold text-[10px] uppercase tracking-widest block mb-4">Theme 01 / Status Quo Bias</span>
+                <h3 class="text-xl font-semibold mb-6">Doctors are trained to trust their judgment. Does this create hesitation around AI?</h3>
+                <div class="quote-raw">"I cannot speak for other physicians, but I can see the value of using AI to do literature review, collate best practice guidelines, and to personalize treatment as best as is possible for a particular patient, given the limitations in human and medical resource availability. The more we use AI capabilities, the better we can partner its output with our own judgements and lived experiences to co-evolve a trustworthy partnership as a tool that best serves as an extension of our cognitive and caring abilities."</div>
+                <p class="mt-6 text-sm text-gray-400 font-light">For him, AI is not a threat to clinical autonomy; it is an opportunity to extend human care by partnering machine output with the wisdom of professional experience.</p>
+            </div>
 
-            <section class="space-y-12">
-                <!-- Status Quo -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4 flex items-center"><span class="w-8 h-1 bg-orange-500 mr-3"></span> Status Quo Bias</h3>
-                    <p class="mb-4">Doctors are trained to trust their judgment. Does this create hesitation around adopting AI?</p>
-                    <div class="quote-box">"I cannot speak for other physicians, but I can see the value of using AI to do literature review, collate best practice guidelines, and to personalize treatment as best as is possible for a particular patient, given the limitations in human and medical resource availability. The more we use AI capabilities, the better we can partner its output with our own judgements and lived experiences to co-evolve a trustworthy partnership as a tool that best serves as an extension of our cognitive and caring abilities."</div>
-                    <p class="text-sm text-gray-400">For him, AI is not a threat to clinical autonomy; it is an opportunity to extend human care by partnering machine output with the wisdom of professional experience.</p>
-                </div>
+            <!-- Q2 -->
+            <div class="glass-luxury p-10 rounded-3xl tech-border">
+                <span class="text-blue-500 font-bold text-[10px] uppercase tracking-widest block mb-4">Theme 02 / Automation Bias</span>
+                <h3 class="text-xl font-semibold mb-6">Is there a risk that doctors might over-trust AI outputs that appear precise?</h3>
+                <div class="quote-raw">"Yes, we can overcompensate for our insufficiencies by following blindly their outputs without grounding in lived experiences. Therefore, we must be vigilant curators and ultimately responsible for and accountable in the most transparent manner the advice we give to our patients, based on our AI-augmented answers. Thus the ultimate guide has to be our emotional GPS (instincts and intuition) which have been honed over evolutionary and life course developmental history through years of lived clinical practice. If the outputs resonate with our emotional GPS and the interactions seem to be pointing in the right directions, then we can trust the output more and more. To directly answer your question, the risk that you highlight is a real and present danger, but the ultimate ground for guidance has to be our instincts and intuition which have over the years provides both fail-safe and safe-fail mechanisms for seeing us through with confidence."</div>
+                <p class="mt-6 text-sm text-gray-400 font-light">Dr. Sahely describes these instincts as our "emotional GPS"—an evolutionary safeguard. If AI aligns with this internal compass, trust can grow; if it does not, clinicians must resist the pull of blind deference.</p>
+            </div>
 
-                <!-- Automation Bias -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4 flex items-center"><span class="w-8 h-1 bg-orange-500 mr-3"></span> Automation Bias</h3>
-                    <p class="mb-4">Is there a risk that doctors might over-trust AI outputs that appear precise?</p>
-                    <div class="quote-box">"Yes, we can overcompensate for our insufficiencies by following blindly their outputs without grounding in lived experiences. Therefore, we must be vigilant curators and ultimately responsible for and accountable in the most transparent manner the advice we give to our patients, based on our AI-augmented answers. Thus the ultimate guide has to be our emotional GPS (instincts and intuition) which have been honed over evolutionary and life course developmental history through years of lived clinical practice. If the outputs resonate with our emotional GPS and the interactions seem to be pointing in the right directions, then we can trust the output more and more. To directly answer your question, the risk that you highlight is a real and present danger, but the ultimate ground for guidance has to be our instincts and intuition which have over the years provides both fail-safe and safe-fail mechanisms for seeing us through with confidence."</div>
-                    <p class="text-sm text-gray-400">Dr. Sahely describes these instincts as our "emotional GPS"—an evolutionary safeguard. If AI aligns with this internal compass, trust can grow; if it does not, clinicians must resist the pull of blind deference.</p>
-                </div>
+            <!-- Q3 -->
+            <div class="glass-luxury p-10 rounded-3xl tech-border">
+                <span class="text-blue-500 font-bold text-[10px] uppercase tracking-widest block mb-4">Theme 03 / Illusion of Explainability</span>
+                <h3 class="text-xl font-semibold mb-6">Does the transparency of AI numbers create a false sense of confidence?</h3>
+                <div class="quote-raw">"As the saying goes, trust but verify. Explainability is not an illusion but a perspective from the corpus of knowledge collated in the training data from journals and guidelines. This should create a true sense of confidence if it resonates with our clinical instincts and intuitions which are not prone to cultural and cognitive capture and hijack. Our emotional compass should help create a sense of trustful confidence or graceful presence as we co-partner with these tools of collective human intelligence."</div>
+                <p class="mt-6 text-sm text-gray-400 font-light">For Dr. Sahely, AI explanations are not inherently deceptive, but they must be rigorously tested against the clinician’s own knowledge to avoid a false sense of security.</p>
+            </div>
 
-                <!-- Illusion of Explainability -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4 flex items-center"><span class="w-8 h-1 bg-orange-500 mr-3"></span> Illusion of Explainability</h3>
-                    <p class="mb-4">Does the apparent transparency of AI-generated numbers create a false sense of confidence?</p>
-                    <div class="quote-box">"As the saying goes, trust but verify. Explainability is not an illusion but a perspective from the corpus of knowledge collated in the training data from journals and guidelines. This should create a true sense of confidence if it resonates with our clinical instincts and intuitions which are not prone to cultural and cognitive capture and hijack. Our emotional compass should help create a sense of trustful confidence or graceful presence as we co-partner with these tools of collective human intelligence."</div>
-                    <p class="text-sm text-gray-400">For Dr. Sahely, AI explanations are not inherently deceptive, but they must be rigorously tested against the clinician’s own knowledge to avoid a false sense of security.</p>
-                </div>
+            <!-- Q4 -->
+            <div class="glass-luxury p-10 rounded-3xl tech-border">
+                <span class="text-blue-500 font-bold text-[10px] uppercase tracking-widest block mb-4">Theme 04 / Algorithmic Injustice</span>
+                <h3 class="text-xl font-semibold mb-6">Can doctors spot bias in AI, or does trust in the system make it harder to question?</h3>
+                <div class="quote-raw">"We do not know what we do not know, and like all processes in life, there are blind spots through and through in our worldviews and also in the collective knowledge commons. So ultimately it would be our instincts and intuitions which would be our emotional compass/GPS to help us navigate successfully in the terrain of illness and diseases. In summary blind trust in our ignorance of our biases and that of the collective knowledge base will lead to unintended consequences of harm, but trust in our emotional compass (the quiet voice from within) will always lead the way, if we so choose to quiet the mind, open the heart, and allow the natural intelligence of love for ourselves, each other, and the planet move us in all that we think, feel and do each day."</div>
+                <p class="mt-6 text-sm text-gray-400 font-light">He cautions that blind trust—whether in our own ego or in a digital system—leads to harm. The alternative is a quieter, deeper trust in our ability to stay grounded in compassion and authentic human connection.</p>
+            </div>
 
-                <!-- Injustice -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4 flex items-center"><span class="w-8 h-1 bg-orange-500 mr-3"></span> Algorithms Codifying Injustice</h3>
-                    <p class="mb-4">Can doctors spot bias in AI, or does trust in the system make it harder to question?</p>
-                    <div class="quote-box">"We do not know what we do not know, and like all processes in life, there are blind spots through and through in our worldviews and also in the collective knowledge commons. So ultimately it would be our instincts and intuitions which would be our emotional compass/GPS to help us navigate successfully in the terrain of illness and diseases. In summary blind trust in our ignorance of our biases and that of the collective knowledge base will lead to unintended consequences of harm, but trust in our emotional compass (the quiet voice from within) will always lead the way, if we so choose to quiet the mind, open the heart, and allow the natural intelligence of love for ourselves, each other, and the planet move us in all that we think, feel and do each day."</div>
-                    <p class="text-sm text-gray-400">He cautions that blind trust—whether in our own ego or in a digital system—leads to harm. The alternative is a quieter, deeper trust in our ability to stay grounded in compassion and authentic human connection.</p>
-                </div>
-            </section>
-        </div>
+        </section>
+
+        <footer class="mt-32 text-center">
+            <p class="text-[10px] tracking-[0.3em] text-gray-600 uppercase">© 2025 Emotion Encoded — Research Initiative</p>
+        </footer>
     </main>
-
-    <footer class="bg-black/40 backdrop-blur-md text-center py-8 text-gray-500 text-sm tracking-widest uppercase">
-        © 2025 Emotion Encoded — All rights reserved.
-    </footer>
-
 </body>
 </html>
