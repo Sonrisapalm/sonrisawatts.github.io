@@ -11,15 +11,17 @@
         .glass-luxury { background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .stat-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 1.5rem; }
         .gradient-text { background: linear-gradient(90deg, #ffffff, #9ca3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* This keeps the full image visible */
+        .full-img { object-fit: contain; }
     </style>
 </head>
 
 <body class="antialiased selection:bg-orange-500/30">
 
-    <!-- Hero Section (Full Size) -->
-    <header class="relative w-full h-[70vh] mb-16">
-        <img src="images/article3.jpg" onerror="this.src='https://placehold.co/1920x1080/111827/ffffff?text=AI+Trust+Survey';" alt="AI Trust Survey" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent flex flex-col justify-end p-12 md:p-24">
+    <!-- Hero Section (Full Size, No Cropping) -->
+    <header class="relative w-full h-[70vh] mb-16 bg-black flex items-center justify-center p-4">
+        <img src="images/article3.jpg" onerror="this.src='https://placehold.co/1920x1080/000000/ffffff?text=AI+Trust+Survey';" alt="AI Trust Survey" class="w-full h-full full-img" />
+        <div class="absolute bottom-0 left-0 right-0 p-12 md:p-24 bg-gradient-to-t from-[#050505] to-transparent">
             <h1 class="text-5xl md:text-8xl font-extrabold gradient-text tracking-tight mb-4">St. Kitts & Nevis</h1>
             <p class="text-xl md:text-3xl font-light text-orange-500 tracking-widest uppercase">Foundations of Trust</p>
         </div>
