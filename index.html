@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
@@ -65,28 +65,17 @@
     padding: 0;
     overflow-x: hidden; /* This prevents the right-side empty space */
 }
-        body { 
-        font-family: 'Space Grotesk', sans-serif; /* Tech-focused, sharp */
-        color: #fff; 
-        margin: 0; 
-    }
+        .font-body { 
+    font-family: 'Inter', sans-serif; 
+    font-weight: 300; 
+}
 
-    /* Use Tenor Sans for headings/labels for a luxury feel */
-    .luxury-accent {
-        font-family: 'Tenor Sans', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.25em; /* Increased spacing = luxury */
-        font-size: 0.7rem;
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    /* Refined body text */
-    .luxury-text {
-        font-family: 'Space Grotesk', sans-serif;
-        font-weight: 300; /* Light weight looks more premium */
-        letter-spacing: -0.01em;
-        line-height: 1.7;
-    }
+/* Accent/Labels: Geometric, luxury, editorial feel */
+.font-accent { 
+    font-family: 'Montserrat', sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing: 0.25em; 
+}
         
     </style>
     <link rel="icon" type="image/fortoppage.jpg" href="/images/favicon.png">
@@ -649,13 +638,11 @@ if (scrollContainer) {
     <div class="research-card reveal neon-wrapper relative p-[2px] rounded-[2.5rem]">
         <div class="inner-content bg-[#0a0a0a] rounded-[calc(2.5rem-2px)] p-8 md:p-12">
             <div class="absolute -top-20 -right-20 w-64 h-64 bg-green-500/10 blur-[80px] rounded-full pointer-events-none"></div>
-            <!-- Added font-tenor -->
-            <div class="font-tenor uppercase tracking-[0.2em] text-[0.7rem] text-zinc-500 mb-4">Research Mission</div>
-            <!-- Added font-space -->
-            <p class="font-space text-[1.05rem] md:text-xl leading-[1.8] text-zinc-400 font-light tracking-tight relative z-10">
+            <div class="font-['Montserrat'] uppercase tracking-[0.25em] text-[0.7rem] text-zinc-500 mb-4">Research Mission</div>
+            <p class="font-['Inter'] text-[1.05rem] md:text-xl leading-[1.8] text-zinc-400 font-light tracking-tight relative z-10">
                 Shaping Artificial Intelligence people can trust by first understanding the psychological factors that shape human perception of it. By conducting interviews with experts in law, medicine/healthcare, finance, and education, and gaining perceptions and insight from the general population 
                 <span class="text-green-400/90 font-medium italic">from and working in the Caribbean Region,</span> 
-                <span class="text-white font-semibold tracking-tighter">Emotion Encoded</span> 
+                <span class="text-white font-medium tracking-tighter">Emotion Encoded</span> 
                 helps to align AI systems with the human mind, not just with data, ensuring their effective adoption.
             </p>
         </div>
@@ -664,10 +651,10 @@ if (scrollContainer) {
     <!-- Card 2 -->
     <div class="research-card reveal neon-wrapper relative p-[2px] rounded-[2.5rem]">
         <div class="inner-content bg-[#0a0a0a] rounded-[calc(2.5rem-2px)] p-8 md:p-12">
-            <div class="font-tenor uppercase tracking-[0.2em] text-[0.7rem] text-zinc-500 mb-4">Founder Profile</div>
-            <p class="font-space text-lg md:text-2xl font-light leading-snug text-zinc-100 tracking-tight">
+            <div class="font-['Montserrat'] uppercase tracking-[0.25em] text-[0.7rem] text-zinc-500 mb-4">Founder Profile</div>
+            <p class="font-['Inter'] text-lg md:text-2xl font-light leading-snug text-zinc-100 tracking-tight">
                 Founded by <span class="font-medium text-white">Sonrisa Watts at 24 years old (July 2025) in St. Kitts & Nevis,</span> following the completion of my Psychology BSc degree. 
-                <span class="block mt-6 text-base md:text-lg text-zinc-400 font-extralight leading-relaxed border-l border-zinc-800 pl-6">
+                <span class="block mt-6 text-base md:text-lg text-zinc-400 font-light leading-relaxed border-l border-zinc-800 pl-6">
                     This research initiative ran for 6-7 months and will end in a few months. All interviews (anonymous or not) and research results will be posted to my website eventually.
                 </span>
             </p>
@@ -678,17 +665,18 @@ if (scrollContainer) {
     <div class="research-card reveal neon-wrapper relative p-[2px] rounded-[2.5rem]">
         <div class="inner-content bg-[#0a0a0a] rounded-[calc(2.5rem-2px)] p-8 md:p-12">
             <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full pointer-events-none"></div>
-            <div class="font-tenor uppercase tracking-[0.2em] text-[0.7rem] text-zinc-500 mb-4">Core Methodology</div>
+            <div class="font-['Montserrat'] uppercase tracking-[0.25em] text-[0.7rem] text-zinc-500 mb-4">Core Methodology</div>
             <div class="relative z-10 space-y-6">
-                <p class="font-space text-lg md:text-2xl leading-tight font-light text-green-400 tracking-tight">
+                <p class="font-['Inter'] text-lg md:text-2xl leading-tight font-light text-green-400 tracking-tight">
                     Emotion Encoded is an independent research initiative. I investigate how trust, cognitive bias, heuristics, and judgment distortions shape AI integration into high-stakes domains.
                 </p>
-                <p class="font-space text-[1.05rem] md:text-xl leading-relaxed text-zinc-300 font-light">
+                <p class="font-['Inter'] text-[1.05rem] md:text-xl leading-relaxed text-zinc-300 font-light">
                     I am dedicated to using <span class="text-white font-medium">Psychology to Decode Emotional Barriers to AI Adoption.</span>
                 </p>
             </div>
         </div>
     </div>
+
 </div>
     
 <style>
