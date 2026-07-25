@@ -46,14 +46,14 @@
             overflow: hidden;
         }
 
-      .card-body {
-    padding: 24px; /* Default for mobile */
-}
-@media (min-width: 768px) {
-    .card-body {
-        padding: 60px 80px; /* Only large on desktop */
-    }
-}
+        .card-body {
+            padding: 24px;
+        }
+        @media (min-width: 768px) {
+            .card-body {
+                padding: 60px 80px;
+            }
+        }
 
         .reveal {
             opacity: 0;
@@ -82,22 +82,20 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        <style>
-    /* Add this to handle mobile text better */
-    @media (max-width: 640px) {
-        .card-body {
-            padding: 30px 20px !important;
+
+        @media (max-width: 640px) {
+            .card-body {
+                padding: 30px 20px !important;
+            }
+            h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.1 !important;
+            }
+            .metric-card p {
+                font-size: 0.95rem !important;
+                line-height: 1.6 !important;
+            }
         }
-        h1 {
-            font-size: 1.8rem !important; /* Smaller header for mobile */
-            line-height: 1.1 !important;
-        }
-        .metric-card p {
-            font-size: 0.95rem !important; /* Smaller body text for mobile readability */
-            line-height: 1.6 !important;
-        }
-    }
-</style>
     </style>
 </head>
 <body>
@@ -135,7 +133,7 @@
             
             <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.05); background: #000; display: flex; justify-content: center;">
                 <img src="images/Emotion_Encoded_x_Stanford _University_Collaboration" 
-                     alt="Sonrisa Watts- Emotion Encoded, Stanford School of Medicine Collaboration, Stanford University, Curriculmn" 
+                     alt="Sonrisa Watts- Emotion Encoded, Stanford School of Medicine Collaboration, Stanford University, Curriculum" 
                      style="width: 100%; height: auto; display: block; object-fit: contain;">
             </div>
 
@@ -174,9 +172,9 @@
                             01 / CURRICULUM PARTNERSHIP
                         </div>
                         <p style="color: rgba(255,255,255,0.9); line-height: 1.75; font-size: 1.1rem;">
-                            I founded Emotion Encoded as a solo project, 24 years old, right after graduating from BsC. 8 months later, I'm proud to announce:
-                            Stanford University School of Medicine invited me to be a collabarating partner and has requested my research to be in their Global Open-access Implementation and Literacy curriculumn for Clinicians using Artificial Intelligence. 
-                            My research is being integrated and adopted into this curriculmn, and it is  being scaled and promoted to different medical institutions and faculties and Ministries and Departments of Health. 🙏🏾💯
+                            I founded Emotion Encoded as a solo project, 24 years old, right after graduating from BSc. 8 months later, I'm proud to announce:
+                            Stanford University School of Medicine invited me to be a collaborating partner and has requested my research to be in their Global Open-access Implementation and Literacy curriculum for Clinicians using Artificial Intelligence. 
+                            My research is being integrated and adopted into this curriculum, and it is being scaled and promoted to different medical institutions and faculties and Ministries and Departments of Health. 🙏🏾💯
                         </p>
                     </div>
 
@@ -191,34 +189,61 @@
 
                 </div>
 
-            </div>
-        </div>
+                 <!-- Interactive Preview Cards Section -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left" style="margin-top: 30px;">
+                    
+                    <!-- View Curriculum Card -->
+                    <div class="metric-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;">
+                                PREVIEW // CURRICULUM
+                            </div>
+                            <!-- Pending Image Placeholder Box -->
+                            <div style="width: 100%; height: 180px; background: rgba(0,0,0,0.5); border: 1px dashed rgba(245, 158, 11, 0.3); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                <span style="font-size: 10px; letter-spacing: 0.3s; text-transform: uppercase; color: rgba(255,255,255,0.3);">[ Preview Pending ]</span>
+                            </div>
+                        </div>
+                        <a href="#" style="display: inline-block; text-align: center; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 14px 24px; border-radius: 12px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                            View Curriculum →
+                        </a>
+                    </div>
 
-
-        <div class="metric-card">
-                          <p style="color: rgba(255,255,255,0.9); line-height: 1.75; font-size: 1.1rem;">
-        Stanford University -School of Medicine | Global Health Innovation 
-Research Collaborative Partnership  & Co Author                                                                                   
-                                                                                                                                      March 2026 – Present
-Invited by Stanford School of Medicine  to incorporate Emotion Encoded’s  proprietary Caribbean physician insights into Stanford’s Global AI Literacy and Implementation Open-access Curriculum for clinicians using AI , having been formally requested by faculty 
-
-
-Collaborative Partnership: Facilitating the institutional integration and adoption of findings into curriculum to establish a permanent case study for  AI implementation
-
-Provided localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists, translating regional data into scalable insights for clinical automation and global health delivery within resource-constrained environment
-
-
-Formulated the international distribution framework and scaling the curriculum directly to global medical faculties, universities, ministries and departments of health.
-
-
-Co-authoring a first-author peer-reviewed manuscript with Stanford Faculty on Caribbean physician perspectives on clinical AI trust
-                               </div>
+                    <!-- View Manuscript Card -->
+                    <div class="metric-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;">
+                                PREVIEW // MANUSCRIPT
+                            </div>
+                            <!-- Pending Image Placeholder Box -->
+                            <div style="width: 100%; height: 180px; background: rgba(0,0,0,0.5); border: 1px dashed rgba(245, 158, 11, 0.3); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                <span style="font-size: 10px; letter-spacing: 0.3s; text-transform: uppercase; color: rgba(255,255,255,0.3);">[ Preview Pending ]</span>
+                            </div>
+                        </div>
+                        <a href="#" style="display: inline-block; text-align: center; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 14px 24px; border-radius: 12px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                            View Manuscript →
+                        </a>
+                    </div>
 
                 </div>
 
             </div>
         </div>
 
+                <!-- Partnership Details Box -->
+                <div class="metric-card" style="margin-top: 24px;">
+                    <p style="color: rgba(255,255,255,0.9); line-height: 1.75; font-size: 1.1rem;">
+                        Stanford University - School of Medicine | Global Health Innovation<br>
+                        Research Collaborative Partnership & Co-Author<br><br>
+                        March 2026 – Present<br><br>
+                        • Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into Stanford’s Global AI Literacy and Implementation Open-access Curriculum for clinicians using AI, having been formally requested by faculty.<br><br>
+                        • Collaborative Partnership: Facilitating the institutional integration and adoption of findings into curriculum to establish a permanent case study for AI implementation.<br><br>
+                        • Provided localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists, translating regional data into scalable insights for clinical automation and global health delivery within resource-constrained environments.<br><br>
+                        • Formulated the international distribution framework and scaling the curriculum directly to global medical faculties, universities, ministries, and departments of health.<br><br>
+                        • Co-authoring a first-author peer-reviewed manuscript with Stanford Faculty on Caribbean physician perspectives on clinical AI trust.
+                    </p>
+                </div>
+
+               
 
         <div class="reveal" style="text-align: center; margin-top: 60px; padding-bottom: 40px;">
             <p style="font-family: 'Courier New', monospace; color: rgba(255,255,255,0.2); font-size: 10px; letter-spacing: 0.1em;">
