@@ -133,7 +133,7 @@
             <div class="card-body">
                 
                 <span style="font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: #2dd4bf; margin-bottom: 12px; display: block; text-align: left;">
-                    ENCODEDEMOTION.ORG
+                    CARIBBEAN CLINICAL PRACTICE & AI / EMOTION ENCODED: INDEPENDENT RESEARCH INITIATIVE / Sonrisa Watts Solo research // Visit: ENCODEDEMOTION.ORG
                 </span>
                 
                 <h1 style="
@@ -155,81 +155,77 @@
                 </h2>
 
                 <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 30px; text-align: left;">
-                    This research brief examines trust calibration between human surgical mastery and software tools in high-stakes operating room environments, based on a structured discussion with Mr. Derrick E. Lousaing.
+                    This brief looks at how human surgical skill and software tools fit together in the operating room, based on a talk with Mr. Derrick E. Lousaing.
                 </p>
 
                 <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 30px; text-align: left;">
-                    Mr. Derrick E. Lousaing is a Consultant Orthopaedic Surgeon with over thirty-five years of extensive experience, specializing in joint preservation, lower limb reconstruction, and complex hip and knee arthroplasty. Co-founder of the Fracture and Orthopaedic Clinic in Trinidad and Tobago, he pioneered regional joint replacement techniques and performs approximately 150 total joint replacements annually. Committed to continuous training, surgical precision, and advanced clinical education, he remains a leading authority in Caribbean orthopaedic care.
+                    Mr. Derrick E. Lousaing is a Consultant Orthopaedic Surgeon with over thirty-five years of experience, specializing in joint preservation, lower limb reconstruction, and complex hip and knee replacement. He co-founded the Fracture and Orthopaedic Clinic in Trinidad and Tobago, pioneered regional joint replacement methods, and does about 150 total joint replacements a year. He focuses heavily on ongoing training, exact surgery, and clinical education as a top authority in Caribbean orthopaedic care.
                 </p>
 
                 <div class="q-box">
                     <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
-                        Question: Do you use any AI tools like ChatGPT or Gemini for any part of your work right now?
+                        Do you use any AI tools like ChatGPT or Gemini for any part of your work right now?
                     </p>
                 </div>
 
                 <div class="ans-box">
                     <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
-                        "Yes we use a program called Heidi for consultation and this can integrate with our EMR to do a number of task"
+                        "Yes we use a program called Heidi for consultation and this can integrate with our EMR to do a number of task."
                     </p>
                 </div>
 
                 <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 30px; text-align: left;">
-                    This insight highlights the pragmatic boundary between consumer chat applications and specialized clinical integration software. Surgical environments are actively adopting workflow automation, but strictly for administrative relief and documentation management rather than direct anatomical decision-making. The integration of AI in high-stakes specialties begins at the administrative bottleneck of patient charting.
+                    This shows that clinics use tech mainly to save time on paperwork and charting rather than for medical choices. The clear boundary here is that doctors are open to using software for repetitive administrative bottlenecks, like handling notes and records, but they keep consumer chat tools away from actual patient care and medical diagnosis to avoid safety risks.
                 </p>
 
                 <div class="q-box">
                     <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
-                        Question: Would you rely on an AI system to actively monitor your surgical precision in real time, or do you prefer it to stay entirely focused on background data management?
+                        Would you rely on an AI system to actively monitor your surgical precision in real time, or do you prefer it to stay entirely focused on background data management?
                     </p>
                 </div>
 
                 <div class="ans-box">
                     <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
-                        "We have a combination of the two but no fully integrated AI system for active monitoring"
+                        "We have a combination of the two but no fully integrated AI system for active monitoring."
                     </p>
                 </div>
 
                 <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 30px; text-align: left;">
-                    In complex joint preservation and lower limb reconstruction, the margin for error is microscopic. While digital systems organize background metrics, physical execution relies completely on the spatial awareness, tactile feedback, and internalized muscle memory of the human surgeon. Active mechanical monitoring cannot yet replicate the nuanced adaptations required for unexpected anatomical variations.
+                    In joint and bone surgery, mistakes are not an option. While software can handle background numbers, the actual physical work relies entirely on the human surgeon's hands, feel, and experience. Systems cannot match real-time physical adjustments yet, meaning high-stakes procedures still depend completely on human judgment and spatial awareness.
                 </p>
 
                 <div class="q-box">
                     <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
-                        Question: If an error is about to happen mid-procedure, would you want the system to interrupt you with a warning, or quietly record details for later review?
+                        If an error is about to happen mid-procedure, would you want the system to interrupt you with a warning, or quietly record details for later review?
                     </p>
                 </div>
 
                 <div class="ans-box">
                     <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
-                        "If we were using it then we would prefer the system to interrupt an error before it occurs"
+                        "If we were using it then we would prefer the system to interrupt an error before it occurs."
                     </p>
                 </div>
 
                 <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 30px; text-align: left;">
-                    In major orthopaedic surgery, recording a mistake for later review offers zero value to the patient on the table. For an algorithmic intervention to hold practical utility in an active theatre, it must function as an immediate safety net, placing immense demands on system reliability to avoid dangerous false-positive distractions.
+                    Logging a mistake after it happens does nothing for the patient on the table. Any tool used in surgery has to stop problems right away to be useful. If a system only records issues for later, it provides zero immediate help during a critical moment, placing huge demands on software reliability so it does not cause dangerous false alarms.
                 </p>
 
                 <div class="q-box">
                     <p style="color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.6;">
-                        Question: Do you worry that relying too much on AI will make younger surgeons lose their touch in emergencies?
+                        Do you worry that relying too much on AI will make younger surgeons lose their touch in emergencies?
                     </p>
                 </div>
 
                 <div class="ans-box">
                     <p style="color: #fff; line-height: 1.7; font-size: 1.05rem;">
-                        "yes"
+                        Emotion Encoded analysis says If trainees lean too much on software to fix problems, they lose the ability to handle sudden crises on their own. Decades of surgical skill come from learning how to deal with high-pressure moments manually, so letting algorithms take over too early creates a major generational threat to basic problem-solving and emergency readiness.
                     </p>
                 </div>
-
-                <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 1.1rem; margin-bottom: 30px; text-align: left;">
-                    Absolute dependence on automated guidance risks eroding the raw, instinctive problem-solving skills required when trainees face sudden intraoperative crises. Decades of surgical mastery are built upon weathering high-pressure complications manually. If younger practitioners bypass foundational crisis navigation by trusting algorithms to dictate solutions, the core resilience and adaptive intuition of the workforce face a severe generational threat.
-                </p>
 
                 <div class="verdict-box">
-                    <p style="color: #2dd4bf; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">RESEARCH IMPLICATIONS</p>
+                    <p style="color: #2dd4bf; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">RESEARCH IMPLICATIONS FOR EMOTION ENCODED</p>
                     <p style="color: rgba(255,255,255,0.9); line-height: 1.7;">
-                        The interview with Mr. Derrick E. Lousaing reinforces the core thesis of our research track regarding procedural domains. While administrative automation like EMR-integrated scribing tools are embraced to streamline clinic hours, high-stakes surgical specialists draw a hard line against autonomous intervention. Real-time surgical tools must act as immediate, interruptive safety guardrails rather than passive logs, ensuring the preservation of foundational human expertise and emergency resilience among the next generation of surgeons.
+                        The talk with Mr. Lousaing shows that while doctors are fine with using tech for office notes and admin tasks, they draw the line at letting software run the actual surgery. Real-time tools need to act as immediate safety nets to keep human skills sharp, ensuring the next generation keeps their hands-on expertise intact.
                     </p>
                 </div>
 
