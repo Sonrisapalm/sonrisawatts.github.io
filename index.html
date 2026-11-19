@@ -2285,11 +2285,61 @@ nav div::-webkit-scrollbar { display: none; }
 
 
                 <div class="w-full max-w-5xl mx-auto my-16 px-4">
+    <style>
+        @keyframes textPopFloat {
+            0%, 100% {
+                transform: translateY(0px) translateZ(0);
+                text-shadow: 0 0 10px rgba(245, 158, 11, 0.35), 0 4px 14px rgba(0, 0, 0, 0.85);
+            }
+            50% {
+                transform: translateY(-4px) translateZ(12px);
+                text-shadow: 0 0 18px rgba(245, 158, 11, 0.7), 0 0 28px rgba(255, 255, 255, 0.22), 0 10px 22px rgba(0, 0, 0, 0.95);
+            }
+        }
+
+        @keyframes headingStickOut {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                text-shadow: 0 0 12px rgba(245, 158, 11, 0.55), 0 4px 16px rgba(0, 0, 0, 0.9);
+            }
+            50% {
+                transform: translateY(-5px) scale(1.02);
+                text-shadow: 0 0 22px rgba(245, 158, 11, 0.9), 0 0 34px rgba(251, 191, 36, 0.45), 0 12px 24px rgba(0, 0, 0, 1);
+            }
+        }
+
+        .glow-pop-heading {
+            animation: headingStickOut 3.2s ease-in-out infinite;
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+        }
+
+        .glow-pop-text {
+            animation: textPopFloat 4s ease-in-out infinite;
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.75));
+        }
+
+        .stick-out-block {
+            position: relative;
+            z-index: 15;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+        }
+
+        .stick-out-block:hover {
+            transform: translateY(-6px) scale(1.015);
+            box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.25), 0 12px 24px rgba(0, 0, 0, 0.85);
+        }
+    </style>
+
     <div class="relative group rounded-[40px] border border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent p-4 md:p-8 backdrop-blur-xl transition-all duration-500 hover:border-white/[0.12] hover:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.9)]">
         
-        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div class="flex flex-col gap-8 lg:gap-12">
             
-            <div class="w-full lg:w-1/2 overflow-hidden rounded-[30px] border border-white/[0.08] bg-black shadow-2xl">
+            <div class="w-full overflow-hidden rounded-[30px] border border-white/[0.08] bg-black shadow-2xl stick-out-block">
                 <a href="Accomplishments.html" class="block overflow-hidden">
                     <img src="images/Emotion_Encoded_x_Stanford _University_Collaboration" 
                          alt="Emotion Encoded Stanford University Stanford School of Medicine Collaboration , Stanford Center for Global health Innovation" 
@@ -2297,33 +2347,31 @@ nav div::-webkit-scrollbar { display: none; }
                 </a>
             </div>
 
-            <div class="w-full lg:w-1/2 flex flex-col justify-between text-left py-2">
+            <div class="w-full flex flex-col justify-between text-left py-2">
                 <div>
-                    <div class="inline-flex items-center gap-2 mb-4">
+                    <div class="inline-flex items-center gap-2 mb-4 stick-out-block">
                         <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-                        <span class="text-[10px] font-medium tracking-[0.4em] text-amber-500 uppercase">Global Benchmarking</span>
+                        <span class="text-[10px] font-medium tracking-[0.4em] text-amber-500 uppercase glow-pop-heading">Global Benchmarking</span>
                     </div>
 
-                   <div class="metric-card">
-                        <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;">
+                   <div class="metric-card stick-out-block">
+                        <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;" class="glow-pop-heading">
                             01 / CURRICULUM PARTNERSHIP
                         </div>
-                        <p style="color: rgba(255,255,255,0.9); line-height: 1.75; font-size: 1.1rem;">
+                        <p style="color: rgba(255,255,255,0.9); line-height: 1.75; font-size: 1.1rem;" class="glow-pop-text">
     I founded Emotion Encoded as a solo project at twenty-four years old, right after graduating with my BSc.
-                            Eight months later, I am proud to announce that Stanford University School of Medicine invited me to be a collaborating partner and requested my research for a global open-access implementation and literacy curriculum for clinicians using artificial intelligence.
+                            Eight months later, I am proud to announce that Stanford University School of Medicine invited me to be a Collaborating Partner and requested my research for a global open-access implementation and literacy curriculum for clinicians using artificial intelligence.
                             My research is being integrated and adopted into this curriculum, which is being scaled and promoted to medical institutions, faculties, ministries, and departments of health. As a collaborating partner, I am also serving as first author on a co-authored manuscript with Stanford faculty, translating behavioral datasets on cognitive bias, algorithm aversion, and explainable AI into practical frameworks for clinical decision-making.
-                            This partnership formally incorporates my proprietary Caribbean physician insights into a global open-access curriculum and educational materials—available on the Stanford Digital Medic website library, YouTube, and Access International—helping to address a critical data gap and establish a permanent case study for clinical artificial intelligence implementation across medical institutions, departments of health, and ministries worldwide
+                            This partnership formally incorporates my proprietary Caribbean physician insights into a Global AI Open-Access Curriculum and educational materials—available on the Stanford Digital Medic website library, YouTube, and Access International—helping to address a critical data gap and establish a permanent case study for clinical artificial intelligence implementation across medical institutions, departments of health, and ministries worldwide
                             Findings from this work were also accepted for a poster presentation at the 18th Annual Consortium of Universities for Global Health (CUGH 2027) conference. .
 </p>
-
-                        </p>
                     </div>
 
-                    <div class="metric-card">
-                        <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;">
+                    <div class="metric-card stick-out-block">
+                        <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;" class="glow-pop-heading">
                             02 / ACADEMIC MANUSCRIPT
                         </div>
-                        <p style="color: rgba(255,255,255,0.9); line-height: 1.75; font-size: 1.1rem;">
+                        <p style="color: rgba(255,255,255,0.9); line-height: 1.75; font-size: 1.1rem;" class="glow-pop-text">
                             I am the first author of a manuscript with Stanford faculty on the implications of artificial intelligence in high stakes fields on Caribbean professionals, which is in prep.
                         </p>
                     </div>
@@ -2332,16 +2380,16 @@ nav div::-webkit-scrollbar { display: none; }
 
 
                 <!-- Partnership Details Box -->
-                <div class="metric-card" style="margin-top: 24px;">
-                    <p style="color: rgba(255,255,255,0.9); line-height: 1.75; font-size: 1.1rem;">
+                <div class="metric-card stick-out-block" style="margin-top: 24px;">
+                    <p style="color: rgba(255,255,255,0.9); line-height: 1.75; font-size: 1.1rem;" class="glow-pop-text">
                         Stanford University - School of Medicine | Global Health Innovation<br>
                         Research Collaborative Partnership & Co-Author<br><br>
                         March 2026 – Present<br><br>
-                        • Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into a Global AI Literacy and Implementation Open-access Curriculum for clinicians using AI, having been formally requested by faculty.<br><br>
-                        • Collaborative Partnership: Facilitating the institutional integration and adoption of findings into curriculum to establish a permanent case study for AI implementation.<br><br>
-                        • Provided localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists, translating regional data into scalable insights for clinical automation and global health delivery within resource-constrained environments.<br><br>
-                        • Formulated the international distribution framework and scaling the curriculum directly to global medical faculties, universities, ministries, and departments of health.<br><br>
-                        • Co-authoring a first-author manuscript with Stanford Faculty on Caribbean physician perspectives on clinical AI trust.
+- Invited by Stanford School of Medicine to incorporate Emotion Encoded’s proprietary Caribbean physician insights into a Global AI Literacy and Implementation Open-access Curriculum for clinicians using AI, having been formally requested by faculty.<br><br>
+- Collaborative Partnership: Facilitating the institutional integration and adoption of findings into curriculum to establish a permanent case study for AI implementation.<br><br>
+- Provided localized qualitative datasets and thematic analyses to architect frameworks for calibrating human-AI trust among medical specialists, translating regional data into scalable insights for clinical automation and global health delivery within resource-constrained environments.<br><br>
+- Formulated the international distribution framework and scaling the curriculum directly to global medical faculties, universities, ministries, and departments of health.<br><br>
+- Co-authoring a first-author manuscript with Stanford Faculty on Caribbean physician perspectives on clinical AI trust.
                     </p>
                 </div>
 
@@ -2349,45 +2397,41 @@ nav div::-webkit-scrollbar { display: none; }
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left" style="margin-top: 30px;">
                     
                     <!-- View Curriculum Card -->
-                    <div class="metric-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="metric-card stick-out-block" style="display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
-                            <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;">
+                            <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;" class="glow-pop-heading">
                                 PREVIEW // CURRICULUM
                             </div>
                             <!-- Pending Image Placeholder Box -->
                             <div style="width: 100%; height: 180px; background: rgba(0,0,0,0.5); border: 1px dashed rgba(245, 158, 11, 0.3); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                                <span style="font-size: 10px; letter-spacing: 0.3s; text-transform: uppercase; color: rgba(255,255,255,0.3);">[ Preview Pending ]</span>
+                                <span style="font-size: 10px; letter-spacing: 0.3s; text-transform: uppercase; color: rgba(255,255,255,0.3);" class="glow-pop-text">[ Preview Pending ]</span>
                             </div>
                         </div>
-                        <a href="#" style="display: inline-block; text-align: center; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 14px 24px; border-radius: 12px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                        <a href="#" class="glow-pop-heading" style="display: inline-block; text-align: center; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 14px 24px; border-radius: 12px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
                             View Curriculum →
                         </a>
                     </div>
 
                     <!-- View Manuscript Card -->
-                    <div class="metric-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="metric-card stick-out-block" style="display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
-                            <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;">
+                            <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #f59e0b; margin-bottom: 15px; font-weight: 600;" class="glow-pop-heading">
                                 PREVIEW // MANUSCRIPT
                             </div>
                             <!-- Pending Image Placeholder Box -->
                             <div style="width: 100%; height: 180px; background: rgba(0,0,0,0.5); border: 1px dashed rgba(245, 158, 11, 0.3); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                                <span style="font-size: 10px; letter-spacing: 0.3s; text-transform: uppercase; color: rgba(255,255,255,0.3);">[ Preview Pending ]</span>
+                                <span style="font-size: 10px; letter-spacing: 0.3s; text-transform: uppercase; color: rgba(255,255,255,0.3);" class="glow-pop-text">[ Preview Pending ]</span>
                             </div>
                         </div>
-                        <a href="#" style="display: inline-block; text-align: center; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 14px 24px; border-radius: 12px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                        <a href="#" class="glow-pop-heading" style="display: inline-block; text-align: center; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 14px 24px; border-radius: 12px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
                             View Manuscript →
                         </a>
                     </div>
 
                 </div>
 
-            </div>
-        </div>
-
-
-                <div class="mt-8 pt-6 border-t border-white/[0.05]">
-                    <a href="Accomplishments.html" class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-amber-400 hover:text-amber-300 uppercase transition-colors duration-300">
+                <div class="mt-8 pt-6 border-t border-white/[0.05] stick-out-block">
+                    <a href="Accomplishments.html" class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-amber-400 hover:text-amber-300 uppercase transition-colors duration-300 glow-pop-heading">
                         READ MORE
                         <span class="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </a>
