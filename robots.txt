@@ -1,0 +1,4 @@
+User-agent: Googlebot-Image
+Disallow: /images/article32.jpg
+Disallow: /images/article18.jpg
+Disallow: /images/article23.jpg
